@@ -10,7 +10,7 @@ SignalFlow（AI 产品情报与需求协同工作台）服务于 AI 产品经理
 
 ## 2. 当前阶段边界
 
-当前为 Phase 0 / Bootstrap。允许：工程基础、设计系统、应用外壳、数据访问接口、文档与测试基础。
+当前为 Phase 1.5 / Product Experience Layer。允许：工程基础、设计系统、真实业务路由、无虚构数据的空状态、数据访问接口、文档与测试基础。
 
 禁止在没有明确新任务时实现：真实信息采集、新闻爬虫、RSS Collector、LLM 分析、GitHub Actions 定时任务、Deep Research、MCP、多 Agent、飞书机器人推送或复杂需求自动化。不得生成虚构新闻或大批量 Mock Data。
 
