@@ -13,6 +13,7 @@ SignalFlow 是一个面向 AI 产品经理的长期作品集项目，把外部�
 - 深色、科技绿的中文工作台外壳
 - 情报池、需求池、数据源、采集任务的导航边界
 - 服务端飞书适配器与 Repository Pattern 的类型占位
+- 飞书凭据校验、tenant token 缓存与 Bitable 分页读取基础
 - 架构、参考项目与后续飞书接入计划
 - TypeScript strict、ESLint、Tailwind CSS 4
 
