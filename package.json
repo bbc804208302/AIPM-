@@ -9,8 +9,9 @@
     "build": "next build",
     "start": "next start",
     "lint": "eslint .",
+    "test": "node --import tsx --test src/lib/feishu/*.test.ts",
     "typecheck": "tsc --noEmit",
-    "check": "pnpm lint && pnpm typecheck && pnpm build"
+    "check": "pnpm lint && pnpm typecheck && pnpm test && pnpm build"
   },
   "dependencies": {
     "lucide-react": "^0.468.0",
@@ -32,6 +33,7 @@
     "eslint-plugin-react-hooks": "6.1.1",
     "globals": "16.4.0",
     "tailwindcss": "4.2.1",
+    "tsx": "^4.20.0",
     "typescript": "5.9.3",
     "typescript-eslint": "8.59.3"
   },
