@@ -1,0 +1,23 @@
+:root {
+  color-scheme: dark;
+  --sf-bg: #070908;
+  --sf-surface-1: #0c0f0d;
+  --sf-surface-2: #111512;
+  --sf-surface-3: #171c18;
+  --sf-border: #242b26;
+  --sf-border-strong: #354039;
+  --sf-text: #f0f4f1;
+  --sf-text-muted: #8f9b93;
+  --sf-text-subtle: #626c65;
+  --sf-accent: #77e89d;
+  --sf-accent-strong: #39d875;
+  --sf-accent-soft: #12281a;
+  --sf-warning: #e8bd77;
+  --sf-danger: #ef7f7f;
+  --sf-radius-sm: 6px;
+  --sf-radius-md: 10px;
+  --sf-sidebar-width: 248px;
+  --sf-shadow-focus: 0 0 0 3px rgb(119 232 157 / 18%);
+  --sf-font-sans: "SF Pro Display", "PingFang SC", "Microsoft YaHei", system-ui, sans-serif;
+  --sf-font-mono: "SFMono-Regular", Consolas, "Liberation Mono", monospace;
+}

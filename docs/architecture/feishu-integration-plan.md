@@ -1,0 +1,34 @@
+# Phase 1: Feishu Integration Plan
+
+## Goal
+
+以只读方式接入“内部需求池”和“AI 产品情报池”，验证字段映射、鉴权、安全边界与 Repository contract。第一阶段不写回数据，不做机器人推送。
+
+## Sequence
+
+1. 确认两张 Bitable 表的字段 schema、唯一标识、状态枚举与时间字段。
+2. 在 Next.js server-only 环境实现 tenant access token 获取与缓存。
+3. 建立可注入的 Feishu HTTP transport，统一 timeout、分页、错误码与限流处理。
+4. 分别实现 `FeishuDemandRepository` 与 `FeishuIntelligenceRepository`，把 records 映射为稳定领域类型。
+5. 在 Application Service 中编排列表与详情用例；页面只依赖这些用例。
+6. 增加契约测试、字段缺失测试、分页测试和凭据泄漏检查。
+7. 使用真实小规模数据完成只读验收，再评估写回、缓存与 webhook。
+
+## Required inputs
+
+- `FEISHU_APP_ID`
+- `FEISHU_APP_SECRET`
+- `FEISHU_BITABLE_APP_TOKEN`
+- `FEISHU_DEMAND_TABLE_ID`
+- `FEISHU_INTELLIGENCE_TABLE_ID`
+- 两张表的字段名、字段类型与至少一条脱敏样例
+
+这些值只能进入 `.env.local` 或部署平台 Secret 管理。
+
+## Acceptance criteria
+
+- 浏览器 bundle 不包含任何飞书 Secret。
+- 页面或 Client Component 不直接请求 Feishu OpenAPI。
+- 两个 Repository 可由测试替身替换。
+- API timeout、鉴权失败、限流和空数据有明确错误语义。
+- UI 展示真实数据或真实空状态，不回退到伪造内容。
