@@ -2,6 +2,7 @@ import { revalidatePath } from "next/cache";
 import { NextResponse } from "next/server";
 
 import { domainFocusAreaOptions, loadCollectorSchedule } from "@/collector/configuration";
+import { isCollectorConfigurationEditable } from "@/collector/runtime";
 import { buildDailyIntelligenceBrief } from "@/collector/daily-brief";
 import { enrichBriefWithChineseOverview } from "@/collector/chinese-overview";
 import { collectIntelligenceSignals } from "@/collector/pipeline";
@@ -30,7 +31,7 @@ async function runCollector(track: CollectorTrack, focusAreas?: readonly DomainF
 }
 
 export async function POST(request: Request) {
-  if (process.env.NODE_ENV !== "development") {
+  if (!isCollectorConfigurationEditable()) {
     return NextResponse.json({ error: "公开环境不允许手动执行采集。" }, { status: 403 });
   }
   if (activeRun) return NextResponse.json({ error: "采集任务正在运行。" }, { status: 409 });
