@@ -1,66 +1,336 @@
-# SignalFlow
+<div align="center">
+  <h1>SignalFlow</h1>
+  <p><strong>AI 产品情报与需求协同工作台</strong></p>
+  <p>让有价值的外部信号主动找到产品经理，并进入可追踪的内部需求执行链路。</p>
+</div>
 
-**AI 产品情报与需求协同工作台**
+<p align="center">
+  <img alt="Next.js 15" src="https://img.shields.io/badge/Next.js-15-202428?style=flat-square&logo=nextdotjs&logoColor=white">
+  <img alt="React 19" src="https://img.shields.io/badge/React-19-3f6578?style=flat-square&logo=react&logoColor=white">
+  <img alt="TypeScript strict" src="https://img.shields.io/badge/TypeScript-strict-315467?style=flat-square&logo=typescript&logoColor=white">
+  <img alt="pnpm 11" src="https://img.shields.io/badge/pnpm-11-a97842?style=flat-square&logo=pnpm&logoColor=white">
+  <img alt="Phase 2" src="https://img.shields.io/badge/status-Daily_Intelligence_MVP-67806d?style=flat-square">
+</p>
 
-SignalFlow 是一个面向 AI 产品经理的长期作品集项目，把外部产品信号与内部需求协作放进同一条可追踪的工作流：
+> [!NOTE]
+> SignalFlow 当前处于 **Phase 2 / Daily Intelligence MVP**。公开信号采集、每日 Top 10、飞书需求读取和完整产品工作区已经可运行；运行时 LLM Analyzer、通知和 Signal → Demand 写回仍在路线图中。
 
-`External Signal → Product Insight → Potential Demand → Internal Demand`
+## SignalFlow 是什么
 
-当前仓库处于 Phase 1.5：已包含工程基础、设计系统、完整产品信息架构和飞书数据访问边界。尚未接入真实数据、采集器、LLM、定时任务或通知。
+SignalFlow 是一个面向 AI 产品经理的长期产品作品集。它把两类原本割裂的工作放到同一工作台：
 
-## 当前能力
+- **外部产品情报**：持续跟踪模型能力、AI Agent、AI Coding、多模态、AI 产品，以及动漫、短剧、影视与 AIGC 生产领域的变化。
+- **内部需求协同**：从飞书多维表格读取需求，透明展示评估、负责人、优先级、开发、测试与上线进度。
 
-- 深色、科技绿的中文产品工作台
-- 工作台、情报池、需求池、数据源、采集任务五个真实路由
-- 服务端飞书适配器与 Repository Pattern 的类型占位
-- 飞书凭据校验、tenant token 缓存与 Bitable 分页读取基础
-- 架构、参考项目与后续飞书接入计划
-- TypeScript strict、ESLint、Tailwind CSS 4
+产品最终希望形成这条闭环：
 
-## 本地开发
-
-要求：Node.js 20.9+、pnpm 11+
-
-```bash
-pnpm install
-pnpm dev
+```mermaid
+flowchart LR
+  A[External Signal] --> B[AI Understanding]
+  B --> C[Product Insight]
+  C --> D[Potential Demand]
+  D --> E[Internal Demand]
+  E --> F[Product Execution]
 ```
 
-验证：
+### 为什么做这个项目
 
-```bash
-pnpm check
+| 真实问题 | SignalFlow 的产品回应 |
+| --- | --- |
+| AI 产品信息依赖产品经理主动浏览，信号分散且容易错过 | 配置化 Source Registry、每日采集、去重和双轨 Top 10 情报 |
+| 需求通过表单、聊天和会议提出，提交后状态不透明 | 统一需求池、状态筛选、详情页与执行看板 |
+| 外部情报与内部需求缺少连接 | 以稳定领域模型为基础，预留 Signal → Insight → Demand 链路 |
+| Demo 容易依赖伪造数据或泄露 Secret | 公开来源快照可审计，飞书凭据仅保留在服务端 |
+
+## 当前可以体验什么
+
+| 路由 | 产品模块 | 当前能力 |
+| --- | --- | --- |
+| `/` | 产品需求看板 | 需求总数、已完成数、平均等待天数、P0 秒级倒计时、状态漏斗、人员进展 |
+| `/intelligence` | AI 产品情报池 | AI 行业 / 业务领域双轨、来源筛选、每日日期、中文内容概述、原文追溯 |
+| `/demands` | 内部需求池 | 飞书实时读取、状态指标筛选、优先级、提出人、负责人和详情入口 |
+| `/demands/[id]` | 需求详情 | 展示该条飞书记录映射后的完整字段与规范化时间 |
+| `/sources` | 数据源 | 按情报轨道管理 Source Registry、来源健康度与本地开关 |
+| `/tasks` | 采集任务 | AI 行业与业务领域独立任务、时间配置、领域选择和本地立即采集 |
+
+### 产品体验设计
+
+- 简体中文优先，技术名词保留 AI、API、RSS、GitHub、LLM 等常用表达。
+- 低饱和 Bento Grid：暖灰画布、象牙白信息面、石墨侧栏和雾霾蓝交互色。
+- 情报页强调连续阅读与来源追溯，需求页强调高密度扫描与状态识别。
+- 公开环境只读：不能修改 Source Registry、计划时间或手动触发采集。
+
+完整视觉规范见 [`docs/design/bento-grid-DESIGN.md`](docs/design/bento-grid-DESIGN.md)。
+
+## 情报数据源
+
+### AI 行业情报
+
+| 来源组 | 当前来源 | 选择目标 |
+| --- | --- | --- |
+| GitHub Trending | GitHub Trending | AI Agent、AI Coding、模型工具与 AI Native 项目 |
+| AI 媒体 | OpenAI、Google DeepMind、Hugging Face、TLDR AI、Smol AI、Latent Space、MIT Technology Review AI | 官方能力更新、工程趋势和产品动态 |
+| X 动态 | AttentionVC AI 公共端点 | AI 从业者与产品实践的高关注信号 |
+
+### 业务领域情报
+
+当前聚焦 **动漫、短剧、影视、AIGC**，来源包括：
+
+- Cartoon Brew
+- No Film School
+- arXiv `cs.CV`
+- Google News · Microdrama
+- Google News · AIGC Production
+
+两条情报轨道分别维护自己的采集时间、关注领域和每日 Top 10。`briefingDate` 表示 Asia/Shanghai 当天的采集批次；原始发布时间单独保留，不使用昨日数据冒充今日情报。
+
+## Collector 如何工作
+
+```mermaid
+flowchart TD
+  R[Source Registry] --> D[Source Dispatch]
+  D --> G[GitHub Trending Adapter]
+  D --> M[AI / Domain RSS Adapter]
+  D --> X[AttentionVC Adapter]
+  G --> N[Normalize]
+  M --> N
+  X --> N
+  N --> U[Canonical URL Deduplicate]
+  U --> T[Source-diverse Daily Top 10]
+  T --> C[Chinese Overview Review Layer]
+  C --> J[Versioned JSON Repository]
+  J --> W[SignalFlow Web App]
 ```
 
-## 环境变量
+Collector 的工程约束：
 
-```bash
-cp .env.example .env.local
+- 默认只执行 `dry-run`，只有显式 `--write` 才更新每日快照。
+- 单个来源失败不会中止整批采集；超过半数来源失败则禁止写入。
+- URL 规范化与指纹去重在来源适配器之后统一完成。
+- AI 媒体、GitHub Trending 与 X 动态有独立配额，避免单一来源占满 Top 10。
+- `summaryZh` 只描述“这是什么、主要讲什么、具有什么能力”，排名与入选依据保存在独立字段。
+- 当前中文内容由人工审校保护层维护，不代表已经接入运行时 LLM。
+
+## 系统架构
+
+```mermaid
+flowchart TB
+  subgraph Intelligence[Product Intelligence]
+    PS[Public Sources] --> CO[Collector]
+    CO --> NR[Normalize / Deduplicate / Top 10]
+    NR --> IR[File Intelligence Repository]
+  end
+
+  subgraph Demand[Demand Management]
+    FB[Feishu Bitable] --> FA[Feishu Adapter]
+    FA --> DR[Demand Repository]
+  end
+
+  IR --> AS[Application Services]
+  DR --> AS
+  AS --> UI[Next.js App Router / React UI]
 ```
 
-`.env.local` 仅用于本地真实值，禁止提交。浏览器端不得持有飞书 Secret。
-
-## 架构原则
+内部需求调用边界：
 
 ```text
 React Component
-  → Application Service / Repository
+  → Application Service / Demand Repository
   → Feishu Adapter
   → Next.js Server
   → Feishu OpenAPI
   → Bitable
 ```
 
-页面只依赖 Repository 接口，不直接调用飞书 API。详细说明见 [系统架构](docs/architecture/system-overview.md) 与 [飞书接入计划](docs/architecture/feishu-integration-plan.md)。
+关键架构决策：
 
-## 开发规则
+- React 页面不直接调用飞书 OpenAPI，也不理解 Bitable 字段结构。
+- `src/lib/feishu` 只负责鉴权、请求、分页、响应映射和安全错误翻译。
+- 页面通过 `src/repositories` 中的领域接口访问数据。
+- AI 情报和内部需求属于两个独立数据边界。
+- File Repository 可在不重写页面的情况下替换为 PostgreSQL。
 
-Codex 或其他开发代理修改仓库前必须先阅读 [AGENTS.md](AGENTS.md)。第一次 bootstrap 可以直接落在 `main`；之后所有功能使用 `feat/*` 分支。
+更多说明见 [`docs/architecture/system-overview.md`](docs/architecture/system-overview.md) 和 [`docs/architecture/feishu-integration-plan.md`](docs/architecture/feishu-integration-plan.md)。
 
-## 参考与许可证
+## 数据存在哪里
 
-调研笔记位于 `docs/references/`。DailyBrief（MIT）只考虑选择性复用并保留 attribution；TrendRadar（GPL-3.0）当前仅作为架构与产品参考，不复制源码；GPT Researcher（Apache-2.0）和 Plane 仅用于未来能力与交互研究。
+AI 产品情报当前使用可公开审计的版本化 JSON：
 
-## Repository
+```text
+data/intelligence/
+├── technical/
+│   └── YYYY-MM-DD.json
+├── technical-latest.json
+├── domain/
+│   └── YYYY-MM-DD.json
+└── domain-latest.json
+```
 
-[bbc804208302/AIPM-](https://github.com/bbc804208302/AIPM-)
+内部需求不进入 Git，运行时由服务端从你的飞书多维表格读取。克隆仓库的使用者不会获得仓库作者的飞书凭据或表格访问权限。
+
+## 快速开始
+
+### 环境要求
+
+- Node.js `20.9+`
+- pnpm `11+`
+- Git
+
+### 只体验产品情报
+
+产品情报使用仓库内快照，不配置飞书也可以启动：
+
+```bash
+git clone https://github.com/bbc804208302/AIPM-.git
+cd AIPM-
+pnpm install
+pnpm dev
+```
+
+打开 [http://localhost:3000](http://localhost:3000)。AI 产品情报池、数据源和采集任务可读取公开配置；内部需求池会提示飞书尚未配置。
+
+### 接入自己的飞书需求表
+
+```bash
+cp .env.example .env.local
+```
+
+在 `.env.local` 中配置：
+
+| 变量 | 用途 | 是否进入浏览器 |
+| --- | --- | --- |
+| `FEISHU_APP_ID` | 飞书自建应用 ID | 否 |
+| `FEISHU_APP_SECRET` | 飞书自建应用 Secret | 否 |
+| `FEISHU_BITABLE_APP_TOKEN` | 多维表格 App Token | 否 |
+| `FEISHU_DEMAND_TABLE_ID` | 内部需求表 ID | 否 |
+| `LLM_API_KEY` | 未来 Analyzer 预留，当前无需配置 | 否 |
+
+推荐的需求表字段：
+
+| 字段组 | 字段名 |
+| --- | --- |
+| 标识与正文 | `需求ID`、`需求名称`、`需求描述` |
+| 流程 | `当前状态`、`优先级`、`需求来源`、`来源情报ID` |
+| 人员 | `提出人`、`产品负责人`、`开发负责人` |
+| 时间 | `提交时间`、`更新时间`、`预计上线时间`、`实际上线时间` |
+
+状态映射支持：`待评估`、`评估中`、`已接受`、`待开发`、`开发中`、`测试中`、`已上线`、`已驳回`、`已暂停`。优先级支持 `P0`–`P3`。
+
+> [!IMPORTANT]
+> `.env.local` 已被 Git 忽略。不要将真实 Secret 写入 README、Issue、截图、客户端代码或任何 `NEXT_PUBLIC_*` 变量。
+
+## 运行 Collector
+
+| 命令 | 行为 | 是否写快照 |
+| --- | --- | --- |
+| `pnpm collector:dry-run` | 验证 AI 行业来源、候选数和 Top 10 | 否 |
+| `pnpm collector:write` | 采集并保存 AI 行业今日快照 | 是 |
+| `pnpm exec tsx scripts/collect-intelligence.ts --dry-run --track domain` | 验证业务领域采集 | 否 |
+| `pnpm collector:write:domain` | 采集并保存业务领域今日快照 | 是 |
+
+本地维护者可以通过 `/sources` 调整来源开关，通过 `/tasks` 修改时间与业务领域并手动采集。生产环境中的这些写操作会返回 `403`，避免公开访客修改仓库配置或运行任务。
+
+仓库还提供两条 GitHub Actions 工作流，分别用于 AI 行业情报与业务领域情报。它们只提交 `data/intelligence` 中发生变化的每日快照。
+
+## 开发与验证
+
+```bash
+pnpm lint
+pnpm typecheck
+pnpm test
+pnpm build
+```
+
+也可以运行完整检查：
+
+```bash
+pnpm check
+```
+
+当前测试覆盖：
+
+- Collector registry、Normalization、Deduplication 与双轨 Top 10
+- 中文概述生成与人工审校内容保护
+- 飞书 token 缓存、并发刷新、分页、限流与安全错误
+- 飞书字段映射、File Repository 和需求看板指标
+
+## 部署
+
+SignalFlow 使用 Next.js 服务端能力，推荐通过 Vercel 或其他支持 Node.js 的平台部署，而不是使用纯静态 GitHub Pages。
+
+Vercel 部署流程：
+
+1. Fork 或推送仓库到自己的 GitHub。
+2. 在 Vercel 中导入仓库并选择 Next.js Preset。
+3. 如需内部需求池，在 Vercel Environment Variables 中配置自己的飞书变量。
+4. 将生产分支设为 `main` 并部署。
+
+生产部署只读取已提交的情报快照。定时采集由 GitHub Actions 更新快照，新的提交再触发站点部署。
+
+## 项目结构
+
+```text
+src/
+├── app/                 # App Router 页面与服务端 API
+├── collector/           # Source Registry、Adapter、Normalize、Top 10
+├── components/          # 布局、情报、需求、数据源与任务组件
+├── lib/feishu/          # Server-only Feishu OpenAPI boundary
+├── repositories/        # 领域接口、Feishu 与 File 实现
+├── services/            # Application use cases
+├── styles/              # Design Token 与 Bento Grid 视觉层
+└── types/               # 稳定领域类型
+
+data/intelligence/       # 可审计的每日情报快照
+docs/                    # 架构、产品、设计与参考项目说明
+.codex/skills/           # SignalFlow Collector Skill
+.github/workflows/       # 两条每日采集工作流
+```
+
+## 当前边界与路线图
+
+### 已实现
+
+- [x] Next.js 产品工作区与五个核心入口
+- [x] AI 行业 / 业务领域双轨情报
+- [x] 14 个公开来源、Registry、Dispatch、Normalization 与 Deduplication
+- [x] 每日 Top 10、版本化 File Repository 与中文概述保护层
+- [x] 飞书 Demand Repository、需求详情和产品需求看板
+- [x] 本地任务控制、公开环境只读和 GitHub Actions 工作流
+- [x] Collector Skill、架构文档、设计规范和自动化测试
+
+### 下一阶段
+
+- [ ] 结构化 AI Analyzer：事实摘要、产品影响、机会、风险与来源证据
+- [ ] Signal → Insight → Demand 草稿转换
+- [ ] AI 输出评估：准确性、来源覆盖、人工审校与 Prompt 版本
+- [ ] 飞书需求写回、缓存与 webhook 策略
+- [ ] PostgreSQL Intelligence Repository 实现
+- [ ] 通知与高价值情报 Deep Research
+
+当前阶段不实现运行时多 Agent、MCP、复杂需求自动化或飞书机器人推送。
+
+## 安全设计
+
+- 所有飞书凭据只在服务端读取。
+- `.env.local` 与所有 `.env*` 真实值不进入 Git。
+- 页面不打印 token、App Secret 或完整敏感业务正文到日志。
+- Collector 默认 dry-run，生产 Web 环境禁止手动写入。
+- 飞书访问范围由使用者自己的应用权限和表格授权决定。
+- 公开 Demo 应使用独立飞书应用与脱敏或虚构需求表。
+
+## 参考项目与许可证注意事项
+
+SignalFlow 不是以下项目的 Fork。调研笔记保存在 [`docs/references`](docs/references/)：
+
+- [leiting-eric/DailyBrief](https://github.com/leiting-eric/DailyBrief) — MIT。选择性参考 Source Registry、dispatch、RSS、GitHub Trending、AttentionVC、normalization 与容错模式，并保留 attribution。
+- [SANSAN0/TrendRadar](https://github.com/SANSAN0/TrendRadar) — GPL-3.0。仅作产品和系统架构研究，不复制实现。
+- [assafelovic/gpt-researcher](https://github.com/assafelovic/gpt-researcher) — Apache-2.0。仅作为未来高价值信号研究管线参考。
+- [makeplane/plane](https://github.com/makeplane/plane) — 仅研究需求详情、状态、Kanban、Timeline 与过滤交互。
+
+SignalFlow 自身当前是公开的个人作品集项目，尚未选择正式开源许可证。在稳定版发布前会补充许可证；在此之前，如需分发或商业复用，请先联系仓库作者。
+
+## 开发协作
+
+任何 Codex 或自动化开发代理修改仓库前，都必须先阅读 [`AGENTS.md`](AGENTS.md)。工程使用 `feat/*` 功能分支，不建立复杂的 develop / staging / release 分支。
+
+项目仓库：[bbc804208302/AIPM-](https://github.com/bbc804208302/AIPM-)

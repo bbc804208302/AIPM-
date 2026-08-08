@@ -1,0 +1,12 @@
+{
+  "enabled": true,
+  "time": "08:45",
+  "timezone": "Asia/Shanghai",
+  "dailyLimit": 10,
+  "focusAreas": [
+    "动漫",
+    "短剧",
+    "影视",
+    "AIGC"
+  ]
+}

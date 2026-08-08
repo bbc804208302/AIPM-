@@ -1,0 +1,127 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>新野兽派组件库 · SignalFlow</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    :root { --black:#000000; --white:#ffffff; --pink:#ff006e; --green:#ccff00; --blue:#00d9ff; --orange:#ff9500; }
+    * { box-sizing: border-box; }
+    body { margin:0; background:var(--green); color:var(--black); font-family:ui-monospace,SFMono-Regular,Menlo,monospace; }
+    button,input { font:inherit; }
+    button { cursor:pointer; }
+    .sheet { width:750px; min-height:1000px; margin:24px auto; padding:26px; background:var(--white); border:4px solid var(--black); box-shadow:12px 12px 0 var(--black); }
+    .heading { font-family:Arial,"PingFang SC",sans-serif; font-weight:900; letter-spacing:-.04em; }
+    .section { margin-top:18px; padding-top:12px; border-top:4px solid var(--black); }
+    .section-label { display:flex; justify-content:space-between; align-items:center; margin-bottom:10px; font-size:10px; font-weight:900; letter-spacing:.12em; text-transform:uppercase; }
+    .grid-2 { display:grid; grid-template-columns:1fr 1fr; gap:14px; }
+    .brutal-button { min-height:42px; padding:8px 13px; border:3px solid var(--black); font-weight:900; text-transform:uppercase; box-shadow:5px 5px 0 var(--black); transition:all 150ms ease-out; }
+    .brutal-button:hover { transform:translate(-3px,-3px); box-shadow:8px 8px 0 var(--black); background:var(--green); color:var(--black); }
+    .brutal-button:active { transform:translate(5px,5px); box-shadow:none; }
+    .primary { background:var(--pink); color:var(--white); }
+    .secondary { background:var(--green); color:var(--black); }
+    .outline { background:var(--white); color:var(--black); }
+    .ghost { background:var(--white); color:var(--black); border-color:transparent; box-shadow:none; }
+    .ghost:hover { border-color:var(--black); box-shadow:5px 5px 0 var(--black); }
+    .control { min-height:46px; border:3px solid var(--black); background:var(--white); box-shadow:4px 4px 0 var(--black); }
+    .control:focus-within { box-shadow:7px 7px 0 var(--blue); }
+    .control input { width:100%; padding:0 36px 0 42px; border:0; outline:0; background:transparent; }
+    .search-icon { position:absolute; left:14px; top:13px; width:15px; height:15px; border:3px solid var(--black); border-radius:50%; }
+    .search-icon::after { content:""; position:absolute; width:7px; height:3px; background:var(--black); transform:rotate(45deg); right:-6px; bottom:-3px; }
+    .toggle { width:74px; height:38px; padding:3px; border:3px solid var(--black); background:var(--green); box-shadow:4px 4px 0 var(--black); }
+    .toggle span { display:block; width:26px; height:26px; background:var(--black); transform:translateX(36px); transition:transform 150ms ease-out; }
+    .toggle[aria-checked="false"] { background:var(--white); }
+    .toggle[aria-checked="false"] span { transform:translateX(0); }
+    .card { padding:16px; border:4px solid var(--black); background:var(--white); box-shadow:7px 7px 0 var(--black); transition:all 150ms ease-out; }
+    .card:hover { transform:translate(-3px,-3px); background:var(--green); box-shadow:10px 10px 0 var(--pink); }
+    .badge { display:inline-flex; min-height:25px; align-items:center; padding:3px 8px; border:2px solid var(--black); font-size:10px; font-weight:900; text-transform:uppercase; box-shadow:2px 2px 0 var(--black); }
+    .progress-ring { transform:rotate(-90deg); }
+    .progress-ring circle { fill:none; stroke-width:10; }
+    .progress-track { stroke:var(--black); }
+    .progress-value { stroke:var(--pink); stroke-dasharray:264; stroke-dashoffset:74; }
+    .progress-bar { height:24px; border:3px solid var(--black); background:var(--white); }
+    .progress-bar > span { display:block; width:65%; height:100%; background:var(--blue); border-right:3px solid var(--black); }
+    .tabs { display:flex; border:3px solid var(--black); }
+    .tab { flex:1; min-height:38px; border:0; border-right:3px solid var(--black); background:var(--white); font-size:10px; font-weight:900; text-transform:uppercase; }
+    .tab:last-child { border-right:0; }
+    .tab[aria-selected="true"] { background:var(--green); }
+    .mini-nav { display:flex; align-items:center; justify-content:space-between; min-height:48px; margin-top:10px; padding:0 12px; border:3px solid var(--black); background:var(--black); color:var(--white); }
+    .mini-nav a { color:inherit; text-decoration:none; font-size:10px; font-weight:900; }
+    .palette { display:grid; grid-template-columns:repeat(5,1fr); gap:8px; }
+    .swatch { height:55px; border:3px solid var(--black); display:flex; align-items:end; padding:5px; font-size:9px; font-weight:900; }
+    .accordion-item { border:3px solid var(--black); border-bottom:0; }
+    .accordion-item:last-child { border-bottom:3px solid var(--black); }
+    .accordion-button { width:100%; min-height:38px; display:flex; justify-content:space-between; align-items:center; padding:0 10px; border:0; background:var(--white); font-weight:900; text-align:left; }
+    .accordion-button[aria-expanded="true"] { background:var(--orange); }
+    .accordion-panel { padding:10px; border-top:3px solid var(--black); background:var(--green); font-size:10px; line-height:1.5; }
+    :focus-visible { outline:4px solid var(--blue); outline-offset:3px; }
+    @media (max-width:780px) { .sheet { width:calc(100% - 24px); margin:12px; padding:16px; border-width:2px; box-shadow:6px 6px 0 var(--black); } .grid-2 { grid-template-columns:1fr; } }
+    @media (prefers-reduced-motion:reduce) { *,*::before,*::after { transition:none!important; animation:none!important; } }
+  </style>
+</head>
+<body>
+  <main class="sheet" aria-labelledby="page-title">
+    <header class="flex items-end justify-between border-b-4 border-black pb-4">
+      <div><p class="text-[10px] font-black uppercase tracking-[.18em]">StyleKit / Expressive / 001</p><h1 id="page-title" class="heading mt-1 text-4xl">新野兽派组件库</h1></div>
+      <span class="badge bg-[#ccff00]">Neo-Brutalist</span>
+    </header>
+
+    <section class="section" aria-labelledby="buttons-title">
+      <div class="section-label"><h2 id="buttons-title">01 / Buttons</h2><span>Physical Crushing</span></div>
+      <div class="grid grid-cols-4 gap-3">
+        <button class="brutal-button primary">Primary</button><button class="brutal-button secondary">Secondary</button><button class="brutal-button outline">Outline</button><button class="brutal-button ghost">Ghost</button>
+      </div>
+    </section>
+
+    <section class="section" aria-labelledby="forms-title">
+      <div class="section-label"><h2 id="forms-title">02 / Form Elements</h2><span>Hard Focus</span></div>
+      <div class="grid-2 items-center">
+        <label class="control relative flex"><span class="search-icon" aria-hidden="true"></span><span class="sr-only">搜索情报</span><input type="search" placeholder="搜索 AI 产品情报"><span class="absolute right-3 top-3 font-black">×</span></label>
+        <div class="flex items-center justify-between border-4 border-black p-3"><span class="font-black uppercase">Daily Collector</span><button class="toggle" type="button" role="switch" aria-checked="true" aria-label="切换每日采集"><span></span></button></div>
+      </div>
+    </section>
+
+    <section class="section" aria-labelledby="content-title">
+      <div class="section-label"><h2 id="content-title">03 / Content</h2><span>Information First</span></div>
+      <div class="grid-2">
+        <article class="card"><span class="badge bg-[#00d9ff]">Signal 024</span><h3 class="heading mt-3 text-xl">AI Agent 工作流发生新变化</h3><p class="mt-2 text-xs leading-5">展示来源、变化与产品启发，不用柔和卡片隐藏信息结构。</p></article>
+        <div class="border-4 border-black p-4"><h3 class="heading text-lg">Badges</h3><div class="mt-4 flex flex-wrap gap-3"><span class="badge bg-white">Default</span><span class="badge bg-[#ccff00]">Success</span><span class="badge bg-[#ff9500]">Warning</span><span class="badge bg-[#ff006e] text-white">Danger</span></div></div>
+      </div>
+    </section>
+
+    <section class="section" aria-labelledby="progress-title">
+      <div class="section-label"><h2 id="progress-title">04 / Progress</h2><span>Measured State</span></div>
+      <div class="grid grid-cols-[120px_1fr] items-center gap-6">
+        <div class="relative h-[96px] w-[96px]" role="progressbar" aria-label="分析进度" aria-valuemin="0" aria-valuemax="100" aria-valuenow="72"><svg class="progress-ring h-full w-full" viewBox="0 0 100 100" aria-hidden="true"><circle class="progress-track" cx="50" cy="50" r="42"></circle><circle class="progress-value" cx="50" cy="50" r="42"></circle></svg><strong class="heading absolute inset-0 grid place-items-center text-xl">72%</strong></div>
+        <div><div class="flex justify-between text-xs font-black"><span>DATA NORMALIZATION</span><span>65%</span></div><div class="progress-bar mt-3" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="65"><span></span></div></div>
+      </div>
+    </section>
+
+    <section class="section" aria-labelledby="navigation-title">
+      <div class="section-label"><h2 id="navigation-title">05 / Navigation</h2><span>Visible Structure</span></div>
+      <div class="tabs" role="tablist" aria-label="工作台视图"><button class="tab" role="tab" aria-selected="true">Overview</button><button class="tab" role="tab" aria-selected="false">Analytics</button><button class="tab" role="tab" aria-selected="false">Settings</button><button class="tab" role="tab" aria-selected="false">Logs</button></div>
+      <nav class="mini-nav" aria-label="示例导航"><a class="heading text-base" href="#">SIGNALFLOW</a><div class="flex gap-5"><a href="#">情报池</a><a href="#">需求池</a><a href="#">数据源</a></div><span class="badge bg-[#ccff00] text-black">Connected</span></nav>
+    </section>
+
+    <section class="section" aria-labelledby="palette-title">
+      <div class="section-label"><h2 id="palette-title">06 / Color Palette</h2><span>Exact Tokens</span></div>
+      <div class="palette"><div class="swatch bg-black text-white">#000000</div><div class="swatch bg-white">#FFFFFF</div><div class="swatch bg-[#ff006e] text-white">#FF006E</div><div class="swatch bg-[#ccff00]">#CCFF00</div><div class="swatch bg-[#00d9ff]">#00D9FF</div></div>
+    </section>
+
+    <section class="section" aria-labelledby="accordion-title">
+      <div class="section-label"><h2 id="accordion-title">07 / Accordion</h2><span>Direct Disclosure</span></div>
+      <div>
+        <div class="accordion-item"><button class="accordion-button" aria-expanded="true"><span>Getting Started</span><span>−</span></button><div class="accordion-panel">连接公开来源，先执行 dry-run，再写入经过审查的产品情报。</div></div>
+        <div class="accordion-item"><button class="accordion-button" aria-expanded="false"><span>Configuration</span><span>+</span></button><div class="accordion-panel hidden">数据源注册表负责 URL、来源类型、可信层级和采集上限。</div></div>
+        <div class="accordion-item"><button class="accordion-button" aria-expanded="false"><span>API Reference</span><span>+</span></button><div class="accordion-panel hidden">飞书 Secret 仅存在服务端，页面通过 Repository 读取领域数据。</div></div>
+      </div>
+    </section>
+  </main>
+  <script>
+    document.querySelector('.toggle').addEventListener('click', function(){ this.setAttribute('aria-checked', String(this.getAttribute('aria-checked') !== 'true')); });
+    document.querySelectorAll('.tab').forEach(function(tab){ tab.addEventListener('click', function(){ document.querySelectorAll('.tab').forEach(function(item){ item.setAttribute('aria-selected','false'); }); this.setAttribute('aria-selected','true'); }); });
+    document.querySelectorAll('.accordion-button').forEach(function(button){ button.addEventListener('click', function(){ var open=this.getAttribute('aria-expanded')==='true'; this.setAttribute('aria-expanded',String(!open)); this.lastElementChild.textContent=open?'+':'−'; this.nextElementSibling.classList.toggle('hidden',open); }); });
+  </script>
+</body>
+</html>

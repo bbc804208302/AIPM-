@@ -34,3 +34,21 @@ test("records API enforces Feishu page size limits before requesting", async () 
 
   await assert.rejects(() => api.searchAll("table-id", { pageSize: 501 }), RangeError);
 });
+
+test("records API batch creates records with an idempotency token", async () => {
+  let requestPath = "";
+  let requestBody = "";
+  const transport: FeishuTransport = {
+    async request<T>(path: string, init?: RequestInit): Promise<T> {
+      requestPath = path;
+      requestBody = String(init?.body);
+      return { code: 0, msg: "success", data: { records: [{ record_id: "created", fields: {} }] } } as T;
+    },
+  };
+  const api = createFeishuRecordsApi("app-token", transport, tokenProvider);
+
+  const created = await api.createMany("table-id", [{ 标题: "Signal" }], "client-token");
+  assert.equal(created[0]?.record_id, "created");
+  assert.match(requestPath, /batch_create\?client_token=client-token/);
+  assert.deepEqual(JSON.parse(requestBody), { records: [{ fields: { 标题: "Signal" } }] });
+});

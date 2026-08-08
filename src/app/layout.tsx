@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import "@/styles/tokens.css";
 import "./globals.css";
+import "@/styles/bento.css";
 
 export const metadata: Metadata = {
   title: "SignalFlow · AI 产品情报与需求协同工作台",

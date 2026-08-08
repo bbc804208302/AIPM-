@@ -5,7 +5,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 
 const navItems = [
-  { href: "/", label: "工作台", icon: LayoutDashboard },
+  { href: "/", label: "产品需求看板", icon: LayoutDashboard },
   { href: "/intelligence", label: "AI 产品情报池", icon: Radio },
   { href: "/demands", label: "内部需求池", icon: Inbox },
   { href: "/sources", label: "数据源", icon: Database },

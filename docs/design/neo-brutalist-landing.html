@@ -1,0 +1,362 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="SignalFlow 是面向 AI 产品经理的产品情报与需求协同工作台。"
+    />
+    <title>SignalFlow · AI 产品情报与需求协同工作台</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              brutal: {
+                black: "#000000",
+                white: "#ffffff",
+                pink: "#ff006e",
+                green: "#ccff00",
+                blue: "#00d9ff",
+                orange: "#ff9500",
+              },
+            },
+            fontFamily: {
+              sans: ["Arial Black", "Arial", "sans-serif"],
+              mono: ["SFMono-Regular", "Consolas", "Liberation Mono", "monospace"],
+            },
+            boxShadow: {
+              brutal: "8px 8px 0 #000000",
+              "brutal-sm": "4px 4px 0 #000000",
+            },
+          },
+        },
+      };
+    </script>
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+
+      html {
+        scroll-behavior: smooth;
+      }
+
+      body {
+        margin: 0;
+      }
+
+      .brutal-action {
+        transition:
+          transform 150ms ease-out,
+          box-shadow 150ms ease-out,
+          background-color 150ms ease-out,
+          color 150ms ease-out;
+      }
+
+      .brutal-action:hover {
+        transform: translate(-2px, -2px);
+        box-shadow: 10px 10px 0 #000000;
+      }
+
+      .brutal-action:active {
+        transform: translate(8px, 8px);
+        box-shadow: 0 0 0 #000000;
+      }
+
+      .ticker-track {
+        animation: ticker 22s linear infinite;
+      }
+
+      @keyframes ticker {
+        from {
+          transform: translateX(0);
+        }
+        to {
+          transform: translateX(-50%);
+        }
+      }
+
+      @media (prefers-reduced-motion: reduce) {
+        html {
+          scroll-behavior: auto;
+        }
+
+        *,
+        *::before,
+        *::after {
+          animation-duration: 0.01ms !important;
+          animation-iteration-count: 1 !important;
+          scroll-behavior: auto !important;
+          transition-duration: 0.01ms !important;
+        }
+      }
+    </style>
+  </head>
+  <body class="bg-brutal-white font-mono text-brutal-black antialiased">
+    <a
+      href="#main"
+      class="fixed left-3 top-3 z-50 -translate-y-24 border-4 border-brutal-black bg-brutal-green px-4 py-2 font-black uppercase focus:translate-y-0"
+    >
+      跳到主要内容
+    </a>
+
+    <header class="sticky top-0 z-40 border-b-4 border-brutal-black bg-brutal-green">
+      <nav
+        class="mx-auto flex max-w-7xl items-center justify-between gap-6 px-5 py-4 lg:px-8"
+        aria-label="主导航"
+      >
+        <a href="#top" class="flex items-center gap-3 font-sans text-xl font-black uppercase tracking-tight">
+          <span
+            class="grid size-10 place-items-center border-4 border-brutal-black bg-brutal-black text-brutal-green"
+            aria-hidden="true"
+          >S</span>
+          SignalFlow
+        </a>
+        <div class="hidden items-center gap-7 text-sm font-bold md:flex">
+          <a class="border-b-4 border-transparent hover:border-brutal-black" href="#workflow">工作流</a>
+          <a class="border-b-4 border-transparent hover:border-brutal-black" href="#capabilities">能力</a>
+          <a class="border-b-4 border-transparent hover:border-brutal-black" href="#foundation">基础设施</a>
+        </div>
+        <a
+          href="#cta"
+          class="brutal-action border-4 border-brutal-black bg-brutal-white px-4 py-2 text-sm font-black shadow-brutal-sm focus-visible:outline focus-visible:outline-4 focus-visible:outline-offset-4 focus-visible:outline-brutal-pink"
+        >
+          进入工作台
+        </a>
+      </nav>
+    </header>
+
+    <main id="main">
+      <section id="top" class="overflow-hidden border-b-4 border-brutal-black bg-brutal-white">
+        <div class="mx-auto grid max-w-7xl lg:grid-cols-[1.2fr_0.8fr]">
+          <div class="border-brutal-black px-5 py-16 sm:py-24 lg:border-r-4 lg:px-8 lg:py-28">
+            <div
+              class="mb-7 inline-flex items-center gap-3 border-4 border-brutal-black bg-brutal-blue px-3 py-2 text-xs font-black uppercase shadow-brutal-sm"
+            >
+              <span class="size-3 border-2 border-brutal-black bg-brutal-black" aria-hidden="true"></span>
+              AI Product Intelligence System
+            </div>
+            <h1 class="max-w-4xl font-sans text-5xl font-black uppercase leading-[0.92] tracking-[-0.055em] sm:text-7xl lg:text-[6.8rem]">
+              让高价值信号
+              <span class="block text-brutal-pink">主动找到你</span>
+            </h1>
+            <p class="mt-8 max-w-2xl border-l-8 border-brutal-green pl-5 text-base font-bold leading-8 sm:text-lg">
+              SignalFlow 将外部 AI 信号转化为产品洞察，并连接内部需求与执行状态。为 AI 产品经理建立一条清晰、可追踪的情报工作流。
+            </p>
+            <div class="mt-10 flex flex-col gap-4 sm:flex-row">
+              <a
+                href="#capabilities"
+                class="brutal-action inline-flex min-h-14 items-center justify-center border-4 border-brutal-black bg-brutal-green px-7 font-black shadow-brutal focus-visible:outline focus-visible:outline-4 focus-visible:outline-offset-4 focus-visible:outline-brutal-pink"
+              >
+                查看产品结构 →
+              </a>
+              <a
+                href="#workflow"
+                class="brutal-action inline-flex min-h-14 items-center justify-center border-4 border-brutal-black bg-brutal-black px-7 font-black text-brutal-white shadow-brutal focus-visible:outline focus-visible:outline-4 focus-visible:outline-offset-4 focus-visible:outline-brutal-blue"
+              >
+                理解工作流
+              </a>
+            </div>
+          </div>
+
+          <div class="relative bg-brutal-black p-5 sm:p-8 lg:p-10">
+            <div class="relative h-full min-h-[440px] border-4 border-brutal-black bg-brutal-green shadow-[12px_12px_0_#ff006e]">
+              <div class="flex items-center justify-between border-b-4 border-brutal-black bg-brutal-white px-4 py-3">
+                <span class="font-black uppercase">Signal Pipeline</span>
+                <span class="border-2 border-brutal-black bg-brutal-orange px-2 py-1 text-xs font-black">PHASE 2</span>
+              </div>
+              <ol class="space-y-0 p-5" aria-label="SignalFlow 产品流程">
+                <li class="grid grid-cols-[3rem_1fr] border-4 border-b-0 border-brutal-black bg-brutal-white">
+                  <span class="grid place-items-center border-r-4 border-brutal-black bg-brutal-blue font-black">01</span>
+                  <span class="p-4 font-black">External Signal</span>
+                </li>
+                <li class="grid grid-cols-[3rem_1fr] border-4 border-b-0 border-brutal-black bg-brutal-white">
+                  <span class="grid place-items-center border-r-4 border-brutal-black bg-brutal-pink font-black text-brutal-white">02</span>
+                  <span class="p-4 font-black">AI Understanding</span>
+                </li>
+                <li class="grid grid-cols-[3rem_1fr] border-4 border-b-0 border-brutal-black bg-brutal-white">
+                  <span class="grid place-items-center border-r-4 border-brutal-black bg-brutal-orange font-black">03</span>
+                  <span class="p-4 font-black">Product Insight</span>
+                </li>
+                <li class="grid grid-cols-[3rem_1fr] border-4 border-b-0 border-brutal-black bg-brutal-black text-brutal-white">
+                  <span class="grid place-items-center border-r-4 border-brutal-black bg-brutal-green font-black text-brutal-black">04</span>
+                  <span class="p-4 font-black">Internal Demand</span>
+                </li>
+                <li class="grid grid-cols-[3rem_1fr] border-4 border-brutal-black bg-brutal-white">
+                  <span class="grid place-items-center border-r-4 border-brutal-black bg-brutal-blue font-black">05</span>
+                  <span class="p-4 font-black">Product Execution</span>
+                </li>
+              </ol>
+              <div class="absolute -bottom-5 -right-5 border-4 border-brutal-black bg-brutal-pink px-5 py-3 font-black text-brutal-white shadow-brutal-sm">
+                SIGNAL → ACTION
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <div class="overflow-hidden border-b-4 border-brutal-black bg-brutal-blue py-3" aria-hidden="true">
+        <div class="ticker-track flex w-max whitespace-nowrap font-black uppercase">
+          <span class="px-5">GitHub Trending · AI Media · RSS · AttentionVC · Product Insight · Demand Execution · </span>
+          <span class="px-5">GitHub Trending · AI Media · RSS · AttentionVC · Product Insight · Demand Execution · </span>
+        </div>
+      </div>
+
+      <section id="capabilities" class="border-b-4 border-brutal-black bg-brutal-green px-5 py-16 lg:px-8 lg:py-24">
+        <div class="mx-auto max-w-7xl">
+          <div class="mb-12 grid gap-6 lg:grid-cols-[0.85fr_1.15fr] lg:items-end">
+            <p class="font-black uppercase tracking-[0.18em]">Product Command Center / 01</p>
+            <h2 class="font-sans text-4xl font-black uppercase leading-none tracking-tight sm:text-6xl">
+              从信号到执行，
+              <span class="bg-brutal-black px-2 text-brutal-green">同一条链路</span>
+            </h2>
+          </div>
+
+          <div class="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+            <article class="border-4 border-brutal-black bg-brutal-white p-6 shadow-brutal">
+              <div class="mb-8 flex items-center justify-between">
+                <span class="grid size-12 place-items-center border-4 border-brutal-black bg-brutal-blue font-black">01</span>
+                <span class="text-xs font-black uppercase">Intelligence</span>
+              </div>
+              <h3 class="font-sans text-2xl font-black">AI 产品情报池</h3>
+              <p class="mt-4 leading-7">聚合公开信号，保留来源与上下文，为后续 AI 分析与产品判断建立可信输入。</p>
+            </article>
+
+            <article class="border-4 border-brutal-black bg-brutal-black p-6 text-brutal-white shadow-[8px_8px_0_#ff006e]">
+              <div class="mb-8 flex items-center justify-between">
+                <span class="grid size-12 place-items-center border-4 border-brutal-white bg-brutal-pink font-black">02</span>
+                <span class="text-xs font-black uppercase text-brutal-green">Demand</span>
+              </div>
+              <h3 class="font-sans text-2xl font-black">内部需求池</h3>
+              <p class="mt-4 leading-7">让提出、评估、接受、开发、测试与上线状态透明，减少产品经理重复同步。</p>
+            </article>
+
+            <article class="border-4 border-brutal-black bg-brutal-orange p-6 shadow-brutal md:col-span-2 lg:col-span-1">
+              <div class="mb-8 flex items-center justify-between">
+                <span class="grid size-12 place-items-center border-4 border-brutal-black bg-brutal-white font-black">03</span>
+                <span class="text-xs font-black uppercase">Collector</span>
+              </div>
+              <h3 class="font-sans text-2xl font-black">数据源与采集任务</h3>
+              <p class="mt-4 leading-7">通过 Source Registry 管理公开数据源，并以 dry-run 优先的方式监控采集结果。</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section id="foundation" class="border-b-4 border-brutal-black bg-brutal-white px-5 py-16 lg:px-8 lg:py-24">
+        <div class="mx-auto max-w-7xl">
+          <div class="grid border-4 border-brutal-black lg:grid-cols-[0.8fr_1.2fr]">
+            <div class="bg-brutal-black p-7 text-brutal-white sm:p-10">
+              <p class="mb-5 text-sm font-black uppercase text-brutal-green">Foundation / Verified Scope</p>
+              <h2 class="font-sans text-4xl font-black uppercase leading-none sm:text-5xl">当前产品基础</h2>
+              <p class="mt-6 max-w-xl leading-7 text-brutal-white">
+                不用虚构指标包装进度。SignalFlow 只展示仓库中已经建立的系统边界与可验证能力。
+              </p>
+            </div>
+            <dl class="grid sm:grid-cols-2">
+              <div class="border-b-4 border-brutal-black bg-brutal-green p-7 sm:border-r-4">
+                <dt class="text-sm font-black uppercase">Public Sources</dt>
+                <dd class="mt-4 font-sans text-6xl font-black">09</dd>
+                <p class="mt-3 font-bold">GitHub Trending、AI RSS 与 AttentionVC 公共端点</p>
+              </div>
+              <div class="border-b-4 border-brutal-black bg-brutal-blue p-7">
+                <dt class="text-sm font-black uppercase">Business Pools</dt>
+                <dd class="mt-4 font-sans text-6xl font-black">02</dd>
+                <p class="mt-3 font-bold">AI 产品情报池与内部需求池</p>
+              </div>
+              <div class="bg-brutal-pink p-7 text-brutal-white sm:border-r-4 sm:border-brutal-black">
+                <dt class="text-sm font-black uppercase">Collector Pipeline</dt>
+                <dd class="mt-4 font-sans text-6xl font-black">01</dd>
+                <p class="mt-3 font-bold">Registry → Normalize → Deduplicate → Writer</p>
+              </div>
+              <div class="bg-brutal-orange p-7">
+                <dt class="text-sm font-black uppercase">Secret Boundary</dt>
+                <dd class="mt-4 font-sans text-4xl font-black">SERVER</dd>
+                <p class="mt-3 font-bold">飞书凭据不进入浏览器，也不进入 Git</p>
+              </div>
+            </dl>
+          </div>
+        </div>
+      </section>
+
+      <section id="workflow" class="border-b-4 border-brutal-black bg-brutal-blue px-5 py-16 lg:px-8 lg:py-24">
+        <div class="mx-auto max-w-7xl">
+          <div class="mb-12 flex flex-col gap-5 lg:flex-row lg:items-end lg:justify-between">
+            <div>
+              <p class="font-black uppercase tracking-[0.18em]">Workflow / 02</p>
+              <h2 class="mt-4 font-sans text-4xl font-black uppercase leading-none sm:text-6xl">可信数据，不走捷径</h2>
+            </div>
+            <p class="max-w-xl border-4 border-brutal-black bg-brutal-white p-4 font-bold shadow-brutal-sm">
+              页面不直连飞书。公开信号先统一结构、去重和审阅，只有显式授权才写入业务数据层。
+            </p>
+          </div>
+
+          <ol class="grid gap-0 border-4 border-brutal-black bg-brutal-white lg:grid-cols-4">
+            <li class="border-b-4 border-brutal-black p-6 lg:border-b-0 lg:border-r-4">
+              <span class="font-sans text-5xl font-black text-brutal-pink">01</span>
+              <h3 class="mt-6 text-lg font-black">COLLECT</h3>
+              <p class="mt-3 leading-7">从明确登记的公开来源只读获取候选信号。</p>
+            </li>
+            <li class="border-b-4 border-brutal-black p-6 lg:border-b-0 lg:border-r-4">
+              <span class="font-sans text-5xl font-black text-brutal-orange">02</span>
+              <h3 class="mt-6 text-lg font-black">NORMALIZE</h3>
+              <p class="mt-3 leading-7">映射为稳定领域类型，隔离第三方结构变化。</p>
+            </li>
+            <li class="border-b-4 border-brutal-black p-6 lg:border-b-0 lg:border-r-4">
+              <span class="font-sans text-5xl font-black text-brutal-blue">03</span>
+              <h3 class="mt-6 text-lg font-black">DEDUPLICATE</h3>
+              <p class="mt-3 leading-7">识别重复信息，保留更完整、更可信的记录。</p>
+            </li>
+            <li class="bg-brutal-green p-6">
+              <span class="font-sans text-5xl font-black">04</span>
+              <h3 class="mt-6 text-lg font-black">REVIEW & WRITE</h3>
+              <p class="mt-3 leading-7">默认 dry-run；审阅后显式写入飞书多维表格。</p>
+            </li>
+          </ol>
+        </div>
+      </section>
+
+      <section id="cta" class="bg-brutal-pink px-5 py-16 lg:px-8 lg:py-24">
+        <div class="mx-auto max-w-7xl border-4 border-brutal-black bg-brutal-green p-7 shadow-[12px_12px_0_#000000] sm:p-12">
+          <div class="grid gap-10 lg:grid-cols-[1fr_auto] lg:items-end">
+            <div>
+              <span class="inline-block border-4 border-brutal-black bg-brutal-white px-3 py-2 text-xs font-black uppercase">
+                Built for AI Product Managers
+              </span>
+              <h2 class="mt-7 max-w-4xl font-sans text-4xl font-black uppercase leading-[0.95] tracking-tight sm:text-7xl">
+                把产品情报变成可执行的需求
+              </h2>
+              <p class="mt-6 max-w-2xl text-lg font-bold leading-8">
+                当前正在建设 Collector MVP 与飞书数据访问层。真实数据、清晰状态、可审阅流程，是 SignalFlow 的产品底线。
+              </p>
+            </div>
+            <a
+              href="#top"
+              class="brutal-action inline-flex min-h-16 items-center justify-center border-4 border-brutal-black bg-brutal-black px-8 font-black text-brutal-white shadow-brutal focus-visible:outline focus-visible:outline-4 focus-visible:outline-offset-4 focus-visible:outline-brutal-blue"
+            >
+              返回顶部 ↑
+            </a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="border-t-4 border-brutal-black bg-brutal-black px-5 py-10 text-brutal-white lg:px-8">
+      <div class="mx-auto flex max-w-7xl flex-col gap-7 sm:flex-row sm:items-end sm:justify-between">
+        <div>
+          <p class="font-sans text-2xl font-black uppercase text-brutal-green">SignalFlow</p>
+          <p class="mt-2 text-sm">AI 产品情报与需求协同工作台</p>
+        </div>
+        <div class="flex flex-wrap gap-x-6 gap-y-3 text-sm font-bold">
+          <a class="hover:text-brutal-green" href="#capabilities">产品结构</a>
+          <a class="hover:text-brutal-green" href="#workflow">工作流</a>
+          <a class="hover:text-brutal-green" href="#foundation">系统基础</a>
+        </div>
+        <p class="text-xs uppercase text-brutal-green">Signal → Insight → Demand → Execution</p>
+      </div>
+    </footer>
+  </body>
+</html>

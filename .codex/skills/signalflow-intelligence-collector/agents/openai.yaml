@@ -1,0 +1,4 @@
+interface:
+  display_name: "SignalFlow Intelligence Collector"
+  short_description: "Build and diagnose today’s AI intelligence brief"
+  default_prompt: "Use $signalflow-intelligence-collector to dry-run today’s technical-intelligence collection, review source health, and report the proposed Top 10."

@@ -5,7 +5,7 @@ export interface FeishuConfig {
   appSecret: string;
   bitableAppToken: string;
   demandTableId: string;
-  intelligenceTableId: string;
+  intelligenceTableId?: string;
   baseUrl: string;
 }
 
@@ -23,7 +23,7 @@ export function readFeishuConfig(environment: Environment = process.env): Feishu
     appSecret: required(environment, "FEISHU_APP_SECRET"),
     bitableAppToken: required(environment, "FEISHU_BITABLE_APP_TOKEN"),
     demandTableId: required(environment, "FEISHU_DEMAND_TABLE_ID"),
-    intelligenceTableId: required(environment, "FEISHU_INTELLIGENCE_TABLE_ID"),
+    intelligenceTableId: environment.FEISHU_INTELLIGENCE_TABLE_ID?.trim() || undefined,
     baseUrl: "https://open.feishu.cn/open-apis",
   };
 }

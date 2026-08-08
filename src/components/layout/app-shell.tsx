@@ -17,9 +17,9 @@ export function AppShell({ children }: Readonly<{ children: ReactNode }>) {
         <div className="nav-label">Workspace</div>
         <SidebarNavigation />
         <div className="nav-note">
-          Phase 1.5 · Experience Layer
+          Phase 2 · Collector MVP
           <br />
-          飞书数据连接尚未配置
+          业务数据仅通过服务端访问
         </div>
       </aside>
       <div className="workspace">
@@ -27,7 +27,7 @@ export function AppShell({ children }: Readonly<{ children: ReactNode }>) {
           <WorkspaceBreadcrumb />
           <div className="system-state">
             <span className="state-dot" />
-            LOCAL · NOT CONNECTED
+            LOCAL · SERVER DATA
           </div>
         </header>
         <main className="main">{children}</main>

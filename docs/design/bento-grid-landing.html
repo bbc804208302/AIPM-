@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>SignalFlow · Bento Grid</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    html{scroll-behavior:smooth}body{background:#fafafa;color:#18181b;font-family:Inter,"PingFang SC",sans-serif}.widget{border:1px solid rgba(24,24,27,.08);box-shadow:0 2px 10px rgba(0,0,0,.025);transition:transform .25s ease-out,box-shadow .25s ease-out}.widget:hover{transform:translateY(-4px) scale(1.008);box-shadow:0 8px 30px rgba(0,0,0,.08)}.focusable:focus-visible{outline:3px solid rgba(59,130,246,.3);outline-offset:3px}@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*:before,*:after{transition:none!important;animation:none!important}}
+  </style>
+</head>
+<body>
+  <a href="#main" class="focusable sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-50 focus:rounded-xl focus:bg-white focus:px-4 focus:py-2">跳到主要内容</a>
+  <header class="border-b border-zinc-900/10 bg-[#fafafa]">
+    <nav class="mx-auto flex h-16 max-w-6xl items-center justify-between px-6" aria-label="主导航">
+      <a href="#" class="text-lg font-bold tracking-tight">SignalFlow</a>
+      <div class="hidden items-center gap-7 text-sm text-zinc-600 md:flex"><a href="#features" class="hover:text-zinc-900">产品能力</a><a href="#metrics" class="hover:text-zinc-900">运行状态</a><a href="#workflow" class="hover:text-zinc-900">工作流</a></div>
+      <a href="#cta" class="focusable rounded-xl bg-[#18181b] px-4 py-2 text-sm font-semibold text-white hover:-translate-y-0.5 active:scale-95">进入工作台</a>
+    </nav>
+  </header>
+
+  <main id="main">
+    <section class="mx-auto grid min-h-[680px] max-w-6xl grid-cols-1 items-center gap-10 px-6 py-16 lg:grid-cols-2">
+      <div><p class="mb-4 text-xs font-semibold uppercase tracking-[.18em] text-zinc-500">AI Product Intelligence & Demand Hub</p><h1 class="max-w-xl text-5xl font-bold leading-[1.06] tracking-[-.045em] md:text-6xl">让值得关注的信息主动找到产品经理</h1><p class="mt-6 max-w-xl text-base leading-7 text-zinc-600">SignalFlow 把外部 AI 信号、业务领域变化与内部需求执行放进一条可追踪的产品工作流。</p><div class="mt-8 flex flex-wrap gap-4"><a class="focusable rounded-xl bg-[#18181b] px-6 py-3 font-semibold text-white hover:-translate-y-0.5 active:scale-95" href="#features">查看今日情报</a><a class="focusable rounded-xl border border-zinc-900/15 px-6 py-3 font-semibold hover:bg-white" href="#workflow">了解数据链路</a></div></div>
+      <div class="grid grid-cols-2 gap-4 lg:grid-cols-4">
+        <article class="widget col-span-2 row-span-2 min-h-72 rounded-3xl bg-[#18181b] p-7 text-white"><span class="text-xs font-semibold text-white/60">TODAY / AI INDUSTRY</span><strong class="mt-14 block text-6xl">10</strong><p class="mt-3 text-sm leading-6 text-white/60">经过来源校验、去重和中文概述的今日重点情报。</p></article>
+        <article class="widget col-span-2 rounded-2xl bg-white p-5"><span class="text-xs font-semibold text-zinc-500">BUSINESS DOMAINS</span><div class="mt-5 flex flex-wrap gap-2 text-xs font-semibold"><span class="rounded-lg bg-[#3b82f6]/10 px-2 py-1 text-[#3b82f6]">动漫</span><span class="rounded-lg bg-[#8b5cf6]/10 px-2 py-1 text-[#8b5cf6]">短剧</span><span class="rounded-lg bg-[#ec4899]/10 px-2 py-1 text-[#ec4899]">影视</span><span class="rounded-lg bg-[#f97316]/10 px-2 py-1 text-[#f97316]">AIGC</span></div></article>
+        <article class="widget rounded-2xl bg-[#3b82f6]/10 p-5"><strong class="text-3xl">14</strong><p class="mt-2 text-xs text-zinc-600">公开来源</p></article><article class="widget rounded-2xl bg-white p-5"><strong class="text-3xl">23</strong><p class="mt-2 text-xs text-zinc-600">自动化测试</p></article>
+      </div>
+    </section>
+
+    <section id="features" class="mx-auto max-w-6xl px-6 py-20"><div class="mb-10 max-w-2xl"><p class="text-xs font-semibold uppercase tracking-[.18em] text-zinc-500">Product Modules</p><h2 class="mt-3 text-3xl font-bold tracking-tight">一个工作台，两条核心链路</h2></div><div class="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-4">
+      <article class="widget col-span-1 row-span-2 rounded-3xl bg-white p-7 md:col-span-2"><span class="text-xs font-semibold text-[#3b82f6]">01 · INTELLIGENCE</span><h3 class="mt-10 text-2xl font-bold">AI 产品情报池</h3><p class="mt-3 max-w-lg leading-7 text-zinc-600">按来源和业务领域阅读每日 Top 10，保留原文证据、中文概述与采集时间。</p></article>
+      <article class="widget rounded-2xl bg-[#8b5cf6]/10 p-6 lg:col-span-2"><span class="text-xs font-semibold text-[#8b5cf6]">02 · DEMAND</span><h3 class="mt-6 text-xl font-bold">内部需求池</h3><p class="mt-2 text-sm leading-6 text-zinc-600">实时读取飞书需求，查看状态、负责人和完整详情。</p></article>
+      <article class="widget rounded-2xl bg-white p-6"><span class="text-xs font-semibold text-[#ec4899]">03</span><h3 class="mt-8 font-bold">来源控制</h3><p class="mt-2 text-sm text-zinc-500">真实开关与健康状态。</p></article><article class="widget rounded-2xl bg-white p-6"><span class="text-xs font-semibold text-[#f97316]">04</span><h3 class="mt-8 font-bold">每日任务</h3><p class="mt-2 text-sm text-zinc-500">两条独立采集计划。</p></article>
+    </div></section>
+
+    <section id="metrics" class="bg-[#18181b] py-20 text-white"><div class="mx-auto grid max-w-6xl grid-cols-2 gap-4 px-6 lg:grid-cols-4"><div class="rounded-2xl border border-white/10 p-6"><strong class="text-4xl">2</strong><p class="mt-2 text-sm text-white/50">独立情报轨道</p></div><div class="rounded-2xl border border-white/10 p-6"><strong class="text-4xl">14</strong><p class="mt-2 text-sm text-white/50">公开数据源</p></div><div class="rounded-2xl border border-white/10 p-6"><strong class="text-4xl">10</strong><p class="mt-2 text-sm text-white/50">每日目标情报</p></div><div class="rounded-2xl border border-white/10 p-6"><strong class="text-4xl">100%</strong><p class="mt-2 text-sm text-white/50">服务端 Secret 隔离</p></div></div></section>
+
+    <section id="workflow" class="mx-auto max-w-6xl px-6 py-20"><div class="widget grid gap-8 rounded-3xl bg-white p-8 md:grid-cols-[.8fr_1.2fr]"><div><p class="text-xs font-semibold uppercase tracking-[.18em] text-zinc-500">Traceable Workflow</p><h2 class="mt-3 text-3xl font-bold tracking-tight">从 Signal 到 Execution</h2></div><ol class="grid gap-3 text-sm"><li class="rounded-xl bg-[#3b82f6]/10 p-4"><strong>01 · Collect</strong><span class="ml-3 text-zinc-600">采集与来源隔离</span></li><li class="rounded-xl bg-[#8b5cf6]/10 p-4"><strong>02 · Understand</strong><span class="ml-3 text-zinc-600">中文概述与分类</span></li><li class="rounded-xl bg-[#ec4899]/10 p-4"><strong>03 · Decide</strong><span class="ml-3 text-zinc-600">产品机会与需求判断</span></li><li class="rounded-xl bg-[#f97316]/10 p-4"><strong>04 · Execute</strong><span class="ml-3 text-zinc-600">飞书需求透明协同</span></li></ol></div></section>
+
+    <section id="cta" class="px-6 py-20"><div class="mx-auto max-w-6xl rounded-3xl bg-[#18181b] px-8 py-16 text-center text-white"><h2 class="text-3xl font-bold tracking-tight">先读懂变化，再决定做什么</h2><p class="mx-auto mt-4 max-w-xl leading-7 text-white/60">进入 SignalFlow 查看今日情报、内部需求状态与采集任务。</p><a href="#" class="focusable mt-7 inline-flex rounded-xl bg-[#fafafa] px-6 py-3 font-semibold text-[#18181b] hover:-translate-y-0.5 active:scale-95">打开产品工作台</a></div></section>
+  </main>
+
+  <footer class="border-t border-zinc-900/10 px-6 py-12"><div class="mx-auto grid max-w-6xl gap-8 text-sm md:grid-cols-4"><div><strong>SignalFlow</strong><p class="mt-3 text-zinc-500">AI 产品情报与需求协同工作台</p></div><div><strong>产品</strong><p class="mt-3 grid gap-2 text-zinc-500"><a href="#">情报池</a><a href="#">需求池</a></p></div><div><strong>资源</strong><p class="mt-3 grid gap-2 text-zinc-500"><a href="#">架构</a><a href="#">GitHub</a></p></div><div><strong>项目</strong><p class="mt-3 text-zinc-500">© 2026 SignalFlow. All rights reserved.</p></div></div></footer>
+</body>
+</html>
