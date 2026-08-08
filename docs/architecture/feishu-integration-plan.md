@@ -1,8 +1,8 @@
-# Phase 1: Feishu Integration Plan
+# Feishu Demand Integration Plan
 
 ## Goal
 
-以只读方式接入“内部需求池”和“AI 产品情报池”，验证字段映射、鉴权、安全边界与 Repository contract。第一阶段不写回数据，不做机器人推送。
+以只读方式接入“内部需求池”，验证字段映射、鉴权、安全边界与 Repository contract。AI 产品情报池已经迁移到 SignalFlow Intelligence Repository，不再要求飞书情报表。
 
 ## Implementation status
 
@@ -14,13 +14,12 @@ Completed on `feat/feishu-integration`:
 - current Bitable record search API with complete cursor pagination;
 - batch record retrieval and offline unit tests.
 
-Pending real schema and credentials:
+Current demand boundary:
 
-1. 确认两张 Bitable 表的字段 schema、唯一标识、状态枚举与时间字段。
-2. 分别实现 `FeishuDemandRepository` 与 `FeishuIntelligenceRepository`，把 records 映射为稳定领域类型。
-3. 在 Application Service 中编排列表与详情用例；页面只依赖这些用例。
-4. 增加字段缺失与 Repository contract 测试。
-5. 使用真实小规模数据完成只读验收，再评估写回、缓存与 webhook。
+1. `FeishuDemandRepository` 把内部需求记录映射为稳定领域类型。
+2. Application Service 负责需求列表用例；页面只依赖该用例。
+3. 当前保持只读，后续再评估需求状态写回、缓存与 webhook。
+4. 历史 `FeishuIntelligenceRepository` 仅保留迁移兼容，不再由情报页面调用。
 
 ## Required inputs
 
@@ -28,8 +27,7 @@ Pending real schema and credentials:
 - `FEISHU_APP_SECRET`
 - `FEISHU_BITABLE_APP_TOKEN`
 - `FEISHU_DEMAND_TABLE_ID`
-- `FEISHU_INTELLIGENCE_TABLE_ID`
-- 两张表的字段名、字段类型与至少一条脱敏样例
+- 内部需求表的字段名、字段类型与至少一条脱敏样例
 
 这些值只能进入 `.env.local` 或部署平台 Secret 管理。
 
@@ -37,7 +35,7 @@ Pending real schema and credentials:
 
 - 浏览器 bundle 不包含任何飞书 Secret。
 - 页面或 Client Component 不直接请求 Feishu OpenAPI。
-- 两个 Repository 可由测试替身替换。
+- Demand Repository 可由测试替身替换。
 - API timeout、鉴权失败、限流和空数据有明确错误语义。
 - UI 展示真实数据或真实空状态，不回退到伪造内容。
 

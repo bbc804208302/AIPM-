@@ -28,6 +28,10 @@ interface BatchGetRecordsData {
   absent_record_ids?: string[];
 }
 
+interface BatchCreateRecordsData {
+  records?: BitableRecord[];
+}
+
 export interface SearchRecordsOptions {
   fieldNames?: readonly string[];
   pageSize?: number;
@@ -36,6 +40,7 @@ export interface SearchRecordsOptions {
 export interface FeishuRecordsApi {
   searchAll(tableId: string, options?: SearchRecordsOptions): Promise<readonly BitableRecord[]>;
   getByIds(tableId: string, recordIds: readonly string[]): Promise<readonly BitableRecord[]>;
+  createMany(tableId: string, fields: readonly Record<string, unknown>[], clientToken?: string): Promise<readonly BitableRecord[]>;
 }
 
 function assertSuccess<T>(response: FeishuEnvelope<T>): T {
@@ -106,6 +111,25 @@ export function createFeishuRecordsApi(
         {
           method: "POST",
           body: JSON.stringify({ record_ids: [...recordIds], automatic_fields: true }),
+        },
+        token,
+      );
+      return assertSuccess(response).records ?? [];
+    },
+
+    async createMany(tableId, fields, clientToken) {
+      if (fields.length === 0) return [];
+      if (fields.length > 1_000) throw new RangeError("fields cannot contain more than 1,000 records.");
+
+      const token = await tokenProvider.getToken();
+      const query = new URLSearchParams();
+      if (clientToken) query.set("client_token", clientToken);
+      const suffix = query.size ? `?${query}` : "";
+      const response = await transport.request<FeishuEnvelope<BatchCreateRecordsData>>(
+        `/bitable/v1/apps/${encodedAppToken}/tables/${encodeURIComponent(tableId)}/records/batch_create${suffix}`,
+        {
+          method: "POST",
+          body: JSON.stringify({ records: fields.map((recordFields) => ({ fields: recordFields })) }),
         },
         token,
       );

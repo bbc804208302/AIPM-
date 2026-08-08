@@ -29,3 +29,9 @@ test("readFeishuConfig reports the missing variable without exposing values", ()
     (error) => error instanceof FeishuConfigurationError && error.message.includes("FEISHU_APP_SECRET"),
   );
 });
+
+test("AI intelligence table is optional for the demand-only Feishu boundary", () => {
+  const demandEnvironment: Record<string, string> = { ...completeEnvironment };
+  delete demandEnvironment.FEISHU_INTELLIGENCE_TABLE_ID;
+  assert.equal(readFeishuConfig(demandEnvironment).intelligenceTableId, undefined);
+});

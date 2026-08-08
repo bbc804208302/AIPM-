@@ -3,21 +3,28 @@
   "version": "0.0.1",
   "private": true,
   "packageManager": "pnpm@11.16.0",
-  "engines": { "node": ">=20.9.0" },
+  "engines": {
+    "node": ">=20.9.0"
+  },
   "scripts": {
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
     "lint": "eslint .",
-    "test": "node --import tsx --test src/lib/feishu/*.test.ts",
+    "test": "node --import tsx --test src/collector/*.test.ts src/lib/feishu/*.test.ts src/repositories/feishu/*.test.ts src/repositories/file/*.test.ts src/services/*.test.ts",
+    "collector:dry-run": "tsx scripts/collect-intelligence.ts --dry-run",
+    "collector:write": "tsx scripts/collect-intelligence.ts --write",
+    "collector:write:domain": "tsx scripts/collect-intelligence.ts --write --track domain",
     "typecheck": "tsc --noEmit",
     "check": "pnpm lint && pnpm typecheck && pnpm test && pnpm build"
   },
   "dependencies": {
+    "cheerio": "^1.0.0",
     "lucide-react": "^0.468.0",
     "next": "^15.5.0",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
+    "rss-parser": "^3.13.0",
     "server-only": "^0.0.1"
   },
   "devDependencies": {

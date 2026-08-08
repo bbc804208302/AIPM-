@@ -1,0 +1,50 @@
+name: SignalFlow Business Domain Intelligence
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: "45 08 * * *"
+      timezone: "Asia/Shanghai"
+
+permissions:
+  contents: write
+
+concurrency:
+  group: signalflow-daily-intelligence
+  cancel-in-progress: false
+
+jobs:
+  collect:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v4
+        with:
+          version: 11.16.0
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: pnpm
+
+      - name: Install dependencies
+        run: pnpm install --frozen-lockfile
+
+      - name: Collect and save today's intelligence
+        run: pnpm collector:write:domain
+
+      - name: Commit daily snapshot
+        run: |
+          if git diff --quiet -- data/intelligence; then
+            echo "No intelligence snapshot changed."
+            exit 0
+          fi
+          git config user.name "signalflow-bot"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/intelligence
+          git commit -m "data: update daily intelligence"
+          git push

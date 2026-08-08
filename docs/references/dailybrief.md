@@ -13,6 +13,16 @@ Source: [leiting-eric/DailyBrief](https://github.com/leiting-eric/DailyBrief) ·
 
 ## SignalFlow adaptation
 
-未来 Collector 可采用 `SourceDefinition → Registry → Dispatcher → Adapter → NormalizedSignal`，并提供 registry schema check 与 fetch-only smoke test。保留 per-source fault isolation、超时、错误分类和可插拔分析后端。
+Phase 2 Collector 已采用 `SourceDefinition → Registry → Dispatcher → Adapter → NormalizedSignal`，并提供 registry validation、fetch-only dry-run、per-source fault isolation、timeout 与 URL 指纹去重。
+
+选择性参考范围：
+
+- `sources.config.json` 的配置驱动模式
+- `lib/sources/dispatch.ts` 的单一 dispatch 入口
+- `lib/sources/github-trending.ts` 的 daily trending HTML 解析思路
+- `lib/sources/rss.ts` 的共享 RSS adapter
+- `lib/sources/attentionvc.ts` 对 AttentionVC AI leaderboard 公共端点的接入思路
+
+SignalFlow 的实现使用独立领域类型、AI 产品关键词过滤、飞书 Schema 映射和显式写入门禁，并非整仓 Fork。DailyBrief 的 MIT 版权声明与许可条件见其 [LICENSE](https://github.com/leiting-eric/DailyBrief/blob/main/LICENSE)。
 
 不迁移股票、Crypto、交易分析、财经/政治栏目和日报 HTML renderer。若选择性复用 MIT 代码，保留许可证与必要 attribution，不 fork 整仓改名。

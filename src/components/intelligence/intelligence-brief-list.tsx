@@ -1,0 +1,76 @@
+import { ArrowUpRight, CalendarDays, Github, Newspaper, Radio } from "lucide-react";
+
+import type { CollectorCategory } from "@/collector/types";
+import type { IntelligenceCategory, IntelligenceSignal } from "@/types/intelligence";
+
+const sourceGroupLabels: Record<CollectorCategory, string> = {
+  "github-trending": "GitHub Trending",
+  "ai-media": "AI 媒体",
+  "x-viral": "X 动态",
+};
+const categoryLabels: Record<IntelligenceCategory, string> = {
+  "model-capability": "模型能力",
+  agent: "AI Agent",
+  "ai-coding": "AI Coding",
+  multimodal: "AIGC / 多模态",
+  product: "产品动态",
+  interaction: "产品交互",
+  "business-model": "商业模式",
+  other: "行业动态",
+};
+const sourceIcons = { "github-trending": Github, "ai-media": Newspaper, "x-viral": Radio } satisfies Record<CollectorCategory, typeof Github>;
+
+const dateFormatter = new Intl.DateTimeFormat("zh-CN", { month: "2-digit", day: "2-digit", hour: "2-digit", minute: "2-digit", hour12: false });
+const numberFormatter = new Intl.NumberFormat("zh-CN", { notation: "compact", maximumFractionDigits: 1 });
+
+function metadataEntries(item: IntelligenceSignal): readonly string[] {
+  const entries: string[] = [];
+  const metadata = item.sourceMetadata;
+  if (typeof metadata.topic === "string" && metadata.topic) entries.push(metadata.topic);
+  if (typeof metadata.language === "string" && metadata.language) entries.push(metadata.language);
+  if (typeof metadata.starsToday === "string" && metadata.starsToday) entries.push(metadata.starsToday);
+  if (typeof metadata.author === "string" && metadata.author) entries.push(metadata.author);
+  for (const [key, label] of [["views", "浏览"], ["likes", "喜欢"], ["reposts", "转发"]] as const) {
+    const value = metadata[key];
+    if (typeof value === "number" && value > 0) entries.push(`${label} ${numberFormatter.format(value)}`);
+  }
+  return entries;
+}
+
+export function IntelligenceBriefList({ items }: Readonly<{ items: readonly IntelligenceSignal[] }>) {
+  return (
+    <ol className="intelligence-brief-list" aria-label="今日重点情报">
+      {items.map((item, index) => {
+        const Icon = sourceIcons[item.sourceGroup];
+        const metadata = metadataEntries(item);
+        const sourceGroupLabel = item.track === "domain" ? "业务领域" : sourceGroupLabels[item.sourceGroup];
+        const title = item.titleZh || item.title;
+        const summary = item.summaryZh || item.summary;
+        return (
+          <li className={`intelligence-story story-${item.sourceGroup}`} key={item.id}>
+            <div className="story-index">{String(index + 1).padStart(2, "0")}</div>
+            <article>
+              <div className="story-meta-line">
+                <span className="story-source-group"><Icon size={14} />{sourceGroupLabel}</span>
+                <span>{item.source}</span>
+                <span>{categoryLabels[item.category]}</span>
+                {item.translationStatus === "reviewed" ? <span>中文审校</span> : item.translationStatus === "generated" ? <span>中文概述</span> : null}
+              </div>
+              <h2>{title}</h2>
+              {item.titleZh && item.titleZh !== item.title ? <p className="story-original-title">{item.title}</p> : null}
+              <p className="story-summary">{summary || "该来源未提供可展示摘要，请通过原文链接核对完整信息。"}</p>
+              <div className="story-footer">
+                <div className="story-facts">
+                  <span>{item.selectionReason}</span>
+                  {item.publishedAt ? <span><CalendarDays size={12} />{dateFormatter.format(new Date(item.publishedAt))}</span> : null}
+                  {metadata.map((entry) => <span key={entry}>{entry}</span>)}
+                </div>
+                <a href={item.url} target="_blank" rel="noreferrer">查看原文 <ArrowUpRight size={14} /></a>
+              </div>
+            </article>
+          </li>
+        );
+      })}
+    </ol>
+  );
+}

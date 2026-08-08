@@ -10,9 +10,9 @@ SignalFlow（AI 产品情报与需求协同工作台）服务于 AI 产品经理
 
 ## 2. 当前阶段边界
 
-当前为 Phase 0 / Bootstrap。允许：工程基础、设计系统、应用外壳、数据访问接口、文档与测试基础。
+当前为 Phase 2 / Daily Intelligence MVP。允许：工程基础、真实业务路由、飞书 Demand Repository、公开数据源只读采集、Normalization、Deduplication、今日 Top 10、SignalFlow Intelligence Repository、SignalFlow Collector Skill、GitHub Actions 每日采集、文档与测试。
 
-禁止在没有明确新任务时实现：真实信息采集、新闻爬虫、RSS Collector、LLM 分析、GitHub Actions 定时任务、Deep Research、MCP、多 Agent、飞书机器人推送或复杂需求自动化。不得生成虚构新闻或大批量 Mock Data。
+本阶段 Collector 覆盖两条独立链路：AI 行业情报使用 GitHub Trending、指定 AI RSS 与 AttentionVC AI 公共端点；业务领域情报使用经过验证的动漫、短剧、影视和 AIGC RSS，并按所选领域与关键词过滤。禁止在没有明确新任务时实现：运行时 LLM API 分析、Deep Research、MCP、多 Agent、飞书机器人推送或复杂需求自动化。不得生成虚构新闻或大批量 Mock Data。
 
 ## 3. 技术栈
 
@@ -23,7 +23,9 @@ SignalFlow（AI 产品情报与需求协同工作台）服务于 AI 产品经理
 
 ## 4. 架构边界
 
-目标链路：React Component → Application Service / Repository → Feishu Adapter → Next.js Server → Feishu OpenAPI → Bitable。
+内部需求链路：React Component → Application Service / Demand Repository → Feishu Adapter → Next.js Server → Feishu OpenAPI → Bitable。
+
+情报链路：Source Registry → Source Adapter → Normalize → Deduplicate → Daily Top 10 → SignalFlow Intelligence Repository。采集源故障必须隔离；默认运行必须是 dry-run，只有显式 `--write` 才允许更新 SignalFlow 每日情报快照。
 
 - React 页面不得直接调用飞书 OpenAPI。
 - 页面依赖 `src/repositories` 中的领域接口。
@@ -33,7 +35,7 @@ SignalFlow（AI 产品情报与需求协同工作台）服务于 AI 产品经理
 
 ## 5. 数据与 Secret
 
-Phase 1 的业务数据源是飞书多维表格：内部需求池、AI 产品情报池。
+内部需求池继续以飞书多维表格为事实来源。AI 产品情报池由 SignalFlow 自行采集并写入独立 Intelligence Repository；当前使用可公开审计的每日 JSON 快照，未来可替换为 PostgreSQL。
 
 - `FEISHU_APP_ID`、`FEISHU_APP_SECRET`、`BITABLE_APP_TOKEN`、任何 `TABLE_ID`、`LLM_API_KEY` 永不进入 Git。
 - 真实值只放 `.env.local` 或托管平台的 Secret 管理。
@@ -43,9 +45,9 @@ Phase 1 的业务数据源是飞书多维表格：内部需求池、AI 产品情
 
 ## 6. Design System
 
-视觉基调：深色/黑色、科技绿 Accent、AI Native、Developer Tool、Command Center、Minimal、Professional、Data Driven。
+视觉基调：低饱和 Bento Grid、AI Native、Developer Tool、Product Intelligence、Professional、Data Driven。以锌黑、近白和中性灰承担主体结构；蓝、紫、粉、橙只用于小面积状态、领域与交互提示，不得铺满大面积内容区域。
 
-避免蓝白 OA、紫色 AI 渐变、满屏卡片、Cyberpunk、大量 glow、emoji 和模板化 Dashboard。优先清晰层级、紧凑信息密度、细边框、克制圆角、可访问对比度和键盘可用性。设计 token 统一维护在 `src/styles/tokens.css`。
+使用四列响应式网格、不同跨度的内容模块、16–28px 圆角、1px 低对比度边框和柔和扩散阴影。主要内容使用大卡片，指标和状态使用小卡片；情报正文与表格优先易读性，不强制所有内容卡片化或添加 hover 动画。避免粗黑边、硬阴影、高饱和色块、紫色渐变、Cyberpunk、glow、emoji、玻璃拟态和拥挤 Dashboard。优先清晰层级、适度留白、可访问对比度、键盘可用性与 `prefers-reduced-motion`。完整规则见 `docs/design/bento-grid-DESIGN.md`，设计 token 统一维护在 `src/styles/tokens.css`，应用覆盖规则位于 `src/styles/bento.css`。
 
 ## 7. Git 规则
 
@@ -61,11 +63,11 @@ Phase 1 的业务数据源是飞书多维表格：内部需求池、AI 产品情
 
 ## 9. Reference Projects 与许可证
 
-- `leiting-eric/DailyBrief` — MIT；重点参考 Source Registry、dispatch、normalization、LLM abstraction、容错与配置。选择性复用必须保留必要 attribution。
+- `leiting-eric/DailyBrief` — MIT；Collector 已选择性参考 Source Registry、dispatch、GitHub Trending、RSS、AttentionVC、normalization 与容错模式。保留 `docs/references/dailybrief.md` attribution，不迁移无关模块。
 - `SANSAN0/TrendRadar` — GPL-3.0；仅做产品与架构参考。未完成许可证影响评估前，不复制源码。
 - `assafelovic/gpt-researcher` — Apache-2.0；未来高价值信号研究管线参考，当前不集成。
 - `makeplane/plane` — 仅研究需求详情、状态、Kanban、Timeline 与过滤交互，不搬运大型源码。
 
 ## 10. 明确禁止
 
-禁止浏览器持有飞书 Secret，禁止页面绕过 Repository，禁止提交 `.env.local`，禁止无归属的大型工具函数，禁止提前建设 Collector/LLM/MCP/Agent，禁止从 GPL 项目复制实现，禁止为了展示效果伪造真实来源或业务进度。
+禁止浏览器持有飞书 Secret，禁止页面绕过 Repository，禁止提交 `.env.local`，禁止 Collector 默认写入，禁止把第三方公共端点当作稳定 SLA，禁止用昨日数据冒充今日情报，禁止无归属的大型工具函数，禁止提前建设 LLM/MCP/Agent，禁止从 GPL 项目复制实现，禁止为了展示效果伪造真实来源或业务进度。
