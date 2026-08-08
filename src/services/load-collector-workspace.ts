@@ -2,6 +2,7 @@ import "server-only";
 
 import { loadCollectorSchedule } from "@/collector/configuration";
 import { loadCollectorSources } from "@/collector/registry";
+import { isCollectorConfigurationEditable } from "@/collector/runtime";
 import { createFileIntelligenceRepository } from "@/repositories/file/file-intelligence-repository";
 
 export async function loadCollectorWorkspace() {
@@ -21,6 +22,6 @@ export async function loadCollectorWorkspace() {
     domainSchedule,
     latestBrief,
     domainBrief,
-    editable: process.env.NODE_ENV === "development",
+    editable: isCollectorConfigurationEditable(),
   };
 }

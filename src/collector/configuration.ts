@@ -1,12 +1,13 @@
 import fs from "node:fs/promises";
 import path from "node:path";
-import { fileURLToPath } from "node:url";
+
+import bundledDomainSchedule from "./domain-schedule.config.json";
+import bundledTechnicalSchedule from "./schedule.config.json";
 
 import { loadCollectorSources, validateSources } from "./registry";
+import { isCollectorConfigurationEditable, isProductionCollectorRuntime } from "./runtime";
 import type { CollectorSource, CollectorTrack, DomainFocusArea } from "./types";
 
-const collectorDirectory = path.dirname(fileURLToPath(import.meta.url));
-const sourceConfigPath = path.join(collectorDirectory, "sources.config.json");
 export const domainFocusAreaOptions = ["动漫", "短剧", "影视", "AIGC"] as const satisfies readonly DomainFocusArea[];
 
 export interface CollectorSchedule {
@@ -18,7 +19,11 @@ export interface CollectorSchedule {
 }
 
 function scheduleConfigPath(track: CollectorTrack): string {
-  return path.join(collectorDirectory, track === "domain" ? "domain-schedule.config.json" : "schedule.config.json");
+  return path.join(process.cwd(), "src", "collector", track === "domain" ? "domain-schedule.config.json" : "schedule.config.json");
+}
+
+function sourceConfigPath(): string {
+  return path.join(process.cwd(), "src", "collector", "sources.config.json");
 }
 
 function workflowPath(track: CollectorTrack): string {
@@ -45,7 +50,10 @@ export function validateCollectorSchedule(value: unknown, track: CollectorTrack 
 }
 
 export async function loadCollectorSchedule(track: CollectorTrack = "technical"): Promise<CollectorSchedule> {
-  return validateCollectorSchedule(JSON.parse(await fs.readFile(scheduleConfigPath(track), "utf8")) as unknown, track);
+  const value: unknown = isProductionCollectorRuntime()
+    ? (track === "domain" ? bundledDomainSchedule : bundledTechnicalSchedule)
+    : JSON.parse(await fs.readFile(scheduleConfigPath(track), "utf8"));
+  return validateCollectorSchedule(value, track);
 }
 
 async function writeJson(filePath: string, value: unknown): Promise<void> {
@@ -109,15 +117,23 @@ jobs:
 `;
 }
 
+function assertCollectorConfigurationEditable(): void {
+  if (!isCollectorConfigurationEditable()) {
+    throw new Error("Collector configuration is read-only outside local development.");
+  }
+}
+
 export async function setCollectorSourceEnabled(sourceId: string, enabled: boolean): Promise<readonly CollectorSource[]> {
+  assertCollectorConfigurationEditable();
   const sources = loadCollectorSources();
   if (!sources.some((source) => source.id === sourceId)) throw new Error(`Unknown collector source: ${sourceId}`);
   const updated = validateSources(sources.map((source) => source.id === sourceId ? { ...source, enabled } : source));
-  await writeJson(sourceConfigPath, updated);
+  await writeJson(sourceConfigPath(), updated);
   return updated;
 }
 
 export async function saveCollectorSchedule(value: unknown, track: CollectorTrack = "technical"): Promise<CollectorSchedule> {
+  assertCollectorConfigurationEditable();
   const schedule = validateCollectorSchedule(value, track);
   await Promise.all([
     writeJson(scheduleConfigPath(track), schedule),

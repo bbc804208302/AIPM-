@@ -2,12 +2,13 @@ import { revalidatePath } from "next/cache";
 import { NextResponse } from "next/server";
 
 import { saveCollectorSchedule, setCollectorSourceEnabled } from "@/collector/configuration";
+import { isCollectorConfigurationEditable } from "@/collector/runtime";
 import type { CollectorTrack } from "@/collector/types";
 
 export const runtime = "nodejs";
 
 function localOnly(): NextResponse | null {
-  if (process.env.NODE_ENV === "development") return null;
+  if (isCollectorConfigurationEditable()) return null;
   return NextResponse.json({ error: "公开环境只展示配置，不允许修改。" }, { status: 403 });
 }
 

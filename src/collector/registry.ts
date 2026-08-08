@@ -1,15 +1,20 @@
 import fs from "node:fs";
 import path from "node:path";
-import { fileURLToPath } from "node:url";
 
+import bundledSources from "./sources.config.json";
+
+import { isProductionCollectorRuntime } from "./runtime";
 import type { CollectorCategory, CollectorSource, CollectorSourceType, CollectorTrack, SourceTrustTier } from "./types";
 
-const configPath = path.join(path.dirname(fileURLToPath(import.meta.url)), "sources.config.json");
 const sourceTypes = new Set<CollectorSourceType>(["rss", "api", "scrape"]);
 const tracks = new Set<CollectorTrack>(["technical", "domain"]);
 const categories = new Set<CollectorCategory>(["github-trending", "ai-media", "x-viral"]);
 const trustTiers = new Set<SourceTrustTier>(["primary", "curated", "community"]);
 const domainFocusAreas = new Set(["动漫", "短剧", "影视", "AIGC"]);
+
+function localSourcesConfigPath(): string {
+  return path.join(process.cwd(), "src", "collector", "sources.config.json");
+}
 
 export function validateSources(value: unknown): readonly CollectorSource[] {
   if (!Array.isArray(value)) throw new Error("Collector source registry must be an array.");
@@ -42,6 +47,8 @@ export function validateSources(value: unknown): readonly CollectorSource[] {
 }
 
 export function loadCollectorSources(): readonly CollectorSource[] {
-  const parsed = JSON.parse(fs.readFileSync(configPath, "utf8")) as unknown;
+  const parsed: unknown = isProductionCollectorRuntime()
+    ? bundledSources
+    : JSON.parse(fs.readFileSync(localSourcesConfigPath(), "utf8"));
   return validateSources(parsed);
 }
