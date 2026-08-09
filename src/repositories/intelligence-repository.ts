@@ -4,6 +4,7 @@ import type { DailyIntelligenceBrief, IntelligenceSignal } from "@/types/domain"
 export interface IntelligenceRepository {
   getLatestBrief(track: CollectorTrack): Promise<DailyIntelligenceBrief | null>;
   getBrief(track: CollectorTrack, briefingDate: string): Promise<DailyIntelligenceBrief | null>;
+  listBriefs(track: CollectorTrack): Promise<readonly DailyIntelligenceBrief[]>;
   saveBrief(brief: DailyIntelligenceBrief): Promise<void>;
   findById(id: string): Promise<IntelligenceSignal | null>;
 }

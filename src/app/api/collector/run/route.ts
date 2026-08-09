@@ -20,11 +20,17 @@ async function runCollector(track: CollectorTrack, focusAreas?: readonly DomainF
   const schedule = await loadCollectorSchedule(track);
   const repository = createFileIntelligenceRepository();
   const previous = await repository.getLatestBrief(track);
+  const historicalBriefs = await repository.listBriefs(track);
   const result = await collectIntelligenceSignals({ track, focusAreas: focusAreas ?? schedule.focusAreas });
   const failed = result.sources.filter((source) => source.status === "failed").length;
   if (failed > result.sources.length / 2) throw new Error("超过半数数据源失败，今日快照未更新。");
   const deterministicBrief = enrichBriefWithChineseOverview(
-    buildDailyIntelligenceBrief(result, { dailyLimit: schedule.dailyLimit, timezone: schedule.timezone, track }),
+    buildDailyIntelligenceBrief(result, {
+      dailyLimit: schedule.dailyLimit,
+      timezone: schedule.timezone,
+      track,
+      historicalItems: historicalBriefs.flatMap((brief) => brief.items),
+    }),
     previous,
   );
   const contextualBrief = await enrichBriefWithSourceContext(deterministicBrief);

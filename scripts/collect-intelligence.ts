@@ -51,8 +51,14 @@ async function main(): Promise<void> {
   const result = await collectIntelligenceSignals({ sourceIds: options.sourceIds, perSourceLimit: options.perSourceLimit, track: options.track, focusAreas: schedule.focusAreas });
   const repository = createFileIntelligenceRepository();
   const previous = await repository.getLatestBrief(options.track);
+  const historicalBriefs = await repository.listBriefs(options.track);
   const deterministicBrief = enrichBriefWithChineseOverview(
-    buildDailyIntelligenceBrief(result, { dailyLimit: options.dailyLimit ?? schedule.dailyLimit, timezone: schedule.timezone, track: options.track }),
+    buildDailyIntelligenceBrief(result, {
+      dailyLimit: options.dailyLimit ?? schedule.dailyLimit,
+      timezone: schedule.timezone,
+      track: options.track,
+      historicalItems: historicalBriefs.flatMap((brief) => brief.items),
+    }),
     previous,
   );
   const contextualBrief = options.write ? await enrichBriefWithSourceContext(deterministicBrief) : deterministicBrief;

@@ -8,6 +8,20 @@ function isMissingFile(error: unknown): boolean {
   return error instanceof Error && "code" in error && error.code === "ENOENT";
 }
 
+async function listBriefs(rootDirectory: string, track: "technical" | "domain"): Promise<readonly DailyIntelligenceBrief[]> {
+  const trackDirectory = path.join(rootDirectory, track);
+  try {
+    const fileNames = (await fs.readdir(trackDirectory)).filter((fileName) => /^\d{4}-\d{2}-\d{2}\.json$/.test(fileName));
+    const briefs = await Promise.all(fileNames.map((fileName) => readBrief(path.join(trackDirectory, fileName))));
+    return briefs
+      .filter((brief): brief is DailyIntelligenceBrief => brief !== null)
+      .sort((left, right) => left.briefingDate.localeCompare(right.briefingDate));
+  } catch (error) {
+    if (isMissingFile(error)) return [];
+    throw error;
+  }
+}
+
 async function readBrief(filePath: string): Promise<DailyIntelligenceBrief | null> {
   try {
     return JSON.parse(await fs.readFile(filePath, "utf8")) as DailyIntelligenceBrief;
@@ -26,6 +40,9 @@ export function createFileIntelligenceRepository(
     },
     getBrief(track, briefingDate) {
       return readBrief(path.join(rootDirectory, track, `${briefingDate}.json`));
+    },
+    listBriefs(track) {
+      return listBriefs(rootDirectory, track);
     },
     async saveBrief(brief) {
       const trackDirectory = path.join(rootDirectory, brief.track);

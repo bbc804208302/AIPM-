@@ -30,4 +30,4 @@ SignalFlow 的实现使用独立领域类型、AI 产品关键词过滤、飞书
 
 不迁移股票、Crypto、交易分析、财经/政治栏目和日报 HTML renderer。若选择性复用 MIT 代码，保留许可证与必要 attribution，不 fork 整仓改名。
 
-DailyBrief 的新闻管线允许更宽的历史时间窗；SignalFlow 未采用这一点。SignalFlow 的“今日情报”严格按 `Asia/Shanghai` 当天发布时间筛选，GitHub Trending 因属于实时日榜而作为无发布时间的例外，不使用旧 RSS/X 内容补足 10 条。
+DailyBrief 的新闻管线允许更宽的历史时间窗；SignalFlow 仅采用近 3 个 `Asia/Shanghai` 自然日，并在选取前排除历史快照中 URL 或规范化标题相同的已读内容。GitHub Trending 因属于实时日榜而作为无发布时间的例外；近 3 日不足 10 条时不继续扩大时间窗。

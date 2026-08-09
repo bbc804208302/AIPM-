@@ -14,6 +14,8 @@ AttentionVC is a third-party public endpoint without a SignalFlow SLA. Schema or
 
 `IntelligenceCandidate.id` is derived from collection date and the canonical-URL SHA-256 fingerprint. Deduplication uses canonical URL/fingerprint in-memory. The saved snapshot is versioned by `track` and Asia/Shanghai `briefingDate`.
 
+Daily selection accepts RSS/X items published on the current Shanghai calendar day or the previous two calendar days. GitHub Trending is the current live daily ranking and may omit `publishedAt`. Before selection, all saved snapshots, including an earlier run from the same day, are checked; a matching canonical URL or normalized original title is treated as already read and excluded from the new batch.
+
 ## Daily snapshot
 
 - `briefingDate`: collection batch date in Asia/Shanghai.

@@ -25,4 +25,6 @@ test("stores versioned and latest daily intelligence snapshots", async () => {
   await repository.saveBrief(brief);
   assert.deepEqual(await repository.getLatestBrief("technical"), brief);
   assert.deepEqual(await repository.getBrief("technical", "2026-08-08"), brief);
+  assert.deepEqual(await repository.listBriefs("technical"), [brief]);
+  assert.deepEqual(await repository.listBriefs("domain"), []);
 });
