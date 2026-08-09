@@ -31,6 +31,7 @@ export interface IntelligenceSignal {
   sourceRank: number | null;
   sourceMetadata: Readonly<Record<string, string | number | boolean>>;
   selectionReason: string;
+  heatScore?: number | null;
   impactScore: number | null;
   noveltyScore: number | null;
   productInsight: string | null;

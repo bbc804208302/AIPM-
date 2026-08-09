@@ -1,6 +1,7 @@
 import type { DailyIntelligenceBrief, IntelligenceCategory, IntelligenceSignal } from "@/types/intelligence";
 
 import type { CollectorCategory, CollectorRunResult, CollectorTrack, IntelligenceCandidate } from "./types";
+import { calculatePublicHeatScore } from "./heat-score";
 
 const defaultTimezone = "Asia/Shanghai";
 const categoryQuotas: Readonly<Record<CollectorCategory, number>> = {
@@ -111,6 +112,7 @@ function toIntelligenceSignal(signal: IntelligenceCandidate, date: string): Inte
     sourceRank: signal.rank,
     sourceMetadata: signal.metadata,
     selectionReason: selectionReason(signal),
+    heatScore: calculatePublicHeatScore(signal.category, signal.metadata),
     impactScore: null,
     noveltyScore: null,
     productInsight: null,
