@@ -19,7 +19,7 @@ function candidate(category: CollectorCategory, index: number): IntelligenceCand
     title: `Signal ${category} ${index}`,
     url: `https://example.com/${category}/${index}`,
     excerpt: "Verified source excerpt",
-    publishedAt: `2026-08-0${Math.min(index, 8)}T00:00:00.000Z`,
+    publishedAt: "2026-08-08T00:00:00.000Z",
     rank: index,
     metadata: {},
   };
@@ -40,6 +40,43 @@ test("builds a Shanghai-dated top ten with source diversity", () => {
   assert.equal(brief.items.filter((item) => item.sourceGroup === "ai-media").length, 4);
   assert.equal(brief.items.filter((item) => item.sourceGroup === "github-trending").length, 4);
   assert.equal(brief.items.filter((item) => item.sourceGroup === "x-viral").length, 2);
+});
+
+test("keeps the latest three Shanghai calendar days while retaining the live GitHub ranking", () => {
+  const currentRss = candidate("ai-media", 1);
+  const recentRss = { ...candidate("ai-media", 2), publishedAt: "2026-08-06T16:00:00.000Z" };
+  const oldX = { ...candidate("x-viral", 1), publishedAt: "2026-08-05T15:59:59.000Z" };
+  const githubWithoutTimestamp = { ...candidate("github-trending", 1), publishedAt: null };
+  const result: CollectorRunResult = {
+    startedAt: "2026-08-08T00:00:00.000Z",
+    finishedAt: "2026-08-08T02:00:00.000Z",
+    signals: [currentRss, recentRss, oldX, githubWithoutTimestamp],
+    sources: [],
+  };
+
+  const brief = buildDailyIntelligenceBrief(result);
+  assert.deepEqual(brief.items.map((item) => item.id).sort(), [currentRss.id, recentRss.id, githubWithoutTimestamp.id].sort());
+  assert.equal(brief.candidateCount, 3);
+});
+
+test("excludes URLs and normalized titles already saved in any previous snapshot", () => {
+  const repeatedByUrl = candidate("ai-media", 1);
+  const repeatedByTitle = { ...candidate("x-viral", 2), title: "Previously Seen: AI Tool!" };
+  const unseen = candidate("github-trending", 3);
+  const historicalItems = [
+    buildDailyIntelligenceBrief({ startedAt: "2026-08-07T00:00:00.000Z", finishedAt: "2026-08-07T01:00:00.000Z", signals: [{ ...repeatedByUrl, publishedAt: "2026-08-07T00:00:00.000Z" }], sources: [] }).items[0]!,
+    buildDailyIntelligenceBrief({ startedAt: "2026-08-08T00:00:00.000Z", finishedAt: "2026-08-08T01:00:00.000Z", signals: [{ ...repeatedByTitle, title: "Previously seen — AI tool" }], sources: [] }).items[0]!,
+  ];
+  const result: CollectorRunResult = {
+    startedAt: "2026-08-08T00:00:00.000Z",
+    finishedAt: "2026-08-08T01:00:00.000Z",
+    signals: [repeatedByUrl, repeatedByTitle, unseen],
+    sources: [],
+  };
+
+  const brief = buildDailyIntelligenceBrief(result, { historicalItems });
+  assert.deepEqual(brief.items.map((item) => item.id), [unseen.id]);
+  assert.equal(brief.candidateCount, 1);
 });
 
 test("builds an independent business-domain brief", () => {

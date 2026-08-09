@@ -2,6 +2,7 @@ import { collectIntelligenceSignals } from "../src/collector/pipeline";
 import { buildDailyIntelligenceBrief } from "../src/collector/daily-brief";
 import { enrichBriefWithChineseOverview } from "../src/collector/chinese-overview";
 import { reviewBriefWithLlm } from "../src/collector/llm-review";
+import { enrichBriefWithSourceContext } from "../src/collector/source-context";
 import { createFileIntelligenceRepository } from "../src/repositories/file/file-intelligence-repository";
 import { loadLocalEnvironment } from "./load-env";
 import type { CollectorTrack } from "../src/collector/types";
@@ -50,11 +51,18 @@ async function main(): Promise<void> {
   const result = await collectIntelligenceSignals({ sourceIds: options.sourceIds, perSourceLimit: options.perSourceLimit, track: options.track, focusAreas: schedule.focusAreas });
   const repository = createFileIntelligenceRepository();
   const previous = await repository.getLatestBrief(options.track);
+  const seenItems = await repository.getSeenItems(options.track);
   const deterministicBrief = enrichBriefWithChineseOverview(
-    buildDailyIntelligenceBrief(result, { dailyLimit: options.dailyLimit ?? schedule.dailyLimit, timezone: schedule.timezone, track: options.track }),
+    buildDailyIntelligenceBrief(result, {
+      dailyLimit: options.dailyLimit ?? schedule.dailyLimit,
+      timezone: schedule.timezone,
+      track: options.track,
+      historicalItems: seenItems,
+    }),
     previous,
   );
-  const brief = options.write ? await reviewBriefWithLlm(deterministicBrief) : deterministicBrief;
+  const contextualBrief = options.write ? await enrichBriefWithSourceContext(deterministicBrief) : deterministicBrief;
+  const brief = options.write ? await reviewBriefWithLlm(contextualBrief) : contextualBrief;
 
   if (options.json) {
     console.log(JSON.stringify({ result, brief }, null, 2));

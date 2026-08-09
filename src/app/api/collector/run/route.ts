@@ -6,6 +6,7 @@ import { isCollectorConfigurationEditable } from "@/collector/runtime";
 import { buildDailyIntelligenceBrief } from "@/collector/daily-brief";
 import { enrichBriefWithChineseOverview } from "@/collector/chinese-overview";
 import { reviewBriefWithLlm } from "@/collector/llm-review";
+import { enrichBriefWithSourceContext } from "@/collector/source-context";
 import { collectIntelligenceSignals } from "@/collector/pipeline";
 import { createFileIntelligenceRepository } from "@/repositories/file/file-intelligence-repository";
 import type { CollectorTrack, DomainFocusArea } from "@/collector/types";
@@ -19,14 +20,21 @@ async function runCollector(track: CollectorTrack, focusAreas?: readonly DomainF
   const schedule = await loadCollectorSchedule(track);
   const repository = createFileIntelligenceRepository();
   const previous = await repository.getLatestBrief(track);
+  const seenItems = await repository.getSeenItems(track);
   const result = await collectIntelligenceSignals({ track, focusAreas: focusAreas ?? schedule.focusAreas });
   const failed = result.sources.filter((source) => source.status === "failed").length;
   if (failed > result.sources.length / 2) throw new Error("超过半数数据源失败，今日快照未更新。");
   const deterministicBrief = enrichBriefWithChineseOverview(
-    buildDailyIntelligenceBrief(result, { dailyLimit: schedule.dailyLimit, timezone: schedule.timezone, track }),
+    buildDailyIntelligenceBrief(result, {
+      dailyLimit: schedule.dailyLimit,
+      timezone: schedule.timezone,
+      track,
+      historicalItems: seenItems,
+    }),
     previous,
   );
-  const brief = await reviewBriefWithLlm(deterministicBrief);
+  const contextualBrief = await enrichBriefWithSourceContext(deterministicBrief);
+  const brief = await reviewBriefWithLlm(contextualBrief);
   if (brief.items.length === 0) throw new Error("没有选出有效情报，今日快照未更新。");
   await repository.saveBrief(brief);
   return brief;

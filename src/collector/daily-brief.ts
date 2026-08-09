@@ -15,6 +15,8 @@ export interface DailyBriefOptions {
   dailyLimit?: number;
   timezone?: string;
   track?: CollectorTrack;
+  lookbackDays?: number;
+  historicalItems?: readonly Pick<IntelligenceSignal, "url" | "title">[];
 }
 
 function briefingDate(isoDate: string, timezone: string): string {
@@ -26,6 +28,43 @@ function briefingDate(isoDate: string, timezone: string): string {
   }).formatToParts(new Date(isoDate));
   const read = (type: Intl.DateTimeFormatPartTypes) => parts.find((part) => part.type === type)?.value ?? "";
   return `${read("year")}-${read("month")}-${read("day")}`;
+}
+
+function recentBriefingDates(isoDate: string, timezone: string, lookbackDays: number): ReadonlySet<string> {
+  const timestamp = Date.parse(isoDate);
+  return new Set(Array.from({ length: lookbackDays }, (_, index) => briefingDate(
+    new Date(timestamp - index * 24 * 60 * 60 * 1_000).toISOString(),
+    timezone,
+  )));
+}
+
+function isRecentSignal(signal: IntelligenceCandidate, allowedDates: ReadonlySet<string>, timezone: string): boolean {
+  // GitHub Trending is a live daily ranking and does not expose a reliable publication timestamp.
+  if (signal.category === "github-trending") return true;
+  if (!signal.publishedAt) return false;
+  return allowedDates.has(briefingDate(signal.publishedAt, timezone));
+}
+
+function normalizedTitleKey(value: string): string {
+  return value
+    .normalize("NFKC")
+    .toLocaleLowerCase("en-US")
+    .replace(/https?:\/\/\S+/g, "")
+    .replace(/[\p{P}\p{S}\s]/gu, "")
+    .trim();
+}
+
+function removePreviouslySeenSignals(
+  signals: readonly IntelligenceCandidate[],
+  historicalItems: readonly Pick<IntelligenceSignal, "url" | "title">[],
+): readonly IntelligenceCandidate[] {
+  const seenUrls = new Set(historicalItems.map((item) => item.url));
+  const seenTitles = new Set(historicalItems.map((item) => normalizedTitleKey(item.title)).filter(Boolean));
+  return signals.filter((signal) => {
+    if (seenUrls.has(signal.canonicalUrl)) return false;
+    const titleKey = normalizedTitleKey(signal.title);
+    return !titleKey || !seenTitles.has(titleKey);
+  });
 }
 
 function intelligenceCategory(signal: IntelligenceCandidate): IntelligenceCategory {
@@ -87,10 +126,10 @@ function selectDailySignals(signals: readonly IntelligenceCandidate[], limit: nu
 }
 
 function selectionReason(signal: IntelligenceCandidate): string {
-  if (signal.track === "domain") return signal.trustTier === "primary" ? "业务领域一手来源近期更新" : "业务领域公开来源近期更新";
+  if (signal.track === "domain") return signal.trustTier === "primary" ? "业务领域一手来源近 3 日更新" : "业务领域公开来源近 3 日更新";
   if (signal.category === "github-trending") return `GitHub Trending 今日排名 #${signal.rank ?? "—"}`;
-  if (signal.category === "x-viral") return `AttentionVC AI 近 3 日排名 #${signal.rank ?? "—"}`;
-  return signal.trustTier === "primary" ? "官方 AI 来源近期更新" : "AI 媒体近期更新";
+  if (signal.category === "x-viral") return `AttentionVC AI 近 3 日信号 #${signal.rank ?? "—"}`;
+  return signal.trustTier === "primary" ? "官方 AI 来源近 3 日更新" : "AI 媒体近 3 日更新";
 }
 
 function toIntelligenceSignal(signal: IntelligenceCandidate, date: string): IntelligenceSignal {
@@ -130,9 +169,13 @@ export function buildDailyIntelligenceBrief(
   const dailyLimit = options.dailyLimit ?? 10;
   const timezone = options.timezone ?? defaultTimezone;
   const track = options.track ?? "technical";
+  const lookbackDays = options.lookbackDays ?? 3;
   const date = briefingDate(result.finishedAt, timezone);
   const trackSignals = result.signals.filter((signal) => signal.track === track);
-  const items = selectDailySignals(trackSignals, dailyLimit).map((signal) => toIntelligenceSignal(signal, date));
+  const allowedDates = recentBriefingDates(result.finishedAt, timezone, lookbackDays);
+  const recentSignals = trackSignals.filter((signal) => isRecentSignal(signal, allowedDates, timezone));
+  const unseenSignals = removePreviouslySeenSignals(recentSignals, options.historicalItems ?? []);
+  const items = selectDailySignals(unseenSignals, dailyLimit).map((signal) => toIntelligenceSignal(signal, date));
 
   return {
     schemaVersion: 1,
@@ -140,7 +183,7 @@ export function buildDailyIntelligenceBrief(
     timezone,
     track,
     generatedAt: result.finishedAt,
-    candidateCount: trackSignals.length,
+    candidateCount: unseenSignals.length,
     dailyLimit,
     items,
     sources: result.sources,

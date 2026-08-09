@@ -1,15 +1,4 @@
-import type { DailyIntelligenceBrief, IntelligenceCategory, IntelligenceSignal } from "@/types/intelligence";
-
-const categoryLabels: Record<IntelligenceCategory, string> = {
-  "model-capability": "模型能力",
-  agent: "AI Agent",
-  "ai-coding": "AI Coding",
-  multimodal: "AIGC 与多模态",
-  product: "AI 产品",
-  interaction: "产品交互",
-  "business-model": "商业模式",
-  other: "AI 行业",
-};
+import type { DailyIntelligenceBrief, IntelligenceSignal } from "@/types/intelligence";
 
 function sourceText(item: IntelligenceSignal): string {
   return `${item.title} ${item.summary}`.replace(/\s+/g, " ").trim();
@@ -88,13 +77,7 @@ function generatedTitle(item: IntelligenceSignal): string {
   if (item.track === "domain") {
     return knownDomainOverview(item)?.title ?? `${domainTopic(item)}原文待审校`;
   }
-  const category = categoryLabels[item.category];
-  if (item.sourceGroup === "github-trending") return `${item.title}：GitHub 热榜中的${category}项目`;
-  if (item.sourceGroup === "x-viral") {
-    const author = typeof item.sourceMetadata.author === "string" ? item.sourceMetadata.author : "AI 从业者";
-    return `${author} 分享${category}新动态`;
-  }
-  return `${item.source} 发布${category}新动态`;
+  return item.title;
 }
 
 function generatedSummary(item: IntelligenceSignal): string {
@@ -106,21 +89,14 @@ function generatedSummary(item: IntelligenceSignal): string {
     }
     return `该来源只提供了标题或信息量有限的摘要，当前无法可靠生成中文说明。已保留原始标题、来源与链接，建议查看原文；后续可由人工或离线审校补充中文概述。`;
   }
-  const category = categoryLabels[item.category];
-
-  if (item.sourceGroup === "github-trending") {
-    return `${item.title} 是一个与${category}相关的开源项目，主要提供可复用的工具、工作流或工程实现；具体功能、使用方式和适用边界以项目说明为准。`;
-  }
-
-  if (item.sourceGroup === "x-viral") {
-    return `这是一则关于${category}的实践分享，主题为“${item.title}”，主要介绍相关产品、方法或使用场景；具体能力与结论以原帖内容为准。`;
-  }
-
-  return `${item.source} 发布了一则关于${category}的内容更新，主题为“${item.title}”，重点介绍相关技术、产品或应用进展；具体事实与边界以原文为准。`;
+  const excerpt = trimExcerpt(item);
+  return excerpt
+    ? `AI 概述暂未生成。原始来源摘要：${excerpt}`
+    : "原始来源信息不足，等待 AI 审校补充中文概述。";
 }
 
 function generatedStatus(item: IntelligenceSignal): NonNullable<IntelligenceSignal["translationStatus"]> {
-  if (item.track !== "domain") return "generated";
+  if (item.track !== "domain") return "needs-review";
   return knownDomainOverview(item) || hasEnoughContext(item) ? "generated" : "needs-review";
 }
 

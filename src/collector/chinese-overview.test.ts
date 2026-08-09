@@ -29,12 +29,12 @@ const result: CollectorRunResult = {
   }],
 };
 
-test("adds a Chinese overview to newly collected signals", () => {
+test("marks an unreviewed technical fallback instead of inventing a generic overview", () => {
   const enriched = enrichBriefWithChineseOverview(buildDailyIntelligenceBrief(result));
   assert.ok(enriched.items[0]?.titleZh);
-  assert.match(enriched.items[0]?.summaryZh ?? "", /开源项目/);
-  assert.doesNotMatch(enriched.items[0]?.summaryZh ?? "", /入选|排名/);
-  assert.equal(enriched.items[0]?.translationStatus, "generated");
+  assert.match(enriched.items[0]?.summaryZh ?? "", /原始来源摘要/);
+  assert.doesNotMatch(enriched.items[0]?.summaryZh ?? "", /开源项目|发布新动态|入选|排名/);
+  assert.equal(enriched.items[0]?.translationStatus, "needs-review");
 });
 
 test("preserves reviewed Chinese content on repeated collection", () => {
