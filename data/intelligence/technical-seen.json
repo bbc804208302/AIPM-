@@ -1,0 +1,87 @@
+{
+  "schemaVersion": 1,
+  "track": "technical",
+  "updatedAt": "2026-08-09T07:27:21.729Z",
+  "items": [
+    {
+      "url": "https://www.latent.space/p/ainews-zawinskis-law-of-multiagents",
+      "title": "[AINews] Zawinski's Law of MultiAgents"
+    },
+    {
+      "url": "https://github.com/PrimeIntellect-ai/prime-agent",
+      "title": "PrimeIntellect-ai/prime-agent"
+    },
+    {
+      "url": "https://x.com/XFreeze/status/2084975853272801623",
+      "title": "Grok Build will rewrite how you use your laptop -A practical guide to your own Autonomous Employee"
+    },
+    {
+      "url": "https://openai.com/index/responding-next-frontier-critical-cyber-capabilities",
+      "title": "Responding to the next frontier of critical cyber capabilities"
+    },
+    {
+      "url": "https://github.com/addyosmani/agent-skills",
+      "title": "addyosmani/agent-skills"
+    },
+    {
+      "url": "https://x.com/tetsuoai/status/2085365652509040768",
+      "title": "How to make a short film with Grok Imagine, start to finish"
+    },
+    {
+      "url": "https://openai.com/index/hsp-gruppe",
+      "title": "How HSP GRUPPE builds AI capabilities for tax advisory"
+    },
+    {
+      "url": "https://github.com/cloudflare/computer",
+      "title": "cloudflare/computer"
+    },
+    {
+      "url": "https://news.smol.ai/issues/26-08-07-not-much",
+      "title": "not much happened today"
+    },
+    {
+      "url": "https://github.com/mattpocock/skills",
+      "title": "mattpocock/skills"
+    },
+    {
+      "url": "https://huggingface.co/blog/allenai/tutormoments",
+      "title": "TutorMoments: Do AI tutors know when to help and when to hold back?"
+    },
+    {
+      "url": "https://x.com/DimitrisPapail/status/2086158118354887060",
+      "title": "AI Settles a 25 Year-old Problem We Left Behind"
+    },
+    {
+      "url": "https://github.com/google/skills",
+      "title": "google/skills"
+    },
+    {
+      "url": "https://www.latent.space/p/ainews-amd-buys-taalas",
+      "title": "[AINews] AMD buys Taalas"
+    },
+    {
+      "url": "https://github.com/TauricResearch/TradingAgents",
+      "title": "TauricResearch/TradingAgents"
+    },
+    {
+      "url": "https://x.com/milesdeutscher/status/2085736739973533708",
+      "title": "How to Automate Your Life With Claude (Full System)"
+    },
+    {
+      "url": "https://tldr.tech/ai/2026-08-07",
+      "title": "GPT-5.6 Luna default 🌙, Agent Plugins 🔌, AMD Taalas acquisition 🧩"
+    },
+    {
+      "url": "https://x.com/hwchase17/status/2085780032031760694",
+      "title": "Why managed agents are the next big thing in agent building"
+    },
+    {
+      "url": "https://x.com/vasuman/status/2085806422072418632",
+      "title": "AI Adoption is a Myth"
+    },
+    {
+      "url": "https://x.com/jino_rohit/status/2085947942339563598",
+      "title": "Profiling LLM Inference with SGLang and Torch Profiler"
+    }
+  ]
+}
