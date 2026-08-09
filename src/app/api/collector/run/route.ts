@@ -4,6 +4,7 @@ import { NextResponse } from "next/server";
 import { domainFocusAreaOptions, loadCollectorSchedule } from "@/collector/configuration";
 import { buildDailyIntelligenceBrief } from "@/collector/daily-brief";
 import { enrichBriefWithChineseOverview } from "@/collector/chinese-overview";
+import { reviewBriefWithLlm } from "@/collector/llm-review";
 import { collectIntelligenceSignals } from "@/collector/pipeline";
 import { createFileIntelligenceRepository } from "@/repositories/file/file-intelligence-repository";
 import type { CollectorTrack, DomainFocusArea } from "@/collector/types";
@@ -20,10 +21,11 @@ async function runCollector(track: CollectorTrack, focusAreas?: readonly DomainF
   const result = await collectIntelligenceSignals({ track, focusAreas: focusAreas ?? schedule.focusAreas });
   const failed = result.sources.filter((source) => source.status === "failed").length;
   if (failed > result.sources.length / 2) throw new Error("超过半数数据源失败，今日快照未更新。");
-  const brief = enrichBriefWithChineseOverview(
+  const deterministicBrief = enrichBriefWithChineseOverview(
     buildDailyIntelligenceBrief(result, { dailyLimit: schedule.dailyLimit, timezone: schedule.timezone, track }),
     previous,
   );
+  const brief = await reviewBriefWithLlm(deterministicBrief);
   if (brief.items.length === 0) throw new Error("没有选出有效情报，今日快照未更新。");
   await repository.saveBrief(brief);
   return brief;
@@ -58,6 +60,7 @@ export async function POST(request: Request) {
       succeededSources: brief.sources.filter((source) => source.status === "success").length,
       failedSources: brief.sources.filter((source) => source.status === "failed").length,
       chineseOverviews: brief.items.filter((item) => item.summaryZh).length,
+      llmReviewed: brief.items.filter((item) => item.translationStatus === "llm-reviewed").length,
     });
   } catch (error) {
     return NextResponse.json({ error: error instanceof Error ? error.message : "采集任务失败。" }, { status: 500 });

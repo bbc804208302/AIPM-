@@ -54,7 +54,7 @@ export function IntelligenceBriefList({ items }: Readonly<{ items: readonly Inte
                 <span className="story-source-group"><Icon size={14} />{sourceGroupLabel}</span>
                 <span>{item.source}</span>
                 <span>{categoryLabels[item.category]}</span>
-                {item.translationStatus === "reviewed" ? <span>中文审校</span> : item.translationStatus === "generated" ? <span>中文概述</span> : item.translationStatus === "needs-review" ? <span>待审校</span> : null}
+                {item.translationStatus === "reviewed" ? <span>中文审校</span> : item.translationStatus === "llm-reviewed" ? <span>LLM 审校</span> : item.translationStatus === "generated" ? <span>中文概述</span> : item.translationStatus === "needs-review" ? <span>待审校</span> : null}
               </div>
               <h2>{title}</h2>
               {item.titleZh && item.titleZh !== item.title ? <p className="story-original-title">{item.title}</p> : null}

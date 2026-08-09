@@ -24,7 +24,7 @@ export interface IntelligenceSignal {
   category: IntelligenceCategory;
   summary: string;
   summaryZh?: string;
-  translationStatus?: "reviewed" | "generated" | "needs-review";
+  translationStatus?: "reviewed" | "generated" | "needs-review" | "llm-reviewed";
   url: string;
   publishedAt: string | null;
   collectedAt: string;

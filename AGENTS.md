@@ -10,9 +10,9 @@ SignalFlow（AI 产品情报与需求协同工作台）服务于 AI 产品经理
 
 ## 2. 当前阶段边界
 
-当前为 Phase 2 / Daily Intelligence MVP。允许：工程基础、真实业务路由、飞书 Demand Repository、公开数据源只读采集、Normalization、Deduplication、今日 Top 10、SignalFlow Intelligence Repository、SignalFlow Collector Skill、GitHub Actions 每日采集、文档与测试。
+当前为 Phase 2 / Daily Intelligence MVP。允许：工程基础、真实业务路由、飞书 Demand Repository、公开数据源只读采集、Normalization、Deduplication、今日 Top 10、SignalFlow Intelligence Repository、SignalFlow Collector Skill、GitHub Actions 每日采集、可选的采集后 LLM 中文审校、文档与测试。
 
-本阶段 Collector 覆盖两条独立链路：AI 行业情报使用 GitHub Trending、指定 AI RSS 与 AttentionVC AI 公共端点；业务领域情报使用经过验证的动漫、短剧、影视和 AIGC RSS，并按所选领域与关键词过滤。禁止在没有明确新任务时实现：运行时 LLM API 分析、Deep Research、MCP、多 Agent、飞书机器人推送或复杂需求自动化。不得生成虚构新闻或大批量 Mock Data。
+本阶段 Collector 覆盖两条独立链路：AI 行业情报使用 GitHub Trending、指定 AI RSS 与 AttentionVC AI 公共端点；业务领域情报使用经过验证的动漫、短剧、影视和 AIGC RSS，并按所选领域与关键词过滤。可选 LLM 只允许在显式写入快照前，基于原始标题和摘要生成中文标题和概述；禁止在没有明确新任务时实现其他运行时 LLM 分析、Deep Research、MCP、多 Agent、飞书机器人推送或复杂需求自动化。不得生成虚构新闻或大批量 Mock Data。
 
 ## 3. 技术栈
 

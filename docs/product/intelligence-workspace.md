@@ -31,4 +31,6 @@ AI 行业情报支持按 GitHub Trending、AI 媒体和 X 动态筛选。AI 媒�
 
 ## 内容规则
 
-每条情报至少保留原始标题、来源分组、具体来源、原文 URL、来源摘要、原始发布时间、采集时间、来源排名或公开热度元数据。中文 UI 可并列保存 `titleZh`、`summaryZh` 与 `translationStatus: reviewed`；译文必须以保留的原文为依据，不得扩写成未经来源支持的产品结论。`summaryZh` 必须回答“这是什么、主要讲什么或具有什么能力”，不得复述排名、入选原因或泛化的产品经理建议；`selectionReason` 单独承担入选依据。当前中文内容由 Codex 人工审校，不代表已接入运行时 LLM。X 热度和 GitHub 排名不能作为事实可信度。
+每条情报至少保留原始标题、来源分组、具体来源、原文 URL、来源摘要、原始发布时间、采集时间、来源排名或公开热度元数据。中文 UI 可并列保存 `titleZh`、`summaryZh` 与 `translationStatus`；译文必须以保留的原文为依据，不得扩写成未经来源支持的产品结论。`summaryZh` 必须回答“这是什么、主要讲什么或具有什么能力”，不得复述排名、入选原因或泛化的产品经理建议；`selectionReason` 单独承担入选依据。
+
+Collector 在显式写入时可选执行 LLM 审校层：仅当 `SIGNALFLOW_LLM_REVIEW=true` 且服务端存在 `LLM_API_KEY` 时启用。模型只能处理已选中的公开 Top 10，并必须输出可追溯到原始标题和摘要的中文标题、概述；任何请求、超时或输出解析失败都会回退到确定性规则，不会阻止快照保存。`translationStatus: llm-reviewed` 用于在页面透明标识该内容。X 热度和 GitHub 排名不能作为事实可信度。

@@ -59,9 +59,9 @@ export function CollectorTaskControls({
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ track, focusAreas }),
       });
-      const data = await response.json() as { error?: string; selected?: number; candidates?: number; failedSources?: number; chineseOverviews?: number };
+      const data = await response.json() as { error?: string; selected?: number; candidates?: number; failedSources?: number; chineseOverviews?: number; llmReviewed?: number };
       if (!response.ok) throw new Error(data.error || "采集任务执行失败。");
-      setStatus(`真实采集完成：入选 ${data.selected ?? 0} 条，中文概述 ${data.chineseOverviews ?? 0} 条；候选 ${data.candidates ?? 0} 条，失败来源 ${data.failedSources ?? 0} 个。`);
+      setStatus(`真实采集完成：入选 ${data.selected ?? 0} 条，LLM 审校 ${data.llmReviewed ?? 0} 条，中文概述 ${data.chineseOverviews ?? 0} 条；候选 ${data.candidates ?? 0} 条，失败来源 ${data.failedSources ?? 0} 个。`);
       router.refresh();
     } catch (reason) {
       setStatus(reason instanceof Error ? reason.message : "采集任务执行失败。");
@@ -113,7 +113,7 @@ export function CollectorTaskControls({
         <button className="brutal-control-button primary" type="button" disabled={!editable || busy !== null || enabledSources === 0 || (track === "domain" && focusAreas.length === 0)} onClick={runNow}><Play size={15} />{busy === "run" ? "采集中" : "重新采集今日情报"}</button>
       </div>
       {status ? <p className="task-control-status" aria-live="polite">{status}</p> : null}
-      <p className="control-note">{editable ? `该操作会真实请求已启用的${track === "domain" ? "业务领域" : "AI 行业"}来源并覆盖对应当天快照；既有中文审校内容会保留。` : "公开站点只展示任务状态，不允许访客修改计划或触发采集。"}</p>
+      <p className="control-note">{editable ? `该操作会真实请求已启用的${track === "domain" ? "业务领域" : "AI 行业"}来源并覆盖对应当天快照；配置 LLM 后会在写入前进行中文审校，人工审校内容会保留。` : "公开站点只展示任务状态，不允许访客修改计划或触发采集。"}</p>
     </section>
   );
 }

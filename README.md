@@ -137,7 +137,7 @@ Collector 的工程约束：
 - URL 规范化与指纹去重在来源适配器之后统一完成。
 - AI 媒体、GitHub Trending 与 X 动态有独立配额，避免单一来源占满 Top 10。
 - `summaryZh` 只描述“这是什么、主要讲什么、具有什么能力”，排名与入选依据保存在独立字段。
-- 当前中文内容由人工审校保护层维护，不代表已经接入运行时 LLM。
+- Collector 写入阶段可选调用 LLM 生成中文标题和概述；页面不会实时调用 LLM。未配置时自动回退到确定性中文概述规则。
 
 ## 系统架构
 
@@ -231,7 +231,10 @@ cp .env.example .env.local
 | `FEISHU_APP_SECRET` | 飞书自建应用 Secret | 否 |
 | `FEISHU_BITABLE_APP_TOKEN` | 多维表格 App Token | 否 |
 | `FEISHU_DEMAND_TABLE_ID` | 内部需求表 ID | 否 |
-| `LLM_API_KEY` | 未来 Analyzer 预留，当前无需配置 | 否 |
+| `LLM_API_KEY` | 可选 LLM 审校服务的 API Key | 否 |
+| `LLM_API_BASE_URL` | OpenAI 兼容 API 地址；默认 `https://api.openai.com/v1` | 否 |
+| `LLM_MODEL` | 审校模型；默认 `gpt-4.1-mini` | 否 |
+| `SIGNALFLOW_LLM_REVIEW` | 设置为 `true` 后，在写入快照前调用 LLM；默认关闭 | 否 |
 
 推荐的需求表字段：
 
@@ -257,6 +260,20 @@ cp .env.example .env.local
 | `pnpm collector:write:domain` | 采集并保存业务领域今日快照 | 是 |
 
 本地维护者可以通过 `/sources` 调整来源开关，通过 `/tasks` 修改时间与业务领域并手动采集。生产环境中的这些写操作会返回 `403`，避免公开访客修改仓库配置或运行任务。
+
+### 可选 LLM 中文审校
+
+将以下变量加入本地 `.env.local`，或作为 GitHub Actions Secrets 配置；不要写入 Git：
+
+```bash
+SIGNALFLOW_LLM_REVIEW=true
+LLM_API_KEY=your_provider_key
+LLM_MODEL=gpt-4.1-mini
+# 仅使用 OpenAI 兼容第三方服务时需要覆盖：
+# LLM_API_BASE_URL=https://your-provider.example/v1
+```
+
+LLM 仅处理已筛选的当天 Top 10，并只接收公开来源标题和摘要。请求或解析失败时自动回退到规则概述；网页访问不会调用 LLM，也不会暴露 API Key。GitHub Actions 中的 Key 由仓库 Secrets 提供，下载本项目的其他人必须自行配置自己的 Key。
 
 仓库还提供两条 GitHub Actions 工作流，分别用于 AI 行业情报与业务领域情报。它们只提交 `data/intelligence` 中发生变化的每日快照。
 
