@@ -12,8 +12,12 @@
   <img alt="Phase 2" src="https://img.shields.io/badge/status-Daily_Intelligence_MVP-67806d?style=flat-square">
 </p>
 
+<p align="center">
+  <a href="https://bbcpmsignalflow.vercel.app/"><strong>在线体验 SignalFlow →</strong></a>
+</p>
+
 > [!NOTE]
-> SignalFlow 当前处于 **Phase 2 / Daily Intelligence MVP**。公开信号采集、每日 Top 10、飞书需求读取和完整产品工作区已经可运行；运行时 LLM Analyzer、通知和 Signal → Demand 写回仍在路线图中。
+> SignalFlow 当前处于 **Phase 2 / Daily Intelligence MVP**。公开信号采集、近 3 日候选与历史去重、DeepSeek / OpenAI 兼容中文审校、每日 Top 10、飞书需求读取和完整产品工作区已经可运行；结构化 AI Analyzer、通知和 Signal → Demand 写回仍在路线图中。
 
 ## SignalFlow 是什么
 
@@ -37,7 +41,7 @@ flowchart LR
 
 | 真实问题 | SignalFlow 的产品回应 |
 | --- | --- |
-| AI 产品信息依赖产品经理主动浏览，信号分散且容易错过 | 配置化 Source Registry、每日采集、去重和双轨 Top 10 情报 |
+| AI 产品信息依赖产品经理主动浏览，信号分散且容易错过 | 配置化 Source Registry、近 3 日滚动候选、跨批次去重和双轨 Top 10 情报 |
 | 需求通过表单、聊天和会议提出，提交后状态不透明 | 统一需求池、状态筛选、详情页与执行看板 |
 | 外部情报与内部需求缺少连接 | 以稳定领域模型为基础，预留 Signal → Insight → Demand 链路 |
 | Demo 容易依赖伪造数据或泄露 Secret | 公开来源快照可审计，飞书凭据仅保留在服务端 |
@@ -47,7 +51,7 @@ flowchart LR
 | 路由 | 产品模块 | 当前能力 |
 | --- | --- | --- |
 | `/` | 产品需求看板 | 需求总数、已完成数、平均等待天数、P0 秒级倒计时、状态漏斗、人员进展 |
-| `/intelligence` | AI 产品情报池 | AI 行业 / 业务领域双轨、来源筛选、每日日期、中文内容概述、原文追溯 |
+| `/intelligence` | AI 产品情报池 | AI 行业 / 业务领域双轨、来源筛选、批次日期、AI 中文概述、公开热度和原文追溯 |
 | `/demands` | 内部需求池 | 飞书实时读取、状态指标筛选、优先级、提出人、负责人和详情入口 |
 | `/demands/[id]` | 需求详情 | 展示该条飞书记录映射后的完整字段与规范化时间 |
 | `/sources` | 数据源 | 按情报轨道管理 Source Registry、来源健康度与本地开关 |
@@ -67,7 +71,7 @@ flowchart LR
 
 ![SignalFlow AI 行业情报](docs/screenshots/intelligence-technical.png)
 
-AI 行业情报将 GitHub Trending、AI 媒体与 X 动态收敛到同一阅读流。每条信号保留来源、原始标题、时间与原文入口，同时提供中文事实概述，让中文产品经理能够先快速判断“这是什么”，再决定是否深入阅读。
+AI 行业情报将 GitHub Trending、AI 媒体与 X 动态收敛到同一阅读流。每条信号保留来源、原始标题、真实发布时间与原文入口，并在证据充分时提供 AI 中文概述和公开热度，让中文产品经理先快速判断“这是什么”，再决定是否深入阅读。
 
 ### 业务领域情报：在技术趋势之外理解真实生产场景
 
@@ -110,7 +114,7 @@ AI 行业情报将 GitHub Trending、AI 媒体与 X 动态收敛到同一阅读�
 - Google News · Microdrama
 - Google News · AIGC Production
 
-两条情报轨道分别维护自己的采集时间、关注领域和每日 Top 10。`briefingDate` 表示 Asia/Shanghai 当天的采集批次；原始发布时间单独保留，不使用昨日数据冒充今日情报。
+两条情报轨道分别维护自己的采集时间、关注领域和每日 Top 10。`briefingDate` 表示 Asia/Shanghai 当天生成的情报批次；候选内容限定为近 3 个上海自然日，原始发布时间单独保留。已在历史批次出现的规范化 URL 或标题不会再次录用，避免用户重复阅读同一信号。
 
 ## Collector 如何工作
 
@@ -123,9 +127,11 @@ flowchart TD
   G --> N[Normalize]
   M --> N
   X --> N
-  N --> U[Canonical URL Deduplicate]
+  N --> F[Recent 3-day Window]
+  F --> U[URL / Title History Deduplicate]
   U --> T[Source-diverse Daily Top 10]
-  T --> C[Chinese Overview Review Layer]
+  T --> P[Public Page Context]
+  P --> C[Optional LLM Chinese Review]
   C --> J[Versioned JSON Repository]
   J --> W[SignalFlow Web App]
 ```
@@ -134,10 +140,13 @@ Collector 的工程约束：
 
 - 默认只执行 `dry-run`，只有显式 `--write` 才更新每日快照。
 - 单个来源失败不会中止整批采集；超过半数来源失败则禁止写入。
-- URL 规范化与指纹去重在来源适配器之后统一完成。
+- URL 规范化与单批次指纹去重在来源适配器之后统一完成；持久化 Seen Index 再按 URL 和规范化标题执行跨批次去重。
+- 当天批次只从近 3 个上海自然日的候选中选取，保留每条情报的真实发布时间。
 - AI 媒体、GitHub Trending 与 X 动态有独立配额，避免单一来源占满 Top 10。
 - `summaryZh` 只描述“这是什么、主要讲什么、具有什么能力”，排名与入选依据保存在独立字段。
-- Collector 写入阶段可选调用 LLM 生成中文标题和概述；页面不会实时调用 LLM。未配置时自动回退到确定性中文概述规则。
+- Collector 写入阶段可选读取公开原文上下文并调用 DeepSeek / OpenAI 兼容 LLM 生成中文标题和概述；页面不会实时调用 LLM。
+- LLM 返回内容会经过 JSON 修复与一次精简重试；仍无法可靠生成时保留来源摘要并标记为“待审校”，不使用空泛模板伪装成 AI 概述。
+- 公开热度只使用来源可验证的 GitHub stars、X 浏览/互动等指标；没有证据时明确显示暂无公开热度。
 
 ## 系统架构
 
@@ -145,8 +154,9 @@ Collector 的工程约束：
 flowchart TB
   subgraph Intelligence[Product Intelligence]
     PS[Public Sources] --> CO[Collector]
-    CO --> NR[Normalize / Deduplicate / Top 10]
-    NR --> IR[File Intelligence Repository]
+    CO --> NR[Normalize / 3-day Filter / History Deduplicate]
+    NR --> LR[Optional LLM Review / Top 10]
+    LR --> IR[File Intelligence Repository]
   end
 
   subgraph Demand[Demand Management]
@@ -189,10 +199,14 @@ data/intelligence/
 ├── technical/
 │   └── YYYY-MM-DD.json
 ├── technical-latest.json
+├── technical-seen.json
 ├── domain/
 │   └── YYYY-MM-DD.json
-└── domain-latest.json
+├── domain-latest.json
+└── domain-seen.json
 ```
+
+`*-seen.json` 只保存公开情报的 URL 与原始标题，用于跨批次去重；它不包含 API Key、飞书数据或其他 Secret。
 
 内部需求不进入 Git，运行时由服务端从你的飞书多维表格读取。克隆仓库的使用者不会获得仓库作者的飞书凭据或表格访问权限。
 
@@ -200,8 +214,8 @@ data/intelligence/
 
 ### 环境要求
 
-- Node.js `20.9+`
-- pnpm `11+`
+- Node.js `22.13+`（推荐 Node.js 24）
+- pnpm `11.16+`
 - Git
 
 ### 只体验产品情报
@@ -268,14 +282,25 @@ cp .env.example .env.local
 ```bash
 SIGNALFLOW_LLM_REVIEW=true
 LLM_API_KEY=your_provider_key
-LLM_MODEL=gpt-4.1-mini
-# 仅使用 OpenAI 兼容第三方服务时需要覆盖：
-# LLM_API_BASE_URL=https://your-provider.example/v1
+LLM_API_BASE_URL=https://api.deepseek.com/v1
+LLM_MODEL=deepseek-chat
 ```
 
-LLM 仅处理已筛选的当天 Top 10，并只接收公开来源标题、摘要及原文页面中可审计的公开描述。请求或解析失败时自动回退到规则概述；普通网页访客不会调用 LLM，也不会暴露 API Key。GitHub Actions 中的 Key 由仓库 Secrets 提供，下载本项目的其他人必须自行配置自己的 Key。
+以上示例使用 DeepSeek；也可以替换为其他 OpenAI 兼容服务。LLM 只处理当日批次中经过近 3 日过滤与历史去重后选出的最多 10 条信号，并只接收公开来源标题、摘要及原文页面中可审计的公开描述。响应会先尝试 JSON 修复，必要时精简提示词重试一次；仍失败则保留来源摘要并标记“待审校”。普通网页访客不会调用 LLM，也不会暴露 API Key。GitHub Actions 中的 Key 由仓库 Secrets 提供，下载本项目的其他人必须自行配置自己的 Key。
 
-仓库还提供两条 GitHub Actions 工作流，分别用于 AI 行业情报与业务领域情报。它们只提交 `data/intelligence` 中发生变化的每日快照。
+仓库提供两条 GitHub Actions 工作流：AI 行业情报每天 `08:17`、业务领域情报每天 `08:45` 运行，时区均为 `Asia/Shanghai`。它们只提交 `data/intelligence` 中发生变化的快照；GitHub 调度可能有少量排队延迟。
+
+```mermaid
+flowchart LR
+  GA[GitHub Actions] --> PS[Public Sources]
+  PS --> DD[3-day Filter / History Deduplicate]
+  DD --> LLM[Optional DeepSeek Review]
+  LLM --> JSON[Versioned JSON Snapshot]
+  JSON --> MAIN[Push main]
+  MAIN --> VC[Vercel Auto Deploy]
+```
+
+本地 `/tasks` 调整时间会同步更新对应工作流文件，只有将该变更提交并合并到 `main` 后，GitHub 上的定时任务才会采用新时间。Vercel 公开环境保持只读。
 
 ## 开发与验证
 
@@ -294,8 +319,8 @@ pnpm check
 
 当前测试覆盖：
 
-- Collector registry、Normalization、Deduplication 与双轨 Top 10
-- 中文概述生成与人工审校内容保护
+- Collector registry、Normalization、近 3 日窗口、单批次与跨批次去重、双轨 Top 10
+- 原文上下文提取、LLM JSON 修复与重试、审校内容保护和公开热度计算
 - 飞书 token 缓存、并发刷新、分页、限流与安全错误
 - 飞书字段映射、File Repository 和需求看板指标
 
@@ -338,7 +363,8 @@ docs/                    # 架构、产品、设计与参考项目说明
 - [x] Next.js 产品工作区与五个核心入口
 - [x] AI 行业 / 业务领域双轨情报
 - [x] 14 个公开来源、Registry、Dispatch、Normalization 与 Deduplication
-- [x] 每日 Top 10、版本化 File Repository 与中文概述保护层
+- [x] 近 3 日候选、历史已读去重、每日 Top 10 与版本化 File Repository
+- [x] DeepSeek / OpenAI 兼容中文审校、失败恢复与公开热度
 - [x] 飞书 Demand Repository、需求详情和产品需求看板
 - [x] 本地任务控制、公开环境只读和 GitHub Actions 工作流
 - [x] Collector Skill、架构文档、设计规范和自动化测试

@@ -1,7 +1,7 @@
 import assert from "node:assert/strict";
 import test from "node:test";
 
-import { loadCollectorSchedule, saveCollectorSchedule, setCollectorSourceEnabled } from "./configuration";
+import { loadCollectorSchedule, renderCollectorWorkflow, saveCollectorSchedule, setCollectorSourceEnabled } from "./configuration";
 import { loadCollectorSources } from "./registry";
 
 async function withNodeEnv<T>(value: string | undefined, operation: () => T | Promise<T>): Promise<T> {
@@ -39,4 +39,19 @@ test("rejects Collector configuration writes in production", async () => {
       /read-only/,
     );
   });
+});
+
+test("renders a production-safe workflow when a local schedule is edited", () => {
+  const workflow = renderCollectorWorkflow(
+    { enabled: true, time: "08:17", timezone: "Asia/Shanghai", dailyLimit: 10 },
+    "technical",
+  );
+
+  assert.match(workflow, /cron: "17 08 \* \* \*"/);
+  assert.match(workflow, /fetch-depth: 0/);
+  assert.match(workflow, /node-version: 24/);
+  assert.match(workflow, /SIGNALFLOW_LLM_REVIEW: \$\{\{ secrets\.SIGNALFLOW_LLM_REVIEW \}\}/);
+  assert.match(workflow, /LLM_MODEL: \$\{\{ secrets\.LLM_MODEL \}\}/);
+  assert.match(workflow, /git rebase origin\/main/);
+  assert.doesNotMatch(workflow, /node-version: 20/);
 });
