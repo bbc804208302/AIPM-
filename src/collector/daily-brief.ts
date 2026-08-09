@@ -16,7 +16,7 @@ export interface DailyBriefOptions {
   timezone?: string;
   track?: CollectorTrack;
   lookbackDays?: number;
-  historicalItems?: readonly IntelligenceSignal[];
+  historicalItems?: readonly Pick<IntelligenceSignal, "url" | "title">[];
 }
 
 function briefingDate(isoDate: string, timezone: string): string {
@@ -56,7 +56,7 @@ function normalizedTitleKey(value: string): string {
 
 function removePreviouslySeenSignals(
   signals: readonly IntelligenceCandidate[],
-  historicalItems: readonly IntelligenceSignal[],
+  historicalItems: readonly Pick<IntelligenceSignal, "url" | "title">[],
 ): readonly IntelligenceCandidate[] {
   const seenUrls = new Set(historicalItems.map((item) => item.url));
   const seenTitles = new Set(historicalItems.map((item) => normalizedTitleKey(item.title)).filter(Boolean));
