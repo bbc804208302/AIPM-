@@ -3,7 +3,7 @@
   "briefingDate": "2026-08-09",
   "timezone": "Asia/Shanghai",
   "track": "technical",
-  "generatedAt": "2026-08-09T06:42:26.624Z",
+  "generatedAt": "2026-08-09T07:01:46.046Z",
   "candidateCount": 35,
   "dailyLimit": 10,
   "items": [
@@ -21,14 +21,15 @@
       "summary": "a quiet day lets us find some connections among recent themes",
       "url": "https://www.latent.space/p/ainews-zawinskis-law-of-multiagents",
       "publishedAt": "2026-08-08T01:12:07.000Z",
-      "collectedAt": "2026-08-09T06:42:25.950Z",
+      "collectedAt": "2026-08-09T07:01:45.458Z",
       "sourceRank": 1,
       "sourceMetadata": {},
       "selectionReason": "AI 媒体近期更新",
+      "heatScore": null,
       "impactScore": null,
       "noveltyScore": null,
       "productInsight": null,
-      "createdAt": "2026-08-09T06:42:25.950Z",
+      "createdAt": "2026-08-09T07:01:45.458Z",
       "highValue": false,
       "readStatus": "未读",
       "convertedToDemand": false,
@@ -50,17 +51,18 @@
       "summary": "A self-improving RLM agent for coding workflows and long-running autonomous tasks.",
       "url": "https://github.com/PrimeIntellect-ai/prime-agent",
       "publishedAt": null,
-      "collectedAt": "2026-08-09T06:42:26.623Z",
+      "collectedAt": "2026-08-09T07:01:46.046Z",
       "sourceRank": 1,
       "sourceMetadata": {
         "language": "TypeScript",
         "starsToday": "2,483 stars today"
       },
       "selectionReason": "GitHub Trending 今日排名 #1",
+      "heatScore": 86,
       "impactScore": null,
       "noveltyScore": null,
       "productInsight": null,
-      "createdAt": "2026-08-09T06:42:26.623Z",
+      "createdAt": "2026-08-09T07:01:46.046Z",
       "highValue": false,
       "readStatus": "未读",
       "convertedToDemand": false,
@@ -82,7 +84,7 @@
       "summary": "Grok Imagine crossed a line this week. Imagine Video 1.5 shipped last month with better motion, physics, and audio. On July 31 xAI added the piece that makes actual filmmaking possible: image and",
       "url": "https://x.com/tetsuoai/status/2085365652509040768",
       "publishedAt": "2026-08-06T14:01:30.000Z",
-      "collectedAt": "2026-08-09T06:42:25.959Z",
+      "collectedAt": "2026-08-09T07:01:45.474Z",
       "sourceRank": 1,
       "sourceMetadata": {
         "author": "@tetsuoai",
@@ -92,10 +94,11 @@
         "reposts": 138
       },
       "selectionReason": "AttentionVC AI 近 3 日排名 #1",
+      "heatScore": 82,
       "impactScore": null,
       "noveltyScore": null,
       "productInsight": null,
-      "createdAt": "2026-08-09T06:42:25.959Z",
+      "createdAt": "2026-08-09T07:01:45.474Z",
       "highValue": false,
       "readStatus": "未读",
       "convertedToDemand": false,
@@ -117,14 +120,15 @@
       "summary": "",
       "url": "https://huggingface.co/blog/allenai/tutormoments",
       "publishedAt": "2026-08-07T17:53:32.000Z",
-      "collectedAt": "2026-08-09T06:42:25.780Z",
+      "collectedAt": "2026-08-09T07:01:45.254Z",
       "sourceRank": 1,
       "sourceMetadata": {},
       "selectionReason": "官方 AI 来源近期更新",
+      "heatScore": null,
       "impactScore": null,
       "noveltyScore": null,
       "productInsight": null,
-      "createdAt": "2026-08-09T06:42:25.780Z",
+      "createdAt": "2026-08-09T07:01:45.254Z",
       "highValue": false,
       "readStatus": "未读",
       "convertedToDemand": false,
@@ -146,17 +150,18 @@
       "summary": "Production-grade engineering skills for AI coding agents.",
       "url": "https://github.com/addyosmani/agent-skills",
       "publishedAt": null,
-      "collectedAt": "2026-08-09T06:42:26.623Z",
+      "collectedAt": "2026-08-09T07:01:46.046Z",
       "sourceRank": 2,
       "sourceMetadata": {
         "language": "JavaScript",
         "starsToday": "779 stars today"
       },
       "selectionReason": "GitHub Trending 今日排名 #2",
+      "heatScore": 78,
       "impactScore": null,
       "noveltyScore": null,
       "productInsight": null,
-      "createdAt": "2026-08-09T06:42:26.623Z",
+      "createdAt": "2026-08-09T07:01:46.046Z",
       "highValue": false,
       "readStatus": "未读",
       "convertedToDemand": false,
@@ -178,7 +183,7 @@
       "summary": "Last week, GPT-5.6 and Claude Fable appear to have settled an open theoretical question in wireless communications that was intensely studied between 2000 till the 2010s and that I briefly worked on",
       "url": "https://x.com/DimitrisPapail/status/2086158118354887060",
       "publishedAt": "2026-08-08T18:30:29.000Z",
-      "collectedAt": "2026-08-09T06:42:25.959Z",
+      "collectedAt": "2026-08-09T07:01:45.474Z",
       "sourceRank": 3,
       "sourceMetadata": {
         "author": "@DimitrisPapail",
@@ -188,10 +193,11 @@
         "reposts": 86
       },
       "selectionReason": "AttentionVC AI 近 3 日排名 #3",
+      "heatScore": 76,
       "impactScore": null,
       "noveltyScore": null,
       "productInsight": null,
-      "createdAt": "2026-08-09T06:42:25.959Z",
+      "createdAt": "2026-08-09T07:01:45.474Z",
       "highValue": false,
       "readStatus": "未读",
       "convertedToDemand": false,
@@ -213,14 +219,15 @@
       "summary": "OpenAI is sharing preliminary cybersecurity evaluations for Astra and the steps we’re taking to strengthen safeguards and security controls.",
       "url": "https://openai.com/index/responding-next-frontier-critical-cyber-capabilities",
       "publishedAt": "2026-08-07T15:20:00.000Z",
-      "collectedAt": "2026-08-09T06:42:25.863Z",
+      "collectedAt": "2026-08-09T07:01:45.381Z",
       "sourceRank": 1,
       "sourceMetadata": {},
       "selectionReason": "官方 AI 来源近期更新",
+      "heatScore": null,
       "impactScore": null,
       "noveltyScore": null,
       "productInsight": null,
-      "createdAt": "2026-08-09T06:42:25.863Z",
+      "createdAt": "2026-08-09T07:01:45.381Z",
       "highValue": false,
       "readStatus": "未读",
       "convertedToDemand": false,
@@ -242,17 +249,18 @@
       "summary": "Agent Skills for Google products and technologies",
       "url": "https://github.com/google/skills",
       "publishedAt": null,
-      "collectedAt": "2026-08-09T06:42:26.623Z",
+      "collectedAt": "2026-08-09T07:01:46.046Z",
       "sourceRank": 4,
       "sourceMetadata": {
         "language": "Python",
         "starsToday": "481 stars today"
       },
       "selectionReason": "GitHub Trending 今日排名 #4",
+      "heatScore": 75,
       "impactScore": null,
       "noveltyScore": null,
       "productInsight": null,
-      "createdAt": "2026-08-09T06:42:26.623Z",
+      "createdAt": "2026-08-09T07:01:46.046Z",
       "highValue": false,
       "readStatus": "未读",
       "convertedToDemand": false,
@@ -274,14 +282,15 @@
       "summary": "Discover how HSP GRUPPE uses ChatGPT Enterprise to boost productivity, improve work quality, and create more capacity for tax advisory and client service.",
       "url": "https://openai.com/index/hsp-gruppe",
       "publishedAt": "2026-08-07T09:00:00.000Z",
-      "collectedAt": "2026-08-09T06:42:25.863Z",
+      "collectedAt": "2026-08-09T07:01:45.381Z",
       "sourceRank": 2,
       "sourceMetadata": {},
       "selectionReason": "官方 AI 来源近期更新",
+      "heatScore": null,
       "impactScore": null,
       "noveltyScore": null,
       "productInsight": null,
-      "createdAt": "2026-08-09T06:42:25.863Z",
+      "createdAt": "2026-08-09T07:01:45.381Z",
       "highValue": false,
       "readStatus": "未读",
       "convertedToDemand": false,
@@ -303,17 +312,18 @@
       "summary": "Skills for Real Engineers. Straight from my .agents directory.",
       "url": "https://github.com/mattpocock/skills",
       "publishedAt": null,
-      "collectedAt": "2026-08-09T06:42:26.623Z",
+      "collectedAt": "2026-08-09T07:01:46.046Z",
       "sourceRank": 5,
       "sourceMetadata": {
         "language": "Shell",
         "starsToday": "1,359 stars today"
       },
       "selectionReason": "GitHub Trending 今日排名 #5",
+      "heatScore": 82,
       "impactScore": null,
       "noveltyScore": null,
       "productInsight": null,
-      "createdAt": "2026-08-09T06:42:26.623Z",
+      "createdAt": "2026-08-09T07:01:46.046Z",
       "highValue": false,
       "readStatus": "未读",
       "convertedToDemand": false,
@@ -328,63 +338,63 @@
       "sourceName": "GitHub Trending",
       "status": "success",
       "collected": 5,
-      "durationMs": 1019
+      "durationMs": 995
     },
     {
       "sourceId": "openai-news",
       "sourceName": "OpenAI News",
       "status": "success",
       "collected": 12,
-      "durationMs": 233
+      "durationMs": 305
     },
     {
       "sourceId": "deepmind-blog",
       "sourceName": "Google DeepMind Blog",
       "status": "success",
       "collected": 12,
-      "durationMs": 473
+      "durationMs": 311
     },
     {
       "sourceId": "huggingface-blog",
       "sourceName": "Hugging Face Blog",
       "status": "success",
       "collected": 12,
-      "durationMs": 148
+      "durationMs": 176
     },
     {
       "sourceId": "tldr-ai",
       "sourceName": "TLDR AI",
       "status": "success",
       "collected": 12,
-      "durationMs": 322
+      "durationMs": 718
     },
     {
       "sourceId": "smol-ai-news",
       "sourceName": "Smol AI News",
       "status": "success",
       "collected": 12,
-      "durationMs": 457
+      "durationMs": 532
     },
     {
       "sourceId": "latent-space",
       "sourceName": "Latent Space",
       "status": "success",
       "collected": 12,
-      "durationMs": 314
+      "durationMs": 375
     },
     {
       "sourceId": "mit-tech-review-ai",
       "sourceName": "MIT Technology Review AI",
       "status": "success",
       "collected": 10,
-      "durationMs": 257
+      "durationMs": 324
     },
     {
       "sourceId": "attentionvc-ai",
       "sourceName": "X / AttentionVC AI",
       "status": "success",
       "collected": 6,
-      "durationMs": 322
+      "durationMs": 390
     }
   ]
 }
