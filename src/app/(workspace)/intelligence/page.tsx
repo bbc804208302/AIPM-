@@ -58,7 +58,7 @@ export default async function IntelligencePage({ searchParams }: PageProps) {
           </div>
           <div className="today-date">
             <strong>{dateFormatter.format(new Date(`${brief.briefingDate}T00:00:00+08:00`))}</strong>
-            <span>{track === "domain" ? brief.sources.length > 0 ? `${brief.sources.length} 个来源 · 自动采集` : "已接入领域情报快照" : `最后更新 ${timeFormatter.format(new Date(brief.generatedAt))}`}</span>
+            <span>最后更新 {timeFormatter.format(new Date(brief.generatedAt))}</span>
           </div>
         </section>
       ) : null}
@@ -75,7 +75,7 @@ export default async function IntelligencePage({ searchParams }: PageProps) {
           />
         </section>
       )}
-      <p className="page-footnote">情报由 SignalFlow 自有 Repository 提供；标题、摘要和热度均保留来源证据，当前不执行运行时 LLM 分析。</p>
+      <p className="page-footnote">情报由 SignalFlow 自有 Repository 提供；AI 概述仅基于原始标题与摘要生成，公开热度来自可审计的 GitHub 或 X 互动数据，不代表事实可信度。</p>
     </div>
   );
 }

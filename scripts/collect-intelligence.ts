@@ -65,6 +65,7 @@ async function main(): Promise<void> {
     }
     console.log(`Unique candidates: ${result.signals.length}`);
     console.log(`Daily brief: ${brief.items.length}/${brief.dailyLimit} · ${brief.briefingDate}`);
+    console.log(`LLM reviewed: ${brief.items.filter((item) => item.translationStatus === "llm-reviewed").length}/${brief.items.length}`);
   }
 
   if (options.write) {

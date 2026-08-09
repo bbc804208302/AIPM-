@@ -1,6 +1,7 @@
-import { ArrowUpRight, CalendarDays, Github, Newspaper, Radio } from "lucide-react";
+import { ArrowUpRight, CalendarDays, Flame, Github, Newspaper, Radio } from "lucide-react";
 
 import type { CollectorCategory } from "@/collector/types";
+import { calculatePublicHeatScore } from "@/collector/heat-score";
 import type { IntelligenceCategory, IntelligenceSignal } from "@/types/intelligence";
 
 const sourceGroupLabels: Record<CollectorCategory, string> = {
@@ -46,6 +47,7 @@ export function IntelligenceBriefList({ items }: Readonly<{ items: readonly Inte
         const sourceGroupLabel = item.track === "domain" ? "业务领域" : sourceGroupLabels[item.sourceGroup];
         const title = item.titleZh || item.title;
         const summary = item.summaryZh || item.summary;
+        const heatScore = item.heatScore ?? calculatePublicHeatScore(item.sourceGroup, item.sourceMetadata);
         return (
           <li className={`intelligence-story story-${item.sourceGroup}`} key={item.id}>
             <div className="story-index">{String(index + 1).padStart(2, "0")}</div>
@@ -55,10 +57,14 @@ export function IntelligenceBriefList({ items }: Readonly<{ items: readonly Inte
                 <span>{item.source}</span>
                 <span>{categoryLabels[item.category]}</span>
                 {item.translationStatus === "reviewed" ? <span>中文审校</span> : item.translationStatus === "llm-reviewed" ? <span>LLM 审校</span> : item.translationStatus === "generated" ? <span>中文概述</span> : item.translationStatus === "needs-review" ? <span>待审校</span> : null}
+                {typeof heatScore === "number" ? <span className="story-heat"><Flame size={12} />公开热度 {heatScore}</span> : item.track === "technical" ? <span className="story-heat-empty">暂无公开热度</span> : null}
               </div>
               <h2>{title}</h2>
               {item.titleZh && item.titleZh !== item.title ? <p className="story-original-title">{item.title}</p> : null}
-              <p className="story-summary">{summary || "该来源未提供可展示摘要，请通过原文链接核对完整信息。"}</p>
+              <div className="story-ai-overview">
+                <span>AI 概述</span>
+                <p className="story-summary">{summary || "该来源未提供可展示摘要，请通过原文链接核对完整信息。"}</p>
+              </div>
               <div className="story-footer">
                 <div className="story-facts">
                   <span>{item.selectionReason}</span>
