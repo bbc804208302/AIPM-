@@ -28,6 +28,13 @@ function briefingDate(isoDate: string, timezone: string): string {
   return `${read("year")}-${read("month")}-${read("day")}`;
 }
 
+function isSameDaySignal(signal: IntelligenceCandidate, date: string, timezone: string): boolean {
+  // GitHub Trending is a live daily ranking and does not expose a reliable publication timestamp.
+  if (signal.category === "github-trending") return true;
+  if (!signal.publishedAt) return false;
+  return briefingDate(signal.publishedAt, timezone) === date;
+}
+
 function intelligenceCategory(signal: IntelligenceCandidate): IntelligenceCategory {
   const text = `${signal.title} ${signal.excerpt}`.toLowerCase();
   if (/\bagent\b|agentic|\bmcp\b/.test(text)) return "agent";
@@ -87,10 +94,10 @@ function selectDailySignals(signals: readonly IntelligenceCandidate[], limit: nu
 }
 
 function selectionReason(signal: IntelligenceCandidate): string {
-  if (signal.track === "domain") return signal.trustTier === "primary" ? "业务领域一手来源近期更新" : "业务领域公开来源近期更新";
+  if (signal.track === "domain") return signal.trustTier === "primary" ? "业务领域一手来源今日更新" : "业务领域公开来源今日更新";
   if (signal.category === "github-trending") return `GitHub Trending 今日排名 #${signal.rank ?? "—"}`;
-  if (signal.category === "x-viral") return `AttentionVC AI 近 3 日排名 #${signal.rank ?? "—"}`;
-  return signal.trustTier === "primary" ? "官方 AI 来源近期更新" : "AI 媒体近期更新";
+  if (signal.category === "x-viral") return `AttentionVC AI 今日信号 #${signal.rank ?? "—"}`;
+  return signal.trustTier === "primary" ? "官方 AI 来源今日更新" : "AI 媒体今日更新";
 }
 
 function toIntelligenceSignal(signal: IntelligenceCandidate, date: string): IntelligenceSignal {
@@ -132,7 +139,8 @@ export function buildDailyIntelligenceBrief(
   const track = options.track ?? "technical";
   const date = briefingDate(result.finishedAt, timezone);
   const trackSignals = result.signals.filter((signal) => signal.track === track);
-  const items = selectDailySignals(trackSignals, dailyLimit).map((signal) => toIntelligenceSignal(signal, date));
+  const sameDaySignals = trackSignals.filter((signal) => isSameDaySignal(signal, date, timezone));
+  const items = selectDailySignals(sameDaySignals, dailyLimit).map((signal) => toIntelligenceSignal(signal, date));
 
   return {
     schemaVersion: 1,
@@ -140,7 +148,7 @@ export function buildDailyIntelligenceBrief(
     timezone,
     track,
     generatedAt: result.finishedAt,
-    candidateCount: trackSignals.length,
+    candidateCount: sameDaySignals.length,
     dailyLimit,
     items,
     sources: result.sources,

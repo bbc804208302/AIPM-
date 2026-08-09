@@ -35,3 +35,10 @@ test("keeps the deterministic brief when the LLM response is invalid", async () 
   const reviewed = await reviewBriefWithLlm(brief, { SIGNALFLOW_LLM_REVIEW: "true", LLM_API_KEY: "test-key" }, fetcher as typeof fetch);
   assert.equal(reviewed, brief);
 });
+
+test("accepts JSON wrapped in provider commentary", async () => {
+  const content = `结果如下：\n${JSON.stringify({ items: [{ id: "SIG-1", titleZh: "微短剧平台收入增长", summaryZh: "该平台通过移动端竖屏连续剧扩大付费内容规模，报道预计其收入有望达到 10 亿美元。" }] })}`;
+  const fetcher = async () => new Response(JSON.stringify({ choices: [{ message: { content } }] }), { status: 200 });
+  const reviewed = await reviewBriefWithLlm(brief, { SIGNALFLOW_LLM_REVIEW: "true", LLM_API_KEY: "test-key" }, fetcher as typeof fetch);
+  assert.equal(reviewed.items[0]?.translationStatus, "llm-reviewed");
+});

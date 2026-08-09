@@ -273,7 +273,7 @@ LLM_MODEL=gpt-4.1-mini
 # LLM_API_BASE_URL=https://your-provider.example/v1
 ```
 
-LLM 仅处理已筛选的当天 Top 10，并只接收公开来源标题和摘要。请求或解析失败时自动回退到规则概述；网页访问不会调用 LLM，也不会暴露 API Key。GitHub Actions 中的 Key 由仓库 Secrets 提供，下载本项目的其他人必须自行配置自己的 Key。
+LLM 仅处理已筛选的当天 Top 10，并只接收公开来源标题、摘要及原文页面中可审计的公开描述。请求或解析失败时自动回退到规则概述；普通网页访客不会调用 LLM，也不会暴露 API Key。GitHub Actions 中的 Key 由仓库 Secrets 提供，下载本项目的其他人必须自行配置自己的 Key。
 
 仓库还提供两条 GitHub Actions 工作流，分别用于 AI 行业情报与业务领域情报。它们只提交 `data/intelligence` 中发生变化的每日快照。
 

@@ -13,7 +13,7 @@ AI 行业情报支持按 GitHub Trending、AI 媒体和 X 动态筛选。AI 媒�
 
 ## 今日情报
 
-“今日情报”指 Asia/Shanghai 当天 Collector 批次选出的重点信号，不等于所有原文都在当天发布。
+“今日情报”指 Asia/Shanghai 当天发布或形成的重点信号。RSS、媒体和 X 内容必须具有当天的 `publishedAt`；GitHub Trending 是当天实时榜单，允许没有原始发布时间。当天有效内容不足 10 条时如实展示更少条目，不使用历史内容回填。
 
 - `briefingDate`：今日批次日期。
 - `publishedAt`：原始来源发布时间。
