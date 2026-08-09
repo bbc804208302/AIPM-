@@ -60,7 +60,7 @@ async function writeJson(filePath: string, value: unknown): Promise<void> {
   await fs.writeFile(filePath, `${JSON.stringify(value, null, 2)}\n`, "utf8");
 }
 
-function renderCollectorWorkflow(schedule: CollectorSchedule, track: CollectorTrack): string {
+export function renderCollectorWorkflow(schedule: CollectorSchedule, track: CollectorTrack): string {
   const [hour, minute] = schedule.time.split(":");
   const scheduleTrigger = schedule.enabled
     ? `  schedule:\n    - cron: "${minute} ${hour} * * *"\n      timezone: "${schedule.timezone}"\n`
@@ -85,23 +85,29 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 24
 
       - name: Setup pnpm
         uses: pnpm/action-setup@v4
         with:
           version: 11.16.0
 
-      - name: Setup Node.js
-        uses: actions/setup-node@v4
-        with:
-          node-version: 20
-          cache: pnpm
-
       - name: Install dependencies
         run: pnpm install --frozen-lockfile
 
       - name: Collect and save today's intelligence
         run: ${command}
+        env:
+          SIGNALFLOW_LLM_REVIEW: \${{ secrets.SIGNALFLOW_LLM_REVIEW }}
+          LLM_API_KEY: \${{ secrets.LLM_API_KEY }}
+          LLM_API_BASE_URL: \${{ secrets.LLM_API_BASE_URL }}
+          LLM_MODEL: \${{ secrets.LLM_MODEL }}
 
       - name: Commit daily snapshot
         run: |
@@ -113,7 +119,14 @@ jobs:
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add data/intelligence
           git commit -m "data: update daily intelligence"
-          git push
+          git fetch origin main
+          git rebase origin/main
+          if ! git push origin HEAD:main; then
+            echo "main changed while publishing; syncing once more."
+            git fetch origin main
+            git rebase origin/main
+            git push origin HEAD:main
+          fi
 `;
 }
 
