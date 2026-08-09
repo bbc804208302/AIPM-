@@ -47,3 +47,42 @@ test("preserves reviewed Chinese content on repeated collection", () => {
   assert.equal(enriched.items[0]?.titleZh, "人工标题");
   assert.equal(enriched.items[0]?.translationStatus, "reviewed");
 });
+
+test("creates a fact-based Chinese overview for a known domain signal", () => {
+  const brief = buildDailyIntelligenceBrief({
+    ...result,
+    signals: [{
+      ...result.signals[0],
+      id: "SIG-DOMAIN-1",
+      track: "domain",
+      sourceId: "google-news-microdrama",
+      sourceName: "Google News · Microdrama",
+      title: "Microdrama platform on track to earn $1B",
+      excerpt: "Microdrama platform on track to earn $1B - KTLA",
+    }],
+  }, { track: "domain" });
+  const item = enrichBriefWithChineseOverview(brief).items[0];
+  assert.match(item?.titleZh ?? "", /10 亿美元/);
+  assert.match(item?.summaryZh ?? "", /商业化规模/);
+  assert.doesNotMatch(item?.summaryZh ?? "", /发布了一则/);
+  assert.equal(item?.translationStatus, "generated");
+});
+
+test("marks domain signals with only a repeated headline for review", () => {
+  const brief = buildDailyIntelligenceBrief({
+    ...result,
+    signals: [{
+      ...result.signals[0],
+      id: "SIG-DOMAIN-2",
+      track: "domain",
+      sourceId: "google-news-microdrama",
+      sourceName: "Google News · Microdrama",
+      title: "A short and ambiguous domain headline",
+      excerpt: "A short and ambiguous domain headline",
+    }],
+  }, { track: "domain" });
+  const item = enrichBriefWithChineseOverview(brief).items[0];
+  assert.match(item?.titleZh ?? "", /待审校/);
+  assert.match(item?.summaryZh ?? "", /无法可靠生成中文说明/);
+  assert.equal(item?.translationStatus, "needs-review");
+});
