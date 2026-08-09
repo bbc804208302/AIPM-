@@ -3,7 +3,7 @@
   "briefingDate": "2026-08-09",
   "timezone": "Asia/Shanghai",
   "track": "domain",
-  "generatedAt": "2026-08-09T06:45:27.890Z",
+  "generatedAt": "2026-08-09T07:47:26.012Z",
   "candidateCount": 24,
   "dailyLimit": 10,
   "items": [
@@ -24,7 +24,8 @@
       "collectedAt": "2026-08-09T06:45:27.890Z",
       "sourceRank": 1,
       "sourceMetadata": {
-        "topic": "短剧"
+        "topic": "短剧",
+        "pageDescription": "Comprehensive up-to-date news coverage, aggregated from sources all over the world by Google News."
       },
       "selectionReason": "业务领域公开来源近期更新",
       "impactScore": null,
@@ -34,9 +35,9 @@
       "highValue": false,
       "readStatus": "未读",
       "convertedToDemand": false,
-      "titleZh": "ReelShort：竖屏短剧正在重塑内容叙事",
-      "summaryZh": "报道讨论 ReelShort 所代表的竖屏短剧形态：以移动端连续剧情和高频内容消费为核心，正在改变故事设计、发行节奏与内容产品的组织方式。文章关注的是短剧叙事与平台产品形态，而非新的 AI 工具发布。",
-      "translationStatus": "generated"
+      "titleZh": "ReelShort高管Marc Hermann谈竖屏剧重新定义叙事",
+      "summaryZh": "ReelShort的Marc Hermann认为，竖屏剧正逐个重新定义故事讲述方式，推动这一新叙事形式发展。",
+      "translationStatus": "llm-reviewed"
     },
     {
       "id": "SIG-20260809-85E4FBD5",
@@ -55,7 +56,8 @@
       "collectedAt": "2026-08-09T06:45:27.890Z",
       "sourceRank": 10,
       "sourceMetadata": {
-        "topic": "短剧"
+        "topic": "短剧",
+        "pageDescription": "Comprehensive up-to-date news coverage, aggregated from sources all over the world by Google News."
       },
       "selectionReason": "业务领域公开来源近期更新",
       "impactScore": null,
@@ -65,9 +67,9 @@
       "highValue": false,
       "readStatus": "未读",
       "convertedToDemand": false,
-      "titleZh": "短剧行业原文待审校",
-      "summaryZh": "该来源只提供了标题或信息量有限的摘要，当前无法可靠生成中文说明。已保留原始标题、来源与链接，建议查看原文；后续可由人工或离线审校补充中文概述。",
-      "translationStatus": "needs-review"
+      "titleZh": "The Script推出微短剧《人类使用指南》",
+      "summaryZh": "The Script推出名为《The User's Guide to Being Human》的微短剧系列，围绕人类生活指南主题展开。",
+      "translationStatus": "llm-reviewed"
     },
     {
       "id": "SIG-20260809-1C22FBF5",
@@ -86,7 +88,8 @@
       "collectedAt": "2026-08-09T06:45:27.890Z",
       "sourceRank": 5,
       "sourceMetadata": {
-        "topic": "短剧"
+        "topic": "短剧",
+        "pageDescription": "Comprehensive up-to-date news coverage, aggregated from sources all over the world by Google News."
       },
       "selectionReason": "业务领域公开来源近期更新",
       "impactScore": null,
@@ -96,9 +99,9 @@
       "highValue": false,
       "readStatus": "未读",
       "convertedToDemand": false,
-      "titleZh": "短剧行业原文待审校",
-      "summaryZh": "该来源只提供了标题或信息量有限的摘要，当前无法可靠生成中文说明。已保留原始标题、来源与链接，建议查看原文；后续可由人工或离线审校补充中文概述。",
-      "translationStatus": "needs-review"
+      "titleZh": "i-D《政权更迭》与另一部Phia微短剧",
+      "summaryZh": "来源提供的信息有限，暂无法形成可靠中文概述。",
+      "translationStatus": "llm-reviewed"
     },
     {
       "id": "SIG-20260809-BE4B4DF3",
@@ -117,7 +120,8 @@
       "collectedAt": "2026-08-09T06:45:27.890Z",
       "sourceRank": 14,
       "sourceMetadata": {
-        "topic": "短剧"
+        "topic": "短剧",
+        "pageDescription": "Comprehensive up-to-date news coverage, aggregated from sources all over the world by Google News."
       },
       "selectionReason": "业务领域公开来源近期更新",
       "impactScore": null,
@@ -127,9 +131,9 @@
       "highValue": false,
       "readStatus": "未读",
       "convertedToDemand": false,
-      "titleZh": "业务领域原文待审校",
-      "summaryZh": "这是一条业务领域公开来源信息，原文围绕“Short Drama Actors Graduated from Central Academy of Drama: After Playing Overbearing CEOs, Now Selling Vegetables at Home with No Roles to Shoot - 36 Kr”展开。来源摘要：Short Drama Actors Graduated from Central Academy of Drama: After Playing Overbearing CEOs, Now Selling Vegetables at Home with No Roles to Shoot 36 Kr。当前未接入运行时 LLM 翻译，请以原文核对具体事实。",
-      "translationStatus": "generated"
+      "titleZh": "中戏毕业短剧演员无戏可拍在家卖菜",
+      "summaryZh": "中央戏剧学院毕业的短剧演员曾饰演霸道总裁，如今无角色可拍，只能在家卖菜，反映短剧行业演员的生存现状。",
+      "translationStatus": "llm-reviewed"
     },
     {
       "id": "SIG-20260809-9796E241",
@@ -148,7 +152,8 @@
       "collectedAt": "2026-08-09T06:45:27.576Z",
       "sourceRank": 1,
       "sourceMetadata": {
-        "topic": "影视 / AIGC"
+        "topic": "影视 / AIGC",
+        "pageDescription": "For our \"Deals of the Week,\" we're looking at some rugged, yet lightweight, Tilta Matte Box options which are ready for your camera setups For our \"Deals of the Week,\" we're looking at some rugged, yet lightweight, Tilta Matte Box options which are ready for your camera setups Think you're ready to upgrade your camera setups with a tough and rugged, yet lightweight and compact, matte box? Well, you're in luck, as these Tilta Matte Box options are on sale and ready for your cameras. For this week's \"Deals of the Week\" roundup, we have several variations of this popular Tilta Matte Box, which are all built rugged for daily use on your camera rig, but also still lightweight enough for handheld gimbal, stabilizer, or drone work."
       },
       "selectionReason": "业务领域公开来源近期更新",
       "impactScore": null,
@@ -158,9 +163,9 @@
       "highValue": false,
       "readStatus": "未读",
       "convertedToDemand": false,
-      "titleZh": "Tilta 遮光斗促销：面向轻量化机位的镜头控制配件",
-      "summaryZh": "这是一则影视拍摄器材信息，介绍 Tilta 遮光斗在手持、稳定器和无人机等轻量化机位中的使用场景，并包含相关产品促销信息。它关注的是拍摄流程中的控光与滤镜管理，不是 AI 产品新闻。",
-      "translationStatus": "generated"
+      "titleZh": "Tilta多款遮光斗本周特价",
+      "summaryZh": "No Film School本周Deals of the Week推荐Tilta多款遮光斗，轻便坚固，适用于手持稳定器或无人机拍摄，价格从91.80美元起。",
+      "translationStatus": "llm-reviewed"
     },
     {
       "id": "SIG-20260809-004B5BF3",
@@ -179,7 +184,8 @@
       "collectedAt": "2026-08-09T06:45:27.576Z",
       "sourceRank": 2,
       "sourceMetadata": {
-        "topic": "影视 / AIGC"
+        "topic": "影视 / AIGC",
+        "pageDescription": "Use Brian Williamson's HEART framework. There are no real shortcuts to writing something good, especially since there are so many ways to attack story. The closest you can probably get if you're writing in a specific genre is to look at that genre's story tropes and just copy the steps. I'm thinking in this case specifically of Lifetime and Hallmark movies, and how they always hit the same beats. Romance actually is a great example of a genre in which the beats are both reliable and expected by the audience. But story consultant Brian Williamson, who runs the channel Plot Luck, has a slightly different approach. In a recent video, he points out that you can hit every convention the romance genre asks for and still leave an audience cold, because, as he said, \"love does not care about your beat sheet.\" If viewers don't believe in the romance and the characters, then why would they keep watching at all?"
       },
       "selectionReason": "业务领域公开来源近期更新",
       "impactScore": null,
@@ -189,9 +195,9 @@
       "highValue": false,
       "readStatus": "未读",
       "convertedToDemand": false,
-      "titleZh": "HEART 叙事框架：用人物关系推进爱情故事",
-      "summaryZh": "文章提出 HEART 写作框架，用于帮助创作者从人物关系、情感变化和冲突推进等角度组织爱情故事。这是一条编剧方法论信息，可用于观察内容创作工具和创作辅助能力的需求。",
-      "translationStatus": "generated"
+      "titleZh": "浪漫剧本写作：基于角色而非套路的HEART框架",
+      "summaryZh": "故事顾问Brian Williamson在Plot Luck频道提出HEART框架，指导浪漫类作品从角色出发构建故事，而非依赖类型片的固定节拍。",
+      "translationStatus": "llm-reviewed"
     },
     {
       "id": "SIG-20260809-17854F96",
@@ -210,7 +216,8 @@
       "collectedAt": "2026-08-09T06:45:27.576Z",
       "sourceRank": 3,
       "sourceMetadata": {
-        "topic": "影视 / AIGC"
+        "topic": "影视 / AIGC",
+        "pageDescription": "Del Toro, Chazelle, and Cameron on the skill that has nothing to do with filmmaking. Del Toro, Chazelle, and Cameron on the skill that has nothing to do with filmmaking. Making a movie is brutal. It's hard. We know. But the lead-up to the green light might even be worse. Before you get to hire actors or buy props, you often have to sit across from someone holding the money and talk them into parting with it. It's a skill that has almost nothing to do with filmmaking. You have to be a performer yourself."
       },
       "selectionReason": "业务领域公开来源近期更新",
       "impactScore": null,
@@ -220,9 +227,9 @@
       "highValue": false,
       "readStatus": "未读",
       "convertedToDemand": false,
-      "titleZh": "影视项目立项：从提案到获得制作资金的路径",
-      "summaryZh": "文章围绕影视项目的提案、开发与立项过程展开，讨论导演和创作者如何让项目获得资金与制作机会。它反映的是影视项目开发流程，不应被误标为 AI 行业动态。",
-      "translationStatus": "generated"
+      "titleZh": "电影绿灯背后的真正技能：推销",
+      "summaryZh": "StudioBinder新视频汇集德尔·托罗、沙泽勒、卡梅隆等导演，指出获得电影绿灯的关键在于向投资者推销项目，这一能力与拍片技巧本身无关。",
+      "translationStatus": "llm-reviewed"
     },
     {
       "id": "SIG-20260809-04914BE2",
@@ -241,7 +248,8 @@
       "collectedAt": "2026-08-09T06:45:27.576Z",
       "sourceRank": 4,
       "sourceMetadata": {
-        "topic": "影视 / AIGC"
+        "topic": "影视 / AIGC",
+        "pageDescription": "These underrated titles are celebrating their 35th anniversary. These underrated titles are celebrating their 35th anniversary. 1991 was a huge year for movies, so it makes sense that there are a lot of overlooked titles left on the table. Who could pay attention to every movie coming out in between all-timer titles like The Silence of the Lambs, Beauty and the Beast, Boyz n the Hood, Terminator 2: Judgment Day, Home Alone, and Thelma & Louise? We’re only human. We simply don’t have the bandwidth. However, as these movies all celebrate their 35th anniversary, let’s take a look at 10 underappreciated 1991 gems that deserve more attention."
       },
       "selectionReason": "业务领域公开来源近期更新",
       "impactScore": null,
@@ -251,9 +259,9 @@
       "highValue": false,
       "readStatus": "未读",
       "convertedToDemand": false,
-      "titleZh": "业务领域原文待审校",
-      "summaryZh": "这是一条业务领域公开来源信息，原文围绕“10 Overlooked Movies of 1991”展开。来源摘要：1991 was a huge year for movies, so it makes sense that there are a lot of overlooked titles left on the table. Who could pay attention to every movie coming out in between all-tim…。当前未接入运行时 LLM 翻译，请以原文核对具体事实。",
-      "translationStatus": "generated"
+      "titleZh": "1991年10部被忽视的电影佳作",
+      "summaryZh": "盘点1991年10部被低估的电影，包括朱莉娅·罗伯茨主演的《与敌共眠》等，这些影片正迎来上映35周年。",
+      "translationStatus": "llm-reviewed"
     },
     {
       "id": "SIG-20260809-5E207665",
@@ -272,7 +280,8 @@
       "collectedAt": "2026-08-09T06:45:27.576Z",
       "sourceRank": 5,
       "sourceMetadata": {
-        "topic": "影视 / AIGC"
+        "topic": "影视 / AIGC",
+        "pageDescription": "‘The Jazz Singer’ permanently altered cinema’s trajectory. ‘The Jazz Singer’ permanently altered cinema’s trajectory. Thanks to the past several decades of commercialized cinema, it’s easy to forget that they were at one time completely devoid of dialogue. They relied on inserted cue cards or music to communicate entire storylines. But one film in 1927 changed everything: The Jazz Singer."
       },
       "selectionReason": "业务领域公开来源近期更新",
       "impactScore": null,
@@ -282,9 +291,9 @@
       "highValue": false,
       "readStatus": "未读",
       "convertedToDemand": false,
-      "titleZh": "业务领域原文待审校",
-      "summaryZh": "这是一条业务领域公开来源信息，原文围绕“The 1927 Film That Ended Hollywood’s Silent Era”展开。来源摘要：Thanks to the past several decades of commercialized cinema, it’s easy to forget that they were at one time completely devoid of dialogue. They relied on inserted cue cards or musi…。当前未接入运行时 LLM 翻译，请以原文核对具体事实。",
-      "translationStatus": "generated"
+      "titleZh": "1927年《爵士歌手》终结好莱坞无声时代",
+      "summaryZh": "1927年上映的《爵士歌手》首次引入同步对话，彻底改变电影叙事方式，为有声电影时代拉开序幕。",
+      "translationStatus": "llm-reviewed"
     },
     {
       "id": "SIG-20260809-C7AACEC0",
@@ -303,7 +312,8 @@
       "collectedAt": "2026-08-09T06:45:27.576Z",
       "sourceRank": 6,
       "sourceMetadata": {
-        "topic": "影视 / AIGC"
+        "topic": "影视 / AIGC",
+        "pageDescription": "“No great movie is too long, and now bad movie is short enough” - Roger Ebert “No great movie is too long, and now bad movie is short enough” - Roger Ebert Pacing can simultaneously be any movie’s secret weapon, as well as its most potent inadequacy. You could be doing everything right at the most pristine level technically, but if you start to bore your audience with a 90-minute runtime, you’re in trouble. But you could also make 150-180 minutes feel like 90 if you do everything right. Here are some of the best-paced movies of all time."
       },
       "selectionReason": "业务领域公开来源近期更新",
       "impactScore": null,
@@ -313,9 +323,9 @@
       "highValue": false,
       "readStatus": "未读",
       "convertedToDemand": false,
-      "titleZh": "业务领域原文待审校",
-      "summaryZh": "这是一条业务领域公开来源信息，原文围绕“5 Best Paced Movies of All Time”展开。来源摘要：Pacing can simultaneously be any movie’s secret weapon, as well as its most potent inadequacy. You could be doing everything right at the most pristine level technically, but if yo…。当前未接入运行时 LLM 翻译，请以原文核对具体事实。",
-      "translationStatus": "generated"
+      "titleZh": "影史5部节奏最佳电影",
+      "summaryZh": "文章列出影史5部节奏掌控最佳的电影，包括《星球大战：新希望》，并引用罗杰·伊伯特关于电影时长的名言。",
+      "translationStatus": "llm-reviewed"
     }
   ],
   "sources": [
@@ -324,35 +334,35 @@
       "sourceName": "Cartoon Brew",
       "status": "success",
       "collected": 12,
-      "durationMs": 390
+      "durationMs": 219
     },
     {
       "sourceId": "no-film-school",
       "sourceName": "No Film School",
       "status": "success",
       "collected": 15,
-      "durationMs": 231
+      "durationMs": 250
     },
     {
       "sourceId": "arxiv-creative-video",
       "sourceName": "arXiv cs.CV",
       "status": "success",
       "collected": 0,
-      "durationMs": 241
+      "durationMs": 84
     },
     {
       "sourceId": "google-news-microdrama",
       "sourceName": "Google News · Microdrama",
       "status": "success",
       "collected": 15,
-      "durationMs": 540
+      "durationMs": 500
     },
     {
       "sourceId": "google-news-aigc-production",
       "sourceName": "Google News · AIGC Production",
       "status": "success",
       "collected": 15,
-      "durationMs": 529
+      "durationMs": 513
     }
   ]
 }
