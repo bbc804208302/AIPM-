@@ -1,4 +1,5 @@
 import type { DailyIntelligenceBrief, IntelligenceSignal } from "@/types/intelligence";
+import { jsonrepair } from "jsonrepair";
 
 const maximumItemsPerReview = 10;
 const maximumSourceTextLength = 1_200;
@@ -20,6 +21,10 @@ interface LlmReviewResponse {
 type FetchLike = typeof fetch;
 type Environment = Readonly<Record<string, string | undefined>>;
 
+function hasFinalReview(item: IntelligenceSignal): boolean {
+  return item.translationStatus === "reviewed" || item.translationStatus === "llm-reviewed";
+}
+
 function normalizeApiBaseUrl(value: string): string {
   return value.replace(/\/+$/, "");
 }
@@ -36,24 +41,37 @@ function parseJsonContent(content: string): LlmReviewResponse | null {
   const firstBrace = unfenced.indexOf("{");
   const lastBrace = unfenced.lastIndexOf("}");
   const cleaned = firstBrace >= 0 && lastBrace > firstBrace ? unfenced.slice(firstBrace, lastBrace + 1) : unfenced;
-  try {
-    const parsed: unknown = JSON.parse(cleaned);
-    if (!parsed || typeof parsed !== "object" || !Array.isArray((parsed as { items?: unknown }).items)) return null;
-    return parsed as LlmReviewResponse;
-  } catch {
-    return null;
+  for (const candidate of [cleaned, (() => {
+    try {
+      return jsonrepair(cleaned);
+    } catch {
+      return "";
+    }
+  })()]) {
+    if (!candidate) continue;
+    try {
+      const parsed: unknown = JSON.parse(candidate);
+      if (Array.isArray(parsed)) return { items: parsed };
+      if (parsed && typeof parsed === "object" && Array.isArray((parsed as { items?: unknown }).items)) {
+        return parsed as LlmReviewResponse;
+      }
+    } catch {
+      continue;
+    }
   }
+  return null;
 }
 
-function promptFor(brief: DailyIntelligenceBrief): string {
-  const items = brief.items.filter((item) => item.translationStatus !== "reviewed").slice(0, maximumItemsPerReview).map((item) => ({
+function promptFor(brief: DailyIntelligenceBrief, compact = false): string {
+  const sourceTextLength = compact ? 600 : maximumSourceTextLength;
+  const items = brief.items.filter((item) => !hasFinalReview(item)).slice(0, maximumItemsPerReview).map((item) => ({
     id: item.id,
     track: item.track,
     source: item.source,
     title: item.title,
-    excerpt: item.summary.slice(0, maximumSourceTextLength),
+    excerpt: item.summary.slice(0, sourceTextLength),
     pageDescription: typeof item.sourceMetadata.pageDescription === "string"
-      ? item.sourceMetadata.pageDescription.slice(0, maximumSourceTextLength)
+      ? item.sourceMetadata.pageDescription.slice(0, sourceTextLength)
       : "",
   }));
 
@@ -68,7 +86,8 @@ function promptFor(brief: DailyIntelligenceBrief): string {
     "禁止出现：某来源发布新动态、发布了内容更新、这是一则、该文章介绍、值得产品经理关注、具体以原文为准、以项目说明为准、入选、排名。",
     "不得补充证据中没有的数字、能力、因果、技术方案或产品结论。业务领域内容不必强行描述为 AI 新闻。信息不足时宁可写短，不得用空泛模板填充。",
     "信息不足、无法可靠判断时，titleZh 保留准确翻译后的原始标题，summaryZh 写“来源提供的信息有限，暂无法形成可靠中文概述。”",
-    "只输出合法 JSON，不要 Markdown，不要解释。格式：{\"items\":[{\"id\":\"...\",\"titleZh\":\"...\",\"summaryZh\":\"...\"}]}。",
+    "必须输出且仅输出一个合法 JSON 对象，不要 Markdown、代码围栏或解释。所有输入 id 必须原样返回。格式：{\"items\":[{\"id\":\"...\",\"titleZh\":\"...\",\"summaryZh\":\"...\"}]}。",
+    ...(compact ? ["这是格式修复重试：请缩短措辞，并在输出前确认 JSON 可被 JSON.parse 直接解析。"] : []),
     `输入：${JSON.stringify({ items })}`,
   ].join("\n");
 }
@@ -97,10 +116,24 @@ function applyLlmItems(brief: DailyIntelligenceBrief, response: LlmReviewRespons
   return {
     ...brief,
     items: brief.items.map((item) => {
-      if (item.translationStatus === "reviewed") return item;
+      if (hasFinalReview(item)) return item;
       const revision = reviewed.get(item.id);
       return revision ? { ...item, ...revision, translationStatus: "llm-reviewed" } : item;
     }),
+  };
+}
+
+export function prepareBriefForLlmReview(
+  collectedBrief: DailyIntelligenceBrief,
+  previousBrief: DailyIntelligenceBrief | null,
+): DailyIntelligenceBrief {
+  const needsRepair = previousBrief?.briefingDate === collectedBrief.briefingDate
+    && previousBrief.items.some((item) => !hasFinalReview(item));
+  if (!needsRepair || !previousBrief) return collectedBrief;
+  return {
+    ...previousBrief,
+    generatedAt: collectedBrief.generatedAt,
+    sources: collectedBrief.sources,
   };
 }
 
@@ -120,43 +153,50 @@ export async function reviewBriefWithLlm(
   }
 
   try {
-    const response = await fetcher(`${config.apiBaseUrl}/chat/completions`, {
-      method: "POST",
-      headers: {
-        "content-type": "application/json",
-        authorization: `Bearer ${config.apiKey}`,
-      },
-      body: JSON.stringify({
-        model: config.model,
-        temperature: 0.1,
-        max_tokens: 2_500,
-        response_format: { type: "json_object" },
-        messages: [
-          { role: "system", content: "你是严谨的中文情报编辑，只能输出 JSON。" },
-          { role: "user", content: promptFor(brief) },
-        ],
-      }),
-    });
-    if (!response.ok) {
-      console.warn(`LLM review fallback: provider returned HTTP ${response.status}.`);
-      return brief;
-    }
+    for (let attempt = 1; attempt <= 2; attempt += 1) {
+      const response = await fetcher(`${config.apiBaseUrl}/chat/completions`, {
+        method: "POST",
+        headers: {
+          "content-type": "application/json",
+          authorization: `Bearer ${config.apiKey}`,
+        },
+        body: JSON.stringify({
+          model: config.model,
+          temperature: 0.1,
+          max_tokens: 4_000,
+          response_format: { type: "json_object" },
+          messages: [
+            { role: "system", content: "你是严谨的中文情报编辑。你的完整回复必须是可被 JSON.parse 直接解析的 JSON 对象。" },
+            { role: "user", content: promptFor(brief, attempt > 1) },
+          ],
+        }),
+      });
+      if (!response.ok) {
+        console.warn(`LLM review fallback: provider returned HTTP ${response.status}.`);
+        return brief;
+      }
 
-    const payload: unknown = await response.json();
-    const content = (payload as { choices?: Array<{ message?: { content?: unknown } }> }).choices?.[0]?.message?.content;
-    if (typeof content !== "string") {
-      console.warn("LLM review fallback: provider response did not contain message content.");
-      return brief;
+      const payload: unknown = await response.json();
+      const content = (payload as { choices?: Array<{ message?: { content?: unknown } }> }).choices?.[0]?.message?.content;
+      if (typeof content !== "string") {
+        console.warn("LLM review fallback: provider response did not contain message content.");
+        return brief;
+      }
+      const parsed = parseJsonContent(content);
+      if (!parsed) {
+        if (attempt === 1) {
+          console.warn("LLM review retry: provider response was not valid JSON; retrying with a compact prompt.");
+          continue;
+        }
+        console.warn("LLM review fallback: provider response was not valid JSON after retry.");
+        return brief;
+      }
+      const reviewed = applyLlmItems(brief, parsed);
+      const reviewedCount = reviewed.items.filter((item) => item.translationStatus === "llm-reviewed").length;
+      console.info(`LLM review completed: ${reviewedCount}/${brief.items.length} items.`);
+      return reviewed;
     }
-    const parsed = parseJsonContent(content);
-    if (!parsed) {
-      console.warn("LLM review fallback: provider response was not valid JSON.");
-      return brief;
-    }
-    const reviewed = applyLlmItems(brief, parsed);
-    const reviewedCount = reviewed.items.filter((item) => item.translationStatus === "llm-reviewed").length;
-    console.info(`LLM review completed: ${reviewedCount}/${brief.items.length} items.`);
-    return reviewed;
+    return brief;
   } catch (error) {
     console.warn(`LLM review fallback: ${error instanceof Error ? error.message.slice(0, 160) : "request failed"}.`);
     return brief;

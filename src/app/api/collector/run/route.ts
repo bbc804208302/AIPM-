@@ -5,7 +5,7 @@ import { domainFocusAreaOptions, loadCollectorSchedule } from "@/collector/confi
 import { isCollectorConfigurationEditable } from "@/collector/runtime";
 import { buildDailyIntelligenceBrief } from "@/collector/daily-brief";
 import { enrichBriefWithChineseOverview } from "@/collector/chinese-overview";
-import { reviewBriefWithLlm } from "@/collector/llm-review";
+import { prepareBriefForLlmReview, reviewBriefWithLlm } from "@/collector/llm-review";
 import { enrichBriefWithSourceContext } from "@/collector/source-context";
 import { collectIntelligenceSignals } from "@/collector/pipeline";
 import { createFileIntelligenceRepository } from "@/repositories/file/file-intelligence-repository";
@@ -33,7 +33,8 @@ async function runCollector(track: CollectorTrack, focusAreas?: readonly DomainF
     }),
     previous,
   );
-  const contextualBrief = await enrichBriefWithSourceContext(deterministicBrief);
+  const reviewTargetBrief = prepareBriefForLlmReview(deterministicBrief, previous);
+  const contextualBrief = await enrichBriefWithSourceContext(reviewTargetBrief);
   const brief = await reviewBriefWithLlm(contextualBrief);
   if (brief.items.length === 0) throw new Error("没有选出有效情报，今日快照未更新。");
   await repository.saveBrief(brief);

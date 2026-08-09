@@ -1,7 +1,7 @@
 import assert from "node:assert/strict";
 import test from "node:test";
 
-import { readLlmReviewConfig, reviewBriefWithLlm } from "./llm-review";
+import { prepareBriefForLlmReview, readLlmReviewConfig, reviewBriefWithLlm } from "./llm-review";
 import type { DailyIntelligenceBrief } from "@/types/intelligence";
 
 const brief: DailyIntelligenceBrief = {
@@ -41,4 +41,32 @@ test("accepts JSON wrapped in provider commentary", async () => {
   const fetcher = async () => new Response(JSON.stringify({ choices: [{ message: { content } }] }), { status: 200 });
   const reviewed = await reviewBriefWithLlm(brief, { SIGNALFLOW_LLM_REVIEW: "true", LLM_API_KEY: "test-key" }, fetcher as typeof fetch);
   assert.equal(reviewed.items[0]?.translationStatus, "llm-reviewed");
+});
+
+test("repairs malformed provider JSON before falling back", async () => {
+  const content = `{items:[{id:'SIG-1',titleZh:'微短剧平台收入增长',summaryZh:'该平台通过移动端竖屏连续剧扩大内容规模。',}],}`;
+  const fetcher = async () => new Response(JSON.stringify({ choices: [{ message: { content } }] }), { status: 200 });
+  const reviewed = await reviewBriefWithLlm(brief, { SIGNALFLOW_LLM_REVIEW: "true", LLM_API_KEY: "test-key" }, fetcher as typeof fetch);
+  assert.equal(reviewed.items[0]?.translationStatus, "llm-reviewed");
+});
+
+test("retries once with a compact prompt when JSON cannot be repaired", async () => {
+  let requests = 0;
+  const fetcher = async () => {
+    requests += 1;
+    const content = requests === 1
+      ? "not json"
+      : JSON.stringify({ items: [{ id: "SIG-1", titleZh: "微短剧平台收入增长", summaryZh: "该平台通过移动端竖屏连续剧扩大内容规模。" }] });
+    return new Response(JSON.stringify({ choices: [{ message: { content } }] }), { status: 200 });
+  };
+  const reviewed = await reviewBriefWithLlm(brief, { SIGNALFLOW_LLM_REVIEW: "true", LLM_API_KEY: "test-key" }, fetcher as typeof fetch);
+  assert.equal(requests, 2);
+  assert.equal(reviewed.items[0]?.translationStatus, "llm-reviewed");
+});
+
+test("reuses today's unreviewed snapshot as the next LLM repair target", () => {
+  const collected = { ...brief, items: [], generatedAt: "2026-08-09T01:00:00.000Z" };
+  const target = prepareBriefForLlmReview(collected, brief);
+  assert.equal(target.items.length, 1);
+  assert.equal(target.generatedAt, collected.generatedAt);
 });

@@ -1,7 +1,7 @@
 import { collectIntelligenceSignals } from "../src/collector/pipeline";
 import { buildDailyIntelligenceBrief } from "../src/collector/daily-brief";
 import { enrichBriefWithChineseOverview } from "../src/collector/chinese-overview";
-import { reviewBriefWithLlm } from "../src/collector/llm-review";
+import { prepareBriefForLlmReview, reviewBriefWithLlm } from "../src/collector/llm-review";
 import { enrichBriefWithSourceContext } from "../src/collector/source-context";
 import { createFileIntelligenceRepository } from "../src/repositories/file/file-intelligence-repository";
 import { loadLocalEnvironment } from "./load-env";
@@ -61,7 +61,8 @@ async function main(): Promise<void> {
     }),
     previous,
   );
-  const contextualBrief = options.write ? await enrichBriefWithSourceContext(deterministicBrief) : deterministicBrief;
+  const reviewTargetBrief = options.write ? prepareBriefForLlmReview(deterministicBrief, previous) : deterministicBrief;
+  const contextualBrief = options.write ? await enrichBriefWithSourceContext(reviewTargetBrief) : reviewTargetBrief;
   const brief = options.write ? await reviewBriefWithLlm(contextualBrief) : contextualBrief;
 
   if (options.json) {
