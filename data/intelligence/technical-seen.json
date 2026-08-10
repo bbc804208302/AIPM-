@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "track": "technical",
-  "updatedAt": "2026-08-09T07:44:24.251Z",
+  "updatedAt": "2026-08-10T02:34:51.230Z",
   "items": [
     {
       "url": "https://www.latent.space/p/ainews-zawinskis-law-of-multiagents",
@@ -82,6 +82,34 @@
     {
       "url": "https://x.com/jino_rohit/status/2085947942339563598",
       "title": "Profiling LLM Inference with SGLang and Torch Profiler"
+    },
+    {
+      "url": "https://github.com/vitali87/code-graph-rag",
+      "title": "vitali87/code-graph-rag"
+    },
+    {
+      "url": "https://x.com/XFreeze/status/2086000397798248750",
+      "title": "Grok Build's most important features you should know"
+    },
+    {
+      "url": "https://github.com/msitarzewski/agency-agents",
+      "title": "msitarzewski/agency-agents"
+    },
+    {
+      "url": "https://github.com/pranshuparmar/witr",
+      "title": "pranshuparmar/witr"
+    },
+    {
+      "url": "https://github.com/ZhuLinsen/daily_stock_analysis",
+      "title": "ZhuLinsen/daily_stock_analysis"
+    },
+    {
+      "url": "https://github.com/Comfy-Org/ComfyUI",
+      "title": "Comfy-Org/ComfyUI"
+    },
+    {
+      "url": "https://github.com/harveyai/harvey-labs",
+      "title": "harveyai/harvey-labs"
     }
   ]
 }
