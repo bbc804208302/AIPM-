@@ -2,6 +2,7 @@ import type { DailyIntelligenceBrief, IntelligenceSignal } from "@/types/intelli
 import { jsonrepair } from "jsonrepair";
 
 const maximumItemsPerReview = 10;
+const maximumItemsPerRequest = 3;
 const maximumSourceTextLength = 1_200;
 
 interface LlmReviewConfig {
@@ -62,9 +63,9 @@ function parseJsonContent(content: string): LlmReviewResponse | null {
   return null;
 }
 
-function promptFor(brief: DailyIntelligenceBrief, compact = false): string {
+function promptFor(itemsToReview: readonly IntelligenceSignal[], compact = false): string {
   const sourceTextLength = compact ? 600 : maximumSourceTextLength;
-  const items = brief.items.filter((item) => !hasFinalReview(item)).slice(0, maximumItemsPerReview).map((item) => ({
+  const items = itemsToReview.map((item) => ({
     id: item.id,
     track: item.track,
     source: item.source,
@@ -90,6 +91,22 @@ function promptFor(brief: DailyIntelligenceBrief, compact = false): string {
     ...(compact ? ["这是格式修复重试：请缩短措辞，并在输出前确认 JSON 可被 JSON.parse 直接解析。"] : []),
     `输入：${JSON.stringify({ items })}`,
   ].join("\n");
+}
+
+function splitIntoBatches<T>(items: readonly T[], batchSize: number): T[][] {
+  const batches: T[][] = [];
+  for (let index = 0; index < items.length; index += batchSize) {
+    batches.push(items.slice(index, index + batchSize));
+  }
+  return batches;
+}
+
+function readProviderMetadata(payload: unknown): { content: unknown; finishReason: string } {
+  const choice = (payload as { choices?: Array<{ finish_reason?: unknown; message?: { content?: unknown } }> }).choices?.[0];
+  return {
+    content: choice?.message?.content,
+    finishReason: typeof choice?.finish_reason === "string" ? choice.finish_reason : "unknown",
+  };
 }
 
 export function readLlmReviewConfig(environment: Environment = process.env): LlmReviewConfig | null {
@@ -152,53 +169,65 @@ export async function reviewBriefWithLlm(
     return brief;
   }
 
-  try {
-    for (let attempt = 1; attempt <= 2; attempt += 1) {
-      const response = await fetcher(`${config.apiBaseUrl}/chat/completions`, {
-        method: "POST",
-        headers: {
-          "content-type": "application/json",
-          authorization: `Bearer ${config.apiKey}`,
-        },
-        body: JSON.stringify({
-          model: config.model,
-          temperature: 0.1,
-          max_tokens: 4_000,
-          response_format: { type: "json_object" },
-          messages: [
-            { role: "system", content: "你是严谨的中文情报编辑。你的完整回复必须是可被 JSON.parse 直接解析的 JSON 对象。" },
-            { role: "user", content: promptFor(brief, attempt > 1) },
-          ],
-        }),
-      });
-      if (!response.ok) {
-        console.warn(`LLM review fallback: provider returned HTTP ${response.status}.`);
-        return brief;
-      }
+  const pendingItems = brief.items.filter((item) => !hasFinalReview(item)).slice(0, maximumItemsPerReview);
+  const batches = splitIntoBatches(pendingItems, maximumItemsPerRequest);
+  let reviewedBrief = brief;
 
-      const payload: unknown = await response.json();
-      const content = (payload as { choices?: Array<{ message?: { content?: unknown } }> }).choices?.[0]?.message?.content;
-      if (typeof content !== "string") {
-        console.warn("LLM review fallback: provider response did not contain message content.");
-        return brief;
-      }
-      const parsed = parseJsonContent(content);
-      if (!parsed) {
-        if (attempt === 1) {
-          console.warn("LLM review retry: provider response was not valid JSON; retrying with a compact prompt.");
-          continue;
+  for (const [batchIndex, batch] of batches.entries()) {
+    const label = `batch ${batchIndex + 1}/${batches.length}`;
+    try {
+      let batchCompleted = false;
+      for (let attempt = 1; attempt <= 2; attempt += 1) {
+        const response = await fetcher(`${config.apiBaseUrl}/chat/completions`, {
+          method: "POST",
+          headers: {
+            "content-type": "application/json",
+            authorization: `Bearer ${config.apiKey}`,
+          },
+          body: JSON.stringify({
+            model: config.model,
+            temperature: 0.1,
+            max_tokens: 1_600,
+            response_format: { type: "json_object" },
+            messages: [
+              { role: "system", content: "你是严谨的中文情报编辑。你的完整回复必须是可被 JSON.parse 直接解析的 JSON 对象。" },
+              { role: "user", content: promptFor(batch, attempt > 1) },
+            ],
+          }),
+        });
+        if (!response.ok) {
+          console.warn(`LLM review ${label} fallback: provider returned HTTP ${response.status}.`);
+          break;
         }
-        console.warn("LLM review fallback: provider response was not valid JSON after retry.");
-        return brief;
+
+        const payload: unknown = await response.json();
+        const { content, finishReason } = readProviderMetadata(payload);
+        if (typeof content !== "string") {
+          console.warn(`LLM review ${label} fallback: provider response did not contain message content (finish_reason=${finishReason}).`);
+          break;
+        }
+        const parsed = parseJsonContent(content);
+        if (!parsed) {
+          const diagnostic = `finish_reason=${finishReason}, content_length=${content.length}`;
+          if (attempt === 1) {
+            console.warn(`LLM review ${label} retry: provider response was not valid JSON (${diagnostic}); retrying with a compact prompt.`);
+            continue;
+          }
+          console.warn(`LLM review ${label} fallback: provider response was not valid JSON after retry (${diagnostic}).`);
+          break;
+        }
+
+        reviewedBrief = applyLlmItems(reviewedBrief, parsed);
+        batchCompleted = true;
+        break;
       }
-      const reviewed = applyLlmItems(brief, parsed);
-      const reviewedCount = reviewed.items.filter((item) => item.translationStatus === "llm-reviewed").length;
-      console.info(`LLM review completed: ${reviewedCount}/${brief.items.length} items.`);
-      return reviewed;
+      if (!batchCompleted) continue;
+    } catch (error) {
+      console.warn(`LLM review ${label} fallback: ${error instanceof Error ? error.message.slice(0, 160) : "request failed"}.`);
     }
-    return brief;
-  } catch (error) {
-    console.warn(`LLM review fallback: ${error instanceof Error ? error.message.slice(0, 160) : "request failed"}.`);
-    return brief;
   }
+
+  const reviewedCount = reviewedBrief.items.filter((item) => item.translationStatus === "llm-reviewed").length;
+  console.info(`LLM review completed: ${reviewedCount}/${brief.items.length} items across ${batches.length} batches.`);
+  return reviewedBrief;
 }
