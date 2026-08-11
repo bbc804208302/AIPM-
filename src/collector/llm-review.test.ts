@@ -18,6 +18,19 @@ const brief: DailyIntelligenceBrief = {
   }],
 };
 
+function briefWithItems(count: number): DailyIntelligenceBrief {
+  const template = brief.items[0];
+  assert.ok(template);
+  return {
+    ...brief,
+    items: Array.from({ length: count }, (_, index) => ({
+      ...template,
+      id: `SIG-${index + 1}`,
+      title: `Source title ${index + 1}`,
+    })),
+  };
+}
+
 test("does not enable LLM review without an explicit flag and key", () => {
   assert.equal(readLlmReviewConfig({ LLM_API_KEY: "key" }), null);
   assert.equal(readLlmReviewConfig({ SIGNALFLOW_LLM_REVIEW: "true" }), null);
@@ -62,6 +75,41 @@ test("retries once with a compact prompt when JSON cannot be repaired", async ()
   const reviewed = await reviewBriefWithLlm(brief, { SIGNALFLOW_LLM_REVIEW: "true", LLM_API_KEY: "test-key" }, fetcher as typeof fetch);
   assert.equal(requests, 2);
   assert.equal(reviewed.items[0]?.translationStatus, "llm-reviewed");
+});
+
+test("reviews larger briefs in small batches", async () => {
+  const input = briefWithItems(4);
+  let requests = 0;
+  const fetcher = async () => {
+    requests += 1;
+    const ids = requests === 1 ? ["SIG-1", "SIG-2", "SIG-3"] : ["SIG-4"];
+    const items = ids.map((id) => ({ id, titleZh: `${id} 中文标题`, summaryZh: `${id} 的中文情报概述。` }));
+    return new Response(JSON.stringify({ choices: [{ finish_reason: "stop", message: { content: JSON.stringify({ items }) } }] }), { status: 200 });
+  };
+
+  const reviewed = await reviewBriefWithLlm(input, { SIGNALFLOW_LLM_REVIEW: "true", LLM_API_KEY: "test-key" }, fetcher as typeof fetch);
+
+  assert.equal(requests, 2);
+  assert.equal(reviewed.items.filter((item) => item.translationStatus === "llm-reviewed").length, 4);
+});
+
+test("keeps successful batches when another batch returns invalid JSON", async () => {
+  const input = briefWithItems(4);
+  let requests = 0;
+  const fetcher = async () => {
+    requests += 1;
+    if (requests <= 2) {
+      return new Response(JSON.stringify({ choices: [{ finish_reason: "length", message: { content: "not json" } }] }), { status: 200 });
+    }
+    const items = [{ id: "SIG-4", titleZh: "第四条中文标题", summaryZh: "第四条情报成功完成中文概述。" }];
+    return new Response(JSON.stringify({ choices: [{ finish_reason: "stop", message: { content: JSON.stringify({ items }) } }] }), { status: 200 });
+  };
+
+  const reviewed = await reviewBriefWithLlm(input, { SIGNALFLOW_LLM_REVIEW: "true", LLM_API_KEY: "test-key" }, fetcher as typeof fetch);
+
+  assert.equal(requests, 3);
+  assert.equal(reviewed.items[0]?.translationStatus, undefined);
+  assert.equal(reviewed.items[3]?.translationStatus, "llm-reviewed");
 });
 
 test("reuses today's unreviewed snapshot as the next LLM repair target", () => {
