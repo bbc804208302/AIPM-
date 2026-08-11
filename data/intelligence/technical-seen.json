@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "track": "technical",
-  "updatedAt": "2026-08-10T02:34:51.230Z",
+  "updatedAt": "2026-08-11T02:28:09.954Z",
   "items": [
     {
       "url": "https://www.latent.space/p/ainews-zawinskis-law-of-multiagents",
@@ -110,6 +110,46 @@
     {
       "url": "https://github.com/harveyai/harvey-labs",
       "title": "harveyai/harvey-labs"
+    },
+    {
+      "url": "https://www.technologyreview.com/2026/08/10/1141597/ai-professors-are-negotiating-the-new-realities-of-academic-research",
+      "title": "AI professors are negotiating the new realities of academic research"
+    },
+    {
+      "url": "https://github.com/semantica-agi/semantica",
+      "title": "semantica-agi/semantica"
+    },
+    {
+      "url": "https://x.com/VibeMarketer_/status/2086808854898323774",
+      "title": "How to Build a Shared AI Harness for Your Team"
+    },
+    {
+      "url": "https://openai.com/index/building-an-ai-native-finance-function",
+      "title": "What building an AI-native finance function taught me"
+    },
+    {
+      "url": "https://github.com/paperclipai/paperclip",
+      "title": "paperclipai/paperclip"
+    },
+    {
+      "url": "https://huggingface.co/blog/nvidia/magpie-tts-multilingual-voice-agents",
+      "title": "Build Low-Latency Multilingual Voice Agents: Open Weights & Full Deployment Control with NVIDIA Magpie TTS"
+    },
+    {
+      "url": "https://github.com/danielmiessler/LifeOS",
+      "title": "danielmiessler/LifeOS"
+    },
+    {
+      "url": "https://openai.com/index/responsible-ai-infrastructure-texas",
+      "title": "OpenAI’s letter to Governor Abbott on responsible AI infrastructure in Texas"
+    },
+    {
+      "url": "https://github.com/opa334/Dopamine",
+      "title": "opa334/Dopamine"
+    },
+    {
+      "url": "https://openai.com/index/model-ml",
+      "title": "Model ML completes finance work more efficiently with GPT-5.6 Sol"
     }
   ]
 }
