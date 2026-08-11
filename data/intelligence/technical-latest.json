@@ -3,7 +3,7 @@
   "briefingDate": "2026-08-11",
   "timezone": "Asia/Shanghai",
   "track": "technical",
-  "generatedAt": "2026-08-11T02:28:09.954Z",
+  "generatedAt": "2026-08-11T10:11:17.400Z",
   "candidateCount": 20,
   "dailyLimit": 10,
   "items": [
@@ -341,63 +341,63 @@
       "sourceName": "GitHub Trending",
       "status": "success",
       "collected": 10,
-      "durationMs": 1353
+      "durationMs": 1622
     },
     {
       "sourceId": "openai-news",
       "sourceName": "OpenAI News",
       "status": "success",
       "collected": 12,
-      "durationMs": 232
+      "durationMs": 320
     },
     {
       "sourceId": "deepmind-blog",
       "sourceName": "Google DeepMind Blog",
       "status": "success",
       "collected": 12,
-      "durationMs": 558
+      "durationMs": 463
     },
     {
       "sourceId": "huggingface-blog",
       "sourceName": "Hugging Face Blog",
       "status": "success",
       "collected": 12,
-      "durationMs": 266
+      "durationMs": 225
     },
     {
       "sourceId": "tldr-ai",
       "sourceName": "TLDR AI",
       "status": "success",
       "collected": 12,
-      "durationMs": 237
+      "durationMs": 467
     },
     {
       "sourceId": "smol-ai-news",
       "sourceName": "Smol AI News",
       "status": "success",
       "collected": 12,
-      "durationMs": 547
+      "durationMs": 592
     },
     {
       "sourceId": "latent-space",
       "sourceName": "Latent Space",
       "status": "success",
       "collected": 12,
-      "durationMs": 417
+      "durationMs": 446
     },
     {
       "sourceId": "mit-tech-review-ai",
       "sourceName": "MIT Technology Review AI",
       "status": "success",
       "collected": 10,
-      "durationMs": 345
+      "durationMs": 375
     },
     {
       "sourceId": "attentionvc-ai",
       "sourceName": "X / AttentionVC AI",
       "status": "success",
-      "collected": 4,
-      "durationMs": 368
+      "collected": 3,
+      "durationMs": 459
     }
   ]
 }
