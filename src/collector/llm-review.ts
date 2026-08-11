@@ -4,6 +4,8 @@ import { jsonrepair } from "jsonrepair";
 const maximumItemsPerReview = 10;
 const maximumItemsPerRequest = 3;
 const maximumSourceTextLength = 1_200;
+const initialReviewTokenLimit = 4_000;
+const retryReviewTokenLimit = 6_000;
 
 interface LlmReviewConfig {
   apiKey: string;
@@ -187,7 +189,7 @@ export async function reviewBriefWithLlm(
           body: JSON.stringify({
             model: config.model,
             temperature: 0.1,
-            max_tokens: 1_600,
+            max_tokens: attempt === 1 ? initialReviewTokenLimit : retryReviewTokenLimit,
             response_format: { type: "json_object" },
             messages: [
               { role: "system", content: "你是严谨的中文情报编辑。你的完整回复必须是可被 JSON.parse 直接解析的 JSON 对象。" },

@@ -65,8 +65,11 @@ test("repairs malformed provider JSON before falling back", async () => {
 
 test("retries once with a compact prompt when JSON cannot be repaired", async () => {
   let requests = 0;
-  const fetcher = async () => {
+  const tokenLimits: number[] = [];
+  const fetcher = async (_input: RequestInfo | URL, init?: RequestInit) => {
     requests += 1;
+    const body = JSON.parse(String(init?.body)) as { max_tokens: number };
+    tokenLimits.push(body.max_tokens);
     const content = requests === 1
       ? "not json"
       : JSON.stringify({ items: [{ id: "SIG-1", titleZh: "微短剧平台收入增长", summaryZh: "该平台通过移动端竖屏连续剧扩大内容规模。" }] });
@@ -74,6 +77,7 @@ test("retries once with a compact prompt when JSON cannot be repaired", async ()
   };
   const reviewed = await reviewBriefWithLlm(brief, { SIGNALFLOW_LLM_REVIEW: "true", LLM_API_KEY: "test-key" }, fetcher as typeof fetch);
   assert.equal(requests, 2);
+  assert.deepEqual(tokenLimits, [4_000, 6_000]);
   assert.equal(reviewed.items[0]?.translationStatus, "llm-reviewed");
 });
 
