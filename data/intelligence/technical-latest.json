@@ -3,7 +3,7 @@
   "briefingDate": "2026-08-11",
   "timezone": "Asia/Shanghai",
   "track": "technical",
-  "generatedAt": "2026-08-11T10:11:17.400Z",
+  "generatedAt": "2026-08-11T11:10:54.297Z",
   "candidateCount": 20,
   "dailyLimit": 10,
   "items": [
@@ -35,9 +35,9 @@
       "highValue": false,
       "readStatus": "未读",
       "convertedToDemand": false,
-      "titleZh": "AI professors are negotiating the new realities of academic research",
-      "summaryZh": "AI 概述暂未生成。原始来源摘要：This story originally appeared in The Algorithm, our weekly newsletter on AI. To get stories like this in your inbox first, sign up here. Last week, I headed 30 miles south of San…",
-      "translationStatus": "needs-review"
+      "titleZh": "AI教授探讨学术研究新现实",
+      "summaryZh": "Schmidt Sciences AI2050会议显示，学术研究者正面对AI时代挑战。",
+      "translationStatus": "llm-reviewed"
     },
     {
       "id": "SIG-20260811-1E09ECC7",
@@ -69,9 +69,9 @@
       "highValue": false,
       "readStatus": "未读",
       "convertedToDemand": false,
-      "titleZh": "semantica-agi/semantica",
-      "summaryZh": "AI 概述暂未生成。原始来源摘要：Graph-Native Infrastructure for Context and Accountable AI Systems",
-      "translationStatus": "needs-review"
+      "titleZh": "Semantica：上下文与可问责AI的图原生基础设施",
+      "summaryZh": "面向上下文与可问责AI系统的图原生基础设施。",
+      "translationStatus": "llm-reviewed"
     },
     {
       "id": "SIG-20260811-BD83C42F",
@@ -106,9 +106,9 @@
       "highValue": false,
       "readStatus": "未读",
       "convertedToDemand": false,
-      "titleZh": "How to Build a Shared AI Harness for Your Team",
-      "summaryZh": "AI 概述暂未生成。原始来源摘要：I am going to show you how to turn the models, agents, skills, and automations living across your team's tools and workflows into one coordinated system. What most teams have today…",
-      "translationStatus": "needs-review"
+      "titleZh": "构建团队共享AI整合框架",
+      "summaryZh": "将团队工具中的模型、智能体、技能和自动化整合为协调系统，共享上下文与工作流。",
+      "translationStatus": "llm-reviewed"
     },
     {
       "id": "SIG-20260811-5367CC95",
@@ -136,9 +136,9 @@
       "highValue": false,
       "readStatus": "未读",
       "convertedToDemand": false,
-      "titleZh": "What building an AI-native finance function taught me",
-      "summaryZh": "AI 概述暂未生成。原始来源摘要：OpenAI CFO Sarah Friar shares five lessons for building an AI-native finance function, from automated forecasting to stronger controls and AI ROI.",
-      "translationStatus": "needs-review"
+      "titleZh": "OpenAI CFO分享AI原生财务部建设五条经验",
+      "summaryZh": "OpenAI CFO Sarah Friar分享AI原生财务部门建设五条经验，涵盖自动预测、强化控制与AI投资回报。",
+      "translationStatus": "llm-reviewed"
     },
     {
       "id": "SIG-20260811-A5E43B15",
@@ -170,9 +170,9 @@
       "highValue": false,
       "readStatus": "未读",
       "convertedToDemand": false,
-      "titleZh": "paperclipai/paperclip",
-      "summaryZh": "AI 概述暂未生成。原始来源摘要：The open-source app everyone uses to manage agents at work",
-      "translationStatus": "needs-review"
+      "titleZh": "paperclip：面向AI代理团队的开源编排应用",
+      "summaryZh": "paperclip 是一款开源应用，用于在团队中编排与管理 AI 代理，简化代理协同工作流程。",
+      "translationStatus": "llm-reviewed"
     },
     {
       "id": "SIG-20260811-5890B1CF",
@@ -202,9 +202,9 @@
       "highValue": false,
       "readStatus": "未读",
       "convertedToDemand": false,
-      "titleZh": "Build Low-Latency Multilingual Voice Agents: Open Weights & Full Deployment Control with NVIDIA Magpie TTS",
-      "summaryZh": "原始来源信息不足，等待 AI 审校补充中文概述。",
-      "translationStatus": "needs-review"
+      "titleZh": "NVIDIA Magpie TTS：开放权重低延迟多语言语音代理",
+      "summaryZh": "NVIDIA 发布 Magpie TTS，支持开放权重与完整部署控制，用于构建低延迟多语言语音代理。",
+      "translationStatus": "llm-reviewed"
     },
     {
       "id": "SIG-20260811-7C3D98E4",
@@ -330,9 +330,9 @@
       "highValue": false,
       "readStatus": "未读",
       "convertedToDemand": false,
-      "titleZh": "Model ML completes finance work more efficiently with GPT-5.6 Sol",
-      "summaryZh": "AI 概述暂未生成。原始来源摘要：Model ML uses GPT-5.6 Sol to carry finance work from research and analysis through editable, traceable PowerPoint decks and Excel workbooks.",
-      "translationStatus": "needs-review"
+      "titleZh": "Model ML 借助 GPT-5.6 Sol 提升金融工作效率",
+      "summaryZh": "Model ML 使用 GPT-5.6 Sol 执行金融任务，产出可编辑、可追踪的 PPT 与 Excel 工作簿，覆盖从研究到分析的全流程。",
+      "translationStatus": "llm-reviewed"
     }
   ],
   "sources": [
@@ -340,64 +340,64 @@
       "sourceId": "github-trending",
       "sourceName": "GitHub Trending",
       "status": "success",
-      "collected": 10,
-      "durationMs": 1622
+      "collected": 12,
+      "durationMs": 1369
     },
     {
       "sourceId": "openai-news",
       "sourceName": "OpenAI News",
       "status": "success",
       "collected": 12,
-      "durationMs": 320
+      "durationMs": 261
     },
     {
       "sourceId": "deepmind-blog",
       "sourceName": "Google DeepMind Blog",
       "status": "success",
       "collected": 12,
-      "durationMs": 463
+      "durationMs": 282
     },
     {
       "sourceId": "huggingface-blog",
       "sourceName": "Hugging Face Blog",
       "status": "success",
       "collected": 12,
-      "durationMs": 225
+      "durationMs": 153
     },
     {
       "sourceId": "tldr-ai",
       "sourceName": "TLDR AI",
       "status": "success",
       "collected": 12,
-      "durationMs": 467
+      "durationMs": 286
     },
     {
       "sourceId": "smol-ai-news",
       "sourceName": "Smol AI News",
       "status": "success",
       "collected": 12,
-      "durationMs": 592
+      "durationMs": 488
     },
     {
       "sourceId": "latent-space",
       "sourceName": "Latent Space",
       "status": "success",
       "collected": 12,
-      "durationMs": 446
+      "durationMs": 350
     },
     {
       "sourceId": "mit-tech-review-ai",
       "sourceName": "MIT Technology Review AI",
       "status": "success",
       "collected": 10,
-      "durationMs": 375
+      "durationMs": 293
     },
     {
       "sourceId": "attentionvc-ai",
       "sourceName": "X / AttentionVC AI",
       "status": "success",
       "collected": 3,
-      "durationMs": 459
+      "durationMs": 350
     }
   ]
 }
