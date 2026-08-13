@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "track": "technical",
-  "updatedAt": "2026-08-12T02:44:30.622Z",
+  "updatedAt": "2026-08-13T02:47:27.035Z",
   "items": [
     {
       "url": "https://www.latent.space/p/ainews-zawinskis-law-of-multiagents",
@@ -190,6 +190,46 @@
     {
       "url": "https://github.com/calesthio/OpenMontage",
       "title": "calesthio/OpenMontage"
+    },
+    {
+      "url": "https://www.latent.space/p/ainews-spacexai-grok-46-and-grok",
+      "title": "[AINews] SpaceXAI Grok 4.6 and Grok @Bot"
+    },
+    {
+      "url": "https://github.com/cathrynlavery/diagram-design",
+      "title": "cathrynlavery/diagram-design"
+    },
+    {
+      "url": "https://x.com/thejessezhang/status/2087198484093149421",
+      "title": "To FDE, or not to FDE?"
+    },
+    {
+      "url": "https://www.technologyreview.com/2026/08/12/1141032/scaling-ai-agents-with-trustworthy-data",
+      "title": "Scaling AI agents with trustworthy data"
+    },
+    {
+      "url": "https://github.com/macro-inc/macro",
+      "title": "macro-inc/macro"
+    },
+    {
+      "url": "https://x.com/addyosmani/status/2087427868343373919",
+      "title": "Agentic Code Quality"
+    },
+    {
+      "url": "https://huggingface.co/blog/allenai/olmoearth-embeddings",
+      "title": "Introducing OlmoEarth embeddings: Custom embedding exports from OlmoEarth Studio for downstream analysis"
+    },
+    {
+      "url": "https://github.com/shiyu-coder/Kronos",
+      "title": "shiyu-coder/Kronos"
+    },
+    {
+      "url": "https://deepmind.google/blog/putting-sign-language-ai-into-users-hands",
+      "title": "Putting sign language AI into users’ hands"
+    },
+    {
+      "url": "https://github.com/hugohe3/ppt-master",
+      "title": "hugohe3/ppt-master"
     }
   ]
 }
