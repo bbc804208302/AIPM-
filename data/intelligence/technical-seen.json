@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "track": "technical",
-  "updatedAt": "2026-08-13T02:47:27.035Z",
+  "updatedAt": "2026-08-14T02:46:44.542Z",
   "items": [
     {
       "url": "https://www.latent.space/p/ainews-zawinskis-law-of-multiagents",
@@ -230,6 +230,46 @@
     {
       "url": "https://github.com/hugohe3/ppt-master",
       "title": "hugohe3/ppt-master"
+    },
+    {
+      "url": "https://huggingface.co/blog/amazon/strands-lerobot-streaming-data-loop",
+      "title": "Record, train, and deploy from one place with Strands Agents, LeRobot, and Hugging Face Storage Buckets"
+    },
+    {
+      "url": "https://github.com/cactus-compute/needle",
+      "title": "cactus-compute/needle"
+    },
+    {
+      "url": "https://x.com/GoogleCloudTech/status/2087733334617063503",
+      "title": "Agent Plugins are the future of Agent Skills"
+    },
+    {
+      "url": "https://deepmind.google/blog/introducing-gemini-3-7-flash",
+      "title": "Introducing Gemini 3.7 Flash"
+    },
+    {
+      "url": "https://github.com/altic-dev/FluidVoice",
+      "title": "altic-dev/FluidVoice"
+    },
+    {
+      "url": "https://x.com/dexhorthy/status/2087569590268391897",
+      "title": "/show-me: compact visual representations for coding agents"
+    },
+    {
+      "url": "https://www.technologyreview.com/2026/08/13/1141904/flock-is-tightening-its-rules-in-response-to-a-growing-surveillance-backlash",
+      "title": "Flock is tightening its rules in response to a growing surveillance backlash"
+    },
+    {
+      "url": "https://github.com/unslothai/unsloth",
+      "title": "unslothai/unsloth"
+    },
+    {
+      "url": "https://openai.com/index/builders-guide-to-gpt-5-6",
+      "title": "The builder’s guide to GPT‑5.6"
+    },
+    {
+      "url": "https://github.com/megadose/holehe",
+      "title": "megadose/holehe"
     }
   ]
 }
