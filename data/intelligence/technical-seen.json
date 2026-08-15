@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "track": "technical",
-  "updatedAt": "2026-08-14T02:46:44.542Z",
+  "updatedAt": "2026-08-15T01:50:08.461Z",
   "items": [
     {
       "url": "https://www.latent.space/p/ainews-zawinskis-law-of-multiagents",
@@ -270,6 +270,46 @@
     {
       "url": "https://github.com/megadose/holehe",
       "title": "megadose/holehe"
+    },
+    {
+      "url": "https://www.latent.space/p/ainews-gemini-37-flash-brings-gdm",
+      "title": "[AINews] Gemini 3.7 Flash brings GDM back to the forefront"
+    },
+    {
+      "url": "https://github.com/citrolabs/ego-lite",
+      "title": "citrolabs/ego-lite"
+    },
+    {
+      "url": "https://x.com/TeslaLarry/status/2087937419479834803",
+      "title": "The Elon–Jensen \"Understanding\""
+    },
+    {
+      "url": "https://huggingface.co/blog/state-of-open-models-summer-2026",
+      "title": "State of Open Models: Summer 2026 Observations"
+    },
+    {
+      "url": "https://github.com/holaboss-ai/holaOS",
+      "title": "holaboss-ai/holaOS"
+    },
+    {
+      "url": "https://x.com/Zai_org/status/2088280509474320693",
+      "title": "Preparing GLM-5.3 for Open Release: A Responsible Path to Cyber Defense"
+    },
+    {
+      "url": "https://tldr.tech/ai/2026-08-14",
+      "title": "Gemini 3.7 🤖, GPT-5.6 Sol Ultrafast ⚡, Anthropic $2T IPO 💰"
+    },
+    {
+      "url": "https://github.com/lightningpixel/modly",
+      "title": "lightningpixel/modly"
+    },
+    {
+      "url": "https://openai.com/index/previewing-ultrafast",
+      "title": "Previewing Ultrafast mode: GPT-5.6 Sol at up to 14X the speed"
+    },
+    {
+      "url": "https://github.com/infiniflow/ragflow",
+      "title": "infiniflow/ragflow"
     }
   ]
 }
