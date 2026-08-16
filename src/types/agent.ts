@@ -8,7 +8,8 @@ export type OpportunityAgentToolName =
   | "reject_signal"
   | "list_daily_signals"
   | "score_candidates"
-  | "recommend_top_signals";
+  | "recommend_top_signals"
+  | "select_intelligence_for_pool";
 
 export type OpportunityAgentRunStatus = "completed" | "rejected" | "failed";
 
@@ -76,6 +77,8 @@ export type OpportunityTriageRecommendation = "priority" | "candidate" | "skip";
 export interface OpportunityTriageCandidate {
   signalId: string;
   signalTitle: string;
+  titleZh: string;
+  summaryZh: string;
   track: CollectorTrack;
   source: string;
   heatScore: number | null;
@@ -91,7 +94,7 @@ export interface OpportunityTriageRun {
   id: string;
   agent: "product-opportunity-agent";
   mode: "daily-triage";
-  version: 2;
+  version: 2 | 3;
   briefingDate: string;
   objective: string;
   status: "completed" | "failed";
@@ -101,7 +104,10 @@ export interface OpportunityTriageRun {
   durationMs: number;
   scannedSignals: number;
   candidates: readonly OpportunityTriageCandidate[];
+  /** Version 3 treats this as every admitted signal rather than a fixed Top 3. */
   recommendedSignalIds: readonly string[];
+  reviewSignalIds?: readonly string[];
+  autoAnalyzedSignalIds?: readonly string[];
   decisionSummary: string;
   toolCalls: readonly OpportunityAgentToolCall[];
   error: string | null;

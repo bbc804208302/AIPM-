@@ -1,4 +1,4 @@
-name: SignalFlow Daily Opportunity Triage
+name: SignalFlow Daily Intelligence Agent
 
 on:
   workflow_dispatch:
@@ -35,7 +35,7 @@ jobs:
       - name: Install dependencies
         run: pnpm install --frozen-lockfile
 
-      - name: Run daily opportunity triage
+      - name: Run Agent admission and automatic deep analysis
         run: pnpm agent:triage
         env:
           SIGNALFLOW_OPPORTUNITY_AGENT: "true"
@@ -52,7 +52,7 @@ jobs:
           git config user.name "signalflow-bot"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add data/agent
-          git commit -m "data: update daily opportunity triage"
+          git commit -m "data: update daily intelligence decisions"
           git fetch origin main
           git rebase origin/main
           if ! git push origin HEAD:main; then

@@ -51,7 +51,7 @@ export function AgentRunControls({
   const disabledReason = !executable
       ? "在线作品集为只读模式；可查看推荐和历史决策，但不会消耗你的 LLM 配额。"
     : !configured
-      ? "本地尚未启用 Opportunity Agent，请配置 LLM 后运行。"
+      ? "本地尚未启用 Product Intelligence Agent，请配置 LLM 后运行。"
       : signals.length === 0
         ? "暂无可供评估的情报。"
         : "";
@@ -64,14 +64,14 @@ export function AgentRunControls({
       </header>
       <div className="agent-control-body">
         <label>
-          <span>选择未被 Agent 推荐的 Signal</span>
+          <span>选择任意候选进行人工补充分析</span>
           <select value={signalId} disabled={!executable || !configured || busy} onChange={(event) => setSignalId(event.target.value)}>
             {signals.map((signal) => <option value={signal.id} key={signal.id}>{signal.trackLabel} · {signal.title} · {signal.source}</option>)}
           </select>
           {selectedSignal ? <small>GitHub Action Signal ID：<code>{selectedSignal.id}</code></small> : null}
         </label>
         <button className="brutal-control-button primary" type="button" disabled={!executable || !configured || !signalId || busy} onClick={runAgent}>
-          <Play size={15} />{busy ? "Agent 运行中" : "运行 Product Opportunity Agent"}
+          <Play size={15} />{busy ? "Agent 运行中" : "运行单条深度分析"}
         </button>
       </div>
       {status ? <p className="task-control-status" aria-live="polite">{status}</p> : null}

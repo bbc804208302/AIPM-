@@ -17,7 +17,7 @@ export function AppShell({ children }: Readonly<{ children: ReactNode }>) {
         <div className="nav-label">Workspace</div>
         <SidebarNavigation />
         <div className="nav-note">
-          Phase 3 · Agent MVP
+          Phase 4 · Agent-driven Intelligence
           <br />
           业务数据仅通过服务端访问
         </div>

@@ -37,11 +37,6 @@ jobs:
 
       - name: Collect and save today's intelligence
         run: pnpm collector:write
-        env:
-          SIGNALFLOW_LLM_REVIEW: ${{ secrets.SIGNALFLOW_LLM_REVIEW }}
-          LLM_API_KEY: ${{ secrets.LLM_API_KEY }}
-          LLM_API_BASE_URL: ${{ secrets.LLM_API_BASE_URL }}
-          LLM_MODEL: ${{ secrets.LLM_MODEL }}
 
       - name: Commit daily snapshot
         run: |

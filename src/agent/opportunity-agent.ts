@@ -147,7 +147,7 @@ function buildSignalObservation(signal: IntelligenceSignal): string {
 
 function buildSystemPrompt(): string {
   return [
-    "你是 SignalFlow Product Opportunity Agent，服务于 AI 产品经理。",
+    "你是 SignalFlow Product Intelligence Agent，服务于 AI 产品经理。",
     "目标是把公开 Signal 评估为可审阅的产品机会，而不是自动创建正式需求。",
     "必须先调用 get_signal，再调用 search_memory；之后只能调用 create_demand_proposal 或 reject_signal 完成任务。",
     "每一轮只调用一个工具，等待工具返回 Observation 后再决定下一步。",
