@@ -1,6 +1,6 @@
 "use client";
 
-import { ArrowRight } from "lucide-react";
+import { Lightbulb } from "lucide-react";
 import { useRouter } from "next/navigation";
 import { useState } from "react";
 
@@ -38,7 +38,8 @@ export function AgentDeepAnalysisButton({
   return (
     <div className="agent-deep-action">
       <button type="button" disabled={disabled || busy} onClick={analyze}>
-        {busy ? "分析中" : "深度分析"}<ArrowRight size={14} />
+        <Lightbulb size={14} aria-hidden="true" />
+        <span>{busy ? "分析中" : "深度分析"}</span>
       </button>
       {status ? <small aria-live="polite">{status}</small> : null}
     </div>

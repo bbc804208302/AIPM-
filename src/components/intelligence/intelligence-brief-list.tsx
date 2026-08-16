@@ -23,15 +23,6 @@ const categoryLabels: Record<IntelligenceCategory, string> = {
   other: "行业动态",
 };
 const sourceIcons = { "github-trending": Github, "ai-media": Newspaper, "x-viral": Radio } satisfies Record<CollectorCategory, typeof Github>;
-const pmValueLabels = {
-  "product-idea": "产品创意",
-  "design-pattern": "设计思路",
-  competitor: "竞品动态",
-  capability: "能力变化",
-  "business-opportunity": "业务机会",
-  "industry-context": "行业判断",
-} as const;
-
 const dateFormatter = new Intl.DateTimeFormat("zh-CN", { month: "2-digit", day: "2-digit", hour: "2-digit", minute: "2-digit", hour12: false });
 const numberFormatter = new Intl.NumberFormat("zh-CN", { notation: "compact", maximumFractionDigits: 1 });
 
@@ -78,8 +69,8 @@ export function IntelligenceBriefList({ items, agentExecutable }: Readonly<{ ite
                 <span>AI 概述</span>
                 <p className="story-summary">{summary || "该来源未提供可展示摘要，请通过原文链接核对完整信息。"}</p>
               </div>
-              {item.agentReview?.rationale ? <div className="story-agent-rationale"><span>PM 价值{item.agentReview.pmValueType ? ` · ${pmValueLabels[item.agentReview.pmValueType]}` : ""}</span><p>{presentAsIntelligence(item.agentReview.rationale)}</p></div> : null}
-              {item.agentReview?.deepAnalysisSummary ? <div className="story-deep-analysis"><span>{item.agentReview.deepAnalysis === "proposal" ? "深度分析 · 形成候选需求" : "深度分析 · 暂不转化"}</span><p>{presentAsIntelligence(item.agentReview.deepAnalysisSummary)}</p></div> : null}
+              {item.agentReview?.rationale ? <div className="story-agent-rationale"><span>PM 视角观点</span><p>{presentAsIntelligence(item.agentReview.rationale)}</p></div> : null}
+              {item.agentReview?.deepAnalysisSummary ? <div className="story-deep-analysis"><span>深度分析报告</span><p>{presentAsIntelligence(item.agentReview.deepAnalysisSummary)}</p></div> : null}
               <div className="story-footer">
                 <div className="story-facts">
                   <span>{presentAsIntelligence(item.selectionReason)}</span>
@@ -87,7 +78,9 @@ export function IntelligenceBriefList({ items, agentExecutable }: Readonly<{ ite
                   {metadata.map((entry) => <span key={entry}>{entry}</span>)}
                 </div>
                 <div className="story-actions">
-                  <AgentDeepAnalysisButton signalId={item.id} disabled={!agentExecutable || item.agentReview?.deepAnalysis !== "not-run"} />
+                  {item.agentReview?.deepAnalysis === "not-run" ? (
+                    <AgentDeepAnalysisButton signalId={item.id} disabled={!agentExecutable} />
+                  ) : null}
                   <a href={item.url} target="_blank" rel="noreferrer">查看原文 <ArrowUpRight size={14} /></a>
                 </div>
               </div>
