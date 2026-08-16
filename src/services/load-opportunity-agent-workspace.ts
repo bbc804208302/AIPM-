@@ -8,10 +8,11 @@ import { createFileOpportunityAgentRepository } from "@/repositories/file/file-o
 export async function loadOpportunityAgentWorkspace() {
   const intelligenceRepository = createFileIntelligenceRepository();
   const agentRepository = createFileOpportunityAgentRepository();
-  const [technicalBrief, domainBrief, runs] = await Promise.all([
+  const [technicalBrief, domainBrief, runs, triageRuns] = await Promise.all([
     intelligenceRepository.getLatestBrief("technical"),
     intelligenceRepository.getLatestBrief("domain"),
     agentRepository.listRuns(),
+    agentRepository.listTriageRuns(),
   ]);
   const signals = [...(technicalBrief?.items ?? []), ...(domainBrief?.items ?? [])]
     .sort((left, right) => (right.publishedAt ?? right.createdAt).localeCompare(left.publishedAt ?? left.createdAt));
@@ -19,6 +20,7 @@ export async function loadOpportunityAgentWorkspace() {
   return {
     signals,
     runs,
+    triageRuns,
     executable: isOpportunityAgentExecutable(),
     configured: readOpportunityAgentConfig() !== null,
   };

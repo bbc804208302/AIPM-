@@ -10,9 +10,9 @@ SignalFlow（AI 产品情报与需求协同工作台）服务于 AI 产品经理
 
 ## 2. 当前阶段边界
 
-当前为 Phase 3 / Product Opportunity Agent MVP。允许：既有 Daily Intelligence 能力、AI 质量评测、单一 Product Opportunity Agent、受控 Tool Use、基于历史 Agent Run 的 Memory、候选需求草稿、人工确认边界、GitHub Actions 手动运行、文档与测试。
+当前为 Phase 3 / Product Opportunity Agent MVP。允许：既有 Daily Intelligence 能力、AI 质量评测、单一 Product Opportunity Agent 的 `daily-triage` 与 `single-signal` 两种运行模式、受控 Tool Use、基于历史 Agent Run 的 Memory、候选需求草稿、人工确认边界、GitHub Actions 定时或手动运行、文档与测试。
 
-本阶段 Collector 继续覆盖两条独立链路。Opportunity Agent 只处理已进入 Intelligence Repository 的公开 Signal，必须先读取 Signal、再检索 Memory，随后才能创建候选需求或记录不转化结论。候选需求必须等待人工确认，禁止自动写入飞书正式需求池。当前仍禁止 Deep Research、MCP、多 Agent、飞书机器人推送或复杂需求自动化。不得生成虚构新闻或大批量 Mock Data。
+本阶段 Collector 继续覆盖两条独立链路。Opportunity Agent 只处理已进入 Intelligence Repository 的公开 Signal。`daily-triage` 必须先读取最新双轨 Signal、再逐条检索 Memory、完成全量结构化评分，最后才能推荐 Top 3；`single-signal` 必须先读取指定 Signal、再检索 Memory，随后才能创建候选需求或记录不转化结论。候选需求必须等待人工确认，禁止自动写入飞书正式需求池。当前仍禁止 Deep Research、MCP、多 Agent 编排、飞书机器人推送或复杂需求自动化。不得生成虚构新闻或大批量 Mock Data。
 
 ## 3. 技术栈
 
@@ -27,7 +27,7 @@ SignalFlow（AI 产品情报与需求协同工作台）服务于 AI 产品经理
 
 情报链路：Source Registry → Source Adapter → Normalize → Deduplicate → Daily Top 10 → SignalFlow Intelligence Repository。采集源故障必须隔离；默认运行必须是 dry-run，只有显式 `--write` 才允许更新 SignalFlow 每日情报快照。
 
-Agent 链路：Signal ID → `get_signal` → `search_memory` → LLM Decision → `create_demand_proposal` / `reject_signal` → Agent Run Repository → Human Review。不得保存或展示模型思维链，只保存输入证据、工具调用摘要、最终结论与运行指标。
+Agent 初筛链路：Latest Dual-track Signals → `list_daily_signals` → `search_memory` → `score_candidates` → `recommend_top_signals` → Agent Run Repository。深度分析链路：Signal ID → `get_signal` → `search_memory` → LLM Decision → `create_demand_proposal` / `reject_signal` → Agent Run Repository → Human Review。不得保存或展示模型思维链，只保存输入证据、评分维度、工具调用摘要、最终结论与运行指标。
 
 - React 页面不得直接调用飞书 OpenAPI。
 - 页面依赖 `src/repositories` 中的领域接口。
@@ -39,7 +39,7 @@ Agent 链路：Signal ID → `get_signal` → `search_memory` → LLM Decision �
 
 内部需求池继续以飞书多维表格为事实来源。AI 产品情报池由 SignalFlow 自行采集并写入独立 Intelligence Repository；当前使用可公开审计的每日 JSON 快照，未来可替换为 PostgreSQL。
 
-Opportunity Agent 的运行记录与 Memory 当前保存在 `data/agent/runs.json`，仅包含公开 Signal、工具轨迹和候选需求。生产网页只读，LLM 运行由本地维护者或手动 GitHub Action 发起。
+Opportunity Agent 的初筛、深度分析与 Memory 当前保存在 `data/agent/runs.json`，仅包含公开 Signal、结构化评分、工具轨迹和候选需求。生产网页只读，LLM 运行由本地维护者或 GitHub Action 发起。
 
 - `FEISHU_APP_ID`、`FEISHU_APP_SECRET`、`BITABLE_APP_TOKEN`、任何 `TABLE_ID`、`LLM_API_KEY` 永不进入 Git。
 - 真实值只放 `.env.local` 或托管平台的 Secret 管理。

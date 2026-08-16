@@ -5,7 +5,10 @@ export type OpportunityAgentToolName =
   | "get_signal"
   | "search_memory"
   | "create_demand_proposal"
-  | "reject_signal";
+  | "reject_signal"
+  | "list_daily_signals"
+  | "score_candidates"
+  | "recommend_top_signals";
 
 export type OpportunityAgentRunStatus = "completed" | "rejected" | "failed";
 
@@ -60,8 +63,53 @@ export interface OpportunityAgentRun {
   error: string | null;
 }
 
+export interface OpportunityTriageDimensionScores {
+  relevance: number;
+  novelty: number;
+  userValue: number;
+  actionability: number;
+  evidence: number;
+}
+
+export type OpportunityTriageRecommendation = "priority" | "candidate" | "skip";
+
+export interface OpportunityTriageCandidate {
+  signalId: string;
+  signalTitle: string;
+  track: CollectorTrack;
+  source: string;
+  heatScore: number | null;
+  dimensions: OpportunityTriageDimensionScores;
+  duplicateRisk: number;
+  memoryMatchCount: number;
+  opportunityScore: number;
+  recommendation: OpportunityTriageRecommendation;
+  rationale: string;
+}
+
+export interface OpportunityTriageRun {
+  id: string;
+  agent: "product-opportunity-agent";
+  mode: "daily-triage";
+  version: 2;
+  briefingDate: string;
+  objective: string;
+  status: "completed" | "failed";
+  model: string;
+  startedAt: string;
+  completedAt: string;
+  durationMs: number;
+  scannedSignals: number;
+  candidates: readonly OpportunityTriageCandidate[];
+  recommendedSignalIds: readonly string[];
+  decisionSummary: string;
+  toolCalls: readonly OpportunityAgentToolCall[];
+  error: string | null;
+}
+
 export interface OpportunityAgentRunIndex {
-  schemaVersion: 1;
+  schemaVersion: 1 | 2;
   updatedAt: string | null;
   runs: readonly OpportunityAgentRun[];
+  triageRuns?: readonly OpportunityTriageRun[];
 }

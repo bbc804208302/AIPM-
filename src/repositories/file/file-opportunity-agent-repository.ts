@@ -4,7 +4,7 @@ import path from "node:path";
 import bundledRunIndex from "../../../data/agent/runs.json";
 import { isProductionAgentRuntime } from "@/agent/runtime";
 import type { OpportunityAgentRepository } from "@/repositories/opportunity-agent-repository";
-import type { OpportunityAgentMemoryMatch, OpportunityAgentRun, OpportunityAgentRunIndex } from "@/types/agent";
+import type { OpportunityAgentMemoryMatch, OpportunityAgentRun, OpportunityAgentRunIndex, OpportunityTriageRun } from "@/types/agent";
 
 const maximumRuns = 100;
 
@@ -46,7 +46,19 @@ export function createFileOpportunityAgentRepository(
       if (isProductionAgentRuntime()) throw new Error("公开环境不允许写入 Agent Memory。");
       const index = await readIndex(filePath);
       const runs = [run, ...index.runs.filter((candidate) => candidate.id !== run.id)].slice(0, maximumRuns);
-      const nextIndex: OpportunityAgentRunIndex = { schemaVersion: 1, updatedAt: run.completedAt, runs };
+      const nextIndex: OpportunityAgentRunIndex = { ...index, schemaVersion: 2, updatedAt: run.completedAt, runs };
+      await fs.mkdir(path.dirname(filePath), { recursive: true });
+      await fs.writeFile(filePath, `${JSON.stringify(nextIndex, null, 2)}\n`, "utf8");
+    },
+    async listTriageRuns() {
+      const index = await readIndex(filePath);
+      return [...(index.triageRuns ?? [])].sort((left, right) => right.completedAt.localeCompare(left.completedAt));
+    },
+    async saveTriageRun(run: OpportunityTriageRun) {
+      if (isProductionAgentRuntime()) throw new Error("公开环境不允许写入 Agent Memory。");
+      const index = await readIndex(filePath);
+      const triageRuns = [run, ...(index.triageRuns ?? []).filter((candidate) => candidate.id !== run.id)].slice(0, maximumRuns);
+      const nextIndex: OpportunityAgentRunIndex = { ...index, schemaVersion: 2, updatedAt: run.completedAt, triageRuns };
       await fs.mkdir(path.dirname(filePath), { recursive: true });
       await fs.writeFile(filePath, `${JSON.stringify(nextIndex, null, 2)}\n`, "utf8");
     },

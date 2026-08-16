@@ -23,6 +23,8 @@ function repositories() {
   const agentRepository: OpportunityAgentRepository = {
     listRuns: async () => savedRuns,
     saveRun: async (run) => { savedRuns.push(run); },
+    listTriageRuns: async () => [],
+    saveTriageRun: async () => undefined,
     searchMemory: async () => [{ runId: "RUN-OLD", signalTitle: "旧 Agent 信号", decision: "proposal", summary: "曾评估过工作流可观测性需求", createdAt: "2026-08-15T00:00:00.000Z" }],
   };
   return { intelligenceRepository, agentRepository, savedRuns };

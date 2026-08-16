@@ -49,7 +49,7 @@ export function AgentRunControls({
   }
 
   const disabledReason = !executable
-    ? "在线作品集为只读模式，避免访客消耗你的 LLM 配额；已提交的运行记录仍可完整查看。"
+      ? "在线作品集为只读模式；可查看推荐和历史决策，但不会消耗你的 LLM 配额。"
     : !configured
       ? "本地尚未启用 Opportunity Agent，请配置 LLM 后运行。"
       : signals.length === 0
@@ -59,12 +59,12 @@ export function AgentRunControls({
   return (
     <section className="agent-control-panel" aria-labelledby="agent-run-title">
       <header>
-        <div><span>HUMAN-GATED EXECUTION</span><h2 id="agent-run-title">发起机会评估</h2></div>
+        <div><span>HUMAN OVERRIDE</span><h2 id="agent-run-title">手动补充分析</h2></div>
         <strong>{executable && configured ? "可运行" : "只读"}</strong>
       </header>
       <div className="agent-control-body">
         <label>
-          <span>选择今日 Signal</span>
+          <span>选择未被 Agent 推荐的 Signal</span>
           <select value={signalId} disabled={!executable || !configured || busy} onChange={(event) => setSignalId(event.target.value)}>
             {signals.map((signal) => <option value={signal.id} key={signal.id}>{signal.trackLabel} · {signal.title} · {signal.source}</option>)}
           </select>

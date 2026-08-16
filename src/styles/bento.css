@@ -583,6 +583,96 @@ body {
 .agent-empty-state h2 { margin-top: 5px; font-size: 24px; font-weight: 680; }
 .agent-empty-state p { max-width: 720px; margin-top: 6px; color: var(--sf-text-muted); font-size: 13px; }
 
+.agent-triage-control,
+.agent-triage-board,
+.agent-triage-empty {
+  border: 1px solid var(--sf-border);
+  border-radius: var(--sf-radius-lg);
+  background: var(--sf-white);
+  box-shadow: var(--sf-shadow-sm);
+}
+.agent-triage-control {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  align-items: center;
+  gap: 18px 28px;
+  padding: 20px;
+}
+.agent-triage-control > div:first-child > span,
+.agent-triage-board > header span,
+.agent-triage-empty > span {
+  color: var(--sf-text-subtle);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: .12em;
+}
+.agent-triage-control h2 { margin-top: 3px; font-size: 23px; font-weight: 680; }
+.agent-triage-control > div:first-child p { margin-top: 4px; color: var(--sf-text-muted); font-size: 12px; }
+.agent-triage-control > div:nth-child(2) { display: grid; justify-items: end; gap: 8px; }
+.agent-triage-control > div:nth-child(2) > strong { color: var(--sf-text-muted); font-size: 11px; }
+.agent-triage-control .brutal-control-button { min-width: 210px; padding-inline: 16px; }
+.agent-triage-control .task-control-status,
+.agent-triage-control .control-note { grid-column: 1 / -1; margin: 0; }
+.agent-triage-empty { padding: 32px 28px; }
+.agent-triage-empty h2 { margin-top: 5px; font-size: 24px; font-weight: 680; }
+.agent-triage-empty p { margin-top: 5px; color: var(--sf-text-muted); font-size: 13px; }
+.agent-triage-board { overflow: hidden; }
+.agent-triage-board > header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 20px;
+  padding: 18px 20px;
+  border-bottom: 1px solid var(--sf-border);
+  background: var(--sf-surface-2);
+}
+.agent-triage-board > header h2 { margin-top: 2px; font-size: 23px; font-weight: 680; }
+.agent-triage-board > header p { max-width: 780px; margin-top: 4px; color: var(--sf-text-muted); font-size: 12px; line-height: 1.6; }
+.agent-triage-board > header > strong { flex: 0 0 auto; padding: 6px 9px; border-radius: 9px; background: var(--sf-blue); color: var(--sf-accent-strong); font-size: 11px; }
+.agent-triage-summary { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); border-bottom: 1px solid var(--sf-border); }
+.agent-triage-summary article { min-height: 104px; padding: 15px 18px; border-right: 1px solid var(--sf-border); }
+.agent-triage-summary article:last-child { border-right: 0; }
+.agent-triage-summary span { color: var(--sf-text-muted); font-size: 11px; font-weight: 600; }
+.agent-triage-summary strong { display: block; margin-top: 6px; font-size: 28px; font-weight: 700; letter-spacing: -.04em; }
+.agent-triage-summary p { margin-top: 5px; color: var(--sf-text-subtle); font-size: 10px; }
+.agent-triage-candidates { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); }
+.agent-triage-candidate { min-width: 0; padding: 18px; border-right: 1px solid var(--sf-border); }
+.agent-triage-candidate:last-child { border-right: 0; }
+.agent-triage-candidate > header { display: grid; grid-template-columns: 26px minmax(0, 1fr) auto; gap: 10px; align-items: start; }
+.agent-triage-candidate > header > span { padding-top: 3px; color: var(--sf-text-subtle); font-family: var(--sf-font-mono); font-size: 11px; }
+.agent-triage-candidate > header div { min-width: 0; }
+.agent-triage-candidate > header div strong { display: block; font-size: 15px; font-weight: 680; line-height: 1.35; }
+.agent-triage-candidate > header div p { margin-top: 3px; overflow: hidden; color: var(--sf-text-subtle); font-size: 10px; text-overflow: ellipsis; white-space: nowrap; }
+.agent-triage-candidate > header > b { color: var(--sf-accent-strong); font-size: 30px; font-weight: 720; letter-spacing: -.05em; }
+.agent-triage-tags { display: flex; flex-wrap: wrap; gap: 5px; margin-top: 13px; }
+.agent-triage-tags span { padding: 5px 7px; border-radius: 8px; background: var(--sf-bg); color: var(--sf-text-muted); font-size: 9px; font-weight: 600; }
+.agent-triage-tags .triage-priority { background: var(--sf-blue); color: var(--sf-accent-strong); }
+.agent-triage-tags .triage-candidate { background: var(--sf-violet); color: #66708a; }
+.agent-triage-candidate > p { min-height: 58px; margin-top: 12px; color: var(--sf-text-muted); font-size: 11px; line-height: 1.7; }
+.agent-triage-candidate dl { display: grid; gap: 7px; margin-top: 14px; }
+.agent-triage-candidate dl > div { display: grid; grid-template-columns: 58px minmax(0, 1fr); align-items: center; gap: 8px; }
+.agent-triage-candidate dt { color: var(--sf-text-subtle); font-size: 9px; }
+.agent-triage-candidate dd { position: relative; height: 6px; border-radius: 999px; background: var(--sf-bg); }
+.agent-triage-candidate dd > span { display: block; height: 100%; border-radius: inherit; background: var(--sf-accent); }
+.agent-triage-candidate dd > b { position: absolute; right: 0; top: -12px; color: var(--sf-text-subtle); font-size: 8px; font-weight: 600; }
+.agent-deep-action { display: grid; gap: 5px; margin-top: 17px; }
+.agent-deep-action button { display: flex; align-items: center; justify-content: center; gap: 7px; min-height: 36px; border: 1px solid var(--sf-border-strong); border-radius: 10px; background: var(--sf-black); color: var(--sf-white); font-size: 11px; font-weight: 650; }
+.agent-deep-action button:disabled { cursor: not-allowed; opacity: .4; }
+.agent-deep-action small { color: var(--sf-text-subtle); font-size: 9px; text-align: center; }
+.agent-triage-no-picks { padding: 28px 20px; color: var(--sf-text-muted); font-size: 12px; }
+.agent-triage-audit { border-top: 1px solid var(--sf-border); }
+.agent-triage-audit summary { padding: 13px 18px; cursor: pointer; color: var(--sf-text-muted); font-size: 11px; font-weight: 650; }
+.agent-triage-audit > div { border-top: 1px solid var(--sf-border); }
+.agent-triage-audit > div p { display: grid; grid-template-columns: 44px minmax(0, 1fr) auto; gap: 12px; padding: 10px 18px; border-bottom: 1px solid var(--sf-border); font-size: 10px; }
+.agent-triage-audit > div p > strong { color: var(--sf-accent-strong); }
+.agent-triage-audit > div p > small { color: var(--sf-text-subtle); }
+.agent-triage-audit ol { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); list-style: none; }
+.agent-triage-audit li { padding: 12px 14px; border-right: 1px solid var(--sf-border); }
+.agent-triage-audit li:last-child { border-right: 0; }
+.agent-triage-audit li > span { color: var(--sf-text-subtle); font-family: var(--sf-font-mono); font-size: 9px; }
+.agent-triage-audit li > strong { display: block; margin-top: 3px; font-family: var(--sf-font-mono); font-size: 10px; }
+.agent-triage-audit li > p { margin-top: 3px; color: var(--sf-text-muted); font-size: 9px; }
+
 .quality-dashboard {
   display: grid;
   gap: 16px;
@@ -806,6 +896,10 @@ body {
   .agent-run-summary article:nth-child(-n + 2) { border-bottom: 1px solid var(--sf-border); }
   .agent-trace-layout { grid-template-columns: 1fr; }
   .agent-tool-trace { border-right: 0; border-bottom: 1px solid var(--sf-border); }
+  .agent-triage-candidates { grid-template-columns: 1fr; }
+  .agent-triage-candidate { border-right: 0; border-bottom: 1px solid var(--sf-border); }
+  .agent-triage-candidate:last-child { border-bottom: 0; }
+  .agent-triage-audit ol { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 }
 
 @media (max-width: 640px) {
@@ -861,4 +955,13 @@ body {
   .agent-history-panel > div { grid-template-columns: 1fr; }
   .agent-history-panel article:nth-child(n) { border-right: 0; }
   .agent-proposal dl > div { grid-template-columns: 1fr; gap: 4px; }
+  .agent-triage-control { grid-template-columns: 1fr; }
+  .agent-triage-control > div:nth-child(2) { justify-items: stretch; }
+  .agent-triage-summary { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .agent-triage-summary article:nth-child(2) { border-right: 0; }
+  .agent-triage-summary article:nth-child(-n + 2) { border-bottom: 1px solid var(--sf-border); }
+  .agent-triage-audit > div p { grid-template-columns: 36px minmax(0, 1fr); }
+  .agent-triage-audit > div p > small { grid-column: 2; }
+  .agent-triage-audit ol { grid-template-columns: 1fr; }
+  .agent-triage-audit li { border-right: 0; border-bottom: 1px solid var(--sf-border); }
 }
