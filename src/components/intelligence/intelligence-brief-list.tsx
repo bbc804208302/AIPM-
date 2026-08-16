@@ -78,7 +78,9 @@ export function IntelligenceBriefList({ items, agentExecutable }: Readonly<{ ite
                   {metadata.map((entry) => <span key={entry}>{entry}</span>)}
                 </div>
                 <div className="story-actions">
-                  <AgentDeepAnalysisButton signalId={item.id} disabled={!agentExecutable || item.agentReview?.deepAnalysis !== "not-run"} />
+                  {item.agentReview?.deepAnalysis === "not-run" ? (
+                    <AgentDeepAnalysisButton signalId={item.id} disabled={!agentExecutable} />
+                  ) : null}
                   <a href={item.url} target="_blank" rel="noreferrer">查看原文 <ArrowUpRight size={14} /></a>
                 </div>
               </div>
