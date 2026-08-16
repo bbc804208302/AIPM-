@@ -41,12 +41,17 @@ test("replaces generated copy only when the LLM returns valid item JSON", async 
   const reviewed = await reviewBriefWithLlm(brief, { SIGNALFLOW_LLM_REVIEW: "true", LLM_API_KEY: "test-key", LLM_MODEL: "test-model" }, fetcher as typeof fetch);
   assert.equal(reviewed.items[0]?.titleZh, "微短剧平台收入有望达到 10 亿美元");
   assert.equal(reviewed.items[0]?.translationStatus, "llm-reviewed");
+  assert.equal(reviewed.quality?.llmReview.status, "completed");
+  assert.equal(reviewed.quality?.llmReview.successfulItems, 1);
 });
 
 test("keeps the deterministic brief when the LLM response is invalid", async () => {
   const fetcher = async () => new Response(JSON.stringify({ choices: [{ message: { content: "not json" } }] }), { status: 200 });
   const reviewed = await reviewBriefWithLlm(brief, { SIGNALFLOW_LLM_REVIEW: "true", LLM_API_KEY: "test-key" }, fetcher as typeof fetch);
-  assert.equal(reviewed, brief);
+  assert.deepEqual(reviewed.items, brief.items);
+  assert.equal(reviewed.quality?.llmReview.status, "failed");
+  assert.equal(reviewed.quality?.llmReview.retryCount, 1);
+  assert.equal(reviewed.quality?.llmReview.issues[0]?.code, "invalid-json");
 });
 
 test("accepts JSON wrapped in provider commentary", async () => {
@@ -79,6 +84,8 @@ test("retries once with a compact prompt when JSON cannot be repaired", async ()
   assert.equal(requests, 2);
   assert.deepEqual(tokenLimits, [4_000, 6_000]);
   assert.equal(reviewed.items[0]?.translationStatus, "llm-reviewed");
+  assert.equal(reviewed.quality?.llmReview.requestCount, 2);
+  assert.equal(reviewed.quality?.llmReview.retryCount, 1);
 });
 
 test("reviews larger briefs in small batches", async () => {
@@ -95,6 +102,8 @@ test("reviews larger briefs in small batches", async () => {
 
   assert.equal(requests, 2);
   assert.equal(reviewed.items.filter((item) => item.translationStatus === "llm-reviewed").length, 4);
+  assert.equal(reviewed.quality?.llmReview.batchCount, 2);
+  assert.equal(reviewed.quality?.llmReview.status, "completed");
 });
 
 test("keeps successful batches when another batch returns invalid JSON", async () => {
@@ -114,6 +123,18 @@ test("keeps successful batches when another batch returns invalid JSON", async (
   assert.equal(requests, 3);
   assert.equal(reviewed.items[0]?.translationStatus, undefined);
   assert.equal(reviewed.items[3]?.translationStatus, "llm-reviewed");
+  assert.equal(reviewed.quality?.llmReview.status, "partial");
+  assert.equal(reviewed.quality?.llmReview.failedBatchCount, 1);
+  assert.equal(reviewed.quality?.llmReview.successfulItems, 1);
+});
+
+test("records why LLM review was skipped without exposing credentials", async () => {
+  const reviewed = await reviewBriefWithLlm(brief, { SIGNALFLOW_LLM_REVIEW: "true" });
+
+  assert.equal(reviewed.quality?.llmReview.status, "not-configured");
+  assert.equal(reviewed.quality?.llmReview.model, null);
+  assert.equal(reviewed.quality?.llmReview.pendingItems, 1);
+  assert.equal(JSON.stringify(reviewed.quality).includes("API_KEY"), false);
 });
 
 test("reuses today's unreviewed snapshot as the next LLM repair target", () => {

@@ -2,8 +2,10 @@ import type { Metadata } from "next";
 
 import { MetricStrip } from "@/components/metric-card/metric-strip";
 import { CollectorTaskControls } from "@/components/tasks/collector-task-controls";
+import { IntelligenceQualityDashboard } from "@/components/tasks/intelligence-quality-dashboard";
 import { PageHeader } from "@/components/workspace/page-header";
 import { loadCollectorWorkspace } from "@/services/load-collector-workspace";
+import { summarizeIntelligenceQuality } from "@/services/summarize-intelligence-quality";
 import { domainFocusAreaOptions } from "@/collector/configuration";
 import type { DailyIntelligenceBrief } from "@/types/intelligence";
 
@@ -35,6 +37,7 @@ const dateTimeFormatter = new Intl.DateTimeFormat("zh-CN", {
 
 export default async function TasksPage() {
   const { sources, domainSources, schedule, domainSchedule, latestBrief, domainBrief, editable } = await loadCollectorWorkspace();
+  const qualitySummary = summarizeIntelligenceQuality([latestBrief, domainBrief]);
   const enabledSources = sources.filter((source) => source.enabled).length;
   const enabledDomainSources = domainSources.filter((source) => source.enabled && source.focusAreas?.some((area) => domainSchedule.focusAreas?.includes(area))).length;
   const metrics = [
@@ -48,6 +51,7 @@ export default async function TasksPage() {
     <div className="workspace-page">
       <PageHeader eyebrow="Collector workflow monitor" title="采集任务" description="分别管理 AI 行业与业务领域每日采集，设置关注范围并查看真实产出状态。" />
       <MetricStrip metrics={metrics} />
+      <IntelligenceQualityDashboard summary={qualitySummary} />
       <CollectorTaskControls schedule={schedule} editable={editable} enabledSources={enabledSources} track="technical" title="AI 行业情报每日采集" />
       <CollectorTaskControls schedule={domainSchedule} editable={editable} enabledSources={enabledDomainSources} track="domain" title="业务领域情报每日采集" availableFocusAreas={domainFocusAreaOptions} />
       {latestBrief ? <LastRun brief={latestBrief} title="AI 行业情报" /> : null}

@@ -1,4 +1,10 @@
-import type { DailyIntelligenceBrief, IntelligenceSignal } from "@/types/intelligence";
+import type {
+  DailyIntelligenceBrief,
+  IntelligenceSignal,
+  LlmReviewIssue,
+  LlmReviewQualityReport,
+  LlmReviewRunStatus,
+} from "@/types/intelligence";
 import { jsonrepair } from "jsonrepair";
 
 const maximumItemsPerReview = 10;
@@ -26,6 +32,19 @@ type Environment = Readonly<Record<string, string | undefined>>;
 
 function hasFinalReview(item: IntelligenceSignal): boolean {
   return item.translationStatus === "reviewed" || item.translationStatus === "llm-reviewed";
+}
+
+function withLlmReviewQuality(
+  brief: DailyIntelligenceBrief,
+  report: LlmReviewQualityReport,
+): DailyIntelligenceBrief {
+  return { ...brief, quality: { ...brief.quality, llmReview: report } };
+}
+
+function runStatus(requestedItems: number, successfulItems: number): LlmReviewRunStatus {
+  if (requestedItems === 0 || successfulItems === requestedItems) return "completed";
+  if (successfulItems > 0) return "partial";
+  return "failed";
 }
 
 function normalizeApiBaseUrl(value: string): string {
@@ -161,25 +180,46 @@ export async function reviewBriefWithLlm(
   environment: Environment = process.env,
   fetcher: FetchLike = fetch,
 ): Promise<DailyIntelligenceBrief> {
+  const startedAt = Date.now();
   const config = readLlmReviewConfig(environment);
-  if (!config || brief.items.length === 0) {
+  const pendingItems = brief.items.filter((item) => !hasFinalReview(item)).slice(0, maximumItemsPerReview);
+  if (!config) {
     if (brief.items.length > 0 && environment.SIGNALFLOW_LLM_REVIEW === "true" && !environment.LLM_API_KEY?.trim()) {
       console.warn("LLM review skipped: LLM_API_KEY is not configured.");
     } else if (brief.items.length > 0 && environment.LLM_API_KEY?.trim() && environment.SIGNALFLOW_LLM_REVIEW !== "true") {
       console.warn("LLM review skipped: SIGNALFLOW_LLM_REVIEW is not true.");
     }
-    return brief;
+    return withLlmReviewQuality(brief, {
+      status: environment.SIGNALFLOW_LLM_REVIEW === "true" ? "not-configured" : "disabled",
+      model: null,
+      requestedItems: 0,
+      successfulItems: 0,
+      finalReviewedItems: brief.items.filter(hasFinalReview).length,
+      pendingItems: brief.items.filter((item) => !hasFinalReview(item)).length,
+      batchCount: 0,
+      requestCount: 0,
+      retryCount: 0,
+      failedBatchCount: 0,
+      durationMs: Date.now() - startedAt,
+      issues: [],
+    });
   }
 
-  const pendingItems = brief.items.filter((item) => !hasFinalReview(item)).slice(0, maximumItemsPerReview);
   const batches = splitIntoBatches(pendingItems, maximumItemsPerRequest);
   let reviewedBrief = brief;
+  let requestCount = 0;
+  let retryCount = 0;
+  const issues: LlmReviewIssue[] = [];
 
   for (const [batchIndex, batch] of batches.entries()) {
     const label = `batch ${batchIndex + 1}/${batches.length}`;
+    let attempts = 0;
     try {
       let batchCompleted = false;
       for (let attempt = 1; attempt <= 2; attempt += 1) {
+        attempts = attempt;
+        requestCount += 1;
+        if (attempt > 1) retryCount += 1;
         const response = await fetcher(`${config.apiBaseUrl}/chat/completions`, {
           method: "POST",
           headers: {
@@ -199,6 +239,7 @@ export async function reviewBriefWithLlm(
         });
         if (!response.ok) {
           console.warn(`LLM review ${label} fallback: provider returned HTTP ${response.status}.`);
+          issues.push({ batchIndex: batchIndex + 1, itemIds: batch.map((item) => item.id), code: "provider-http-error", attempts, httpStatus: response.status });
           break;
         }
 
@@ -206,6 +247,7 @@ export async function reviewBriefWithLlm(
         const { content, finishReason } = readProviderMetadata(payload);
         if (typeof content !== "string") {
           console.warn(`LLM review ${label} fallback: provider response did not contain message content (finish_reason=${finishReason}).`);
+          issues.push({ batchIndex: batchIndex + 1, itemIds: batch.map((item) => item.id), code: "missing-content", attempts, finishReason });
           break;
         }
         const parsed = parseJsonContent(content);
@@ -216,20 +258,48 @@ export async function reviewBriefWithLlm(
             continue;
           }
           console.warn(`LLM review ${label} fallback: provider response was not valid JSON after retry (${diagnostic}).`);
+          issues.push({ batchIndex: batchIndex + 1, itemIds: batch.map((item) => item.id), code: "invalid-json", attempts, finishReason, contentLength: content.length });
           break;
         }
 
         reviewedBrief = applyLlmItems(reviewedBrief, parsed);
-        batchCompleted = true;
+        const missingItemIds = batch
+          .filter((item) => !reviewedBrief.items.find((candidate) => candidate.id === item.id && hasFinalReview(candidate)))
+          .map((item) => item.id);
+        if (missingItemIds.length === 0) {
+          batchCompleted = true;
+          break;
+        }
+        if (attempt === 1) {
+          console.warn(`LLM review ${label} retry: provider omitted ${missingItemIds.length} items; retrying with a compact prompt.`);
+          continue;
+        }
+        issues.push({ batchIndex: batchIndex + 1, itemIds: missingItemIds, code: "incomplete-items", attempts, finishReason, contentLength: content.length });
         break;
       }
       if (!batchCompleted) continue;
     } catch (error) {
       console.warn(`LLM review ${label} fallback: ${error instanceof Error ? error.message.slice(0, 160) : "request failed"}.`);
+      issues.push({ batchIndex: batchIndex + 1, itemIds: batch.map((item) => item.id), code: "request-error", attempts: Math.max(attempts, 1) });
     }
   }
 
   const reviewedCount = reviewedBrief.items.filter((item) => item.translationStatus === "llm-reviewed").length;
+  const successfulItems = pendingItems.filter((item) => reviewedBrief.items.some((candidate) => candidate.id === item.id && hasFinalReview(candidate))).length;
+  const finalReviewedItems = reviewedBrief.items.filter(hasFinalReview).length;
   console.info(`LLM review completed: ${reviewedCount}/${brief.items.length} items across ${batches.length} batches.`);
-  return reviewedBrief;
+  return withLlmReviewQuality(reviewedBrief, {
+    status: runStatus(pendingItems.length, successfulItems),
+    model: config.model,
+    requestedItems: pendingItems.length,
+    successfulItems,
+    finalReviewedItems,
+    pendingItems: reviewedBrief.items.length - finalReviewedItems,
+    batchCount: batches.length,
+    requestCount,
+    retryCount,
+    failedBatchCount: new Set(issues.map((issue) => issue.batchIndex)).size,
+    durationMs: Date.now() - startedAt,
+    issues,
+  });
 }

@@ -50,6 +50,44 @@ export interface IntelligenceSourceReport {
   error?: string;
 }
 
+export type LlmReviewRunStatus = "disabled" | "not-configured" | "completed" | "partial" | "failed";
+
+export type LlmReviewIssueCode =
+  | "provider-http-error"
+  | "missing-content"
+  | "invalid-json"
+  | "incomplete-items"
+  | "request-error";
+
+export interface LlmReviewIssue {
+  batchIndex: number;
+  itemIds: readonly string[];
+  code: LlmReviewIssueCode;
+  attempts: number;
+  httpStatus?: number;
+  finishReason?: string;
+  contentLength?: number;
+}
+
+export interface LlmReviewQualityReport {
+  status: LlmReviewRunStatus;
+  model: string | null;
+  requestedItems: number;
+  successfulItems: number;
+  finalReviewedItems: number;
+  pendingItems: number;
+  batchCount: number;
+  requestCount: number;
+  retryCount: number;
+  failedBatchCount: number;
+  durationMs: number;
+  issues: readonly LlmReviewIssue[];
+}
+
+export interface IntelligenceQualityReport {
+  llmReview: LlmReviewQualityReport;
+}
+
 export interface DailyIntelligenceBrief {
   schemaVersion: 1;
   briefingDate: string;
@@ -60,4 +98,5 @@ export interface DailyIntelligenceBrief {
   dailyLimit: number;
   items: readonly IntelligenceSignal[];
   sources: readonly IntelligenceSourceReport[];
+  quality?: IntelligenceQualityReport;
 }
