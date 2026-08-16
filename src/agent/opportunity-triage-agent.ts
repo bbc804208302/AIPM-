@@ -48,7 +48,6 @@ interface TriageState {
 }
 
 const maximumSignals = 20;
-const maximumRecommendations = 3;
 
 const triageTools = [
   {
@@ -96,6 +95,8 @@ const triageTools = [
               type: "object",
               properties: {
                 signalId: { type: "string" },
+                titleZh: { type: "string" },
+                summaryZh: { type: "string" },
                 relevance: { type: "number", minimum: 0, maximum: 100 },
                 novelty: { type: "number", minimum: 0, maximum: 100 },
                 userValue: { type: "number", minimum: 0, maximum: 100 },
@@ -104,7 +105,7 @@ const triageTools = [
                 duplicateRisk: { type: "number", minimum: 0, maximum: 100 },
                 rationale: { type: "string" },
               },
-              required: ["signalId", "relevance", "novelty", "userValue", "actionability", "evidence", "duplicateRisk", "rationale"],
+              required: ["signalId", "titleZh", "summaryZh", "relevance", "novelty", "userValue", "actionability", "evidence", "duplicateRisk", "rationale"],
               additionalProperties: false,
             },
           },
@@ -117,8 +118,8 @@ const triageTools = [
   {
     type: "function",
     function: {
-      name: "recommend_top_signals",
-      description: "按照程序计算后的机会分数生成今日 Top 3 推荐，并记录可审计结论。",
+      name: "select_intelligence_for_pool",
+      description: "确认程序按机会分数完成动态准入；50 分以上进入情报池，低分进入待审候选。",
       parameters: {
         type: "object",
         properties: {
@@ -146,6 +147,15 @@ function parseArguments(value: string): Record<string, unknown> {
 function requiredString(value: unknown, label: string, maximumLength = 500): string {
   if (typeof value !== "string" || value.trim().length === 0) throw new Error(`${label} 不能为空。`);
   return value.trim().slice(0, maximumLength);
+}
+
+function requiredChineseOverview(value: unknown): string {
+  const overview = requiredString(value, "中文概述", 220);
+  if (!/[\u3400-\u9fff]/u.test(overview)) throw new Error("中文概述必须包含可读的中文说明。");
+  if (/发布(?:了)?(?:一则|关于)?.{0,12}(?:新动态|内容更新)|具体以原文为准|以项目说明为准|值得产品经理关注/u.test(overview)) {
+    throw new Error("中文概述过于模板化，必须直接说明情报是什么、做什么或发生了什么。");
+  }
+  return overview;
 }
 
 function score(value: unknown): number {
@@ -179,20 +189,25 @@ function signalObservation(signal: IntelligenceSignal) {
     id: signal.id,
     title: signal.titleZh ?? signal.title,
     summary: signal.summaryZh ?? signal.summary,
+    originalTitle: signal.title,
+    sourceSummary: signal.summary,
+    pageDescription: typeof signal.sourceMetadata.pageDescription === "string" ? signal.sourceMetadata.pageDescription.slice(0, 800) : "",
     track: signal.track,
     source: signal.source,
     category: signal.category,
     publishedAt: signal.publishedAt,
     heatScore: signal.heatScore ?? null,
+    url: signal.url,
   };
 }
 
 function systemPrompt(): string {
   return [
-    "你是 SignalFlow Product Opportunity Agent 的 daily-triage 模式，服务于 AI 产品经理。",
+    "你是 SignalFlow Product Intelligence Agent 的 daily-triage 模式，服务于 AI 产品经理。",
     "目标是主动扫描最新公开情报，推荐最值得进一步做产品机会分析的 Signal。",
-    "必须依次调用 list_daily_signals、search_memory、score_candidates、recommend_top_signals；每轮只能调用一个工具。",
+    "必须依次调用 list_daily_signals、search_memory、score_candidates、select_intelligence_for_pool；每轮只能调用一个工具。",
     "search_memory 必须为每条 Signal 提供简短查询；score_candidates 必须覆盖全部候选且每条只出现一次。",
+    "score_candidates 同时生成准确中文标题和一句中文概述。概述直接说明它是什么、做什么或发生了什么，不解释入选原因，不得使用‘发布新动态’等空泛模板。",
     "评分维度：业务相关性、新颖性、用户价值、可行动性、证据质量、历史重复风险。",
     "公开热度只是弱信号；公司新闻或热门事件如果没有明确用户问题和可行动机会，不应获得高分。",
     "历史已有高度相似决策时提高 duplicateRisk；不得为了凑数推荐重复内容。",
@@ -210,7 +225,7 @@ function toolSummary(name: OpportunityAgentToolName, args: Record<string, unknow
   if (name === "list_daily_signals") return "读取最新双轨情报";
   if (name === "search_memory") return `检索 ${Array.isArray(args.queries) ? args.queries.length : 0} 条 Signal 的历史决策`;
   if (name === "score_candidates") return `评估 ${Array.isArray(args.candidates) ? args.candidates.length : 0} 条候选`;
-  if (name === "recommend_top_signals") return "生成今日机会推荐";
+  if (name === "select_intelligence_for_pool") return "确认今日情报池准入结果";
   return "不支持的初筛工具";
 }
 
@@ -280,7 +295,9 @@ async function executeTriageTool(
         const opportunityScore = calculateOpportunityScore(dimensions, signal.heatScore ?? null, duplicateRisk);
         return {
           signalId: signal.id,
-          signalTitle: signal.titleZh ?? signal.title,
+          signalTitle: requiredString(raw.titleZh, "中文标题", 60),
+          titleZh: requiredString(raw.titleZh, "中文标题", 60),
+          summaryZh: requiredChineseOverview(raw.summaryZh),
           track: signal.track,
           source: signal.source,
           heatScore: signal.heatScore ?? null,
@@ -295,21 +312,20 @@ async function executeTriageTool(
       state.scoredCandidates = true;
       output = { candidates: state.candidates };
       outputSummary = `完成 ${state.candidates.length} 条机会评分`;
-    } else if (name === "recommend_top_signals") {
+    } else if (name === "select_intelligence_for_pool") {
       if (!state.scoredCandidates) throw new Error("生成推荐前必须完成全部候选评分。");
       state.recommendedSignalIds = state.candidates
         .filter((candidate) => candidate.recommendation !== "skip")
-        .slice(0, maximumRecommendations)
         .map((candidate) => candidate.signalId);
       requiredString(args.summary, "推荐总结", 280);
       const recommendedTitles = state.recommendedSignalIds
         .map((signalId) => state.candidates.find((candidate) => candidate.signalId === signalId)?.signalTitle)
         .filter((title): title is string => Boolean(title));
       state.decisionSummary = recommendedTitles.length > 0
-        ? `Agent 从 ${state.signals.length} 条情报中推荐 ${recommendedTitles.length} 条进入深度分析：${recommendedTitles.join("、")}。其余候选未达到机会阈值或受到历史重复风险影响。`
-        : `Agent 完成 ${state.signals.length} 条情报的结构化评分，本批次没有达到机会阈值的候选。`;
+        ? `Agent 从 ${state.signals.length} 条候选中准入 ${recommendedTitles.length} 条产品情报：${recommendedTitles.join("、")}。其余内容进入待审候选。`
+        : `Agent 完成 ${state.signals.length} 条候选的结构化评分，本批次没有达到情报池准入阈值的内容。`;
       output = { recommendedSignalIds: state.recommendedSignalIds, summary: state.decisionSummary };
-      outputSummary = `推荐 ${state.recommendedSignalIds.length} 条优先分析情报`;
+      outputSummary = `准入 ${state.recommendedSignalIds.length} 条产品情报`;
     } else {
       throw new Error("不支持的初筛工具。");
     }
@@ -338,7 +354,7 @@ export async function runOpportunityTriageAgent(
   };
   const messages: ConversationMessage[] = [
     { role: "system", content: systemPrompt() },
-    { role: "user", content: "扫描最新双轨情报，完成历史去重、结构化评分并推荐今日最值得深度分析的产品机会。" },
+    { role: "user", content: "扫描最新双轨候选，完成中文概述、历史去重和结构化评分，决定哪些内容进入 AI 产品情报池。" },
   ];
   let runError: string | null = null;
 
@@ -368,9 +384,9 @@ export async function runOpportunityTriageAgent(
     id: `TRIAGE-${randomUUID()}`,
     agent: "product-opportunity-agent",
     mode: "daily-triage",
-    version: 2,
+    version: 3,
     briefingDate: state.signals.map((signal) => signal.briefingDate).sort().at(-1) ?? completedAt.toISOString().slice(0, 10),
-    objective: "扫描每日情报并推荐最值得深度分析的产品机会",
+    objective: "扫描每日候选并决定产品情报准入与深度分析优先级",
     status: state.decisionSummary ? "completed" : "failed",
     model: config.model,
     startedAt: startedAt.toISOString(),
@@ -379,6 +395,8 @@ export async function runOpportunityTriageAgent(
     scannedSignals: state.signals.length,
     candidates: state.candidates,
     recommendedSignalIds: state.recommendedSignalIds,
+    reviewSignalIds: state.candidates.filter((candidate) => candidate.recommendation === "skip").map((candidate) => candidate.signalId),
+    autoAnalyzedSignalIds: [],
     decisionSummary: state.decisionSummary ?? runError ?? "未形成推荐",
     toolCalls: state.toolCalls,
     error: runError,

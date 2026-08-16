@@ -15,7 +15,7 @@ export async function POST(request: Request) {
   if (!isOpportunityAgentExecutable()) {
     return NextResponse.json({ error: "公开环境只展示 Agent 运行记录，不允许访客消耗你的 LLM 配额。" }, { status: 403 });
   }
-  if (activeRun) return NextResponse.json({ error: "Product Opportunity Agent 正在运行。" }, { status: 409 });
+  if (activeRun) return NextResponse.json({ error: "Product Intelligence Agent 正在执行深度分析。" }, { status: 409 });
 
   try {
     const body = await request.json().catch(() => ({})) as { signalId?: unknown };

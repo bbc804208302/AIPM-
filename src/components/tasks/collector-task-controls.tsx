@@ -52,16 +52,16 @@ export function CollectorTaskControls({
 
   async function runNow() {
     setBusy("run");
-    setStatus("正在采集公开来源并生成今日 Top 10…");
+    setStatus("正在采集公开来源、准备候选并运行 Agent 准入…");
     try {
       const response = await fetch("/api/collector/run", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ track, focusAreas }),
       });
-      const data = await response.json() as { error?: string; selected?: number; candidates?: number; failedSources?: number; chineseOverviews?: number; llmReviewed?: number };
+      const data = await response.json() as { error?: string; selected?: number; candidates?: number; failedSources?: number; admitted?: number; autoAnalyzed?: number };
       if (!response.ok) throw new Error(data.error || "采集任务执行失败。");
-      setStatus(`真实采集完成：入选 ${data.selected ?? 0} 条，LLM 审校 ${data.llmReviewed ?? 0} 条，中文概述 ${data.chineseOverviews ?? 0} 条；候选 ${data.candidates ?? 0} 条，失败来源 ${data.failedSources ?? 0} 个。`);
+      setStatus(`真实采集完成：准备 ${data.selected ?? 0} 条候选，Agent 准入 ${data.admitted ?? 0} 条，自动深度分析 ${data.autoAnalyzed ?? 0} 条；来源候选 ${data.candidates ?? 0} 条，失败来源 ${data.failedSources ?? 0} 个。`);
       router.refresh();
     } catch (reason) {
       setStatus(reason instanceof Error ? reason.message : "采集任务执行失败。");
@@ -85,7 +85,7 @@ export function CollectorTaskControls({
         </label>
         <label><span>执行时间</span><input type="time" value={time} disabled={!editable} onChange={(event) => setTime(event.target.value)} /></label>
         <label><span>时区</span><input type="text" value="Asia/Shanghai" disabled /></label>
-        <label><span>今日输出</span><input type="number" min="1" max="30" value={dailyLimit} disabled={!editable} onChange={(event) => setDailyLimit(Number(event.target.value))} /></label>
+        <label><span>Agent 候选上限</span><input type="number" min="1" max="20" value={dailyLimit} disabled={!editable} onChange={(event) => setDailyLimit(Number(event.target.value))} /></label>
       </div>
       {availableFocusAreas.length > 0 ? (
         <fieldset className="domain-focus-control">
@@ -113,7 +113,7 @@ export function CollectorTaskControls({
         <button className="brutal-control-button primary" type="button" disabled={!editable || busy !== null || enabledSources === 0 || (track === "domain" && focusAreas.length === 0)} onClick={runNow}><Play size={15} />{busy === "run" ? "采集中" : "重新采集今日情报"}</button>
       </div>
       {status ? <p className="task-control-status" aria-live="polite">{status}</p> : null}
-      <p className="control-note">{editable ? `该操作会真实请求已启用的${track === "domain" ? "业务领域" : "AI 行业"}来源并覆盖对应当天快照；配置 LLM 后会在写入前进行中文审校，人工审校内容会保留。` : "公开站点只展示任务状态，不允许访客修改计划或触发采集。"}</p>
+      <p className="control-note">{editable ? `该操作会真实请求已启用的${track === "domain" ? "业务领域" : "AI 行业"}来源、覆盖候选快照，并在本地已配置 LLM 时运行 Agent 准入和高分自动深度分析。` : "公开站点只展示任务状态，不允许访客修改计划或触发采集。"}</p>
     </section>
   );
 }

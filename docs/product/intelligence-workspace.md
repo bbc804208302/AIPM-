@@ -7,18 +7,18 @@ AI 产品情报池是 SignalFlow 自有数据产品，不再以飞书多维表�
 ## 信息架构
 
 - AI 行业情报：新模型、AI 技术、Agent、AI Coding、多模态、AI Native 产品、有价值的 AI 工具与开源项目。
-- 业务领域情报：动漫、短剧、影视和 AIGC 的生产流程、平台规则、工具、案例、商业模式和 AI 影响。当前使用独立 RSS Source Registry、领域关键词过滤、每日 Top 10 与人工中文审校保护层。
+- 业务领域情报：动漫、短剧、影视和 AIGC 的生产流程、平台规则、工具、案例、商业模式和 AI 影响。当前使用独立 RSS Source Registry、领域关键词过滤与 Product Intelligence Agent 动态准入。
 
 AI 行业情报支持按 GitHub Trending、AI 媒体和 X 动态筛选。AI 媒体包含 OpenAI、Google DeepMind、Hugging Face、TLDR AI、Smol AI、Latent Space 与 MIT Technology Review AI。
 
 ## 今日情报
 
-“今日情报”是当日生成的情报批次，候选内容允许来自 `Asia/Shanghai` 当天及此前两个自然日。RSS、媒体和 X 内容必须具有近 3 日内的 `publishedAt`；GitHub Trending 是当天实时榜单，允许没有原始发布时间。近 3 日有效内容不足 10 条时如实展示更少条目，不继续扩大时间窗。
+“今日情报”是当日生成的情报批次，候选内容允许来自 `Asia/Shanghai` 当天及此前两个自然日。RSS、媒体和 X 内容必须具有近 3 日内的 `publishedAt`；GitHub Trending 是当天实时榜单，允许没有原始发布时间。Collector 最多准备 20 条候选；Agent 只接纳达到价值阈值的内容，不为凑数补齐。
 
 - `briefingDate`：今日批次日期。
 - `publishedAt`：原始来源发布时间。
 - `collectedAt`：SignalFlow 采集时间。
-- 默认展示 10 条；来源配额先按 AI 媒体 4、GitHub 4、X 2，再在来源不足时回填。
+- Collector 按来源配额构造最多 20 条双轨候选，避免单一来源垄断；最终展示数量由 Agent 评分动态决定。
 - 选取前通过持久化已读索引对全部历史内容执行去重，包括当天重复手动采集：规范化 URL 相同，或去除标点、符号和空白后的原始标题相同，均视为已读内容，不再录入新批次。索引只保存公开 URL 与原始标题。
 - 页面不得用昨日数据冒充今日数据；当天没有快照时显示明确空状态。
 - 两条情报轨道统一显示 `generatedAt` 对应的“最后更新时间”。
@@ -35,7 +35,9 @@ AI 行业情报支持按 GitHub Trending、AI 媒体和 X 动态筛选。AI 媒�
 
 每条情报至少保留原始标题、来源分组、具体来源、原文 URL、来源摘要、原始发布时间、采集时间、来源排名或公开热度元数据。中文 UI 可并列保存 `titleZh`、`summaryZh` 与 `translationStatus`；译文必须以保留的原文为依据，不得扩写成未经来源支持的产品结论。`summaryZh` 必须回答“这是什么、主要讲什么或具有什么能力”，不得复述排名、入选原因或泛化的产品经理建议；`selectionReason` 单独承担入选依据。
 
-Collector 在显式写入时可选执行 LLM 审校层：仅当 `SIGNALFLOW_LLM_REVIEW=true` 且服务端存在 `LLM_API_KEY` 时启用。模型只能处理已选中的公开 Top 10，并必须输出可追溯到原始标题和摘要的中文标题、概述；任何请求、超时或输出解析失败都会回退到确定性规则，不会阻止快照保存。`translationStatus: llm-reviewed` 用于在页面透明标识该内容。X 热度和 GitHub 排名不能作为事实可信度。
+每日 Product Intelligence Agent 处理最多 20 条公开候选，逐条生成可追溯到原始标题和摘要的中文标题与概述，并按业务相关性、新颖性、用户价值、可行动性和证据质量评分。70 分以上自动触发深度分析，每日最多 3 条；50–69 分进入情报池并等待人工决定是否深度分析；低分内容进入待审候选。X 热度和 GitHub 排名不能作为事实可信度。
+
+Collector 仍保留 `SIGNALFLOW_LLM_REVIEW=true` 的本地兼容审校能力，但 GitHub 定时采集不再重复调用该层，避免中文审校与 Agent 准入产生双份 LLM 消耗。
 
 DeepSeek 等 OpenAI 兼容服务返回近似 JSON 时，先使用 `jsonrepair` 做结构修复；仍无法解析则使用更短上下文重试一次。当天快照存在 `needs-review` 条目时，下一次显式写入优先重新审校该快照，成功后再由后续批次选取新的未读内容。
 

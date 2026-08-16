@@ -5,16 +5,18 @@ import { domainFocusAreaOptions, loadCollectorSchedule } from "@/collector/confi
 import { isCollectorConfigurationEditable } from "@/collector/runtime";
 import { buildDailyIntelligenceBrief } from "@/collector/daily-brief";
 import { enrichBriefWithChineseOverview } from "@/collector/chinese-overview";
-import { prepareBriefForLlmReview, reviewBriefWithLlm } from "@/collector/llm-review";
 import { enrichBriefWithSourceContext } from "@/collector/source-context";
 import { collectIntelligenceSignals } from "@/collector/pipeline";
+import { runDailyIntelligenceAgent } from "@/agent/daily-intelligence-agent";
+import { readOpportunityAgentConfig } from "@/agent/opportunity-agent";
 import { createFileIntelligenceRepository } from "@/repositories/file/file-intelligence-repository";
+import { createFileOpportunityAgentRepository } from "@/repositories/file/file-opportunity-agent-repository";
 import type { CollectorTrack, DomainFocusArea } from "@/collector/types";
 
 export const runtime = "nodejs";
-export const maxDuration = 60;
+export const maxDuration = 300;
 
-let activeRun: Promise<ReturnType<typeof buildDailyIntelligenceBrief>> | null = null;
+let activeRun: ReturnType<typeof runCollector> | null = null;
 
 async function runCollector(track: CollectorTrack, focusAreas?: readonly DomainFocusArea[]) {
   const schedule = await loadCollectorSchedule(track);
@@ -33,12 +35,13 @@ async function runCollector(track: CollectorTrack, focusAreas?: readonly DomainF
     }),
     previous,
   );
-  const reviewTargetBrief = prepareBriefForLlmReview(deterministicBrief, previous);
-  const contextualBrief = await enrichBriefWithSourceContext(reviewTargetBrief);
-  const brief = await reviewBriefWithLlm(contextualBrief);
+  const brief = await enrichBriefWithSourceContext(deterministicBrief);
   if (brief.items.length === 0) throw new Error("没有选出有效情报，今日快照未更新。");
   await repository.saveBrief(brief);
-  return brief;
+  const agentResult = readOpportunityAgentConfig()
+    ? await runDailyIntelligenceAgent(repository, createFileOpportunityAgentRepository())
+    : null;
+  return { brief, agentResult };
 }
 
 export async function POST(request: Request) {
@@ -57,7 +60,7 @@ export async function POST(request: Request) {
       return NextResponse.json({ error: "请至少选择一个业务领域。" }, { status: 400 });
     }
     activeRun = runCollector(track, focusAreas);
-    const brief = await activeRun;
+    const { brief, agentResult } = await activeRun;
     revalidatePath("/intelligence");
     revalidatePath("/sources");
     revalidatePath("/tasks");
@@ -69,8 +72,8 @@ export async function POST(request: Request) {
       candidates: brief.candidateCount,
       succeededSources: brief.sources.filter((source) => source.status === "success").length,
       failedSources: brief.sources.filter((source) => source.status === "failed").length,
-      chineseOverviews: brief.items.filter((item) => item.summaryZh).length,
-      llmReviewed: brief.items.filter((item) => item.translationStatus === "llm-reviewed").length,
+      admitted: agentResult?.triageRun.recommendedSignalIds.length ?? 0,
+      autoAnalyzed: agentResult?.deepAnalysisRuns.length ?? 0,
     });
   } catch (error) {
     return NextResponse.json({ error: error instanceof Error ? error.message : "采集任务失败。" }, { status: 500 });

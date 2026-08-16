@@ -38,8 +38,8 @@ export function validateCollectorSchedule(value: unknown, track: CollectorTrack 
     throw new Error("Collector schedule time must use HH:mm.");
   }
   if (schedule.timezone !== "Asia/Shanghai") throw new Error("Collector schedule timezone must be Asia/Shanghai.");
-  if (typeof schedule.dailyLimit !== "number" || !Number.isInteger(schedule.dailyLimit) || schedule.dailyLimit < 1 || schedule.dailyLimit > 30) {
-    throw new Error("Collector daily limit must be an integer between 1 and 30.");
+  if (typeof schedule.dailyLimit !== "number" || !Number.isInteger(schedule.dailyLimit) || schedule.dailyLimit < 1 || schedule.dailyLimit > 20) {
+    throw new Error("Collector candidate limit must be an integer between 1 and 20.");
   }
   if (track === "domain") {
     if (!Array.isArray(schedule.focusAreas) || schedule.focusAreas.length === 0 || schedule.focusAreas.some((area) => !domainFocusAreaOptions.includes(area as DomainFocusArea))) {
@@ -103,11 +103,6 @@ jobs:
 
       - name: Collect and save today's intelligence
         run: ${command}
-        env:
-          SIGNALFLOW_LLM_REVIEW: \${{ secrets.SIGNALFLOW_LLM_REVIEW }}
-          LLM_API_KEY: \${{ secrets.LLM_API_KEY }}
-          LLM_API_BASE_URL: \${{ secrets.LLM_API_BASE_URL }}
-          LLM_MODEL: \${{ secrets.LLM_MODEL }}
 
       - name: Commit daily snapshot
         run: |

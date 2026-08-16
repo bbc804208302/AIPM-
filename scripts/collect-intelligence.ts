@@ -36,7 +36,7 @@ function parseArgs(args: readonly string[]): CliOptions {
       options.perSourceLimit = value;
     } else if (arg === "--daily-limit") {
       const value = Number(args[++index]);
-      if (!Number.isInteger(value) || value < 1 || value > 30) throw new Error("--daily-limit must be an integer between 1 and 30.");
+      if (!Number.isInteger(value) || value < 1 || value > 20) throw new Error("--daily-limit must be an integer between 1 and 20.");
       options.dailyLimit = value;
     } else throw new Error(`Unknown argument: ${arg}`);
   }

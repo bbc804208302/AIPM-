@@ -39,6 +39,18 @@ export interface IntelligenceSignal {
   highValue: boolean;
   readStatus: string | null;
   convertedToDemand: boolean;
+  agentReview?: IntelligenceAgentReview;
+}
+
+export interface IntelligenceAgentReview {
+  status: "admitted" | "review" | "unreviewed";
+  opportunityScore: number | null;
+  recommendation: "priority" | "candidate" | "skip" | null;
+  rationale: string | null;
+  duplicateRisk: number | null;
+  reviewedAt: string | null;
+  deepAnalysis: "proposal" | "rejected" | "not-run";
+  deepAnalysisSummary: string | null;
 }
 
 export interface IntelligenceSourceReport {

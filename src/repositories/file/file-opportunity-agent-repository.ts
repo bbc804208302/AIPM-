@@ -23,7 +23,7 @@ function toMemoryMatch(run: OpportunityAgentRun): OpportunityAgentMemoryMatch {
 }
 
 async function readIndex(filePath: string): Promise<OpportunityAgentRunIndex> {
-  if (isProductionAgentRuntime()) return bundledRunIndex as OpportunityAgentRunIndex;
+  if (isProductionAgentRuntime()) return bundledRunIndex as unknown as OpportunityAgentRunIndex;
   try {
     return JSON.parse(await fs.readFile(filePath, "utf8")) as OpportunityAgentRunIndex;
   } catch (error) {

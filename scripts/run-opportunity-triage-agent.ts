@@ -1,18 +1,19 @@
-import { runOpportunityTriageAgent } from "../src/agent/opportunity-triage-agent";
+import { runDailyIntelligenceAgent } from "../src/agent/daily-intelligence-agent";
 import { createFileIntelligenceRepository } from "../src/repositories/file/file-intelligence-repository";
 import { createFileOpportunityAgentRepository } from "../src/repositories/file/file-opportunity-agent-repository";
 import { loadLocalEnvironment } from "./load-env";
 
 async function main(): Promise<void> {
   loadLocalEnvironment();
-  const run = await runOpportunityTriageAgent(
+  const { triageRun: run, deepAnalysisRuns } = await runDailyIntelligenceAgent(
     createFileIntelligenceRepository(),
     createFileOpportunityAgentRepository(),
   );
-  console.log("SignalFlow Product Opportunity Agent · Daily Triage");
+  console.log("SignalFlow Product Intelligence Agent · Daily Admission");
   console.log(`Run: ${run.id}`);
   console.log(`Scanned: ${run.scannedSignals}`);
-  console.log(`Recommended: ${run.recommendedSignalIds.length}`);
+  console.log(`Admitted: ${run.recommendedSignalIds.length}`);
+  console.log(`Auto deep analysis: ${deepAnalysisRuns.length}`);
   console.log(`Tool calls: ${run.toolCalls.length}`);
   console.log(`Summary: ${run.decisionSummary}`);
   if (run.error) throw new Error(run.error);

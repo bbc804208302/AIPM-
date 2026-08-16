@@ -50,8 +50,8 @@ test("renders a production-safe workflow when a local schedule is edited", () =>
   assert.match(workflow, /cron: "17 08 \* \* \*"/);
   assert.match(workflow, /fetch-depth: 0/);
   assert.match(workflow, /node-version: 24/);
-  assert.match(workflow, /SIGNALFLOW_LLM_REVIEW: \$\{\{ secrets\.SIGNALFLOW_LLM_REVIEW \}\}/);
-  assert.match(workflow, /LLM_MODEL: \$\{\{ secrets\.LLM_MODEL \}\}/);
+  assert.doesNotMatch(workflow, /LLM_API_KEY/);
+  assert.doesNotMatch(workflow, /SIGNALFLOW_LLM_REVIEW/);
   assert.match(workflow, /git rebase origin\/main/);
   assert.doesNotMatch(workflow, /node-version: 20/);
 });

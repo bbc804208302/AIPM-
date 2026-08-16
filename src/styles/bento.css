@@ -223,6 +223,16 @@ body {
   box-shadow: 0 4px 12px rgba(49, 84, 103, .2);
 }
 .source-filter-tabs a.active { background: var(--sf-white); color: var(--sf-text); box-shadow: 0 2px 8px rgba(32, 36, 40, .06); }
+.intelligence-admission-tabs { display: flex; width: fit-content; gap: 8px; padding-top: 2px; }
+.intelligence-admission-tabs a { display: inline-flex; align-items: center; gap: 8px; min-height: 40px; padding: 0 15px; border: 1px solid var(--sf-border); border-radius: 11px; background: var(--sf-white); color: var(--sf-text-muted); font-size: 12px; font-weight: 650; }
+.intelligence-admission-tabs a span { min-width: 22px; padding: 2px 6px; border-radius: 999px; background: var(--sf-bg); color: var(--sf-text-subtle); text-align: center; }
+.intelligence-admission-tabs a.active { border-color: var(--sf-accent); background: var(--sf-blue); color: var(--sf-accent-strong); }
+.intelligence-admission-tabs a.active span { background: var(--sf-white); color: var(--sf-accent-strong); }
+.intelligence-agent-gate { min-height: 72px; padding: 15px 18px; display: flex; align-items: center; justify-content: space-between; gap: 24px; border: 1px solid #cbd4d7; border-radius: 16px; background: #eef2f2; box-shadow: var(--sf-shadow-sm); }
+.intelligence-agent-gate > div { display: grid; gap: 4px; }
+.intelligence-agent-gate span { color: var(--sf-accent-strong); font-family: var(--font-mono); font-size: 9px; font-weight: 700; letter-spacing: .12em; }
+.intelligence-agent-gate strong { font-size: 14px; font-weight: 680; }
+.intelligence-agent-gate p { max-width: 68ch; margin: 0; color: var(--sf-text-muted); font-size: 12px; line-height: 1.65; }
 
 .domain-focus-summary,
 .today-brief-banner,
@@ -288,7 +298,19 @@ body {
 .story-summary { margin: 0; color: var(--sf-text); font-size: 14px; font-weight: 500; line-height: 1.7; }
 .story-heat { display: inline-flex; align-items: center; gap: 4px; color: var(--sf-warning) !important; }
 .story-heat-empty { color: var(--sf-text-subtle) !important; }
+.story-agent-score { background: #edf0e8 !important; color: #596a47 !important; }
+.story-agent-rationale,
+.story-deep-analysis { max-width: 82ch; margin-top: 10px; padding: 10px 12px; display: grid; grid-template-columns: auto 1fr; gap: 10px; border-radius: 10px; background: #f1f0ed; }
+.story-agent-rationale > span,
+.story-deep-analysis > span { color: var(--sf-text-muted); font-size: 10px; font-weight: 700; white-space: nowrap; }
+.story-agent-rationale p,
+.story-deep-analysis p { margin: 0; color: var(--sf-text-muted); font-size: 12px; line-height: 1.65; }
+.story-deep-analysis { border-left: 3px solid #84788f; background: #f0edf2; }
+.story-deep-analysis > span { color: #685c73; }
 .story-facts span { color: var(--sf-text-subtle); font-size: 11px; font-weight: 550; }
+.story-actions { display: flex; align-items: center; gap: 8px; }
+.story-actions .agent-deep-action { margin-top: 0; }
+.story-actions .agent-deep-action button { min-height: 34px; background: var(--sf-accent); }
 .story-footer a,
 .detail-link,
 .detail-back-link {
@@ -918,6 +940,9 @@ body {
   .demand-filter-strip a { border-width: 1px; border-radius: 16px; box-shadow: var(--sf-shadow-sm); }
   .track-tabs { border-width: 1px; box-shadow: none; }
   .track-tabs a { border-bottom: 0; }
+  .intelligence-admission-tabs { width: 100%; }
+  .intelligence-admission-tabs a { flex: 1; justify-content: center; }
+  .intelligence-agent-gate { align-items: flex-start; flex-direction: column; gap: 8px; }
   .domain-focus-summary,
   .today-brief-banner,
   .intelligence-brief-list,
@@ -929,6 +954,11 @@ body {
   .intelligence-story { grid-template-columns: 42px minmax(0, 1fr); border-width: 1px; border-radius: 16px; }
   .story-index { border-right-width: 1px; }
   .intelligence-story article { padding: 17px 15px; }
+  .story-agent-rationale,
+  .story-deep-analysis { grid-template-columns: 1fr; gap: 4px; }
+  .story-actions { width: 100%; align-items: stretch; flex-direction: column; }
+  .story-actions .agent-deep-action,
+  .story-actions a { width: 100%; }
   .table-header,
   .task-control-heading,
   .task-control-grid,
