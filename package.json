@@ -11,10 +11,11 @@
     "build": "next build",
     "start": "next start",
     "lint": "eslint .",
-    "test": "node --import tsx --test src/collector/*.test.ts src/lib/feishu/*.test.ts src/repositories/feishu/*.test.ts src/repositories/file/*.test.ts src/services/*.test.ts",
+    "test": "node --import tsx --test src/agent/*.test.ts src/collector/*.test.ts src/lib/feishu/*.test.ts src/repositories/feishu/*.test.ts src/repositories/file/*.test.ts src/services/*.test.ts",
     "collector:dry-run": "tsx scripts/collect-intelligence.ts --dry-run",
     "collector:write": "tsx scripts/collect-intelligence.ts --write",
     "collector:write:domain": "tsx scripts/collect-intelligence.ts --write --track domain",
+    "agent:opportunity": "tsx scripts/run-opportunity-agent.ts",
     "typecheck": "tsc --noEmit",
     "check": "pnpm lint && pnpm typecheck && pnpm test && pnpm build"
   },

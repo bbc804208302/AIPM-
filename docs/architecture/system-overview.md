@@ -10,11 +10,27 @@ Collector → Normalize → Deduplicate → Daily Top 10
 SignalFlow Intelligence Repository
   ↓
 AI 产品情报池
+  ↓
+Product Opportunity Agent → Agent Run / Memory Repository → 候选需求 → Human Review
 
 Feishu Bitable → Demand Repository → 内部需求池
 ```
 
-Phase 2 已实现公开源采集、归一化、去重、来源多样化今日 Top 10 与版本化每日快照。AI 产品情报不再以飞书为主数据源；可选 LLM 审校层仅在 Collector 显式写入阶段运行，不在公开页面运行。
+Phase 3 在 Daily Intelligence 基础上增加 Product Opportunity Agent。AI 产品情报不再以飞书为主数据源；可选 LLM 审校层仅在 Collector 显式写入阶段运行。Agent 由本地维护者或手动 GitHub Action 发起，公开页面只读取已经提交的脱敏运行记录。
+
+## Opportunity Agent boundaries
+
+```text
+Signal ID
+  → get_signal (Intelligence Repository)
+  → search_memory (Agent Run Repository)
+  → LLM chooses one next action
+  → create_demand_proposal OR reject_signal
+  → persist tool trace + decision + proposal
+  → Human Review
+```
+
+这是一个受控的单 Agent 工具循环：模型每轮只能调用一个工具，并必须等待 Observation 后再决定下一步。服务端强制 `get_signal → search_memory` 前置顺序；候选需求不会自动写入飞书。系统不保存模型思维链，只保存公开证据、工具调用摘要、Memory 命中、最终决策和运行指标。
 
 ## Collector boundaries
 
@@ -52,6 +68,7 @@ Feishu OpenAPI / Bitable
 - Next.js App Router 作为 Web 与 Server boundary。
 - 飞书多维表格只作为内部需求池事实来源。
 - AI 产品情报当前使用版本化 JSON Repository，未来通过同一接口迁移 PostgreSQL。
+- Agent Memory 当前使用 `data/agent/runs.json`，生产读取使用静态打包快照，写入只允许本地或 GitHub Action。
 - 所有凭据只在服务端环境变量读取。
 - 页面以真实空状态为准，不创建假新闻或假需求。
-- Collector 是独立 bounded context；GitHub Actions 承担每日执行，可选 LLM 审校以 GitHub Secrets 注入，通知仍保留为未来能力。
+- Collector 与 Opportunity Agent 是独立 bounded context；GitHub Actions 分别承担每日采集和手动 Agent 运行，LLM 由 GitHub Secrets 注入，通知仍保留为未来能力。
