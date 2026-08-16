@@ -41,7 +41,7 @@ flowchart LR
 
 | 真实问题 | SignalFlow 的产品回应 |
 | --- | --- |
-| AI 产品信息依赖产品经理主动浏览，信号分散且容易错过 | 配置化 Source Registry、近 3 日滚动候选、跨批次去重和 Agent 动态准入 |
+| AI 产品信息依赖产品经理主动浏览，情报分散且容易错过 | 配置化 Source Registry、近 15 日滚动候选、跨批次去重和 Agent 动态准入 |
 | 需求通过表单、聊天和会议提出，提交后状态不透明 | 统一需求池、状态筛选、详情页与执行看板 |
 | 外部情报与内部需求缺少连接 | Product Intelligence Agent 为每条候选评分，高分自动深度分析，再转为可审阅候选需求 |
 | Demo 容易依赖伪造数据或泄露 Secret | 公开来源快照可审计，飞书凭据仅保留在服务端 |
@@ -115,7 +115,7 @@ AI 行业情报将 GitHub Trending、AI 媒体与 X 动态收敛到同一阅读�
 - Google News · Microdrama
 - Google News · AIGC Production
 
-两条情报轨道分别维护自己的采集时间和关注领域，并最多准备 20 条 Agent 候选。`briefingDate` 表示 Asia/Shanghai 当天生成的情报批次；候选内容限定为近 3 个上海自然日，原始发布时间单独保留。已在历史批次出现的规范化 URL 或标题不会再次录用，避免用户重复阅读同一信号。
+两条情报轨道分别维护自己的采集时间和关注领域，并最多准备 20 条 Agent 候选。`briefingDate` 表示 Asia/Shanghai 当天生成的情报批次；候选内容限定为近 15 个上海自然日，原始发布时间单独保留。Collector 会优先排列具体的新产品、新功能、Agent、Skill、工具与应用案例；已在历史批次出现的规范化 URL 或标题不会再次录用，避免用户重复阅读同一情报。
 
 ## Collector 如何工作
 
@@ -141,7 +141,8 @@ Collector 的工程约束：
 - 默认只执行 `dry-run`，只有显式 `--write` 才更新每日快照。
 - 单个来源失败不会中止整批采集；超过半数来源失败则禁止写入。
 - URL 规范化与单批次指纹去重在来源适配器之后统一完成；持久化 Seen Index 再按 URL 和规范化标题执行跨批次去重。
-- 当天批次只从近 3 个上海自然日的候选中选取，保留每条情报的真实发布时间。
+- 当天批次只从近 15 个上海自然日的候选中选取，保留每条情报的真实发布时间。
+- 产品发布、功能更新、Agent、Skill、插件、工具和真实应用案例优先于收购、融资、观点评论等泛新闻。
 - AI 媒体、GitHub Trending 与 X 动态有独立配额，避免单一来源占满候选集。
 - `summaryZh` 只描述“这是什么、主要讲什么、具有什么能力”，排名与入选依据保存在独立字段。
 - Collector 只准备低成本候选；Product Intelligence Agent 基于公开标题、摘要与页面描述统一生成中文概述、机会评分和准入判断，页面不会实时调用 LLM。
@@ -367,7 +368,7 @@ pnpm check
 
 当前测试覆盖：
 
-- Collector registry、Normalization、近 3 日窗口、单批次与跨批次去重、最多 20 条双轨候选
+- Collector registry、Normalization、近 15 日窗口、产品情报预排序、单批次与跨批次去重、最多 20 条双轨候选
 - 原文上下文提取、LLM JSON 修复与重试、审校内容保护和公开热度计算
 - Product Intelligence Agent 中文概述、动态准入、固定权重评分、自动深度分析上限、工具顺序、Memory 召回、候选需求门控与 File Repository
 - 飞书 token 缓存、并发刷新、分页、限流与安全错误
@@ -414,7 +415,7 @@ docs/                    # 架构、产品、设计与参考项目说明
 - [x] Next.js 产品工作区与六个核心入口
 - [x] AI 行业 / 业务领域双轨情报
 - [x] 14 个公开来源、Registry、Dispatch、Normalization 与 Deduplication
-- [x] 近 3 日候选、历史已读去重、最多 20 条候选与版本化 File Repository
+- [x] 近 15 日候选、历史已展示去重、产品情报优先级、最多 20 条候选与版本化 File Repository
 - [x] DeepSeek / OpenAI 兼容中文审校、失败恢复与公开热度
 - [x] 飞书 Demand Repository、需求详情和产品需求看板
 - [x] 本地任务控制、公开环境只读和 GitHub Actions 工作流

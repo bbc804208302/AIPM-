@@ -3,6 +3,7 @@ import { ArrowUpRight, CalendarDays, Flame, Github, Newspaper, Radio } from "luc
 import type { CollectorCategory } from "@/collector/types";
 import { calculatePublicHeatScore } from "@/collector/heat-score";
 import { AgentDeepAnalysisButton } from "@/components/agent/agent-deep-analysis-button";
+import { presentAsIntelligence } from "@/lib/intelligence/presentation";
 import type { IntelligenceCategory, IntelligenceSignal } from "@/types/intelligence";
 
 const sourceGroupLabels: Record<CollectorCategory, string> = {
@@ -67,11 +68,11 @@ export function IntelligenceBriefList({ items, agentExecutable }: Readonly<{ ite
                 <span>AI 概述</span>
                 <p className="story-summary">{summary || "该来源未提供可展示摘要，请通过原文链接核对完整信息。"}</p>
               </div>
-              {item.agentReview?.rationale ? <div className="story-agent-rationale"><span>准入判断</span><p>{item.agentReview.rationale}</p></div> : null}
-              {item.agentReview?.deepAnalysisSummary ? <div className="story-deep-analysis"><span>{item.agentReview.deepAnalysis === "proposal" ? "深度分析 · 形成候选需求" : "深度分析 · 暂不转化"}</span><p>{item.agentReview.deepAnalysisSummary}</p></div> : null}
+              {item.agentReview?.rationale ? <div className="story-agent-rationale"><span>准入判断</span><p>{presentAsIntelligence(item.agentReview.rationale)}</p></div> : null}
+              {item.agentReview?.deepAnalysisSummary ? <div className="story-deep-analysis"><span>{item.agentReview.deepAnalysis === "proposal" ? "深度分析 · 形成候选需求" : "深度分析 · 暂不转化"}</span><p>{presentAsIntelligence(item.agentReview.deepAnalysisSummary)}</p></div> : null}
               <div className="story-footer">
                 <div className="story-facts">
-                  <span>{item.selectionReason}</span>
+                  <span>{presentAsIntelligence(item.selectionReason)}</span>
                   {item.publishedAt ? <span><CalendarDays size={12} />{dateFormatter.format(new Date(item.publishedAt))}</span> : null}
                   {metadata.map((entry) => <span key={entry}>{entry}</span>)}
                 </div>

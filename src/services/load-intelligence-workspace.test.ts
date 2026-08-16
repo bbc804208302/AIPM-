@@ -1,7 +1,7 @@
 import assert from "node:assert/strict";
 import test from "node:test";
 
-import { applyAgentReviewToBrief } from "./project-agent-intelligence";
+import { applyAgentReviewToBrief, sortIntelligenceByOpportunity } from "./project-agent-intelligence";
 import type { OpportunityAgentRun, OpportunityTriageCandidate, OpportunityTriageRun } from "@/types/agent";
 import type { DailyIntelligenceBrief, IntelligenceSignal } from "@/types/intelligence";
 
@@ -96,4 +96,11 @@ test("projects Agent admission, Chinese overview, and deep analysis onto intelli
   assert.equal(reviewed.items[0]?.agentReview?.deepAnalysis, "proposal");
   assert.equal(reviewed.items[1]?.agentReview?.status, "review");
   assert.equal(reviewed.items[2]?.agentReview?.status, "unreviewed");
+});
+
+test("sorts reviewed intelligence from highest to lowest opportunity score", () => {
+  const reviewed = applyAgentReviewToBrief(brief, triageRun, []);
+  const sorted = sortIntelligenceByOpportunity(reviewed.items);
+
+  assert.deepEqual(sorted.map((item) => item.id), ["A", "B", "C"]);
 });

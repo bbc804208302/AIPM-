@@ -1,4 +1,5 @@
 import type { OpportunityAgentRun } from "@/types/agent";
+import { presentAsIntelligence } from "@/lib/intelligence/presentation";
 
 const dateTimeFormatter = new Intl.DateTimeFormat("zh-CN", {
   timeZone: "Asia/Shanghai", month: "2-digit", day: "2-digit", hour: "2-digit", minute: "2-digit", hour12: false,
@@ -19,7 +20,7 @@ export function AgentRunDashboard({ runs }: Readonly<{ runs: readonly Opportunit
       <section className="agent-empty-state">
         <span>NO AGENT RUNS</span>
         <h2>暂无 Agent 运行记录</h2>
-        <p>配置 LLM 后选择一条真实 Signal 运行；系统会保存工具轨迹、Memory 召回和候选需求，但不会自动写入飞书。</p>
+        <p>配置 LLM 后选择一条真实情报运行；系统会保存工具轨迹、Memory 召回和候选需求，但不会自动写入飞书。</p>
       </section>
     );
   }
@@ -32,7 +33,7 @@ export function AgentRunDashboard({ runs }: Readonly<{ runs: readonly Opportunit
           <strong className={`agent-decision agent-decision-${latestRun.decision}`}>{decisionLabel(latestRun)}</strong>
         </header>
         <div className="agent-run-summary">
-          <article><span>输入 Signal</span><strong>{latestRun.signalTitle}</strong><p>{latestRun.signalId}</p></article>
+          <article><span>输入情报</span><strong>{latestRun.signalTitle}</strong><p>{latestRun.signalId}</p></article>
           <article><span>Tool Calls</span><strong>{latestRun.toolCalls.length}</strong><p>强制证据与 Memory 顺序</p></article>
           <article><span>Memory Recall</span><strong>{latestRun.memoryMatches.length}</strong><p>历史相似决策</p></article>
           <article><span>执行耗时</span><strong>{(latestRun.durationMs / 1000).toFixed(1)}s</strong><p>{latestRun.model}</p></article>
@@ -44,7 +45,7 @@ export function AgentRunDashboard({ runs }: Readonly<{ runs: readonly Opportunit
               {latestRun.toolCalls.map((call, index) => (
                 <li key={call.id}>
                   <span>{String(index + 1).padStart(2, "0")}</span>
-                  <div><strong>{call.name}</strong><p>{call.inputSummary}</p><small>{call.outputSummary} · {call.durationMs} ms</small></div>
+                  <div><strong>{call.name}</strong><p>{presentAsIntelligence(call.inputSummary)}</p><small>{presentAsIntelligence(call.outputSummary)} · {call.durationMs} ms</small></div>
                   <b className={call.status === "success" ? "tool-success" : "tool-failed"}>{call.status === "success" ? "成功" : "失败"}</b>
                 </li>
               ))}
@@ -64,7 +65,7 @@ export function AgentRunDashboard({ runs }: Readonly<{ runs: readonly Opportunit
                 </dl>
                 <p>等待产品经理确认 · 不会自动写入飞书正式需求池</p>
               </div>
-            ) : <p className="agent-rejection">{latestRun.decisionSummary}</p>}
+            ) : <p className="agent-rejection">{presentAsIntelligence(latestRun.decisionSummary)}</p>}
           </div>
         </div>
       </section>
@@ -75,7 +76,7 @@ export function AgentRunDashboard({ runs }: Readonly<{ runs: readonly Opportunit
           {runs.slice(0, 8).map((run) => (
             <article key={run.id}>
               <div><strong>{run.signalTitle}</strong><span>{decisionLabel(run)}</span></div>
-              <p>{run.decisionSummary}</p>
+              <p>{presentAsIntelligence(run.decisionSummary)}</p>
               <time dateTime={run.completedAt}>{dateTimeFormatter.format(new Date(run.completedAt))}</time>
             </article>
           ))}

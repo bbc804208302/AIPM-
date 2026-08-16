@@ -18,7 +18,7 @@ function LastRun({ brief, title }: Readonly<{ brief: DailyIntelligenceBrief; tit
       <header><span>LAST RUN</span><h2>{title}最近批次</h2></header>
       <div className="last-run-panel">
         <div><span>最近批次</span><strong>{brief.briefingDate}</strong></div>
-        <div><span>候选信号</span><strong>{brief.candidateCount}</strong></div>
+        <div><span>候选情报</span><strong>{brief.candidateCount}</strong></div>
         <div><span>Agent 候选</span><strong>{brief.items.length}</strong></div>
         <div><span>异常来源</span><strong>{brief.sources.filter((source) => source.status === "failed").length}</strong></div>
       </div>
@@ -49,7 +49,7 @@ export default async function TasksPage() {
 
   return (
     <div className="workspace-page">
-      <PageHeader eyebrow="Collector workflow monitor" title="采集任务" description="分别管理 AI 行业与业务领域每日采集，为 Product Intelligence Agent 准备候选信号。" />
+      <PageHeader eyebrow="Collector workflow monitor" title="采集任务" description="分别管理 AI 行业与业务领域每日采集，为 Product Intelligence Agent 准备候选情报。" />
       <MetricStrip metrics={metrics} />
       <IntelligenceQualityDashboard summary={qualitySummary} />
       <CollectorTaskControls schedule={schedule} editable={editable} enabledSources={enabledSources} track="technical" title="AI 行业情报每日采集" />

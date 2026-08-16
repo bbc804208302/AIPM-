@@ -1,5 +1,14 @@
 import type { OpportunityAgentRun, OpportunityTriageRun } from "@/types/agent";
 import type { DailyIntelligenceBrief } from "@/types/intelligence";
+import type { IntelligenceSignal } from "@/types/intelligence";
+
+export function sortIntelligenceByOpportunity(items: readonly IntelligenceSignal[]): readonly IntelligenceSignal[] {
+  return [...items].sort((left, right) => {
+    const scoreDifference = (right.agentReview?.opportunityScore ?? -1) - (left.agentReview?.opportunityScore ?? -1);
+    if (scoreDifference !== 0) return scoreDifference;
+    return (right.publishedAt ?? right.createdAt).localeCompare(left.publishedAt ?? left.createdAt);
+  });
+}
 
 export function applyAgentReviewToBrief(
   brief: DailyIntelligenceBrief,

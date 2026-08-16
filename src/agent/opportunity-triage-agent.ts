@@ -62,7 +62,7 @@ const triageTools = [
     type: "function",
     function: {
       name: "search_memory",
-      description: "按每条 Signal 检索历史产品机会决策，识别已经分析过的相似内容。",
+      description: "按每条情报检索历史产品机会决策，识别已经分析过的相似内容。",
       parameters: {
         type: "object",
         properties: {
@@ -85,7 +85,7 @@ const triageTools = [
     type: "function",
     function: {
       name: "score_candidates",
-      description: "对全部候选 Signal 进行结构化机会评分；程序将按固定权重计算总分。",
+      description: "对全部候选情报进行结构化机会评分；程序将按固定权重计算总分。",
       parameters: {
         type: "object",
         properties: {
@@ -204,12 +204,14 @@ function signalObservation(signal: IntelligenceSignal) {
 function systemPrompt(): string {
   return [
     "你是 SignalFlow Product Intelligence Agent 的 daily-triage 模式，服务于 AI 产品经理。",
-    "目标是主动扫描最新公开情报，推荐最值得进一步做产品机会分析的 Signal。",
+    "目标是主动扫描最新公开情报，选出最值得 AI 产品经理阅读与进一步分析的产品情报。",
     "必须依次调用 list_daily_signals、search_memory、score_candidates、select_intelligence_for_pool；每轮只能调用一个工具。",
-    "search_memory 必须为每条 Signal 提供简短查询；score_candidates 必须覆盖全部候选且每条只出现一次。",
+    "search_memory 必须为每条情报提供简短查询；score_candidates 必须覆盖全部候选且每条只出现一次。",
     "score_candidates 同时生成准确中文标题和一句中文概述。概述直接说明它是什么、做什么或发生了什么，不解释入选原因，不得使用‘发布新动态’等空泛模板。",
     "评分维度：业务相关性、新颖性、用户价值、可行动性、证据质量、历史重复风险。",
-    "公开热度只是弱信号；公司新闻或热门事件如果没有明确用户问题和可行动机会，不应获得高分。",
+    "优先选择具体的新产品、新功能、Agent、Skill、插件、工具、交互方式、模型能力或真实应用案例；中文概述要讲清它的功能、亮点和解决的问题。",
+    "收购、融资、人事、宏观趋势、观点评论和普通公司新闻默认低优先级，除非它们带来可验证的新产品能力或明确改变产品决策。",
+    "公开热度只是弱指标；不得因为新闻热门但缺少具体产品能力就给高分。",
     "历史已有高度相似决策时提高 duplicateRisk；不得为了凑数推荐重复内容。",
     "只保存简洁评分理由与工具观察，不要输出或保存思维链，不得虚构来源没有提供的事实。",
   ].join("\n");
@@ -223,7 +225,7 @@ function readProviderMessage(payload: unknown): ProviderMessage | null {
 
 function toolSummary(name: OpportunityAgentToolName, args: Record<string, unknown>): string {
   if (name === "list_daily_signals") return "读取最新双轨情报";
-  if (name === "search_memory") return `检索 ${Array.isArray(args.queries) ? args.queries.length : 0} 条 Signal 的历史决策`;
+  if (name === "search_memory") return `检索 ${Array.isArray(args.queries) ? args.queries.length : 0} 条情报的历史决策`;
   if (name === "score_candidates") return `评估 ${Array.isArray(args.candidates) ? args.candidates.length : 0} 条候选`;
   if (name === "select_intelligence_for_pool") return "确认今日情报池准入结果";
   return "不支持的初筛工具";
@@ -263,7 +265,7 @@ async function executeTriageTool(
         return [[value.signalId, value.query] as const];
       }));
       if (queryBySignal.size !== state.signals.length || state.signals.some((signal) => !queryBySignal.has(signal.id))) {
-        throw new Error("必须为全部候选 Signal 检索 Memory。");
+        throw new Error("必须为全部候选情报检索 Memory。");
       }
       const matches = await Promise.all(state.signals.map(async (signal) => [
         signal.id,
@@ -282,7 +284,7 @@ async function executeTriageTool(
         return typeof value.signalId === "string" ? [[value.signalId, value] as const] : [];
       }));
       if (rawById.size !== state.signals.length || state.signals.some((signal) => !rawById.has(signal.id))) {
-        throw new Error("必须对全部候选 Signal 完成评分。");
+        throw new Error("必须对全部候选情报完成评分。");
       }
       state.candidates = state.signals.map((signal) => {
         const raw = rawById.get(signal.id) as Record<string, unknown>;

@@ -20,7 +20,7 @@ async function main(): Promise<void> {
   );
   console.log("SignalFlow Product Opportunity Agent");
   console.log(`Run: ${run.id}`);
-  console.log(`Signal: ${run.signalTitle}`);
+  console.log(`Intelligence: ${run.signalTitle}`);
   console.log(`Decision: ${run.decision}`);
   console.log(`Tool calls: ${run.toolCalls.length}`);
   console.log(`Memory matches: ${run.memoryMatches.length}`);

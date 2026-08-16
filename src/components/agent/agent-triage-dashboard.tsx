@@ -1,4 +1,5 @@
 import { AgentDeepAnalysisButton } from "@/components/agent/agent-deep-analysis-button";
+import { presentAsIntelligence } from "@/lib/intelligence/presentation";
 import type { OpportunityTriageCandidate, OpportunityTriageRun } from "@/types/agent";
 
 const recommendationLabels = { priority: "自动深度分析", candidate: "已准入", skip: "待审候选" } as const;
@@ -20,7 +21,7 @@ function CandidateCard({ candidate, rank, executable }: Readonly<{ candidate: Op
         <span>{candidate.heatScore === null ? "无公开热度" : `公开热度 ${candidate.heatScore}`}</span>
       </div>
       <p>{candidate.summaryZh}</p>
-      <p>{candidate.rationale}</p>
+      <p>{presentAsIntelligence(candidate.rationale)}</p>
       <dl>
         {Object.entries(candidate.dimensions).map(([key, value]) => (
           <div key={key}><dt>{dimensionLabels[key as keyof typeof dimensionLabels]}</dt><dd><span style={{ width: `${value}%` }} /><b>{value}</b></dd></div>
@@ -55,7 +56,7 @@ export function AgentTriageDashboard({
   return (
     <section className="agent-triage-board" aria-labelledby="agent-triage-title">
       <header>
-        <div><span>INTELLIGENCE ADMISSION AUDIT</span><h2 id="agent-triage-title">本批 Agent 准入结果</h2><p>{run.decisionSummary}</p></div>
+        <div><span>INTELLIGENCE ADMISSION AUDIT</span><h2 id="agent-triage-title">本批 Agent 准入结果</h2><p>{presentAsIntelligence(run.decisionSummary)}</p></div>
         <strong>{run.status === "completed" ? `${recommended.length} 条准入` : "初筛失败"}</strong>
       </header>
       <div className="agent-triage-summary">
@@ -72,10 +73,10 @@ export function AgentTriageDashboard({
       <details className="agent-triage-audit">
         <summary>查看全部评分与初筛工具轨迹</summary>
         <div>
-          {run.candidates.map((candidate) => <p key={candidate.signalId}><strong>{candidate.opportunityScore}</strong><span>{candidate.signalTitle}</span><small>{recommendationLabels[candidate.recommendation]} · 重复风险 {candidate.duplicateRisk}</small></p>)}
+          {run.candidates.map((candidate) => <p key={candidate.signalId}><strong>{candidate.opportunityScore}</strong><span>{presentAsIntelligence(candidate.signalTitle)}</span><small>{recommendationLabels[candidate.recommendation]} · 重复风险 {candidate.duplicateRisk}</small></p>)}
         </div>
         <ol>
-          {run.toolCalls.map((call, index) => <li key={call.id}><span>{index + 1}</span><strong>{call.name}</strong><p>{call.outputSummary}</p></li>)}
+          {run.toolCalls.map((call, index) => <li key={call.id}><span>{index + 1}</span><strong>{call.name}</strong><p>{presentAsIntelligence(call.outputSummary)}</p></li>)}
         </ol>
       </details>
     </section>

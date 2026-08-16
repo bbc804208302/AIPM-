@@ -7,6 +7,7 @@ import type { IntelligencePoolView } from "@/components/intelligence/intelligenc
 import { PageHeader } from "@/components/workspace/page-header";
 import type { CollectorCategory, CollectorTrack } from "@/collector/types";
 import { loadIntelligenceWorkspace } from "@/services/load-intelligence-workspace";
+import { sortIntelligenceByOpportunity } from "@/services/project-agent-intelligence";
 import { readOpportunityAgentConfig } from "@/agent/opportunity-agent";
 import { isOpportunityAgentExecutable } from "@/agent/runtime";
 
@@ -38,11 +39,11 @@ export default async function IntelligencePage({ searchParams }: PageProps) {
   const view: IntelligencePoolView = query.view === "review" ? "review" : "admitted";
   const sourceGroup: CollectorCategory | "all" = sourceGroups.has(query.source as CollectorCategory) ? query.source as CollectorCategory : "all";
   const { brief, state, focusAreas, agentReviewed, admittedCount, reviewCount } = await loadIntelligenceWorkspace(track, query.date);
-  const items = brief?.items.filter((item) => {
+  const items = sortIntelligenceByOpportunity(brief?.items.filter((item) => {
     const matchesSource = sourceGroup === "all" || item.sourceGroup === sourceGroup;
     const matchesAdmission = view === "review" ? item.agentReview?.status === "review" : item.agentReview?.status !== "review";
     return matchesSource && matchesAdmission;
-  }) ?? [];
+  }) ?? []);
   const agentExecutable = isOpportunityAgentExecutable() && readOpportunityAgentConfig() !== null;
 
   return (

@@ -4,7 +4,7 @@ on:
   workflow_dispatch:
     inputs:
       signal_id:
-        description: "Signal ID from the latest intelligence snapshot"
+        description: "Intelligence ID from the latest intelligence snapshot"
         required: true
         type: string
 
