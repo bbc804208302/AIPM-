@@ -20,7 +20,7 @@ export async function POST(request: Request) {
   try {
     const body = await request.json().catch(() => ({})) as { signalId?: unknown };
     if (typeof body.signalId !== "string" || body.signalId.trim().length === 0) {
-      return NextResponse.json({ error: "请选择需要评估的 Signal。" }, { status: 400 });
+      return NextResponse.json({ error: "请选择需要评估的情报。" }, { status: 400 });
     }
     activeRun = runOpportunityAgent(
       body.signalId.trim(),

@@ -1,4 +1,5 @@
 import type { CollectorCategory, CollectorSourceType, CollectorTrack, SourceTrustTier } from "@/collector/types";
+import type { OpportunityPmValueType } from "@/types/agent";
 
 export type IntelligenceCategory =
   | "model-capability"
@@ -46,6 +47,7 @@ export interface IntelligenceAgentReview {
   status: "admitted" | "review" | "unreviewed";
   opportunityScore: number | null;
   recommendation: "priority" | "candidate" | "skip" | null;
+  pmValueType: OpportunityPmValueType | null;
   rationale: string | null;
   duplicateRisk: number | null;
   reviewedAt: string | null;

@@ -4,6 +4,7 @@ import type { CollectorCategory, CollectorRunResult, CollectorTrack, Intelligenc
 import { calculatePublicHeatScore } from "./heat-score";
 
 const defaultTimezone = "Asia/Shanghai";
+const defaultLookbackDays = 15;
 const categoryQuotas: Readonly<Record<CollectorCategory, number>> = {
   "ai-media": 4,
   "github-trending": 4,
@@ -79,8 +80,20 @@ function intelligenceCategory(signal: IntelligenceCandidate): IntelligenceCatego
   return "other";
 }
 
+function productIntelligencePriority(signal: IntelligenceCandidate): number {
+  const text = `${signal.title} ${signal.excerpt}`.toLowerCase();
+  let priority = 0;
+  if (/launch(?:ed|es|ing)?|release(?:d|s)?|introduc(?:e|ed|es|ing)|roll(?:ed|s)? out|unveil(?:ed|s)?|open[- ]source|上线|上新|推出|发布|开放|开源/u.test(text)) priority += 3;
+  if (/new feature|feature update|product update|tool|app|platform|plugin|skill|workflow|agent|model|api|sdk|copilot|功能|产品|工具|插件|工作流|智能体|模型/u.test(text)) priority += 3;
+  if (/capabilit|benchmark|integration|use case|demo|体验|亮点|能力|集成|用例/u.test(text)) priority += 1;
+  if (/acqui(?:re|red|sition)|merger|funding|raises? \$|earnings|layoffs?|lawsuit|opinion|prediction|收购|合并|融资|财报|裁员|诉讼|观点|预测/u.test(text)) priority -= 4;
+  return priority;
+}
+
 function compareSignals(category: CollectorCategory, left: IntelligenceCandidate, right: IntelligenceCandidate): number {
   if (category === "ai-media") {
+    const productDifference = productIntelligencePriority(right) - productIntelligencePriority(left);
+    if (productDifference !== 0) return productDifference;
     const dateDifference = Date.parse(right.publishedAt ?? "1970-01-01") - Date.parse(left.publishedAt ?? "1970-01-01");
     if (dateDifference !== 0) return dateDifference;
     const trustOrder = { primary: 0, curated: 1, community: 2 } as const;
@@ -116,6 +129,8 @@ function selectDailySignals(signals: readonly IntelligenceCandidate[], limit: nu
     const remaining = signals
       .filter((signal) => !selectedIds.has(signal.id))
       .sort((left, right) => {
+        const productDifference = productIntelligencePriority(right) - productIntelligencePriority(left);
+        if (productDifference !== 0) return productDifference;
         const categoryDifference = categoryOrder.indexOf(left.category) - categoryOrder.indexOf(right.category);
         return categoryDifference || compareSignals(left.category, left, right);
       });
@@ -125,14 +140,14 @@ function selectDailySignals(signals: readonly IntelligenceCandidate[], limit: nu
   return selected;
 }
 
-function selectionReason(signal: IntelligenceCandidate): string {
-  if (signal.track === "domain") return signal.trustTier === "primary" ? "业务领域一手来源近 3 日更新" : "业务领域公开来源近 3 日更新";
+function selectionReason(signal: IntelligenceCandidate, lookbackDays: number): string {
+  if (signal.track === "domain") return signal.trustTier === "primary" ? `业务领域一手来源近 ${lookbackDays} 日更新` : `业务领域公开来源近 ${lookbackDays} 日更新`;
   if (signal.category === "github-trending") return `GitHub Trending 今日排名 #${signal.rank ?? "—"}`;
-  if (signal.category === "x-viral") return `AttentionVC AI 近 3 日信号 #${signal.rank ?? "—"}`;
-  return signal.trustTier === "primary" ? "官方 AI 来源近 3 日更新" : "AI 媒体近 3 日更新";
+  if (signal.category === "x-viral") return `AttentionVC AI 近 ${lookbackDays} 日情报 #${signal.rank ?? "—"}`;
+  return signal.trustTier === "primary" ? `官方 AI 来源近 ${lookbackDays} 日更新` : `AI 媒体近 ${lookbackDays} 日更新`;
 }
 
-function toIntelligenceSignal(signal: IntelligenceCandidate, date: string): IntelligenceSignal {
+function toIntelligenceSignal(signal: IntelligenceCandidate, date: string, lookbackDays: number): IntelligenceSignal {
   return {
     id: signal.id,
     briefingDate: date,
@@ -150,7 +165,7 @@ function toIntelligenceSignal(signal: IntelligenceCandidate, date: string): Inte
     collectedAt: signal.collectedAt,
     sourceRank: signal.rank,
     sourceMetadata: signal.metadata,
-    selectionReason: selectionReason(signal),
+    selectionReason: selectionReason(signal, lookbackDays),
     heatScore: calculatePublicHeatScore(signal.category, signal.metadata),
     impactScore: null,
     noveltyScore: null,
@@ -169,13 +184,13 @@ export function buildDailyIntelligenceBrief(
   const dailyLimit = options.dailyLimit ?? 10;
   const timezone = options.timezone ?? defaultTimezone;
   const track = options.track ?? "technical";
-  const lookbackDays = options.lookbackDays ?? 3;
+  const lookbackDays = options.lookbackDays ?? defaultLookbackDays;
   const date = briefingDate(result.finishedAt, timezone);
   const trackSignals = result.signals.filter((signal) => signal.track === track);
   const allowedDates = recentBriefingDates(result.finishedAt, timezone, lookbackDays);
   const recentSignals = trackSignals.filter((signal) => isRecentSignal(signal, allowedDates, timezone));
   const unseenSignals = removePreviouslySeenSignals(recentSignals, options.historicalItems ?? []);
-  const items = selectDailySignals(unseenSignals, dailyLimit).map((signal) => toIntelligenceSignal(signal, date));
+  const items = selectDailySignals(unseenSignals, dailyLimit).map((signal) => toIntelligenceSignal(signal, date, lookbackDays));
 
   return {
     schemaVersion: 1,

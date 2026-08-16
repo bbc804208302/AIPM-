@@ -3,7 +3,7 @@ name: SignalFlow AI Industry Intelligence
 on:
   workflow_dispatch:
   schedule:
-    - cron: "17 08 * * *"
+    - cron: "00 07 * * *"
       timezone: "Asia/Shanghai"
 
 permissions:

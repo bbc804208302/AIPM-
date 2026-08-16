@@ -87,7 +87,7 @@ const agentTools = [
     type: "function",
     function: {
       name: "reject_signal",
-      description: "记录该信号暂不值得转化为候选需求的理由。",
+      description: "记录该情报暂不值得转化为候选需求的理由。",
       parameters: { type: "object", properties: { reason: { type: "string" } }, required: ["reason"], additionalProperties: false },
     },
   },
@@ -124,7 +124,7 @@ function requiredString(args: Record<string, unknown>, key: string, maximumLengt
 }
 
 function toolInputSummary(name: OpportunityAgentToolName, args: Record<string, unknown>): string {
-  if (name === "get_signal") return `读取 Signal ${String(args.signalId ?? "")}`;
+  if (name === "get_signal") return `读取情报 ${String(args.signalId ?? "")}`;
   if (name === "search_memory") return `检索“${String(args.query ?? "").slice(0, 60)}”`;
   if (name === "create_demand_proposal") return `创建候选需求“${String(args.title ?? "").slice(0, 60)}”`;
   return "记录暂不转化原因";
@@ -148,10 +148,10 @@ function buildSignalObservation(signal: IntelligenceSignal): string {
 function buildSystemPrompt(): string {
   return [
     "你是 SignalFlow Product Intelligence Agent，服务于 AI 产品经理。",
-    "目标是把公开 Signal 评估为可审阅的产品机会，而不是自动创建正式需求。",
+    "目标是把公开情报评估为可审阅的产品机会，而不是自动创建正式需求。",
     "必须先调用 get_signal，再调用 search_memory；之后只能调用 create_demand_proposal 或 reject_signal 完成任务。",
     "每一轮只调用一个工具，等待工具返回 Observation 后再决定下一步。",
-    "只有当信号包含明确用户问题、目标用户和可落地产品机会时才创建候选需求；新闻热度本身不是需求。",
+    "只有当情报包含明确用户问题、目标用户和可落地产品机会时才创建候选需求；新闻热度本身不是需求。",
     "候选需求必须用简体中文，清楚区分事实、判断与建议，不得虚构来源没有提供的事实。",
     "不要输出思维链或内部推理，只通过工具参数给出简洁、可审计的决策结论。",
   ].join("\n");
@@ -172,7 +172,7 @@ async function executeTool(
     let output: unknown;
     if (name === "get_signal") {
       const requestedId = requiredString(args, "signalId", 120);
-      if (requestedId !== signalId) throw new Error("只能读取当前请求中的 Signal。");
+      if (requestedId !== signalId) throw new Error("只能读取当前请求中的情报。");
       const signal = await intelligenceRepository.findById(signalId);
       if (!signal) throw new Error("没有找到对应情报。");
       state.signal = signal;
@@ -187,7 +187,7 @@ async function executeTool(
       output = { matches: state.memoryMatches };
       outputSummary = `召回 ${state.memoryMatches.length} 条历史决策`;
     } else if (name === "create_demand_proposal") {
-      if (!state.observedSignal || !state.recalledMemory || !state.signal) throw new Error("创建候选需求前必须读取 Signal 并检索 Memory。");
+      if (!state.observedSignal || !state.recalledMemory || !state.signal) throw new Error("创建候选需求前必须读取情报并检索 Memory。");
       state.proposal = {
         id: `PROP-${randomUUID()}`,
         title: requiredString(args, "title", 120),
@@ -203,7 +203,7 @@ async function executeTool(
       output = { proposalId: state.proposal.id, approvalStatus: state.proposal.approvalStatus };
       outputSummary = "已生成候选需求，等待产品经理确认";
     } else if (name === "reject_signal") {
-      if (!state.observedSignal || !state.recalledMemory) throw new Error("结束分析前必须读取 Signal 并检索 Memory。");
+      if (!state.observedSignal || !state.recalledMemory) throw new Error("结束分析前必须读取情报并检索 Memory。");
       state.rejectionReason = requiredString(args, "reason");
       output = { decision: "reject", recorded: true };
       outputSummary = "已记录暂不转化结论";
@@ -240,7 +240,7 @@ export async function runOpportunityAgent(
   const state: AgentExecutionState = { signal: null, memoryMatches: [], proposal: null, rejectionReason: null, toolCalls: [], observedSignal: false, recalledMemory: false };
   const messages: ConversationMessage[] = [
     { role: "system", content: buildSystemPrompt() },
-    { role: "user", content: `评估 Signal ${signalId} 是否值得转化为候选产品需求。` },
+    { role: "user", content: `评估情报 ${signalId} 是否值得转化为候选产品需求。` },
   ];
   let runError: string | null = null;
 

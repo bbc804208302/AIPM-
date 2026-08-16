@@ -188,6 +188,9 @@ body {
   box-shadow: none;
 }
 .track-tabs {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  width: 100%;
   padding: 6px;
   gap: 6px;
   border-color: #cbd4d7;
@@ -206,8 +209,10 @@ body {
   font-weight: 600;
 }
 .track-tabs a {
-  flex: 0 0 auto;
-  min-height: 46px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 54px;
   padding: 0 22px;
   border-radius: 11px;
   color: #59656b;
@@ -287,8 +292,8 @@ body {
   font-size: 15px;
   font-weight: 650;
 }
-.intelligence-story article { padding: 21px 24px; }
-.story-meta-line { gap: 6px; font-size: 11px; font-weight: 600; }
+.intelligence-story article { position: relative; padding: 21px 24px; }
+.story-meta-line { gap: 6px; padding-right: 78px; font-size: 11px; font-weight: 600; }
 .story-meta-line > span { padding: 3px 7px; border: 0; border-radius: 7px; background: var(--sf-bg); color: var(--sf-text-muted); }
 .story-source-group { background: var(--sf-blue) !important; color: var(--sf-accent-strong) !important; }
 .intelligence-story h2 { margin: 13px 0 7px; font-size: clamp(18px, 1.8vw, 24px); font-weight: 680; letter-spacing: -.025em; }
@@ -298,13 +303,33 @@ body {
 .story-summary { margin: 0; color: var(--sf-text); font-size: 14px; font-weight: 500; line-height: 1.7; }
 .story-heat { display: inline-flex; align-items: center; gap: 4px; color: var(--sf-warning) !important; }
 .story-heat-empty { color: var(--sf-text-subtle) !important; }
-.story-agent-score { background: #edf0e8 !important; color: #596a47 !important; }
+.opportunity-score-ring {
+  --opportunity-score-color: #75808a;
+  position: absolute;
+  top: 20px;
+  right: 22px;
+  width: 64px;
+  height: 64px;
+  padding: 5px;
+  border-radius: 50%;
+  background: conic-gradient(var(--opportunity-score-color) var(--opportunity-score-angle), #e6e6e2 0);
+  box-shadow: 0 5px 14px rgb(28 32 30 / 8%);
+}
+.opportunity-score-ring > div { display: flex; width: 100%; height: 100%; align-items: center; justify-content: center; flex-direction: column; border: 1px solid rgb(26 31 28 / 7%); border-radius: 50%; background: var(--sf-white); }
+.opportunity-score-ring strong { color: var(--opportunity-score-color); font-size: 20px; line-height: 1; }
+.opportunity-score-ring span { margin-top: 3px; color: var(--sf-text-subtle); font-size: 9px; font-weight: 700; }
+.opportunity-score-ring.score-high { --opportunity-score-color: #2f7d5c; }
+.opportunity-score-ring.score-medium { --opportunity-score-color: #b0782c; }
+.opportunity-score-ring.score-low { --opportunity-score-color: #77818a; }
 .story-agent-rationale,
 .story-deep-analysis { max-width: 82ch; margin-top: 10px; padding: 10px 12px; display: grid; grid-template-columns: auto 1fr; gap: 10px; border-radius: 10px; background: #f1f0ed; }
+.story-agent-rationale { border-left: 3px solid #b0782c; background: #f5f1e9; }
 .story-agent-rationale > span,
 .story-deep-analysis > span { color: var(--sf-text-muted); font-size: 10px; font-weight: 700; white-space: nowrap; }
+.story-agent-rationale > span { color: #8b622a; }
 .story-agent-rationale p,
 .story-deep-analysis p { margin: 0; color: var(--sf-text-muted); font-size: 12px; line-height: 1.65; }
+.story-agent-rationale p { color: var(--sf-text); font-size: 13px; font-weight: 530; }
 .story-deep-analysis { border-left: 3px solid #84788f; background: #f0edf2; }
 .story-deep-analysis > span { color: #685c73; }
 .story-facts span { color: var(--sf-text-subtle); font-size: 11px; font-weight: 550; }
@@ -954,6 +979,9 @@ body {
   .intelligence-story { grid-template-columns: 42px minmax(0, 1fr); border-width: 1px; border-radius: 16px; }
   .story-index { border-right-width: 1px; }
   .intelligence-story article { padding: 17px 15px; }
+  .story-meta-line { padding-right: 65px; }
+  .opportunity-score-ring { top: 15px; right: 13px; width: 54px; height: 54px; padding: 4px; }
+  .opportunity-score-ring strong { font-size: 17px; }
   .story-agent-rationale,
   .story-deep-analysis { grid-template-columns: 1fr; gap: 4px; }
   .story-actions { width: 100%; align-items: stretch; flex-direction: column; }

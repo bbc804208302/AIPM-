@@ -3,7 +3,7 @@ name: SignalFlow Daily Intelligence Agent
 on:
   workflow_dispatch:
   schedule:
-    - cron: "15 09 * * *"
+    - cron: "30 07 * * *"
       timezone: "Asia/Shanghai"
 
 permissions:
@@ -35,7 +35,7 @@ jobs:
       - name: Install dependencies
         run: pnpm install --frozen-lockfile
 
-      - name: Run Agent admission and automatic deep analysis
+      - name: Run Agent opportunity scoring and automatic deep analysis
         run: pnpm agent:triage
         env:
           SIGNALFLOW_OPPORTUNITY_AGENT: "true"

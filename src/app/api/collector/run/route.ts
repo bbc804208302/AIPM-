@@ -72,7 +72,7 @@ export async function POST(request: Request) {
       candidates: brief.candidateCount,
       succeededSources: brief.sources.filter((source) => source.status === "success").length,
       failedSources: brief.sources.filter((source) => source.status === "failed").length,
-      admitted: agentResult?.triageRun.recommendedSignalIds.length ?? 0,
+      scored: agentResult?.triageRun.candidates.length ?? 0,
       autoAnalyzed: agentResult?.deepAnalysisRuns.length ?? 0,
     });
   } catch (error) {

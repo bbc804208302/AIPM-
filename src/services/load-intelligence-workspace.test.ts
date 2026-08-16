@@ -1,7 +1,7 @@
 import assert from "node:assert/strict";
 import test from "node:test";
 
-import { applyAgentReviewToBrief } from "./project-agent-intelligence";
+import { applyAgentReviewToBrief, sortIntelligenceByOpportunity } from "./project-agent-intelligence";
 import type { OpportunityAgentRun, OpportunityTriageCandidate, OpportunityTriageRun } from "@/types/agent";
 import type { DailyIntelligenceBrief, IntelligenceSignal } from "@/types/intelligence";
 
@@ -48,7 +48,8 @@ function candidate(id: string, recommendation: OpportunityTriageCandidate["recom
     memoryMatchCount: 0,
     opportunityScore: recommendation === "skip" ? 45 : 72,
     recommendation,
-    rationale: `${id} 的准入理由`,
+    pmValueType: recommendation === "priority" ? "product-idea" : "competitor",
+    rationale: `${id} 对产品经理的判断价值`,
   };
 }
 
@@ -70,7 +71,7 @@ const triageRun = {
   mode: "daily-triage",
   version: 3,
   briefingDate: "2026-08-16",
-  objective: "Admission",
+  objective: "PM opportunity scoring",
   status: "completed",
   model: "test-model",
   startedAt: "2026-08-16T01:00:00.000Z",
@@ -86,7 +87,7 @@ const triageRun = {
   error: null,
 } satisfies OpportunityTriageRun;
 
-test("projects Agent admission, Chinese overview, and deep analysis onto intelligence", () => {
+test("projects Agent scoring, PM value, Chinese overview, and deep analysis onto intelligence", () => {
   const analysisRuns = [{ signalId: "A", decision: "proposal", decisionSummary: "发现明确的 Agent 评测需求。" }] as OpportunityAgentRun[];
   const reviewed = applyAgentReviewToBrief(brief, triageRun, analysisRuns);
 
@@ -94,6 +95,14 @@ test("projects Agent admission, Chinese overview, and deep analysis onto intelli
   assert.equal(reviewed.items[0]?.summaryZh, "A 是一个经过 Agent 概括的产品情报。");
   assert.equal(reviewed.items[0]?.agentReview?.status, "admitted");
   assert.equal(reviewed.items[0]?.agentReview?.deepAnalysis, "proposal");
-  assert.equal(reviewed.items[1]?.agentReview?.status, "review");
+  assert.equal(reviewed.items[0]?.agentReview?.pmValueType, "product-idea");
+  assert.equal(reviewed.items[1]?.agentReview?.status, "admitted");
   assert.equal(reviewed.items[2]?.agentReview?.status, "unreviewed");
+});
+
+test("sorts reviewed intelligence from highest to lowest opportunity score", () => {
+  const reviewed = applyAgentReviewToBrief(brief, triageRun, []);
+  const sorted = sortIntelligenceByOpportunity(reviewed.items);
+
+  assert.deepEqual(sorted.map((item) => item.id), ["A", "B", "C"]);
 });

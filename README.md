@@ -17,7 +17,7 @@
 </p>
 
 > [!NOTE]
-> SignalFlow 当前处于 **Phase 4 / Agent-driven Intelligence MVP**。Collector 负责公开信号采集与去重，单一 Product Intelligence Agent 负责中文概述、Memory 去重、机会评分、动态情报准入和高分自动深度分析；正式需求写回仍由产品经理人工确认。
+> SignalFlow 当前处于 **Phase 4 / Agent-driven Intelligence MVP**。Collector 负责公开信号采集与去重，单一 Product Intelligence Agent 负责中文概述、Memory 去重、PM 价值分类、机会评分排序和高分自动深度分析；正式需求写回仍由产品经理人工确认。
 
 ## SignalFlow 是什么
 
@@ -41,7 +41,7 @@ flowchart LR
 
 | 真实问题 | SignalFlow 的产品回应 |
 | --- | --- |
-| AI 产品信息依赖产品经理主动浏览，信号分散且容易错过 | 配置化 Source Registry、近 3 日滚动候选、跨批次去重和 Agent 动态准入 |
+| AI 产品信息依赖产品经理主动浏览，情报分散且容易错过 | 配置化 Source Registry、近 15 日滚动候选、跨批次去重和 Agent 机会评分 |
 | 需求通过表单、聊天和会议提出，提交后状态不透明 | 统一需求池、状态筛选、详情页与执行看板 |
 | 外部情报与内部需求缺少连接 | Product Intelligence Agent 为每条候选评分，高分自动深度分析，再转为可审阅候选需求 |
 | Demo 容易依赖伪造数据或泄露 Secret | 公开来源快照可审计，飞书凭据仅保留在服务端 |
@@ -51,8 +51,8 @@ flowchart LR
 | 路由 | 产品模块 | 当前能力 |
 | --- | --- | --- |
 | `/` | 产品需求看板 | 需求总数、已完成数、平均等待天数、P0 秒级倒计时、状态漏斗、人员进展 |
-| `/intelligence` | AI 产品情报池 | Agent 已入选 / 待审候选、双轨来源筛选、中文概述、机会评分、深度分析和原文追溯 |
-| `/agent` | Agent 决策审计 | 动态准入、评分拆解、Tool Use、Memory、高分自动深度分析和候选需求草稿 |
+| `/intelligence` | AI 产品情报池 | 双轨来源筛选、中文概述、PM 价值分类、环形机会分、降序展示、深度分析和原文追溯 |
+| `/agent` | Agent 运行记录 | 全量评分、PM 价值分类、Tool Use、Memory、高分自动深度分析和候选需求草稿 |
 | `/demands` | 内部需求池 | 飞书实时读取、状态指标筛选、优先级、提出人、负责人和详情入口 |
 | `/demands/[id]` | 需求详情 | 展示该条飞书记录映射后的完整字段与规范化时间 |
 | `/sources` | 数据源 | 按情报轨道管理 Source Registry、来源健康度与本地开关 |
@@ -115,7 +115,7 @@ AI 行业情报将 GitHub Trending、AI 媒体与 X 动态收敛到同一阅读�
 - Google News · Microdrama
 - Google News · AIGC Production
 
-两条情报轨道分别维护自己的采集时间和关注领域，并最多准备 20 条 Agent 候选。`briefingDate` 表示 Asia/Shanghai 当天生成的情报批次；候选内容限定为近 3 个上海自然日，原始发布时间单独保留。已在历史批次出现的规范化 URL 或标题不会再次录用，避免用户重复阅读同一信号。
+两条情报轨道分别维护自己的采集时间和关注领域，并最多准备 20 条 Agent 候选。`briefingDate` 表示 Asia/Shanghai 当天生成的情报批次；候选内容限定为近 15 个上海自然日，原始发布时间单独保留。Collector 会优先排列具体的新产品、新功能、Agent、Skill、工具与应用案例；已在历史批次出现的规范化 URL 或标题不会再次录用，避免用户重复阅读同一情报。
 
 ## Collector 如何工作
 
@@ -128,12 +128,12 @@ flowchart TD
   G --> N[Normalize]
   M --> N
   X --> N
-  N --> F[Recent 3-day Window]
+  N --> F[Recent 15-day Window]
   F --> U[URL / Title History Deduplicate]
   U --> T[Source-diverse Candidates / max 20]
   T --> J[Versioned Candidate Repository]
   J --> A[Product Intelligence Agent]
-  A --> W[Admitted Pool / Review Queue]
+  A --> W[All Intelligence / Opportunity Score Ranking]
 ```
 
 Collector 的工程约束：
@@ -141,10 +141,11 @@ Collector 的工程约束：
 - 默认只执行 `dry-run`，只有显式 `--write` 才更新每日快照。
 - 单个来源失败不会中止整批采集；超过半数来源失败则禁止写入。
 - URL 规范化与单批次指纹去重在来源适配器之后统一完成；持久化 Seen Index 再按 URL 和规范化标题执行跨批次去重。
-- 当天批次只从近 3 个上海自然日的候选中选取，保留每条情报的真实发布时间。
+- 当天批次只从近 15 个上海自然日的候选中选取，保留每条情报的真实发布时间。
+- 产品发布、功能更新、Agent、Skill、插件、工具和真实应用案例优先于收购、融资、观点评论等泛新闻。
 - AI 媒体、GitHub Trending 与 X 动态有独立配额，避免单一来源占满候选集。
 - `summaryZh` 只描述“这是什么、主要讲什么、具有什么能力”，排名与入选依据保存在独立字段。
-- Collector 只准备低成本候选；Product Intelligence Agent 基于公开标题、摘要与页面描述统一生成中文概述、机会评分和准入判断，页面不会实时调用 LLM。
+- Collector 只准备低成本候选；Product Intelligence Agent 基于公开标题、摘要与页面描述统一生成中文概述、PM 价值分类和机会评分，页面不会实时调用 LLM。
 - LLM 返回内容会经过 JSON 修复与一次精简重试；仍无法可靠生成时保留来源摘要并标记为“待审校”，不使用空泛模板伪装成 AI 概述。
 - 每次写入快照会保存脱敏的审校质量报告，包括覆盖率、批次、请求、重试、耗时与失败类型；`/tasks` 可直接查看评测指标和 badcase，不记录 Prompt、原文正文或 API Key。
 - 公开热度只使用来源可验证的 GitHub stars、X 浏览/互动等指标；没有证据时明确显示暂无公开热度。
@@ -155,9 +156,9 @@ Collector 的工程约束：
 flowchart TB
   subgraph Intelligence[Product Intelligence]
     PS[Public Sources] --> CO[Collector]
-    CO --> NR[Normalize / 3-day Filter / History Deduplicate]
+    CO --> NR[Normalize / 15-day Filter / History Deduplicate]
     NR --> IR[Candidate Snapshot / max 20]
-    IR --> IA[Agent Admission + Chinese Overview]
+    IR --> IA[Agent PM Value Scoring + Chinese Overview]
   end
 
   subgraph Demand[Demand Management]
@@ -288,14 +289,14 @@ LLM_API_BASE_URL=https://api.deepseek.com
 LLM_MODEL=deepseek-v4-flash
 ```
 
-以上示例使用 DeepSeek；也可以替换为其他 OpenAI 兼容服务。当前每日主链路由 Product Intelligence Agent 处理最多 20 条候选，并只接收公开来源标题、摘要及页面中可审计的公开描述。旧的独立 LLM 审校仍保留为本地兼容能力，但 GitHub Collector 不再重复调用它，避免中文审校与 Agent 准入产生双份 API 消耗。普通网页访客不会调用 LLM，也不会暴露 API Key；下载本项目的其他人必须自行配置自己的 Key。
+以上示例使用 DeepSeek；也可以替换为其他 OpenAI 兼容服务。当前每日主链路由 Product Intelligence Agent 处理最多 20 条候选，并只接收公开来源标题、摘要及页面中可审计的公开描述。旧的独立 LLM 审校仍保留为本地兼容能力，但 GitHub Collector 不再重复调用它，避免中文审校与 Agent 评分产生双份 API 消耗。普通网页访客不会调用 LLM，也不会暴露 API Key；下载本项目的其他人必须自行配置自己的 Key。
 
-仓库提供两条 GitHub Actions 工作流：AI 行业情报每天 `08:17`、业务领域情报每天 `08:45` 运行，时区均为 `Asia/Shanghai`。它们只提交 `data/intelligence` 中发生变化的快照；GitHub 调度可能有少量排队延迟。
+仓库的每日链路统一在早上 7 点运行并留出依赖间隔：AI 行业情报 `07:00`、业务领域情报 `07:15`、Product Intelligence Agent `07:30`，时区均为 `Asia/Shanghai`。两个 Collector 只提交 `data/intelligence` 中发生变化的快照；Agent 在候选准备完成后读取最新双轨数据，避免并发时误用旧快照。GitHub 调度可能有少量排队延迟。
 
 ```mermaid
 flowchart LR
   GA[GitHub Actions] --> PS[Public Sources]
-  PS --> DD[3-day Filter / History Deduplicate]
+  PS --> DD[15-day Filter / History Deduplicate]
   DD --> LLM[Optional DeepSeek Review]
   LLM --> JSON[Versioned JSON Snapshot]
   JSON --> MAIN[Push main]
@@ -306,7 +307,7 @@ flowchart LR
 
 ## Product Intelligence Agent
 
-Agent 不是把一次 Prompt 包装成按钮，而是直接参与情报池主流程。同一个 Agent 使用两种受控运行模式：`daily-triage` 决定情报准入，`single-signal` 对高分或人工选择的内容做深度分析：
+Agent 不是把一次 Prompt 包装成按钮，而是直接参与情报池主流程。同一个 Agent 使用两种受控运行模式：`daily-triage` 完成全量 PM 机会评分与排序，`single-signal` 对高分或人工选择的内容做深度分析：
 
 ```mermaid
 flowchart TB
@@ -314,10 +315,8 @@ flowchart TB
   LS --> TM[search_memory]
   TM --> SC[score_candidates]
   SC --> RT[select_intelligence_for_pool]
-  RT --> AP[Admitted Intelligence]
-  RT --> RQ[Review Queue]
-  AP --> S[Priority or Human-selected Signal]
-  RQ --> S
+  RT --> AP[All Intelligence / Score Descending]
+  AP --> S[Priority or Human-selected Intelligence]
   S --> GS[get_signal]
   GS --> SM[search_memory]
   SM --> LLM[LLM Decision]
@@ -331,9 +330,9 @@ flowchart TB
 
 工程约束：
 
-- Agent 准入必须覆盖最多 20 条最新双轨候选，先逐条检索 Memory，再生成中文概述并按业务相关性、新颖性、用户价值、可行动性与证据质量评分。
+- Agent 评分必须覆盖最多 20 条最新双轨候选，先逐条检索 Memory，再生成中文概述、PM 价值分类，并按业务相关性、新颖性、用户价值、可行动性与证据质量评分。
 - 机会总分使用固定权重计算，公开热度仅占 5%，历史重复风险会扣分；Agent 不能为了凑数推荐低价值内容。
-- 70 分以上自动进入深度分析，每天最多 3 条；50–69 分进入情报池并等待人工选择，低分内容进入待审候选。
+- 全部情报按机会分从高到低展示；70 分以上自动进入深度分析，每天最多 3 条，其余内容保留手动深度分析入口。
 - 深度分析必须先读取 Signal，再检索历史 Memory，不能跳过证据直接生成需求。
 - Agent 只接收 Intelligence Repository 中的公开情报，不读取飞书私有需求正文。
 - 每次运行持久化模型、耗时、工具输入/输出摘要、Memory 命中与最终决策；不保存思维链。
@@ -348,7 +347,9 @@ pnpm agent:triage
 pnpm agent:opportunity --signal <LATEST_SIGNAL_ID>
 ```
 
-GitHub 的 **SignalFlow Daily Intelligence Agent** 工作流每天 `09:15` 自动扫描当日双轨候选，完成动态准入，并对 70 分以上的内容自动执行最多 3 条深度分析。手动工作流仍可接受任意候选的 `signal_id`。两者都使用仓库 Secret 调用 LLM，只提交脱敏后的 `data/agent/runs.json`；Vercel 随后自动展示真实情报池和运行记录。
+GitHub 的 **SignalFlow Daily Intelligence Agent** 工作流每天 `07:30` 自动扫描已经更新的双轨候选，完成 PM 价值分类与机会评分排序，并对 70 分以上的内容自动执行最多 3 条深度分析。手动工作流仍可接受任意候选的 `signal_id`。两者都使用仓库 Secret 调用 LLM，只提交脱敏后的 `data/agent/runs.json`；Vercel 随后自动展示真实情报池和运行记录。
+
+仓库同时保留公开来源的每日 JSON 快照与脱敏后的 Agent 运行记录，在线作品集因此可以直接展示真实中文概述、机会分、PM 价值判断、Tool Use 摘要与历史 Memory，而无需让 Vercel 访客调用维护者的 LLM。
 
 ## 开发与验证
 
@@ -367,9 +368,9 @@ pnpm check
 
 当前测试覆盖：
 
-- Collector registry、Normalization、近 3 日窗口、单批次与跨批次去重、最多 20 条双轨候选
+- Collector registry、Normalization、近 15 日窗口、产品情报预排序、单批次与跨批次去重、最多 20 条双轨候选
 - 原文上下文提取、LLM JSON 修复与重试、审校内容保护和公开热度计算
-- Product Intelligence Agent 中文概述、动态准入、固定权重评分、自动深度分析上限、工具顺序、Memory 召回、候选需求门控与 File Repository
+- Product Intelligence Agent 中文概述、PM 价值分类、固定权重评分、全量排序、自动深度分析上限、工具顺序、Memory 召回、候选需求门控与 File Repository
 - 飞书 token 缓存、并发刷新、分页、限流与安全错误
 - 飞书字段映射、File Repository 和需求看板指标
 
@@ -391,7 +392,7 @@ Vercel 部署流程：
 ```text
 src/
 ├── app/                 # App Router 页面与服务端 API
-├── agent/               # Product Intelligence Agent、动态准入与受控 Tool Use
+├── agent/               # Product Intelligence Agent、机会评分与受控 Tool Use
 ├── collector/           # Source Registry、Adapter、Normalize、候选准备
 ├── components/          # 布局、情报、需求、数据源与任务组件
 ├── lib/feishu/          # Server-only Feishu OpenAPI boundary
@@ -414,12 +415,12 @@ docs/                    # 架构、产品、设计与参考项目说明
 - [x] Next.js 产品工作区与六个核心入口
 - [x] AI 行业 / 业务领域双轨情报
 - [x] 14 个公开来源、Registry、Dispatch、Normalization 与 Deduplication
-- [x] 近 3 日候选、历史已读去重、最多 20 条候选与版本化 File Repository
+- [x] 近 15 日候选、历史已展示去重、产品情报优先级、最多 20 条候选与版本化 File Repository
 - [x] DeepSeek / OpenAI 兼容中文审校、失败恢复与公开热度
 - [x] 飞书 Demand Repository、需求详情和产品需求看板
 - [x] 本地任务控制、公开环境只读和 GitHub Actions 工作流
 - [x] AI 质量评测、badcase 队列与运行指标
-- [x] Product Intelligence Agent 动态准入、中文概述、机会评分、高分自动深度分析、Tool Use、Memory 与候选需求
+- [x] Product Intelligence Agent 中文概述、PM 价值分类、机会评分排序、高分自动深度分析、Tool Use、Memory 与候选需求
 - [x] Collector Skill、架构文档、设计规范和自动化测试
 
 ### 下一阶段

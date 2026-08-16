@@ -74,6 +74,14 @@ export interface OpportunityTriageDimensionScores {
 
 export type OpportunityTriageRecommendation = "priority" | "candidate" | "skip";
 
+export type OpportunityPmValueType =
+  | "product-idea"
+  | "design-pattern"
+  | "competitor"
+  | "capability"
+  | "business-opportunity"
+  | "industry-context";
+
 export interface OpportunityTriageCandidate {
   signalId: string;
   signalTitle: string;
@@ -87,6 +95,7 @@ export interface OpportunityTriageCandidate {
   memoryMatchCount: number;
   opportunityScore: number;
   recommendation: OpportunityTriageRecommendation;
+  pmValueType?: OpportunityPmValueType;
   rationale: string;
 }
 
@@ -94,7 +103,7 @@ export interface OpportunityTriageRun {
   id: string;
   agent: "product-opportunity-agent";
   mode: "daily-triage";
-  version: 2 | 3;
+  version: 2 | 3 | 4;
   briefingDate: string;
   objective: string;
   status: "completed" | "failed";
@@ -104,7 +113,7 @@ export interface OpportunityTriageRun {
   durationMs: number;
   scannedSignals: number;
   candidates: readonly OpportunityTriageCandidate[];
-  /** Version 3 treats this as every admitted signal rather than a fixed Top 3. */
+  /** Version 4 treats this as every scored signal, ordered by opportunity score. */
   recommendedSignalIds: readonly string[];
   reviewSignalIds?: readonly string[];
   autoAnalyzedSignalIds?: readonly string[];

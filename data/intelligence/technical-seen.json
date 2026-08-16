@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "track": "technical",
-  "updatedAt": "2026-08-16T01:57:31.936Z",
+  "updatedAt": "2026-08-16T10:59:41.699Z",
   "items": [
     {
       "url": "https://www.latent.space/p/ainews-zawinskis-law-of-multiagents",
@@ -346,6 +346,42 @@
     {
       "url": "https://x.com/OracleFoundtion/status/2088382164773826775",
       "title": "ORACLE: Confirmed AI Bots Actively Trading on Polymarket — Gains Reaching 200% Within 24 Hours"
+    },
+    {
+      "url": "https://openai.com/index/dali-rajic-chief-revenue-officer",
+      "title": "OpenAI appoints Dali Rajic as Chief Revenue Officer"
+    },
+    {
+      "url": "https://openai.com/index/how-enterprises-put-ai-to-work",
+      "title": "From assistance to execution: How enterprises put AI to work"
+    },
+    {
+      "url": "https://www.latent.space/p/ainews-muse-glimmer-and-spark-open",
+      "title": "[AINews] Muse Glimmer and Spark: Open Weights return Personal Superintelligence promise"
+    },
+    {
+      "url": "https://www.technologyreview.com/2026/08/13/1141410/how-kids-feel-about-ai-own-words",
+      "title": "How kids feel about AI, in their own words"
+    },
+    {
+      "url": "https://tldr.tech/ai/2026-08-13",
+      "title": "Claude Chrome Cowork 🌐, Grok 4.6 🚀, DeepSeek v4-Pro-0813 🧠"
+    },
+    {
+      "url": "https://www.latent.space/p/ainews-how-to-steal-a-reasoning-trace",
+      "title": "[AINews] How to steal a Reasoning Trace"
+    },
+    {
+      "url": "https://openai.com/index/ringcentral",
+      "title": "How RingCentral builds AI-native work from engineering to ops"
+    },
+    {
+      "url": "https://tldr.tech/ai/2026-08-12",
+      "title": "Cursor’s GitHub rival 👨‍💻, OpenAI COO leaves 👋, Gemini 1B milestone 📈"
+    },
+    {
+      "url": "https://tldr.tech/ai/2026-08-11",
+      "title": "Muse Glimmer ✨, OpenAI Cyber 🛡️, Claude vs Riemann Hypothesis 🧠"
     }
   ]
 }

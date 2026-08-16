@@ -43,11 +43,11 @@ test("rejects Collector configuration writes in production", async () => {
 
 test("renders a production-safe workflow when a local schedule is edited", () => {
   const workflow = renderCollectorWorkflow(
-    { enabled: true, time: "08:17", timezone: "Asia/Shanghai", dailyLimit: 10 },
+    { enabled: true, time: "07:00", timezone: "Asia/Shanghai", dailyLimit: 10 },
     "technical",
   );
 
-  assert.match(workflow, /cron: "17 08 \* \* \*"/);
+  assert.match(workflow, /cron: "00 07 \* \* \*"/);
   assert.match(workflow, /fetch-depth: 0/);
   assert.match(workflow, /node-version: 24/);
   assert.doesNotMatch(workflow, /LLM_API_KEY/);

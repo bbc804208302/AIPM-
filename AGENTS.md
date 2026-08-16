@@ -10,9 +10,9 @@ SignalFlow（AI 产品情报与需求协同工作台）服务于 AI 产品经理
 
 ## 2. 当前阶段边界
 
-当前为 Phase 4 / Agent-driven Intelligence MVP。允许：既有 Daily Intelligence 能力、单一 Product Intelligence Agent 的 `daily-triage` 与 `single-signal` 两种运行模式、受控 Tool Use、动态情报准入、Agent 中文概述、结构化机会评分、基于历史 Agent Run 的 Memory、每日最多 3 条高分自动深度分析、候选需求草稿、人工确认边界、GitHub Actions 定时或手动运行、文档与测试。
+当前为 Phase 4 / Agent-driven Intelligence MVP。允许：既有 Daily Intelligence 能力、单一 Product Intelligence Agent 的 `daily-triage` 与 `single-signal` 两种运行模式、受控 Tool Use、Agent 中文概述、PM 价值分类、结构化机会评分、基于历史 Agent Run 的 Memory、每日最多 3 条高分自动深度分析、候选需求草稿、人工确认边界、GitHub Actions 定时或手动运行、文档与测试。
 
-本阶段 Collector 继续覆盖两条独立链路，并只承担公开来源采集、近 3 日过滤、历史去重与最多 20 条候选准备。`daily-triage` 必须读取候选、逐条检索 Memory、生成事实型中文概述、完成全量结构化评分，随后动态决定情报池准入；70 分以上候选每天最多自动执行 3 条 `single-signal` 深度分析，50–69 分直接进入情报池但由用户选择是否深度分析，低分内容进入待审候选。候选需求必须等待人工确认，禁止自动写入飞书正式需求池。当前仍禁止 Deep Research、MCP、多 Agent 编排、飞书机器人推送或复杂需求自动化。不得生成虚构新闻或大批量 Mock Data。
+本阶段 Collector 继续覆盖两条独立链路，并只承担公开来源采集、近 15 日过滤、历史已展示去重与最多 20 条候选准备。候选预排序优先具体的新产品、新功能、Agent、Skill、工具、交互与应用案例，普通公司新闻不因时间更近而自动获得高优先级。`daily-triage` 必须读取候选、逐条检索 Memory、生成事实型中文概述、标注 PM 价值类型并完成全量结构化评分；全部情报保留并按机会分降序展示，70 分以上候选每天最多自动执行 3 条 `single-signal` 深度分析，其余内容由用户按需触发。候选需求必须等待人工确认，禁止自动写入飞书正式需求池。当前仍禁止 Deep Research、MCP、多 Agent 编排、飞书机器人推送或复杂需求自动化。不得生成虚构新闻或大批量 Mock Data。
 
 ## 3. 技术栈
 
@@ -25,9 +25,9 @@ SignalFlow（AI 产品情报与需求协同工作台）服务于 AI 产品经理
 
 内部需求链路：React Component → Application Service / Demand Repository → Feishu Adapter → Next.js Server → Feishu OpenAPI → Bitable。
 
-情报链路：Source Registry → Source Adapter → Normalize → Deduplicate → Candidate Snapshot（最多 20）→ Agent Admission → Admitted Intelligence / Review Queue → SignalFlow Intelligence Repository + Agent Run Repository。采集源故障必须隔离；默认运行必须是 dry-run，只有显式 `--write` 才允许更新 SignalFlow 每日候选快照。
+情报链路：Source Registry → Source Adapter → Normalize → Deduplicate → Candidate Snapshot（最多 20）→ Agent PM Value Scoring → Opportunity Ranking → SignalFlow Intelligence Repository + Agent Run Repository。采集源故障必须隔离；默认运行必须是 dry-run，只有显式 `--write` 才允许更新 SignalFlow 每日候选快照。
 
-Agent 准入链路：Latest Dual-track Candidates → `list_daily_signals` → `search_memory` → `score_candidates`（中文概述 + 五维评分）→ `select_intelligence_for_pool` → Agent Run Repository。深度分析链路：高分 Signal 或人工选择 → `get_signal` → `search_memory` → LLM Decision → `create_demand_proposal` / `reject_signal` → Agent Run Repository → Human Review。不得保存或展示模型思维链，只保存输入证据、评分维度、工具调用摘要、最终结论与运行指标。
+Agent 评分链路：Latest Dual-track Candidates → `list_daily_signals` → `search_memory` → `score_candidates`（中文概述 + PM 价值类型 + 五维评分）→ `select_intelligence_for_pool`（全量排序）→ Agent Run Repository。深度分析链路：高分情报或人工选择 → `get_signal` → `search_memory` → LLM Decision → `create_demand_proposal` / `reject_signal` → Agent Run Repository → Human Review。用户界面统一使用“情报”，`signalId` 等英文名称仅作为内部兼容标识。不得保存或展示模型思维链，只保存输入证据、评分维度、工具调用摘要、最终结论与运行指标。
 
 - React 页面不得直接调用飞书 OpenAPI。
 - 页面依赖 `src/repositories` 中的领域接口。
@@ -39,7 +39,7 @@ Agent 准入链路：Latest Dual-track Candidates → `list_daily_signals` → `
 
 内部需求池继续以飞书多维表格为事实来源。AI 产品情报池由 SignalFlow 自行采集并写入独立 Intelligence Repository；当前使用可公开审计的每日 JSON 快照，未来可替换为 PostgreSQL。
 
-Product Intelligence Agent 的准入、深度分析与 Memory 当前保存在 `data/agent/runs.json`，仅包含公开 Signal、结构化评分、工具轨迹和候选需求。生产网页只读，LLM 运行由本地维护者或 GitHub Action 发起。
+Product Intelligence Agent 的评分、深度分析与 Memory 当前保存在 `data/agent/runs.json`，仅包含公开 Signal、结构化评分、工具轨迹和候选需求。生产网页只读，LLM 运行由本地维护者或 GitHub Action 发起。
 
 - `FEISHU_APP_ID`、`FEISHU_APP_SECRET`、`BITABLE_APP_TOKEN`、任何 `TABLE_ID`、`LLM_API_KEY` 永不进入 Git。
 - 真实值只放 `.env.local` 或托管平台的 Secret 管理。

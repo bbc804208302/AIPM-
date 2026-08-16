@@ -42,7 +42,7 @@ function toolResponse(id: string, name: string, args: Record<string, unknown>): 
   return new Response(JSON.stringify({ choices: [{ message: { role: "assistant", content: null, tool_calls: [{ id, type: "function", function: { name, arguments: JSON.stringify(args) } }] } }] }), { status: 200 });
 }
 
-test("scans, recalls, scores, and admits daily intelligence in a fixed tool order", async () => {
+test("scans, recalls, scores, and ranks all daily intelligence in a fixed tool order", async () => {
   const { intelligenceRepository, agentRepository, savedTriageRuns } = repositories();
   let request = 0;
   const fetcher = async () => {
@@ -53,10 +53,10 @@ test("scans, recalls, scores, and admits daily intelligence in a fixed tool orde
       { signalId: "SIG-OLD", query: "既有视频工作流" },
     ] });
     if (request === 3) return toolResponse("call-3", "score_candidates", { candidates: [
-      { signalId: "SIG-NEW", titleZh: "Agent 评测工具", summaryZh: "用于评测 Agent 工作流质量并定位执行问题。", relevance: 92, novelty: 88, userValue: 90, actionability: 86, evidence: 82, duplicateRisk: 5, rationale: "提供可落地的 Agent 质量评测能力。" },
-      { signalId: "SIG-OLD", titleZh: "既有视频工作流更新", summaryZh: "已有视频工作流的小幅功能更新。", relevance: 60, novelty: 30, userValue: 45, actionability: 40, evidence: 60, duplicateRisk: 80, rationale: "信息增量有限且历史已覆盖。" },
+      { signalId: "SIG-NEW", titleZh: "Agent 评测工具", summaryZh: "用于评测 Agent 工作流质量并定位执行问题。", relevance: 92, novelty: 88, userValue: 90, actionability: 86, evidence: 82, duplicateRisk: 5, pmValueType: "product-idea", rationale: "帮助 PM 建立 Agent 质量评估方案，并转化为可执行的评测能力设计。" },
+      { signalId: "SIG-OLD", titleZh: "既有视频工作流更新", summaryZh: "已有视频工作流的小幅功能更新。", relevance: 60, novelty: 30, userValue: 45, actionability: 40, evidence: 60, duplicateRisk: 80, pmValueType: "competitor", rationale: "作为竞品迭代记录，可帮助 PM 判断视频工作流能力差异，但产品增量较低。" },
     ] });
-    return toolResponse("call-4", "select_intelligence_for_pool", { summary: "已完成动态准入。" });
+    return toolResponse("call-4", "select_intelligence_for_pool", { summary: "已完成机会评分。" });
   };
 
   const run = await runOpportunityTriageAgent(
@@ -69,12 +69,13 @@ test("scans, recalls, scores, and admits daily intelligence in a fixed tool orde
   assert.equal(run.status, "completed");
   assert.equal(run.scannedSignals, 2);
   assert.deepEqual(run.toolCalls.map((call) => call.name), ["list_daily_signals", "search_memory", "score_candidates", "select_intelligence_for_pool"]);
-  assert.deepEqual(run.recommendedSignalIds, ["SIG-NEW"]);
-  assert.match(run.decisionSummary ?? "", /Agent 评测工具/);
-  assert.doesNotMatch(run.decisionSummary ?? "", /既有视频工作流暂不重复分析/);
+  assert.deepEqual(run.recommendedSignalIds, ["SIG-NEW", "SIG-OLD"]);
+  assert.match(run.decisionSummary ?? "", /2 条情报/);
   assert.equal(run.candidates[0]?.signalId, "SIG-NEW");
   assert.equal(run.candidates[0]?.summaryZh, "用于评测 Agent 工作流质量并定位执行问题。");
+  assert.equal(run.candidates[0]?.pmValueType, "product-idea");
   assert.equal(run.candidates[1]?.memoryMatchCount, 1);
+  assert.equal(run.candidates[1]?.recommendation, "candidate");
   assert.equal(savedTriageRuns.length, 1);
   assert.equal(JSON.stringify(run).includes("secret"), false);
 });

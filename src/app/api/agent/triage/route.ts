@@ -15,7 +15,7 @@ export async function POST() {
   if (!isOpportunityAgentExecutable()) {
     return NextResponse.json({ error: "公开环境只展示 Agent 推荐，不允许访客消耗你的 LLM 配额。" }, { status: 403 });
   }
-  if (activeRun) return NextResponse.json({ error: "Product Intelligence Agent 正在执行今日准入。" }, { status: 409 });
+  if (activeRun) return NextResponse.json({ error: "Product Intelligence Agent 正在执行今日机会评分。" }, { status: 409 });
 
   try {
     activeRun = runDailyIntelligenceAgent(
@@ -29,7 +29,7 @@ export async function POST() {
       ok: run.status === "completed",
       runId: run.id,
       scannedSignals: run.scannedSignals,
-      recommendations: run.recommendedSignalIds.length,
+      scored: run.candidates.length,
       autoAnalyzed: deepAnalysisRuns.length,
       error: run.error,
     }, { status: run.status === "failed" ? 502 : 200 });

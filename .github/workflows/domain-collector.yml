@@ -3,7 +3,7 @@ name: SignalFlow Business Domain Intelligence
 on:
   workflow_dispatch:
   schedule:
-    - cron: "45 08 * * *"
+    - cron: "15 07 * * *"
       timezone: "Asia/Shanghai"
 
 permissions:

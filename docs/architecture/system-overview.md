@@ -9,14 +9,14 @@ Collector → Normalize → Deduplicate → Candidate Snapshot (max 20)
   ↓
 SignalFlow Intelligence Repository
   ↓
-Product Intelligence Agent daily-triage → 动态准入 + 中文概述 + 机会评分
+Product Intelligence Agent daily-triage → 中文概述 + PM 价值分类 + 全量机会评分
   ↓
-AI 产品情报池 / 待审候选 → 高分自动或人工 single-signal 深度分析 → Agent Run / Memory Repository → 候选需求 → Human Review
+AI 产品情报池（机会分降序）→ 高分自动或人工 single-signal 深度分析 → Agent Run / Memory Repository → 候选需求 → Human Review
 
 Feishu Bitable → Demand Repository → 内部需求池
 ```
 
-Phase 4 将 Product Intelligence Agent 纳入 Daily Intelligence 主链路。Collector 只生成最多 20 条低成本候选；Agent 统一负责中文概述、Memory 去重、机会评分、动态准入和高分自动深度分析。公开页面只读取已经提交的候选快照和脱敏 Agent 运行记录，不在访客请求中调用 LLM。
+Phase 4 将 Product Intelligence Agent 纳入 Daily Intelligence 主链路。Collector 只生成最多 20 条低成本候选；Agent 统一负责中文概述、Memory 去重、PM 价值分类、机会评分排序和高分自动深度分析。公开页面只读取已经提交的候选快照和脱敏 Agent 运行记录，不在访客请求中调用 LLM。
 
 ## Product Intelligence Agent boundaries
 
@@ -24,9 +24,9 @@ Phase 4 将 Product Intelligence Agent 纳入 Daily Intelligence 主链路。Col
 Latest dual-track Candidates (max 20)
   → list_daily_signals
   → search_memory for every Signal
-  → score_candidates with Chinese overview + fixed weighted formula
+  → score_candidates with Chinese overview + PM value type + fixed weighted formula
   → select_intelligence_for_pool
-  → admitted intelligence / review queue
+  → all intelligence sorted by opportunity score
   → priority Signal ID (max 3 automatic per day) or human-selected Signal ID
   → get_signal (Intelligence Repository)
   → search_memory (Agent Run Repository)
@@ -77,4 +77,4 @@ Feishu OpenAPI / Bitable
 - Agent Memory 当前使用 `data/agent/runs.json`，生产读取使用静态打包快照，写入只允许本地或 GitHub Action。
 - 所有凭据只在服务端环境变量读取。
 - 页面以真实空状态为准，不创建假新闻或假需求。
-- Collector 与 Product Intelligence Agent 保持边界清晰但由工作流串联；GitHub Actions 先生成双轨候选，再于 09:15 执行动态准入和最多 3 条高分自动深度分析。LLM 由 GitHub Secrets 注入，通知仍保留为未来能力。
+- Collector 与 Product Intelligence Agent 保持边界清晰但由工作流串联；GitHub Actions 在 07:00 与 07:15 依次生成双轨候选，再于 07:30 执行 PM 价值分类、机会评分排序和最多 3 条高分自动深度分析。LLM 由 GitHub Secrets 注入，通知仍保留为未来能力。

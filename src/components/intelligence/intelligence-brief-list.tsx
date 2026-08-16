@@ -3,6 +3,8 @@ import { ArrowUpRight, CalendarDays, Flame, Github, Newspaper, Radio } from "luc
 import type { CollectorCategory } from "@/collector/types";
 import { calculatePublicHeatScore } from "@/collector/heat-score";
 import { AgentDeepAnalysisButton } from "@/components/agent/agent-deep-analysis-button";
+import { OpportunityScoreRing } from "@/components/intelligence/opportunity-score-ring";
+import { presentAsIntelligence } from "@/lib/intelligence/presentation";
 import type { IntelligenceCategory, IntelligenceSignal } from "@/types/intelligence";
 
 const sourceGroupLabels: Record<CollectorCategory, string> = {
@@ -21,6 +23,14 @@ const categoryLabels: Record<IntelligenceCategory, string> = {
   other: "行业动态",
 };
 const sourceIcons = { "github-trending": Github, "ai-media": Newspaper, "x-viral": Radio } satisfies Record<CollectorCategory, typeof Github>;
+const pmValueLabels = {
+  "product-idea": "产品创意",
+  "design-pattern": "设计思路",
+  competitor: "竞品动态",
+  capability: "能力变化",
+  "business-opportunity": "业务机会",
+  "industry-context": "行业判断",
+} as const;
 
 const dateFormatter = new Intl.DateTimeFormat("zh-CN", { month: "2-digit", day: "2-digit", hour: "2-digit", minute: "2-digit", hour12: false });
 const numberFormatter = new Intl.NumberFormat("zh-CN", { notation: "compact", maximumFractionDigits: 1 });
@@ -53,13 +63,14 @@ export function IntelligenceBriefList({ items, agentExecutable }: Readonly<{ ite
           <li className={`intelligence-story story-${item.sourceGroup}`} key={item.id}>
             <div className="story-index">{String(index + 1).padStart(2, "0")}</div>
             <article>
+              {typeof item.agentReview?.opportunityScore === "number" ? <OpportunityScoreRing score={item.agentReview.opportunityScore} /> : null}
               <div className="story-meta-line">
                 <span className="story-source-group"><Icon size={14} />{sourceGroupLabel}</span>
                 <span>{item.source}</span>
                 <span>{categoryLabels[item.category]}</span>
                 {item.translationStatus === "reviewed" ? <span>中文审校</span> : item.translationStatus === "llm-reviewed" ? <span>LLM 审校</span> : item.translationStatus === "generated" ? <span>中文概述</span> : item.translationStatus === "needs-review" ? <span>待审校</span> : null}
                 {typeof heatScore === "number" ? <span className="story-heat"><Flame size={12} />公开热度 {heatScore}</span> : item.track === "technical" ? <span className="story-heat-empty">暂无公开热度</span> : null}
-                {item.agentReview?.opportunityScore !== null && item.agentReview?.opportunityScore !== undefined ? <span className="story-agent-score">Agent 机会分 {item.agentReview.opportunityScore}</span> : <span>等待 Agent 评分</span>}
+                {typeof item.agentReview?.opportunityScore !== "number" ? <span>等待 Agent 评分</span> : null}
               </div>
               <h2>{title}</h2>
               {item.titleZh && item.titleZh !== item.title ? <p className="story-original-title">{item.title}</p> : null}
@@ -67,11 +78,11 @@ export function IntelligenceBriefList({ items, agentExecutable }: Readonly<{ ite
                 <span>AI 概述</span>
                 <p className="story-summary">{summary || "该来源未提供可展示摘要，请通过原文链接核对完整信息。"}</p>
               </div>
-              {item.agentReview?.rationale ? <div className="story-agent-rationale"><span>准入判断</span><p>{item.agentReview.rationale}</p></div> : null}
-              {item.agentReview?.deepAnalysisSummary ? <div className="story-deep-analysis"><span>{item.agentReview.deepAnalysis === "proposal" ? "深度分析 · 形成候选需求" : "深度分析 · 暂不转化"}</span><p>{item.agentReview.deepAnalysisSummary}</p></div> : null}
+              {item.agentReview?.rationale ? <div className="story-agent-rationale"><span>PM 价值{item.agentReview.pmValueType ? ` · ${pmValueLabels[item.agentReview.pmValueType]}` : ""}</span><p>{presentAsIntelligence(item.agentReview.rationale)}</p></div> : null}
+              {item.agentReview?.deepAnalysisSummary ? <div className="story-deep-analysis"><span>{item.agentReview.deepAnalysis === "proposal" ? "深度分析 · 形成候选需求" : "深度分析 · 暂不转化"}</span><p>{presentAsIntelligence(item.agentReview.deepAnalysisSummary)}</p></div> : null}
               <div className="story-footer">
                 <div className="story-facts">
-                  <span>{item.selectionReason}</span>
+                  <span>{presentAsIntelligence(item.selectionReason)}</span>
                   {item.publishedAt ? <span><CalendarDays size={12} />{dateFormatter.format(new Date(item.publishedAt))}</span> : null}
                   {metadata.map((entry) => <span key={entry}>{entry}</span>)}
                 </div>
