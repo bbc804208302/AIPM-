@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "track": "technical",
-  "updatedAt": "2026-08-15T01:50:08.461Z",
+  "updatedAt": "2026-08-16T01:57:31.936Z",
   "items": [
     {
       "url": "https://www.latent.space/p/ainews-zawinskis-law-of-multiagents",
@@ -310,6 +310,42 @@
     {
       "url": "https://github.com/infiniflow/ragflow",
       "title": "infiniflow/ragflow"
+    },
+    {
+      "url": "https://www.latent.space/p/flue-2",
+      "title": "React for Agents: Astro Creator Brings Hooks to his Meta-Harness, Flue"
+    },
+    {
+      "url": "https://github.com/MakazhanAlpamys/Soup",
+      "title": "MakazhanAlpamys/Soup"
+    },
+    {
+      "url": "https://x.com/sarahdingwang/status/2088271571848986965",
+      "title": "Cursor + SpaceXAI: the fastest iterating team wins"
+    },
+    {
+      "url": "https://github.com/ToolJet/ToolJet",
+      "title": "ToolJet/ToolJet"
+    },
+    {
+      "url": "https://x.com/AndrewYNg/status/2088302050706686198",
+      "title": "The AI Engineering Skills Map"
+    },
+    {
+      "url": "https://github.com/HKUDS/CLI-Anything",
+      "title": "HKUDS/CLI-Anything"
+    },
+    {
+      "url": "https://x.com/GoogleAIStudio/status/2088279677756473533",
+      "title": "What's new in Gemini 3.7 Flash"
+    },
+    {
+      "url": "https://x.com/QwenDevs/status/2088289608031510811",
+      "title": "Qwen3.8-27B Practical Guide: Control Reasoning Depth and Extend Context to 1M Tokens"
+    },
+    {
+      "url": "https://x.com/OracleFoundtion/status/2088382164773826775",
+      "title": "ORACLE: Confirmed AI Bots Actively Trading on Polymarket — Gains Reaching 200% Within 24 Hours"
     }
   ]
 }
