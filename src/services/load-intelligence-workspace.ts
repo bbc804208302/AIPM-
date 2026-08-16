@@ -13,8 +13,7 @@ export interface IntelligenceWorkspaceData {
   state: "ready" | "empty" | "error";
   focusAreas: readonly DomainFocusArea[];
   agentReviewed: boolean;
-  admittedCount: number;
-  reviewCount: number;
+  scoredCount: number;
 }
 
 export async function loadIntelligenceWorkspace(track: CollectorTrack, date?: string): Promise<IntelligenceWorkspaceData> {
@@ -31,17 +30,15 @@ export async function loadIntelligenceWorkspace(track: CollectorTrack, date?: st
       ? triageRuns.find((run) => run.briefingDate === brief.briefingDate) ?? null
       : null;
     const reviewedBrief = brief ? applyAgentReviewToBrief(brief, matchingTriage, analysisRuns) : null;
-    const admittedCount = reviewedBrief?.items.filter((item) => item.agentReview?.status !== "review").length ?? 0;
-    const reviewCount = reviewedBrief?.items.filter((item) => item.agentReview?.status === "review").length ?? 0;
+    const scoredCount = reviewedBrief?.items.filter((item) => item.agentReview?.opportunityScore !== null).length ?? 0;
     return {
       brief: reviewedBrief,
       state: reviewedBrief ? "ready" : "empty",
       focusAreas: schedule?.focusAreas ?? [],
       agentReviewed: matchingTriage !== null,
-      admittedCount,
-      reviewCount,
+      scoredCount,
     };
   } catch {
-    return { brief: null, state: "error", focusAreas: [], agentReviewed: false, admittedCount: 0, reviewCount: 0 };
+    return { brief: null, state: "error", focusAreas: [], agentReviewed: false, scoredCount: 0 };
   }
 }

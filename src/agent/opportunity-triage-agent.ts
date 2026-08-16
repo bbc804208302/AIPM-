@@ -9,6 +9,7 @@ import type {
   OpportunityAgentToolName,
   OpportunityTriageCandidate,
   OpportunityTriageDimensionScores,
+  OpportunityPmValueType,
   OpportunityTriageRun,
 } from "@/types/agent";
 import type { IntelligenceSignal } from "@/types/intelligence";
@@ -103,9 +104,10 @@ const triageTools = [
                 actionability: { type: "number", minimum: 0, maximum: 100 },
                 evidence: { type: "number", minimum: 0, maximum: 100 },
                 duplicateRisk: { type: "number", minimum: 0, maximum: 100 },
+                pmValueType: { type: "string", enum: ["product-idea", "design-pattern", "competitor", "capability", "business-opportunity", "industry-context"] },
                 rationale: { type: "string" },
               },
-              required: ["signalId", "titleZh", "summaryZh", "relevance", "novelty", "userValue", "actionability", "evidence", "duplicateRisk", "rationale"],
+              required: ["signalId", "titleZh", "summaryZh", "relevance", "novelty", "userValue", "actionability", "evidence", "duplicateRisk", "pmValueType", "rationale"],
               additionalProperties: false,
             },
           },
@@ -119,7 +121,7 @@ const triageTools = [
     type: "function",
     function: {
       name: "select_intelligence_for_pool",
-      description: "确认程序按机会分数完成动态准入；50 分以上进入情报池，低分进入待审候选。",
+      description: "确认程序已完成全部情报的机会评分；所有情报保留，并按机会分数从高到低展示。",
       parameters: {
         type: "object",
         properties: {
@@ -180,8 +182,18 @@ function calculateOpportunityScore(
 
 function recommendationFor(scoreValue: number): OpportunityTriageCandidate["recommendation"] {
   if (scoreValue >= 70) return "priority";
-  if (scoreValue >= 50) return "candidate";
-  return "skip";
+  return "candidate";
+}
+
+const pmValueTypes = new Set<OpportunityPmValueType>([
+  "product-idea", "design-pattern", "competitor", "capability", "business-opportunity", "industry-context",
+]);
+
+function requiredPmValueType(value: unknown): OpportunityPmValueType {
+  if (typeof value !== "string" || !pmValueTypes.has(value as OpportunityPmValueType)) {
+    throw new Error("必须明确该情报对 PM 的价值类型。");
+  }
+  return value as OpportunityPmValueType;
 }
 
 function signalObservation(signal: IntelligenceSignal) {
@@ -204,11 +216,13 @@ function signalObservation(signal: IntelligenceSignal) {
 function systemPrompt(): string {
   return [
     "你是 SignalFlow Product Intelligence Agent 的 daily-triage 模式，服务于 AI 产品经理。",
-    "目标是主动扫描最新公开情报，选出最值得 AI 产品经理阅读与进一步分析的产品情报。",
+    "目标是主动扫描最新公开情报，从 AI 产品经理视角完成全量机会评分并确定深度分析优先级。",
     "必须依次调用 list_daily_signals、search_memory、score_candidates、select_intelligence_for_pool；每轮只能调用一个工具。",
     "search_memory 必须为每条情报提供简短查询；score_candidates 必须覆盖全部候选且每条只出现一次。",
     "score_candidates 同时生成准确中文标题和一句中文概述。概述直接说明它是什么、做什么或发生了什么，不解释入选原因，不得使用‘发布新动态’等空泛模板。",
     "评分维度：业务相关性、新颖性、用户价值、可行动性、证据质量、历史重复风险。",
+    "每条情报必须归类 PM 价值：product-idea 产品创意、design-pattern 设计思路、competitor 竞品动态、capability 能力变化、business-opportunity 业务机会、industry-context 行业判断。",
+    "rationale 必须直接解释它能帮助产品经理做什么判断、启发什么方案或识别什么竞品变化，不要复述新闻，也不要写‘值得关注’这类空话。",
     "优先选择具体的新产品、新功能、Agent、Skill、插件、工具、交互方式、模型能力或真实应用案例；中文概述要讲清它的功能、亮点和解决的问题。",
     "收购、融资、人事、宏观趋势、观点评论和普通公司新闻默认低优先级，除非它们带来可验证的新产品能力或明确改变产品决策。",
     "公开热度只是弱指标；不得因为新闻热门但缺少具体产品能力就给高分。",
@@ -227,7 +241,7 @@ function toolSummary(name: OpportunityAgentToolName, args: Record<string, unknow
   if (name === "list_daily_signals") return "读取最新双轨情报";
   if (name === "search_memory") return `检索 ${Array.isArray(args.queries) ? args.queries.length : 0} 条情报的历史决策`;
   if (name === "score_candidates") return `评估 ${Array.isArray(args.candidates) ? args.candidates.length : 0} 条候选`;
-  if (name === "select_intelligence_for_pool") return "确认今日情报池准入结果";
+  if (name === "select_intelligence_for_pool") return "确认今日情报机会评分结果";
   return "不支持的初筛工具";
 }
 
@@ -308,6 +322,7 @@ async function executeTriageTool(
           memoryMatchCount,
           opportunityScore,
           recommendation: recommendationFor(opportunityScore),
+          pmValueType: requiredPmValueType(raw.pmValueType),
           rationale: requiredString(raw.rationale, "评分理由", 360),
         } satisfies OpportunityTriageCandidate;
       }).sort((left, right) => right.opportunityScore - left.opportunityScore);
@@ -316,18 +331,12 @@ async function executeTriageTool(
       outputSummary = `完成 ${state.candidates.length} 条机会评分`;
     } else if (name === "select_intelligence_for_pool") {
       if (!state.scoredCandidates) throw new Error("生成推荐前必须完成全部候选评分。");
-      state.recommendedSignalIds = state.candidates
-        .filter((candidate) => candidate.recommendation !== "skip")
-        .map((candidate) => candidate.signalId);
+      state.recommendedSignalIds = state.candidates.map((candidate) => candidate.signalId);
       requiredString(args.summary, "推荐总结", 280);
-      const recommendedTitles = state.recommendedSignalIds
-        .map((signalId) => state.candidates.find((candidate) => candidate.signalId === signalId)?.signalTitle)
-        .filter((title): title is string => Boolean(title));
-      state.decisionSummary = recommendedTitles.length > 0
-        ? `Agent 从 ${state.signals.length} 条候选中准入 ${recommendedTitles.length} 条产品情报：${recommendedTitles.join("、")}。其余内容进入待审候选。`
-        : `Agent 完成 ${state.signals.length} 条候选的结构化评分，本批次没有达到情报池准入阈值的内容。`;
+      const highOpportunityCount = state.candidates.filter((candidate) => candidate.opportunityScore >= 70).length;
+      state.decisionSummary = `Agent 已完成 ${state.candidates.length} 条情报的 PM 机会评分，并按分数排序；其中 ${highOpportunityCount} 条高机会情报进入自动深度分析候选。`;
       output = { recommendedSignalIds: state.recommendedSignalIds, summary: state.decisionSummary };
-      outputSummary = `准入 ${state.recommendedSignalIds.length} 条产品情报`;
+      outputSummary = `完成 ${state.recommendedSignalIds.length} 条产品情报评分`;
     } else {
       throw new Error("不支持的初筛工具。");
     }
@@ -356,7 +365,7 @@ export async function runOpportunityTriageAgent(
   };
   const messages: ConversationMessage[] = [
     { role: "system", content: systemPrompt() },
-    { role: "user", content: "扫描最新双轨候选，完成中文概述、历史去重和结构化评分，决定哪些内容进入 AI 产品情报池。" },
+    { role: "user", content: "扫描最新双轨候选，完成中文概述、历史去重和全量结构化评分，按 PM 价值与机会分确定展示顺序和深度分析优先级。" },
   ];
   let runError: string | null = null;
 
@@ -386,9 +395,9 @@ export async function runOpportunityTriageAgent(
     id: `TRIAGE-${randomUUID()}`,
     agent: "product-opportunity-agent",
     mode: "daily-triage",
-    version: 3,
+    version: 4,
     briefingDate: state.signals.map((signal) => signal.briefingDate).sort().at(-1) ?? completedAt.toISOString().slice(0, 10),
-    objective: "扫描每日候选并决定产品情报准入与深度分析优先级",
+    objective: "扫描每日情报并完成 PM 机会评分与深度分析优先级排序",
     status: state.decisionSummary ? "completed" : "failed",
     model: config.model,
     startedAt: startedAt.toISOString(),
@@ -397,7 +406,7 @@ export async function runOpportunityTriageAgent(
     scannedSignals: state.signals.length,
     candidates: state.candidates,
     recommendedSignalIds: state.recommendedSignalIds,
-    reviewSignalIds: state.candidates.filter((candidate) => candidate.recommendation === "skip").map((candidate) => candidate.signalId),
+    reviewSignalIds: [],
     autoAnalyzedSignalIds: [],
     decisionSummary: state.decisionSummary ?? runError ?? "未形成推荐",
     toolCalls: state.toolCalls,

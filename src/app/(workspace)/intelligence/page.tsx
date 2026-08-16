@@ -3,7 +3,6 @@ import type { Metadata } from "next";
 import { EmptyState } from "@/components/empty-state/empty-state";
 import { IntelligenceBriefList } from "@/components/intelligence/intelligence-brief-list";
 import { IntelligenceFilters } from "@/components/intelligence/intelligence-filters";
-import type { IntelligencePoolView } from "@/components/intelligence/intelligence-filters";
 import { PageHeader } from "@/components/workspace/page-header";
 import type { CollectorCategory, CollectorTrack } from "@/collector/types";
 import { loadIntelligenceWorkspace } from "@/services/load-intelligence-workspace";
@@ -30,19 +29,16 @@ const timeFormatter = new Intl.DateTimeFormat("zh-CN", {
 });
 
 interface PageProps {
-  searchParams: Promise<{ track?: string; source?: string; date?: string; view?: string }>;
+  searchParams: Promise<{ track?: string; source?: string; date?: string }>;
 }
 
 export default async function IntelligencePage({ searchParams }: PageProps) {
   const query = await searchParams;
   const track: CollectorTrack = query.track === "domain" ? "domain" : "technical";
-  const view: IntelligencePoolView = query.view === "review" ? "review" : "admitted";
   const sourceGroup: CollectorCategory | "all" = sourceGroups.has(query.source as CollectorCategory) ? query.source as CollectorCategory : "all";
-  const { brief, state, focusAreas, agentReviewed, admittedCount, reviewCount } = await loadIntelligenceWorkspace(track, query.date);
+  const { brief, state, focusAreas, agentReviewed, scoredCount } = await loadIntelligenceWorkspace(track, query.date);
   const items = sortIntelligenceByOpportunity(brief?.items.filter((item) => {
-    const matchesSource = sourceGroup === "all" || item.sourceGroup === sourceGroup;
-    const matchesAdmission = view === "review" ? item.agentReview?.status === "review" : item.agentReview?.status !== "review";
-    return matchesSource && matchesAdmission;
+    return sourceGroup === "all" || item.sourceGroup === sourceGroup;
   }) ?? []);
   const agentExecutable = isOpportunityAgentExecutable() && readOpportunityAgentConfig() !== null;
 
@@ -51,12 +47,12 @@ export default async function IntelligencePage({ searchParams }: PageProps) {
       <PageHeader
         eyebrow="Product intelligence workspace"
         title="AI 产品情报池"
-        description="由 Agent 从公开候选中判断产品价值，动态准入值得 AI 产品经理关注的情报。"
+        description="由 Agent 从 PM 视角评估公开情报的产品价值，按机会分排序并辅助确定深度分析优先级。"
       />
-      <IntelligenceFilters track={track} sourceGroup={sourceGroup} view={view} admittedCount={admittedCount} reviewCount={reviewCount} />
-      <section className="intelligence-agent-gate" aria-label="Agent 情报准入说明">
-        <div><span>AGENT ADMISSION GATE</span><strong>{agentReviewed ? "本批候选已完成 Agent 初筛" : "等待 Agent 初筛"}</strong></div>
-        <p>{agentReviewed ? `动态准入 ${admittedCount} 条，${reviewCount} 条进入待审候选；70 分以上每天最多自动深度分析 3 条。` : "当前先展示采集候选；Agent 运行后会补充中文概述、机会评分与准入状态。"}</p>
+      <IntelligenceFilters track={track} sourceGroup={sourceGroup} />
+      <section className="intelligence-agent-gate" aria-label="Agent 机会评分说明">
+        <div><span>PM OPPORTUNITY SCORING</span><strong>{agentReviewed ? "本批情报已完成 Agent 评分" : "等待 Agent 评分"}</strong></div>
+        <p>{agentReviewed ? `已完成 ${scoredCount} 条 PM 机会评分，页面按分数从高到低排列；70 分以上每天最多自动深度分析 3 条。` : "当前先展示采集结果；Agent 运行后会补充中文概述、PM 价值类型与机会评分。"}</p>
       </section>
       {track === "domain" ? (
         <section className="domain-focus-summary" aria-label="已选择的业务领域">
@@ -79,12 +75,12 @@ export default async function IntelligencePage({ searchParams }: PageProps) {
       {items.length > 0 ? <IntelligenceBriefList items={items} agentExecutable={agentExecutable} /> : (
         <section className="intelligence-empty-panel">
           <EmptyState
-            title={state === "error" ? "情报快照暂时不可用" : view === "review" ? "暂无待审候选" : track === "domain" ? "暂无业务领域情报" : sourceGroup === "all" ? "今日情报尚未生成" : "当前来源暂无入选情报"}
+            title={state === "error" ? "情报快照暂时不可用" : track === "domain" ? "暂无业务领域情报" : sourceGroup === "all" ? "今日情报尚未生成" : "当前来源暂无情报"}
             description={state === "error"
               ? "请检查 SignalFlow Intelligence Repository 的快照文件。"
               : track === "domain"
                 ? <>当前未找到业务领域快照，请检查 Intelligence Repository。</>
-                : <>在采集任务中点击“立即采集”，系统会准备候选并由 Agent 动态决定准入结果。</>}
+                : <>在采集任务中点击“立即采集”，系统会准备情报并由 Agent 完成 PM 机会评分与排序。</>}
             meta={track === "domain" ? "DOMAIN INTELLIGENCE · NO SNAPSHOT" : "SIGNALFLOW REPOSITORY · NO SNAPSHOT"}
           />
         </section>

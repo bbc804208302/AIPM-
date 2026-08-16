@@ -9,10 +9,10 @@ async function main(): Promise<void> {
     createFileIntelligenceRepository(),
     createFileOpportunityAgentRepository(),
   );
-  console.log("SignalFlow Product Intelligence Agent · Daily Admission");
+  console.log("SignalFlow Product Intelligence Agent · Daily PM Opportunity Scoring");
   console.log(`Run: ${run.id}`);
   console.log(`Scanned: ${run.scannedSignals}`);
-  console.log(`Admitted: ${run.recommendedSignalIds.length}`);
+  console.log(`Scored: ${run.candidates.length}`);
   console.log(`Auto deep analysis: ${deepAnalysisRuns.length}`);
   console.log(`Tool calls: ${run.toolCalls.length}`);
   console.log(`Summary: ${run.decisionSummary}`);

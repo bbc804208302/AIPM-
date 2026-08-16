@@ -23,14 +23,14 @@ export default async function AgentPage() {
   const proposals = runs.filter((run) => run.decision === "proposal").length;
   const metrics = [
     { label: "今日扫描", value: String(latestTriageRun?.scannedSignals ?? 0), hint: "最近双轨情报" },
-    { label: "Agent 准入", value: String(latestTriageRun?.recommendedSignalIds.length ?? 0), hint: "进入产品情报池" },
+    { label: "Agent 评分", value: String(latestTriageRun?.candidates.length ?? 0), hint: "按机会分排序" },
     { label: "重复过滤", value: String(latestTriageRun?.candidates.filter((item) => item.duplicateRisk >= 60).length ?? 0), hint: "Memory 高度相似" },
     { label: "候选需求", value: String(proposals), hint: `${runs.length} 次深度分析` },
   ];
 
   return (
     <div className="workspace-page">
-      <PageHeader eyebrow="Product intelligence agent" title="Agent 决策审计" description="查看情报准入、Memory 去重、机会评分、自动深度分析与候选需求的完整运行轨迹。" />
+      <PageHeader eyebrow="Product intelligence agent" title="Agent 决策审计" description="查看 PM 价值分类、Memory 去重、机会评分、自动深度分析与候选需求的完整运行轨迹。" />
       <MetricStrip metrics={metrics} />
       <AgentTriageControls executable={executable} configured={configured} signalCount={signals.length} />
       <AgentTriageDashboard run={latestTriageRun} executable={executable && configured} />

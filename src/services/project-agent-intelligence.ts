@@ -1,6 +1,15 @@
 import type { OpportunityAgentRun, OpportunityTriageRun } from "@/types/agent";
-import type { DailyIntelligenceBrief } from "@/types/intelligence";
-import type { IntelligenceSignal } from "@/types/intelligence";
+import type { OpportunityPmValueType } from "@/types/agent";
+import type { DailyIntelligenceBrief, IntelligenceCategory, IntelligenceSignal } from "@/types/intelligence";
+
+function inferLegacyPmValueType(category: IntelligenceCategory, rationale: string): OpportunityPmValueType {
+  if (/竞品|竞争|对标/u.test(rationale)) return "competitor";
+  if (category === "interaction") return "design-pattern";
+  if (category === "model-capability" || category === "multimodal") return "capability";
+  if (category === "business-model") return "business-opportunity";
+  if (category === "other") return "industry-context";
+  return "product-idea";
+}
 
 export function sortIntelligenceByOpportunity(items: readonly IntelligenceSignal[]): readonly IntelligenceSignal[] {
   return [...items].sort((left, right) => {
@@ -24,6 +33,7 @@ export function applyAgentReviewToBrief(
           status: "unreviewed",
           opportunityScore: null,
           recommendation: null,
+          pmValueType: null,
           rationale: null,
           duplicateRisk: null,
           reviewedAt: null,
@@ -50,6 +60,7 @@ export function applyAgentReviewToBrief(
           status: "unreviewed" as const,
           opportunityScore: null,
           recommendation: null,
+          pmValueType: null,
           rationale: null,
           duplicateRisk: null,
           reviewedAt: triageRun.completedAt,
@@ -63,9 +74,10 @@ export function applyAgentReviewToBrief(
         summaryZh: candidate.summaryZh || item.summaryZh,
         translationStatus: candidate.summaryZh ? "llm-reviewed" as const : item.translationStatus,
         agentReview: {
-          status: candidate.recommendation === "skip" ? "review" as const : "admitted" as const,
+          status: "admitted" as const,
           opportunityScore: candidate.opportunityScore,
           recommendation: candidate.recommendation,
+          pmValueType: candidate.pmValueType ?? inferLegacyPmValueType(item.category, candidate.rationale),
           rationale: candidate.rationale,
           duplicateRisk: candidate.duplicateRisk,
           reviewedAt: triageRun.completedAt,
