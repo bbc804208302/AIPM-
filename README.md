@@ -52,7 +52,7 @@ flowchart LR
 | --- | --- | --- |
 | `/` | 产品需求看板 | 需求总数、已完成数、平均等待天数、P0 秒级倒计时、状态漏斗、人员进展 |
 | `/intelligence` | AI 产品情报池 | 双轨来源筛选、中文概述、PM 价值分类、环形机会分、降序展示、深度分析和原文追溯 |
-| `/agent` | Agent 决策审计 | 全量评分、PM 价值分类、Tool Use、Memory、高分自动深度分析和候选需求草稿 |
+| `/agent` | Agent 运行记录 | 全量评分、PM 价值分类、Tool Use、Memory、高分自动深度分析和候选需求草稿 |
 | `/demands` | 内部需求池 | 飞书实时读取、状态指标筛选、优先级、提出人、负责人和详情入口 |
 | `/demands/[id]` | 需求详情 | 展示该条飞书记录映射后的完整字段与规范化时间 |
 | `/sources` | 数据源 | 按情报轨道管理 Source Registry、来源健康度与本地开关 |
@@ -128,12 +128,12 @@ flowchart TD
   G --> N[Normalize]
   M --> N
   X --> N
-  N --> F[Recent 3-day Window]
+  N --> F[Recent 15-day Window]
   F --> U[URL / Title History Deduplicate]
   U --> T[Source-diverse Candidates / max 20]
   T --> J[Versioned Candidate Repository]
   J --> A[Product Intelligence Agent]
-  A --> W[Admitted Pool / Review Queue]
+  A --> W[All Intelligence / Opportunity Score Ranking]
 ```
 
 Collector 的工程约束：
@@ -156,7 +156,7 @@ Collector 的工程约束：
 flowchart TB
   subgraph Intelligence[Product Intelligence]
     PS[Public Sources] --> CO[Collector]
-    CO --> NR[Normalize / 3-day Filter / History Deduplicate]
+    CO --> NR[Normalize / 15-day Filter / History Deduplicate]
     NR --> IR[Candidate Snapshot / max 20]
     IR --> IA[Agent PM Value Scoring + Chinese Overview]
   end
@@ -291,12 +291,12 @@ LLM_MODEL=deepseek-v4-flash
 
 以上示例使用 DeepSeek；也可以替换为其他 OpenAI 兼容服务。当前每日主链路由 Product Intelligence Agent 处理最多 20 条候选，并只接收公开来源标题、摘要及页面中可审计的公开描述。旧的独立 LLM 审校仍保留为本地兼容能力，但 GitHub Collector 不再重复调用它，避免中文审校与 Agent 评分产生双份 API 消耗。普通网页访客不会调用 LLM，也不会暴露 API Key；下载本项目的其他人必须自行配置自己的 Key。
 
-仓库提供两条 GitHub Actions 工作流：AI 行业情报每天 `08:17`、业务领域情报每天 `08:45` 运行，时区均为 `Asia/Shanghai`。它们只提交 `data/intelligence` 中发生变化的快照；GitHub 调度可能有少量排队延迟。
+仓库的每日链路统一在早上 7 点运行并留出依赖间隔：AI 行业情报 `07:00`、业务领域情报 `07:15`、Product Intelligence Agent `07:30`，时区均为 `Asia/Shanghai`。两个 Collector 只提交 `data/intelligence` 中发生变化的快照；Agent 在候选准备完成后读取最新双轨数据，避免并发时误用旧快照。GitHub 调度可能有少量排队延迟。
 
 ```mermaid
 flowchart LR
   GA[GitHub Actions] --> PS[Public Sources]
-  PS --> DD[3-day Filter / History Deduplicate]
+  PS --> DD[15-day Filter / History Deduplicate]
   DD --> LLM[Optional DeepSeek Review]
   LLM --> JSON[Versioned JSON Snapshot]
   JSON --> MAIN[Push main]
@@ -315,10 +315,8 @@ flowchart TB
   LS --> TM[search_memory]
   TM --> SC[score_candidates]
   SC --> RT[select_intelligence_for_pool]
-  RT --> AP[Admitted Intelligence]
-  RT --> RQ[Review Queue]
-  AP --> S[Priority or Human-selected Signal]
-  RQ --> S
+  RT --> AP[All Intelligence / Score Descending]
+  AP --> S[Priority or Human-selected Intelligence]
   S --> GS[get_signal]
   GS --> SM[search_memory]
   SM --> LLM[LLM Decision]
@@ -349,7 +347,9 @@ pnpm agent:triage
 pnpm agent:opportunity --signal <LATEST_SIGNAL_ID>
 ```
 
-GitHub 的 **SignalFlow Daily Intelligence Agent** 工作流每天 `09:15` 自动扫描当日双轨候选，完成 PM 价值分类与机会评分排序，并对 70 分以上的内容自动执行最多 3 条深度分析。手动工作流仍可接受任意候选的 `signal_id`。两者都使用仓库 Secret 调用 LLM，只提交脱敏后的 `data/agent/runs.json`；Vercel 随后自动展示真实情报池和运行记录。
+GitHub 的 **SignalFlow Daily Intelligence Agent** 工作流每天 `07:30` 自动扫描已经更新的双轨候选，完成 PM 价值分类与机会评分排序，并对 70 分以上的内容自动执行最多 3 条深度分析。手动工作流仍可接受任意候选的 `signal_id`。两者都使用仓库 Secret 调用 LLM，只提交脱敏后的 `data/agent/runs.json`；Vercel 随后自动展示真实情报池和运行记录。
+
+仓库同时保留公开来源的每日 JSON 快照与脱敏后的 Agent 运行记录，在线作品集因此可以直接展示真实中文概述、机会分、PM 价值判断、Tool Use 摘要与历史 Memory，而无需让 Vercel 访客调用维护者的 LLM。
 
 ## 开发与验证
 

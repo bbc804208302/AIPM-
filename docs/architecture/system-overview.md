@@ -77,4 +77,4 @@ Feishu OpenAPI / Bitable
 - Agent Memory 当前使用 `data/agent/runs.json`，生产读取使用静态打包快照，写入只允许本地或 GitHub Action。
 - 所有凭据只在服务端环境变量读取。
 - 页面以真实空状态为准，不创建假新闻或假需求。
-- Collector 与 Product Intelligence Agent 保持边界清晰但由工作流串联；GitHub Actions 先生成双轨候选，再于 09:15 执行 PM 价值分类、机会评分排序和最多 3 条高分自动深度分析。LLM 由 GitHub Secrets 注入，通知仍保留为未来能力。
+- Collector 与 Product Intelligence Agent 保持边界清晰但由工作流串联；GitHub Actions 在 07:00 与 07:15 依次生成双轨候选，再于 07:30 执行 PM 价值分类、机会评分排序和最多 3 条高分自动深度分析。LLM 由 GitHub Secrets 注入，通知仍保留为未来能力。

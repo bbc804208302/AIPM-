@@ -71,7 +71,7 @@ export function AgentRunControls({
           {selectedSignal ? <small>GitHub Action 情报 ID：<code>{selectedSignal.id}</code></small> : null}
         </label>
         <button className="brutal-control-button primary" type="button" disabled={!executable || !configured || !signalId || busy} onClick={runAgent}>
-          <Play size={15} />{busy ? "Agent 运行中" : "运行单条深度分析"}
+          <Play size={15} />{busy ? "分析中" : "深度分析"}
         </button>
       </div>
       {status ? <p className="task-control-status" aria-live="polite">{status}</p> : null}

@@ -8,7 +8,7 @@ import { MetricStrip } from "@/components/metric-card/metric-strip";
 import { PageHeader } from "@/components/workspace/page-header";
 import { loadOpportunityAgentWorkspace } from "@/services/load-opportunity-agent-workspace";
 
-export const metadata: Metadata = { title: "机会 Agent · SignalFlow" };
+export const metadata: Metadata = { title: "Agent 运行记录 · SignalFlow" };
 export const dynamic = "force-dynamic";
 
 export default async function AgentPage() {
@@ -30,7 +30,7 @@ export default async function AgentPage() {
 
   return (
     <div className="workspace-page">
-      <PageHeader eyebrow="Product intelligence agent" title="Agent 决策审计" description="查看 PM 价值分类、Memory 去重、机会评分、自动深度分析与候选需求的完整运行轨迹。" />
+      <PageHeader eyebrow="Product intelligence agent" title="Agent 运行记录" description="查看 PM 价值分类、Memory 去重、机会评分、自动深度分析与候选需求的完整运行轨迹。" />
       <MetricStrip metrics={metrics} />
       <AgentTriageControls executable={executable} configured={configured} signalCount={signals.length} />
       <AgentTriageDashboard run={latestTriageRun} executable={executable && configured} />

@@ -3,7 +3,7 @@ name: SignalFlow Daily Intelligence Agent
 on:
   workflow_dispatch:
   schedule:
-    - cron: "15 09 * * *"
+    - cron: "30 07 * * *"
       timezone: "Asia/Shanghai"
 
 permissions:
