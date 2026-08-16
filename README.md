@@ -9,7 +9,7 @@
   <img alt="React 19" src="https://img.shields.io/badge/React-19-3f6578?style=flat-square&logo=react&logoColor=white">
   <img alt="TypeScript strict" src="https://img.shields.io/badge/TypeScript-strict-315467?style=flat-square&logo=typescript&logoColor=white">
   <img alt="pnpm 11" src="https://img.shields.io/badge/pnpm-11-a97842?style=flat-square&logo=pnpm&logoColor=white">
-  <img alt="Phase 2" src="https://img.shields.io/badge/status-Daily_Intelligence_MVP-67806d?style=flat-square">
+  <img alt="Phase 3" src="https://img.shields.io/badge/status-Product_Opportunity_Agent_MVP-67806d?style=flat-square">
 </p>
 
 <p align="center">
@@ -17,7 +17,7 @@
 </p>
 
 > [!NOTE]
-> SignalFlow 当前处于 **Phase 2 / Daily Intelligence MVP**。公开信号采集、近 3 日候选与历史去重、DeepSeek / OpenAI 兼容中文审校、每日 Top 10、飞书需求读取和完整产品工作区已经可运行；结构化 AI Analyzer、通知和 Signal → Demand 写回仍在路线图中。
+> SignalFlow 当前处于 **Phase 3 / Product Opportunity Agent MVP**。除公开信号采集、AI 中文审校和飞书需求读取外，现已具备单 Agent Tool Use、历史决策 Memory、可审计运行轨迹和候选需求草稿；正式需求写回仍由产品经理人工确认。
 
 ## SignalFlow 是什么
 
@@ -43,7 +43,7 @@ flowchart LR
 | --- | --- |
 | AI 产品信息依赖产品经理主动浏览，信号分散且容易错过 | 配置化 Source Registry、近 3 日滚动候选、跨批次去重和双轨 Top 10 情报 |
 | 需求通过表单、聊天和会议提出，提交后状态不透明 | 统一需求池、状态筛选、详情页与执行看板 |
-| 外部情报与内部需求缺少连接 | 以稳定领域模型为基础，预留 Signal → Insight → Demand 链路 |
+| 外部情报与内部需求缺少连接 | Product Opportunity Agent 将 Signal 转为可审阅候选需求，并保留人工确认边界 |
 | Demo 容易依赖伪造数据或泄露 Secret | 公开来源快照可审计，飞书凭据仅保留在服务端 |
 
 ## 当前可以体验什么
@@ -52,6 +52,7 @@ flowchart LR
 | --- | --- | --- |
 | `/` | 产品需求看板 | 需求总数、已完成数、平均等待天数、P0 秒级倒计时、状态漏斗、人员进展 |
 | `/intelligence` | AI 产品情报池 | AI 行业 / 业务领域双轨、来源筛选、批次日期、AI 中文概述、公开热度和原文追溯 |
+| `/agent` | 机会 Agent | Tool Use、历史决策 Memory、可审计运行轨迹和候选需求草稿 |
 | `/demands` | 内部需求池 | 飞书实时读取、状态指标筛选、优先级、提出人、负责人和详情入口 |
 | `/demands/[id]` | 需求详情 | 展示该条飞书记录映射后的完整字段与规范化时间 |
 | `/sources` | 数据源 | 按情报轨道管理 Source Registry、来源健康度与本地开关 |
@@ -250,6 +251,7 @@ cp .env.example .env.local
 | `LLM_API_BASE_URL` | OpenAI 兼容 API 地址；默认 `https://api.openai.com/v1` | 否 |
 | `LLM_MODEL` | 审校模型；默认 `gpt-4.1-mini` | 否 |
 | `SIGNALFLOW_LLM_REVIEW` | 设置为 `true` 后，在写入快照前调用 LLM；默认关闭 | 否 |
+| `SIGNALFLOW_OPPORTUNITY_AGENT` | 设置为 `true` 后允许本地或 GitHub Action 运行机会 Agent | 否 |
 
 推荐的需求表字段：
 
@@ -303,6 +305,40 @@ flowchart LR
 
 本地 `/tasks` 调整时间会同步更新对应工作流文件，只有将该变更提交并合并到 `main` 后，GitHub 上的定时任务才会采用新时间。Vercel 公开环境保持只读。
 
+## Product Opportunity Agent
+
+机会 Agent 不是把一次 Prompt 包装成按钮，而是一个受控的工具调用循环：
+
+```mermaid
+flowchart LR
+  S[Signal ID] --> GS[get_signal]
+  GS --> SM[search_memory]
+  SM --> LLM[LLM Decision]
+  LLM --> DP[create_demand_proposal]
+  LLM --> RJ[reject_signal]
+  DP --> AR[Agent Run Repository]
+  RJ --> AR
+  AR --> HR[Human Review]
+  HR -. approved later .-> FD[Feishu Demand]
+```
+
+工程约束：
+
+- 模型必须先读取 Signal，再检索历史 Memory，不能跳过证据直接生成需求。
+- Agent 只接收 Intelligence Repository 中的公开情报，不读取飞书私有需求正文。
+- 每次运行持久化模型、耗时、工具输入/输出摘要、Memory 命中与最终决策；不保存思维链。
+- `create_demand_proposal` 只创建等待确认的候选需求，不会自动写入飞书。
+- Vercel 在线作品集只读，避免陌生访客消耗维护者的 LLM 配额；运行可由本地维护者或 GitHub Actions 手动触发。
+
+本地运行：
+
+```bash
+SIGNALFLOW_OPPORTUNITY_AGENT=true
+pnpm agent:opportunity --signal <LATEST_SIGNAL_ID>
+```
+
+GitHub 的 **SignalFlow Product Opportunity Agent** 工作流也接受最新情报的 `signal_id`，使用仓库 Secret 调用 LLM，并将脱敏后的 `data/agent/runs.json` 提交回 `main`。Vercel 随后自动展示真实运行记录。
+
 ## 开发与验证
 
 ```bash
@@ -322,6 +358,7 @@ pnpm check
 
 - Collector registry、Normalization、近 3 日窗口、单批次与跨批次去重、双轨 Top 10
 - 原文上下文提取、LLM JSON 修复与重试、审校内容保护和公开热度计算
+- Opportunity Agent 工具顺序、Memory 召回、候选需求门控、失败轨迹与 File Repository
 - 飞书 token 缓存、并发刷新、分页、限流与安全错误
 - 飞书字段映射、File Repository 和需求看板指标
 
@@ -343,6 +380,7 @@ Vercel 部署流程：
 ```text
 src/
 ├── app/                 # App Router 页面与服务端 API
+├── agent/               # Product Opportunity Agent 与受控 Tool Use
 ├── collector/           # Source Registry、Adapter、Normalize、Top 10
 ├── components/          # 布局、情报、需求、数据源与任务组件
 ├── lib/feishu/          # Server-only Feishu OpenAPI boundary
@@ -352,34 +390,37 @@ src/
 └── types/               # 稳定领域类型
 
 data/intelligence/       # 可审计的每日情报快照
+data/agent/              # 脱敏 Agent Run 与历史决策 Memory
 docs/                    # 架构、产品、设计与参考项目说明
 .codex/skills/           # SignalFlow Collector Skill
-.github/workflows/       # 两条每日采集工作流
+.github/workflows/       # 双轨采集与手动 Opportunity Agent 工作流
 ```
 
 ## 当前边界与路线图
 
 ### 已实现
 
-- [x] Next.js 产品工作区与五个核心入口
+- [x] Next.js 产品工作区与六个核心入口
 - [x] AI 行业 / 业务领域双轨情报
 - [x] 14 个公开来源、Registry、Dispatch、Normalization 与 Deduplication
 - [x] 近 3 日候选、历史已读去重、每日 Top 10 与版本化 File Repository
 - [x] DeepSeek / OpenAI 兼容中文审校、失败恢复与公开热度
 - [x] 飞书 Demand Repository、需求详情和产品需求看板
 - [x] 本地任务控制、公开环境只读和 GitHub Actions 工作流
+- [x] AI 质量评测、badcase 队列与运行指标
+- [x] Product Opportunity Agent、Tool Use、Memory、审计轨迹与候选需求
 - [x] Collector Skill、架构文档、设计规范和自动化测试
 
 ### 下一阶段
 
-- [ ] 结构化 AI Analyzer：事实摘要、产品影响、机会、风险与来源证据
-- [ ] Signal → Insight → Demand 草稿转换
-- [ ] AI 输出评估：准确性、来源覆盖、人工审校与 Prompt 版本
+- [ ] 候选需求人工批准与飞书写回
+- [ ] Agent Eval 数据集、决策准确性与 Prompt 版本对比
+- [ ] Planner / Reviewer 多 Agent 实验（仅在单 Agent 指标稳定后）
 - [ ] 飞书需求写回、缓存与 webhook 策略
 - [ ] PostgreSQL Intelligence Repository 实现
 - [ ] 通知与高价值情报 Deep Research
 
-当前阶段不实现运行时多 Agent、MCP、复杂需求自动化或飞书机器人推送。
+当前阶段不实现 MCP、自动飞书写回、复杂需求自动化或飞书机器人推送。
 
 ## 安全设计
 
@@ -387,6 +428,7 @@ docs/                    # 架构、产品、设计与参考项目说明
 - `.env.local` 与所有 `.env*` 真实值不进入 Git。
 - 页面不打印 token、App Secret 或完整敏感业务正文到日志。
 - Collector 默认 dry-run，生产 Web 环境禁止手动写入。
+- Agent 不保存思维链，生产 Web 环境禁止访客调用 LLM 或写入 Memory。
 - 飞书访问范围由使用者自己的应用权限和表格授权决定。
 - 公开 Demo 应使用独立飞书应用与脱敏或虚构需求表。
 

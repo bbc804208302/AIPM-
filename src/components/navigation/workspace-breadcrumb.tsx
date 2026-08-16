@@ -5,6 +5,7 @@ import { usePathname } from "next/navigation";
 const pageNames: Record<string, string> = {
   "/": "产品需求看板",
   "/intelligence": "AI 产品情报池",
+  "/agent": "机会 Agent",
   "/demands": "内部需求池",
   "/sources": "数据源",
   "/tasks": "采集任务",

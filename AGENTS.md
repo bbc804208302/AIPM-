@@ -10,9 +10,9 @@ SignalFlow（AI 产品情报与需求协同工作台）服务于 AI 产品经理
 
 ## 2. 当前阶段边界
 
-当前为 Phase 2 / Daily Intelligence MVP。允许：工程基础、真实业务路由、飞书 Demand Repository、公开数据源只读采集、Normalization、Deduplication、今日 Top 10、SignalFlow Intelligence Repository、SignalFlow Collector Skill、GitHub Actions 每日采集、可选的采集后 LLM 中文审校、文档与测试。
+当前为 Phase 3 / Product Opportunity Agent MVP。允许：既有 Daily Intelligence 能力、AI 质量评测、单一 Product Opportunity Agent、受控 Tool Use、基于历史 Agent Run 的 Memory、候选需求草稿、人工确认边界、GitHub Actions 手动运行、文档与测试。
 
-本阶段 Collector 覆盖两条独立链路：AI 行业情报使用 GitHub Trending、指定 AI RSS 与 AttentionVC AI 公共端点；业务领域情报使用经过验证的动漫、短剧、影视和 AIGC RSS，并按所选领域与关键词过滤。可选 LLM 只允许在显式写入快照前，基于原始标题和摘要生成中文标题和概述；禁止在没有明确新任务时实现其他运行时 LLM 分析、Deep Research、MCP、多 Agent、飞书机器人推送或复杂需求自动化。不得生成虚构新闻或大批量 Mock Data。
+本阶段 Collector 继续覆盖两条独立链路。Opportunity Agent 只处理已进入 Intelligence Repository 的公开 Signal，必须先读取 Signal、再检索 Memory，随后才能创建候选需求或记录不转化结论。候选需求必须等待人工确认，禁止自动写入飞书正式需求池。当前仍禁止 Deep Research、MCP、多 Agent、飞书机器人推送或复杂需求自动化。不得生成虚构新闻或大批量 Mock Data。
 
 ## 3. 技术栈
 
@@ -27,6 +27,8 @@ SignalFlow（AI 产品情报与需求协同工作台）服务于 AI 产品经理
 
 情报链路：Source Registry → Source Adapter → Normalize → Deduplicate → Daily Top 10 → SignalFlow Intelligence Repository。采集源故障必须隔离；默认运行必须是 dry-run，只有显式 `--write` 才允许更新 SignalFlow 每日情报快照。
 
+Agent 链路：Signal ID → `get_signal` → `search_memory` → LLM Decision → `create_demand_proposal` / `reject_signal` → Agent Run Repository → Human Review。不得保存或展示模型思维链，只保存输入证据、工具调用摘要、最终结论与运行指标。
+
 - React 页面不得直接调用飞书 OpenAPI。
 - 页面依赖 `src/repositories` 中的领域接口。
 - `src/lib/feishu` 只负责鉴权、请求、响应映射与错误翻译。
@@ -36,6 +38,8 @@ SignalFlow（AI 产品情报与需求协同工作台）服务于 AI 产品经理
 ## 5. 数据与 Secret
 
 内部需求池继续以飞书多维表格为事实来源。AI 产品情报池由 SignalFlow 自行采集并写入独立 Intelligence Repository；当前使用可公开审计的每日 JSON 快照，未来可替换为 PostgreSQL。
+
+Opportunity Agent 的运行记录与 Memory 当前保存在 `data/agent/runs.json`，仅包含公开 Signal、工具轨迹和候选需求。生产网页只读，LLM 运行由本地维护者或手动 GitHub Action 发起。
 
 - `FEISHU_APP_ID`、`FEISHU_APP_SECRET`、`BITABLE_APP_TOKEN`、任何 `TABLE_ID`、`LLM_API_KEY` 永不进入 Git。
 - 真实值只放 `.env.local` 或托管平台的 Secret 管理。
@@ -70,4 +74,4 @@ SignalFlow（AI 产品情报与需求协同工作台）服务于 AI 产品经理
 
 ## 10. 明确禁止
 
-禁止浏览器持有飞书 Secret，禁止页面绕过 Repository，禁止提交 `.env.local`，禁止 Collector 默认写入，禁止把第三方公共端点当作稳定 SLA，禁止用昨日数据冒充今日情报，禁止无归属的大型工具函数，禁止提前建设 LLM/MCP/Agent，禁止从 GPL 项目复制实现，禁止为了展示效果伪造真实来源或业务进度。
+禁止浏览器持有飞书或 LLM Secret，禁止页面绕过 Repository，禁止提交 `.env.local`，禁止 Collector 默认写入，禁止 Agent 自动创建正式飞书需求，禁止保存或展示思维链，禁止把第三方公共端点当作稳定 SLA，禁止用昨日数据冒充今日情报，禁止无归属的大型工具函数，禁止提前建设 MCP 或多 Agent，禁止从 GPL 项目复制实现，禁止为了展示效果伪造真实来源或业务进度。

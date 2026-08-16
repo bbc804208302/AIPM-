@@ -1,12 +1,13 @@
 "use client";
 
-import { Activity, Database, Inbox, LayoutDashboard, Radio } from "lucide-react";
+import { Activity, Bot, Database, Inbox, LayoutDashboard, Radio } from "lucide-react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 
 const navItems = [
   { href: "/", label: "产品需求看板", icon: LayoutDashboard },
   { href: "/intelligence", label: "AI 产品情报池", icon: Radio },
+  { href: "/agent", label: "机会 Agent", icon: Bot },
   { href: "/demands", label: "内部需求池", icon: Inbox },
   { href: "/sources", label: "数据源", icon: Database },
   { href: "/tasks", label: "采集任务", icon: Activity },

@@ -1,0 +1,65 @@
+name: SignalFlow Product Opportunity Agent
+
+on:
+  workflow_dispatch:
+    inputs:
+      signal_id:
+        description: "Signal ID from the latest intelligence snapshot"
+        required: true
+        type: string
+
+permissions:
+  contents: write
+
+concurrency:
+  group: signalflow-product-opportunity-agent
+  cancel-in-progress: false
+
+jobs:
+  evaluate:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 24
+
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v4
+        with:
+          version: 11.16.0
+
+      - name: Install dependencies
+        run: pnpm install --frozen-lockfile
+
+      - name: Run Product Opportunity Agent
+        run: pnpm agent:opportunity --signal "${{ inputs.signal_id }}"
+        env:
+          SIGNALFLOW_OPPORTUNITY_AGENT: "true"
+          LLM_API_KEY: ${{ secrets.LLM_API_KEY }}
+          LLM_API_BASE_URL: ${{ secrets.LLM_API_BASE_URL }}
+          LLM_MODEL: ${{ secrets.LLM_MODEL }}
+
+      - name: Commit Agent memory
+        run: |
+          if git diff --quiet -- data/agent; then
+            echo "No Agent memory changed."
+            exit 0
+          fi
+          git config user.name "signalflow-bot"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/agent
+          git commit -m "data: update opportunity agent memory"
+          git fetch origin main
+          git rebase origin/main
+          if ! git push origin HEAD:main; then
+            echo "main changed while publishing; syncing once more."
+            git fetch origin main
+            git rebase origin/main
+            git push origin HEAD:main
+          fi
