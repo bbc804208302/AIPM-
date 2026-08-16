@@ -16,6 +16,7 @@
     "collector:write": "tsx scripts/collect-intelligence.ts --write",
     "collector:write:domain": "tsx scripts/collect-intelligence.ts --write --track domain",
     "agent:opportunity": "tsx scripts/run-opportunity-agent.ts",
+    "agent:triage": "tsx scripts/run-opportunity-triage-agent.ts",
     "typecheck": "tsc --noEmit",
     "check": "pnpm lint && pnpm typecheck && pnpm test && pnpm build"
   },

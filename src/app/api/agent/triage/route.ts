@@ -1,0 +1,39 @@
+import { revalidatePath } from "next/cache";
+import { NextResponse } from "next/server";
+
+import { runOpportunityTriageAgent } from "@/agent/opportunity-triage-agent";
+import { isOpportunityAgentExecutable } from "@/agent/runtime";
+import { createFileIntelligenceRepository } from "@/repositories/file/file-intelligence-repository";
+import { createFileOpportunityAgentRepository } from "@/repositories/file/file-opportunity-agent-repository";
+
+export const runtime = "nodejs";
+export const maxDuration = 120;
+
+let activeRun: ReturnType<typeof runOpportunityTriageAgent> | null = null;
+
+export async function POST() {
+  if (!isOpportunityAgentExecutable()) {
+    return NextResponse.json({ error: "公开环境只展示 Agent 推荐，不允许访客消耗你的 LLM 配额。" }, { status: 403 });
+  }
+  if (activeRun) return NextResponse.json({ error: "Product Opportunity Agent 正在执行今日初筛。" }, { status: 409 });
+
+  try {
+    activeRun = runOpportunityTriageAgent(
+      createFileIntelligenceRepository(),
+      createFileOpportunityAgentRepository(),
+    );
+    const run = await activeRun;
+    revalidatePath("/agent");
+    return NextResponse.json({
+      ok: run.status === "completed",
+      runId: run.id,
+      scannedSignals: run.scannedSignals,
+      recommendations: run.recommendedSignalIds.length,
+      error: run.error,
+    }, { status: run.status === "failed" ? 502 : 200 });
+  } catch (error) {
+    return NextResponse.json({ error: error instanceof Error ? error.message : "Agent 初筛失败。" }, { status: 500 });
+  } finally {
+    activeRun = null;
+  }
+}
