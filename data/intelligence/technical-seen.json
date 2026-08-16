@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "track": "technical",
-  "updatedAt": "2026-08-16T10:59:41.699Z",
+  "updatedAt": "2026-08-16T23:17:15.287Z",
   "items": [
     {
       "url": "https://www.latent.space/p/ainews-zawinskis-law-of-multiagents",
@@ -382,6 +382,18 @@
     {
       "url": "https://tldr.tech/ai/2026-08-11",
       "title": "Muse Glimmer ✨, OpenAI Cyber 🛡️, Claude vs Riemann Hypothesis 🧠"
+    },
+    {
+      "url": "https://huggingface.co/blog/LiquidAI/lfm2-5-vl-3b",
+      "title": "LFM2.5-VL-3B for Better and Faster Vision Capabilities for the Edge"
+    },
+    {
+      "url": "https://x.com/TheGlobalMinima/status/2088708859133333552",
+      "title": "The Holy Trinity - pi, herdr and opencode go"
+    },
+    {
+      "url": "https://huggingface.co/blog/icml-2026-open-reproductions",
+      "title": "What We Learned by Reproducing 2,200 papers from ICML"
     }
   ]
 }
