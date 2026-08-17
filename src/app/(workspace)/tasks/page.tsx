@@ -21,7 +21,7 @@ function LastRun({ brief, title }: Readonly<{ brief: DailyIntelligenceBrief; tit
       <div className="last-run-panel">
         <div><span>最近批次</span><strong>{brief.briefingDate}</strong></div>
         <div><span>候选情报</span><strong>{brief.candidateCount}</strong></div>
-        <div><span>Agent 候选</span><strong>{brief.items.length}</strong></div>
+        <div><span>Agent 候选</span><strong>{brief.items.length} / {brief.targetCount ?? 10}</strong></div>
         <div><span>异常来源</span><strong>{brief.sources.filter((source) => source.status === "failed").length}</strong></div>
       </div>
     </section>

@@ -5,9 +5,11 @@ import type { CollectorRunResult, CollectorTrack, DomainFocusArea, IntelligenceC
 
 const categoryLimits = {
   "github-trending": 15,
-  "ai-media": 24,
+  "ai-media": 60,
   "x-viral": 15,
 } as const;
+
+const mediaLookbackDays = 15;
 
 export interface CollectOptions {
   sourceIds?: readonly string[];
@@ -21,8 +23,8 @@ function safeError(error: unknown): string {
   return error instanceof Error ? error.message.slice(0, 240) : "Unknown collector error";
 }
 
-function curateSignals(signals: readonly IntelligenceCandidate[], collectedAt: string): readonly IntelligenceCandidate[] {
-  const oldestMediaTime = Date.parse(collectedAt) - 7 * 24 * 60 * 60 * 1_000;
+export function curateIntelligenceCandidates(signals: readonly IntelligenceCandidate[], collectedAt: string): readonly IntelligenceCandidate[] {
+  const oldestMediaTime = Date.parse(collectedAt) - mediaLookbackDays * 24 * 60 * 60 * 1_000;
   return (Object.keys(categoryLimits) as (keyof typeof categoryLimits)[]).flatMap((category) => {
     const categorySignals = signals
       .filter((signal) => signal.category === category)
@@ -70,5 +72,5 @@ export async function collectIntelligenceSignals(options: CollectOptions = {}): 
 
   reports.sort((a, b) => selected.findIndex((source) => source.id === a.sourceId) - selected.findIndex((source) => source.id === b.sourceId));
   const unique = deduplicateSignals(signals);
-  return { startedAt, finishedAt: now().toISOString(), signals: curateSignals(unique, startedAt), sources: reports };
+  return { startedAt, finishedAt: now().toISOString(), signals: curateIntelligenceCandidates(unique, startedAt), sources: reports };
 }

@@ -108,7 +108,7 @@ Agent 运行记录展示当天扫描量、评分覆盖、Memory 重复过滤、�
 | 来源组 | 当前来源 | 选择目标 |
 | --- | --- | --- |
 | GitHub Trending | GitHub Trending | AI Agent、AI Coding、模型工具与 AI Native 项目 |
-| AI 媒体 | OpenAI、Google DeepMind、Hugging Face、TLDR AI、Smol AI、Latent Space、MIT Technology Review AI | 官方能力更新、工程趋势和产品动态 |
+| AI 媒体与产品发布 | OpenAI、Google DeepMind、Hugging Face、TLDR AI、Smol AI、Latent Space、MIT Technology Review AI、Product Hunt AI、GitHub AI Changelog、Vercel AI Changelog | 官方能力更新、新产品、新功能、Agent、Skill、AI 工具与工程趋势 |
 | X 动态 | AttentionVC AI 公共端点 | AI 从业者与产品实践的高关注信号 |
 
 ### 业务领域情报
@@ -121,7 +121,7 @@ Agent 运行记录展示当天扫描量、评分覆盖、Memory 重复过滤、�
 - Google News · Microdrama
 - Google News · AIGC Production
 
-两条情报轨道分别维护自己的采集时间和关注领域，并最多准备 20 条 Agent 候选。`briefingDate` 表示 Asia/Shanghai 当天生成的情报批次；候选内容限定为近 15 个上海自然日，原始发布时间单独保留。Collector 会优先排列具体的新产品、新功能、Agent、Skill、工具与应用案例；已在历史批次出现的规范化 URL 或标题不会再次录用，避免用户重复阅读同一情报。
+两条情报轨道分别维护自己的采集时间和关注领域。每日以 10 条为产品目标、20 条为 Agent 候选硬上限；严格去重后允许不足，不会为了凑满数量重新展示旧内容。`briefingDate` 表示 Asia/Shanghai 当天生成的情报批次；候选内容限定为近 15 个上海自然日，原始发布时间单独保留。Collector 会优先排列具体的新产品、新功能、Agent、Skill、工具与应用案例；已在历史批次出现的规范化 URL 或标题不会再次录用，避免用户重复阅读同一情报。
 
 ## Collector 如何工作
 
@@ -383,7 +383,7 @@ pnpm check
 
 当前测试覆盖：
 
-- Collector registry、Normalization、近 15 日窗口、产品情报预排序、单批次与跨批次去重、最多 20 条双轨候选
+- Collector registry、Normalization、真实近 15 日窗口、产品情报预排序、单批次与跨批次去重、目标 10 条 / 最多 20 条双轨候选
 - 原文上下文提取、LLM JSON 修复与重试、审校内容保护和公开热度计算
 - Product Intelligence Agent 中文概述、PM 价值分类、固定权重评分、全量排序、自动深度分析上限、工具顺序、Memory 召回、候选需求门控与 File Repository
 - 固定集 Agent Eval、事实覆盖、分类/评分/决策一致性、Bad Case 归因、版本化结果与生产只读边界
@@ -430,8 +430,8 @@ docs/                    # 架构、产品、设计与参考项目说明
 
 - [x] Next.js 产品工作区与六个核心入口
 - [x] AI 行业 / 业务领域双轨情报
-- [x] 14 个公开来源、Registry、Dispatch、Normalization 与 Deduplication
-- [x] 近 15 日候选、历史已展示去重、产品情报优先级、最多 20 条候选与版本化 File Repository
+- [x] 17 个公开来源、Registry、Dispatch、Normalization 与 Deduplication
+- [x] 近 15 日候选、历史已展示去重、产品情报优先级、目标 10 条 / 最多 20 条候选与版本化 File Repository
 - [x] DeepSeek / OpenAI 兼容中文审校、失败恢复与公开热度
 - [x] 飞书 Demand Repository、需求详情和产品需求看板
 - [x] 本地任务控制、公开环境只读和 GitHub Actions 工作流

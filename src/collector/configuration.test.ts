@@ -26,7 +26,7 @@ test("loads bundled Collector configuration in production", async () => {
     return { sources: loadCollectorSources(), technical, domain };
   });
 
-  assert.equal(result.sources.length, 14);
+  assert.equal(result.sources.length, 17);
   assert.equal(result.technical.timezone, "Asia/Shanghai");
   assert.deepEqual(result.domain.focusAreas, ["动漫", "短剧", "影视", "AIGC"]);
 });

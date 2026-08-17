@@ -12,7 +12,7 @@ SignalFlow（AI 产品情报与需求协同工作台）服务于 AI 产品经理
 
 当前为 Phase 4 / Agent-driven Intelligence MVP。允许：既有 Daily Intelligence 能力、单一 Product Intelligence Agent 的 `daily-triage` 与 `single-signal` 两种运行模式、受控 Tool Use、Agent 中文概述、PM 价值分类、结构化机会评分、基于历史 Agent Run 的 Memory、每日最多 3 条高分自动深度分析、候选需求草稿、人工确认边界、固定历史真实情报 Agent Eval、Bad Case 根因归类、Prompt / 策略版本对比、GitHub Actions 定时或手动运行、文档与测试。
 
-本阶段 Collector 继续覆盖两条独立链路，并只承担公开来源采集、近 15 日过滤、历史已展示去重与最多 20 条候选准备。候选预排序优先具体的新产品、新功能、Agent、Skill、工具、交互与应用案例，普通公司新闻不因时间更近而自动获得高优先级。`daily-triage` 必须读取候选、逐条检索 Memory、生成事实型中文概述、标注 PM 价值类型并完成全量结构化评分；全部情报保留并按机会分降序展示，70 分以上候选每天最多自动执行 3 条 `single-signal` 深度分析，其余内容由用户按需触发。候选需求必须等待人工确认，禁止自动写入飞书正式需求池。当前仍禁止 Deep Research、MCP、多 Agent 编排、飞书机器人推送或复杂需求自动化。不得生成虚构新闻或大批量 Mock Data。
+本阶段 Collector 继续覆盖两条独立链路，并只承担公开来源采集、近 15 日过滤、历史已展示去重与候选准备。每日以 10 条为产品目标、20 条为硬上限；严格去重后允许不足，禁止为了凑数重新录用已展示内容。候选预排序优先具体的新产品、新功能、Agent、Skill、工具、交互与应用案例，普通公司新闻不因时间更近而自动获得高优先级。`daily-triage` 必须读取候选、逐条检索 Memory、生成事实型中文概述、标注 PM 价值类型并完成全量结构化评分；全部情报保留并按机会分降序展示，70 分以上候选每天最多自动执行 3 条 `single-signal` 深度分析，其余内容由用户按需触发。候选需求必须等待人工确认，禁止自动写入飞书正式需求池。当前仍禁止 Deep Research、MCP、多 Agent 编排、飞书机器人推送或复杂需求自动化。不得生成虚构新闻或大批量 Mock Data。
 
 ## 3. 技术栈
 

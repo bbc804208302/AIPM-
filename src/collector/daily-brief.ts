@@ -5,6 +5,7 @@ import { calculatePublicHeatScore } from "./heat-score";
 
 const defaultTimezone = "Asia/Shanghai";
 const defaultLookbackDays = 15;
+const defaultTargetCount = 10;
 const categoryQuotas: Readonly<Record<CollectorCategory, number>> = {
   "ai-media": 4,
   "github-trending": 4,
@@ -14,6 +15,7 @@ const categoryOrder: readonly CollectorCategory[] = ["ai-media", "github-trendin
 
 export interface DailyBriefOptions {
   dailyLimit?: number;
+  targetCount?: number;
   timezone?: string;
   track?: CollectorTrack;
   lookbackDays?: number;
@@ -182,6 +184,7 @@ export function buildDailyIntelligenceBrief(
   options: DailyBriefOptions = {},
 ): DailyIntelligenceBrief {
   const dailyLimit = options.dailyLimit ?? 10;
+  const targetCount = Math.min(options.targetCount ?? defaultTargetCount, dailyLimit);
   const timezone = options.timezone ?? defaultTimezone;
   const track = options.track ?? "technical";
   const lookbackDays = options.lookbackDays ?? defaultLookbackDays;
@@ -199,6 +202,7 @@ export function buildDailyIntelligenceBrief(
     track,
     generatedAt: result.finishedAt,
     candidateCount: unseenSignals.length,
+    targetCount,
     dailyLimit,
     items,
     sources: result.sources,

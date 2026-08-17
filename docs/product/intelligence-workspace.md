@@ -18,7 +18,7 @@ AI 行业情报支持按 GitHub Trending、AI 媒体和 X 动态筛选。AI 媒�
 - `briefingDate`：今日批次日期。
 - `publishedAt`：原始来源发布时间。
 - `collectedAt`：SignalFlow 采集时间。
-- Collector 按来源配额构造最多 20 条双轨候选，避免单一来源垄断；同一来源内优先具体产品发布、功能更新、Agent、Skill、插件、工具和真实应用案例，最终展示顺序由 Agent 评分决定。
+- Collector 每日以 10 条为目标、20 条为硬上限，按来源配额构造双轨候选，避免单一来源垄断；严格去重后允许不足，不以旧内容填充。AI 行业来源额外覆盖 Product Hunt AI 产品、GitHub AI Changelog 与 Vercel AI Changelog，同一来源内优先具体产品发布、功能更新、Agent、Skill、插件、工具和真实应用案例，最终展示顺序由 Agent 评分决定。
 - 选取前通过持久化已展示索引对全部历史内容执行去重，包括当天重复手动采集：规范化 URL 相同，或去除标点、符号和空白后的原始标题相同，均视为已展示内容，不再录入新批次。索引只保存公开 URL 与原始标题。
 - 页面不得用昨日数据冒充今日数据；当天没有快照时显示明确空状态。
 - 两条情报轨道统一显示 `generatedAt` 对应的“最后更新时间”。
