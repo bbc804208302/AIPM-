@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "track": "domain",
-  "updatedAt": "2026-08-16T23:34:44.835Z",
+  "updatedAt": "2026-08-17T23:37:30.795Z",
   "items": [
     {
       "url": "https://www.creativebloq.com/3d/autodesk-tackles-ai-filmmakings-biggest-problem-with-3d-control",
@@ -326,6 +326,86 @@
     {
       "url": "https://news.google.com/rss/articles/CBMisAFBVV95cUxOMHZBUkM0OVcyNExtcUpuNkp2QUNXRXRZUzhCQkZKTmRlU1Z1dzVRRXJlTU1sbG4wek43Ry1zRGZLel9GYzh3dFNkYVk1cXF4UHpsVVpGSnVjNExFUmExZkczSFR2U29fM3Y3NWdwYWpUcFVqcjBoakt4dTU4M013cHMtQ3V3ZFVESVhBeXQtTWtUTm5sSVAweHZBcktvZ1RlbURxYy11NFFOOEVoVkhfdA?oc=5",
       "title": "Anker SOLIX Debuts Industry-First Backup Power Microdrama 'When the Blackout Comes' - The National Law Review"
+    },
+    {
+      "url": "https://arxiv.org/abs/2608.14022",
+      "title": "ForgeWM: Progressive Causal Training for Few-Step Action-Conditioned Video World Models"
+    },
+    {
+      "url": "https://arxiv.org/abs/2608.14284",
+      "title": "PRM-as-a-Judge 1.5: A Toolkit for Robot Process Assessment"
+    },
+    {
+      "url": "https://arxiv.org/abs/2602.12498",
+      "title": "NAST: Improving Negation Handling in Medical Vision-Language Models through Negation-Aware Selective Training"
+    },
+    {
+      "url": "https://arxiv.org/abs/2607.08705",
+      "title": "HumanForge: A Human-Centric Deepfake Video Benchmark with Multi-Agent Forgery Rationales"
+    },
+    {
+      "url": "https://arxiv.org/abs/2608.13037",
+      "title": "Spatially-Grounded Text-to-Video Generation via Inference-Time Gradient-Free Optimization"
+    },
+    {
+      "url": "https://arxiv.org/abs/2608.14043",
+      "title": "Beyond Text Conditioning: A Systematic Study of MLLM-DiT Fusion for Video Generation"
+    },
+    {
+      "url": "https://arxiv.org/abs/2608.14112",
+      "title": "Fixed-Budget Gaussian Volume Encoding with Structure-Aware Allocation"
+    },
+    {
+      "url": "https://arxiv.org/abs/2608.13711",
+      "title": "TRUE-Colon: Exposing a Consistent Transfer Asymmetry in Real-Time Polyp Detection"
+    },
+    {
+      "url": "https://news.google.com/rss/articles/CBMilgFBVV95cUxQU0J3cW54N2hGUXd4TVBCOTFXbVdjMUJZTlVuQm84YzFXaUpBMkdSdG5TczRrbEJKTWotM2hPNG1YV25PTmxDeEtZTFNWLXFKZUZ6TVdFLXRJTElLbUFsYmJJVHdQZkhDZUdCZERySXo1VTFJbHRNNEJwSWplR2tUTEFHb3FhNHhNNk9sckR1Skw4QlYzNmc?oc=5",
+      "title": "Report: Short drama app downloads surge 95.5% - Advanced Television"
+    },
+    {
+      "url": "https://news.google.com/rss/articles/CBMitwFBVV95cUxPWlBUT0IzX3AyQlJjbmNpRU1zUkZTaDRMVnRxeEgxd0J2VEJ2Qms4LW5FLS1hdmVQb3pGbUF1eWMzT3RyVmlobXp3QTJVenJkX1U1bjVkRml3cnRlVktCcmM4NnFPdXJ6eFQ2bUVVT1lUVDJad0NielhsZ0NYSF9iQi1JanF0SGp1VEl1NXlGbWI3ejBnc25IZVhaR2RxUkZDSVlnVjVKUE1sUTNEOG1qRWx1NFRTdWs?oc=5",
+      "title": "Animaze 2026 Unveils Programming Highlights & First-Ever AI Animation Forum - Animation Magazine"
+    },
+    {
+      "url": "https://nofilmschool.com/how-to-build-production-value-into-a-no-budget-feature",
+      "title": "How to Build Production Value Into a No-Budget Feature"
+    },
+    {
+      "url": "https://nofilmschool.com/langstone-bridge-blow-up-the-good-the-bad-and-the-ugly",
+      "title": "Movie Myth Monday: Did 'The Good, the Bad and the Ugly' Blow Up the Bridge Twice?"
+    },
+    {
+      "url": "https://nofilmschool.com/fiscal-sponsorship-explained",
+      "title": "Fiscal Sponsorship Explained"
+    },
+    {
+      "url": "https://nofilmschool.com/best-movies",
+      "title": "What Are The Best Pirate Movies?"
+    },
+    {
+      "url": "https://nofilmschool.com/falcam-tagbatt",
+      "title": "Power and Keep Track of Your Camera With This Smart Battery From FALCAM"
+    },
+    {
+      "url": "https://nofilmschool.com/d23-2026",
+      "title": "Every Disney Announcement from D23 2026"
+    },
+    {
+      "url": "https://nofilmschool.com/sound-of-music-confidence",
+      "title": "Film Quote of the Day: The 1965 'Sound of Music' Line About Having “Confidence in Confidence”"
+    },
+    {
+      "url": "https://nofilmschool.com/hacks-showrunners-cowriting",
+      "title": "The 'Hacks' Showrunners' 12-Minute Rule for Writing Together"
+    },
+    {
+      "url": "https://www.cartoonbrew.com/series/gargoyles-animated-series-in-development-265678.html",
+      "title": "Original Series Voice Actor Brent Spiner Says A New ‘Gargoyles’ Animated Series Is In Development"
+    },
+    {
+      "url": "https://www.cartoonbrew.com/rip/luis-de-la-rosa-ash-raider-265672.html",
+      "title": "Friends Honor ‘Ash Raider’ Creator Luis De La Rosa As His Final Tutorial Is Released Posthumously"
     }
   ]
 }
