@@ -106,6 +106,74 @@
     "trustTier": "curated"
   },
   {
+    "id": "product-hunt-ai",
+    "name": "Product Hunt · AI Products",
+    "type": "rss",
+    "url": "https://www.producthunt.com/feed",
+    "track": "technical",
+    "category": "ai-media",
+    "enabled": true,
+    "limit": 20,
+    "trustTier": "community",
+    "keywords": [
+      "artificial intelligence",
+      "agent",
+      "copilot",
+      "llm",
+      "generative",
+      "automation",
+      "vibe coding",
+      "voice ai",
+      "ai video",
+      "ai image"
+    ],
+    "notes": "Official Product Hunt feed filtered to AI products and tools; launch descriptions are community-submitted and require Agent evidence review."
+  },
+  {
+    "id": "github-ai-changelog",
+    "name": "GitHub Changelog · AI",
+    "type": "rss",
+    "url": "https://github.blog/changelog/feed/",
+    "track": "technical",
+    "category": "ai-media",
+    "enabled": true,
+    "limit": 20,
+    "trustTier": "primary",
+    "keywordScope": "title",
+    "keywords": [
+      "copilot",
+      "agent",
+      "agentic",
+      "mcp",
+      "model",
+      "skill",
+      "ai coding"
+    ]
+  },
+  {
+    "id": "vercel-ai-changelog",
+    "name": "Vercel Changelog · AI",
+    "type": "rss",
+    "url": "https://vercel.com/changelog/rss.xml",
+    "track": "technical",
+    "category": "ai-media",
+    "enabled": true,
+    "limit": 20,
+    "trustTier": "primary",
+    "keywordScope": "title",
+    "keywords": [
+      "ai sdk",
+      "ai gateway",
+      "agent",
+      "mcp",
+      "model",
+      "chat sdk",
+      "workflow",
+      "v0"
+    ],
+    "notes": "Official Vercel Atom feed filtered to AI product, Agent, MCP, model and workflow updates."
+  },
+  {
     "id": "attentionvc-ai",
     "name": "X / AttentionVC AI",
     "type": "api",

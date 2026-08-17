@@ -4,12 +4,13 @@ import path from "node:path";
 import bundledSources from "./sources.config.json";
 
 import { isProductionCollectorRuntime } from "./runtime";
-import type { CollectorCategory, CollectorSource, CollectorSourceType, CollectorTrack, SourceTrustTier } from "./types";
+import type { CollectorCategory, CollectorSource, CollectorSourceType, CollectorTrack, SourceKeywordScope, SourceTrustTier } from "./types";
 
 const sourceTypes = new Set<CollectorSourceType>(["rss", "api", "scrape"]);
 const tracks = new Set<CollectorTrack>(["technical", "domain"]);
 const categories = new Set<CollectorCategory>(["github-trending", "ai-media", "x-viral"]);
 const trustTiers = new Set<SourceTrustTier>(["primary", "curated", "community"]);
+const keywordScopes = new Set<SourceKeywordScope>(["title", "all"]);
 const domainFocusAreas = new Set(["动漫", "短剧", "影视", "AIGC"]);
 
 function localSourcesConfigPath(): string {
@@ -38,6 +39,9 @@ export function validateSources(value: unknown): readonly CollectorSource[] {
     }
     if (source.keywords !== undefined && (!Array.isArray(source.keywords) || source.keywords.some((item) => typeof item !== "string"))) {
       throw new Error(`${at} keywords must be strings.`);
+    }
+    if (source.keywordScope !== undefined && !keywordScopes.has(source.keywordScope as SourceKeywordScope)) {
+      throw new Error(`${at} has invalid keyword scope.`);
     }
     if (source.focusAreas !== undefined && (!Array.isArray(source.focusAreas) || source.focusAreas.some((item) => !domainFocusAreas.has(item as string)))) {
       throw new Error(`${at} has invalid focus areas.`);

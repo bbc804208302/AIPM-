@@ -52,7 +52,7 @@ export default async function IntelligencePage({ searchParams }: PageProps) {
       <IntelligenceFilters track={track} sourceGroup={sourceGroup} />
       <section className="intelligence-agent-gate" aria-label="Agent 机会评分说明">
         <div><span>PM OPPORTUNITY SCORING</span><strong>{agentReviewed ? "本批情报已完成 Agent 评分" : "等待 Agent 评分"}</strong></div>
-        <p>{agentReviewed ? `已完成 ${scoredCount} 条 PM 机会评分，页面按分数从高到低排列；70 分以上每天最多自动深度分析 3 条。` : "当前先展示采集结果；Agent 运行后会补充中文概述、PM 价值类型与机会评分。"}</p>
+        <p>{agentReviewed ? `已完成 ${scoredCount} 条 PM 机会评分；每日目标 10 条、最多 20 条，严格去重后允许不足。页面按分数从高到低排列。` : "当前先展示采集结果；每日目标 10 条、最多 20 条，严格去重后允许不足。Agent 运行后会补充中文概述、PM 价值类型与机会评分。"}</p>
       </section>
       {track === "domain" ? (
         <section className="domain-focus-summary" aria-label="已选择的业务领域">

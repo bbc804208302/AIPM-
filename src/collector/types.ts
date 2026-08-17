@@ -2,6 +2,7 @@ export type CollectorSourceType = "rss" | "api" | "scrape";
 export type CollectorCategory = "github-trending" | "ai-media" | "x-viral";
 export type CollectorTrack = "technical" | "domain";
 export type SourceTrustTier = "primary" | "curated" | "community";
+export type SourceKeywordScope = "title" | "all";
 export type DomainFocusArea = "动漫" | "短剧" | "影视" | "AIGC";
 
 export interface CollectorSource {
@@ -15,6 +16,7 @@ export interface CollectorSource {
   limit: number;
   trustTier: SourceTrustTier;
   keywords?: readonly string[];
+  keywordScope?: SourceKeywordScope;
   focusAreas?: readonly DomainFocusArea[];
   notes?: string;
 }

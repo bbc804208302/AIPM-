@@ -32,7 +32,7 @@ export async function fetchRssSource(source: CollectorSource, fetcher: Fetcher =
     const url = typeof item.link === "string" ? item.link : "";
     if (!title.trim() || !URL.canParse(url)) return [];
     const content = [item.contentSnippet, item.content, item.summary].find((value) => typeof value === "string") as string | undefined;
-    const searchable = `${title} ${content ?? ""}`.toLowerCase();
+    const searchable = (source.keywordScope === "title" ? title : `${title} ${content ?? ""}`).toLowerCase();
     if (source.keywords?.length && !source.keywords.some((keyword) => searchable.includes(keyword.toLowerCase()))) return [];
     const metadata: Readonly<Record<string, string | number | boolean>> = source.focusAreas?.length
       ? { topic: source.focusAreas.join(" / ") }

@@ -109,6 +109,7 @@ export interface DailyIntelligenceBrief {
   track: CollectorTrack;
   generatedAt: string;
   candidateCount: number;
+  targetCount?: number;
   dailyLimit: number;
   items: readonly IntelligenceSignal[];
   sources: readonly IntelligenceSourceReport[];

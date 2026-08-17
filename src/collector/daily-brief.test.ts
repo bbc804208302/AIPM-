@@ -36,6 +36,8 @@ test("builds a Shanghai-dated top ten with source diversity", () => {
 
   const brief = buildDailyIntelligenceBrief(result);
   assert.equal(brief.briefingDate, "2026-08-08");
+  assert.equal(brief.targetCount, 10);
+  assert.equal(brief.dailyLimit, 10);
   assert.equal(brief.items.length, 10);
   assert.equal(brief.items.filter((item) => item.sourceGroup === "ai-media").length, 4);
   assert.equal(brief.items.filter((item) => item.sourceGroup === "github-trending").length, 4);
@@ -72,6 +74,20 @@ test("prioritizes concrete product releases over newer corporate news", () => {
   const brief = buildDailyIntelligenceBrief(result, { dailyLimit: 1 });
   assert.equal(brief.items[0]?.id, productRelease.id);
   assert.match(brief.items[0]?.selectionReason ?? "", /近 15 日/);
+});
+
+test("treats ten as the daily target while allowing up to twenty candidates", () => {
+  const result: CollectorRunResult = {
+    startedAt: "2026-08-08T00:00:00.000Z",
+    finishedAt: "2026-08-08T02:00:00.000Z",
+    signals: Array.from({ length: 16 }, (_, index) => candidate("ai-media", index + 1)),
+    sources: [],
+  };
+
+  const brief = buildDailyIntelligenceBrief(result, { dailyLimit: 20 });
+  assert.equal(brief.targetCount, 10);
+  assert.equal(brief.dailyLimit, 20);
+  assert.equal(brief.items.length, 16);
 });
 
 test("excludes URLs and normalized titles already saved in any previous snapshot", () => {

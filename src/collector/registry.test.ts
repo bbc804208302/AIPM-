@@ -5,10 +5,15 @@ import { loadCollectorSources, validateSources } from "./registry";
 
 test("collector registry contains only valid unique enabled sources", () => {
   const sources = loadCollectorSources();
-  assert.equal(sources.length, 14);
+  assert.equal(sources.length, 17);
   assert.equal(new Set(sources.map((source) => source.id)).size, sources.length);
   assert.ok(sources.every((source) => source.enabled));
   assert.equal(sources.filter((source) => source.track === "domain").length, 5);
+  assert.equal(sources.filter((source) => source.track === "technical").length, 12);
+  assert.deepEqual(
+    sources.filter((source) => ["product-hunt-ai", "github-ai-changelog", "vercel-ai-changelog"].includes(source.id)).map((source) => source.type),
+    ["rss", "rss", "rss"],
+  );
 });
 
 test("collector registry rejects duplicate source ids", () => {
