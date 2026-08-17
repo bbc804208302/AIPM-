@@ -104,6 +104,8 @@ export interface OpportunityTriageRun {
   agent: "product-opportunity-agent";
   mode: "daily-triage";
   version: 2 | 3 | 4;
+  promptVersion?: string;
+  strategyVersion?: string;
   briefingDate: string;
   objective: string;
   status: "completed" | "failed";

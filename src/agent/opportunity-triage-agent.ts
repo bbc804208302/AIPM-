@@ -197,13 +197,13 @@ function requiredPmValueType(value: unknown): OpportunityPmValueType {
 }
 
 function signalObservation(signal: IntelligenceSignal) {
+  const trustedChinese = signal.translationStatus === "reviewed" || signal.translationStatus === "llm-reviewed";
   return {
     id: signal.id,
-    title: signal.titleZh ?? signal.title,
-    summary: signal.summaryZh ?? signal.summary,
-    originalTitle: signal.title,
+    sourceTitle: signal.title,
     sourceSummary: signal.summary,
     pageDescription: typeof signal.sourceMetadata.pageDescription === "string" ? signal.sourceMetadata.pageDescription.slice(0, 800) : "",
+    reviewedChineseDraft: trustedChinese ? { title: signal.titleZh ?? "", summary: signal.summaryZh ?? "" } : null,
     track: signal.track,
     source: signal.source,
     category: signal.category,
@@ -220,6 +220,7 @@ function systemPrompt(): string {
     "必须依次调用 list_daily_signals、search_memory、score_candidates、select_intelligence_for_pool；每轮只能调用一个工具。",
     "search_memory 必须为每条情报提供简短查询；score_candidates 必须覆盖全部候选且每条只出现一次。",
     "score_candidates 同时生成准确中文标题和一句中文概述。概述直接说明它是什么、做什么或发生了什么，不解释入选原因，不得使用‘发布新动态’等空泛模板。",
+    "事实判断必须优先使用 sourceTitle、sourceSummary 与 pageDescription；reviewedChineseDraft 只在存在时辅助理解。未审校或 generated 中文草稿不会提供给你，禁止根据旧中文标题猜测原文。",
     "评分维度：业务相关性、新颖性、用户价值、可行动性、证据质量、历史重复风险。",
     "每条情报必须归类 PM 价值：product-idea 产品创意、design-pattern 设计思路、competitor 竞品动态、capability 能力变化、business-opportunity 业务机会、industry-context 行业判断。",
     "rationale 必须直接解释它能帮助产品经理做什么判断、启发什么方案或识别什么竞品变化，不要复述新闻，也不要写‘值得关注’这类空话。",
@@ -396,6 +397,8 @@ export async function runOpportunityTriageAgent(
     agent: "product-opportunity-agent",
     mode: "daily-triage",
     version: 4,
+    promptVersion: "daily-triage-v5-source-truth",
+    strategyVersion: "opportunity-weighted-v1",
     briefingDate: state.signals.map((signal) => signal.briefingDate).sort().at(-1) ?? completedAt.toISOString().slice(0, 10),
     objective: "扫描每日情报并完成 PM 机会评分与深度分析优先级排序",
     status: state.decisionSummary ? "completed" : "failed",

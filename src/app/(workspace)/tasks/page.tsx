@@ -3,9 +3,11 @@ import type { Metadata } from "next";
 import { MetricStrip } from "@/components/metric-card/metric-strip";
 import { CollectorTaskControls } from "@/components/tasks/collector-task-controls";
 import { IntelligenceQualityDashboard } from "@/components/tasks/intelligence-quality-dashboard";
+import { AgentEvaluationDashboard } from "@/components/tasks/agent-evaluation-dashboard";
 import { PageHeader } from "@/components/workspace/page-header";
 import { loadCollectorWorkspace } from "@/services/load-collector-workspace";
 import { summarizeIntelligenceQuality } from "@/services/summarize-intelligence-quality";
+import { loadAgentEvaluationWorkspace } from "@/services/load-agent-evaluation";
 import { domainFocusAreaOptions } from "@/collector/configuration";
 import type { DailyIntelligenceBrief } from "@/types/intelligence";
 
@@ -36,7 +38,11 @@ const dateTimeFormatter = new Intl.DateTimeFormat("zh-CN", {
 });
 
 export default async function TasksPage() {
-  const { sources, domainSources, schedule, domainSchedule, latestBrief, domainBrief, editable } = await loadCollectorWorkspace();
+  const [collectorWorkspace, agentEvaluation] = await Promise.all([
+    loadCollectorWorkspace(),
+    loadAgentEvaluationWorkspace(),
+  ]);
+  const { sources, domainSources, schedule, domainSchedule, latestBrief, domainBrief, editable } = collectorWorkspace;
   const qualitySummary = summarizeIntelligenceQuality([latestBrief, domainBrief]);
   const enabledSources = sources.filter((source) => source.enabled).length;
   const enabledDomainSources = domainSources.filter((source) => source.enabled && source.focusAreas?.some((area) => domainSchedule.focusAreas?.includes(area))).length;
@@ -52,6 +58,7 @@ export default async function TasksPage() {
       <PageHeader eyebrow="Collector workflow monitor" title="采集任务" description="分别管理 AI 行业与业务领域每日采集，为 Product Intelligence Agent 准备候选情报。" />
       <MetricStrip metrics={metrics} />
       <IntelligenceQualityDashboard summary={qualitySummary} />
+      <AgentEvaluationDashboard latest={agentEvaluation.latest} previous={agentEvaluation.previous} />
       <CollectorTaskControls schedule={schedule} editable={editable} enabledSources={enabledSources} track="technical" title="AI 行业情报每日采集" />
       <CollectorTaskControls schedule={domainSchedule} editable={editable} enabledSources={enabledDomainSources} track="domain" title="业务领域情报每日采集" availableFocusAreas={domainFocusAreaOptions} />
       {latestBrief ? <LastRun brief={latestBrief} title="AI 行业情报" /> : null}

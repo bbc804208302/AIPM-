@@ -79,3 +79,52 @@ test("scans, recalls, scores, and ranks all daily intelligence in a fixed tool o
   assert.equal(savedTriageRuns.length, 1);
   assert.equal(JSON.stringify(run).includes("secret"), false);
 });
+
+test("uses original source facts instead of an unreviewed Chinese draft", async () => {
+  const contaminated: IntelligenceSignal = {
+    ...signals[1],
+    id: "SIG-CONTAMINATED",
+    title: "Netflix changes its animated film theatrical window",
+    summary: "Netflix will release an animated film through Sony in theaters for six weeks before streaming.",
+    titleZh: "HEART 叙事框架",
+    summaryZh: "用人物关系推进爱情故事。",
+    translationStatus: "generated",
+  };
+  const intelligenceRepository: IntelligenceRepository = {
+    getLatestBrief: async (track) => track === "domain" ? brief(track, [contaminated]) : brief(track, []),
+    getBrief: async () => null,
+    getSeenItems: async () => [],
+    saveBrief: async () => undefined,
+    findById: async () => contaminated,
+  };
+  const agentRepository: OpportunityAgentRepository = {
+    listRuns: async () => [], saveRun: async () => undefined, listTriageRuns: async () => [], saveTriageRun: async () => undefined, searchMemory: async () => [],
+  };
+  let request = 0;
+  let observation = "";
+  const fetcher = async (_input: string | URL | Request, init?: RequestInit) => {
+    request += 1;
+    if (request === 1) return toolResponse("source-1", "list_daily_signals", {});
+    if (request === 2) {
+      const body = JSON.parse(String(init?.body)) as { messages: readonly { role: string; content: string }[] };
+      observation = body.messages.findLast((message) => message.role === "tool")?.content ?? "";
+      return toolResponse("source-2", "search_memory", { queries: [{ signalId: contaminated.id, query: "Netflix animated film" }] });
+    }
+    if (request === 3) return toolResponse("source-3", "score_candidates", { candidates: [{
+      signalId: contaminated.id, titleZh: "Netflix 调整动画电影院线窗口", summaryZh: "Netflix 将通过索尼让动画电影先在院线上映六周，再上线流媒体。", relevance: 50, novelty: 40, userValue: 45, actionability: 35, evidence: 80, duplicateRisk: 0, pmValueType: "industry-context", rationale: "帮助 PM 观察流媒体动画发行策略变化。",
+    }] });
+    return toolResponse("source-4", "select_intelligence_for_pool", { summary: "完成" });
+  };
+
+  const run = await runOpportunityTriageAgent(
+    intelligenceRepository,
+    agentRepository,
+    { SIGNALFLOW_OPPORTUNITY_AGENT: "true", LLM_API_KEY: "secret", LLM_MODEL: "test-model" },
+    fetcher,
+  );
+
+  assert.equal(run.status, "completed");
+  assert.match(observation, /Netflix changes its animated film theatrical window/);
+  assert.doesNotMatch(observation, /HEART 叙事框架/);
+  assert.equal(run.promptVersion, "daily-triage-v5-source-truth");
+});
