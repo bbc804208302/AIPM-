@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "track": "technical",
-  "updatedAt": "2026-08-16T23:17:15.287Z",
+  "updatedAt": "2026-08-17T23:20:13.376Z",
   "items": [
     {
       "url": "https://www.latent.space/p/ainews-zawinskis-law-of-multiagents",
@@ -394,6 +394,86 @@
     {
       "url": "https://huggingface.co/blog/icml-2026-open-reproductions",
       "title": "What We Learned by Reproducing 2,200 papers from ICML"
+    },
+    {
+      "url": "https://github.blog/changelog/2026-08-13-github-copilot-weekly-releases-august-10",
+      "title": "GitHub Copilot weekly releases — August 10"
+    },
+    {
+      "url": "https://github.com/harry0703/MoneyPrinterTurbo",
+      "title": "harry0703/MoneyPrinterTurbo"
+    },
+    {
+      "url": "https://x.com/EXM7777/status/2088992368695628159",
+      "title": "How to build a $2M video production pipeline"
+    },
+    {
+      "url": "https://vercel.com/blog/building-a-software-factory-for-ai-sdk",
+      "title": "Building a software factory for AI SDK"
+    },
+    {
+      "url": "https://github.com/usestrix/strix",
+      "title": "usestrix/strix"
+    },
+    {
+      "url": "https://x.com/JensenHuang/status/2089331487342829862",
+      "title": "Securing the Infrastructure of Intelligence"
+    },
+    {
+      "url": "https://vercel.com/changelog/use-acp-compatible-harnesses-with-the-ai-sdk-harness-layer",
+      "title": "Use ACP-compatible harnesses with the AI SDK harness layer"
+    },
+    {
+      "url": "https://github.com/akitaonrails/ai-memory",
+      "title": "akitaonrails/ai-memory"
+    },
+    {
+      "url": "https://vercel.com/changelog/exa-joins-the-vercel-agent-marketplace",
+      "title": "Exa joins the Vercel Agent Marketplace"
+    },
+    {
+      "url": "https://github.com/mukul975/Anthropic-Cybersecurity-Skills",
+      "title": "mukul975/Anthropic-Cybersecurity-Skills"
+    },
+    {
+      "url": "https://github.com/santifer/career-ops",
+      "title": "santifer/career-ops"
+    },
+    {
+      "url": "https://www.latent.space/p/ainews-stripe-buys-openrouter-for",
+      "title": "[AINews] Stripe buys OpenRouter for $7B"
+    },
+    {
+      "url": "https://www.technologyreview.com/2026/08/17/1142200/what-flocks-defenders-are-missing",
+      "title": "What Flock’s defenders are missing"
+    },
+    {
+      "url": "https://www.technologyreview.com/2026/08/17/1141568/moxie-when-kids-robot-best-friend-dies",
+      "title": "What happens when a kid’s robot best friend dies?"
+    },
+    {
+      "url": "https://openai.com/index/the-defenders-window",
+      "title": "The Defender’s Window"
+    },
+    {
+      "url": "https://vercel.com/changelog/gpt-5-6-sol-is-50-off-on-ai-gateway-for-the-next-month",
+      "title": "GPT-5.6 Sol is 50% off on AI Gateway for the next month"
+    },
+    {
+      "url": "https://tldr.tech/ai/2026-08-17",
+      "title": "GLM-5.3 🤖, Stripe OpenRouter deal 💰, AI agent consensus 🤝"
+    },
+    {
+      "url": "https://www.producthunt.com/products/blender-agent-bridge",
+      "title": "Blender Agent Bridge"
+    },
+    {
+      "url": "https://github.blog/changelog/2026-08-14-grok-4-6-is-now-available-in-github-copilot",
+      "title": "Grok 4.6 is now available in GitHub Copilot"
+    },
+    {
+      "url": "https://github.blog/changelog/2026-08-13-gemini-3-7-flash-is-now-available-in-github-copilot",
+      "title": "Gemini 3.7 Flash is now available in GitHub Copilot"
     }
   ]
 }
