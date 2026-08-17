@@ -1,0 +1,117 @@
+{
+  "schemaVersion": 1,
+  "datasetVersion": "2026-08-17-v1",
+  "description": "由 SignalFlow 历史真实公开情报构成的 Product Intelligence Agent 固定评测集。",
+  "cases": [
+    {
+      "id": "EVAL-TECH-ENTERPRISE-AGENT",
+      "track": "technical",
+      "briefingDate": "2026-08-16",
+      "signalId": "SIG-20260816-E063DAAE",
+      "expectedPmValueTypes": ["capability", "business-opportunity", "design-pattern"],
+      "expectedScore": { "minimum": 70, "maximum": 85 },
+      "expectedDeepAnalysis": true,
+      "requiredFactGroups": [["企业", "enterprise"], ["Agent", "智能体", "agentic"], ["执行", "execution", "agentic"], ["ChatGPT", "Codex"]],
+      "annotation": "企业从 AI 辅助走向 Agent 执行的真实采用研究，能够支持产品工作流判断。"
+    },
+    {
+      "id": "EVAL-TECH-GLIMMER",
+      "track": "technical",
+      "briefingDate": "2026-08-16",
+      "signalId": "SIG-20260816-E637BAF2",
+      "expectedPmValueTypes": ["capability"],
+      "expectedScore": { "minimum": 50, "maximum": 69 },
+      "expectedDeepAnalysis": false,
+      "requiredFactGroups": [["Glimmer"], ["开放权重", "开源", "open weight"], ["RTX 3090", "3090"]],
+      "annotation": "模型能力变化明确，但来源证据有限，不应仅凭营销表述自动转化为需求。"
+    },
+    {
+      "id": "EVAL-TECH-OPENAI-CRO",
+      "track": "technical",
+      "briefingDate": "2026-08-16",
+      "signalId": "SIG-20260816-6EAAB463",
+      "expectedPmValueTypes": ["industry-context", "business-opportunity"],
+      "expectedScore": { "minimum": 10, "maximum": 45 },
+      "expectedDeepAnalysis": false,
+      "requiredFactGroups": [["OpenAI"], ["Dali Rajic"], ["首席营收官", "Chief Revenue Officer", "CRO"]],
+      "annotation": "管理层任命属于行业背景信息，没有直接产品能力或用户问题。"
+    },
+    {
+      "id": "EVAL-TECH-KIDS-AI",
+      "track": "technical",
+      "briefingDate": "2026-08-16",
+      "signalId": "SIG-20260816-6EBED58E",
+      "expectedPmValueTypes": ["industry-context", "product-idea"],
+      "expectedScore": { "minimum": 35, "maximum": 69 },
+      "expectedDeepAnalysis": false,
+      "requiredFactGroups": [["儿童", "青少年", "孩子"], ["AI"], ["感受", "看法", "观点", "态度", "顾虑"]],
+      "annotation": "用户研究具有洞察价值，但证据不足以直接形成高优先级产品方案。"
+    },
+    {
+      "id": "EVAL-TECH-RINGCENTRAL",
+      "track": "technical",
+      "briefingDate": "2026-08-16",
+      "signalId": "SIG-20260816-9BAFA93F",
+      "expectedPmValueTypes": ["design-pattern", "capability"],
+      "expectedScore": { "minimum": 45, "maximum": 69 },
+      "expectedDeepAnalysis": false,
+      "requiredFactGroups": [["RingCentral"], ["ChatGPT", "Codex"], ["工程", "运营", "工作流"]],
+      "annotation": "企业 AI-native 工作方式提供设计案例，但属于单一企业实践。"
+    },
+    {
+      "id": "EVAL-DOMAIN-MEANTIO",
+      "track": "domain",
+      "briefingDate": "2026-08-16",
+      "signalId": "SIG-20260816-2E3E1735",
+      "expectedPmValueTypes": ["product-idea", "competitor"],
+      "expectedScore": { "minimum": 70, "maximum": 90 },
+      "expectedDeepAnalysis": true,
+      "requiredFactGroups": [["Meantio"], ["手机", "智能手机"], ["短剧"], ["创作", "创作者"]],
+      "annotation": "面向短剧创作的明确产品及低门槛交互，和目标业务高度相关。"
+    },
+    {
+      "id": "EVAL-DOMAIN-KINGDOM-HEARTS",
+      "track": "domain",
+      "briefingDate": "2026-08-16",
+      "signalId": "SIG-20260816-51B87CBB",
+      "expectedPmValueTypes": ["competitor", "industry-context"],
+      "expectedScore": { "minimum": 25, "maximum": 55 },
+      "expectedDeepAnalysis": false,
+      "requiredFactGroups": [["迪士尼", "Disney"], ["王国之心", "Kingdom Hearts"], ["动画", "anime"], ["立项", "绿灯", "greenlit", "批准"]],
+      "annotation": "迪士尼重启游戏 IP 动画项目属于内容行业动态，不是直接的 AI 产品机会。"
+    },
+    {
+      "id": "EVAL-DOMAIN-NETFLIX-THEATRICAL",
+      "track": "domain",
+      "briefingDate": "2026-08-16",
+      "signalId": "SIG-20260816-2990C0D7",
+      "expectedPmValueTypes": ["industry-context", "business-opportunity"],
+      "expectedScore": { "minimum": 20, "maximum": 55 },
+      "expectedDeepAnalysis": false,
+      "requiredFactGroups": [["Netflix"], ["动画"], ["索尼", "Sony"], ["院线", "影院", "theater"], ["六周", "6周", "six weeks"]],
+      "annotation": "Netflix 调整动画发行窗口属于业务策略变化，可记录但不应自动深挖。"
+    },
+    {
+      "id": "EVAL-DOMAIN-DUOLINGO",
+      "track": "domain",
+      "briefingDate": "2026-08-16",
+      "signalId": "SIG-20260816-09155BF3",
+      "expectedPmValueTypes": ["competitor", "industry-context"],
+      "expectedScore": { "minimum": 20, "maximum": 50 },
+      "expectedDeepAnalysis": false,
+      "requiredFactGroups": [["多邻国", "Duolingo"], ["Animade"], ["收购"], ["动画"]],
+      "annotation": "动画产能布局值得记录，但缺少具体产品变化。"
+    },
+    {
+      "id": "EVAL-DOMAIN-PICTOPLASMA",
+      "track": "domain",
+      "briefingDate": "2026-08-16",
+      "signalId": "SIG-20260816-6886A7F4",
+      "expectedPmValueTypes": ["industry-context"],
+      "expectedScore": { "minimum": 10, "maximum": 45 },
+      "expectedDeepAnalysis": false,
+      "requiredFactGroups": [["Pictoplasma"], ["纽约"], ["演讲", "议程", "大会"], ["角色", "动画"]],
+      "annotation": "行业活动日程属于背景情报，不构成自动深度分析机会。"
+    }
+  ]
+}

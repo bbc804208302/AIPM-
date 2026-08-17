@@ -56,7 +56,7 @@ flowchart LR
 | `/demands` | 内部需求池 | 飞书实时读取、状态指标筛选、优先级、提出人、负责人和详情入口 |
 | `/demands/[id]` | 需求详情 | 展示该条飞书记录映射后的完整字段与规范化时间 |
 | `/sources` | 数据源 | 按情报轨道管理 Source Registry、来源健康度与本地开关 |
-| `/tasks` | 采集任务 | 双轨任务配置、AI 概述覆盖率、来源可用率、重试监控与 badcase 队列 |
+| `/tasks` | 采集任务与质量评测 | 双轨任务配置、运行稳定性、固定集 Agent Eval、版本指标与 Bad Case 根因队列 |
 
 ## 产品实景
 
@@ -351,11 +351,20 @@ flowchart TB
 SIGNALFLOW_OPPORTUNITY_AGENT=true
 pnpm agent:triage
 pnpm agent:opportunity --signal <LATEST_SIGNAL_ID>
+pnpm agent:eval
 ```
 
 GitHub 的 **SignalFlow Daily Intelligence Agent** 工作流每天 `07:30` 自动扫描已经更新的双轨候选，完成 PM 价值分类与机会评分排序，并对 70 分以上的内容自动执行最多 3 条深度分析。手动工作流仍可接受任意候选的 `signal_id`。两者都使用仓库 Secret 调用 LLM，只提交脱敏后的 `data/agent/runs.json`；Vercel 随后自动展示真实情报池和运行记录。
 
 仓库同时保留公开来源的每日 JSON 快照与脱敏后的 Agent 运行记录，在线作品集因此可以直接展示真实中文概述、机会分、PM 价值判断、Tool Use 摘要与历史 Memory，而无需让 Vercel 访客调用维护者的 LLM。
+
+## Agent 效果评测
+
+SignalFlow 将“运行稳定性”和“Agent 效果”分开衡量。固定评测集引用仓库内的历史真实公开情报，并由人工标注期望 PM 价值类型、合理机会分区间、深度分析决策和中文概述必须覆盖的关键事实。每次评测记录模型、Prompt、评分策略与数据集版本，避免只凭肉眼判断 Prompt 是否变好。
+
+当前基线包含 10 条样本。第一轮 Bad Case 发现旧中文草稿可能污染事实判断，改为原始来源优先后，同一固定集的综合质量由 85% 提升到 91%、事实覆盖率由 86% 提升到 100%、深度分析决策一致率由 70% 提升到 80%，人工修订率由 50% 降至 30%。该结果是作品集规模的离线基线，不代表真实线上用户任务完成率。
+
+Bad Case 按运行链路、Prompt、分类策略、评分策略和决策阈值归因。`pnpm agent:eval` 可在本地复跑固定集；GitHub Actions 的 **SignalFlow Agent Evaluation** 工作流支持手动生成新版本结果。完整定义见 [`docs/architecture/agent-evaluation.md`](docs/architecture/agent-evaluation.md)。
 
 ## 开发与验证
 
@@ -377,6 +386,7 @@ pnpm check
 - Collector registry、Normalization、近 15 日窗口、产品情报预排序、单批次与跨批次去重、最多 20 条双轨候选
 - 原文上下文提取、LLM JSON 修复与重试、审校内容保护和公开热度计算
 - Product Intelligence Agent 中文概述、PM 价值分类、固定权重评分、全量排序、自动深度分析上限、工具顺序、Memory 召回、候选需求门控与 File Repository
+- 固定集 Agent Eval、事实覆盖、分类/评分/决策一致性、Bad Case 归因、版本化结果与生产只读边界
 - 飞书 token 缓存、并发刷新、分页、限流与安全错误
 - 飞书字段映射、File Repository 和需求看板指标
 
@@ -408,7 +418,7 @@ src/
 └── types/               # 稳定领域类型
 
 data/intelligence/       # 可审计的每日情报快照
-data/agent/              # 脱敏 Agent Run 与历史决策 Memory
+data/agent/              # 脱敏 Agent Run、历史决策 Memory 与固定集 Eval
 docs/                    # 架构、产品、设计与参考项目说明
 .codex/skills/           # SignalFlow Collector Skill
 .github/workflows/       # 双轨采集、每日机会初筛与手动深度分析工作流
@@ -427,12 +437,13 @@ docs/                    # 架构、产品、设计与参考项目说明
 - [x] 本地任务控制、公开环境只读和 GitHub Actions 工作流
 - [x] AI 质量评测、badcase 队列与运行指标
 - [x] Product Intelligence Agent 中文概述、PM 价值分类、机会评分排序、高分自动深度分析、Tool Use、Memory 与候选需求
+- [x] 固定历史真实情报 Agent Eval、六项效果指标、Bad Case 根因与 Prompt / 策略版本记录
 - [x] Collector Skill、架构文档、设计规范和自动化测试
 
 ### 下一阶段
 
 - [ ] 候选需求人工批准与飞书写回
-- [ ] Agent Eval 数据集、决策准确性与 Prompt 版本对比
+- [ ] 扩充人工标注集、引入双人复核并积累多版本 Prompt 对比趋势
 - [ ] Planner / Reviewer 多 Agent 实验（仅在单 Agent 指标稳定后）
 - [ ] 飞书需求写回、缓存与 webhook 策略
 - [ ] PostgreSQL Intelligence Repository 实现

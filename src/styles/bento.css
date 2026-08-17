@@ -828,6 +828,54 @@ body {
 .quality-badcase-head { min-height: 38px; background: var(--sf-bg); color: var(--sf-text-subtle); font-size: 10px; font-weight: 650; }
 .quality-empty { padding: 24px 18px; color: var(--sf-text-muted); font-size: 12px; }
 
+.agent-eval-dashboard { display: grid; gap: 14px; }
+.agent-eval-empty {
+  padding: 22px;
+  border: 1px dashed var(--sf-border-strong);
+  border-radius: var(--sf-radius-md);
+  background: var(--sf-surface-2);
+  color: var(--sf-text-muted);
+  font-size: 12px;
+}
+.agent-eval-empty code { color: var(--sf-text); font-family: var(--sf-font-mono); font-weight: 650; }
+.agent-eval-meta {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px;
+  padding: 0 2px;
+  color: var(--sf-text-subtle);
+  font-size: 10px;
+}
+.agent-eval-meta span,
+.agent-eval-meta time { padding: 5px 8px; border-radius: 8px; background: var(--sf-surface-2); }
+.agent-eval-meta strong { color: var(--sf-text); font-family: var(--sf-font-mono); font-weight: 650; }
+.agent-eval-kpi-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 10px; }
+.agent-eval-kpi-grid article {
+  min-height: 116px;
+  padding: 15px 17px;
+  border: 1px solid var(--sf-border);
+  border-radius: 16px;
+  background: var(--sf-white);
+  box-shadow: var(--sf-shadow-sm);
+}
+.agent-eval-kpi-grid article > span { color: var(--sf-text-muted); font-size: 11px; font-weight: 600; }
+.agent-eval-kpi-grid article > strong { display: block; margin-top: 7px; font-size: 32px; letter-spacing: -.04em; line-height: 1; }
+.agent-eval-kpi-grid article > p,
+.agent-eval-kpi-grid article > span:last-child { display: block; margin-top: 10px; color: var(--sf-text-subtle); font-size: 10px; font-weight: 500; }
+.agent-eval-badcase-panel { overflow: hidden; border: 1px solid var(--sf-border); border-radius: var(--sf-radius-lg); background: var(--sf-white); box-shadow: var(--sf-shadow-sm); }
+.agent-eval-badcase-panel > header { display: flex; align-items: center; justify-content: space-between; padding: 14px 18px; border-bottom: 1px solid var(--sf-border); background: var(--sf-surface-2); }
+.agent-eval-badcase-panel > header span { color: var(--sf-text-subtle); font-size: 9px; font-weight: 700; letter-spacing: .12em; }
+.agent-eval-badcase-panel > header h3 { margin-top: 2px; font-size: 17px; font-weight: 680; }
+.agent-eval-badcase-panel > header > strong { padding: 5px 8px; border-radius: 8px; background: var(--sf-orange); color: var(--sf-warning); font-size: 10px; }
+.agent-eval-badcase-table { min-width: 820px; }
+.agent-eval-badcase-row { display: grid; grid-template-columns: minmax(190px, 1fr) 100px minmax(180px, .9fr) minmax(280px, 1.4fr); align-items: center; gap: 14px; min-height: 64px; padding: 10px 18px; border-bottom: 1px solid var(--sf-border); color: var(--sf-text-muted); font-size: 10px; }
+.agent-eval-badcase-row:last-child { border-bottom: 0; }
+.agent-eval-badcase-row > div { display: grid; gap: 2px; min-width: 0; }
+.agent-eval-badcase-row > div strong { overflow: hidden; color: var(--sf-text); font-size: 11px; text-overflow: ellipsis; white-space: nowrap; }
+.agent-eval-badcase-row > div span { overflow: hidden; color: var(--sf-text-subtle); text-overflow: ellipsis; white-space: nowrap; }
+.agent-eval-badcase-head { min-height: 36px; background: var(--sf-bg); color: var(--sf-text-subtle); font-weight: 650; }
+
 .demand-dashboard {
   display: grid;
   gap: 20px;
@@ -938,6 +986,8 @@ body {
   .quality-kpi-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .quality-run-grid { grid-template-columns: 1fr; }
   .quality-badcase-panel { overflow-x: auto; }
+  .agent-eval-kpi-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .agent-eval-badcase-panel { overflow-x: auto; }
   .agent-run-summary { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .agent-run-summary article:nth-child(2) { border-right: 0; }
   .agent-run-summary article:nth-child(-n + 2) { border-bottom: 1px solid var(--sf-border); }
@@ -1005,6 +1055,7 @@ body {
   .quality-dashboard-header { align-items: flex-start; flex-direction: column; gap: 12px; }
   .quality-kpi-grid { grid-template-columns: 1fr; gap: 10px; }
   .quality-kpi-grid article { min-height: 112px; }
+  .agent-eval-kpi-grid { grid-template-columns: 1fr; }
   .quality-run-stats { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .agent-control-body { grid-template-columns: 1fr; }
   .agent-control-body .brutal-control-button { min-width: 0; }

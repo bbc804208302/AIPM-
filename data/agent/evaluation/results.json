@@ -1,0 +1,295 @@
+{
+  "schemaVersion": 1,
+  "updatedAt": "2026-08-17T05:45:34.087Z",
+  "results": [
+    {
+      "id": "AGENT-EVAL-TRIAGE-d3f0862d-9d7e-4e05-8dc8-3f3a893b454c",
+      "schemaVersion": 1,
+      "datasetVersion": "2026-08-17-v1",
+      "status": "valid",
+      "agentRunId": "TRIAGE-d3f0862d-9d7e-4e05-8dc8-3f3a893b454c",
+      "model": "deepseek-v4-flash",
+      "promptVersion": "daily-triage-v5-source-truth",
+      "strategyVersion": "opportunity-weighted-v1",
+      "evaluatedAt": "2026-08-17T05:45:34.087Z",
+      "metrics": {
+        "evaluatedCases": 10,
+        "taskCompletionRate": 100,
+        "structuredOutputSuccessRate": 100,
+        "summaryFactCoverageRate": 100,
+        "pmValueClassificationAccuracy": 90,
+        "scoreAgreementRate": 70,
+        "deepAnalysisDecisionAgreement": 80,
+        "humanCorrectionRate": 30,
+        "overallQualityScore": 91
+      },
+      "badcases": [
+        {
+          "caseId": "EVAL-TECH-ENTERPRISE-AGENT",
+          "signalId": "SIG-20260816-E063DAAE",
+          "title": "OpenAI研究：企业正从AI辅助走向执行型Agentic AI",
+          "rootCause": "classification-strategy",
+          "issue": "PM 价值分类与人工标注不一致",
+          "expected": "capability / business-opportunity / design-pattern",
+          "actual": "industry-context"
+        },
+        {
+          "caseId": "EVAL-TECH-ENTERPRISE-AGENT",
+          "signalId": "SIG-20260816-E063DAAE",
+          "title": "OpenAI研究：企业正从AI辅助走向执行型Agentic AI",
+          "rootCause": "scoring-strategy",
+          "issue": "机会分超出人工标注区间",
+          "expected": "70–85",
+          "actual": "55"
+        },
+        {
+          "caseId": "EVAL-TECH-ENTERPRISE-AGENT",
+          "signalId": "SIG-20260816-E063DAAE",
+          "title": "OpenAI研究：企业正从AI辅助走向执行型Agentic AI",
+          "rootCause": "decision-threshold",
+          "issue": "深度分析决策与人工标注不一致",
+          "expected": "应自动深度分析",
+          "actual": "未进入自动深度分析"
+        },
+        {
+          "caseId": "EVAL-DOMAIN-MEANTIO",
+          "signalId": "SIG-20260816-2E3E1735",
+          "title": "Meantio：让智能手机用户变身短剧创作者",
+          "rootCause": "scoring-strategy",
+          "issue": "机会分超出人工标注区间",
+          "expected": "70–90",
+          "actual": "68"
+        },
+        {
+          "caseId": "EVAL-DOMAIN-MEANTIO",
+          "signalId": "SIG-20260816-2E3E1735",
+          "title": "Meantio：让智能手机用户变身短剧创作者",
+          "rootCause": "decision-threshold",
+          "issue": "深度分析决策与人工标注不一致",
+          "expected": "应自动深度分析",
+          "actual": "未进入自动深度分析"
+        },
+        {
+          "caseId": "EVAL-DOMAIN-KINGDOM-HEARTS",
+          "signalId": "SIG-20260816-51B87CBB",
+          "title": "迪士尼正式绿灯《王国之心》动画剧集，野村哲也参与",
+          "rootCause": "scoring-strategy",
+          "issue": "机会分超出人工标注区间",
+          "expected": "25–55",
+          "actual": "22"
+        }
+      ]
+    },
+    {
+      "id": "AGENT-EVAL-TRIAGE-e6d4c6a9-cf78-40fb-981d-536688715b68",
+      "schemaVersion": 1,
+      "datasetVersion": "2026-08-17-v1",
+      "status": "valid",
+      "agentRunId": "TRIAGE-e6d4c6a9-cf78-40fb-981d-536688715b68",
+      "model": "deepseek-v4-flash",
+      "promptVersion": "daily-triage-v4",
+      "strategyVersion": "opportunity-weighted-v1",
+      "evaluatedAt": "2026-08-17T05:42:59.708Z",
+      "metrics": {
+        "evaluatedCases": 10,
+        "taskCompletionRate": 100,
+        "structuredOutputSuccessRate": 100,
+        "summaryFactCoverageRate": 86,
+        "pmValueClassificationAccuracy": 90,
+        "scoreAgreementRate": 60,
+        "deepAnalysisDecisionAgreement": 70,
+        "humanCorrectionRate": 50,
+        "overallQualityScore": 85
+      },
+      "badcases": [
+        {
+          "caseId": "EVAL-TECH-ENTERPRISE-AGENT",
+          "signalId": "SIG-20260816-E063DAAE",
+          "title": "OpenAI 报告：企业 AI 采用正从辅助走向执行",
+          "rootCause": "scoring-strategy",
+          "issue": "机会分超出人工标注区间",
+          "expected": "70–85",
+          "actual": "58"
+        },
+        {
+          "caseId": "EVAL-TECH-ENTERPRISE-AGENT",
+          "signalId": "SIG-20260816-E063DAAE",
+          "title": "OpenAI 报告：企业 AI 采用正从辅助走向执行",
+          "rootCause": "decision-threshold",
+          "issue": "深度分析决策与人工标注不一致",
+          "expected": "应自动深度分析",
+          "actual": "未进入自动深度分析"
+        },
+        {
+          "caseId": "EVAL-TECH-GLIMMER",
+          "signalId": "SIG-20260816-E637BAF2",
+          "title": "MSL 发布开源权重小模型 Muse Glimmer，单张 RTX 3090 可运行",
+          "rootCause": "scoring-strategy",
+          "issue": "机会分超出人工标注区间",
+          "expected": "50–69",
+          "actual": "75"
+        },
+        {
+          "caseId": "EVAL-TECH-GLIMMER",
+          "signalId": "SIG-20260816-E637BAF2",
+          "title": "MSL 发布开源权重小模型 Muse Glimmer，单张 RTX 3090 可运行",
+          "rootCause": "decision-threshold",
+          "issue": "深度分析决策与人工标注不一致",
+          "expected": "不应自动深度分析",
+          "actual": "进入自动深度分析"
+        },
+        {
+          "caseId": "EVAL-DOMAIN-MEANTIO",
+          "signalId": "SIG-20260816-2E3E1735",
+          "title": "Meantio 让仅持智能手机的用户也能创作短剧",
+          "rootCause": "scoring-strategy",
+          "issue": "机会分超出人工标注区间",
+          "expected": "70–90",
+          "actual": "63"
+        },
+        {
+          "caseId": "EVAL-DOMAIN-MEANTIO",
+          "signalId": "SIG-20260816-2E3E1735",
+          "title": "Meantio 让仅持智能手机的用户也能创作短剧",
+          "rootCause": "decision-threshold",
+          "issue": "深度分析决策与人工标注不一致",
+          "expected": "应自动深度分析",
+          "actual": "未进入自动深度分析"
+        },
+        {
+          "caseId": "EVAL-DOMAIN-KINGDOM-HEARTS",
+          "signalId": "SIG-20260816-51B87CBB",
+          "title": "迪士尼正式立项《王国之心》动画剧集",
+          "rootCause": "scoring-strategy",
+          "issue": "机会分超出人工标注区间",
+          "expected": "25–55",
+          "actual": "21"
+        },
+        {
+          "caseId": "EVAL-DOMAIN-NETFLIX-THEATRICAL",
+          "signalId": "SIG-20260816-2990C0D7",
+          "title": "HEART 叙事框架：用人物关系推进爱情故事创作",
+          "rootCause": "prompt",
+          "issue": "中文概述遗漏关键事实",
+          "expected": "Netflix；动画；索尼 / Sony；院线 / 影院 / theater；六周 / 6周 / six weeks",
+          "actual": "文章提出 HEART 写作框架，帮助创作者从人物关系、情感变化和冲突推进等角度组织爱情故事，属编剧方法论类内容。"
+        },
+        {
+          "caseId": "EVAL-DOMAIN-NETFLIX-THEATRICAL",
+          "signalId": "SIG-20260816-2990C0D7",
+          "title": "HEART 叙事框架：用人物关系推进爱情故事创作",
+          "rootCause": "classification-strategy",
+          "issue": "PM 价值分类与人工标注不一致",
+          "expected": "industry-context / business-opportunity",
+          "actual": "design-pattern"
+        }
+      ]
+    },
+    {
+      "id": "AGENT-EVAL-TRIAGE-5d649939-3feb-407d-b700-c40a5fb1e2d6",
+      "schemaVersion": 1,
+      "datasetVersion": "2026-08-17-v2",
+      "status": "invalid",
+      "invalidReason": "人工标签曾引用错误的 generated 中文草稿；已依据原始来源修正并建立 v1 正式数据集。",
+      "agentRunId": "TRIAGE-5d649939-3feb-407d-b700-c40a5fb1e2d6",
+      "model": "deepseek-v4-flash",
+      "promptVersion": "daily-triage-v4",
+      "strategyVersion": "opportunity-weighted-v1",
+      "evaluatedAt": "2026-08-17T05:36:38.554Z",
+      "metrics": {
+        "evaluatedCases": 10,
+        "taskCompletionRate": 100,
+        "structuredOutputSuccessRate": 100,
+        "summaryFactCoverageRate": 95,
+        "pmValueClassificationAccuracy": 90,
+        "scoreAgreementRate": 70,
+        "deepAnalysisDecisionAgreement": 70,
+        "humanCorrectionRate": 40,
+        "overallQualityScore": 88
+      },
+      "badcases": [
+        {
+          "caseId": "EVAL-TECH-ENTERPRISE-AGENT",
+          "signalId": "SIG-20260816-E063DAAE",
+          "title": "OpenAI 研究：企业如何从 AI 辅助走向执行型应用",
+          "rootCause": "prompt",
+          "issue": "中文概述遗漏关键事实",
+          "expected": "执行 / execution",
+          "actual": "OpenAI 发布企业采用研究，展示企业如何采用 agentic AI、使用 ChatGPT 与 Codex，以及前沿企业在 AI 采用上拉开差距的具体模式。"
+        },
+        {
+          "caseId": "EVAL-TECH-ENTERPRISE-AGENT",
+          "signalId": "SIG-20260816-E063DAAE",
+          "title": "OpenAI 研究：企业如何从 AI 辅助走向执行型应用",
+          "rootCause": "classification-strategy",
+          "issue": "PM 价值分类与人工标注不一致",
+          "expected": "capability / business-opportunity / design-pattern",
+          "actual": "industry-context"
+        },
+        {
+          "caseId": "EVAL-TECH-ENTERPRISE-AGENT",
+          "signalId": "SIG-20260816-E063DAAE",
+          "title": "OpenAI 研究：企业如何从 AI 辅助走向执行型应用",
+          "rootCause": "scoring-strategy",
+          "issue": "机会分超出人工标注区间",
+          "expected": "70–85",
+          "actual": "67"
+        },
+        {
+          "caseId": "EVAL-TECH-ENTERPRISE-AGENT",
+          "signalId": "SIG-20260816-E063DAAE",
+          "title": "OpenAI 研究：企业如何从 AI 辅助走向执行型应用",
+          "rootCause": "decision-threshold",
+          "issue": "深度分析决策与人工标注不一致",
+          "expected": "应自动深度分析",
+          "actual": "未进入自动深度分析"
+        },
+        {
+          "caseId": "EVAL-TECH-GLIMMER",
+          "signalId": "SIG-20260816-E637BAF2",
+          "title": "MSL 开源 Muse Glimmer 与 Spark，主打本地个人超级智能",
+          "rootCause": "scoring-strategy",
+          "issue": "机会分超出人工标注区间",
+          "expected": "50–69",
+          "actual": "73"
+        },
+        {
+          "caseId": "EVAL-TECH-GLIMMER",
+          "signalId": "SIG-20260816-E637BAF2",
+          "title": "MSL 开源 Muse Glimmer 与 Spark，主打本地个人超级智能",
+          "rootCause": "decision-threshold",
+          "issue": "深度分析决策与人工标注不一致",
+          "expected": "不应自动深度分析",
+          "actual": "进入自动深度分析"
+        },
+        {
+          "caseId": "EVAL-DOMAIN-MEANTIO",
+          "signalId": "SIG-20260816-2E3E1735",
+          "title": "Meantio 让用户仅用智能手机创作短剧",
+          "rootCause": "scoring-strategy",
+          "issue": "机会分超出人工标注区间",
+          "expected": "70–90",
+          "actual": "69"
+        },
+        {
+          "caseId": "EVAL-DOMAIN-MEANTIO",
+          "signalId": "SIG-20260816-2E3E1735",
+          "title": "Meantio 让用户仅用智能手机创作短剧",
+          "rootCause": "decision-threshold",
+          "issue": "深度分析决策与人工标注不一致",
+          "expected": "应自动深度分析",
+          "actual": "未进入自动深度分析"
+        },
+        {
+          "caseId": "EVAL-DOMAIN-KINGDOM-HEARTS",
+          "signalId": "SIG-20260816-51B87CBB",
+          "title": "迪士尼正式立项《王国之心》动画剧集",
+          "rootCause": "prompt",
+          "issue": "中文概述遗漏关键事实",
+          "expected": "立项 / 绿灯 / greenlit",
+          "actual": "迪士尼在搁置首个电视试播项目二十多年后，正式批准由野村哲也参与的《王国之心》动画剧集开发。"
+        }
+      ]
+    }
+  ]
+}
