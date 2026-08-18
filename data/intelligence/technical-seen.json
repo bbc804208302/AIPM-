@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "track": "technical",
-  "updatedAt": "2026-08-17T23:20:13.376Z",
+  "updatedAt": "2026-08-18T23:19:29.593Z",
   "items": [
     {
       "url": "https://www.latent.space/p/ainews-zawinskis-law-of-multiagents",
@@ -474,6 +474,86 @@
     {
       "url": "https://github.blog/changelog/2026-08-13-gemini-3-7-flash-is-now-available-in-github-copilot",
       "title": "Gemini 3.7 Flash is now available in GitHub Copilot"
+    },
+    {
+      "url": "https://openai.com/index/strengthening-democratic-oversight-in-national-security",
+      "title": "Strengthening democratic oversight in national security"
+    },
+    {
+      "url": "https://github.com/chaitanyagiri/munder-difflin",
+      "title": "chaitanyagiri/munder-difflin"
+    },
+    {
+      "url": "https://x.com/PiCoreTeam/status/2089477194045141419",
+      "title": "Update to Pi App Studio Creation Pricing"
+    },
+    {
+      "url": "https://openai.com/index/pacing-model-development-cyber-capabilities",
+      "title": "Pacing model development in an era of cyber-critical capabilities"
+    },
+    {
+      "url": "https://github.com/volcengine/OpenViking",
+      "title": "volcengine/OpenViking"
+    },
+    {
+      "url": "https://x.com/_avichawla/status/2089657097244024858",
+      "title": "Grok Bot Masterclass"
+    },
+    {
+      "url": "https://vercel.com/changelog/chat-sdk-adds-instagram-adapter",
+      "title": "Chat SDK adds Instagram adapter"
+    },
+    {
+      "url": "https://github.com/jundot/omlx",
+      "title": "jundot/omlx"
+    },
+    {
+      "url": "https://www.latent.space/p/glean-model-routing",
+      "title": "Frontier Model Cost and Open-Weights Popularity is Driving Demand for Model Routing"
+    },
+    {
+      "url": "https://github.com/bojieli/ai-agent-book",
+      "title": "bojieli/ai-agent-book"
+    },
+    {
+      "url": "https://huggingface.co/blog/ibm-research/altk-evolve-hmm",
+      "title": "How Much Memory Does Your Agent Actually Need?"
+    },
+    {
+      "url": "https://openai.com/index/partnering-with-codeai",
+      "title": "Partnering with CodeAI to prepare the first AI generation"
+    },
+    {
+      "url": "https://openai.com/index/chatgpt-for-teens",
+      "title": "Introducing ChatGPT for Teens: Built for learning, backed by protections"
+    },
+    {
+      "url": "https://www.technologyreview.com/2026/08/18/1142226/how-people-use-ai",
+      "title": "We still don’t know how people are really using AI"
+    },
+    {
+      "url": "https://huggingface.co/blog/multi-vector-encoder",
+      "title": "Multi-Vector (Late Interaction) Embedding Models with Sentence Transformers"
+    },
+    {
+      "url": "https://vercel.com/changelog/cline-harness-adapter",
+      "title": "Cline is now available in the AI SDK harness layer"
+    },
+    {
+      "url": "https://vercel.com/changelog/glm-5-3-now-available-on-ai-gateway",
+      "title": "GLM 5.3 now available on AI Gateway"
+    },
+    {
+      "url": "https://vercel.com/changelog/glm-5-2-free-for-eve-agents-through-august-27-via-blackbox-on-ai-gateway",
+      "title": "GLM 5.2 free for eve agents through August 27 via Blackbox on AI Gateway"
+    },
+    {
+      "url": "https://vercel.com/changelog/gemini-3-7-flash-now-available-on-ai-gateway-for-50-off",
+      "title": "Gemini 3.7 Flash now available on AI Gateway for 50% off"
+    },
+    {
+      "url": "https://vercel.com/changelog/grok-build-harness-adapter",
+      "title": "Grok Build is now available in the AI SDK harness layer"
     }
   ]
 }
