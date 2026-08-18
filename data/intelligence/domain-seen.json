@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "track": "domain",
-  "updatedAt": "2026-08-17T23:37:30.795Z",
+  "updatedAt": "2026-08-18T23:36:54.140Z",
   "items": [
     {
       "url": "https://www.creativebloq.com/3d/autodesk-tackles-ai-filmmakings-biggest-problem-with-3d-control",
@@ -406,6 +406,86 @@
     {
       "url": "https://www.cartoonbrew.com/rip/luis-de-la-rosa-ash-raider-265672.html",
       "title": "Friends Honor ‘Ash Raider’ Creator Luis De La Rosa As His Final Tutorial Is Released Posthumously"
+    },
+    {
+      "url": "https://arxiv.org/abs/2608.14706",
+      "title": "Equilibrium Forcing: Adaptive Video Generation Without Noise Conditioning"
+    },
+    {
+      "url": "https://arxiv.org/abs/2608.14778",
+      "title": "AMPLIFAI: A Multiphase CT Dataset for Benchmarking Clinical Reasoning in LI-RADS Assessment of Liver Lesions"
+    },
+    {
+      "url": "https://arxiv.org/abs/2608.15054",
+      "title": "Frequency and Edge-Guided Segment Anything Model for Remote Sensing Image Semantic Segmentation"
+    },
+    {
+      "url": "https://arxiv.org/abs/2608.15296",
+      "title": "FMReward: Aligning and Evaluating Audio-Driven 3D Facial Animation with Human Preferences"
+    },
+    {
+      "url": "https://arxiv.org/abs/2608.15555",
+      "title": "RigidBench: Evaluating Rigid-Body Physics in Video Generation Models"
+    },
+    {
+      "url": "https://arxiv.org/abs/2608.16513",
+      "title": "MLLM-Guided Semantic Correction for Text-to-Video Generation"
+    },
+    {
+      "url": "https://nofilmschool.com/danny-mcbride-criterion-picks-list",
+      "title": "Danny McBride’s Criterion Closet Picks Reveal His Unexpected Influences"
+    },
+    {
+      "url": "https://nofilmschool.com/edward-norton-primal-fear-debut",
+      "title": "Born 57 Years Ago, the Actor Who Made His Film Debut With a Performance That Shocked Hollywood"
+    },
+    {
+      "url": "https://nofilmschool.com/the-devil-wears-prada-miranda-priestly-intro-scene-explained",
+      "title": "Iconic Film Introductions: Miranda Priestly's First ‘Devil Wears Prada’ Scene Is the Birth of a Fully-Formed Icon"
+    },
+    {
+      "url": "https://arxiv.org/abs/2608.15522",
+      "title": "Efficient Audio-Visual Generation via Synchrony-Aware Cross-Modal Sparse Attention"
+    },
+    {
+      "url": "https://arxiv.org/abs/2608.15659",
+      "title": "WorldRover: A Scalable Synthetic Video Data Engine for World Exploration with Rich Annotations"
+    },
+    {
+      "url": "https://arxiv.org/abs/2608.15785",
+      "title": "RoofGS: Roofline-Guided End-to-End Acceleration of 3D Gaussian Splatting"
+    },
+    {
+      "url": "https://arxiv.org/abs/2608.15818",
+      "title": "FlowDance: Music-Driven Dance Video Generation with Parallel Pose and RGB Streams"
+    },
+    {
+      "url": "https://arxiv.org/abs/2608.15110",
+      "title": "CETalk: Continuous Valence-Arousal Control for Audio-Driven 3D Talking Head Generation"
+    },
+    {
+      "url": "https://nofilmschool.com/we-are-rosie",
+      "title": "How This Community Is Helping Freelance Producers, Writers, and Editors Bag Fortune 500 Clients"
+    },
+    {
+      "url": "https://nofilmschool.com/jack-nicholson-everything-counts",
+      "title": "Jack Nicholson's Advice For Those Trying to Make It In Film and Television"
+    },
+    {
+      "url": "https://nofilmschool.com/robert-eggers-movies-ranked",
+      "title": "Robert Eggers Movies Ranked: Which One Is His Best?"
+    },
+    {
+      "url": "https://www.cartoonbrew.com/law/roblox-us-senate-investigation-child-safety-265715.html",
+      "title": "The U.S. Senate Is Investigating Roblox Over Child Safety Concerns"
+    },
+    {
+      "url": "https://nofilmschool.com/horror-classic-overshadowed-by-the-exorcist",
+      "title": "The 1973 Horror Classic Overshadowed by ‘The Exorcist’"
+    },
+    {
+      "url": "https://arxiv.org/abs/2608.15004",
+      "title": "FZ-VLM: A Two Stage Florence-Zephyr Vision Language Model Framework for Pulmonary Nodule Characterization and Clinical Decision Making"
     }
   ]
 }
