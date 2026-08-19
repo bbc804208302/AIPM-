@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "track": "domain",
-  "updatedAt": "2026-08-18T23:36:54.140Z",
+  "updatedAt": "2026-08-19T23:37:33.213Z",
   "items": [
     {
       "url": "https://www.creativebloq.com/3d/autodesk-tackles-ai-filmmakings-biggest-problem-with-3d-control",
@@ -486,6 +486,86 @@
     {
       "url": "https://arxiv.org/abs/2608.15004",
       "title": "FZ-VLM: A Two Stage Florence-Zephyr Vision Language Model Framework for Pulmonary Nodule Characterization and Clinical Decision Making"
+    },
+    {
+      "url": "https://arxiv.org/abs/2608.17426",
+      "title": "SemComp-Bench: Benchmarking Semantic Task Completion in Video Generation"
+    },
+    {
+      "url": "https://arxiv.org/abs/2601.21282",
+      "title": "WorldBench: Benchmarking Physical Understanding of World Models by Isolating Physics Concepts"
+    },
+    {
+      "url": "https://arxiv.org/abs/2608.12781",
+      "title": "Beyond Correctness: Benchmarking and Aligning Response Behaviors in Hybrid-Thinking MLLMs"
+    },
+    {
+      "url": "https://nofilmschool.com/dunesday",
+      "title": "Forget Barbenheimer: 'Dunesday' Is Shaping Up to Be a Box Office Bloodbath"
+    },
+    {
+      "url": "https://arxiv.org/abs/2608.17707",
+      "title": "DynaForcing: Overcoming Dynamic Collapse in Self-Forcing Distillation for Streaming Avatar Generation"
+    },
+    {
+      "url": "https://arxiv.org/abs/2607.23687",
+      "title": "GNM Head: A Generative aNthropometric Model of the human head"
+    },
+    {
+      "url": "https://nofilmschool.com/tusk-mac-backup-app",
+      "title": "This Mac Backup App for Video Creators Can Help You Free Up Space Without Losing Footage"
+    },
+    {
+      "url": "https://arxiv.org/abs/2608.17351",
+      "title": "Primitive-Driven Compositional Forensic Visual Prompting for Open-World Face Anti-Spoofing"
+    },
+    {
+      "url": "https://arxiv.org/abs/2608.17394",
+      "title": "Noisy group neurons with synchronous resetting for high-performance spiking neural networks"
+    },
+    {
+      "url": "https://arxiv.org/abs/2510.14462",
+      "title": "Unsupervised Deep Generative Models for Anomaly Detection in Neuroimaging: A Systematic Scoping Review"
+    },
+    {
+      "url": "https://arxiv.org/abs/2608.00137",
+      "title": "Two-Stage Teacher-Student Reliable Prior Learning for Robust Underwater Image Enhancement"
+    },
+    {
+      "url": "https://nofilmschool.com/an-intro-to-grip-equipment",
+      "title": "Curious About Becoming a Grip? Here’s Everything You Need to Know About the Equipment"
+    },
+    {
+      "url": "https://nofilmschool.com/matthew-perry-birthday-chandler-bing",
+      "title": "Born 57 Years Ago, Matthew Perry Became One of TV's Most Iconic Sitcom Characters"
+    },
+    {
+      "url": "https://nofilmschool.com/gilda-quote",
+      "title": "Film Quote of the Day: The 1946 Glenn Ford Noir Line That Summed Up His Character in One Line"
+    },
+    {
+      "url": "https://news.google.com/rss/articles/CBMixAFBVV95cUxNVDZXUlJVa1RtQXJjd1ctYUh1c1o2ZElfN0hhRXFrU0NWRm5YMTVHNFVnbXBYLV9Dd3l1bmF2YWRmOTB0aTRkb1E5VTNnOXprU1Yxb1M3WXhnbFdyWXlCOXN2S3FNMUJ3YTIyMl9wMEtONVItRjhnSzNzNFVrZjNIdmZwRlotZmdtTlZLWFY1T21KeXV6THNRMERYMDJLX3RaaTF4Sngxd3hlWVY2cHEweld4TXRoQnhxYjREbm1RVzBLVnNK?oc=5",
+      "title": "VERZA TV Launches New Español Collection, Expanding Latin American Microdrama Library - EIN News"
+    },
+    {
+      "url": "https://nofilmschool.com/gregg-arakis-teen-apocalypse-trilogy",
+      "title": "Looking Back at Gregg Araki’s Teen Apocalypse Trilogy: A Defiant Portrait of ’90s Youth"
+    },
+    {
+      "url": "https://arxiv.org/abs/2608.17662",
+      "title": "Is Haar Enough? Exploring Symlets and Coiflets for Wavelet Convolution Layers"
+    },
+    {
+      "url": "https://arxiv.org/abs/2608.17695",
+      "title": "Magnitude-Direction Decoupling for Fast Video Generation with Flow Matching Models"
+    },
+    {
+      "url": "https://arxiv.org/abs/2311.09614",
+      "title": "Comprehensive framework for evaluation of deep neural networks in detection and quantification of lymphoma from PET/CT images: clinical insights, pitfalls, and observer agreement analyses"
+    },
+    {
+      "url": "https://arxiv.org/abs/2407.13753",
+      "title": "Exploring Facial Biomarkers for Detecting Depression through Temporal Analysis of Action Units"
     }
   ]
 }
