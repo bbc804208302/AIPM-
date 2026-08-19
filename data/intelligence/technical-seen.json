@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "track": "technical",
-  "updatedAt": "2026-08-18T23:19:29.593Z",
+  "updatedAt": "2026-08-19T23:20:22.824Z",
   "items": [
     {
       "url": "https://www.latent.space/p/ainews-zawinskis-law-of-multiagents",
@@ -554,6 +554,86 @@
     {
       "url": "https://vercel.com/changelog/grok-build-harness-adapter",
       "title": "Grok Build is now available in the AI SDK harness layer"
+    },
+    {
+      "url": "https://vercel.com/changelog/fish-audio-models-now-available-on-ai-gateway-for-free",
+      "title": "Fish Audio models now available on Vercel AI Gateway for free"
+    },
+    {
+      "url": "https://github.com/obra/superpowers",
+      "title": "obra/superpowers"
+    },
+    {
+      "url": "https://x.com/nateherk/status/2089917020087210160",
+      "title": "A Week of Grok Bot Lessons in 10 Mins"
+    },
+    {
+      "url": "https://github.blog/changelog/2026-08-19-codeql-2-26-3-improves-github-actions-queries-and-javascript-modeling",
+      "title": "CodeQL 2.26.3 improves GitHub Actions queries and JavaScript modeling"
+    },
+    {
+      "url": "https://x.com/sairahul1/status/2089995692874068433",
+      "title": "How To Build a One-Person Company Using Grok Bot"
+    },
+    {
+      "url": "https://openai.com/index/offering-zero-data-retention-for-frontier-models",
+      "title": "Offering Zero Data Retention for frontier models"
+    },
+    {
+      "url": "https://openai.com/index/replit",
+      "title": "Replit expands access to software creation with GPT-5.6 Luna"
+    },
+    {
+      "url": "https://tldr.tech/ai/2026-08-19",
+      "title": "GLM-5.3 API 🤖, Cerebras’ new chip ⚡, OpenAI cyber slowdown 🚨"
+    },
+    {
+      "url": "https://github.blog/changelog/2026-08-18-enterprise-managed-settings-in-github-copilot-for-jetbrains",
+      "title": "Enterprise managed settings in GitHub Copilot for JetBrains"
+    },
+    {
+      "url": "https://openai.com/index/nvidia/chatgpt-work",
+      "title": "How NVIDIA scales expertise with ChatGPT Work"
+    },
+    {
+      "url": "https://www.producthunt.com/products/cluing",
+      "title": "Hosted Agents in Cluing"
+    },
+    {
+      "url": "https://www.producthunt.com/products/agentr",
+      "title": "AgentR 3.0"
+    },
+    {
+      "url": "https://x.com/XFreeze/status/2089954139220713662",
+      "title": "Here's the simplest way to get started with Grok Bot"
+    },
+    {
+      "url": "https://x.com/milesdeutscher/status/2089724781449052255",
+      "title": "Grok Bot: The Ultimate Guide"
+    },
+    {
+      "url": "https://x.com/mattyp/status/2089758434921160877",
+      "title": "Chat is all you need"
+    },
+    {
+      "url": "https://x.com/0xCodez/status/2089676836619878567",
+      "title": "Grok Bot Agents: how to automate your life in 10 Steps (Full-tutorial)"
+    },
+    {
+      "url": "https://x.com/GoogleAI/status/2089437060310434098",
+      "title": "Bring your spreadsheet data to life"
+    },
+    {
+      "url": "https://x.com/queenpresh_x/status/2089818935235600408",
+      "title": "AI Is Getting Smarter. But Where Does It Learn From?"
+    },
+    {
+      "url": "https://huggingface.co/blog/LiquidAI/qad",
+      "title": "LFM2.5 Q4\\_0 Checkpoints from Quantization-Aware Distillation"
+    },
+    {
+      "url": "https://www.latent.space/p/ainews-memory-prices-up-500-in-12",
+      "title": "[AINews] Memory prices up 500% in 12 months"
     }
   ]
 }
