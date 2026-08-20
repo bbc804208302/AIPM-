@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "track": "technical",
-  "updatedAt": "2026-08-20T03:24:11.966Z",
+  "updatedAt": "2026-08-20T23:23:36.745Z",
   "items": [
     {
       "url": "https://www.latent.space/p/ainews-zawinskis-law-of-multiagents",
@@ -634,6 +634,86 @@
     {
       "url": "https://www.latent.space/p/ainews-memory-prices-up-500-in-12",
       "title": "[AINews] Memory prices up 500% in 12 months"
+    },
+    {
+      "url": "https://vercel.com/blog/how-v0-authenticates-to-snowflake-without-exposing-the-users-oauth-token",
+      "title": "How v0 authenticates to Snowflake without exposing the user's OAuth token"
+    },
+    {
+      "url": "https://github.com/agent-substrate/substrate",
+      "title": "agent-substrate/substrate"
+    },
+    {
+      "url": "https://x.com/Sabrina_Ramonov/status/2089761229418221683",
+      "title": "This 1 Claude Skill fully replaces your Higgsfield subscription (FULL BREAKDOWN)"
+    },
+    {
+      "url": "https://www.latent.space/p/wayfinder-skill",
+      "title": "The /wayfinder Skill: Navigating the “Fog of War” of Planning"
+    },
+    {
+      "url": "https://github.com/PostHog/posthog",
+      "title": "PostHog/posthog"
+    },
+    {
+      "url": "https://x.com/RayFernando1337/status/2090195841822998888",
+      "title": "Turn Grok Bot Into Your CTO"
+    },
+    {
+      "url": "https://www.technologyreview.com/2026/08/20/1142571/ai-consciousness-debate-trap",
+      "title": "Debates over AI consciousness are a trap"
+    },
+    {
+      "url": "https://github.com/Tencent/AI-Infra-Guard",
+      "title": "Tencent/AI-Infra-Guard"
+    },
+    {
+      "url": "https://www.technologyreview.com/2026/08/20/1142070/unlocking-hidden-revenue-streams-with-market-models",
+      "title": "Unlocking hidden revenue streams with market models"
+    },
+    {
+      "url": "https://github.com/RyanCodrai/turbovec",
+      "title": "RyanCodrai/turbovec"
+    },
+    {
+      "url": "https://openai.com/index/introducing-ai-futures",
+      "title": "Introducing AI Futures"
+    },
+    {
+      "url": "https://openai.com/index/stampli",
+      "title": "Stampli cuts launch hours by 68% using ChatGPT Work"
+    },
+    {
+      "url": "https://tldr.tech/ai/2026-08-20",
+      "title": "Muse Video leaks 📹, Ramp Router launch 🔀, why Stripe bought OpenRouter 💰"
+    },
+    {
+      "url": "https://www.producthunt.com/products/cloudways",
+      "title": "Cloudways Managed AI Agents"
+    },
+    {
+      "url": "https://x.com/GoogleCloudTech/status/2090248297214525569",
+      "title": "5 design patterns for long-horizon agent harness"
+    },
+    {
+      "url": "https://huggingface.co/blog/LiquidAI/lfm25-dspark",
+      "title": "Up to 3.2x Faster Inference with LFM2.5-DSpark"
+    },
+    {
+      "url": "https://www.latent.space/p/ainews-death-of-params-zai-ceo-jie",
+      "title": "[AINews] Death of Params: Z.ai CEO Jie Tang on GLM 5.3 and the new Post-training Scaling Law"
+    },
+    {
+      "url": "https://openai.com/index/chatgpt-ads-expands-across-europe",
+      "title": "ChatGPT Ads expands across Europe"
+    },
+    {
+      "url": "https://www.technologyreview.com/2026/08/18/1142188/ai-recursive-self-improvement",
+      "title": "AI’s recursive self-improvement might not come so quickly after all"
+    },
+    {
+      "url": "https://openai.com/index/asana",
+      "title": "Asana cleared 5 years of engineering work in 2 weeks with Codex"
     }
   ]
 }
