@@ -103,7 +103,7 @@ export interface OpportunityTriageRun {
   id: string;
   agent: "product-opportunity-agent";
   mode: "daily-triage";
-  version: 2 | 3 | 4;
+  version: 2 | 3 | 4 | 5;
   promptVersion?: string;
   strategyVersion?: string;
   briefingDate: string;

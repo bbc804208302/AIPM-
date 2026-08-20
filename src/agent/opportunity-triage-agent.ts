@@ -48,7 +48,7 @@ interface TriageState {
   scoredCandidates: boolean;
 }
 
-const maximumSignals = 20;
+const maximumSignalsPerBatch = 10;
 
 const triageTools = [
   {
@@ -249,7 +249,6 @@ function toolSummary(name: OpportunityAgentToolName, args: Record<string, unknow
 async function executeTriageTool(
   toolCall: ProviderToolCall,
   state: TriageState,
-  intelligenceRepository: IntelligenceRepository,
   agentRepository: OpportunityAgentRepository,
 ): Promise<string> {
   const startedAt = Date.now();
@@ -259,13 +258,6 @@ async function executeTriageTool(
   try {
     let output: unknown;
     if (name === "list_daily_signals") {
-      const [technicalBrief, domainBrief] = await Promise.all([
-        intelligenceRepository.getLatestBrief("technical"),
-        intelligenceRepository.getLatestBrief("domain"),
-      ]);
-      state.signals = [...(technicalBrief?.items ?? []), ...(domainBrief?.items ?? [])]
-        .sort((left, right) => (right.publishedAt ?? right.createdAt).localeCompare(left.publishedAt ?? left.createdAt))
-        .slice(0, maximumSignals);
       if (state.signals.length === 0) throw new Error("没有可供初筛的最新情报。");
       state.listedSignals = true;
       output = { signals: state.signals.map(signalObservation) };
@@ -350,25 +342,44 @@ async function executeTriageTool(
   }
 }
 
-export async function runOpportunityTriageAgent(
-  intelligenceRepository: IntelligenceRepository,
-  agentRepository: OpportunityAgentRepository,
-  environment: Environment = process.env,
-  fetcher: FetchLike = fetch,
-): Promise<OpportunityTriageRun> {
-  const config = readOpportunityAgentConfig(environment);
-  if (!config) throw new Error("请先配置 LLM_API_KEY，并将 SIGNALFLOW_OPPORTUNITY_AGENT 设置为 true。");
-
-  const startedAt = new Date();
-  const state: TriageState = {
-    signals: [], memoryBySignal: new Map(), candidates: [], recommendedSignalIds: [], decisionSummary: null,
-    toolCalls: [], listedSignals: false, searchedMemory: false, scoredCandidates: false,
+function createTriageState(signals: readonly IntelligenceSignal[]): TriageState {
+  return {
+    signals,
+    memoryBySignal: new Map(),
+    candidates: [],
+    recommendedSignalIds: [],
+    decisionSummary: null,
+    toolCalls: [],
+    listedSignals: false,
+    searchedMemory: false,
+    scoredCandidates: false,
   };
+}
+
+function splitIntoBatches<T>(items: readonly T[], batchSize: number): readonly (readonly T[])[] {
+  const batches: T[][] = [];
+  for (let index = 0; index < items.length; index += batchSize) {
+    batches.push(items.slice(index, index + batchSize));
+  }
+  return batches;
+}
+
+async function runTriageBatch(
+  signals: readonly IntelligenceSignal[],
+  batchIndex: number,
+  batchCount: number,
+  agentRepository: OpportunityAgentRepository,
+  config: NonNullable<ReturnType<typeof readOpportunityAgentConfig>>,
+  fetcher: FetchLike,
+): Promise<{ state: TriageState; error: string | null }> {
+  const state = createTriageState(signals);
   const messages: ConversationMessage[] = [
     { role: "system", content: systemPrompt() },
-    { role: "user", content: "扫描最新双轨候选，完成中文概述、历史去重和全量结构化评分，按 PM 价值与机会分确定展示顺序和深度分析优先级。" },
+    {
+      role: "user",
+      content: `这是今日全量情报的第 ${batchIndex + 1}/${batchCount} 批，共 ${signals.length} 条。完成本批全部情报的中文概述、历史去重和结构化评分。`,
+    },
   ];
-  let runError: string | null = null;
 
   try {
     for (let step = 0; step < 7 && !state.decisionSummary; step += 1) {
@@ -383,10 +394,66 @@ export async function runOpportunityTriageAgent(
       if (providerMessage.tool_calls.length !== 1) throw new Error("Agent 每一步只能调用一个工具，以保证先观察再决策。");
       messages.push({ role: "assistant", content: providerMessage.content ?? null, tool_calls: providerMessage.tool_calls });
       const toolCall = providerMessage.tool_calls[0];
-      const result = await executeTriageTool(toolCall, state, intelligenceRepository, agentRepository);
+      const result = await executeTriageTool(toolCall, state, agentRepository);
       messages.push({ role: "tool", tool_call_id: toolCall.id, content: result });
     }
-    if (!state.decisionSummary) throw new Error("Agent 达到最大步骤数，未形成今日机会推荐。");
+    if (!state.decisionSummary) throw new Error("Agent 达到最大步骤数，未形成本批机会评分。");
+    return { state, error: null };
+  } catch (error) {
+    return { state, error: error instanceof Error ? error.message : "Agent 本批初筛失败。" };
+  }
+}
+
+export async function runOpportunityTriageAgent(
+  intelligenceRepository: IntelligenceRepository,
+  agentRepository: OpportunityAgentRepository,
+  environment: Environment = process.env,
+  fetcher: FetchLike = fetch,
+): Promise<OpportunityTriageRun> {
+  const config = readOpportunityAgentConfig(environment);
+  if (!config) throw new Error("请先配置 LLM_API_KEY，并将 SIGNALFLOW_OPPORTUNITY_AGENT 设置为 true。");
+
+  const startedAt = new Date();
+  let signals: readonly IntelligenceSignal[] = [];
+  let candidates: readonly OpportunityTriageCandidate[] = [];
+  let recommendedSignalIds: readonly string[] = [];
+  let toolCalls: OpportunityAgentToolCall[] = [];
+  let decisionSummary: string | null = null;
+  let runError: string | null = null;
+
+  try {
+    const [technicalBrief, domainBrief] = await Promise.all([
+      intelligenceRepository.getLatestBrief("technical"),
+      intelligenceRepository.getLatestBrief("domain"),
+    ]);
+    signals = [...(technicalBrief?.items ?? []), ...(domainBrief?.items ?? [])]
+      .sort((left, right) => (right.publishedAt ?? right.createdAt).localeCompare(left.publishedAt ?? left.createdAt));
+    if (signals.length === 0) throw new Error("没有可供初筛的最新情报。");
+
+    const batches = splitIntoBatches(signals, maximumSignalsPerBatch);
+    const scoredCandidates: OpportunityTriageCandidate[] = [];
+    for (let batchIndex = 0; batchIndex < batches.length; batchIndex += 1) {
+      const result = await runTriageBatch(
+        batches[batchIndex],
+        batchIndex,
+        batches.length,
+        agentRepository,
+        config,
+        fetcher,
+      );
+      toolCalls = toolCalls.concat(result.state.toolCalls.map((call) => ({
+        ...call,
+        id: `batch-${batchIndex + 1}:${call.id}`,
+        inputSummary: `批次 ${batchIndex + 1}/${batches.length} · ${call.inputSummary}`,
+      })));
+      if (result.error) throw new Error(`第 ${batchIndex + 1}/${batches.length} 批评分失败：${result.error}`);
+      scoredCandidates.push(...result.state.candidates);
+    }
+
+    candidates = scoredCandidates.sort((left, right) => right.opportunityScore - left.opportunityScore);
+    recommendedSignalIds = candidates.map((candidate) => candidate.signalId);
+    const highOpportunityCount = candidates.filter((candidate) => candidate.opportunityScore >= 70).length;
+    decisionSummary = `Agent 已分 ${batches.length} 批完成 ${candidates.length} 条情报的 PM 机会评分，并按分数排序；其中 ${highOpportunityCount} 条高机会情报进入自动深度分析候选。`;
   } catch (error) {
     runError = error instanceof Error ? error.message : "Agent 初筛失败。";
   }
@@ -396,23 +463,23 @@ export async function runOpportunityTriageAgent(
     id: `TRIAGE-${randomUUID()}`,
     agent: "product-opportunity-agent",
     mode: "daily-triage",
-    version: 4,
-    promptVersion: "daily-triage-v5-source-truth",
+    version: 5,
+    promptVersion: "daily-triage-v6-batched-full-coverage",
     strategyVersion: "opportunity-weighted-v1",
-    briefingDate: state.signals.map((signal) => signal.briefingDate).sort().at(-1) ?? completedAt.toISOString().slice(0, 10),
+    briefingDate: signals.map((signal) => signal.briefingDate).sort().at(-1) ?? completedAt.toISOString().slice(0, 10),
     objective: "扫描每日情报并完成 PM 机会评分与深度分析优先级排序",
-    status: state.decisionSummary ? "completed" : "failed",
+    status: decisionSummary ? "completed" : "failed",
     model: config.model,
     startedAt: startedAt.toISOString(),
     completedAt: completedAt.toISOString(),
     durationMs: completedAt.getTime() - startedAt.getTime(),
-    scannedSignals: state.signals.length,
-    candidates: state.candidates,
-    recommendedSignalIds: state.recommendedSignalIds,
+    scannedSignals: signals.length,
+    candidates,
+    recommendedSignalIds,
     reviewSignalIds: [],
     autoAnalyzedSignalIds: [],
-    decisionSummary: state.decisionSummary ?? runError ?? "未形成推荐",
-    toolCalls: state.toolCalls,
+    decisionSummary: decisionSummary ?? runError ?? "未形成推荐",
+    toolCalls,
     error: runError,
   };
   await agentRepository.saveTriageRun(run);

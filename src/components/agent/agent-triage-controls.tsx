@@ -47,7 +47,7 @@ export function AgentTriageControls({
       <div>
         <span>AUTONOMOUS TRIAGE</span>
         <h2 id="agent-triage-control-title">运行 PM 机会评分与分析</h2>
-        <p>扫描最多 20 条情报，生成中文概述、PM 价值分类与机会评分，并自动深度分析高分内容。</p>
+        <p>扫描双轨全部候选并分批生成中文概述、PM 价值分类与机会评分，再自动深度分析高分内容。</p>
       </div>
       <div>
         <strong>{signalCount} 条待扫描</strong>
