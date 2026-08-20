@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "track": "domain",
-  "updatedAt": "2026-08-19T23:37:33.213Z",
+  "updatedAt": "2026-08-20T23:41:36.260Z",
   "items": [
     {
       "url": "https://www.creativebloq.com/3d/autodesk-tackles-ai-filmmakings-biggest-problem-with-3d-control",
@@ -566,6 +566,86 @@
     {
       "url": "https://arxiv.org/abs/2407.13753",
       "title": "Exploring Facial Biomarkers for Detecting Depression through Temporal Analysis of Action Units"
+    },
+    {
+      "url": "https://arxiv.org/abs/2608.18607",
+      "title": "VA-Judger: Reward Modeling from Human Preference Feedback for Joint Video-Audio Generation"
+    },
+    {
+      "url": "https://arxiv.org/abs/2608.18710",
+      "title": "CamWorldQA: Perceptual Quality Assessment of Camera-Controlled World Video Generation"
+    },
+    {
+      "url": "https://arxiv.org/abs/2608.18957",
+      "title": "Institutional Books - Visual Elements: An open-source pipeline for extracting, classifying, deduplicating, and captioning visual elements from digital book collections"
+    },
+    {
+      "url": "https://arxiv.org/abs/2608.19055",
+      "title": "Generalized Audio-Driven Synthesis of Precise Drummer Motion"
+    },
+    {
+      "url": "https://arxiv.org/abs/2608.19177",
+      "title": "Image-Guided Pavement Defect Recognition in GPR Data with novel 3D Deep Learning Architecture"
+    },
+    {
+      "url": "https://arxiv.org/abs/2512.22274",
+      "title": "GeCo: Evaluating Geometric Consistency for Video Generation via Motion and Structure"
+    },
+    {
+      "url": "https://nofilmschool.com/eddie-ai-9b",
+      "title": "Eddie AI Unveils a Specialized 9B Model Built for Private, Personalized Video Editing"
+    },
+    {
+      "url": "https://nofilmschool.com/tombstone-doc-holliday-hypocrisy",
+      "title": "Film Quote of the Day: The 'Tombstone' Quote That Perfectly Captures Doc Holliday's Wicked Sense of Humor"
+    },
+    {
+      "url": "https://arxiv.org/abs/2608.18484",
+      "title": "Partition the Support, Reconstruct the Residual: Training-Free Sparse Attention for Video Generation and World Models"
+    },
+    {
+      "url": "https://arxiv.org/abs/2506.03079",
+      "title": "ORV: 4D Occupancy-centric Robot Video Generation"
+    },
+    {
+      "url": "https://arxiv.org/abs/2608.18915",
+      "title": "Simple, Safe, and Overlooked: Reclaiming Sustainable Domain Generalization with Statistical Color Matching"
+    },
+    {
+      "url": "https://arxiv.org/abs/2503.08484",
+      "title": "Generalizable AI-Generated Image Detection Based on Fractal Self-Similarity in the Spectrum"
+    },
+    {
+      "url": "https://nofilmschool.com/first-feature",
+      "title": "How I Stole From My Own Life to Make My First Feature in 18 Days"
+    },
+    {
+      "url": "https://nofilmschool.com/over-researching-can-ruin-scene",
+      "title": "Why Over-Researching Can Ruin a Great Scene—and How to Fix It"
+    },
+    {
+      "url": "https://nofilmschool.com/editing-exercise-sinners-emotion",
+      "title": "How to Reverse-Engineer Emotion in Your Editing"
+    },
+    {
+      "url": "https://nofilmschool.com/lut-tuner-cut-point-labs",
+      "title": "Fine-Tune Your LUTs With This LUT Tuner macOS App From Cut Point Labs"
+    },
+    {
+      "url": "https://nofilmschool.com/best-world-war-i-movies",
+      "title": "The 10 Best World War I Movies Ever Made"
+    },
+    {
+      "url": "https://nofilmschool.com/hard-target-van-damme",
+      "title": "The Greatest Action Movie Moment Ever Was When Van Damme Punched That Snake in ‘Hard Target’"
+    },
+    {
+      "url": "https://news.google.com/rss/articles/CBMisgFBVV95cUxOaW9kZmZmeFdPQUo2dGtzWjZRMlBDZEs2TGVZeDlWMWpYeFI1RzBTR3NSeEc1ckNobHJ1cFlGQTM3UmZFUDVzdGpOWjVyQWdPUkQtOHZnMTRBanFMWnpySURVUEVmZTAxbEgxMmdEVmJ5akk0R0dTTkRtbll3bm5KdXdfOXp5NlM2alFMUzlpQzRUdTNJQjRiNWRZV0dtd0tBeGNnZm9lS0dfb0cxd0lYSlVn0gGyAUFVX3lxTE5pb2RmZmZ4V09BSjZ0a3NaNlEyUENkSzZMZVl4OVYxalh4UjVHMFNHc1J4RzVyQ2hscnVwWUZBMzdSZkVQNXN0ak5aNXJBZ09SRC04dmcxNEFqcUxaenJJRFVQRWZlMDFsSDEyZ0RWYnlqSTRHR1NORG1uWXdubkp1d185enk2UzZqUUxTOWlDNFR1M0lCNGI1ZFlXR213S0F4Y2dmb2VLR19vRzF3SVhKVWc?oc=5",
+      "title": "Anijam AI Animation Agent: The Next Evolution Beyond Text-to-Video Generators - findarticles.com"
+    },
+    {
+      "url": "https://arxiv.org/abs/2608.18679",
+      "title": "FRAGMENT: Factorized Graph Representations for Document Generation and Editing via Entity-Aware Transformations"
     }
   ]
 }
