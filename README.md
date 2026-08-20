@@ -121,7 +121,7 @@ Agent 运行记录展示当天扫描量、评分覆盖、Memory 重复过滤、�
 - Google News · Microdrama
 - Google News · AIGC Production
 
-两条情报轨道分别维护自己的采集时间和关注领域。每日以 10 条为产品目标、20 条为 Agent 候选硬上限；严格去重后允许不足，不会为了凑满数量重新展示旧内容。`briefingDate` 表示 Asia/Shanghai 当天生成的情报批次；候选内容限定为近 15 个上海自然日，原始发布时间单独保留。Collector 会优先排列具体的新产品、新功能、Agent、Skill、工具与应用案例；已在历史批次出现的规范化 URL 或标题不会再次录用，避免用户重复阅读同一情报。
+两条情报轨道分别维护自己的采集时间和关注领域，每条轨道每日以 10 条为产品目标、20 条为候选硬上限；严格去重后允许不足，不会为了凑满数量重新展示旧内容。`briefingDate` 表示 Asia/Shanghai 当天生成的情报批次；候选内容限定为近 15 个上海自然日，原始发布时间单独保留。Collector 会优先排列具体的新产品、新功能、Agent、Skill、工具与应用案例；已在历史批次出现的规范化 URL 或标题不会再次录用，避免用户重复阅读同一情报。
 
 ## Collector 如何工作
 
@@ -295,7 +295,7 @@ LLM_API_BASE_URL=https://api.deepseek.com
 LLM_MODEL=deepseek-v4-flash
 ```
 
-以上示例使用 DeepSeek；也可以替换为其他 OpenAI 兼容服务。当前每日主链路由 Product Intelligence Agent 处理最多 20 条候选，并只接收公开来源标题、摘要及页面中可审计的公开描述。旧的独立 LLM 审校仍保留为本地兼容能力，但 GitHub Collector 不再重复调用它，避免中文审校与 Agent 评分产生双份 API 消耗。普通网页访客不会调用 LLM，也不会暴露 API Key；下载本项目的其他人必须自行配置自己的 Key。
+以上示例使用 DeepSeek；也可以替换为其他 OpenAI 兼容服务。当前每日主链路由 Product Intelligence Agent 分批处理双轨全部候选，每批最多 10 条，并只接收公开来源标题、摘要及页面中可审计的公开描述。旧的独立 LLM 审校仍保留为本地兼容能力，但 GitHub Collector 不再重复调用它，避免中文审校与 Agent 评分产生双份 API 消耗。普通网页访客不会调用 LLM，也不会暴露 API Key；下载本项目的其他人必须自行配置自己的 Key。
 
 仓库的每日链路统一在早上 7 点运行并留出依赖间隔：AI 行业情报 `07:00`、业务领域情报 `07:15`、Product Intelligence Agent `07:30`，时区均为 `Asia/Shanghai`。两个 Collector 只提交 `data/intelligence` 中发生变化的快照；Agent 在候选准备完成后读取最新双轨数据，避免并发时误用旧快照。GitHub 调度可能有少量排队延迟。
 
@@ -336,7 +336,7 @@ flowchart TB
 
 工程约束：
 
-- Agent 评分必须覆盖最多 20 条最新双轨候选，先逐条检索 Memory，再生成中文概述、PM 价值分类，并按业务相关性、新颖性、用户价值、可行动性与证据质量评分。
+- Agent 评分必须分批覆盖两条轨道的全部最新候选，每批最多 10 条；先逐条检索 Memory，再生成中文概述、PM 价值分类，并按业务相关性、新颖性、用户价值、可行动性与证据质量评分。
 - 机会总分使用固定权重计算，公开热度仅占 5%，历史重复风险会扣分；Agent 不能为了凑数推荐低价值内容。
 - 全部情报按机会分从高到低展示；70 分以上自动进入深度分析，每天最多 3 条，其余内容保留手动深度分析入口。
 - 深度分析必须先读取 Signal，再检索历史 Memory，不能跳过证据直接生成需求。
@@ -383,7 +383,7 @@ pnpm check
 
 当前测试覆盖：
 
-- Collector registry、Normalization、真实近 15 日窗口、产品情报预排序、单批次与跨批次去重、目标 10 条 / 最多 20 条双轨候选
+- Collector registry、Normalization、真实近 15 日窗口、产品情报预排序、单批次与跨批次去重、每轨目标 10 条 / 最多 20 条候选
 - 原文上下文提取、LLM JSON 修复与重试、审校内容保护和公开热度计算
 - Product Intelligence Agent 中文概述、PM 价值分类、固定权重评分、全量排序、自动深度分析上限、工具顺序、Memory 召回、候选需求门控与 File Repository
 - 固定集 Agent Eval、事实覆盖、分类/评分/决策一致性、Bad Case 归因、版本化结果与生产只读边界
@@ -431,7 +431,7 @@ docs/                    # 架构、产品、设计与参考项目说明
 - [x] Next.js 产品工作区与六个核心入口
 - [x] AI 行业 / 业务领域双轨情报
 - [x] 17 个公开来源、Registry、Dispatch、Normalization 与 Deduplication
-- [x] 近 15 日候选、历史已展示去重、产品情报优先级、目标 10 条 / 最多 20 条候选与版本化 File Repository
+- [x] 近 15 日候选、历史已展示去重、产品情报优先级、每轨目标 10 条 / 最多 20 条候选与版本化 File Repository
 - [x] DeepSeek / OpenAI 兼容中文审校、失败恢复与公开热度
 - [x] 飞书 Demand Repository、需求详情和产品需求看板
 - [x] 本地任务控制、公开环境只读和 GitHub Actions 工作流

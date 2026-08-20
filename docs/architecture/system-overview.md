@@ -18,7 +18,7 @@ Fixed Historical Intelligence → Agent Eval → Effect Metrics + Bad Case Root 
 Feishu Bitable → Demand Repository → 内部需求池
 ```
 
-Phase 4 将 Product Intelligence Agent 纳入 Daily Intelligence 主链路。Collector 只生成最多 20 条低成本候选；Agent 统一负责中文概述、Memory 去重、PM 价值分类、机会评分排序和高分自动深度分析。公开页面只读取已经提交的候选快照和脱敏 Agent 运行记录，不在访客请求中调用 LLM。
+Phase 4 将 Product Intelligence Agent 纳入 Daily Intelligence 主链路。两条 Collector 轨道分别生成最多 20 条低成本候选；Agent 以每批最多 10 条处理双轨全部候选，统一负责中文概述、Memory 去重、PM 价值分类、机会评分排序和高分自动深度分析。公开页面只读取已经提交的候选快照和脱敏 Agent 运行记录，不在访客请求中调用 LLM。
 
 ## Product Intelligence Agent boundaries
 

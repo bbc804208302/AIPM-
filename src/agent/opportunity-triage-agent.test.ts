@@ -126,5 +126,91 @@ test("uses original source facts instead of an unreviewed Chinese draft", async 
   assert.equal(run.status, "completed");
   assert.match(observation, /Netflix changes its animated film theatrical window/);
   assert.doesNotMatch(observation, /HEART 叙事框架/);
-  assert.equal(run.promptVersion, "daily-triage-v5-source-truth");
+  assert.equal(run.promptVersion, "daily-triage-v6-batched-full-coverage");
+});
+
+test("scores every item across two full tracks in bounded batches", async () => {
+  const makeSignal = (index: number, track: "technical" | "domain"): IntelligenceSignal => ({
+    ...signals[index % signals.length],
+    id: `SIG-${track}-${index}`,
+    briefingDate: "2026-08-20",
+    track,
+    title: `${track} product update ${index}`,
+    summary: `Product ${index} adds an AI workflow capability.`,
+    titleZh: undefined,
+    summaryZh: undefined,
+    translationStatus: "needs-review",
+    publishedAt: `2026-08-19T${String(index % 20).padStart(2, "0")}:00:00.000Z`,
+    collectedAt: "2026-08-20T00:00:00.000Z",
+    createdAt: "2026-08-20T00:00:00.000Z",
+  });
+  const technical = Array.from({ length: 20 }, (_, index) => makeSignal(index, "technical"));
+  const domain = Array.from({ length: 20 }, (_, index) => makeSignal(index, "domain"));
+  const savedTriageRuns: OpportunityTriageRun[] = [];
+  const intelligenceRepository: IntelligenceRepository = {
+    getLatestBrief: async (track) => brief(track, track === "technical" ? technical : domain),
+    getBrief: async () => null,
+    getSeenItems: async () => [],
+    saveBrief: async () => undefined,
+    findById: async (id) => [...technical, ...domain].find((signal) => signal.id === id) ?? null,
+  };
+  const agentRepository: OpportunityAgentRepository = {
+    listRuns: async () => [],
+    saveRun: async () => undefined,
+    listTriageRuns: async () => savedTriageRuns,
+    saveTriageRun: async (run) => { savedTriageRuns.push(run); },
+    searchMemory: async () => [],
+  };
+  let request = 0;
+  let batchSignals: readonly { id: string }[] = [];
+  const fetcher = async (_input: string | URL | Request, init?: RequestInit) => {
+    request += 1;
+    const step = (request - 1) % 4;
+    if (step === 0) return toolResponse(`batch-${request}-list`, "list_daily_signals", {});
+
+    if (step === 1) {
+      const body = JSON.parse(String(init?.body)) as { messages: readonly { role: string; content: string }[] };
+      const observation = JSON.parse(body.messages.findLast((message) => message.role === "tool")?.content ?? "{}") as { signals?: readonly { id: string }[] };
+      batchSignals = observation.signals ?? [];
+      return toolResponse(`batch-${request}-memory`, "search_memory", {
+        queries: batchSignals.map((signal) => ({ signalId: signal.id, query: `${signal.id} product capability` })),
+      });
+    }
+
+    if (step === 2) {
+      return toolResponse(`batch-${request}-score`, "score_candidates", {
+        candidates: batchSignals.map((signal, index) => ({
+          signalId: signal.id,
+          titleZh: `AI 产品能力 ${signal.id}`,
+          summaryZh: `该产品新增 AI 工作流能力 ${index + 1}，用于缩短内容处理流程。`,
+          relevance: 80,
+          novelty: 70,
+          userValue: 75,
+          actionability: 72,
+          evidence: 78,
+          duplicateRisk: 0,
+          pmValueType: "capability",
+          rationale: "帮助 PM 判断产品能力变化并形成竞品功能对比。",
+        })),
+      });
+    }
+
+    return toolResponse(`batch-${request}-select`, "select_intelligence_for_pool", { summary: "本批评分完成。" });
+  };
+
+  const run = await runOpportunityTriageAgent(
+    intelligenceRepository,
+    agentRepository,
+    { SIGNALFLOW_OPPORTUNITY_AGENT: "true", LLM_API_KEY: "secret", LLM_MODEL: "test-model" },
+    fetcher,
+  );
+
+  assert.equal(run.status, "completed");
+  assert.equal(run.scannedSignals, 40);
+  assert.equal(run.candidates.length, 40);
+  assert.equal(new Set(run.candidates.map((candidate) => candidate.signalId)).size, 40);
+  assert.equal(run.toolCalls.length, 16);
+  assert.equal(request, 16);
+  assert.match(run.decisionSummary, /分 4 批完成 40 条情报/);
+  assert.equal(savedTriageRuns.length, 1);
 });
