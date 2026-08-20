@@ -1,7 +1,133 @@
 {
   "schemaVersion": 2,
-  "updatedAt": "2026-08-19T23:51:44.154Z",
+  "updatedAt": "2026-08-20T03:48:24.568Z",
   "runs": [
+    {
+      "id": "RUN-7791ac6e-64fe-4b51-9df7-44f7c44d783d",
+      "agent": "product-opportunity-agent",
+      "version": 1,
+      "signalId": "SIG-20260819-2F000139",
+      "signalTitle": "Replit expands access to software creation with GPT-5.6 Luna",
+      "track": "technical",
+      "objective": "评估公开情报并形成可供产品经理确认的候选需求",
+      "status": "rejected",
+      "decision": "reject",
+      "decisionSummary": "该情报为 OpenAI 官方发布的 Replit Free Mode 产品新闻，核心事实仅为其基于 GPT-5.6 Luna 提供免费 AI 编程能力，\"让任何人无需担心 token 成本即可把想法变成软件\"。属于竞品能力/模型动态类公告，未包含明确的目标用户画像、待解决的用户问题或可由我方产品承接的可落地机会；\"任何人都能创建软件\"更多是营销承诺，缺乏用户侧证据支撑。与历史处理一致（OpenAI 零数据保留公告、开源 AI 工具、模型能力新闻等均因无明确需求信号而拒绝转化），建议仅作为 AI 编程类竞品动态跟踪，若后续出现具体用户痛点场景或差异化机会再重新评估。",
+      "model": "deepseek-v4-flash",
+      "startedAt": "2026-08-20T03:48:30.263Z",
+      "completedAt": "2026-08-20T03:48:37.439Z",
+      "durationMs": 7176,
+      "toolCalls": [
+        {
+          "id": "call_00_AHhcHmR6qWqISfnSYyYx9815",
+          "name": "get_signal",
+          "status": "success",
+          "inputSummary": "读取情报 SIG-20260819-2F000139",
+          "outputSummary": "已读取 OpenAI News 的公开情报证据",
+          "durationMs": 0
+        },
+        {
+          "id": "call_00_12ERaH64AxFrBAYVEpMC2854",
+          "name": "search_memory",
+          "status": "success",
+          "inputSummary": "检索“Replit AI 编程 免费模式 无代码开发 软件创建”",
+          "outputSummary": "召回 5 条历史决策",
+          "durationMs": 1
+        },
+        {
+          "id": "call_00_8TbTZC5rrhvd6CwGD64h3994",
+          "name": "reject_signal",
+          "status": "success",
+          "inputSummary": "记录暂不转化原因",
+          "outputSummary": "已记录暂不转化结论",
+          "durationMs": 0
+        }
+      ],
+      "memoryMatches": [
+        {
+          "runId": "RUN-4f895686-1062-4967-a8a6-ea3c30e2cf41",
+          "signalTitle": "Offering Zero Data Retention for frontier models",
+          "decision": "reject",
+          "summary": "该情报为 OpenAI 官方产品政策公告（面向合格 API 客户重申零数据保留并预览 Private Safety Processing），属于供应商能力/政策信息，而非用户问题或需求信号。情报中未包含明确的目标用户、待解决问题或可由我方产品承接的可落地机会，新闻价值本身不足以构成候选需求。建议仅作为合规与竞品动态跟踪，暂不创建候选需求。",
+          "createdAt": "2026-08-20T03:48:30.259Z"
+        },
+        {
+          "runId": "RUN-9542d2e6-38ce-4df5-a36f-26fa3ea619ef",
+          "signalTitle": "akitaonrails/ai-memory",
+          "decision": "reject",
+          "summary": "该信号为 GitHub Trending 上开源项目 akitaonrails/ai-memory 的热度信息，核心事实仅为其仓库描述（为 agent 编码 CLI 提供长期记忆、促进不同 agent 厂商之间交接）。信号未提供明确的用户问题、目标用户画像或可落地产品机会；\"agent 交接丢失上下文\"这一痛点仅可推断，缺乏用户侧证据（如问题场景、采用反馈、差异化价值主张）支撑。heatScore 69 属于开源工具热度，热度本身不构成需求。与历史处理一致（TradingAgents、Strix、Flue、TLDR AI 等开源工具/技术新闻均拒绝转化），建议持续跟踪该项目在 agent 编码与跨厂商交接场景中的采用反馈，若出现具体落地场景或明确用户痛点证据再重新评估。",
+          "createdAt": "2026-08-17T23:51:38.211Z"
+        },
+        {
+          "runId": "RUN-ef34b7f1-1b6f-4e05-93ca-4f041490ecc4",
+          "signalTitle": "usestrix/strix",
+          "decision": "reject",
+          "summary": "该信号为 GitHub Trending 上的开源 AI 渗透测试工具介绍，核心事实仅为其仓库描述（可用 AI 发现并修复应用漏洞），未提供明确的用户问题场景、目标用户画像或针对我们产品可落地的机会。目标用户（开发者/安全团队）与痛点（漏洞发现修复成本）仅可推断，缺乏用户侧证据或差异化价值主张支撑；heatScore 77 属于开源工具热度，而热度本身不构成需求。与历史处理一致（TradingAgents、Flue 等开源工具/技术新闻均拒绝转化），建议持续跟踪该工具的采用反馈与安全场景用户痛点，若出现具体落地场景再重新评估。",
+          "createdAt": "2026-08-17T23:51:30.867Z"
+        },
+        {
+          "runId": "RUN-fc9879ac-e3b8-4e88-8296-d01d2ccd2618",
+          "signalTitle": "[AINews] Muse Glimmer and Spark: Open Weights return Personal Superintelligence promise",
+          "decision": "reject",
+          "summary": "该情报仅为技术媒体（Latent Space）发布的开源模型能力新闻，核心事实是 Glimmer 可在单张 RTX 3090 上运行。情报中未包含明确的目标用户、待解决的用户问题或可落地的产品机会，属于模型能力动态而非需求信号。其\"个人超级智能\"表述更多是营销性承诺，缺乏用户侧证据支撑，不满足转化为候选需求的门槛。建议持续跟踪该模型的实测能力与开发者反馈，若后续出现具体使用场景和用户痛点再重新评估。",
+          "createdAt": "2026-08-16T11:22:50.220Z"
+        },
+        {
+          "runId": "RUN-cf8a57b3-111c-4086-98a5-b2cee46b7b6d",
+          "signalTitle": "React for Agents: Astro Creator Brings Hooks to his Meta-Harness, Flue",
+          "decision": "reject",
+          "summary": "该信号为 Latent Space 对 Flue 2（agent harness，借鉴 React hooks 设计）的技术访谈/新闻类内容，属于开发者设计理念的讨论，而非明确的用户需求。信号未提供具体用户痛点、问题场景或可落地产品机会；目标用户（agent 开发者）虽可推断，但缺乏问题与价值主张支撑，heatScore 为空，新闻热度本身不构成需求。与历史相似信号（TradingAgents 开源框架、TLDR AI 聚合新闻）的处理结论一致，暂不建议转化为候选需求。",
+          "createdAt": "2026-08-16T10:37:11.799Z"
+        }
+      ],
+      "proposal": null,
+      "error": null
+    },
+    {
+      "id": "RUN-4f895686-1062-4967-a8a6-ea3c30e2cf41",
+      "agent": "product-opportunity-agent",
+      "version": 1,
+      "signalId": "SIG-20260819-DF8F1230",
+      "signalTitle": "Offering Zero Data Retention for frontier models",
+      "track": "technical",
+      "objective": "评估公开情报并形成可供产品经理确认的候选需求",
+      "status": "rejected",
+      "decision": "reject",
+      "decisionSummary": "该情报为 OpenAI 官方产品政策公告（面向合格 API 客户重申零数据保留并预览 Private Safety Processing），属于供应商能力/政策信息，而非用户问题或需求信号。情报中未包含明确的目标用户、待解决问题或可由我方产品承接的可落地机会，新闻价值本身不足以构成候选需求。建议仅作为合规与竞品动态跟踪，暂不创建候选需求。",
+      "model": "deepseek-v4-flash",
+      "startedAt": "2026-08-20T03:48:24.574Z",
+      "completedAt": "2026-08-20T03:48:30.259Z",
+      "durationMs": 5685,
+      "toolCalls": [
+        {
+          "id": "call_00_mjMKq5xjcgnGC4DAbeYO3819",
+          "name": "get_signal",
+          "status": "success",
+          "inputSummary": "读取情报 SIG-20260819-DF8F1230",
+          "outputSummary": "已读取 OpenAI News 的公开情报证据",
+          "durationMs": 1
+        },
+        {
+          "id": "call_00_spSWqBsD7qfbfSkTlpXz3640",
+          "name": "search_memory",
+          "status": "success",
+          "inputSummary": "检索“零数据保留 Zero Data Retention 数据隐私 OpenAI API”",
+          "outputSummary": "召回 0 条历史决策",
+          "durationMs": 1
+        },
+        {
+          "id": "call_00_tBfXk4QkjceztIVI5Tcv4123",
+          "name": "reject_signal",
+          "status": "success",
+          "inputSummary": "记录暂不转化原因",
+          "outputSummary": "已记录暂不转化结论",
+          "durationMs": 0
+        }
+      ],
+      "memoryMatches": [],
+      "proposal": null,
+      "error": null
+    },
     {
       "id": "RUN-9542d2e6-38ce-4df5-a36f-26fa3ea619ef",
       "agent": "product-opportunity-agent",
@@ -438,6 +564,535 @@
     }
   ],
   "triageRuns": [
+    {
+      "id": "TRIAGE-5d2c4fa4-a0c7-449e-bbcc-436589aa70b5",
+      "agent": "product-opportunity-agent",
+      "mode": "daily-triage",
+      "version": 4,
+      "promptVersion": "daily-triage-v5-source-truth",
+      "strategyVersion": "opportunity-weighted-v1",
+      "briefingDate": "2026-08-20",
+      "objective": "扫描每日情报并完成 PM 机会评分与深度分析优先级排序",
+      "status": "completed",
+      "model": "deepseek-v4-flash",
+      "startedAt": "2026-08-20T03:46:52.867Z",
+      "completedAt": "2026-08-20T03:48:24.568Z",
+      "durationMs": 91701,
+      "scannedSignals": 20,
+      "candidates": [
+        {
+          "signalId": "SIG-20260819-DF8F1230",
+          "signalTitle": "OpenAI 强化前沿模型零数据留存承诺并预览私有安全处理",
+          "titleZh": "OpenAI 强化前沿模型零数据留存承诺并预览私有安全处理",
+          "summaryZh": "OpenAI 向符合条件的 API 客户重申零数据留存，并预告 Private Safety Processing，在不牺牲数据隐私的前提下提供高级 AI 安全处理。",
+          "track": "technical",
+          "source": "OpenAI News",
+          "heatScore": null,
+          "dimensions": {
+            "relevance": 90,
+            "novelty": 75,
+            "userValue": 85,
+            "actionability": 70,
+            "evidence": 80
+          },
+          "duplicateRisk": 10,
+          "memoryMatchCount": 0,
+          "opportunityScore": 77,
+          "recommendation": "priority",
+          "pmValueType": "capability",
+          "rationale": "零数据留存加私有安全处理直接决定企业级产品能否用前沿模型处理敏感数据，是合规型客户准入与方案设计的硬约束。"
+        },
+        {
+          "signalId": "SIG-20260819-2F000139",
+          "signalTitle": "Replit 推出 GPT-5.6 Luna 驱动的免费模式",
+          "titleZh": "Replit 推出 GPT-5.6 Luna 驱动的免费模式",
+          "summaryZh": "Replit 上线由 GPT-5.6 Luna 驱动的 Free Mode，用户无需担心 token 成本即可把想法变成可运行软件。",
+          "track": "technical",
+          "source": "OpenAI News",
+          "heatScore": null,
+          "dimensions": {
+            "relevance": 90,
+            "novelty": 65,
+            "userValue": 85,
+            "actionability": 75,
+            "evidence": 80
+          },
+          "duplicateRisk": 35,
+          "memoryMatchCount": 5,
+          "opportunityScore": 70,
+          "recommendation": "priority",
+          "pmValueType": "competitor",
+          "rationale": "Replit 把免 token 成本当作获客手段直接冲击 AI 编程工具的定价与免费层设计，需据此重估自家产品的入口与商业化策略。"
+        },
+        {
+          "signalId": "SIG-20260819-8C6014A3",
+          "signalTitle": "Superpowers：面向编码 Agent 的可组合技能框架与开发方法论",
+          "titleZh": "Superpowers：面向编码 Agent 的可组合技能框架与开发方法论",
+          "summaryZh": "开源项目 Superpowers 提供一套基于可组合 skill 的编码 Agent 完整开发方法论，Agent 启动后先询问用户真实目标而非直接写代码。",
+          "track": "technical",
+          "source": "GitHub Trending",
+          "heatScore": 75,
+          "dimensions": {
+            "relevance": 85,
+            "novelty": 80,
+            "userValue": 75,
+            "actionability": 75,
+            "evidence": 60
+          },
+          "duplicateRisk": 35,
+          "memoryMatchCount": 5,
+          "opportunityScore": 67,
+          "recommendation": "candidate",
+          "pmValueType": "design-pattern",
+          "rationale": "把编码 Agent 拆成‘先澄清目标再执行’的可组合技能集，是一套可直接借鉴的产品化范式，帮助 PM 设计自研 agent 的启动流程与技能编排结构。"
+        },
+        {
+          "signalId": "SIG-20260819-F56FB1EE",
+          "signalTitle": "Liquid AI 发布量化感知蒸馏版 LFM2.5 Q4_0 检查点",
+          "titleZh": "Liquid AI 发布量化感知蒸馏版 LFM2.5 Q4_0 检查点",
+          "summaryZh": "Liquid AI 用量化感知蒸馏训练的 LFM2.5 系列 Q4_0 检查点，在推理、工具调用与智能体基准上保留约 97% 的 BF16 性能。",
+          "track": "technical",
+          "source": "Hugging Face Blog",
+          "heatScore": null,
+          "dimensions": {
+            "relevance": 80,
+            "novelty": 75,
+            "userValue": 80,
+            "actionability": 75,
+            "evidence": 75
+          },
+          "duplicateRisk": 35,
+          "memoryMatchCount": 5,
+          "opportunityScore": 67,
+          "recommendation": "candidate",
+          "pmValueType": "capability",
+          "rationale": "230M-2.6B 小模型在 Q4_0 量化下保留约 97% 基座性能，可直接指导边缘/低算力产品的模型选型与部署成本测算。"
+        },
+        {
+          "signalId": "SIG-20260819-372D1F3E",
+          "signalTitle": "DynaForcing：修复流式数字人蒸馏的动态坍缩问题",
+          "titleZh": "DynaForcing：修复流式数字人蒸馏的动态坍缩问题",
+          "summaryZh": "论文提出 DynaForcing 训练框架，通过混合锚定与运动奖励解决数字人生成中的动态坍缩，同时把 GPU 占用降低一个数量级。",
+          "track": "domain",
+          "source": "arXiv cs.CV",
+          "heatScore": null,
+          "dimensions": {
+            "relevance": 70,
+            "novelty": 85,
+            "userValue": 75,
+            "actionability": 60,
+            "evidence": 70
+          },
+          "duplicateRisk": 15,
+          "memoryMatchCount": 0,
+          "opportunityScore": 67,
+          "recommendation": "candidate",
+          "pmValueType": "capability",
+          "rationale": "解决流式数字人训练的动态坍缩且 GPU 占用降一个数量级，是数字人与直播产品提升口型同步和表情自然度的直接技术路线参考。"
+        },
+        {
+          "signalId": "SIG-20260819-3458CB37",
+          "signalTitle": "Grok Bot 爆火：多 AI 同事共享持久云端电脑的 Agent 工作台",
+          "titleZh": "Grok Bot 爆火：多 AI 同事共享持久云端电脑的 Agent 工作台",
+          "summaryZh": "Grok Bot 发布即走红（浏览量超 3400 万），支持多个 Bot 各占一块屏幕在同一个持久云端电脑上独立工作并互相通信。",
+          "track": "technical",
+          "source": "X / AttentionVC AI",
+          "heatScore": 76,
+          "dimensions": {
+            "relevance": 90,
+            "novelty": 85,
+            "userValue": 80,
+            "actionability": 65,
+            "evidence": 65
+          },
+          "duplicateRisk": 50,
+          "memoryMatchCount": 5,
+          "opportunityScore": 65,
+          "recommendation": "candidate",
+          "pmValueType": "competitor",
+          "rationale": "Grok Bot 以多 Bot 同屏协作加持久云端电脑的形态成为爆款，是研究下一代 agent 工作台交互范式与竞品差距的直接样本。"
+        },
+        {
+          "signalId": "SIG-20260819-E44FE29F",
+          "signalTitle": "实操案例：用 Grok Bot 的多 AI 同事搭建一人公司工作流",
+          "titleZh": "实操案例：用 Grok Bot 的多 AI 同事搭建一人公司工作流",
+          "summaryZh": "X 上演示用 Grok Bot 的多个 AI 同事在持久云端电脑上并行完成找线索、写外联、做图与回消息，支撑一人公司运转。",
+          "track": "technical",
+          "source": "X / AttentionVC AI",
+          "heatScore": 85,
+          "dimensions": {
+            "relevance": 85,
+            "novelty": 75,
+            "userValue": 80,
+            "actionability": 75,
+            "evidence": 60
+          },
+          "duplicateRisk": 50,
+          "memoryMatchCount": 5,
+          "opportunityScore": 64,
+          "recommendation": "candidate",
+          "pmValueType": "design-pattern",
+          "rationale": "提供‘多 AI 同事共享持久云端电脑、各自独立工作并互相通信’的真实落地用例，是评估多 agent 协作产品形态与单人公司场景价值的样本。"
+        },
+        {
+          "signalId": "SIG-20260819-1008ACCF",
+          "signalTitle": "PatternEval/PatternRL：对齐混合思考多模态模型的行为表现",
+          "titleZh": "PatternEval/PatternRL：对齐混合思考多模态模型的行为表现",
+          "summaryZh": "论文提出评测思维与非思维模式行为差异的 PatternEval 与带模式惩罚的 PatternRL，可缓解思维链泄漏、重复与逻辑矛盾等产品级缺陷。",
+          "track": "domain",
+          "source": "arXiv cs.CV",
+          "heatScore": null,
+          "dimensions": {
+            "relevance": 75,
+            "novelty": 85,
+            "userValue": 75,
+            "actionability": 65,
+            "evidence": 70
+          },
+          "duplicateRisk": 35,
+          "memoryMatchCount": 2,
+          "opportunityScore": 64,
+          "recommendation": "candidate",
+          "pmValueType": "capability",
+          "rationale": "系统诊断混合思考模型在非思考模式下的思维链泄漏、重复、矛盾等用户可见缺陷并提供对齐训练方案，直接影响多模态对话产品的质量验收标准。"
+        },
+        {
+          "signalId": "SIG-20260819-CBB026DE",
+          "signalTitle": "SemComp-Bench：面向视频生成的语义任务完成评测基准",
+          "titleZh": "SemComp-Bench：面向视频生成的语义任务完成评测基准",
+          "summaryZh": "论文提出结果导向的语义任务完成视频生成任务与评测集 SemComp-Bench，用 VLM 判定生成结果是否达成意图并保持语义对齐。",
+          "track": "domain",
+          "source": "arXiv cs.CV",
+          "heatScore": null,
+          "dimensions": {
+            "relevance": 65,
+            "novelty": 80,
+            "userValue": 65,
+            "actionability": 55,
+            "evidence": 70
+          },
+          "duplicateRisk": 15,
+          "memoryMatchCount": 0,
+          "opportunityScore": 62,
+          "recommendation": "candidate",
+          "pmValueType": "capability",
+          "rationale": "提出以‘结果达成+语义对齐’评价视频生成的新范式与 VLM 评测协议，可用于制定自家视频产品的任务达成类评测指标。"
+        },
+        {
+          "signalId": "SIG-20260819-58BFCACB",
+          "signalTitle": "GNM Head：覆盖眼、牙、舌的全解剖头部参数模型开源",
+          "titleZh": "GNM Head：覆盖眼、牙、舌的全解剖头部参数模型开源",
+          "summaryZh": "论文发布涵盖面部、颈部、眼球、牙齿与舌头的生成式头部参数模型 GNM，用于动画渲染并作为生成模型的精细空间控制信号。",
+          "track": "domain",
+          "source": "arXiv cs.CV",
+          "heatScore": null,
+          "dimensions": {
+            "relevance": 65,
+            "novelty": 80,
+            "userValue": 65,
+            "actionability": 55,
+            "evidence": 70
+          },
+          "duplicateRisk": 15,
+          "memoryMatchCount": 0,
+          "opportunityScore": 62,
+          "recommendation": "candidate",
+          "pmValueType": "capability",
+          "rationale": "公开覆盖眼球、牙齿、舌头的全解剖头部参数模型，可提升生成式数字人的空间控制精度，是 3D 头像与数字人产品可引用的基础资产。"
+        },
+        {
+          "signalId": "SIG-20260819-09AC7D97",
+          "signalTitle": "WorldBench：按物理概念解耦评测世界模型的基准",
+          "titleZh": "WorldBench：按物理概念解耦评测世界模型的基准",
+          "summaryZh": "论文推出 WorldBench 视频基准，逐项隔离评测对象恒存、摩擦系数、流体粘度等物理概念，发现现有世界模型普遍缺乏物理一致性。",
+          "track": "domain",
+          "source": "arXiv cs.CV",
+          "heatScore": null,
+          "dimensions": {
+            "relevance": 60,
+            "novelty": 80,
+            "userValue": 65,
+            "actionability": 50,
+            "evidence": 70
+          },
+          "duplicateRisk": 15,
+          "memoryMatchCount": 0,
+          "opportunityScore": 59,
+          "recommendation": "candidate",
+          "pmValueType": "capability",
+          "rationale": "概念解耦的物理评测揭示世界模型在具体物理定律上的系统性失效，可用于判断视频生成产品在仿真与物理场景的可用边界。"
+        },
+        {
+          "signalId": "SIG-20260819-5CE0D6F8",
+          "signalTitle": "内存短缺加剧：内存价格 12 个月上涨 500%",
+          "titleZh": "内存短缺加剧：内存价格 12 个月上涨 500%",
+          "summaryZh": "Latent Space 报道内存短缺持续，内存价格一年内上涨 500%，128GB DDR5 套装价格达到历史低点的十倍。",
+          "track": "technical",
+          "source": "Latent Space",
+          "heatScore": null,
+          "dimensions": {
+            "relevance": 70,
+            "novelty": 60,
+            "userValue": 55,
+            "actionability": 40,
+            "evidence": 50
+          },
+          "duplicateRisk": 35,
+          "memoryMatchCount": 5,
+          "opportunityScore": 47,
+          "recommendation": "candidate",
+          "pmValueType": "industry-context",
+          "rationale": "内存成本一年涨 500% 会改变推理与本地部署的成本假设，PM 需在定价、缓存与端侧方案上提前做对冲决策。"
+        },
+        {
+          "signalId": "SIG-20260819-4333F6B1",
+          "signalTitle": "Tusk：面向视频创作者的 Mac 备份应用，可安全释放磁盘空间",
+          "titleZh": "Tusk：面向视频创作者的 Mac 备份应用，可安全释放磁盘空间",
+          "summaryZh": "Mac 备份应用 Tusk 跟踪项目文件在外部硬盘与云端的每份副本位置，支持一键安全删除本地副本并随时恢复。",
+          "track": "domain",
+          "source": "No Film School",
+          "heatScore": null,
+          "dimensions": {
+            "relevance": 45,
+            "novelty": 40,
+            "userValue": 55,
+            "actionability": 30,
+            "evidence": 55
+          },
+          "duplicateRisk": 10,
+          "memoryMatchCount": 0,
+          "opportunityScore": 43,
+          "recommendation": "candidate",
+          "pmValueType": "product-idea",
+          "rationale": "展示视频创作者‘多副本追踪+安全释放空间’的素材管理诉求，可作为面向创作者工具的功能参照，但产品本身非 AI 驱动。"
+        },
+        {
+          "signalId": "SIG-20260819-5B03EEE2",
+          "signalTitle": "VERZA TV 上线西语内容合集，扩充拉美微短剧库",
+          "titleZh": "VERZA TV 上线西语内容合集，扩充拉美微短剧库",
+          "summaryZh": "微短剧平台 VERZA TV 新增 Español 内容合集，扩充面向拉美市场的西班牙语微短剧库。",
+          "track": "domain",
+          "source": "Google News · Microdrama",
+          "heatScore": null,
+          "dimensions": {
+            "relevance": 40,
+            "novelty": 35,
+            "userValue": 40,
+            "actionability": 25,
+            "evidence": 40
+          },
+          "duplicateRisk": 10,
+          "memoryMatchCount": 0,
+          "opportunityScore": 34,
+          "recommendation": "candidate",
+          "pmValueType": "industry-context",
+          "rationale": "印证微短剧向拉美西语市场扩张，为短剧生成/多语言本地化类 AI 产品的区域拓展提供需求侧信号，但无具体 AI 能力细节。"
+        },
+        {
+          "signalId": "SIG-20260819-9525995C",
+          "signalTitle": "CodeQL 2.26.3 增强 JavaScript/TypeScript/Vue 建模与 GitHub Action",
+          "titleZh": "CodeQL 2.26.3 增强 JavaScript/TypeScript/Vue 建模与 GitHub Action",
+          "summaryZh": "GitHub 静态分析引擎 CodeQL 2.26.3 新增 JS/TS/Vue 源码建模并改进 GitHub Actions 相关查询的准确性。",
+          "track": "technical",
+          "source": "GitHub Changelog · AI",
+          "heatScore": null,
+          "dimensions": {
+            "relevance": 40,
+            "novelty": 30,
+            "userValue": 35,
+            "actionability": 25,
+            "evidence": 70
+          },
+          "duplicateRisk": 35,
+          "memoryMatchCount": 3,
+          "opportunityScore": 31,
+          "recommendation": "candidate",
+          "pmValueType": "industry-context",
+          "rationale": "属静态分析工具的常规迭代，可作为 AI 编码产品安全护栏的参照背景，但不构成可直接行动的产品机会。"
+        },
+        {
+          "signalId": "SIG-20260819-49CE2A69",
+          "signalTitle": "马修·派瑞诞辰：回顾钱德勒角色从落选到经典的过程",
+          "titleZh": "马修·派瑞诞辰：回顾钱德勒角色从落选到经典的过程",
+          "summaryZh": "马修·派瑞诞辰纪念文章回顾其在《老友记》中饰演钱德勒的试镜与角色塑造历程。",
+          "track": "domain",
+          "source": "No Film School",
+          "heatScore": null,
+          "dimensions": {
+            "relevance": 5,
+            "novelty": 5,
+            "userValue": 5,
+            "actionability": 5,
+            "evidence": 50
+          },
+          "duplicateRisk": 0,
+          "memoryMatchCount": 0,
+          "opportunityScore": 14,
+          "recommendation": "candidate",
+          "pmValueType": "industry-context",
+          "rationale": "影视人物回顾内容，与 AI 产品决策无关。"
+        },
+        {
+          "signalId": "SIG-20260819-BB79BDA1",
+          "signalTitle": "《沙丘3》与《复仇者5》同日上映引发票房对决",
+          "titleZh": "《沙丘3》与《复仇者5》同日上映引发票房对决",
+          "summaryZh": "华纳《沙丘3》与迪士尼《复仇者5》定于 12 月 18 日同日上映，预售火爆并导致售票网站崩溃。",
+          "track": "domain",
+          "source": "No Film School",
+          "heatScore": null,
+          "dimensions": {
+            "relevance": 5,
+            "novelty": 5,
+            "userValue": 5,
+            "actionability": 5,
+            "evidence": 50
+          },
+          "duplicateRisk": 0,
+          "memoryMatchCount": 0,
+          "opportunityScore": 14,
+          "recommendation": "candidate",
+          "pmValueType": "industry-context",
+          "rationale": "影视票房新闻，与 AI 产品决策无关。"
+        },
+        {
+          "signalId": "SIG-20260819-7EA74CD4",
+          "signalTitle": "回顾 Gregg Araki 的‘少年末日三部曲’",
+          "titleZh": "回顾 Gregg Araki 的‘少年末日三部曲’",
+          "summaryZh": "No Film School 回顾 1990 年代 Gregg Araki 的 Teen Apocalypse 三部曲及其对酷儿青年的刻画。",
+          "track": "domain",
+          "source": "No Film School",
+          "heatScore": null,
+          "dimensions": {
+            "relevance": 5,
+            "novelty": 5,
+            "userValue": 5,
+            "actionability": 5,
+            "evidence": 50
+          },
+          "duplicateRisk": 0,
+          "memoryMatchCount": 0,
+          "opportunityScore": 14,
+          "recommendation": "candidate",
+          "pmValueType": "industry-context",
+          "rationale": "电影史回顾内容，与 AI 产品决策无关。"
+        },
+        {
+          "signalId": "SIG-20260819-3B521201",
+          "signalTitle": "B&H 发布影视灯光与机械师（Grip）岗位及设备入门指南",
+          "titleZh": "B&H 发布影视灯光与机械师（Grip）岗位及设备入门指南",
+          "summaryZh": "B&H 发布面向影视灯光与机械师的完整入门指南视频，涵盖灯架结构、C-Stand 用法与各类 grip 设备。",
+          "track": "domain",
+          "source": "No Film School",
+          "heatScore": null,
+          "dimensions": {
+            "relevance": 5,
+            "novelty": 5,
+            "userValue": 5,
+            "actionability": 5,
+            "evidence": 40
+          },
+          "duplicateRisk": 0,
+          "memoryMatchCount": 0,
+          "opportunityScore": 13,
+          "recommendation": "candidate",
+          "pmValueType": "industry-context",
+          "rationale": "纯影视行业设备科普，不含 AI 能力或产品决策信息，仅作环境背景保留。"
+        },
+        {
+          "signalId": "SIG-20260819-C5370EF1",
+          "signalTitle": "影史台词解析：1946 年黑色电影《吉尔达》经典独白",
+          "titleZh": "影史台词解析：1946 年黑色电影《吉尔达》经典独白",
+          "summaryZh": "No Film School 解析 1946 年黑色电影《吉尔达》中 Glenn Ford 角色的开篇内心独白及其含义。",
+          "track": "domain",
+          "source": "No Film School",
+          "heatScore": null,
+          "dimensions": {
+            "relevance": 5,
+            "novelty": 5,
+            "userValue": 5,
+            "actionability": 5,
+            "evidence": 45
+          },
+          "duplicateRisk": 0,
+          "memoryMatchCount": 0,
+          "opportunityScore": 13,
+          "recommendation": "candidate",
+          "pmValueType": "industry-context",
+          "rationale": "影评内容，不含产品能力或行业决策信息。"
+        }
+      ],
+      "recommendedSignalIds": [
+        "SIG-20260819-DF8F1230",
+        "SIG-20260819-2F000139",
+        "SIG-20260819-8C6014A3",
+        "SIG-20260819-F56FB1EE",
+        "SIG-20260819-372D1F3E",
+        "SIG-20260819-3458CB37",
+        "SIG-20260819-E44FE29F",
+        "SIG-20260819-1008ACCF",
+        "SIG-20260819-CBB026DE",
+        "SIG-20260819-58BFCACB",
+        "SIG-20260819-09AC7D97",
+        "SIG-20260819-5CE0D6F8",
+        "SIG-20260819-4333F6B1",
+        "SIG-20260819-5B03EEE2",
+        "SIG-20260819-9525995C",
+        "SIG-20260819-49CE2A69",
+        "SIG-20260819-BB79BDA1",
+        "SIG-20260819-7EA74CD4",
+        "SIG-20260819-3B521201",
+        "SIG-20260819-C5370EF1"
+      ],
+      "reviewSignalIds": [],
+      "autoAnalyzedSignalIds": [
+        "SIG-20260819-DF8F1230",
+        "SIG-20260819-2F000139"
+      ],
+      "decisionSummary": "Agent 已完成 20 条情报的 PM 机会评分，并按分数排序；其中 2 条高机会情报进入自动深度分析候选。",
+      "toolCalls": [
+        {
+          "id": "call_00_LJLZTN7nW8xgRI6iqrz95893",
+          "name": "list_daily_signals",
+          "status": "success",
+          "inputSummary": "读取最新双轨情报",
+          "outputSummary": "已读取 20 条最新情报",
+          "durationMs": 9
+        },
+        {
+          "id": "call_00_OOfylNMaUn4QpI0JzSjs8819",
+          "name": "search_memory",
+          "status": "success",
+          "inputSummary": "检索 20 条情报的历史决策",
+          "outputSummary": "完成 20 条候选的历史去重检索",
+          "durationMs": 26
+        },
+        {
+          "id": "call_00_jfwXMUwO6usMXM6rX6H31798",
+          "name": "score_candidates",
+          "status": "failed",
+          "inputSummary": "评估 0 条候选",
+          "outputSummary": "必须对全部候选情报完成评分。",
+          "durationMs": 0
+        },
+        {
+          "id": "call_00_wIV1XDc71eUPH5QIIoLe8735",
+          "name": "score_candidates",
+          "status": "success",
+          "inputSummary": "评估 20 条候选",
+          "outputSummary": "完成 20 条机会评分",
+          "durationMs": 1
+        },
+        {
+          "id": "call_00_LtZVaeZv744o28Isaees0342",
+          "name": "select_intelligence_for_pool",
+          "status": "success",
+          "inputSummary": "确认今日情报机会评分结果",
+          "outputSummary": "完成 20 条产品情报评分",
+          "durationMs": 0
+        }
+      ],
+      "error": null
+    },
     {
       "id": "TRIAGE-df9673a4-78e7-454c-95da-b52aff12cbca",
       "agent": "product-opportunity-agent",
