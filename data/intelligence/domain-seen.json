@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "track": "domain",
-  "updatedAt": "2026-08-20T23:41:36.260Z",
+  "updatedAt": "2026-08-21T23:40:03.355Z",
   "items": [
     {
       "url": "https://www.creativebloq.com/3d/autodesk-tackles-ai-filmmakings-biggest-problem-with-3d-control",
@@ -646,6 +646,86 @@
     {
       "url": "https://arxiv.org/abs/2608.18679",
       "title": "FRAGMENT: Factorized Graph Representations for Document Generation and Editing via Entity-Aware Transformations"
+    },
+    {
+      "url": "https://arxiv.org/abs/2608.19583",
+      "title": "VGI-BENCH: Probing Visual Intelligence in Video Generation Models"
+    },
+    {
+      "url": "https://arxiv.org/abs/2608.19637",
+      "title": "TextRefine: Improving Textual Fidelity, Spatial Placement, and Glyph Rendering for Text Editing in Product Posters"
+    },
+    {
+      "url": "https://arxiv.org/abs/2608.19738",
+      "title": "Learning to Beat: Phenotype-Guided Latent Flow with Regional Motion Priors for Biventricular Motion Synthesis"
+    },
+    {
+      "url": "https://arxiv.org/abs/2608.20107",
+      "title": "BeyondMasks: Evaluating Causal and Physical Consistency in Video Object Removal"
+    },
+    {
+      "url": "https://arxiv.org/abs/2608.20127",
+      "title": "ID-VTG: Image-Disambiguated Video Temporal Grounding"
+    },
+    {
+      "url": "https://arxiv.org/abs/2608.19900",
+      "title": "AvatarDynamizer: From Static to Dynamic Human Avatars via Generative Dynamic Textures"
+    },
+    {
+      "url": "https://arxiv.org/abs/2608.20312",
+      "title": "Inter-X++: A Comprehensive Benchmark for Multimodal Human-Human Interaction Analysis"
+    },
+    {
+      "url": "https://nofilmschool.com/prograde-card-readers-sale",
+      "title": "Speed Up Your Footage Transfers With These ProGrade Card Readers"
+    },
+    {
+      "url": "https://www.cartoonbrew.com/feature-film/michel-gange-saga-of-rex-trailer-265869.html",
+      "title": "Michel Gagné Unveils The First Trailer For ‘The Saga Of Rex,’ A Solo Hand-Drawn Feature 14 Years In The Making"
+    },
+    {
+      "url": "https://nofilmschool.com/django-unchained-s-unmasking-scene",
+      "title": "The Hidden Cameos You Probably Missed in Django Unchained's Unmasking Scene"
+    },
+    {
+      "url": "https://nofilmschool.com/underrated-andrew-garfield-movie-performances",
+      "title": "5 Most Underrated Andrew Garfield Movie Performances"
+    },
+    {
+      "url": "https://nofilmschool.com/dirty-dancing-watermelon",
+      "title": "Film Quote of the Day: The 'Dirty Dancing' Quote That Perfectly Captures Baby's Awkwardness"
+    },
+    {
+      "url": "https://nofilmschool.com/plantcam-timelapse-camera",
+      "title": "PlantCam: Shoot Plant Timelapses or DIY Projects With This Aptly Named Plant Camera"
+    },
+    {
+      "url": "https://www.cartoonbrew.com/animators/miyu-animation-in-conversation-ru-kuwahata-max-porter-anna-mantzaris-265845.html",
+      "title": "Acclaimed Indie Filmmakers Get Candid About Their Craft In Miyu’s New Online Series"
+    },
+    {
+      "url": "https://www.cartoonbrew.com/animators/margie-claus-warner-bros-pictures-animation-release-date-265859.html",
+      "title": "Warner Bros. Pictures Animation Sets 2027 Release For ‘Margie Claus,’ Reveals Voice Cast"
+    },
+    {
+      "url": "https://arxiv.org/abs/2608.19385",
+      "title": "Beyond Recognition: Compact Multi-Domain Arabic Manuscript HTR with Candidate-Selection Analysis and Evidence-Preserving Review"
+    },
+    {
+      "url": "https://arxiv.org/abs/2608.19536",
+      "title": "CVSD-Reg: Cross-Modal Visual Semantic Prior Distillation for Robust LiDAR Registration"
+    },
+    {
+      "url": "https://arxiv.org/abs/2608.20026",
+      "title": "From Street View Imagery to Street Quality Indicators: Vision Language Inference for the Suburban 15-minute City"
+    },
+    {
+      "url": "https://arxiv.org/abs/2608.20154",
+      "title": "Artificial Intelligence for Workflow Analysis in Colorectal Surgery: A Multicentric, Cross-Procedural Development and Generalization Study"
+    },
+    {
+      "url": "https://arxiv.org/abs/2608.20038",
+      "title": "An Inclusive and Lightweight Approach to Federated Continual Learning for Cultural Heritage"
     }
   ]
 }
