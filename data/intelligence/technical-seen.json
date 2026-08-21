@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "track": "technical",
-  "updatedAt": "2026-08-20T23:23:36.745Z",
+  "updatedAt": "2026-08-21T23:21:26.235Z",
   "items": [
     {
       "url": "https://www.latent.space/p/ainews-zawinskis-law-of-multiagents",
@@ -714,6 +714,86 @@
     {
       "url": "https://openai.com/index/asana",
       "title": "Asana cleared 5 years of engineering work in 2 weeks with Codex"
+    },
+    {
+      "url": "https://vercel.com/changelog/deepseek-v4-flash-with-vision-now-available-on-ai-gateway",
+      "title": "DeepSeek V4 Flash Vision Experimental now available on AI Gateway"
+    },
+    {
+      "url": "https://github.com/affaan-m/ECC",
+      "title": "affaan-m/ECC"
+    },
+    {
+      "url": "https://x.com/gabepereyra/status/2090453918547685537",
+      "title": "Update on our post-training effort"
+    },
+    {
+      "url": "https://vercel.com/changelog/vercel-agent-is-now-available-in-slack-code-channels",
+      "title": "Vercel Agent is now available in Slack code channels"
+    },
+    {
+      "url": "https://github.com/ruvnet/ruflo",
+      "title": "ruvnet/ruflo"
+    },
+    {
+      "url": "https://x.com/heynavtoor/status/2090421070230966656",
+      "title": "How To Set Up Grokbot The Right Way So It Runs Your Business While You Sleep In 2026"
+    },
+    {
+      "url": "https://vercel.com/changelog/the-vercel-sandbox-cli-is-now-more-agent-friendly",
+      "title": "The Vercel Sandbox CLI is now more agent-friendly"
+    },
+    {
+      "url": "https://github.com/apache/maka",
+      "title": "apache/maka"
+    },
+    {
+      "url": "https://github.blog/changelog/2026-08-21-the-new-github-copilot-experience-in-slack",
+      "title": "The new GitHub Copilot experience in Slack"
+    },
+    {
+      "url": "https://github.com/elder-plinius/OBLITERATUS",
+      "title": "elder-plinius/OBLITERATUS"
+    },
+    {
+      "url": "https://x.com/SlackHQ/status/2090415566351659267",
+      "title": "Agentic coding is now multiplayer: Introducing Slack Code"
+    },
+    {
+      "url": "https://github.blog/changelog/2026-08-21-shared-agentic-work-with-github-copilot-in-microsoft-teams",
+      "title": "Shared agentic work with GitHub Copilot in Microsoft Teams"
+    },
+    {
+      "url": "https://vercel.com/changelog/connect-v0-apps-to-slack-google-and-100-other-services",
+      "title": "Connect v0 apps to Slack, Google, and 100+ other services"
+    },
+    {
+      "url": "https://tldr.tech/ai/2026-08-21",
+      "title": "ChatGPT Apple Messages 💬, Anthropic’s meeting recorder 💼, Mistral Agentic Search 🔍"
+    },
+    {
+      "url": "https://github.com/microsoft/onnxruntime",
+      "title": "microsoft/onnxruntime"
+    },
+    {
+      "url": "https://x.com/AndrewYNg/status/2090840747738374568",
+      "title": "AI Engineering Skills Map: Building and Deploying AI Applications"
+    },
+    {
+      "url": "https://x.com/ID_AA_Carmack/status/2090514515129520516",
+      "title": "RL Policy Churn"
+    },
+    {
+      "url": "https://x.com/themahis/status/2090468795080994955",
+      "title": "Grok Bot vs. Hermes: They Look Similar. Underneath, They’re Making Very Different Bets."
+    },
+    {
+      "url": "https://x.com/kmeanskaran/status/2090436724250026177",
+      "title": "System Design for Agent Systems (Part 1)"
+    },
+    {
+      "url": "https://huggingface.co/blog/asr-benchmark-optimization",
+      "title": "Measuring benchmark optimization in speech recognition"
     }
   ]
 }
