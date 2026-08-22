@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "track": "technical",
-  "updatedAt": "2026-08-21T23:21:26.235Z",
+  "updatedAt": "2026-08-22T23:18:35.420Z",
   "items": [
     {
       "url": "https://www.latent.space/p/ainews-zawinskis-law-of-multiagents",
@@ -794,6 +794,66 @@
     {
       "url": "https://huggingface.co/blog/asr-benchmark-optimization",
       "title": "Measuring benchmark optimization in speech recognition"
+    },
+    {
+      "url": "https://www.latent.space/p/ainews-10-worse-100x-cheaper-10000x",
+      "title": "[AINews] 10% worse, 100x cheaper, 10000x faster: Why Simulation is taking over"
+    },
+    {
+      "url": "https://github.com/openai/codex",
+      "title": "openai/codex"
+    },
+    {
+      "url": "https://x.com/dzhng/status/2090252351533973768",
+      "title": "Building software factories (with no slop)"
+    },
+    {
+      "url": "https://www.latent.space/p/attention-interface",
+      "title": "The Evolution of the Agent Harness"
+    },
+    {
+      "url": "https://github.com/Wei-Shaw/sub2api",
+      "title": "Wei-Shaw/sub2api"
+    },
+    {
+      "url": "https://www.latent.space/p/simile",
+      "title": "Simulation: the new Scaling Law — Joon Sung Park, Simile AI"
+    },
+    {
+      "url": "https://github.com/n8n-io/n8n",
+      "title": "n8n-io/n8n"
+    },
+    {
+      "url": "https://www.producthunt.com/products/agents-never-sleep",
+      "title": "Agents Never Sleep"
+    },
+    {
+      "url": "https://github.com/anthropics/claude-code",
+      "title": "anthropics/claude-code"
+    },
+    {
+      "url": "https://github.com/multica-ai/andrej-karpathy-skills",
+      "title": "multica-ai/andrej-karpathy-skills"
+    },
+    {
+      "url": "https://vercel.com/blog/how-ora-benchmarks-every-major-ai-agent-on-vercel",
+      "title": "How Ora benchmarks every major AI agent on Vercel"
+    },
+    {
+      "url": "https://deepmind.google/blog/from-atari-to-eve-online-building-on-15-years-of-ai-research-in-games",
+      "title": "From Atari to EVE Online: Building on 15 Years of AI Research in Games"
+    },
+    {
+      "url": "https://www.latent.space/p/ainews-poolside-gets-12b-reverse",
+      "title": "[AINews] Poolside gets $12B reverse-execuhire to NVIDIA; founders stay for $1B, employees go for $6B, Infraco scaling to 7GW neocloud"
+    },
+    {
+      "url": "https://tldr.tech/ai/2026-08-18",
+      "title": "Cursor Origin 👨‍💻, Anthropic $65B revenue 💰, deadline dividend scaling 📈"
+    },
+    {
+      "url": "https://huggingface.co/blog/Dharma-AI/gpu-management-pt2",
+      "title": "Same Cluster, 33 Points More Utilization: What Changed Was the Order"
     }
   ]
 }
