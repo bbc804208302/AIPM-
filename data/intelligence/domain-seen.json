@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "track": "domain",
-  "updatedAt": "2026-08-21T23:40:03.355Z",
+  "updatedAt": "2026-08-22T23:35:29.736Z",
   "items": [
     {
       "url": "https://www.creativebloq.com/3d/autodesk-tackles-ai-filmmakings-biggest-problem-with-3d-control",
@@ -726,6 +726,86 @@
     {
       "url": "https://arxiv.org/abs/2608.20038",
       "title": "An Inclusive and Lightweight Approach to Federated Continual Learning for Cultural Heritage"
+    },
+    {
+      "url": "https://nofilmschool.com/the-little-girl-who-lives-down-the-lane-overlooked-1976-thriller",
+      "title": "Overlooked Movies of the 1970s: This Jodie Foster Thriller Came Out the Same Year as 'Taxi Driver'"
+    },
+    {
+      "url": "https://nofilmschool.com/bong-joon-ho-favorite-movies-influence-explained",
+      "title": "What You Can Learn from Bong Joon Ho’s 4 Favorite Movies"
+    },
+    {
+      "url": "https://nofilmschool.com/essential-movies-of-1999",
+      "title": "The Most Essential Movies of 1999"
+    },
+    {
+      "url": "https://nofilmschool.com/36-hour-edit-mahaspital",
+      "title": "The 36-Hour Edit That Earned This 'Saturday Night Live' Segment an Emmy Nomination"
+    },
+    {
+      "url": "https://www.cartoonbrew.com/law/christian-metal-sues-netflix-over-kpop-demon-hunters-name-265765.html",
+      "title": "Christian Metal Band Demon Hunter Sues Netflix Over ‘KPop Demon Hunters’ Name"
+    },
+    {
+      "url": "https://news.google.com/rss/articles/CBMinwFBVV95cUxNTWg4Mjg5Zl9RT1I2S1pXYUpYeVQ0cFl5RXc4T2tMbTZHLUV2dlpWcjNhV3M1WnYwQVVsTE5JOGFoU0pVVmRHcTVhdXJYYW0wc2N5TGRXUjBva1duclZnd0g4YUN0WWgyaENLMGhLWTBOTzBvS2tYYkRJN1pOMEh4UkdXY3RKRjVISWNoZmtmM3U0azRjTjNMMWROdlZfakU?oc=5",
+      "title": "“Younger” star Nico Tortorella breaks into microdramas with spicy, queer Lyonesse Trilogy adaptations (exclusive) - Yahoo"
+    },
+    {
+      "url": "https://news.google.com/rss/articles/CBMidEFVX3lxTE0tUHJvY2pKdGtxS0xsNmpCRkFPakUyWFZqMzY4ZV9NUFRqVHk0YnRHakEwcHQ4MS0zTWpWVTJDWXFyYmtIMVduQWxjTS03WEFrdlFWc3ViZmdVV2FabVZwTTNrSVpCZHZ3Z3BuOFNGM0NYRWY0?oc=5",
+      "title": "Quiet on set. How AI transformed China’s microdrama scene - CNN"
+    },
+    {
+      "url": "https://nofilmschool.com/jack-sparrows-unforgettable-intro",
+      "title": "Iconic Film Character Intros: Captain Jack Sparrow - How to Steal a Movie in Seconds"
+    },
+    {
+      "url": "https://nofilmschool.com/best-treasure-hunting-movies",
+      "title": "10 Best Treasure Hunting Movies of All Time"
+    },
+    {
+      "url": "https://nofilmschool.com/kelsey-grammer-rule-dialogue",
+      "title": "The Kelsey Grammer Rule for Writing Better Dialogue"
+    },
+    {
+      "url": "https://news.google.com/rss/articles/CBMifkFVX3lxTFBxeElUaEp5WlYzVmprWFFISjh0elVtWEdVOTFJQXE5dlRBc1ZDeUxBdnlOMno0Z0dXaEFMdzZTbHVkd1h3MjVNTkJrY3NDeUVYMVVpX180cVNpVEM0YWhoUjVyMXNpTGlibTdudTJsbmFkN2dpWE5PUUlFZF9ldw?oc=5",
+      "title": "Data Drop: 5 Charts on Microdramas in China - eMarketer"
+    },
+    {
+      "url": "https://news.google.com/rss/articles/CBMirAFBVV95cUxOR0oxdFYzb0EyOHRWNG50M2xyQW01cDVLdnhUN2hfVmhHZDNMS0RVbjJkNUVDS1hETWtCZGRkeHloNHB1bl9DczhjQkpRYjNiNnNUMHNjRkdnOWdTWm5nVVh5MXEwQWN4Tnc4WGFiWE1JQ3R4NTRMX1d4VmtmUURFdkRpUWlWWGlTbVRFVHJCTU9RWEJ1Zk9sRG5ob2xPSDdtWW52bUhZeVFMTXA2?oc=5",
+      "title": "Can Microdramas Save Hollywood? Why the New Vertical Boom Isn’t Quibi 2.0 - Variety"
+    },
+    {
+      "url": "https://www.cartoonbrew.com/cartoon-brew-pick/daniel-brusson-paria-short-of-the-week-265855.html",
+      "title": "Watercolor Animation Paints A Fight For Survival In Daniel Bruson’s ‘Pária’"
+    },
+    {
+      "url": "https://www.cartoonbrew.com/anime/netflix-anime-blue-eye-samurai-edgerunners-one-piece-265850.html",
+      "title": "Netflix Shares Updates On ‘Blue Eye Samurai,’ ‘Edgerunners 2,’ ‘The One Piece,’ And More"
+    },
+    {
+      "url": "https://news.google.com/rss/articles/CBMitAFBVV95cUxObjBfWWdyOFZTVkw3Q2JhUXVsSDJxNEp4b2FZR1pLR09VWWZUZDd0MEdfZUNkU3doUXN5SGpKSjZnY1p5dWVqN3QyaVlORU84Nk9KcDVLVUxtdldGeGczaXhoZ183SVBvcU5zMjJkVGtqRjNpanlpZWVEam1qOWpnUDI3N1paVUYwckxickRYcHkycVRiZzdfM3NFQ1VPT1hzYkE0VlRNYUhqRUktVGd5cDVRYWw?oc=5",
+      "title": "Why Nuuly is betting on a microdrama for its social-first fall campaign - Marketing Dive"
+    },
+    {
+      "url": "https://www.cartoonbrew.com/streaming/metv-toons-quick-draw-mcgraw-sonic-heathcliff-265828.html",
+      "title": "MeTV Toons Adds Restored ‘Quick Draw McGraw,’ ‘Sonic,’ And ‘Heathcliff’ To Fall Lineup (EXCLUSIVE)"
+    },
+    {
+      "url": "https://www.cartoonbrew.com/anime/san-diego-fc-captain-tsubasa-viz-media-265818.html",
+      "title": "MLS’s San Diego FC Recruits ‘Captain Tsubasa’ As Anime’s Mainstream Sports Crossover Continues"
+    },
+    {
+      "url": "https://news.google.com/rss/articles/CBMifkFVX3lxTE5jVmN2ZWVHaE5MYzVVR09xTHp2N2JpRzUtRHVCZnJoTndFaTlNbkNiRHB0a25nTTZwSkNtNmJCZENkdk1UME04ckp4Z3MzeWV6LWFlZm9ndmRYUzYxejhEQlFVZ3MwczNTdXZSMlFzYXZPTDY0a1dTUjNTVDhMUQ?oc=5",
+      "title": "FlareFlow & Europe’s Shorts Strike Four-Title Microdrama Pact - Deadline"
+    },
+    {
+      "url": "https://news.google.com/rss/articles/CBMiZkFVX3lxTE53RFJFYUNFaDBBQlNKVEVvX0dmRV9ab3loTXNpTVZjT3FHQlhIYzN1WVNGYUhsMmFUUDJkeG5fM3JUWllVdk5PVVQwU1V5RlRKNE9aVVU0VG5wRnY4dHpCMHdZZXNRUQ?oc=5",
+      "title": "India’s Epic Studios, Rusk Media Ink 50-Title Vertical Drama Deal (Exclusive) - IMDb"
+    },
+    {
+      "url": "https://news.google.com/rss/articles/CBMipgFBVV95cUxQTFN3X3lzLTVtT252TF9uZ0R2aTV5aG85eTBObGFMTldsS2xvOE40cjdLeVJqOUIzWWc4YmZheDltNWFQTW9ldVpLbUZqOUpwTlJ0MXJVOGw4al9ETnV4ZkZZVE9KeXg5WTVZZTFmVEtfSVFZSzh0SF9MVlROYzBQZFFsYmZCSUx4U3JoSmRKSUd3OEM5c2c4WVZvcWVpY3NneG5iWVZn?oc=5",
+      "title": "India’s Epic Studios, Rusk Media Ink 50-Title Vertical Drama Deal (EXCLUSIVE) - Variety"
     }
   ]
 }
