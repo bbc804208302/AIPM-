@@ -1,6 +1,6 @@
 {
   "schemaVersion": 2,
-  "updatedAt": "2026-08-22T23:51:15.872Z",
+  "updatedAt": "2026-08-23T23:49:59.056Z",
   "runs": [
     {
       "id": "RUN-89b13967-be3b-455a-8080-95365be288c6",
@@ -1013,6 +1013,495 @@
     }
   ],
   "triageRuns": [
+    {
+      "id": "TRIAGE-f60d4f05-e9de-404b-bff8-8412e7e9964e",
+      "agent": "product-opportunity-agent",
+      "mode": "daily-triage",
+      "version": 5,
+      "promptVersion": "daily-triage-v6-batched-full-coverage",
+      "strategyVersion": "opportunity-weighted-v1",
+      "briefingDate": "2026-08-24",
+      "objective": "扫描每日情报并完成 PM 机会评分与深度分析优先级排序",
+      "status": "completed",
+      "model": "deepseek-v4-flash",
+      "startedAt": "2026-08-23T23:48:21.728Z",
+      "completedAt": "2026-08-23T23:49:59.056Z",
+      "durationMs": 97328,
+      "scannedSignals": 17,
+      "candidates": [
+        {
+          "signalId": "SIG-20260823-0AD7AB3D",
+          "signalTitle": "awesome-gpt-image-2：470+ 案例逆向工程出的 GPT-Image2 工业级提示词模板库",
+          "titleZh": "awesome-gpt-image-2：470+ 案例逆向工程出的 GPT-Image2 工业级提示词模板库",
+          "summaryZh": "开源项目 awesome-gpt-image-2 对 470+ 个 GPT-Image2 生成案例做逆向工程，提炼出 20+ 套工业级提示词模板并以 Skills 形式封装，提供在线图库可预览大图、复制完整提示词、按风格/场景筛选并实测生成，配套 9.90 元付费讨论社区。",
+          "track": "technical",
+          "source": "GitHub Trending",
+          "heatScore": 74,
+          "dimensions": {
+            "relevance": 75,
+            "novelty": 72,
+            "userValue": 68,
+            "actionability": 72,
+            "evidence": 70
+          },
+          "duplicateRisk": 35,
+          "memoryMatchCount": 2,
+          "opportunityScore": 63,
+          "recommendation": "candidate",
+          "pmValueType": "design-pattern",
+          "rationale": "为图像生成类产品提供了可直接复用的 prompt-as-code 设计范式与 Skills 封装方法，产品经理可据此设计提示词模板体系、反向拆解竞品生成效果，是设计层面的具体可借鉴资产，而非空泛新闻。"
+        },
+        {
+          "signalId": "SIG-20260823-EC2B8BD4",
+          "signalTitle": "Nous Research 开源自进化 agent hermes-agent：内置从经验中创建技能的闭环",
+          "titleZh": "Nous Research 开源自进化 agent hermes-agent：内置从经验中创建技能的闭环",
+          "summaryZh": "Nous Research 开源自进化 agent hermes-agent，内置学习循环：从使用经验创建并改进 skills、主动持久化知识、检索自身历史对话，跨会话构建用户模型；可部署在 $5 VPS 或闲置近零成本的无服务器环境，支持 Telegram 远程交互与任意模型切换。",
+          "track": "technical",
+          "source": "GitHub Trending",
+          "heatScore": 75,
+          "dimensions": {
+            "relevance": 82,
+            "novelty": 76,
+            "userValue": 66,
+            "actionability": 62,
+            "evidence": 70
+          },
+          "duplicateRisk": 35,
+          "memoryMatchCount": 5,
+          "opportunityScore": 63,
+          "recommendation": "candidate",
+          "pmValueType": "competitor",
+          "rationale": "其技能自创建+跨会话用户建模+低成本云端常驻的组合是当前 agent 产品中少见的完整方案，可作为个人 agent 产品的竞品标杆，也启发我们思考记忆与技能沉淀的工程实现路径。"
+        },
+        {
+          "signalId": "SIG-20260823-CCC01D62",
+          "signalTitle": "awesome-agent-skills：1000+ 跨工具兼容的 Agent Skills 开源合集",
+          "titleZh": "awesome-agent-skills：1000+ 跨工具兼容的 Agent Skills 开源合集",
+          "summaryZh": "开源合集 awesome-agent-skills 收录 1000+ 个来自官方开发团队与社区的 agent skills，兼容 Claude Code、Codex、Gemini CLI、Cursor 等多个主流编码工具。",
+          "track": "technical",
+          "source": "GitHub Trending",
+          "heatScore": 70,
+          "dimensions": {
+            "relevance": 78,
+            "novelty": 60,
+            "userValue": 62,
+            "actionability": 66,
+            "evidence": 65
+          },
+          "duplicateRisk": 35,
+          "memoryMatchCount": 5,
+          "opportunityScore": 59,
+          "recommendation": "candidate",
+          "pmValueType": "design-pattern",
+          "rationale": "展示当前 agent skills 生态的形态与跨工具兼容做法，产品经理可借其梳理主流工具中 skill 的命名、结构与分发模式，为自家 agent 技能市场或技能库设计提供基线参考。"
+        },
+        {
+          "signalId": "SIG-20260823-EE98E39E",
+          "signalTitle": "阿里巴巴开源实时 AI 动画工具套件",
+          "titleZh": "阿里巴巴开源实时 AI 动画工具套件",
+          "summaryZh": "报道称阿里巴巴开源了实时 AI 动画工具套件，支持实时进行 AI 动画生成，降低动画内容制作门槛。",
+          "track": "domain",
+          "source": "Google News · AIGC Production",
+          "heatScore": null,
+          "dimensions": {
+            "relevance": 66,
+            "novelty": 70,
+            "userValue": 60,
+            "actionability": 55,
+            "evidence": 52
+          },
+          "duplicateRisk": 35,
+          "memoryMatchCount": 5,
+          "opportunityScore": 52,
+          "recommendation": "candidate",
+          "pmValueType": "capability",
+          "rationale": "实时 AI 动画开源能力对内容生成产品是可直接关注的技术资产，可作为接入评估或能力对标对象；但报道未给出工具名称与具体接口，需待细节补充。"
+        },
+        {
+          "signalId": "SIG-20260823-7E6717B3",
+          "signalTitle": "微短剧热潮继中国后蔓延至印度，Z 世代视其为娱乐快餐",
+          "titleZh": "微短剧热潮继中国后蔓延至印度，Z 世代视其为娱乐快餐",
+          "summaryZh": "报道称微短剧在中国爆发后正席卷印度市场，Z 世代成为主要驱动人群，将其称为娱乐快餐，带动需求快速增长。",
+          "track": "domain",
+          "source": "Google News · Microdrama",
+          "heatScore": null,
+          "dimensions": {
+            "relevance": 52,
+            "novelty": 55,
+            "userValue": 42,
+            "actionability": 42,
+            "evidence": 50
+          },
+          "duplicateRisk": 10,
+          "memoryMatchCount": 0,
+          "opportunityScore": 46,
+          "recommendation": "candidate",
+          "pmValueType": "industry-context",
+          "rationale": "为微短剧 AI 内容生成赛道提供海外市场扩张信号，可帮助判断出海内容产能工具的需求窗口，但报道缺少具体产品能力或数据，仅作行业背景。"
+        },
+        {
+          "signalId": "SIG-20260823-262E78AA",
+          "signalTitle": "服装租赁品牌 Nuuly 用 12 集微短剧替代秋季广告片",
+          "titleZh": "服装租赁品牌 Nuuly 用 12 集微短剧替代秋季广告片",
+          "summaryZh": "美国服装租赁品牌 Nuuly 将秋季商业广告替换为一部 12 集微短剧，尝试用微短剧形式承载品牌营销内容。",
+          "track": "domain",
+          "source": "Google News · Microdrama",
+          "heatScore": null,
+          "dimensions": {
+            "relevance": 55,
+            "novelty": 66,
+            "userValue": 46,
+            "actionability": 50,
+            "evidence": 55
+          },
+          "duplicateRisk": 35,
+          "memoryMatchCount": 1,
+          "opportunityScore": 45,
+          "recommendation": "candidate",
+          "pmValueType": "business-opportunity",
+          "rationale": "品牌把微短剧当作正式广告媒介的真实案例，为 AI 短剧产能工具的商业化渠道（品牌定制剧）提供需求佐证，可作为 B 端客户场景依据。"
+        },
+        {
+          "signalId": "SIG-20260823-93E673A4",
+          "signalTitle": "路透：好莱坞收缩之际微短剧热潮兴起，片厂追逐 TikTok 观众",
+          "titleZh": "路透：好莱坞收缩之际微短剧热潮兴起，片厂追逐 TikTok 观众",
+          "summaryZh": "路透社报道好莱坞在行业收缩背景下涌入微短剧赛道，各大片厂以 TikTok 用户为目标制作短剧内容。",
+          "track": "domain",
+          "source": "Google News · Microdrama",
+          "heatScore": null,
+          "dimensions": {
+            "relevance": 60,
+            "novelty": 55,
+            "userValue": 40,
+            "actionability": 45,
+            "evidence": 65
+          },
+          "duplicateRisk": 30,
+          "memoryMatchCount": 0,
+          "opportunityScore": 45,
+          "recommendation": "candidate",
+          "pmValueType": "business-opportunity",
+          "rationale": "好莱坞片厂转向微短剧证实了竖屏短剧内容需求的增长，为 AIGC 短剧生产与批量制作工具提供明确的市场容量与付费客户群依据，可用于短剧产品线的行业论证。"
+        },
+        {
+          "signalId": "SIG-20260823-1B43EE0D",
+          "signalTitle": "eMarketer 发布微短剧 FAQ：移动竖屏视频日活跃时长已超过 Netflix",
+          "titleZh": "eMarketer 发布微短剧 FAQ：移动竖屏视频日活跃时长已超过 Netflix",
+          "summaryZh": "eMarketer 以 FAQ 形式解析微短剧这一移动视频格式，称其每日互动时长已超过 Netflix，正成为不可忽视的内容形态。",
+          "track": "domain",
+          "source": "Google News · Microdrama",
+          "heatScore": null,
+          "dimensions": {
+            "relevance": 50,
+            "novelty": 50,
+            "userValue": 40,
+            "actionability": 38,
+            "evidence": 52
+          },
+          "duplicateRisk": 10,
+          "memoryMatchCount": 0,
+          "opportunityScore": 43,
+          "recommendation": "candidate",
+          "pmValueType": "industry-context",
+          "rationale": "以数据佐证微短剧的用户时长价值，为 AI 短剧内容生产与分发产品提供赛道判断依据，但属于调研综述而非具体产品机会。"
+        },
+        {
+          "signalId": "SIG-20260823-3638177A",
+          "signalTitle": "Nuuly 押注微短剧做品牌营销，主打情感共鸣",
+          "titleZh": "Nuuly 押注微短剧做品牌营销，主打情感共鸣",
+          "summaryZh": "服装租赁品牌 Nuuly 推出品牌微短剧作为营销内容，希望借短剧的情感叙事突破社媒信息噪音、与年轻用户建立连接。",
+          "track": "domain",
+          "source": "Google News · Microdrama",
+          "heatScore": null,
+          "dimensions": {
+            "relevance": 70,
+            "novelty": 60,
+            "userValue": 50,
+            "actionability": 55,
+            "evidence": 55
+          },
+          "duplicateRisk": 70,
+          "memoryMatchCount": 2,
+          "opportunityScore": 41,
+          "recommendation": "candidate",
+          "pmValueType": "design-pattern",
+          "rationale": "品牌方自制微短剧做情感化营销，为 AIGC 短剧生成工具锚定了除影视公司外的第二类付费客户——品牌营销团队；其情感叙事驱动转化是可直接借鉴的内容模板，辅助 PM 设计面向品牌的短剧模板与投放工作流。"
+        },
+        {
+          "signalId": "SIG-20260823-8C6FB50D",
+          "signalTitle": "SpaceXai 以 600 亿美元完成对 Cursor 的收购",
+          "titleZh": "SpaceXai 以 600 亿美元完成对 Cursor 的收购",
+          "summaryZh": "AI 编程工具 Cursor 被 SpaceXai 以约 600 亿美元估值收购并完成交割，Latent Space 确认该交易落地。",
+          "track": "technical",
+          "source": "Latent Space",
+          "heatScore": null,
+          "dimensions": {
+            "relevance": 55,
+            "novelty": 60,
+            "userValue": 35,
+            "actionability": 30,
+            "evidence": 60
+          },
+          "duplicateRisk": 35,
+          "memoryMatchCount": 1,
+          "opportunityScore": 39,
+          "recommendation": "candidate",
+          "pmValueType": "competitor",
+          "rationale": "Cursor 作为 AI 编程赛道头部竞品被并入 SpaceXai，其定价、模型接入与捆绑策略可能随资本关系调整，PM 需将其纳入竞品路线图监控；但报道无产品能力细节，不足以直接触发功能规划。"
+        },
+        {
+          "signalId": "SIG-20260823-8ED2CCE0",
+          "signalTitle": "OpenHuman：本地优先记忆的个人 AI 超级智能开源项目",
+          "titleZh": "OpenHuman：本地优先记忆的个人 AI 超级智能开源项目",
+          "summaryZh": "开源项目 OpenHuman 定位个人 AI 超级智能，核心是本地优先存储的生活记忆库，可作为 agent 集群与工作流的编排中枢，并内置深度研究能力，强调简单与强大。",
+          "track": "technical",
+          "source": "GitHub Trending",
+          "heatScore": 64,
+          "dimensions": {
+            "relevance": 70,
+            "novelty": 40,
+            "userValue": 55,
+            "actionability": 55,
+            "evidence": 55
+          },
+          "duplicateRisk": 75,
+          "memoryMatchCount": 5,
+          "opportunityScore": 38,
+          "recommendation": "candidate",
+          "pmValueType": "competitor",
+          "rationale": "个人记忆+agent 编排方向已多次出现（ai-memory、Glimmer 均曾被拒），此项目作为竞品动向值得记录，但差异化描述模糊、页面信息不足，重复风险高，仅作竞品跟踪。"
+        },
+        {
+          "signalId": "SIG-20260823-3E3EABB7",
+          "signalTitle": "Nuuly 推出品牌浪漫喜剧微短剧，突破社媒噪音",
+          "titleZh": "Nuuly 推出品牌浪漫喜剧微短剧，突破社媒噪音",
+          "summaryZh": "Nuuly 制作品牌浪漫喜剧微短剧，以短剧形式在社媒上与年轻用户建立情感连接、提升品牌曝光。",
+          "track": "domain",
+          "source": "Google News · Microdrama",
+          "heatScore": null,
+          "dimensions": {
+            "relevance": 70,
+            "novelty": 50,
+            "userValue": 50,
+            "actionability": 55,
+            "evidence": 55
+          },
+          "duplicateRisk": 85,
+          "memoryMatchCount": 1,
+          "opportunityScore": 36,
+          "recommendation": "candidate",
+          "pmValueType": "business-opportunity",
+          "rationale": "与 Marketing Brew 报道为同一 Nuuly 微短剧营销案例，仅作交叉验证；浪漫喜剧类型与社媒传播目标补充了案例细节，但内容重复度高，不构成独立新机会。"
+        },
+        {
+          "signalId": "SIG-20260823-2E053F89",
+          "signalTitle": "Netflix 广告层用户达 2.5 亿并组建 AI 动画工作室，文章同时讨论其股价",
+          "titleZh": "Netflix 广告层用户达 2.5 亿并组建 AI 动画工作室，文章同时讨论其股价",
+          "summaryZh": "报道称 Netflix 广告订阅层用户已达 2.5 亿，公司正在搭建 AI 动画工作室，文章主体为投资视角的买入分析。",
+          "track": "domain",
+          "source": "Google News · AIGC Production",
+          "heatScore": null,
+          "dimensions": {
+            "relevance": 45,
+            "novelty": 55,
+            "userValue": 35,
+            "actionability": 28,
+            "evidence": 50
+          },
+          "duplicateRisk": 35,
+          "memoryMatchCount": 5,
+          "opportunityScore": 33,
+          "recommendation": "candidate",
+          "pmValueType": "industry-context",
+          "rationale": "Netflix 布局 AI 动画工作室印证头部流媒体将 AI 引入内容制作，但本条核心是股票分析，缺少工作室具体能力或产品细节，仅作行业方向参考。"
+        },
+        {
+          "signalId": "SIG-20260823-AEF787A3",
+          "signalTitle": "Primitives 将全球发行 Play Media 的微短剧片单",
+          "titleZh": "Primitives 将全球发行 Play Media 的微短剧片单",
+          "summaryZh": "发行公司 Primitives 与 Play Media 达成合作，将负责其微短剧片单的全球分发，推动微短剧内容出海发行。",
+          "track": "domain",
+          "source": "Google News · Microdrama",
+          "heatScore": null,
+          "dimensions": {
+            "relevance": 50,
+            "novelty": 40,
+            "userValue": 30,
+            "actionability": 30,
+            "evidence": 35
+          },
+          "duplicateRisk": 20,
+          "memoryMatchCount": 0,
+          "opportunityScore": 33,
+          "recommendation": "candidate",
+          "pmValueType": "industry-context",
+          "rationale": "微短剧海外发行链路的参与者增多，可帮助 PM 判断 AIGC 短剧产能的出海分发通道与变现路径；但信号只有标题无具体合作条款或产品能力，仅作行业格局参考。"
+        },
+        {
+          "signalId": "SIG-20260823-2EB54111",
+          "signalTitle": "报告警告 Paramount-WBD 合并或致洛杉矶数千影视岗位流失",
+          "titleZh": "报告警告 Paramount-WBD 合并或致洛杉矶数千影视岗位流失",
+          "summaryZh": "新经济报告警告，拟议的 Paramount 与 Warner Bros. Discovery 合并可能使洛杉矶县数千个影视岗位年面临消失风险。",
+          "track": "domain",
+          "source": "Cartoon Brew",
+          "heatScore": null,
+          "dimensions": {
+            "relevance": 30,
+            "novelty": 40,
+            "userValue": 25,
+            "actionability": 20,
+            "evidence": 58
+          },
+          "duplicateRisk": 5,
+          "memoryMatchCount": 0,
+          "opportunityScore": 32,
+          "recommendation": "candidate",
+          "pmValueType": "industry-context",
+          "rationale": "影视行业合并与就业预测对 AI 内容制作产品决策影响间接，且无具体 AI 能力信息，属于低优先级行业新闻。"
+        },
+        {
+          "signalId": "SIG-20260823-C27BE11A",
+          "signalTitle": "报道：吉卜力工作室谈新片、AI 与宫崎骏继任者",
+          "titleZh": "报道：吉卜力工作室谈新片、AI 与宫崎骏继任者",
+          "summaryZh": "Cartoon Brew 深度报道吉卜力工作室现状，工作室以自身节奏应对 AI 冲击并规划宫崎骏之后的继任安排。",
+          "track": "domain",
+          "source": "Cartoon Brew",
+          "heatScore": null,
+          "dimensions": {
+            "relevance": 45,
+            "novelty": 45,
+            "userValue": 30,
+            "actionability": 25,
+            "evidence": 55
+          },
+          "duplicateRisk": 35,
+          "memoryMatchCount": 5,
+          "opportunityScore": 31,
+          "recommendation": "candidate",
+          "pmValueType": "industry-context",
+          "rationale": "头部动画工作室对 AI 的保留态度可作为专业动画市场对 AIGC 工具接受度的风向标，帮助 PM 评估传统影视动画客户群的落地阻力与切入时机，但无具体工具需求信息。"
+        },
+        {
+          "signalId": "SIG-20260823-B227C239",
+          "signalTitle": "哈萨克斯坦 AI 创作者 Alissa Kamorskaya 谈 AI 动画崛起",
+          "titleZh": "哈萨克斯坦 AI 创作者 Alissa Kamorskaya 谈 AI 动画崛起",
+          "summaryZh": "AI 创作者 Alissa Kamorskaya 接受媒体采访，分享她对 AI 动画创作兴起的观察与个人创作实践。",
+          "track": "domain",
+          "source": "Google News · AIGC Production",
+          "heatScore": null,
+          "dimensions": {
+            "relevance": 40,
+            "novelty": 35,
+            "userValue": 30,
+            "actionability": 25,
+            "evidence": 30
+          },
+          "duplicateRisk": 35,
+          "memoryMatchCount": 5,
+          "opportunityScore": 25,
+          "recommendation": "candidate",
+          "pmValueType": "industry-context",
+          "rationale": "独立 AI 动画创作者的一线视角可用于了解个人创作者对 AI 视频工具的采纳习惯，但报道未披露具体工作流或工具组合，无可直接复用的产品启发，仅作生态观察。"
+        }
+      ],
+      "recommendedSignalIds": [
+        "SIG-20260823-0AD7AB3D",
+        "SIG-20260823-EC2B8BD4",
+        "SIG-20260823-CCC01D62",
+        "SIG-20260823-EE98E39E",
+        "SIG-20260823-7E6717B3",
+        "SIG-20260823-262E78AA",
+        "SIG-20260823-93E673A4",
+        "SIG-20260823-1B43EE0D",
+        "SIG-20260823-3638177A",
+        "SIG-20260823-8C6FB50D",
+        "SIG-20260823-8ED2CCE0",
+        "SIG-20260823-3E3EABB7",
+        "SIG-20260823-2E053F89",
+        "SIG-20260823-AEF787A3",
+        "SIG-20260823-2EB54111",
+        "SIG-20260823-C27BE11A",
+        "SIG-20260823-B227C239"
+      ],
+      "reviewSignalIds": [],
+      "autoAnalyzedSignalIds": [],
+      "decisionSummary": "Agent 已分 2 批完成 17 条情报的 PM 机会评分，并按分数排序；其中 0 条高机会情报进入自动深度分析候选。",
+      "toolCalls": [
+        {
+          "id": "batch-1:call_00_TjJd2f3mn0BmjL2Z4EJM6564",
+          "name": "list_daily_signals",
+          "status": "success",
+          "inputSummary": "批次 1/2 · 读取最新双轨情报",
+          "outputSummary": "已读取 10 条最新情报",
+          "durationMs": 0
+        },
+        {
+          "id": "batch-1:call_00_y9V5AXxSAQUKKDCEaltd2316",
+          "name": "search_memory",
+          "status": "success",
+          "inputSummary": "批次 1/2 · 检索 10 条情报的历史决策",
+          "outputSummary": "完成 10 条候选的历史去重检索",
+          "durationMs": 21
+        },
+        {
+          "id": "batch-1:call_00_AoFOQurqjSeekXQ3PyaH5187",
+          "name": "score_candidates",
+          "status": "failed",
+          "inputSummary": "批次 1/2 · 评估 0 条候选",
+          "outputSummary": "必须对全部候选情报完成评分。",
+          "durationMs": 0
+        },
+        {
+          "id": "batch-1:call_00_bSDeM3II8BABv2tyi3ag1865",
+          "name": "score_candidates",
+          "status": "success",
+          "inputSummary": "批次 1/2 · 评估 10 条候选",
+          "outputSummary": "完成 10 条机会评分",
+          "durationMs": 1
+        },
+        {
+          "id": "batch-1:call_00_F9JT9qixHfIPF4xnqY2Q6675",
+          "name": "select_intelligence_for_pool",
+          "status": "success",
+          "inputSummary": "批次 1/2 · 确认今日情报机会评分结果",
+          "outputSummary": "完成 10 条产品情报评分",
+          "durationMs": 0
+        },
+        {
+          "id": "batch-2:call_00_Ia4Rjh5Ea5fbj8d3UEPB9527",
+          "name": "list_daily_signals",
+          "status": "success",
+          "inputSummary": "批次 2/2 · 读取最新双轨情报",
+          "outputSummary": "已读取 7 条最新情报",
+          "durationMs": 0
+        },
+        {
+          "id": "batch-2:call_00_8n7LFkUGItSFwKHYtXqN0717",
+          "name": "search_memory",
+          "status": "success",
+          "inputSummary": "批次 2/2 · 检索 7 条情报的历史决策",
+          "outputSummary": "完成 7 条候选的历史去重检索",
+          "durationMs": 14
+        },
+        {
+          "id": "batch-2:call_00_drKDAYN6FmYKKRvErPQ83693",
+          "name": "score_candidates",
+          "status": "success",
+          "inputSummary": "批次 2/2 · 评估 7 条候选",
+          "outputSummary": "完成 7 条机会评分",
+          "durationMs": 0
+        },
+        {
+          "id": "batch-2:call_00_IDNCJPFFnq2AWeNX84795575",
+          "name": "select_intelligence_for_pool",
+          "status": "success",
+          "inputSummary": "批次 2/2 · 确认今日情报机会评分结果",
+          "outputSummary": "完成 7 条产品情报评分",
+          "durationMs": 0
+        }
+      ],
+      "error": null
+    },
     {
       "id": "TRIAGE-802e68c2-72b3-4c7e-9555-81f1645c38c8",
       "agent": "product-opportunity-agent",
