@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "track": "technical",
-  "updatedAt": "2026-08-22T23:18:35.420Z",
+  "updatedAt": "2026-08-23T23:18:23.723Z",
   "items": [
     {
       "url": "https://www.latent.space/p/ainews-zawinskis-law-of-multiagents",
@@ -854,6 +854,26 @@
     {
       "url": "https://huggingface.co/blog/Dharma-AI/gpu-management-pt2",
       "title": "Same Cluster, 33 Points More Utilization: What Changed Was the Order"
+    },
+    {
+      "url": "https://www.latent.space/p/ainews-cursors-60b-acquisition-by",
+      "title": "[AINews] Cursor's $60B acquisition by SpaceXai closes"
+    },
+    {
+      "url": "https://github.com/freestylefly/awesome-gpt-image-2",
+      "title": "freestylefly/awesome-gpt-image-2"
+    },
+    {
+      "url": "https://github.com/tinyhumansai/openhuman",
+      "title": "tinyhumansai/openhuman"
+    },
+    {
+      "url": "https://github.com/VoltAgent/awesome-agent-skills",
+      "title": "VoltAgent/awesome-agent-skills"
+    },
+    {
+      "url": "https://github.com/NousResearch/hermes-agent",
+      "title": "NousResearch/hermes-agent"
     }
   ]
 }
