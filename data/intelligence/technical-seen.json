@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "track": "technical",
-  "updatedAt": "2026-08-24T07:21:57.642Z",
+  "updatedAt": "2026-08-24T23:20:05.231Z",
   "items": [
     {
       "url": "https://www.latent.space/p/ainews-zawinskis-law-of-multiagents",
@@ -874,6 +874,58 @@
     {
       "url": "https://github.com/NousResearch/hermes-agent",
       "title": "NousResearch/hermes-agent"
+    },
+    {
+      "url": "https://www.technologyreview.com/2026/08/24/1142630/ai-school-classroom-policies",
+      "title": "How to encourage smarter AI use in the classroom"
+    },
+    {
+      "url": "https://github.com/MadsLorentzen/ai-job-search",
+      "title": "MadsLorentzen/ai-job-search"
+    },
+    {
+      "url": "https://x.com/harsehaj/status/2091690736211112005",
+      "title": "how i built an SEO/AEO blog engine"
+    },
+    {
+      "url": "https://vercel.com/changelog/exa-joins-vercel-ai-gateway-agent-marketplace",
+      "title": "Exa joins the Vercel AI Gateway and Agent Marketplace"
+    },
+    {
+      "url": "https://github.com/openclaw/openclaw",
+      "title": "openclaw/openclaw"
+    },
+    {
+      "url": "https://x.com/chamath/status/2091930810098364595",
+      "title": "Deep Dive: The Next Trillion-Dollar Futures Market"
+    },
+    {
+      "url": "https://www.technologyreview.com/2026/08/24/1141740/kids-machines-language-learning",
+      "title": "Kids outlearn AI—and we still don’t know why"
+    },
+    {
+      "url": "https://github.com/AgriciDaniel/claude-obsidian",
+      "title": "AgriciDaniel/claude-obsidian"
+    },
+    {
+      "url": "https://openai.com/index/gpt-5-6-in-kiro",
+      "title": "Advancing price-performance for developers with GPT‑5.6 in Kiro"
+    },
+    {
+      "url": "https://github.com/rohitg00/ai-engineering-from-scratch",
+      "title": "rohitg00/ai-engineering-from-scratch"
+    },
+    {
+      "url": "https://github.com/tashfeenahmed/freellmapi",
+      "title": "tashfeenahmed/freellmapi"
+    },
+    {
+      "url": "https://x.com/FareaNFts/status/2091538403611533820",
+      "title": "17 Skills I Would Install on a Fresh Hermes Setup (10x Powerful Hack)"
+    },
+    {
+      "url": "https://tldr.tech/ai/2026-08-24",
+      "title": "DeepSeek Flash Vision 👀, Claude Mythos security 🛡️, inside Grok Bot 🤖"
     }
   ]
 }
