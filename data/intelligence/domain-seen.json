@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "track": "domain",
-  "updatedAt": "2026-08-23T23:36:22.374Z",
+  "updatedAt": "2026-08-24T23:36:27.483Z",
   "items": [
     {
       "url": "https://www.creativebloq.com/3d/autodesk-tackles-ai-filmmakings-biggest-problem-with-3d-control",
@@ -854,6 +854,86 @@
     {
       "url": "https://www.cartoonbrew.com/artist-rights/paramount-skydance-warner-bros-discovery-merger-job-losses-265822.html",
       "title": "New Report Warns Paramount-WBD Merger Could Devastate Los Angeles’ Production Workforce"
+    },
+    {
+      "url": "https://arxiv.org/abs/2608.20515",
+      "title": "DiffVC-ONE: Diffusion-based Generative Video Compression with One-Step Video Diffusion Transformer"
+    },
+    {
+      "url": "https://arxiv.org/abs/2608.20884",
+      "title": "Breaking High Confidence: Practical Face Impersonation under High-Security Thresholds"
+    },
+    {
+      "url": "https://arxiv.org/abs/2608.21133",
+      "title": "Masking Is Not Enough: Generative Restoration for Multimodal De-Identification in Medical AI"
+    },
+    {
+      "url": "https://arxiv.org/abs/2608.21194",
+      "title": "ES-VP : Energy-Shaped Dynamic Visual Prompting for Efficient Model Adaptation"
+    },
+    {
+      "url": "https://nofilmschool.com/beyerdynamic-dt-275-pro-headphones",
+      "title": "Beyerdynamic Has Some New PRO Headphones Designed for Productions in Loud Environments"
+    },
+    {
+      "url": "https://arxiv.org/abs/2608.20534",
+      "title": "Grounded-Exo2Ego: Structured Semantic Grounding for Robust Exocentric-to-Egocentric Video Generation"
+    },
+    {
+      "url": "https://arxiv.org/abs/2608.20770",
+      "title": "MotionPhys: Detecting AI-Generated Videos via Physical Consistency of Optical-Flow Trajectories"
+    },
+    {
+      "url": "https://arxiv.org/abs/2608.20868",
+      "title": "Identify, Locate, Link: End-to-End Key-Value Extraction from Document Images"
+    },
+    {
+      "url": "https://arxiv.org/abs/2608.21009",
+      "title": "Dorsal Hand Images for Immersive (XR) and Privacy-preserving Age Assurance and Child Safety"
+    },
+    {
+      "url": "https://arxiv.org/abs/2608.21254",
+      "title": "On the Transferability of Agricultural Weed Detection Under Cross-Field Distribution Shift"
+    },
+    {
+      "url": "https://nofilmschool.com/tombstone-latin-quote",
+      "title": "Film Quote of the Day: The 'Tombstone' Quote That Doc Holliday Delivered in Latin"
+    },
+    {
+      "url": "https://arxiv.org/abs/2608.20682",
+      "title": "Aristotelian Manifolds: Leveraging Platonic Perceptual Features for Backpropagation Free Rapid Concept Learning"
+    },
+    {
+      "url": "https://arxiv.org/abs/2608.20699",
+      "title": "ArtiMo: Agent-Driven Articulated Mesh Animation"
+    },
+    {
+      "url": "https://nofilmschool.com/shelley-fabares-elvis-presley-movies",
+      "title": "The Shelley Fabares Movies That Put Her Alongside Elvis Presley"
+    },
+    {
+      "url": "https://nofilmschool.com/mel-brooks-favorite-films",
+      "title": "Mel Brooks Celebrates His 100th Birthday With His 20 Favorite Films"
+    },
+    {
+      "url": "https://nofilmschool.com/3d-film-parts-cinecharge-65",
+      "title": "This New USB Charger is Here to Unlock 4 Independent Fast Charging Channels"
+    },
+    {
+      "url": "https://www.cartoonbrew.com/anime/two-one-piece-films-announced-toei-265884.html",
+      "title": "Two New ‘One Piece’ Movies Announced For 2027 And 2029"
+    },
+    {
+      "url": "https://arxiv.org/abs/2608.20713",
+      "title": "AGIDefect-4K: A Richly Annotated Dataset for AI-Generated Image Defect Detection, Localization and Explanation"
+    },
+    {
+      "url": "https://arxiv.org/abs/2608.20749",
+      "title": "Identity-Preserving Text-to-Video Generation via Agentic Enhancement and Semantic Repair"
+    },
+    {
+      "url": "https://arxiv.org/abs/2608.21247",
+      "title": "Just Noticeable Difference Modeling for Token Compression in Vision-Language-Action Models"
     }
   ]
 }
