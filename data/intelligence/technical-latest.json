@@ -3,7 +3,7 @@
   "briefingDate": "2026-08-24",
   "timezone": "Asia/Shanghai",
   "track": "technical",
-  "generatedAt": "2026-08-23T23:18:23.723Z",
+  "generatedAt": "2026-08-24T07:21:57.642Z",
   "candidateCount": 5,
   "targetCount": 10,
   "dailyLimit": 20,
@@ -183,84 +183,84 @@
       "sourceName": "GitHub Trending",
       "status": "success",
       "collected": 10,
-      "durationMs": 1479
+      "durationMs": 1651
     },
     {
       "sourceId": "openai-news",
       "sourceName": "OpenAI News",
       "status": "success",
       "collected": 12,
-      "durationMs": 243
+      "durationMs": 206
     },
     {
       "sourceId": "deepmind-blog",
       "sourceName": "Google DeepMind Blog",
       "status": "success",
       "collected": 12,
-      "durationMs": 448
+      "durationMs": 343
     },
     {
       "sourceId": "huggingface-blog",
       "sourceName": "Hugging Face Blog",
       "status": "success",
       "collected": 12,
-      "durationMs": 271
+      "durationMs": 235
     },
     {
       "sourceId": "tldr-ai",
       "sourceName": "TLDR AI",
       "status": "success",
       "collected": 12,
-      "durationMs": 245
+      "durationMs": 238
     },
     {
       "sourceId": "smol-ai-news",
       "sourceName": "Smol AI News",
       "status": "success",
       "collected": 12,
-      "durationMs": 434
+      "durationMs": 484
     },
     {
       "sourceId": "latent-space",
       "sourceName": "Latent Space",
       "status": "success",
       "collected": 12,
-      "durationMs": 311
+      "durationMs": 256
     },
     {
       "sourceId": "mit-tech-review-ai",
       "sourceName": "MIT Technology Review AI",
       "status": "success",
       "collected": 10,
-      "durationMs": 274
+      "durationMs": 306
     },
     {
       "sourceId": "product-hunt-ai",
       "sourceName": "Product Hunt · AI Products",
       "status": "success",
       "collected": 1,
-      "durationMs": 121
+      "durationMs": 311
     },
     {
       "sourceId": "github-ai-changelog",
       "sourceName": "GitHub Changelog · AI",
       "status": "success",
       "collected": 3,
-      "durationMs": 152
+      "durationMs": 275
     },
     {
       "sourceId": "vercel-ai-changelog",
       "sourceName": "Vercel Changelog · AI",
       "status": "success",
       "collected": 20,
-      "durationMs": 859
+      "durationMs": 1025
     },
     {
       "sourceId": "attentionvc-ai",
       "sourceName": "X / AttentionVC AI",
       "status": "success",
       "collected": 1,
-      "durationMs": 236
+      "durationMs": 402
     }
   ],
   "quality": {
@@ -275,7 +275,7 @@
       "requestCount": 0,
       "retryCount": 0,
       "failedBatchCount": 0,
-      "durationMs": 1,
+      "durationMs": 0,
       "issues": []
     }
   }
