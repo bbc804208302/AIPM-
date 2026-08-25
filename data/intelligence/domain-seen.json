@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "track": "domain",
-  "updatedAt": "2026-08-24T23:36:27.483Z",
+  "updatedAt": "2026-08-25T23:39:36.721Z",
   "items": [
     {
       "url": "https://www.creativebloq.com/3d/autodesk-tackles-ai-filmmakings-biggest-problem-with-3d-control",
@@ -934,6 +934,86 @@
     {
       "url": "https://arxiv.org/abs/2608.21247",
       "title": "Just Noticeable Difference Modeling for Token Compression in Vision-Language-Action Models"
+    },
+    {
+      "url": "https://nofilmschool.com/apple-m6-mac-mini",
+      "title": "Apple Introduces the M6, Its First 2 nm Chip, Set to Power a New Era of Desktop Performance"
+    },
+    {
+      "url": "https://arxiv.org/abs/2608.21425",
+      "title": "Aligning Human Sense: Calibrated Distributional Reward Learning for Video Generation"
+    },
+    {
+      "url": "https://arxiv.org/abs/2608.21439",
+      "title": "WorldMind: Decoupled Game World Model for State-Aware NPC Behavior"
+    },
+    {
+      "url": "https://nofilmschool.com/amc-fights-against-ticket-scalpers",
+      "title": "AMC Fights Back Against Ticket Scalpers"
+    },
+    {
+      "url": "https://nofilmschool.com/desktop-video-update-16-4",
+      "title": "Blackmagic Design Rolls Out Another Desktop Video Update for DeckLink IP HD Models"
+    },
+    {
+      "url": "https://nofilmschool.com/new-mac-studio-models",
+      "title": "Apple Unveils Its New Mac Studio With M5 Max and M5 Ultra Options Aimed for On-Device AI"
+    },
+    {
+      "url": "https://arxiv.org/abs/2608.21839",
+      "title": "FIRM-Video: Check Before You Score for Reliable Text-to-Video Reward Modeling"
+    },
+    {
+      "url": "https://arxiv.org/abs/2608.21849",
+      "title": "GaussVid: Sparse-View Gaussian Splatting with 3D-Aware Video Diffusion Priors"
+    },
+    {
+      "url": "https://arxiv.org/abs/2608.22819",
+      "title": "Direct, Parallel, or Sequential? A Comparative Study of Training-Free Multi-Subject Image-to-Video Generation"
+    },
+    {
+      "url": "https://nofilmschool.com/adobe-firefly-audio-tools",
+      "title": "Adobe Firefly Overhauls Its Audio Capabilities With Music, Speech, and Sound Effects All Now in One Place"
+    },
+    {
+      "url": "https://arxiv.org/abs/2608.21426",
+      "title": "AI Visual Inspection for Garment Production"
+    },
+    {
+      "url": "https://arxiv.org/abs/2608.21468",
+      "title": "3D Point Cloud from Close-Range Photogrammetry for Defect Characterisation of Rubberised Concrete"
+    },
+    {
+      "url": "https://arxiv.org/abs/2608.21754",
+      "title": "Fidelity-Diversity-Consistency (FDC): Data Pruning for Remote Sensing Change Detection"
+    },
+    {
+      "url": "https://nofilmschool.com/hideo-kojima-film-inspirations",
+      "title": "The Movies That Inspired Hideo Kojima’s Most Iconic Video Games"
+    },
+    {
+      "url": "https://nofilmschool.com/unforgiven-little-bill-hypocrisy-quote",
+      "title": "Film Quote of the Day: The 1992 'Unforgiven' Line That Perfectly Captures Little Bill's Hypocrisy"
+    },
+    {
+      "url": "https://news.google.com/rss/articles/CBMiowFBVV95cUxPVlhXcTB5bW1zYlV4ZFppT1VXZVBYTUFiRWMwTW44MDZOeGJrbThRTE9JRjVQbWVTa2pBMnNEdVhlOTJodHpMU1V5cVVKbEdWc0Y0anFfaWlyZWRCYUZZQlJsYVFDUmlwN19WTDVkRWNEWGJPMzRxZ3JCb1dyU3k4cDJqOWZKUWZrTnMwWkpGWmwzV3Y4WGVTYng5aWpacEN2NWxn?oc=5",
+      "title": "Bite-sized bingeing: Inside the explosion of short drama apps - Business of Apps"
+    },
+    {
+      "url": "https://arxiv.org/abs/2608.21455",
+      "title": "Tomatoes, Potatoes, and Onions: Questioning the Need for Faces in Face Presentation Attack Detection"
+    },
+    {
+      "url": "https://arxiv.org/abs/2608.21697",
+      "title": "Emotion Intensity Matters: Generating Realistic Expressions in Virtual Humans with CVAEs"
+    },
+    {
+      "url": "https://arxiv.org/abs/2608.22655",
+      "title": "Multiple View Neural Regression of a Facial Shape Model"
+    },
+    {
+      "url": "https://arxiv.org/abs/2608.22937",
+      "title": "Quality Inspection of Printed Circuit Board Pin Insertion via Semantic Segmentation and Board-Level Feature Extraction"
     }
   ]
 }
