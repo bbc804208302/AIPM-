@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "track": "technical",
-  "updatedAt": "2026-08-24T23:20:05.231Z",
+  "updatedAt": "2026-08-25T23:23:10.614Z",
   "items": [
     {
       "url": "https://www.latent.space/p/ainews-zawinskis-law-of-multiagents",
@@ -926,6 +926,86 @@
     {
       "url": "https://tldr.tech/ai/2026-08-24",
       "title": "DeepSeek Flash Vision 👀, Claude Mythos security 🛡️, inside Grok Bot 🤖"
+    },
+    {
+      "url": "https://vercel.com/blog/the-end-of-credential-sprawl-for-agents",
+      "title": "The end of credential sprawl for agents"
+    },
+    {
+      "url": "https://github.com/Shubhamsaboo/awesome-llm-apps",
+      "title": "Shubhamsaboo/awesome-llm-apps"
+    },
+    {
+      "url": "https://x.com/chddaniel/status/2091903435243200640",
+      "title": "I gave my Grok Bot 3 X accounts. It got us 69.8M impressions. (full guide)"
+    },
+    {
+      "url": "https://vercel.com/blog/introducing-run",
+      "title": "Introducing Run SDK: secure eval for your agents"
+    },
+    {
+      "url": "https://github.com/marin-community/marin",
+      "title": "marin-community/marin"
+    },
+    {
+      "url": "https://x.com/P_Bonnet/status/2091928684621860889",
+      "title": "What if everything goes right for AI? Learnings from the Aluminium trade."
+    },
+    {
+      "url": "https://openai.com/index/introducing-admin-plugin",
+      "title": "Introducing the Admin plugin for ChatGPT Work and Codex"
+    },
+    {
+      "url": "https://github.com/DietrichGebert/ponytail",
+      "title": "DietrichGebert/ponytail"
+    },
+    {
+      "url": "https://github.blog/changelog/2026-08-25-github-copilot-app-customize-tab-is-generally-available",
+      "title": "GitHub Copilot app Customize tab is generally available"
+    },
+    {
+      "url": "https://huggingface.co/blog/MultiverseComputingCAI/quantization-aware-healing",
+      "title": "Quantization-Aware Healing: a compressed, 4-bit model that outperforms its full-precision original"
+    },
+    {
+      "url": "https://openai.com/index/the-full-stack-behind-abundant-intelligence",
+      "title": "The full stack behind abundant intelligence"
+    },
+    {
+      "url": "https://openai.com/index/jalapeno-first-results",
+      "title": "Jalapeño’s first results show industry-leading speed and efficiency in AI inference"
+    },
+    {
+      "url": "https://huggingface.co/blog/gradio-workflow-guide",
+      "title": "Wire It, Run It, Deploy It: AI Workflows in Gradio"
+    },
+    {
+      "url": "https://vercel.com/changelog/minimax-m3-and-m2-7-are-free-on-ai-gateway",
+      "title": "MiniMax M3 and M2.7 are free on AI Gateway"
+    },
+    {
+      "url": "https://vercel.com/changelog/wan-3-0-now-available-on-ai-gateway",
+      "title": "Wan 3.0 now available on AI Gateway"
+    },
+    {
+      "url": "https://vercel.com/changelog/ai-gateway-now-supports-asynchronous-video-generation",
+      "title": "AI Gateway now supports asynchronous video generation"
+    },
+    {
+      "url": "https://vercel.com/changelog/chat-sdk-slack-enterprise-grid",
+      "title": "Chat SDK now supports Slack Enterprise Grid"
+    },
+    {
+      "url": "https://vercel.com/changelog/notion-chat-sdk",
+      "title": "Bring your agent to Notion with Chat SDK"
+    },
+    {
+      "url": "https://vercel.com/changelog/chat-sdk-now-supports-xchat",
+      "title": "Chat SDK now supports XChat"
+    },
+    {
+      "url": "https://www.producthunt.com/products/agent-card",
+      "title": "Purchase API by Agentcard"
     }
   ]
 }
