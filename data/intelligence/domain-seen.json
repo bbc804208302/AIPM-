@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "track": "domain",
-  "updatedAt": "2026-08-25T23:39:36.721Z",
+  "updatedAt": "2026-08-27T04:31:44.164Z",
   "items": [
     {
       "url": "https://www.creativebloq.com/3d/autodesk-tackles-ai-filmmakings-biggest-problem-with-3d-control",
@@ -1014,6 +1014,86 @@
     {
       "url": "https://arxiv.org/abs/2608.22937",
       "title": "Quality Inspection of Printed Circuit Board Pin Insertion via Semantic Segmentation and Board-Level Feature Extraction"
+    },
+    {
+      "url": "https://arxiv.org/abs/2608.25452",
+      "title": "VGA-BenchV2: An Expanded Unified Benchmark and Multi-Model Framework for Evaluating Video Aesthetics and Generation Quality"
+    },
+    {
+      "url": "https://arxiv.org/abs/2608.25981",
+      "title": "FRAME: separating sampling variation from representational cause in medical imaging fairness"
+    },
+    {
+      "url": "https://arxiv.org/abs/2608.26105",
+      "title": "VBVR-Pro: A Scalable and Verifiable Suite for Native Visual Reasoning"
+    },
+    {
+      "url": "https://arxiv.org/abs/2505.22084",
+      "title": "MObyGaze: a film dataset of multimodal objectification densely annotated by experts"
+    },
+    {
+      "url": "https://nofilmschool.com/gopro-mission-1-pro-ils-release",
+      "title": "GoPro Officially Launches its MISSION 1 PRO ILS and New MISSION Monitor App"
+    },
+    {
+      "url": "https://arxiv.org/abs/2608.25140",
+      "title": "RefLAM: A Reference-Grounded Line Annotation Pipeline for Historical Arabic Manuscripts"
+    },
+    {
+      "url": "https://nofilmschool.com/godox-gm6s-pro",
+      "title": "Looking for a Highly Affordable On-Camera Monitor? The Godox GM6S PRO Base Kit Retails for Under $200"
+    },
+    {
+      "url": "https://nofilmschool.com/miller-tripods-closure",
+      "title": "Legacy Tripod Company Miller Camera Support Equipment to Shut Down"
+    },
+    {
+      "url": "https://arxiv.org/abs/2608.24956",
+      "title": "Synergising Local Geo-Environmental Characteristics with Spatial Context for Enhancing Landslide Susceptibility Mapping"
+    },
+    {
+      "url": "https://arxiv.org/abs/2608.25485",
+      "title": "Semi-Supervised Adaptation of Vision-Language Models for Image Classification"
+    },
+    {
+      "url": "https://arxiv.org/abs/2608.25933",
+      "title": "When Composition Doesn't Add Up: Humans Identifying Defects in AI-Generated Images"
+    },
+    {
+      "url": "https://arxiv.org/abs/2608.25965",
+      "title": "Less Contouring, More Accuracy: Lesion-Guided ROI Deep Learning for Ovarian Ultrasound Classification"
+    },
+    {
+      "url": "https://arxiv.org/abs/2608.24909",
+      "title": "Super Star: Towards Streaming Real-time Interactive Agents for Digital Humans"
+    },
+    {
+      "url": "https://arxiv.org/abs/2601.17103",
+      "title": "Performance uncertainty in medical image analysis: a large-scale investigation of confidence intervals"
+    },
+    {
+      "url": "https://arxiv.org/abs/2603.00188",
+      "title": "ST-Lite: Training-Free KV Cache Compression with Spatio-Trajectory Guidance for Long-Horizon GUI Agents"
+    },
+    {
+      "url": "https://nofilmschool.com/your-edit-isnt-finished-until-it-sounds-right",
+      "title": "Your Edit Isn’t Finished Until It Sounds Right"
+    },
+    {
+      "url": "https://nofilmschool.com/young-men-tv-friendship-stories",
+      "title": "Screenwriters, This Is the Audience Hollywood Isn’t Writing For"
+    },
+    {
+      "url": "https://nofilmschool.com/dolly-parton-best-songs-screen",
+      "title": "The Best Uses of Dolly Parton's Music on Screen"
+    },
+    {
+      "url": "https://arxiv.org/abs/2608.25479",
+      "title": "4DStreamCtrl: Interactive Video Generation with Online 4D Control"
+    },
+    {
+      "url": "https://arxiv.org/abs/2412.12660",
+      "title": "SEG-SAM: Semantic-Guided SAM for Unified Medical Image Segmentation"
     }
   ]
 }
