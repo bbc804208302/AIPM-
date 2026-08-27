@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "track": "technical",
-  "updatedAt": "2026-08-25T23:23:10.614Z",
+  "updatedAt": "2026-08-27T04:13:06.938Z",
   "items": [
     {
       "url": "https://www.latent.space/p/ainews-zawinskis-law-of-multiagents",
@@ -1006,6 +1006,86 @@
     {
       "url": "https://www.producthunt.com/products/agent-card",
       "title": "Purchase API by Agentcard"
+    },
+    {
+      "url": "https://www.technologyreview.com/2026/08/26/1143013/the-inside-story-on-why-openai-agents-hacked-hugging-face",
+      "title": "The inside story on why OpenAI agents hacked Hugging Face"
+    },
+    {
+      "url": "https://github.com/tt-a1i/archify",
+      "title": "tt-a1i/archify"
+    },
+    {
+      "url": "https://x.com/TryLiveAvatar/status/2092281613682123061",
+      "title": "Unlimited concurrency, pennies a minute"
+    },
+    {
+      "url": "https://www.latent.space/p/lovable-future-of-saas",
+      "title": "Lovable CTO: The Future of SaaS Is Apps That Agents Can Use"
+    },
+    {
+      "url": "https://github.com/browser-use/browser-use",
+      "title": "browser-use/browser-use"
+    },
+    {
+      "url": "https://x.com/johnbai/status/2092019324797989023",
+      "title": "Designing Grok Bot with Grok Bot"
+    },
+    {
+      "url": "https://www.latent.space/p/ainews-nvidia-buys-huggingface-for",
+      "title": "[AINews] NVIDIA buys HuggingFace for $13B, as OpenAI publishes their HF incident retro"
+    },
+    {
+      "url": "https://github.com/K-Dense-AI/scientific-agent-skills",
+      "title": "K-Dense-AI/scientific-agent-skills"
+    },
+    {
+      "url": "https://www.latent.space/p/ainews-hot-chips-openais-jalapeno",
+      "title": "[AINews] Hot Chips: OpenAI’s Jalapeño, Cerebras CS-5, Groq 3 LPX, Apple M6"
+    },
+    {
+      "url": "https://github.blog/changelog/2026-08-26-global-model-policy-generally-available",
+      "title": "Global model policy generally available"
+    },
+    {
+      "url": "https://www.latent.space/p/anima",
+      "title": "🔬“We have foundation models for language, not for physics” — Anima Anandkumar, Bren Professor of Computing"
+    },
+    {
+      "url": "https://openai.com/index/bringing-chatgpt-for-teachers-to-more-us-school-districts",
+      "title": "Bringing ChatGPT for Teachers to more U.S. school districts"
+    },
+    {
+      "url": "https://www.technologyreview.com/2026/08/26/1141949/editors-letter-september-2026",
+      "title": "Raised on AI"
+    },
+    {
+      "url": "https://www.technologyreview.com/2026/08/26/1141952/puzzles-ai-models-flub-these-tests",
+      "title": "AI models flub these intelligence tests. Can you fare any better?"
+    },
+    {
+      "url": "https://huggingface.co/blog/train-multi-vector-encoder",
+      "title": "Training and Finetuning Multi-Vector Embedding Models with Sentence Transformers"
+    },
+    {
+      "url": "https://openai.com/index/hugging-face-incident-and-the-road-ahead",
+      "title": "The Hugging Face incident and the road ahead"
+    },
+    {
+      "url": "https://vercel.com/changelog/muse-image-now-available-on-ai-gateway",
+      "title": "Muse Image now available on AI Gateway"
+    },
+    {
+      "url": "https://vercel.com/changelog/gemini-3-5-transcribe-now-available-on-ai-gateway",
+      "title": "Gemini 3.5 Transcribe now available on AI Gateway"
+    },
+    {
+      "url": "https://vercel.com/changelog/qwen-3-8-flash-now-available-on-ai-gateway",
+      "title": "Qwen 3.8 Flash now available on AI Gateway"
+    },
+    {
+      "url": "https://vercel.com/changelog/glm-5-3-flash-now-available-on-ai-gateway",
+      "title": "GLM 5.3 Flash now available on AI Gateway"
     }
   ]
 }
