@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "track": "technical",
-  "updatedAt": "2026-08-27T04:13:06.938Z",
+  "updatedAt": "2026-08-28T06:45:25.630Z",
   "items": [
     {
       "url": "https://www.latent.space/p/ainews-zawinskis-law-of-multiagents",
@@ -1086,6 +1086,86 @@
     {
       "url": "https://vercel.com/changelog/glm-5-3-flash-now-available-on-ai-gateway",
       "title": "GLM 5.3 Flash now available on AI Gateway"
+    },
+    {
+      "url": "https://github.blog/changelog/2026-08-27-copilot-code-review-resolution-reasons-and-expanded-capabilities",
+      "title": "Copilot code review: Resolution reasons and expanded capabilities"
+    },
+    {
+      "url": "https://github.com/JetBrains/go-modern-guidelines",
+      "title": "JetBrains/go-modern-guidelines"
+    },
+    {
+      "url": "https://x.com/fi56622380/status/2093040177711329673",
+      "title": "AI Semiconductor Endgame 2026 (III)"
+    },
+    {
+      "url": "https://vercel.com/changelog/claude-managed-agents-with-chat-sdk",
+      "title": "Run Claude Managed Agents with Chat SDK"
+    },
+    {
+      "url": "https://github.com/thedotmack/claude-mem",
+      "title": "thedotmack/claude-mem"
+    },
+    {
+      "url": "https://x.com/VibeMarketer_/status/2092243372929151135",
+      "title": "How to Build a Company Brain That Gets Smarter Every Week"
+    },
+    {
+      "url": "https://vercel.com/changelog/cursor-ai-sdk-harness-adapter",
+      "title": "Cursor is now available in the AI SDK harness layer"
+    },
+    {
+      "url": "https://github.com/ComposioHQ/awesome-claude-skills",
+      "title": "ComposioHQ/awesome-claude-skills"
+    },
+    {
+      "url": "https://vercel.com/blog/the-best-workflow-engine-is-a-programming-language",
+      "title": "The best workflow engine is a programming language"
+    },
+    {
+      "url": "https://x.com/GoogleAIStudio/status/2092665956036219151",
+      "title": "Intelligent transcription with Gemini 3.5 Transcribe"
+    },
+    {
+      "url": "https://vercel.com/changelog/ling-3-0-flash-fin-now-available-on-ai-gateway-for-free",
+      "title": "Ling 3.0 Flash Fin now available on AI Gateway for free"
+    },
+    {
+      "url": "https://x.com/reactiverobot/status/2092638003789439075",
+      "title": "How I Design with AI."
+    },
+    {
+      "url": "https://deepmind.google/blog/gemini-omni-1-1-flash-lets-you-build-with-more-control",
+      "title": "Gemini Omni 1.1 Flash lets you build with more control"
+    },
+    {
+      "url": "https://deepmind.google/blog/piloting-the-worlds-first-double-blind-ai-evaluations",
+      "title": "Piloting the world's first double-blind AI evaluations"
+    },
+    {
+      "url": "https://openai.com/index/what-students-gain-from-chatgpt-critical-thinking-training",
+      "title": "Better answers, broader thinking: What students gain from ChatGPT and critical-thinking training"
+    },
+    {
+      "url": "https://openai.com/index/expanding-our-presence-in-brazil",
+      "title": "Expanding OpenAI’s presence in Brazil"
+    },
+    {
+      "url": "https://tldr.tech/ai/2026-08-27",
+      "title": "GLM-5.3 Flash ⚡, Claudeforce 🤝, NVIDIA revenue surge 📈"
+    },
+    {
+      "url": "https://deepmind.google/blog/intelligent-transcription-with-gemini-3-5-transcribe",
+      "title": "Intelligent transcription with Gemini 3.5 Transcribe"
+    },
+    {
+      "url": "https://openai.com/index/learning-never-stops",
+      "title": "Learning never stops: How AI makes learning continuous"
+    },
+    {
+      "url": "https://www.technologyreview.com/2026/08/26/1142946/bill-gates-ai-danger-threshold",
+      "title": "Bill Gates says we’ve passed AI’s danger thresholds. Now what?"
     }
   ]
 }
