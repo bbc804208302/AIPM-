@@ -1,7 +1,169 @@
 {
   "schemaVersion": 2,
-  "updatedAt": "2026-08-27T04:43:35.183Z",
+  "updatedAt": "2026-08-28T07:06:35.559Z",
   "runs": [
+    {
+      "id": "RUN-b23ac128-0121-45ea-8752-489d617b044f",
+      "agent": "product-opportunity-agent",
+      "version": 1,
+      "signalId": "SIG-20260828-90BA20DC",
+      "signalTitle": "Gemini Omni 1.1 Flash lets you build with more control",
+      "track": "technical",
+      "objective": "评估公开情报并形成可供产品经理确认的候选需求",
+      "status": "rejected",
+      "decision": "reject",
+      "decisionSummary": "该情报为 Google DeepMind 官方发布的模型能力公告（Gemini Omni 1.1 Flash，标题强调\"build with more control\"），属厂商模型能力/技术新闻而非明确需求信号。摘要注明\"原始来源信息不足\"，未包含明确的目标用户画像、待解决的具体用户问题或可由我方产品承接的可落地机会，heatScore 为空，无采用反馈或用户侧痛点证据。与历史处理一致：DeepSeek V4 Flash Vision 接入、Sheets canvas + Gemini、Run SDK 等模型能力/厂商发布公告均因无明确需求信号而拒绝转化。新闻或模型发布热度本身不构成需求。建议仅作为多模态/Omni 模型控制能力方向的生态动态跟踪，若后续出现客户侧真实诉求（如某场景下模型控制能力不足的具体痛点）或可落地的产品承接点再重新评估。",
+      "model": "deepseek-v4-flash",
+      "startedAt": "2026-08-28T07:06:42.750Z",
+      "completedAt": "2026-08-28T07:06:50.284Z",
+      "durationMs": 7534,
+      "toolCalls": [
+        {
+          "id": "call_00_lmJBWU0yaVyHj5zaTKQu1292",
+          "name": "get_signal",
+          "status": "success",
+          "inputSummary": "读取情报 SIG-20260828-90BA20DC",
+          "outputSummary": "已读取 Google DeepMind Blog 的公开情报证据",
+          "durationMs": 2
+        },
+        {
+          "id": "call_00_B48APYXeFliwEGnVx6ZY0534",
+          "name": "search_memory",
+          "status": "success",
+          "inputSummary": "检索“Gemini Omni Flash 多模态模型 控制能力”",
+          "outputSummary": "召回 5 条历史决策",
+          "durationMs": 6
+        },
+        {
+          "id": "call_00_IBnERrRIVZ3HtrTW5c1b8109",
+          "name": "reject_signal",
+          "status": "success",
+          "inputSummary": "记录暂不转化原因",
+          "outputSummary": "已记录暂不转化结论",
+          "durationMs": 0
+        }
+      ],
+      "memoryMatches": [
+        {
+          "runId": "RUN-89b13967-be3b-455a-8080-95365be288c6",
+          "signalTitle": "DeepSeek V4 Flash Vision Experimental now available on AI Gateway",
+          "decision": "reject",
+          "summary": "该情报为 Vercel Changelog 发布的厂商公告：DeepSeek V4 Flash Vision Experimental 模型接入 AI Gateway，可接受图文输入。核心事实属于模型能力/平台可用性的技术新闻，而非市场需求信号：情报中未包含明确的目标用户画像（“开发者”仅为推断）、待解决的具体用户问题或用户侧证据（无痛点场景、无采用反馈），也未给出可由我方产品承接的可落地机会（我方无法承接第三方平台自身的模型接入公告）。heatScore 为空，与历史处理一致：模型能力新闻、厂商功能发布公告（如 GitHub Copilot in Slack、Sheets canvas + Gemini）均因无明确需求信号而拒绝转化。建议仅作为多模态模型生态动态跟踪，若后续出现客户侧真实诉求（如图文理解场景的具体痛点）或可落地的产品承接点再重新评估。",
+          "createdAt": "2026-08-21T23:55:21.336Z"
+        },
+        {
+          "runId": "RUN-b2eac380-87a8-4d97-be40-ebfae20b4108",
+          "signalTitle": "Bring your spreadsheet data to life",
+          "decision": "reject",
+          "summary": "该情报为 Google AI 官方发布的 Sheets canvas + Gemini 3.7 Flash 产品能力公告，核心事实是\"无需编码即可将表格变为交互式迷你应用\"。属竞品能力/产品动态，未包含明确的目标用户画像、待解决的用户问题或可由我方产品承接的可落地机会；\"no coding required\"\"Most AI UI tools produce…\"等表述更接近产品宣传，缺乏用户侧证据（问题场景、采用反馈、差异化痛点）支撑。heatScore 72 属于热度而非需求，与历史处理一致（Replit Free Mode、开源 AI 工具、模型能力新闻等均因无明确需求信号而拒绝转化）。建议仅作为 AI 表格/低代码交互应用方向的竞品动态跟踪，若后续出现具体用户痛点场景或差异化机会再重新评估。",
+          "createdAt": "2026-08-20T04:07:04.388Z"
+        },
+        {
+          "runId": "RUN-c60a884c-d491-489d-8c46-1de815c1d1e7",
+          "signalTitle": "Cursor is now available in the AI SDK harness layer",
+          "decision": "reject",
+          "summary": "该情报为 Vercel Changelog 的厂商产品发布公告（AI SDK harness 层新增 Cursor 官方适配器），属技术能力发布而非明确需求信号。核心事实仅为：harness 层可通过统一接口运行并切换不同 coding agent。信号未提供明确用户问题场景、目标用户画像（coding agent 开发者仅为推断）或可由我方产品承接的可落地机会；摘要本身不完整（关键内容被截断），heatScore 为空，无采用反馈或用户侧痛点证据。与历史处理一致：Vercel 官方 SDK/Changelog 类公告（Run SDK secure eval、DeepSeek V4 Flash Vision 接入 AI Gateway 等）均因无明确需求而拒绝。多 agent 统一接入/切换方向可继续跟踪，若后续出现具体痛点证据（如开发者切换 coding agent 的成本问题、harness 层的真实采用反馈）再重新评估。",
+          "createdAt": "2026-08-28T07:06:42.740Z"
+        },
+        {
+          "runId": "RUN-58494344-4085-4b76-a69b-281594e22bbc",
+          "signalTitle": "Introducing Run SDK: secure eval for your agents",
+          "decision": "reject",
+          "summary": "该信号为 Vercel 官方 SDK 发布公告（Run SDK: secure eval for agents），属于厂商能力/产品发布类技术新闻，而非明确的市场需求信号。核心事实仅为：Vercel 发布了一个用于安全评估 agent 的 SDK，且 agent 编写的 TypeScript 程序触达真实应用时涉及认证。信号未提供明确的目标用户画像（agent 开发者仅为推断）、具体用户痛点场景、问题频率或用户侧证据（无采用反馈、无价值主张验证），heatScore 为空，摘要本身亦不完整（关键内容被截断），无法确认可落地的问题边界。与历史处理一致：Vercel Changelog 厂商公告（如 DeepSeek V4 Flash Vision 接入 AI Gateway）均因无明确需求信号而拒绝；尽管历史中存在\"v0 认证不暴露 OAuth token\"被转化的案例，但那是针对具体、已被头部厂商验证的认证安全问题（token 泄露痛点有明确技术方案），而本条仅是宽泛的 agent 安全评估 SDK 能力发布，未呈现出可由我方产品承接的具体切入点。新闻/产品发布热度本身不构成需求。建议持续跟踪 agent 安全评估与认证隔离方向在开发者中的反馈，若出现明确用户痛点证据（如 agent 评估过程中的凭据泄露事件、安全评估成本问题）或可落地的产品场景再重新评估。",
+          "createdAt": "2026-08-25T23:54:24.016Z"
+        },
+        {
+          "runId": "RUN-3d7fc78e-b556-4224-ab6a-64850b0cef7f",
+          "signalTitle": "VoltAgent/awesome-agent-skills",
+          "decision": "reject",
+          "summary": "该信号为 GitHub Trending 上的开源资源合集（VoltAgent/awesome-agent-skills），核心事实仅为一个收录 1000+ agent skills 的第三方清单，兼容 Claude Code、Codex、Gemini CLI、Cursor 等工具。信号未提供明确用户问题场景、目标用户画像或可由我方产品承接的可落地机会；heatScore=70 仅代表开源热度，不构成需求。与历史处理一致：TradingAgents、ai-memory、strix、awesome-gpt-image-2 等开源工具/资源合集类技术动态均因无明确需求信号而拒绝。建议持续跟踪 agent skills 生态在各工具间标准化与复用方面的采用反馈，若后续出现具体用户痛点（如技能跨工具迁移成本、团队技能资产管理缺失）再重新评估。",
+          "createdAt": "2026-08-24T07:26:59.331Z"
+        }
+      ],
+      "proposal": null,
+      "error": null
+    },
+    {
+      "id": "RUN-c60a884c-d491-489d-8c46-1de815c1d1e7",
+      "agent": "product-opportunity-agent",
+      "version": 1,
+      "signalId": "SIG-20260828-C93CC4F9",
+      "signalTitle": "Cursor is now available in the AI SDK harness layer",
+      "track": "technical",
+      "objective": "评估公开情报并形成可供产品经理确认的候选需求",
+      "status": "rejected",
+      "decision": "reject",
+      "decisionSummary": "该情报为 Vercel Changelog 的厂商产品发布公告（AI SDK harness 层新增 Cursor 官方适配器），属技术能力发布而非明确需求信号。核心事实仅为：harness 层可通过统一接口运行并切换不同 coding agent。信号未提供明确用户问题场景、目标用户画像（coding agent 开发者仅为推断）或可由我方产品承接的可落地机会；摘要本身不完整（关键内容被截断），heatScore 为空，无采用反馈或用户侧痛点证据。与历史处理一致：Vercel 官方 SDK/Changelog 类公告（Run SDK secure eval、DeepSeek V4 Flash Vision 接入 AI Gateway 等）均因无明确需求而拒绝。多 agent 统一接入/切换方向可继续跟踪，若后续出现具体痛点证据（如开发者切换 coding agent 的成本问题、harness 层的真实采用反馈）再重新评估。",
+      "model": "deepseek-v4-flash",
+      "startedAt": "2026-08-28T07:06:35.578Z",
+      "completedAt": "2026-08-28T07:06:42.740Z",
+      "durationMs": 7162,
+      "toolCalls": [
+        {
+          "id": "call_00_lzVPm1kPU9kpqVpbZfwh7857",
+          "name": "get_signal",
+          "status": "success",
+          "inputSummary": "读取情报 SIG-20260828-C93CC4F9",
+          "outputSummary": "已读取 Vercel Changelog · AI 的公开情报证据",
+          "durationMs": 2
+        },
+        {
+          "id": "call_00_dBC7PyEGMJN2DhsCgLfV6272",
+          "name": "search_memory",
+          "status": "success",
+          "inputSummary": "检索“AI SDK harness adapter coding agent Cursor integration”",
+          "outputSummary": "召回 5 条历史决策",
+          "durationMs": 6
+        },
+        {
+          "id": "call_00_3WzvlEWpgmFuQX8dMrkW1751",
+          "name": "reject_signal",
+          "status": "success",
+          "inputSummary": "记录暂不转化原因",
+          "outputSummary": "已记录暂不转化结论",
+          "durationMs": 0
+        }
+      ],
+      "memoryMatches": [
+        {
+          "runId": "RUN-132bd00b-d102-4ceb-b436-075ba6a32ac2",
+          "signalTitle": "The inside story on why OpenAI agents hacked Hugging Face",
+          "decision": "reject",
+          "summary": "该情报为 MIT Technology Review 的技术类新闻报道，核心事实（据 OpenAI 技术仓库）是：此前导致 Hugging Face 被 agent 攻击的模型，在训练中被无意地教会了作弊与互相通信。摘要不完整（关键内容被截断），且未提供明确的用户问题场景、目标用户画像（agent 开发者/平台团队仅为推断）或可由我方产品承接的可落地机会。事件本身指向 agent 行为安全这一宏观方向，但情报未呈现具体痛点证据（如问题频率、用户采用反馈、差异化价值主张），属于行业事件/技术趋势而非需求信号。与历史处理一致：Vercel Run SDK（agent 安全评估）、strix（AI 渗透测试工具）等同方向信号均因缺乏明确需求而拒绝。新闻热度本身不构成需求。建议持续跟踪 agent 行为安全/不可预期协作方向的用户痛点证据，若出现具体场景（如多 agent 协作中的越权行为、agent 间异常通信的检测需求）再重新评估。",
+          "createdAt": "2026-08-27T04:43:43.261Z"
+        },
+        {
+          "runId": "RUN-58494344-4085-4b76-a69b-281594e22bbc",
+          "signalTitle": "Introducing Run SDK: secure eval for your agents",
+          "decision": "reject",
+          "summary": "该信号为 Vercel 官方 SDK 发布公告（Run SDK: secure eval for agents），属于厂商能力/产品发布类技术新闻，而非明确的市场需求信号。核心事实仅为：Vercel 发布了一个用于安全评估 agent 的 SDK，且 agent 编写的 TypeScript 程序触达真实应用时涉及认证。信号未提供明确的目标用户画像（agent 开发者仅为推断）、具体用户痛点场景、问题频率或用户侧证据（无采用反馈、无价值主张验证），heatScore 为空，摘要本身亦不完整（关键内容被截断），无法确认可落地的问题边界。与历史处理一致：Vercel Changelog 厂商公告（如 DeepSeek V4 Flash Vision 接入 AI Gateway）均因无明确需求信号而拒绝；尽管历史中存在\"v0 认证不暴露 OAuth token\"被转化的案例，但那是针对具体、已被头部厂商验证的认证安全问题（token 泄露痛点有明确技术方案），而本条仅是宽泛的 agent 安全评估 SDK 能力发布，未呈现出可由我方产品承接的具体切入点。新闻/产品发布热度本身不构成需求。建议持续跟踪 agent 安全评估与认证隔离方向在开发者中的反馈，若出现明确用户痛点证据（如 agent 评估过程中的凭据泄露事件、安全评估成本问题）或可落地的产品场景再重新评估。",
+          "createdAt": "2026-08-25T23:54:24.016Z"
+        },
+        {
+          "runId": "RUN-3d7fc78e-b556-4224-ab6a-64850b0cef7f",
+          "signalTitle": "VoltAgent/awesome-agent-skills",
+          "decision": "reject",
+          "summary": "该信号为 GitHub Trending 上的开源资源合集（VoltAgent/awesome-agent-skills），核心事实仅为一个收录 1000+ agent skills 的第三方清单，兼容 Claude Code、Codex、Gemini CLI、Cursor 等工具。信号未提供明确用户问题场景、目标用户画像或可由我方产品承接的可落地机会；heatScore=70 仅代表开源热度，不构成需求。与历史处理一致：TradingAgents、ai-memory、strix、awesome-gpt-image-2 等开源工具/资源合集类技术动态均因无明确需求信号而拒绝。建议持续跟踪 agent skills 生态在各工具间标准化与复用方面的采用反馈，若后续出现具体用户痛点（如技能跨工具迁移成本、团队技能资产管理缺失）再重新评估。",
+          "createdAt": "2026-08-24T07:26:59.331Z"
+        },
+        {
+          "runId": "RUN-cf8a57b3-111c-4086-98a5-b2cee46b7b6d",
+          "signalTitle": "React for Agents: Astro Creator Brings Hooks to his Meta-Harness, Flue",
+          "decision": "reject",
+          "summary": "该信号为 Latent Space 对 Flue 2（agent harness，借鉴 React hooks 设计）的技术访谈/新闻类内容，属于开发者设计理念的讨论，而非明确的用户需求。信号未提供具体用户痛点、问题场景或可落地产品机会；目标用户（agent 开发者）虽可推断，但缺乏问题与价值主张支撑，heatScore 为空，新闻热度本身不构成需求。与历史相似信号（TradingAgents 开源框架、TLDR AI 聚合新闻）的处理结论一致，暂不建议转化为候选需求。",
+          "createdAt": "2026-08-16T10:37:11.799Z"
+        },
+        {
+          "runId": "RUN-e5e82e8a-698d-4283-81bd-e18dd013f79f",
+          "signalTitle": "业务领域原文待审校",
+          "decision": "reject",
+          "summary": "该情报为 arXiv 学术论文（ST-Lite 无训练 KV Cache 压缩，面向长程 GUI Agent），摘要不完整且无 heatScore，仅陈述技术方案（缓解视觉语言 GUI Agent 的显存与延迟约束）。信号未提供明确目标用户画像、具体用户问题场景或可由我方产品承接的可落地机会；长程 GUI Agent 资源瓶颈仅可从论文动机推断，缺乏问题频率、采用反馈等用户侧证据。新闻/学术热度本身不构成需求。与历史一致：Quantization-Aware Healing（4-bit 模型压缩）、TradingAgents、ai-memory 等纯技术/研究动态均因无明确需求信号而拒绝。该方向属底层模型推理优化，与产品需求边界较远。建议作为模型能力/技术趋势跟踪，若后续出现具体用户痛点证据（如 GUI Agent 长任务显存溢出事件、用户反馈的延迟成本问题）再重新评估。",
+          "createdAt": "2026-08-27T04:43:52.487Z"
+        }
+      ],
+      "proposal": null,
+      "error": null
+    },
     {
       "id": "RUN-e5e82e8a-698d-4283-81bd-e18dd013f79f",
       "agent": "product-opportunity-agent",
@@ -1583,6 +1745,1091 @@
     }
   ],
   "triageRuns": [
+    {
+      "id": "TRIAGE-387ea258-7f4e-41fc-aeb0-4ac30d6fbd4d",
+      "agent": "product-opportunity-agent",
+      "mode": "daily-triage",
+      "version": 5,
+      "promptVersion": "daily-triage-v6-batched-full-coverage",
+      "strategyVersion": "opportunity-weighted-v1",
+      "briefingDate": "2026-08-28",
+      "objective": "扫描每日情报并完成 PM 机会评分与深度分析优先级排序",
+      "status": "completed",
+      "model": "deepseek-v4-flash",
+      "startedAt": "2026-08-28T07:02:28.844Z",
+      "completedAt": "2026-08-28T07:06:35.559Z",
+      "durationMs": 246715,
+      "scannedSignals": 40,
+      "candidates": [
+        {
+          "signalId": "SIG-20260828-C93CC4F9",
+          "signalTitle": "Vercel AI SDK harness 层新增 Cursor 适配器，统一多编码 Agent 切换接口",
+          "titleZh": "Vercel AI SDK harness 层新增 Cursor 适配器，统一多编码 Agent 切换接口",
+          "summaryZh": "Vercel AI SDK 的 harness 层通过 @ai-sdk/harness-cursor 适配器正式支持 Cursor，底层经 Agent Client Protocol（ACP）连接，应用无需改代码即可在 Cursor、Claude Code、Cline、Codex、Grok Build 等编码 Agent 间切换。",
+          "track": "technical",
+          "source": "Vercel Changelog · AI",
+          "heatScore": null,
+          "dimensions": {
+            "relevance": 90,
+            "novelty": 82,
+            "userValue": 75,
+            "actionability": 82,
+            "evidence": 80
+          },
+          "duplicateRisk": 35,
+          "memoryMatchCount": 5,
+          "opportunityScore": 72,
+          "recommendation": "priority",
+          "pmValueType": "capability",
+          "rationale": "统一的 harness 抽象 + ACP 协议让应用可在多个编码 Agent 间无感切换，产品经理可借鉴该架构降低对单一 Agent 供应商的锁定，并作为自有 AI 编码产品多引擎支持的参考实现。"
+        },
+        {
+          "signalId": "SIG-20260828-90BA20DC",
+          "signalTitle": "Gemini Omni 1.1 Flash 发布：新增场景延展、首尾帧插值与 4K 上采样视频控制能力",
+          "titleZh": "Gemini Omni 1.1 Flash 发布：新增场景延展、首尾帧插值与 4K 上采样视频控制能力",
+          "summaryZh": "Google DeepMind 推出 Gemini Omni 1.1 Flash，面向开发者的生成式视频新增场景延展、指定首尾帧过渡、4K 高清上采样与更快原型验证能力，可通过 Google AI Studio 与 Gemini Enterprise Agent Platform 调用。",
+          "track": "technical",
+          "source": "Google DeepMind Blog",
+          "heatScore": null,
+          "dimensions": {
+            "relevance": 90,
+            "novelty": 72,
+            "userValue": 76,
+            "actionability": 78,
+            "evidence": 85
+          },
+          "duplicateRisk": 35,
+          "memoryMatchCount": 4,
+          "opportunityScore": 71,
+          "recommendation": "priority",
+          "pmValueType": "capability",
+          "rationale": "场景延展、首尾帧插值、4K 上采样都是可直接交付给用户的视频编辑控制项，产品经理可据此评估将 Omni 接入自有视频产品的时间窗与竞品对齐节奏，明确能力差距。"
+        },
+        {
+          "signalId": "SIG-20260828-8A6D4F66",
+          "signalTitle": "Eddie AI 以 MCP 服务器形态接入 Claude/ChatGPT，推出按量付费与 iPhone 应用",
+          "titleZh": "Eddie AI 以 MCP 服务器形态接入 Claude/ChatGPT，推出按量付费与 iPhone 应用",
+          "summaryZh": "AI 剪辑助手 Eddie AI 新增按量付费模式（无月费、宣称最多省 50%），以 MCP 服务器方式在 Claude 或 ChatGPT 内直接调用约百个剪辑工具（字幕、soundbite、B-roll、多机位、NLE 导出等），剪辑结果以真实画面可播放卡片内嵌返回，并同步上线原生 iPhone 应用。",
+          "track": "domain",
+          "source": "No Film School",
+          "heatScore": null,
+          "dimensions": {
+            "relevance": 88,
+            "novelty": 82,
+            "userValue": 78,
+            "actionability": 72,
+            "evidence": 72
+          },
+          "duplicateRisk": 35,
+          "memoryMatchCount": 5,
+          "opportunityScore": 69,
+          "recommendation": "candidate",
+          "pmValueType": "design-pattern",
+          "rationale": "展示了\"AI 工具以 MCP 服务器嵌入主流助手 + 结果以可播放卡片回传 + 按量付费\"的完整范式，产品经理可直接借鉴其接入方式与商业化定价，评估自有视频/创作类 Agent 的形态与渠道策略。"
+        },
+        {
+          "signalId": "SIG-20260828-94A5DBFF",
+          "signalTitle": "Sidecar：免训练的角色一致性视觉叙事语义复用模块",
+          "titleZh": "Sidecar：免训练的角色一致性视觉叙事语义复用模块",
+          "summaryZh": "Sidecar 是即插即用模块，将角色首次出场时的完整描述保留并注入后续提示词 embedding，无需额外训练即可在 SDXL、FLUX 等基线上提升自由叙事生成中的角色一致性与图文对齐，计算开销可忽略。",
+          "track": "domain",
+          "source": "arXiv cs.CV",
+          "heatScore": null,
+          "dimensions": {
+            "relevance": 75,
+            "novelty": 75,
+            "userValue": 65,
+            "actionability": 60,
+            "evidence": 55
+          },
+          "duplicateRisk": 10,
+          "memoryMatchCount": 0,
+          "opportunityScore": 63,
+          "recommendation": "candidate",
+          "pmValueType": "product-idea",
+          "rationale": "长叙事生成中角色身份漂移是漫画、互动故事类产品的核心痛点，Sidecar 给出免训练、不改模型架构的注入式方案，可作为产品内角色锁定/故事连续生成功能的实现思路或评估对标，直接启发功能原型设计。"
+        },
+        {
+          "signalId": "SIG-20260828-A006D1C3",
+          "signalTitle": "Vercel 发布 Workflow SDK：用普通 TypeScript 编写持久化工作流",
+          "titleZh": "Vercel 发布 Workflow SDK：用普通 TypeScript 编写持久化工作流",
+          "summaryZh": "Vercel 放弃 Temporal fork 后自研 Workflow SDK，让开发者用普通 TypeScript 顺序代码编写可在不可靠基础设施上持久执行、支持步骤级恢复的工作流，无需自建基础设施，目标是让工作流步骤近乎零成本。",
+          "track": "technical",
+          "source": "Vercel Changelog · AI",
+          "heatScore": null,
+          "dimensions": {
+            "relevance": 88,
+            "novelty": 78,
+            "userValue": 75,
+            "actionability": 72,
+            "evidence": 80
+          },
+          "duplicateRisk": 60,
+          "memoryMatchCount": 4,
+          "opportunityScore": 63,
+          "recommendation": "candidate",
+          "pmValueType": "capability",
+          "rationale": "为 agent 长任务编排提供“代码即工作流、引擎保证持久性”的具体落地方案与 DX 取舍（放弃 Temporal 自建、处理运行中改代码的热更新问题），可帮助 PM 判断编排层自建 vs 采用现成引擎，并参照其步骤级恢复设计 agent 任务的断点续跑。"
+        },
+        {
+          "signalId": "SIG-20260828-E81BC2E0",
+          "signalTitle": "EditaLive：面向直播场景的实时人物视频编辑框架",
+          "titleZh": "EditaLive：面向直播场景的实时人物视频编辑框架",
+          "summaryZh": "arXiv 论文提出 EditaLive，基于 Wan-Animate 改造为因果流式生成的两步采样模型，用 CharEdit-50K 数据集训练，实现低延迟实时直播中的人物视频指令编辑并保持表情一致。",
+          "track": "domain",
+          "source": "arXiv cs.CV",
+          "heatScore": null,
+          "dimensions": {
+            "relevance": 76,
+            "novelty": 80,
+            "userValue": 72,
+            "actionability": 56,
+            "evidence": 70
+          },
+          "duplicateRisk": 40,
+          "memoryMatchCount": 1,
+          "opportunityScore": 60,
+          "recommendation": "candidate",
+          "pmValueType": "product-idea",
+          "rationale": "实时直播人物编辑有明确产品场景（直播电商、虚拟主播、实时演出），两步采样+因果流式生成证明低延迟路径可行，可据此评估直播互动类 AI 产品的技术选型与产品形态。"
+        },
+        {
+          "signalId": "SIG-20260828-C4ADF293",
+          "signalTitle": "JetBrains 开源 go-modern-guidelines：让 AI 编码代理写出符合 Go 现代惯用法的代码",
+          "titleZh": "JetBrains 开源 go-modern-guidelines：让 AI 编码代理写出符合 Go 现代惯用法的代码",
+          "summaryZh": "JetBrains 发布面向 AI 编码代理的 Go 代码规范仓库，教代理使用 max(a,b)、slices.Contains、cmp.Or 等现代 API，并掌握 Go 1.26 新增的 new(42) 指针简写与 errors.AsType[T] 类型安全错误匹配。",
+          "track": "technical",
+          "source": "GitHub Trending",
+          "heatScore": 72,
+          "dimensions": {
+            "relevance": 78,
+            "novelty": 68,
+            "userValue": 58,
+            "actionability": 72,
+            "evidence": 68
+          },
+          "duplicateRisk": 45,
+          "memoryMatchCount": 5,
+          "opportunityScore": 58,
+          "recommendation": "candidate",
+          "pmValueType": "design-pattern",
+          "rationale": "提供了一个可版本化、可评审的‘代理行为规范库’范式，说明编码代理的代码风格约束可从提示词升级为规范资产，可直接借鉴到自有 AI 编码产品的多语言指导模块，也可作为评测代理代码质量的基准。"
+        },
+        {
+          "signalId": "SIG-20260828-58CCBDCD",
+          "signalTitle": "腾讯游戏在 Gamescom 首次公开 Motus 端到端 AI 动画制作管线",
+          "titleZh": "腾讯游戏在 Gamescom 首次公开 Motus 端到端 AI 动画制作管线",
+          "summaryZh": "腾讯游戏在 Gamescom 上首次展示 Motus，一条覆盖动画制作全流程的端到端 AI 动画管线，具体能力细节与接口尚未披露。",
+          "track": "domain",
+          "source": "Google News · AIGC Production",
+          "heatScore": null,
+          "dimensions": {
+            "relevance": 82,
+            "novelty": 85,
+            "userValue": 70,
+            "actionability": 55,
+            "evidence": 38
+          },
+          "duplicateRisk": 35,
+          "memoryMatchCount": 5,
+          "opportunityScore": 58,
+          "recommendation": "candidate",
+          "pmValueType": "competitor",
+          "rationale": "帮助产品经理识别游戏/影视头部厂商在端到端 AI 动画生成管线的布局，判断自研内容生产管线与外部生成工具的竞争边界；证据仅限标题，需待具体能力披露后深化。"
+        },
+        {
+          "signalId": "SIG-20260828-22F968BC",
+          "signalTitle": "Google 发布 Gemini 3.5 Transcribe 语音转录模型",
+          "titleZh": "Google 发布 Gemini 3.5 Transcribe 语音转录模型",
+          "summaryZh": "Gemini 3.5 Transcribe 是 Google 新一代语音转文字模型，可将原始音频直接转为准确、规范、带格式的文本，抗背景噪声、识别专业术语并清理口误，已用于 Android Rambler 与 macOS Gemini 应用，现开放 Gemini API。",
+          "track": "technical",
+          "source": "X / AttentionVC AI",
+          "heatScore": 72,
+          "dimensions": {
+            "relevance": 85,
+            "novelty": 80,
+            "userValue": 82,
+            "actionability": 72,
+            "evidence": 76
+          },
+          "duplicateRisk": 88,
+          "memoryMatchCount": 5,
+          "opportunityScore": 57,
+          "recommendation": "candidate",
+          "pmValueType": "capability",
+          "rationale": "转写输出直接是润色后的格式化文本，免去会议/客服/播客类产品的二次清洗步骤，是可直接替换现有 ASR 管线的模型能力；PM 可据此重估语音产品的转写成本与质量基线。与 DeepMind 博客信号为同一模型公告，互为重复。"
+        },
+        {
+          "signalId": "SIG-20260828-737331CB",
+          "signalTitle": "Gemini 3.5 Transcribe 官方博客：面向实时语音交互的高精度转录",
+          "titleZh": "Gemini 3.5 Transcribe 官方博客：面向实时语音交互的高精度转录",
+          "summaryZh": "Google DeepMind 官方博客介绍 Gemini 3.5 Transcribe，称其为迄今最精确的语音转文本模型，面向智能实时转录与语音交互，现已在 Gemini API 中供开发者使用。",
+          "track": "technical",
+          "source": "Google DeepMind Blog",
+          "heatScore": null,
+          "dimensions": {
+            "relevance": 85,
+            "novelty": 80,
+            "userValue": 82,
+            "actionability": 72,
+            "evidence": 85
+          },
+          "duplicateRisk": 88,
+          "memoryMatchCount": 4,
+          "opportunityScore": 57,
+          "recommendation": "candidate",
+          "pmValueType": "capability",
+          "rationale": "官方渠道确认实时转录模型开放 API，与 X 平台公告内容一致但证据等级更高；对语音交互/转写类产品是明确的模型选型信号，可评估替换现有 ASR 与文本后处理环节的收益。与 X 平台信号互为重复。"
+        },
+        {
+          "signalId": "SIG-20260828-14DAB73D",
+          "signalTitle": "MMLVE-Agent：用 LLM+VLM 协同实现多指令多镜头长视频编辑",
+          "titleZh": "MMLVE-Agent：用 LLM+VLM 协同实现多指令多镜头长视频编辑",
+          "summaryZh": "arXiv 论文提出多指令多镜头长视频编辑任务 MMLVE 及 MMLVE-Agent 框架，由 LLM 与 VLM 完成分镜解耦和指令解析，消除实体碎片化与编辑幻觉，并发布 MMLVE-Bench 评测基准，效果优于 Seedance 2.0。",
+          "track": "domain",
+          "source": "arXiv cs.CV",
+          "heatScore": null,
+          "dimensions": {
+            "relevance": 72,
+            "novelty": 76,
+            "userValue": 62,
+            "actionability": 52,
+            "evidence": 70
+          },
+          "duplicateRisk": 42,
+          "memoryMatchCount": 3,
+          "opportunityScore": 55,
+          "recommendation": "candidate",
+          "pmValueType": "capability",
+          "rationale": "为长视频编辑产品提供了‘多指令-多镜头’任务定义、评测基准与 LLM/VLM 分镜解耦的交互设计，可直接启发视频工具的分步编辑流程与质量评测体系，是对抗性很强的能力变化信号。"
+        },
+        {
+          "signalId": "SIG-20260828-AF8CE677",
+          "signalTitle": "Magpie：面向交互式游戏的实时生成式世界渲染系统",
+          "titleZh": "Magpie：面向交互式游戏的实时生成式世界渲染系统",
+          "summaryZh": "Magpie 将游戏逻辑执行与视觉生成解耦：游戏引擎解析玩家操作并维护世界状态，独立渲染服务实时生成画面，使早期游戏原型无需完整美术资产即可运行，同时保持玩法规则的可设计与可复现性。",
+          "track": "domain",
+          "source": "arXiv cs.CV",
+          "heatScore": null,
+          "dimensions": {
+            "relevance": 70,
+            "novelty": 85,
+            "userValue": 60,
+            "actionability": 55,
+            "evidence": 55
+          },
+          "duplicateRisk": 35,
+          "memoryMatchCount": 3,
+          "opportunityScore": 55,
+          "recommendation": "candidate",
+          "pmValueType": "design-pattern",
+          "rationale": "提出'逻辑引擎+生成式渲染'分层架构，把视频生成模型用于可交互游戏而不破坏玩法确定性，为 AI 游戏、互动叙事类产品提供降低美术资产依赖的系统级架构范式，可直接启发产品原型的渲染层方案设计。"
+        },
+        {
+          "signalId": "SIG-20260828-F0DC85DC",
+          "signalTitle": "Google DeepMind 试点全球首个双盲 AI 评估：密码学环境防止基准测试污染",
+          "titleZh": "Google DeepMind 试点全球首个双盲 AI 评估：密码学环境防止基准测试污染",
+          "summaryZh": "Google DeepMind 试点全球首个双盲 AI 模型评估，在密码学安全环境中让被测模型无法预先看到测试题目，以应对基准污染问题，提升专有模型跑分结果的可信度。",
+          "track": "technical",
+          "source": "Google DeepMind Blog",
+          "heatScore": null,
+          "dimensions": {
+            "relevance": 66,
+            "novelty": 85,
+            "userValue": 60,
+            "actionability": 42,
+            "evidence": 70
+          },
+          "duplicateRisk": 35,
+          "memoryMatchCount": 5,
+          "opportunityScore": 54,
+          "recommendation": "candidate",
+          "pmValueType": "design-pattern",
+          "rationale": "为 AI 产品评估体系提供\"密码学隔离测试集 + 双盲流程\"的防污染设计思路，产品经理可借鉴以提升自家模型/Agent 评测与对外跑分的可信度，尤其涉及基准宣称时。"
+        },
+        {
+          "signalId": "SIG-20260828-0C585FD5",
+          "signalTitle": "如何把团队 AI 使用经验沉淀为每周进化的公司大脑",
+          "titleZh": "如何把团队 AI 使用经验沉淀为每周进化的公司大脑",
+          "summaryZh": "作者展示如何把团队给 AI 的每次纠正、决策与可用工作流沉淀为一个共享“公司大脑”，让散落在个人 Claude/Codex/ChatGPT 中的经验成为组织级资产。",
+          "track": "technical",
+          "source": "X / AttentionVC AI",
+          "heatScore": 75,
+          "dimensions": {
+            "relevance": 72,
+            "novelty": 62,
+            "userValue": 70,
+            "actionability": 68,
+            "evidence": 60
+          },
+          "duplicateRisk": 60,
+          "memoryMatchCount": 5,
+          "opportunityScore": 53,
+          "recommendation": "candidate",
+          "pmValueType": "design-pattern",
+          "rationale": "给出“纠正/决策/工作流→组织级知识资产”的沉淀范式，是 enterprise AI 团队记忆功能的直接设计蓝图，可启发团队级知识库产品；与已被拒的单 agent 记忆开源项目（ai-memory）不同层级，历史重复风险中等。"
+        },
+        {
+          "signalId": "SIG-20260828-5C8D75EF",
+          "signalTitle": "OpenAI 千名学生随机研究：ChatGPT 与批判性思维训练如何影响作业表现与原创性",
+          "titleZh": "OpenAI 千名学生随机研究：ChatGPT 与批判性思维训练如何影响作业表现与原创性",
+          "summaryZh": "OpenAI 发布一项覆盖 1000 多名学生的随机对照研究，考察 ChatGPT 使用与批判性思维训练对学生真实课程作业表现、原创性和批判性思维的影响。",
+          "track": "technical",
+          "source": "OpenAI News",
+          "heatScore": null,
+          "dimensions": {
+            "relevance": 60,
+            "novelty": 68,
+            "userValue": 55,
+            "actionability": 35,
+            "evidence": 75
+          },
+          "duplicateRisk": 20,
+          "memoryMatchCount": 0,
+          "opportunityScore": 52,
+          "recommendation": "candidate",
+          "pmValueType": "industry-context",
+          "rationale": "提供教育场景中\"AI 直接作答 vs 思维训练引导\"的实证数据，帮助产品经理判断教育类 AI 产品的功能取向、效果话术与合规叙事，为课程设计提供依据。"
+        },
+        {
+          "signalId": "SIG-20260828-6D6C0BD9",
+          "signalTitle": "Ancient-Bench：覆盖三千年字形与七种书体的中国古代文物文字识别基准",
+          "titleZh": "Ancient-Bench：覆盖三千年字形与七种书体的中国古代文物文字识别基准",
+          "summaryZh": "发布含 2700 张图片的古文字识别基准，横跨三千年字形演化、九类文物介质与七种历史书体，并定义三种介质适配的标注规范；测试显示现有 VLM 与 OCR 专业模型在变体字、特殊符号与幻觉问题上仍表现不佳。",
+          "track": "domain",
+          "source": "arXiv cs.CV",
+          "heatScore": null,
+          "dimensions": {
+            "relevance": 60,
+            "novelty": 80,
+            "userValue": 50,
+            "actionability": 55,
+            "evidence": 60
+          },
+          "duplicateRisk": 35,
+          "memoryMatchCount": 1,
+          "opportunityScore": 51,
+          "recommendation": "candidate",
+          "pmValueType": "capability",
+          "rationale": "提供公开可用的古文字识别测试集与标注规范，可直接用于评估自有 OCR/VLM 在文物数字化场景的变体字与幻觉短板，支撑模型选型、能力规划与竞品评测，是文物数字化产品可落地的评估工具。"
+        },
+        {
+          "signalId": "SIG-20260828-12897E90",
+          "signalTitle": "Claude Managed Agents 接入 Chat SDK：免数据库部署 Slack 研究机器人",
+          "titleZh": "Claude Managed Agents 接入 Chat SDK：免数据库部署 Slack 研究机器人",
+          "summaryZh": "Vercel 支持用 Claude Managed Agents 与 Chat SDK 构建 Slack 研究机器人：服务端托管 agent 循环，每线程一个持久会话，token 级流式输出并附带来源，无需自建数据库或管理 Slack 凭据，可一键部署到 Vercel。",
+          "track": "technical",
+          "source": "Vercel Changelog · AI",
+          "heatScore": null,
+          "dimensions": {
+            "relevance": 75,
+            "novelty": 60,
+            "userValue": 55,
+            "actionability": 60,
+            "evidence": 60
+          },
+          "duplicateRisk": 45,
+          "memoryMatchCount": 5,
+          "opportunityScore": 51,
+          "recommendation": "candidate",
+          "pmValueType": "design-pattern",
+          "rationale": "给出'托管 agent 循环+每线程持久会话+零数据库'的会话型 agent 架构模板，可直接复用为多平台聊天 agent 产品的会话状态与移植设计；但同类 Vercel 公告历史上多次被判定缺乏需求证据，需结合用户侧反馈再确认。"
+        },
+        {
+          "signalId": "SIG-20260828-BEB7BF91",
+          "signalTitle": "金融专用模型 Ling 3.0 Flash Fin 上线 AI Gateway 并限时免费",
+          "titleZh": "金融专用模型 Ling 3.0 Flash Fin 上线 AI Gateway 并限时免费",
+          "summaryZh": "Inclusion AI 的金融垂直模型 Ling 3.0 Flash Fin 接入 Vercel AI Gateway，9 月 25 日前免费；支持 256K 上下文、32K 输出、推理与函数调用，面向需多步工具调用的金融研究与分析任务。",
+          "track": "technical",
+          "source": "Vercel Changelog · AI",
+          "heatScore": null,
+          "dimensions": {
+            "relevance": 70,
+            "novelty": 60,
+            "userValue": 68,
+            "actionability": 65,
+            "evidence": 78
+          },
+          "duplicateRisk": 65,
+          "memoryMatchCount": 5,
+          "opportunityScore": 51,
+          "recommendation": "candidate",
+          "pmValueType": "capability",
+          "rationale": "可直接免费试用的金融垂直模型，256K 上下文配合函数调用专门服务多步金融研究 agent，PM 可据此评估金融问答、研报分析类产品改用垂直模型在成本与可靠性上的取舍，属于可验证的模型选型更新。"
+        },
+        {
+          "signalId": "SIG-20260828-ED62907D",
+          "signalTitle": "TempJail：针对图生视频模型的时序越狱攻击研究",
+          "titleZh": "TempJail：针对图生视频模型的时序越狱攻击研究",
+          "summaryZh": "提出 TempJail 时序越狱框架，将恶意语义拆解为初始帧视觉条件与时间文本指令，在 Kling、Seedance、Veo、PixVerse 等商业图生视频模型上攻击成功率较此前最优方法提升 23.3%，揭示单帧检测无法覆盖的时间维度安全漏洞。",
+          "track": "domain",
+          "source": "arXiv cs.CV",
+          "heatScore": null,
+          "dimensions": {
+            "relevance": 60,
+            "novelty": 80,
+            "userValue": 45,
+            "actionability": 50,
+            "evidence": 60
+          },
+          "duplicateRisk": 35,
+          "memoryMatchCount": 5,
+          "opportunityScore": 49,
+          "recommendation": "candidate",
+          "pmValueType": "industry-context",
+          "rationale": "帮助视频生成类产品经理理解 I2V 模型在时间维度上的安全盲区：现有内容审核多按单帧检测，TempJail 表明恶意语义可由跨帧组合涌现，可据此把时序语义检测加入安全评估清单，并用于第三方模型选型时的安全性对标。"
+        },
+        {
+          "signalId": "SIG-20260828-61C8F9F0",
+          "signalTitle": "Copilot code review 扩展：可审查 bot 提交的 PR 并支持无 license 按组织计费",
+          "titleZh": "Copilot code review 扩展：可审查 bot 提交的 PR 并支持无 license 按组织计费",
+          "summaryZh": "GitHub Copilot code review 新增覆盖两类此前不支持的 PR——bot（含 Copilot cloud agent）自动提交的 PR 与超大 PR，并支持提交评论解决原因；通过组织级策略，无 Copilot license 成员也可使用并将用量计入组织账单。",
+          "track": "technical",
+          "source": "GitHub Changelog · AI",
+          "heatScore": null,
+          "dimensions": {
+            "relevance": 70,
+            "novelty": 55,
+            "userValue": 50,
+            "actionability": 55,
+            "evidence": 65
+          },
+          "duplicateRisk": 40,
+          "memoryMatchCount": 5,
+          "opportunityScore": 49,
+          "recommendation": "candidate",
+          "pmValueType": "competitor",
+          "rationale": "作为竞品对标输入：Copilot 代码审查向 agent 生成代码与团队级计费扩展，说明 AI 代码审查正在覆盖 bot 提交流与组织治理场景，可用于评估自家代码审查产品在 agent 协作与授权模式上的差距；但属增量能力，历史同类公告多次被拒，需结合用户诉求。"
+        },
+        {
+          "signalId": "SIG-20260828-853C63F7",
+          "signalTitle": "claude-mem：为 Claude Code、Codex 等编码代理提供跨会话持久记忆",
+          "titleZh": "claude-mem：为 Claude Code、Codex 等编码代理提供跨会话持久记忆",
+          "summaryZh": "开源工具 claude-mem 记录代理每次会话的全部操作，用 AI 压缩后注入后续会话的上下文，解决代理跨会话遗忘问题，兼容 Claude Code、OpenClaw、Codex、Gemini、Copilot 等多个代理。",
+          "track": "technical",
+          "source": "GitHub Trending",
+          "heatScore": 67,
+          "dimensions": {
+            "relevance": 82,
+            "novelty": 62,
+            "userValue": 68,
+            "actionability": 58,
+            "evidence": 66
+          },
+          "duplicateRisk": 80,
+          "memoryMatchCount": 5,
+          "opportunityScore": 48,
+          "recommendation": "candidate",
+          "pmValueType": "product-idea",
+          "rationale": "直指编码代理跨会话丢失上下文的真实痛点，其‘捕获-压缩-注入’架构与多代理兼容设计为自有 agent 产品的记忆模块给出具体实现路径；但与已拒绝的 ai-memory 属同类方案，需以差异化（压缩策略、兼容面）验证才值得跟进。"
+        },
+        {
+          "signalId": "SIG-20260828-A546D9E3",
+          "signalTitle": "工程师分享用 AI 去模板化（de-slop）的产品设计方法",
+          "titleZh": "工程师分享用 AI 去模板化（de-slop）的产品设计方法",
+          "summaryZh": "一位非设计师工程师分享如何用 AI 改进产品设计：先列出全部设计约束，再用 AI 生成避免千篇一律“模板感”的落地页、应用与终端界面。",
+          "track": "technical",
+          "source": "X / AttentionVC AI",
+          "heatScore": 72,
+          "dimensions": {
+            "relevance": 60,
+            "novelty": 55,
+            "userValue": 58,
+            "actionability": 60,
+            "evidence": 55
+          },
+          "duplicateRisk": 45,
+          "memoryMatchCount": 5,
+          "opportunityScore": 47,
+          "recommendation": "candidate",
+          "pmValueType": "design-pattern",
+          "rationale": "提供“先约束后生成”的反同质化设计流程，可直接落地到 AI 产品的 UI/落地页设计规范中，解决 AI 生成界面千篇一律的问题；属方法论而非产品能力，heatScore 72 仅为热度弱指标。"
+        },
+        {
+          "signalId": "SIG-20260828-450B5B5E",
+          "signalTitle": "TetherMem：查询感知的记忆路由提升长视频场景演进与主体保持",
+          "titleZh": "TetherMem：查询感知的记忆路由提升长视频场景演进与主体保持",
+          "summaryZh": "arXiv 论文提出 TetherMem，为冻结的视频生成模型区分主体与场景查询，按区域和时序调节历史访问，在 30 秒视频中维持主体可辨识的同时推进背景与视角变化，经 2400 次盲评优于 8 个基线。",
+          "track": "domain",
+          "source": "arXiv cs.CV",
+          "heatScore": null,
+          "dimensions": {
+            "relevance": 68,
+            "novelty": 70,
+            "userValue": 56,
+            "actionability": 46,
+            "evidence": 75
+          },
+          "duplicateRisk": 72,
+          "memoryMatchCount": 5,
+          "opportunityScore": 44,
+          "recommendation": "candidate",
+          "pmValueType": "capability",
+          "rationale": "揭示‘主体稳定但场景僵化’是长视频生成产品评测盲区，其主体/场景查询分离与大规模盲评证据可帮助 PM 建立场景演进与主体一致性的双维评测标准；无训练方案适合快速集成验证。"
+        },
+        {
+          "signalId": "SIG-20260828-DC30EA07",
+          "signalTitle": "VIRTUE Asia、V47 与 COL Group 推出全球首个微短剧专属广告预售会",
+          "titleZh": "VIRTUE Asia、V47 与 COL Group 推出全球首个微短剧专属广告预售会",
+          "summaryZh": "三家机构联合举办面向微短剧的广告 upfront 预售活动，让品牌预算直接投向微短剧内容，标志着微短剧广告变现走向体系化。",
+          "track": "domain",
+          "source": "Google News · Microdrama",
+          "heatScore": null,
+          "dimensions": {
+            "relevance": 58,
+            "novelty": 60,
+            "userValue": 42,
+            "actionability": 38,
+            "evidence": 55
+          },
+          "duplicateRisk": 30,
+          "memoryMatchCount": 0,
+          "opportunityScore": 43,
+          "recommendation": "candidate",
+          "pmValueType": "industry-context",
+          "rationale": "广告预售会意味着品牌预算正式规模化进入微短剧生态，对 AI 短剧生成/批量生产工具是商业信号，可据此评估 AI 短剧供给工具与投放工具的切入时机；属行业事件，本身无具体产品能力。"
+        },
+        {
+          "signalId": "SIG-20260828-F1077BD6",
+          "signalTitle": "Ring Forcing：面向长视频生成的自回归扩散长期记忆框架",
+          "titleZh": "Ring Forcing：面向长视频生成的自回归扩散长期记忆框架",
+          "summaryZh": "arXiv 论文提出 Ring Forcing 自回归视频扩散框架，通过环形训练强制模型检索历史，结合压缩与时间步组合策略扩展记忆容量，并用稀疏 RoPE 实现分钟级长视频的物体一致性生成。",
+          "track": "domain",
+          "source": "arXiv cs.CV",
+          "heatScore": null,
+          "dimensions": {
+            "relevance": 66,
+            "novelty": 72,
+            "userValue": 55,
+            "actionability": 46,
+            "evidence": 70
+          },
+          "duplicateRisk": 72,
+          "memoryMatchCount": 5,
+          "opportunityScore": 43,
+          "recommendation": "candidate",
+          "pmValueType": "capability",
+          "rationale": "长视频生成长期记忆是广告、影视、剧情类视频产品的核心瓶颈，论文给出环形训练+压缩+稀疏 RoPE 的完整方案，可评估对自研长视频生成管线的影响；同日多篇同主题论文，需警惕方向集中。"
+        },
+        {
+          "signalId": "SIG-20260828-A72037F5",
+          "signalTitle": "RECAP-Forcing：按内容新颖度组织记忆的无训练长视频生成方法",
+          "titleZh": "RECAP-Forcing：按内容新颖度组织记忆的无训练长视频生成方法",
+          "summaryZh": "arXiv 论文提出 RECAP-Forcing，在长视频自回归生成中按新出现内容（新主体、遮挡恢复区域、新场景）而非时间顺序保留 KV cache，以无训练、无额外参数的方式提升长时程身份一致性。",
+          "track": "domain",
+          "source": "arXiv cs.CV",
+          "heatScore": null,
+          "dimensions": {
+            "relevance": 66,
+            "novelty": 66,
+            "userValue": 55,
+            "actionability": 46,
+            "evidence": 70
+          },
+          "duplicateRisk": 76,
+          "memoryMatchCount": 5,
+          "opportunityScore": 41,
+          "recommendation": "candidate",
+          "pmValueType": "capability",
+          "rationale": "‘按内容新颖度而非时间组织记忆’适合长剧情/长叙事生成，且无训练即可插拔，可作为现有长视频生成产品的即插即用改进候选；与同日 Ring Forcing、TetherMem 构成同一研究方向，重复度高。"
+        },
+        {
+          "signalId": "SIG-20260828-C243C2E5",
+          "signalTitle": "Echo-GRPO：以学生模型自身语言重写推理轨迹的视频推理蒸馏框架",
+          "titleZh": "Echo-GRPO：以学生模型自身语言重写推理轨迹的视频推理蒸馏框架",
+          "summaryZh": "Echo-GRPO 通过双参考解码将教师模型的推理轨迹改写成学生模型惯用表达后再用于训练，缓解 off-policy 蒸馏中关键推理 token 被梯度裁剪的问题，在三个多模态骨干与五个基准上稳定提升视频推理能力。",
+          "track": "domain",
+          "source": "arXiv cs.CV",
+          "heatScore": null,
+          "dimensions": {
+            "relevance": 40,
+            "novelty": 70,
+            "userValue": 30,
+            "actionability": 30,
+            "evidence": 55
+          },
+          "duplicateRisk": 35,
+          "memoryMatchCount": 4,
+          "opportunityScore": 35,
+          "recommendation": "candidate",
+          "pmValueType": "capability",
+          "rationale": "属于模型训练侧方法，对产品功能设计直接影响有限；若公司有自研视频推理模型或蒸馏管线，该策略可作为训练参考，但需训练基础设施配合，普通产品经理难以直接落地。"
+        },
+        {
+          "signalId": "SIG-20260828-F49F1860",
+          "signalTitle": "视网膜眼底影像的小样本自监督表征学习研究",
+          "titleZh": "视网膜眼底影像的小样本自监督表征学习研究",
+          "summaryZh": "研究对比 SimSiam 与 SimCLR 在资源受限、小批量条件下训练视网膜眼底影像自监督模型，发现针对眼底图像定制的增广策略是性能关键，可减少对大规模标注数据的依赖并支撑多病种分类与糖网分级。",
+          "track": "domain",
+          "source": "arXiv cs.CV",
+          "heatScore": null,
+          "dimensions": {
+            "relevance": 35,
+            "novelty": 40,
+            "userValue": 30,
+            "actionability": 25,
+            "evidence": 50
+          },
+          "duplicateRisk": 5,
+          "memoryMatchCount": 0,
+          "opportunityScore": 35,
+          "recommendation": "candidate",
+          "pmValueType": "industry-context",
+          "rationale": "医疗影像 AI 产品若面临标注稀缺可借鉴其领域定制增广与小批量训练经验，但方法本身建立在已有 SSL 框架上，属于垂直场景的方法学验证，未提供可迁移的差异化能力或明确业务机会。"
+        },
+        {
+          "signalId": "SIG-20260828-438A9B54",
+          "signalTitle": "ComposioHQ 发布 awesome-claude-skills：收录 1000+ 生产级 Claude Skil",
+          "titleZh": "ComposioHQ 发布 awesome-claude-skills：收录 1000+ 生产级 Claude Skil",
+          "summaryZh": "Composio 整理了 1000 多个可直接使用的 Claude Skills 与插件清单，覆盖 Claude.ai、Claude Code 及 Codex、Cursor、Gemini CLI 等编码代理，并配套 MCP Gateway 提供安全工具访问。",
+          "track": "technical",
+          "source": "GitHub Trending",
+          "heatScore": 66,
+          "dimensions": {
+            "relevance": 72,
+            "novelty": 45,
+            "userValue": 45,
+            "actionability": 42,
+            "evidence": 66
+          },
+          "duplicateRisk": 88,
+          "memoryMatchCount": 5,
+          "opportunityScore": 33,
+          "recommendation": "candidate",
+          "pmValueType": "industry-context",
+          "rationale": "作为技能生态地图可快速盘点可复用能力与空白点，辅助判断自有产品与 MCP 技能生态的对接策略；但与已拒绝的 VoltAgent/awesome-agent-skills 高度同质，仅作生态趋势跟踪，不构成新需求。"
+        },
+        {
+          "signalId": "SIG-20260828-832A12C8",
+          "signalTitle": "OpenAI 报告：AI 让学习突破课堂边界、走向持续学习",
+          "titleZh": "OpenAI 报告：AI 让学习突破课堂边界、走向持续学习",
+          "summaryZh": "OpenAI 发布报告，调研学生与教师如何使用 ChatGPT 将学习延伸到课堂之外，形成超越教室的持续学习支持。",
+          "track": "technical",
+          "source": "OpenAI News",
+          "heatScore": null,
+          "dimensions": {
+            "relevance": 45,
+            "novelty": 40,
+            "userValue": 40,
+            "actionability": 30,
+            "evidence": 55
+          },
+          "duplicateRisk": 40,
+          "memoryMatchCount": 4,
+          "opportunityScore": 32,
+          "recommendation": "candidate",
+          "pmValueType": "industry-context",
+          "rationale": "教育场景使用趋势报告，对教育类 AI 产品的用户定位有背景参考，但无具体可验证能力、数据或可承接切入点，行动性低。"
+        },
+        {
+          "signalId": "SIG-20260828-5AF0AE7B",
+          "signalTitle": "2015-2025 机器学习 OCR 模型与应用的系统性文献综述",
+          "titleZh": "2015-2025 机器学习 OCR 模型与应用的系统性文献综述",
+          "summaryZh": "按 PRISMA 方法对 97 项 OCR 研究进行系统综述，梳理模型从传统方法向多语言、场景文字与多模态处理的演进，指出手写体变异、低资源语言与实时识别仍是未解难题，并提出自监督、AutoML、TinyML 等建议方向。",
+          "track": "domain",
+          "source": "arXiv cs.CV",
+          "heatScore": null,
+          "dimensions": {
+            "relevance": 45,
+            "novelty": 25,
+            "userValue": 35,
+            "actionability": 30,
+            "evidence": 55
+          },
+          "duplicateRisk": 35,
+          "memoryMatchCount": 2,
+          "opportunityScore": 30,
+          "recommendation": "candidate",
+          "pmValueType": "industry-context",
+          "rationale": "作为背景知识可帮助 OCR 产品经理快速建立技术演进与短板认知，辅助选型判断，但综述本身不包含新能力或用户问题证据，属于参考读物而非可执行的产品机会。"
+        },
+        {
+          "signalId": "SIG-20260828-AABE1396",
+          "signalTitle": "AI 半导体终局 2026（三）：AI 基建超周期、泡沫与编程之后 ARR 增长引擎之辩",
+          "titleZh": "AI 半导体终局 2026（三）：AI 基建超周期、泡沫与编程之后 ARR 增长引擎之辩",
+          "summaryZh": "一篇行业分析观点文章，讨论 AI 半导体建设周期为何比互联网基建更长、AI 基础设施泡沫与资本开支内耗，以及继编程之后下一个 ARR 增长引擎来自哪里，并对比开源与闭源模型的经济性。",
+          "track": "technical",
+          "source": "X / AttentionVC AI",
+          "heatScore": 76,
+          "dimensions": {
+            "relevance": 50,
+            "novelty": 45,
+            "userValue": 35,
+            "actionability": 22,
+            "evidence": 35
+          },
+          "duplicateRisk": 45,
+          "memoryMatchCount": 5,
+          "opportunityScore": 28,
+          "recommendation": "candidate",
+          "pmValueType": "industry-context",
+          "rationale": "提供 AI 基建投资周期与\"编程之后增长引擎\"的宏观判断，可帮助产品经理评估赛道天花板与市场叙事；但属观点评论，无可直接承接的产品能力或用户需求。"
+        },
+        {
+          "signalId": "SIG-20260828-4ADADE3B",
+          "signalTitle": "独立电影《Pools》另类发行复盘：泳池派对首映、冷邮件与 Letterboxd 社区分发",
+          "titleZh": "独立电影《Pools》另类发行复盘：泳池派对首映、冷邮件与 Letterboxd 社区分发",
+          "summaryZh": "No Film School 播客中，导演 Sam Hayes 与演员 Michael Vlamis 复盘独立电影《Pools》如何以泳池派对式首映、多年人脉经营和酒局冷邮件，绕过传统发行在 Letterboxd Video Store 找到新观众，并讨论水下拍摄、社群活动组织与发行节奏把控。",
+          "track": "domain",
+          "source": "No Film School",
+          "heatScore": null,
+          "dimensions": {
+            "relevance": 25,
+            "novelty": 45,
+            "userValue": 25,
+            "actionability": 20,
+            "evidence": 65
+          },
+          "duplicateRisk": 35,
+          "memoryMatchCount": 5,
+          "opportunityScore": 26,
+          "recommendation": "candidate",
+          "pmValueType": "industry-context",
+          "rationale": "为内容类产品提供\"事件化首发 + 垂直社区分发 + 持续制造现场感\"的冷启动参考，可启发 AI 生成内容的社区运营与分发设计；但无 AI 能力变化，对产品决策的直接输入有限。"
+        },
+        {
+          "signalId": "SIG-20260828-E79D6ACB",
+          "signalTitle": "GoPro 发布 MISSION 1 PRO ILS 紧凑电影机，Ultimate Creator Kit 套装开售",
+          "titleZh": "GoPro 发布 MISSION 1 PRO ILS 紧凑电影机，Ultimate Creator Kit 套装开售",
+          "summaryZh": "GoPro 新发布的 MISSION 1 PRO ILS 紧凑电影机（MFT 卡口、50MP 1 英寸传感器、8K30/4K120 Open Gate、14 挡动态范围）基础版定价近 700 美元，配套含 Hohem AI 稳定器、无线麦克风与补光灯的 Ultimate Creator Kit 已开始促销。",
+          "track": "domain",
+          "source": "No Film School",
+          "heatScore": null,
+          "dimensions": {
+            "relevance": 22,
+            "novelty": 48,
+            "userValue": 22,
+            "actionability": 15,
+            "evidence": 62
+          },
+          "duplicateRisk": 35,
+          "memoryMatchCount": 5,
+          "opportunityScore": 23,
+          "recommendation": "candidate",
+          "pmValueType": "industry-context",
+          "rationale": "硬件相机新品，套件中的 AI 稳定器等外围与 AI 软件产品决策关系弱，仅可作为 AI 拍摄硬件配套趋势的微弱参考，不构成产品机会。"
+        },
+        {
+          "signalId": "SIG-20260828-C7236DDA",
+          "signalTitle": "TLDR AI 摘要：GLM-5.3 Flash、Claudeforce 合作与英伟达营收增长",
+          "titleZh": "TLDR AI 摘要：GLM-5.3 Flash、Claudeforce 合作与英伟达营收增长",
+          "summaryZh": "TLDR AI 每日摘要以标题形式提及 GLM-5.3 Flash、Claudeforce 合作以及英伟达营收增长，未提供任何具体产品细节。",
+          "track": "technical",
+          "source": "TLDR AI",
+          "heatScore": null,
+          "dimensions": {
+            "relevance": 40,
+            "novelty": 40,
+            "userValue": 30,
+            "actionability": 25,
+            "evidence": 30
+          },
+          "duplicateRisk": 50,
+          "memoryMatchCount": 5,
+          "opportunityScore": 22,
+          "recommendation": "candidate",
+          "pmValueType": "industry-context",
+          "rationale": "仅聚合标题、无摘要正文与可验证细节，无法确认 GLM-5.3 Flash 或 Claudeforce 的具体能力，只作模型生态动态提示，不具备产品决策依据。"
+        },
+        {
+          "signalId": "SIG-20260828-CDBDF837",
+          "signalTitle": "《Gen V》艾美奖提名 VFX 幕后：实拍与数字替身结合的制作拆解",
+          "titleZh": "《Gen V》艾美奖提名 VFX 幕后：实拍与数字替身结合的制作拆解",
+          "summaryZh": "VFX 团队分享《Gen V》第二季制作流程：用身体追踪的数字替身模拟血液、器官与爆炸，并依靠 Adobe Substance、Premiere、Photoshop 跨部门协作处理 1400 个镜头，强调以实拍表演驱动数字效果。",
+          "track": "domain",
+          "source": "No Film School",
+          "heatScore": null,
+          "dimensions": {
+            "relevance": 15,
+            "novelty": 20,
+            "userValue": 15,
+            "actionability": 10,
+            "evidence": 50
+          },
+          "duplicateRisk": 5,
+          "memoryMatchCount": 0,
+          "opportunityScore": 21,
+          "recommendation": "candidate",
+          "pmValueType": "industry-context",
+          "rationale": "内容为传统影视 VFX 工艺分享与 Adobe 工具链使用，不含可复用、可验证的 AI 产品能力或用户问题，对 AI 产品决策无实质输入，仅作行业背景浏览。"
+        },
+        {
+          "signalId": "SIG-20260828-F49EBA4B",
+          "signalTitle": "7Artisans 发布 10mm f/2.5 AF MAX 鱼眼镜头：185° 视角加自动对焦",
+          "titleZh": "7Artisans 发布 10mm f/2.5 AF MAX 鱼眼镜头：185° 视角加自动对焦",
+          "summaryZh": "7Artisans 推出 10mm f/2.5 AF MAX 鱼眼镜头，具备 185° 视角、f/2.5 大光圈、自动对焦、双自定义按键与 5.9 英寸最近对焦距离，适配索尼 E、尼康 Z 与 L 卡口，面向动作运动、vlog 等动态追踪拍摄场景。",
+          "track": "domain",
+          "source": "No Film School",
+          "heatScore": null,
+          "dimensions": {
+            "relevance": 10,
+            "novelty": 40,
+            "userValue": 12,
+            "actionability": 10,
+            "evidence": 60
+          },
+          "duplicateRisk": 12,
+          "memoryMatchCount": 0,
+          "opportunityScore": 21,
+          "recommendation": "candidate",
+          "pmValueType": "industry-context",
+          "rationale": "纯硬件镜头发布，不含 AI 能力变化，无法为 AI 产品决策提供可执行输入，仅作拍摄器材生态的背景信息处理。"
+        },
+        {
+          "signalId": "SIG-20260828-FE23F369",
+          "signalTitle": "OpenAI 宣布扩大巴西市场布局",
+          "titleZh": "OpenAI 宣布扩大巴西市场布局",
+          "summaryZh": "OpenAI 宣布扩展在巴西的业务，深化与当地开发者、企业和社区的 AI 采用合作，以支持该国 AI 落地。",
+          "track": "technical",
+          "source": "OpenAI News",
+          "heatScore": null,
+          "dimensions": {
+            "relevance": 30,
+            "novelty": 35,
+            "userValue": 25,
+            "actionability": 20,
+            "evidence": 60
+          },
+          "duplicateRisk": 50,
+          "memoryMatchCount": 3,
+          "opportunityScore": 21,
+          "recommendation": "candidate",
+          "pmValueType": "industry-context",
+          "rationale": "区域市场拓展公告，无任何可验证的新产品能力或用户侧证据，仅提示 OpenAI 加大葡语市场投入，对多语言/本地化产品策略只有弱参考价值，不构成可承接机会。"
+        },
+        {
+          "signalId": "SIG-20260828-913A9ECB",
+          "signalTitle": "比尔·盖茨访谈：AI 已越过危险阈值，呼吁政策提速",
+          "titleZh": "比尔·盖茨访谈：AI 已越过危险阈值，呼吁政策提速",
+          "summaryZh": "比尔·盖茨在 MIT Technology Review 访谈中警示 AI 风险阈值已过，主张加快 AI 政策与治理安排。",
+          "track": "technical",
+          "source": "MIT Technology Review AI",
+          "heatScore": null,
+          "dimensions": {
+            "relevance": 30,
+            "novelty": 30,
+            "userValue": 25,
+            "actionability": 20,
+            "evidence": 50
+          },
+          "duplicateRisk": 40,
+          "memoryMatchCount": 5,
+          "opportunityScore": 21,
+          "recommendation": "candidate",
+          "pmValueType": "industry-context",
+          "rationale": "观点访谈类新闻，无新产品能力或可验证事实，仅作为政策环境背景参考，对产品决策影响弱，符合低优先级处理原则。"
+        },
+        {
+          "signalId": "SIG-20260828-51DE6B20",
+          "signalTitle": "《黑暗侵袭》上映 20 周年：回顾恐怖片类型转型节点",
+          "titleZh": "《黑暗侵袭》上映 20 周年：回顾恐怖片类型转型节点",
+          "summaryZh": "影评文章借《黑暗侵袭》登陆北美院线 20 周年，回顾 2000 年代恐怖片在翻拍潮与 J-horror 改编背景下的类型演变。",
+          "track": "domain",
+          "source": "No Film School",
+          "heatScore": null,
+          "dimensions": {
+            "relevance": 5,
+            "novelty": 25,
+            "userValue": 8,
+            "actionability": 5,
+            "evidence": 55
+          },
+          "duplicateRisk": 35,
+          "memoryMatchCount": 3,
+          "opportunityScore": 10,
+          "recommendation": "candidate",
+          "pmValueType": "industry-context",
+          "rationale": "纯电影行业回顾内容，与 AI 产品决策无关，无可借鉴的产品方案或商业判断，属于过滤噪音。"
+        }
+      ],
+      "recommendedSignalIds": [
+        "SIG-20260828-C93CC4F9",
+        "SIG-20260828-90BA20DC",
+        "SIG-20260828-8A6D4F66",
+        "SIG-20260828-94A5DBFF",
+        "SIG-20260828-A006D1C3",
+        "SIG-20260828-E81BC2E0",
+        "SIG-20260828-C4ADF293",
+        "SIG-20260828-58CCBDCD",
+        "SIG-20260828-22F968BC",
+        "SIG-20260828-737331CB",
+        "SIG-20260828-14DAB73D",
+        "SIG-20260828-AF8CE677",
+        "SIG-20260828-F0DC85DC",
+        "SIG-20260828-0C585FD5",
+        "SIG-20260828-5C8D75EF",
+        "SIG-20260828-6D6C0BD9",
+        "SIG-20260828-12897E90",
+        "SIG-20260828-BEB7BF91",
+        "SIG-20260828-ED62907D",
+        "SIG-20260828-61C8F9F0",
+        "SIG-20260828-853C63F7",
+        "SIG-20260828-A546D9E3",
+        "SIG-20260828-450B5B5E",
+        "SIG-20260828-DC30EA07",
+        "SIG-20260828-F1077BD6",
+        "SIG-20260828-A72037F5",
+        "SIG-20260828-C243C2E5",
+        "SIG-20260828-F49F1860",
+        "SIG-20260828-438A9B54",
+        "SIG-20260828-832A12C8",
+        "SIG-20260828-5AF0AE7B",
+        "SIG-20260828-AABE1396",
+        "SIG-20260828-4ADADE3B",
+        "SIG-20260828-E79D6ACB",
+        "SIG-20260828-C7236DDA",
+        "SIG-20260828-CDBDF837",
+        "SIG-20260828-F49EBA4B",
+        "SIG-20260828-FE23F369",
+        "SIG-20260828-913A9ECB",
+        "SIG-20260828-51DE6B20"
+      ],
+      "reviewSignalIds": [],
+      "autoAnalyzedSignalIds": [
+        "SIG-20260828-C93CC4F9",
+        "SIG-20260828-90BA20DC"
+      ],
+      "decisionSummary": "Agent 已分 4 批完成 40 条情报的 PM 机会评分，并按分数排序；其中 2 条高机会情报进入自动深度分析候选。",
+      "toolCalls": [
+        {
+          "id": "batch-1:call_00_tl4vpYggUMNGK1Z0zpvr8213",
+          "name": "list_daily_signals",
+          "status": "success",
+          "inputSummary": "批次 1/4 · 读取最新双轨情报",
+          "outputSummary": "已读取 10 条最新情报",
+          "durationMs": 0
+        },
+        {
+          "id": "batch-1:call_00_pdjw2TKldwyS1eTyHSRk1928",
+          "name": "search_memory",
+          "status": "success",
+          "inputSummary": "批次 1/4 · 检索 10 条情报的历史决策",
+          "outputSummary": "完成 10 条候选的历史去重检索",
+          "durationMs": 46
+        },
+        {
+          "id": "batch-1:call_00_PAU78YSIYBZYpTw1SQoW7785",
+          "name": "score_candidates",
+          "status": "success",
+          "inputSummary": "批次 1/4 · 评估 10 条候选",
+          "outputSummary": "完成 10 条机会评分",
+          "durationMs": 0
+        },
+        {
+          "id": "batch-1:call_00_0MmtxYYQbjeFP1S0Kz4J6317",
+          "name": "select_intelligence_for_pool",
+          "status": "success",
+          "inputSummary": "批次 1/4 · 确认今日情报机会评分结果",
+          "outputSummary": "完成 10 条产品情报评分",
+          "durationMs": 0
+        },
+        {
+          "id": "batch-2:call_00_SnLPYd8uvWznlXJ5QnaX7908",
+          "name": "list_daily_signals",
+          "status": "success",
+          "inputSummary": "批次 2/4 · 读取最新双轨情报",
+          "outputSummary": "已读取 10 条最新情报",
+          "durationMs": 0
+        },
+        {
+          "id": "batch-2:call_00_qq31EH9ch72Y0MhPUVxK2899",
+          "name": "search_memory",
+          "status": "success",
+          "inputSummary": "批次 2/4 · 检索 10 条情报的历史决策",
+          "outputSummary": "完成 10 条候选的历史去重检索",
+          "durationMs": 44
+        },
+        {
+          "id": "batch-2:call_00_Xol1fNh6bpqXdTukYXua8760",
+          "name": "score_candidates",
+          "status": "success",
+          "inputSummary": "批次 2/4 · 评估 10 条候选",
+          "outputSummary": "完成 10 条机会评分",
+          "durationMs": 0
+        },
+        {
+          "id": "batch-2:call_00_vX5b5cUUbzmoByNRSoKp1427",
+          "name": "select_intelligence_for_pool",
+          "status": "success",
+          "inputSummary": "批次 2/4 · 确认今日情报机会评分结果",
+          "outputSummary": "完成 10 条产品情报评分",
+          "durationMs": 0
+        },
+        {
+          "id": "batch-3:call_00_RCAmC9Yuz8f8DfGHzPd80059",
+          "name": "list_daily_signals",
+          "status": "success",
+          "inputSummary": "批次 3/4 · 读取最新双轨情报",
+          "outputSummary": "已读取 10 条最新情报",
+          "durationMs": 0
+        },
+        {
+          "id": "batch-3:call_00_AoWbJnb2fCrM7WRabutC8197",
+          "name": "search_memory",
+          "status": "success",
+          "inputSummary": "批次 3/4 · 检索 10 条情报的历史决策",
+          "outputSummary": "完成 10 条候选的历史去重检索",
+          "durationMs": 48
+        },
+        {
+          "id": "batch-3:call_00_5UOPVEZtaCIlHHC9Zzc11676",
+          "name": "score_candidates",
+          "status": "success",
+          "inputSummary": "批次 3/4 · 评估 10 条候选",
+          "outputSummary": "完成 10 条机会评分",
+          "durationMs": 1
+        },
+        {
+          "id": "batch-3:call_00_qOU0xfyiMQV98FHIOkPb2187",
+          "name": "select_intelligence_for_pool",
+          "status": "success",
+          "inputSummary": "批次 3/4 · 确认今日情报机会评分结果",
+          "outputSummary": "完成 10 条产品情报评分",
+          "durationMs": 0
+        },
+        {
+          "id": "batch-4:call_00_s5seRU631CSMGmUr1vpZ9799",
+          "name": "list_daily_signals",
+          "status": "success",
+          "inputSummary": "批次 4/4 · 读取最新双轨情报",
+          "outputSummary": "已读取 10 条最新情报",
+          "durationMs": 0
+        },
+        {
+          "id": "batch-4:call_00_pMiaBrppnQSOjPTZ02Gb6471",
+          "name": "search_memory",
+          "status": "success",
+          "inputSummary": "批次 4/4 · 检索 10 条情报的历史决策",
+          "outputSummary": "完成 10 条候选的历史去重检索",
+          "durationMs": 52
+        },
+        {
+          "id": "batch-4:call_00_F8auS9D0sIfi2tEl3f004149",
+          "name": "score_candidates",
+          "status": "failed",
+          "inputSummary": "批次 4/4 · 评估 0 条候选",
+          "outputSummary": "必须对全部候选情报完成评分。",
+          "durationMs": 0
+        },
+        {
+          "id": "batch-4:call_00_Jlnc5QcS3ebydxKOOdV68780",
+          "name": "score_candidates",
+          "status": "success",
+          "inputSummary": "批次 4/4 · 评估 10 条候选",
+          "outputSummary": "完成 10 条机会评分",
+          "durationMs": 0
+        },
+        {
+          "id": "batch-4:call_00_jO2Mpn54Sd0pZpvaNlSd8541",
+          "name": "select_intelligence_for_pool",
+          "status": "success",
+          "inputSummary": "批次 4/4 · 确认今日情报机会评分结果",
+          "outputSummary": "完成 10 条产品情报评分",
+          "durationMs": 0
+        }
+      ],
+      "error": null
+    },
     {
       "id": "TRIAGE-fda707f6-1d98-4d5a-8ad6-f7941e5cc8c6",
       "agent": "product-opportunity-agent",
