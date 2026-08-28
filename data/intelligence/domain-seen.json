@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "track": "domain",
-  "updatedAt": "2026-08-27T04:31:44.164Z",
+  "updatedAt": "2026-08-28T06:56:22.664Z",
   "items": [
     {
       "url": "https://www.creativebloq.com/3d/autodesk-tackles-ai-filmmakings-biggest-problem-with-3d-control",
@@ -1094,6 +1094,86 @@
     {
       "url": "https://arxiv.org/abs/2412.12660",
       "title": "SEG-SAM: Semantic-Guided SAM for Unified Medical Image Segmentation"
+    },
+    {
+      "url": "https://arxiv.org/abs/2608.26794",
+      "title": "Ring Forcing: Towards Precise Long-Term Memory for Autoregressive Video Diffusion"
+    },
+    {
+      "url": "https://arxiv.org/abs/2608.26809",
+      "title": "Thinking on Shots: Consistent Multi-Shot Video Editing with Agentic Reasoning"
+    },
+    {
+      "url": "https://arxiv.org/abs/2608.27123",
+      "title": "EditaLive! Unified Character Video Editing for Live Streaming"
+    },
+    {
+      "url": "https://nofilmschool.com/eddie-ai-updates-pricing",
+      "title": "You Can Now Run Eddie AI as an MCP Server, Unlocking Pay-As-You-Go Use for AI Assistant Editing"
+    },
+    {
+      "url": "https://arxiv.org/abs/2608.26671",
+      "title": "RECAP-Forcing: Retaining Content Appearances for Long Video Generation"
+    },
+    {
+      "url": "https://arxiv.org/abs/2608.26902",
+      "title": "Tether the Subject, Release the Scene: Query-Aware Memory Routing for Long-Horizon Autoregressive Video Generation"
+    },
+    {
+      "url": "https://arxiv.org/abs/2608.26971",
+      "title": "TempJail: Temporal Jailbreak Attacks against Image-to-Video Generation Models"
+    },
+    {
+      "url": "https://arxiv.org/abs/2608.27280",
+      "title": "Sidecar: Training-Free Semantic Reuse for Character-Consistent Free-form Visual Storytelling"
+    },
+    {
+      "url": "https://nofilmschool.com/how-a-wine-infused-cold-email-pool-parties-got-pools-noticed",
+      "title": "How a Wine-Infused Cold Email & Pool Parties Got 'Pools' Noticed"
+    },
+    {
+      "url": "https://nofilmschool.com/gopro-mission-1-pro-ils-ultimate-creator-kit",
+      "title": "Ready for the New GoPro MISSION 1 PRO ILS? This Ultimate Creator Kit Is Already On Sale"
+    },
+    {
+      "url": "https://arxiv.org/abs/2608.26684",
+      "title": "Reason in the Words You Speak: Idiolectal Paraphrasing Off-Policy Traces for Reasoning Distillation in VideoLLMs"
+    },
+    {
+      "url": "https://arxiv.org/abs/2608.26686",
+      "title": "Domain-Specific Self-Supervised Representation Learning for Retinal Fundus Classification"
+    },
+    {
+      "url": "https://arxiv.org/abs/2608.27169",
+      "title": "Ancient-Bench: A Comprehensive Multi-millennial, Multi-medium, and Multi-script Benchmark for Ancient Chinese Artifact Text Recognition"
+    },
+    {
+      "url": "https://news.google.com/rss/articles/CBMiugFBVV95cUxNeEFqRzdXaHNoYWVUUmp1OGxmdHZtWC05QWNOck5YaklfRGt5bVdzdjFVbVEtMWd4ZHVocG5kNjBZa2MtYkthWkNmbWU1eHVRTFpqNXc5LUZKeDFUMXNLbXBDZnBxOEdqcGRyTGN1SGJfSXBfU2hZU0RPdWdpOEszVnJDdUdQWV9rSHVPY0tQZ3V4cm1FaTUwcWh2XzRBZFZEMkN6NUUzQXJLeElhR2lOYjB1R0huOXlLOWc?oc=5",
+      "title": "VIRTUE Asia, V47 Entertainment and COL Group launch world’s first microdrama-focused upfront - marketech apac"
+    },
+    {
+      "url": "https://nofilmschool.com/the-descent-20th-anniversary",
+      "title": "20 Years Ago, The Scariest Movie of the Century Arrived on American Shores"
+    },
+    {
+      "url": "https://arxiv.org/abs/2608.26500",
+      "title": "Systematic Literature Review of Machine Learning Models and Applications for Text Recognition"
+    },
+    {
+      "url": "https://arxiv.org/abs/2608.27168",
+      "title": "Magpie: Real-Time World Renderer for Interactive Games"
+    },
+    {
+      "url": "https://nofilmschool.com/meet-the-artists-behind-the-emmy-nominated-vfx-on-gen-v",
+      "title": "Meet the Artists Behind the Emmy-Nominated VFX on Gen V"
+    },
+    {
+      "url": "https://nofilmschool.com/7artisans-10mm-f-2-5-af-max-fisheye-lens-2677786987",
+      "title": "7Artisans Brings Another Bright Fisheye Lens With an Expansive 185° Angle of View to Filmmakers"
+    },
+    {
+      "url": "https://news.google.com/rss/articles/CBMidkFVX3lxTE92OEI1TVdWaXp5T1FtcW5TNTQyeVdPMHR0bGpZRkVQTzZnY2h5V0tfWkRIVzIzdG8wMTQ0ZDNSUHpMbEViQ19pN3RlcEd6M3NYdVBvbjY2RE5zQVBRWTEwNkpuS0tqeEpUMzY2RlIwQVpmQUo4dWc?oc=5",
+      "title": "Tencent Games Unveils Motus End-to-End AI Animation Pipeline at Gamescom Debut - finance.biggo.com"
     }
   ]
 }
