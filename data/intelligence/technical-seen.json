@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "track": "technical",
-  "updatedAt": "2026-08-28T06:45:25.630Z",
+  "updatedAt": "2026-08-29T04:00:52.609Z",
   "items": [
     {
       "url": "https://www.latent.space/p/ainews-zawinskis-law-of-multiagents",
@@ -1166,6 +1166,86 @@
     {
       "url": "https://www.technologyreview.com/2026/08/26/1142946/bill-gates-ai-danger-threshold",
       "title": "Bill Gates says we’ve passed AI’s danger thresholds. Now what?"
+    },
+    {
+      "url": "https://github.blog/changelog/2026-08-28-github-copilot-weekly-releases-august-24",
+      "title": "GitHub Copilot weekly releases — August 24"
+    },
+    {
+      "url": "https://github.com/abhigyanpatwari/GitNexus",
+      "title": "abhigyanpatwari/GitNexus"
+    },
+    {
+      "url": "https://x.com/coinbase/status/2092995079640141855",
+      "title": "AiFi: The Financial System for AI"
+    },
+    {
+      "url": "https://vercel.com/changelog/hy4-preview-now-available-on-ai-gateway",
+      "title": "Hy4 Preview now available on AI Gateway"
+    },
+    {
+      "url": "https://github.com/abi/screenshot-to-code",
+      "title": "abi/screenshot-to-code"
+    },
+    {
+      "url": "https://x.com/imagine/status/2092675531057885288",
+      "title": "Odyssey Challenge Cinematic Guide"
+    },
+    {
+      "url": "https://github.blog/changelog/2026-08-28-github-copilot-in-visual-studio-august-update-2",
+      "title": "GitHub Copilot in Visual Studio — August update"
+    },
+    {
+      "url": "https://github.com/tailscale/tailcat",
+      "title": "tailscale/tailcat"
+    },
+    {
+      "url": "https://github.blog/changelog/2026-08-28-upcoming-changes-to-github-copilot-policies-and-billing",
+      "title": "Upcoming changes to GitHub Copilot policies and billing"
+    },
+    {
+      "url": "https://github.com/ChromeDevTools/chrome-devtools-mcp",
+      "title": "ChromeDevTools/chrome-devtools-mcp"
+    },
+    {
+      "url": "https://x.com/ailker/status/2093165511920046289",
+      "title": "How I write motion graphics prompts for MiniMax H3 Max"
+    },
+    {
+      "url": "https://openai.com/index/supporting-next-generation-ai-startups-thailand",
+      "title": "Supporting Thailand’s next generation of AI startups"
+    },
+    {
+      "url": "https://vercel.com/changelog/build-and-deploy-eve-agents-from-the-vercel-dashboard",
+      "title": "Build and deploy eve agents from the Vercel dashboard"
+    },
+    {
+      "url": "https://github.com/livekit/agents",
+      "title": "livekit/agents"
+    },
+    {
+      "url": "https://x.com/_avichawla/status/2093265776266637739",
+      "title": "KV, Prefix, Prompt and Semantic Caching in LLMs, clearly explained"
+    },
+    {
+      "url": "https://x.com/AndrewYNg/status/2093388974194872781",
+      "title": "AI Engineering Skills Map: Software engineering fundamentals"
+    },
+    {
+      "url": "https://www.latent.space/p/ainews-openai-to-reach-agi-bar-by",
+      "title": "[AINews] OpenAI to reach AGI bar by end-2026"
+    },
+    {
+      "url": "https://huggingface.co/blog/open-asr-leaderboard-global-south",
+      "title": "The Open ASR Leaderboard Adds Its First Global South Language"
+    },
+    {
+      "url": "https://tldr.tech/ai/2026-08-28",
+      "title": "Gemini Omni 1.1 🎬, Cohere Parse 📄, Codex persistent mode 👨‍💻"
+    },
+    {
+      "url": "https://openai.com/index/loveholidays",
+      "title": "How loveholidays is making everyone a builder with Codex"
     }
   ]
 }
