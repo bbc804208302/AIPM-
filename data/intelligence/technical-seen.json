@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "track": "technical",
-  "updatedAt": "2026-08-29T04:00:52.609Z",
+  "updatedAt": "2026-08-30T01:02:51.542Z",
   "items": [
     {
       "url": "https://www.latent.space/p/ainews-zawinskis-law-of-multiagents",
@@ -1246,6 +1246,74 @@
     {
       "url": "https://openai.com/index/loveholidays",
       "title": "How loveholidays is making everyone a builder with Codex"
+    },
+    {
+      "url": "https://www.latent.space/p/ainews-openai-shuts-off-cursor",
+      "title": "[AINews] OpenAI shuts off Cursor"
+    },
+    {
+      "url": "https://github.com/THU-MAIC/OpenMAIC",
+      "title": "THU-MAIC/OpenMAIC"
+    },
+    {
+      "url": "https://x.com/UberEng/status/2093444169037762840",
+      "title": "Running a Software Factory Efficiently at Uber Scale"
+    },
+    {
+      "url": "https://tldr.tech/ai/2026-08-26",
+      "title": "OpenAI Jalapeño 🌶️, Perplexity Portable Computer 💻, Claude combines memory 🧠"
+    },
+    {
+      "url": "https://github.com/p-e-w/heretic",
+      "title": "p-e-w/heretic"
+    },
+    {
+      "url": "https://x.com/ericzakariasson/status/2092982710465970425",
+      "title": "How I run multiple teams of Grok Bots"
+    },
+    {
+      "url": "https://huggingface.co/blog/ibm-granite/granite-4-2",
+      "title": "Granite 4.2 LLMs: How They're Built"
+    },
+    {
+      "url": "https://github.com/Osmantic/ODS",
+      "title": "Osmantic/ODS"
+    },
+    {
+      "url": "https://www.technologyreview.com/2026/08/25/1141907/dispatch-shanghai-humanoid-robot-carnival",
+      "title": "I spent a day at a robot “carnival” in Shanghai. Here’s what I saw."
+    },
+    {
+      "url": "https://github.com/kaifcodec/user-scanner",
+      "title": "kaifcodec/user-scanner"
+    },
+    {
+      "url": "https://github.com/workweave/router",
+      "title": "workweave/router"
+    },
+    {
+      "url": "https://x.com/akshay_pachaar/status/2093452397402317239",
+      "title": "WebMCP Clearly Explained"
+    },
+    {
+      "url": "https://www.latent.space/p/ainews-andrew-ng-gets-into-ai-engineering",
+      "title": "[AINews] Andrew Ng gets into AI Engineering"
+    },
+    {
+      "url": "https://openai.com/index/disrupting-malicious-uses-of-ai-influence-campaign-russia",
+      "title": "Disrupting a new covert influence campaign from Russia"
+    },
+    {
+      "url": "https://tldr.tech/ai/2026-08-25",
+      "title": "Nvidia’s Groq chip ⚡, frontier economics 💰, Ox Alpha mystery 🕵️"
+    },
+    {
+      "url": "https://x.com/VibeMarketer_/status/2093330541177352217",
+      "title": "How to Build a One-Person Media Company With Hermes Bots"
+    },
+    {
+      "url": "https://openai.com/index/our-decision-on-cursor-following-its-acquisition-by-spacex",
+      "title": "Our decision on Cursor following its acquisition by SpaceX"
     }
   ]
 }
