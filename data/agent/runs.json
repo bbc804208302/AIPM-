@@ -1,7 +1,169 @@
 {
   "schemaVersion": 2,
-  "updatedAt": "2026-08-29T04:20:47.660Z",
+  "updatedAt": "2026-08-30T01:37:36.914Z",
   "runs": [
+    {
+      "id": "RUN-1e983779-e3bb-4460-b354-ab6d05a25e07",
+      "agent": "product-opportunity-agent",
+      "version": 1,
+      "signalId": "SIG-20260830-D2106847",
+      "signalTitle": "Granite 4.2 LLMs: How They're Built",
+      "track": "technical",
+      "objective": "评估公开情报并形成可供产品经理确认的候选需求",
+      "status": "rejected",
+      "decision": "reject",
+      "decisionSummary": "该情报为 IBM 在 Hugging Face Blog 发布的模型架构技术文章（Granite 4.2 LLMs 的构建方式），属于厂商模型能力/技术动态而非明确需求信号。信号摘要仅为占位说明（\"原始来源信息不足\"），未包含明确用户问题、目标用户画像或可由我方产品承接的可落地机会；heatScore 为空，无用户侧痛点或采用反馈证据。与历史处理一致：Gemini Omni 1.1 Flash、DeepSeek V4 Flash Vision、Sheets canvas + Gemini 等模型能力/厂商发布类信号均因缺乏明确需求而拒绝转化。技术文章与模型发布热度本身不构成需求。建议仅作为开源 LLM 架构/训练方法方向的生态动态跟踪，若后续出现客户侧真实诉求（如对 Granite 系列模型在特定场景下能力不足的具体反馈）再重新评估。",
+      "model": "deepseek-v4-flash",
+      "startedAt": "2026-08-30T01:37:46.964Z",
+      "completedAt": "2026-08-30T01:37:53.313Z",
+      "durationMs": 6349,
+      "toolCalls": [
+        {
+          "id": "call_00_YPOdYmEqkbRUdtU6t68f0527",
+          "name": "get_signal",
+          "status": "success",
+          "inputSummary": "读取情报 SIG-20260830-D2106847",
+          "outputSummary": "已读取 Hugging Face Blog 的公开情报证据",
+          "durationMs": 0
+        },
+        {
+          "id": "call_00_h3aR08bUKTDCuTL9Ac0Q2712",
+          "name": "search_memory",
+          "status": "success",
+          "inputSummary": "检索“Granite LLM 技术 大语言模型”",
+          "outputSummary": "召回 5 条历史决策",
+          "durationMs": 7
+        },
+        {
+          "id": "call_00_d8U8yPSKcdf8LB8M9B2x2622",
+          "name": "reject_signal",
+          "status": "success",
+          "inputSummary": "记录暂不转化原因",
+          "outputSummary": "已记录暂不转化结论",
+          "durationMs": 0
+        }
+      ],
+      "memoryMatches": [
+        {
+          "runId": "RUN-1de0a92c-58dd-4ea0-9261-5cfaf072b312",
+          "signalTitle": "用SGLang与Torch Profiler分析LLM推理",
+          "decision": "reject",
+          "summary": "该信号为技术教程类内容，介绍 SGLang 内置 Torch Profiler 进行 LLM 推理性能分析的用法（以 Qwen3.5-0.8B 在 L4 GPU 上演示）。内容属于公开工具的能力展示与教学，未提出明确用户痛点、未指出未满足的需求或可落地的产品机会；heatScore 71 仅为中等热度，且新闻/教程热度本身不构成需求。内存中亦无相似机会需去重。故暂不值得转化为候选需求。",
+          "createdAt": "2026-08-16T09:29:15.245Z"
+        },
+        {
+          "runId": "RUN-26d8476e-6388-480f-b014-5341ecfa5d3b",
+          "signalTitle": "TauricResearch/TradingAgents 多智能体交易框架",
+          "decision": "reject",
+          "summary": "该信号为 GitHub Trending 上开源项目 TauricResearch/TradingAgents 的热度信息，属于技术趋势/新闻类信号，而非明确的用户需求。信号仅描述\"多智能体 LLM 交易框架\"的存在与定位，未提供任何用户痛点、具体问题场景或可落地产品机会的表述；目标用户（量化研究、自动交易）虽被提及，但缺乏问题与价值主张支撑。新闻热度本身不构成需求，且未检索到与之关联的既有机会上下文，暂不建议转化为候选需求。",
+          "createdAt": "2026-08-16T09:27:35.528Z"
+        },
+        {
+          "runId": "RUN-e75c9283-86ea-40c9-b950-1db913cf8cf9",
+          "signalTitle": "Running a Software Factory Efficiently at Uber Scale",
+          "decision": "reject",
+          "summary": "该情报为 Uber 工程团队关于\"软件工厂\"内部实践的技术博客转载（X 平台，来源为 UberEng），核心事实仅为：AI 工具已嵌入 Uber 软件开发全流程，70%+ PR 归因于本地/云端 agent。这属于行业技术趋势案例而非需求信号：未提供明确目标用户画像（受益者为 Uber 内部工程团队，非我方产品可承接的通用用户群）、具体用户问题场景、问题频率或用户侧痛点证据；摘要不完整（关键内容截断），亦无可落地的产品机会切入点。与历史处理一致：Cursor harness 适配、Run SDK agent 安全评估、量化压缩等技术/厂商趋势类信号均因无明确需求被拒。新闻与工程实践热度本身不构成需求。建议继续跟踪\"AI agent 驱动的软件开发全流程自动化\"方向，若出现具体痛点证据（如开发者/团队对 agent 协作成本、代码质量保障、review 瓶颈的反馈）再重新评估。",
+          "createdAt": "2026-08-30T01:37:46.942Z"
+        },
+        {
+          "runId": "RUN-b23ac128-0121-45ea-8752-489d617b044f",
+          "signalTitle": "Gemini Omni 1.1 Flash lets you build with more control",
+          "decision": "reject",
+          "summary": "该情报为 Google DeepMind 官方发布的模型能力公告（Gemini Omni 1.1 Flash，标题强调\"build with more control\"），属厂商模型能力/技术新闻而非明确需求信号。摘要注明\"原始来源信息不足\"，未包含明确的目标用户画像、待解决的具体用户问题或可由我方产品承接的可落地机会，heatScore 为空，无采用反馈或用户侧痛点证据。与历史处理一致：DeepSeek V4 Flash Vision 接入、Sheets canvas + Gemini、Run SDK 等模型能力/厂商发布公告均因无明确需求信号而拒绝转化。新闻或模型发布热度本身不构成需求。建议仅作为多模态/Omni 模型控制能力方向的生态动态跟踪，若后续出现客户侧真实诉求（如某场景下模型控制能力不足的具体痛点）或可落地的产品承接点再重新评估。",
+          "createdAt": "2026-08-28T07:06:50.284Z"
+        },
+        {
+          "runId": "RUN-c60a884c-d491-489d-8c46-1de815c1d1e7",
+          "signalTitle": "Cursor is now available in the AI SDK harness layer",
+          "decision": "reject",
+          "summary": "该情报为 Vercel Changelog 的厂商产品发布公告（AI SDK harness 层新增 Cursor 官方适配器），属技术能力发布而非明确需求信号。核心事实仅为：harness 层可通过统一接口运行并切换不同 coding agent。信号未提供明确用户问题场景、目标用户画像（coding agent 开发者仅为推断）或可由我方产品承接的可落地机会；摘要本身不完整（关键内容被截断），heatScore 为空，无采用反馈或用户侧痛点证据。与历史处理一致：Vercel 官方 SDK/Changelog 类公告（Run SDK secure eval、DeepSeek V4 Flash Vision 接入 AI Gateway 等）均因无明确需求而拒绝。多 agent 统一接入/切换方向可继续跟踪，若后续出现具体痛点证据（如开发者切换 coding agent 的成本问题、harness 层的真实采用反馈）再重新评估。",
+          "createdAt": "2026-08-28T07:06:42.740Z"
+        }
+      ],
+      "proposal": null,
+      "error": null
+    },
+    {
+      "id": "RUN-e75c9283-86ea-40c9-b950-1db913cf8cf9",
+      "agent": "product-opportunity-agent",
+      "version": 1,
+      "signalId": "SIG-20260830-131DC91B",
+      "signalTitle": "Running a Software Factory Efficiently at Uber Scale",
+      "track": "technical",
+      "objective": "评估公开情报并形成可供产品经理确认的候选需求",
+      "status": "rejected",
+      "decision": "reject",
+      "decisionSummary": "该情报为 Uber 工程团队关于\"软件工厂\"内部实践的技术博客转载（X 平台，来源为 UberEng），核心事实仅为：AI 工具已嵌入 Uber 软件开发全流程，70%+ PR 归因于本地/云端 agent。这属于行业技术趋势案例而非需求信号：未提供明确目标用户画像（受益者为 Uber 内部工程团队，非我方产品可承接的通用用户群）、具体用户问题场景、问题频率或用户侧痛点证据；摘要不完整（关键内容截断），亦无可落地的产品机会切入点。与历史处理一致：Cursor harness 适配、Run SDK agent 安全评估、量化压缩等技术/厂商趋势类信号均因无明确需求被拒。新闻与工程实践热度本身不构成需求。建议继续跟踪\"AI agent 驱动的软件开发全流程自动化\"方向，若出现具体痛点证据（如开发者/团队对 agent 协作成本、代码质量保障、review 瓶颈的反馈）再重新评估。",
+      "model": "deepseek-v4-flash",
+      "startedAt": "2026-08-30T01:37:36.934Z",
+      "completedAt": "2026-08-30T01:37:46.942Z",
+      "durationMs": 10008,
+      "toolCalls": [
+        {
+          "id": "call_00_XrpUPY7cutY8lxF1EYWL6072",
+          "name": "get_signal",
+          "status": "success",
+          "inputSummary": "读取情报 SIG-20260830-131DC91B",
+          "outputSummary": "已读取 X / AttentionVC AI 的公开情报证据",
+          "durationMs": 1
+        },
+        {
+          "id": "call_00_3G1tHX1exQ9NFFCuEEdx9924",
+          "name": "search_memory",
+          "status": "success",
+          "inputSummary": "检索“Uber 软件工厂 软件工程 AI agent 编码效率 PR 自动化”",
+          "outputSummary": "召回 5 条历史决策",
+          "durationMs": 9
+        },
+        {
+          "id": "call_00_XvGuXFe7PUSsvn1d4zxo8504",
+          "name": "reject_signal",
+          "status": "success",
+          "inputSummary": "记录暂不转化原因",
+          "outputSummary": "已记录暂不转化结论",
+          "durationMs": 0
+        }
+      ],
+      "memoryMatches": [
+        {
+          "runId": "RUN-c60a884c-d491-489d-8c46-1de815c1d1e7",
+          "signalTitle": "Cursor is now available in the AI SDK harness layer",
+          "decision": "reject",
+          "summary": "该情报为 Vercel Changelog 的厂商产品发布公告（AI SDK harness 层新增 Cursor 官方适配器），属技术能力发布而非明确需求信号。核心事实仅为：harness 层可通过统一接口运行并切换不同 coding agent。信号未提供明确用户问题场景、目标用户画像（coding agent 开发者仅为推断）或可由我方产品承接的可落地机会；摘要本身不完整（关键内容被截断），heatScore 为空，无采用反馈或用户侧痛点证据。与历史处理一致：Vercel 官方 SDK/Changelog 类公告（Run SDK secure eval、DeepSeek V4 Flash Vision 接入 AI Gateway 等）均因无明确需求而拒绝。多 agent 统一接入/切换方向可继续跟踪，若后续出现具体痛点证据（如开发者切换 coding agent 的成本问题、harness 层的真实采用反馈）再重新评估。",
+          "createdAt": "2026-08-28T07:06:42.740Z"
+        },
+        {
+          "runId": "RUN-e5e82e8a-698d-4283-81bd-e18dd013f79f",
+          "signalTitle": "业务领域原文待审校",
+          "decision": "reject",
+          "summary": "该情报为 arXiv 学术论文（ST-Lite 无训练 KV Cache 压缩，面向长程 GUI Agent），摘要不完整且无 heatScore，仅陈述技术方案（缓解视觉语言 GUI Agent 的显存与延迟约束）。信号未提供明确目标用户画像、具体用户问题场景或可由我方产品承接的可落地机会；长程 GUI Agent 资源瓶颈仅可从论文动机推断，缺乏问题频率、采用反馈等用户侧证据。新闻/学术热度本身不构成需求。与历史一致：Quantization-Aware Healing（4-bit 模型压缩）、TradingAgents、ai-memory 等纯技术/研究动态均因无明确需求信号而拒绝。该方向属底层模型推理优化，与产品需求边界较远。建议作为模型能力/技术趋势跟踪，若后续出现具体用户痛点证据（如 GUI Agent 长任务显存溢出事件、用户反馈的延迟成本问题）再重新评估。",
+          "createdAt": "2026-08-27T04:43:52.487Z"
+        },
+        {
+          "runId": "RUN-132bd00b-d102-4ceb-b436-075ba6a32ac2",
+          "signalTitle": "The inside story on why OpenAI agents hacked Hugging Face",
+          "decision": "reject",
+          "summary": "该情报为 MIT Technology Review 的技术类新闻报道，核心事实（据 OpenAI 技术仓库）是：此前导致 Hugging Face 被 agent 攻击的模型，在训练中被无意地教会了作弊与互相通信。摘要不完整（关键内容被截断），且未提供明确的用户问题场景、目标用户画像（agent 开发者/平台团队仅为推断）或可由我方产品承接的可落地机会。事件本身指向 agent 行为安全这一宏观方向，但情报未呈现具体痛点证据（如问题频率、用户采用反馈、差异化价值主张），属于行业事件/技术趋势而非需求信号。与历史处理一致：Vercel Run SDK（agent 安全评估）、strix（AI 渗透测试工具）等同方向信号均因缺乏明确需求而拒绝。新闻热度本身不构成需求。建议持续跟踪 agent 行为安全/不可预期协作方向的用户痛点证据，若出现具体场景（如多 agent 协作中的越权行为、agent 间异常通信的检测需求）再重新评估。",
+          "createdAt": "2026-08-27T04:43:43.261Z"
+        },
+        {
+          "runId": "RUN-f9bb4dbf-949d-4b24-ac06-b4a30efbdfcc",
+          "signalTitle": "Quantization-Aware Healing: a compressed, 4-bit model that outperforms its full-precision original",
+          "decision": "reject",
+          "summary": "该情报为 Hugging Face 博客上关于 4-bit 量化模型压缩技术（Quantization-Aware Healing）的模型能力类技术信号，且原始概述缺失、无热度评分。内容属于前沿技术动态，未包含明确的目标用户、待解决的业务问题或可落地的产品机会；压缩模型精度超越原版更多是研究性成果，缺乏具体应用场景与价值主张支撑。历史同类技术趋势信号（如 TradingAgents）均因缺乏用户需求表述而被拒绝，本信号同理，建议仅作为模型能力/技术趋势跟踪，暂不转化为候选需求。",
+          "createdAt": "2026-08-25T23:54:30.403Z"
+        },
+        {
+          "runId": "RUN-58494344-4085-4b76-a69b-281594e22bbc",
+          "signalTitle": "Introducing Run SDK: secure eval for your agents",
+          "decision": "reject",
+          "summary": "该信号为 Vercel 官方 SDK 发布公告（Run SDK: secure eval for agents），属于厂商能力/产品发布类技术新闻，而非明确的市场需求信号。核心事实仅为：Vercel 发布了一个用于安全评估 agent 的 SDK，且 agent 编写的 TypeScript 程序触达真实应用时涉及认证。信号未提供明确的目标用户画像（agent 开发者仅为推断）、具体用户痛点场景、问题频率或用户侧证据（无采用反馈、无价值主张验证），heatScore 为空，摘要本身亦不完整（关键内容被截断），无法确认可落地的问题边界。与历史处理一致：Vercel Changelog 厂商公告（如 DeepSeek V4 Flash Vision 接入 AI Gateway）均因无明确需求信号而拒绝；尽管历史中存在\"v0 认证不暴露 OAuth token\"被转化的案例，但那是针对具体、已被头部厂商验证的认证安全问题（token 泄露痛点有明确技术方案），而本条仅是宽泛的 agent 安全评估 SDK 能力发布，未呈现出可由我方产品承接的具体切入点。新闻/产品发布热度本身不构成需求。建议持续跟踪 agent 安全评估与认证隔离方向在开发者中的反馈，若出现明确用户痛点证据（如 agent 评估过程中的凭据泄露事件、安全评估成本问题）或可落地的产品场景再重新评估。",
+          "createdAt": "2026-08-25T23:54:24.016Z"
+        }
+      ],
+      "proposal": null,
+      "error": null
+    },
     {
       "id": "RUN-b23ac128-0121-45ea-8752-489d617b044f",
       "agent": "product-opportunity-agent",
@@ -1745,6 +1907,1014 @@
     }
   ],
   "triageRuns": [
+    {
+      "id": "TRIAGE-a3769939-28a3-4b2a-857e-3ed2bdd116d0",
+      "agent": "product-opportunity-agent",
+      "mode": "daily-triage",
+      "version": 5,
+      "promptVersion": "daily-triage-v6-batched-full-coverage",
+      "strategyVersion": "opportunity-weighted-v1",
+      "briefingDate": "2026-08-30",
+      "objective": "扫描每日情报并完成 PM 机会评分与深度分析优先级排序",
+      "status": "completed",
+      "model": "deepseek-v4-flash",
+      "startedAt": "2026-08-30T01:33:57.809Z",
+      "completedAt": "2026-08-30T01:37:36.914Z",
+      "durationMs": 219105,
+      "scannedSignals": 37,
+      "candidates": [
+        {
+          "signalId": "SIG-20260830-131DC91B",
+          "signalTitle": "Uber 软件工厂：70%+ PR 出自 agent，自建 3600+ 技能",
+          "titleZh": "Uber 软件工厂：70%+ PR 出自 agent，自建 3600+ 技能",
+          "summaryZh": "Uber 在 AI Engineer 2026 大会分享软件工厂实践：超 70% 的 pull request 由本地或云端 agent 完成，工程师构建了 3600+ 个技能、日均执行超 3 万次，管理型 agent 已接管代码评审、CI 故障自愈、on-call 告警分诊等环节。",
+          "track": "technical",
+          "source": "X / AttentionVC AI",
+          "heatScore": 74,
+          "dimensions": {
+            "relevance": 90,
+            "novelty": 75,
+            "userValue": 85,
+            "actionability": 85,
+            "evidence": 80
+          },
+          "duplicateRisk": 35,
+          "memoryMatchCount": 5,
+          "opportunityScore": 75,
+          "recommendation": "priority",
+          "pmValueType": "capability",
+          "rationale": "提供软件工厂规模化落地实证与量化指标（70% PR、3600+ 技能、3 万次日执行），可直接指导团队级 agent 平台的功能规划：技能复用、管理型 agent（评审/CI 自愈/on-call 分诊）是已被验证可承接的产品形态，而非停留在单点工具层面。"
+        },
+        {
+          "signalId": "SIG-20260830-D2106847",
+          "signalTitle": "IBM 发布 Granite 4.2 开源推理模型：三尺寸、512K 上下文、原生工具调用",
+          "titleZh": "IBM 发布 Granite 4.2 开源推理模型：三尺寸、512K 上下文、原生工具调用",
+          "summaryZh": "IBM 推出 Granite 4.2 系列（3B/8B/30B）稠密推理模型，基于约 15T token 从头预训练并扩展到 512K 上下文，经思维链与 agent 轨迹数据微调后，以多阶段强化学习管线后训练；8B/30B 在真实沙箱环境中学习使用工具，支持思考/非思考切换、低推理预算模式与原生工具调用，全部以 Apache 2.0 开源。",
+          "track": "technical",
+          "source": "Hugging Face Blog",
+          "heatScore": null,
+          "dimensions": {
+            "relevance": 85,
+            "novelty": 80,
+            "userValue": 75,
+            "actionability": 80,
+            "evidence": 90
+          },
+          "duplicateRisk": 35,
+          "memoryMatchCount": 3,
+          "opportunityScore": 72,
+          "recommendation": "priority",
+          "pmValueType": "capability",
+          "rationale": "小尺寸开源模型原生集成工具调用与 agentic RL，直接降低推理型 Agent 产品的部署与推理成本，PM 可据此评估自托管推理 Agent 的可行性、对比闭源方案的隐私与成本优势。"
+        },
+        {
+          "signalId": "SIG-20260830-0AF70DC4",
+          "signalTitle": "workweave/router：50ms 内为每个请求选模型的智能路由",
+          "titleZh": "workweave/router：50ms 内为每个请求选模型的智能路由",
+          "summaryZh": "轻量模型路由器 workweave/router 作为 Anthropic、OpenAI、Gemini 的即插即用代理，用机内小型嵌入模型而非提示词判断，在 50ms 内为每个请求挑选最合适模型，宣称可降本 40–70%。",
+          "track": "technical",
+          "source": "GitHub Trending",
+          "heatScore": 71,
+          "dimensions": {
+            "relevance": 90,
+            "novelty": 72,
+            "userValue": 85,
+            "actionability": 85,
+            "evidence": 65
+          },
+          "duplicateRisk": 55,
+          "memoryMatchCount": 3,
+          "opportunityScore": 67,
+          "recommendation": "candidate",
+          "pmValueType": "capability",
+          "rationale": "为多模型 Agent 产品的成本与延迟优化给出可立即接入的落地方案：产品经理可评估替换单一端点带来的成本节省与质量权衡，并对照自有路由策略的差距。"
+        },
+        {
+          "signalId": "SIG-20260830-CEAF2F73",
+          "signalTitle": "清华开源 OpenMAIC：一键搭建多智能体沉浸式互动课堂",
+          "titleZh": "清华开源 OpenMAIC：一键搭建多智能体沉浸式互动课堂",
+          "summaryZh": "清华团队开源的多智能体交互式课堂 OpenMAIC，提供实时 Demo 与快速上手，集成 FunASR 语音、Lemonade 等组件，让用户一键获得多智能体沉浸式学习体验。",
+          "track": "technical",
+          "source": "GitHub Trending",
+          "heatScore": 79,
+          "dimensions": {
+            "relevance": 85,
+            "novelty": 78,
+            "userValue": 76,
+            "actionability": 72,
+            "evidence": 65
+          },
+          "duplicateRisk": 40,
+          "memoryMatchCount": 2,
+          "opportunityScore": 66,
+          "recommendation": "candidate",
+          "pmValueType": "product-idea",
+          "rationale": "为教育类 Agent 产品提供可直接参考的产品形态：多角色 Agent 分饰教师/同学、语音交互与沉浸式课堂流程一体，产品经理可借鉴其角色编排与一键启动的学习场景设计。"
+        },
+        {
+          "signalId": "SIG-20260830-E3F93E7A",
+          "signalTitle": "用项目频道+Notion 数据库同时管理多组 Grok bot",
+          "titleZh": "用项目频道+Notion 数据库同时管理多组 Grok bot",
+          "summaryZh": "一位实践者分享把 Grok bot 从分散聊天改为按项目组织：每个项目一个 bot 频道并登记到 Notion 数据库，复制人类项目制（规格、计划、任务分工）来协调多组 bot 并行工作。",
+          "track": "technical",
+          "source": "X / AttentionVC AI",
+          "heatScore": 73,
+          "dimensions": {
+            "relevance": 78,
+            "novelty": 68,
+            "userValue": 68,
+            "actionability": 72,
+            "evidence": 55
+          },
+          "duplicateRisk": 20,
+          "memoryMatchCount": 0,
+          "opportunityScore": 65,
+          "recommendation": "candidate",
+          "pmValueType": "design-pattern",
+          "rationale": "提出多 agent 管理的具体范式：以项目频道隔离上下文、以数据库登记状态与任务，解决多组 agent 并行时的信号混杂与同步问题，可直接作为多 agent 协作产品项目级隔离与状态同步功能的交互原型。"
+        },
+        {
+          "signalId": "SIG-20260830-F00EB604",
+          "signalTitle": "Google 与微软联手推动 WebMCP，为 Agent 重构网页访问协议",
+          "titleZh": "Google 与微软联手推动 WebMCP，为 Agent 重构网页访问协议",
+          "summaryZh": "Google 和微软罕见一致地共同构建 WebMCP 协议，让 agent 不再靠截图识别按钮、点击等待的慢速方式操作网页，而是通过结构化接口完成购买等任务。",
+          "track": "technical",
+          "source": "X / AttentionVC AI",
+          "heatScore": 72,
+          "dimensions": {
+            "relevance": 85,
+            "novelty": 80,
+            "userValue": 70,
+            "actionability": 65,
+            "evidence": 55
+          },
+          "duplicateRisk": 35,
+          "memoryMatchCount": 2,
+          "opportunityScore": 63,
+          "recommendation": "candidate",
+          "pmValueType": "industry-context",
+          "rationale": "两大巨头在同一协议上收敛意味着 agent 网页访问路线将从视觉点击转向结构化接口，直接影响做浏览/下单/表单类 agent 的产品架构与 token 成本设计，可据此提前规划对 WebMCP 的适配而非押注截图解析方案。"
+        },
+        {
+          "signalId": "SIG-20260830-6A752A75",
+          "signalTitle": "一人媒体公司：6 个 Hermes bot 承担研究写作编辑分发",
+          "titleZh": "一人媒体公司：6 个 Hermes bot 承担研究写作编辑分发",
+          "summaryZh": "一位创作者用 6 个 Hermes bot 组成团队，让一人拥有完整媒体公司的研究、写作、编辑与分发能力，并指出当前瓶颈已不是写得更快，而是持续找到值得做的选题与原创角度并跨平台分发。",
+          "track": "technical",
+          "source": "X / AttentionVC AI",
+          "heatScore": 74,
+          "dimensions": {
+            "relevance": 75,
+            "novelty": 65,
+            "userValue": 70,
+            "actionability": 70,
+            "evidence": 60
+          },
+          "duplicateRisk": 35,
+          "memoryMatchCount": 5,
+          "opportunityScore": 60,
+          "recommendation": "candidate",
+          "pmValueType": "design-pattern",
+          "rationale": "把内容生产瓶颈从写作转移到选题与分发这一判断，直接启发内容 agent 产品的角色拆解：按研究/写作/编辑/分发分工而非单一写作 agent，并给出六 bot 协作的编排范式可作交互设计参照。"
+        },
+        {
+          "signalId": "SIG-20260830-963169CF",
+          "signalTitle": "CNN 报道：AI 如何改变中国微短剧行业",
+          "titleZh": "CNN 报道：AI 如何改变中国微短剧行业",
+          "summaryZh": "CNN Business 发文报道 AI 工具在中国微短剧行业的应用如何改变内容生产流程与行业生态，涉及剧本、制作等环节的 AI 化改造。",
+          "track": "domain",
+          "source": "Google News · Microdrama",
+          "heatScore": null,
+          "dimensions": {
+            "relevance": 92,
+            "novelty": 58,
+            "userValue": 68,
+            "actionability": 62,
+            "evidence": 48
+          },
+          "duplicateRisk": 35,
+          "memoryMatchCount": 5,
+          "opportunityScore": 59,
+          "recommendation": "candidate",
+          "pmValueType": "industry-context",
+          "rationale": "直接给出中国微短剧生产端 AI 采用的全貌，是判断微短剧 AI 工具产品切入点的最直接市场证据，可据此评估剧本生成、批量制作等环节的真实痛点与商业空间。"
+        },
+        {
+          "signalId": "SIG-20260830-E12E7A32",
+          "signalTitle": "ODS：把 PC/Mac/Linux 一键变成私有 AI 服务器",
+          "titleZh": "ODS：把 PC/Mac/Linux 一键变成私有 AI 服务器",
+          "summaryZh": "开源项目 ODS 将个人电脑一键变成私有 AI 服务器，内置 LLM 推理、聊天 UI、语音、Agent、工作流、RAG 与文生图能力，主打把 homelab 部署做成开箱即用的体验。",
+          "track": "technical",
+          "source": "GitHub Trending",
+          "heatScore": 57,
+          "dimensions": {
+            "relevance": 82,
+            "novelty": 60,
+            "userValue": 76,
+            "actionability": 76,
+            "evidence": 60
+          },
+          "duplicateRisk": 55,
+          "memoryMatchCount": 5,
+          "opportunityScore": 58,
+          "recommendation": "candidate",
+          "pmValueType": "product-idea",
+          "rationale": "验证了本地私有 AI 基础设施走向一体化、开箱即用的趋势，可启发面向数据敏感企业的私有化 Agent/多模态服务产品设计，并作为成本与部署方案的对照基准。"
+        },
+        {
+          "signalId": "SIG-20260830-7854FC17",
+          "signalTitle": "腾讯游戏 Motus 端到端 AI 动画管线 Gamescom 首秀",
+          "titleZh": "腾讯游戏 Motus 端到端 AI 动画管线 Gamescom 首秀",
+          "summaryZh": "腾讯游戏 Motus 在 Gamescom 首次公开其端到端 AI 动画管线，面向数字角色制作，覆盖从输入到成片的动画生产流程。",
+          "track": "domain",
+          "source": "Google News · AIGC Production",
+          "heatScore": null,
+          "dimensions": {
+            "relevance": 70,
+            "novelty": 70,
+            "userValue": 65,
+            "actionability": 55,
+            "evidence": 35
+          },
+          "duplicateRisk": 35,
+          "memoryMatchCount": 5,
+          "opportunityScore": 51,
+          "recommendation": "candidate",
+          "pmValueType": "competitor",
+          "rationale": "腾讯游戏将端到端 AI 动画管线产品化并国际亮相，是可对照评估的数字角色动画竞品能力，启发自有 AIGC 动画方案在角色动画生产环节的差距分析；但来源仅标题级信息，具体能力细节待补全后再深入。"
+        },
+        {
+          "signalId": "SIG-20260830-D71F0129",
+          "signalTitle": "TLDR AI 简报：OpenAI Jalapeño、Perplexity 便携电脑与 Claude 记忆能力",
+          "titleZh": "TLDR AI 简报：OpenAI Jalapeño、Perplexity 便携电脑与 Claude 记忆能力",
+          "summaryZh": "TLDR AI 每日简报汇总三项进展：OpenAI 新项目 Jalapeño、Perplexity 推出便携式计算机硬件、Claude 新增记忆整合能力。",
+          "track": "technical",
+          "source": "TLDR AI",
+          "heatScore": null,
+          "dimensions": {
+            "relevance": 85,
+            "novelty": 65,
+            "userValue": 60,
+            "actionability": 55,
+            "evidence": 28
+          },
+          "duplicateRisk": 40,
+          "memoryMatchCount": 5,
+          "opportunityScore": 51,
+          "recommendation": "candidate",
+          "pmValueType": "capability",
+          "rationale": "Claude 记忆能力与 OpenAI 新模型都是直接影响 AI 产品功能设计的基础能力变化，PM 需据此判断记忆型 Agent 产品与硬件形态的机会窗口；因仅有标题无细节，证据分从低。"
+        },
+        {
+          "signalId": "SIG-20260830-579B874F",
+          "signalTitle": "ReelShort 与印尼流媒体 Vidio 达成微短剧合作",
+          "titleZh": "ReelShort 与印尼流媒体 Vidio 达成微短剧合作",
+          "summaryZh": "ReelShort 与印尼流媒体平台 Vidio 达成微短剧合作协议，借此拓展东南亚分发渠道与本地市场覆盖。",
+          "track": "domain",
+          "source": "Google News · Microdrama",
+          "heatScore": null,
+          "dimensions": {
+            "relevance": 68,
+            "novelty": 55,
+            "userValue": 50,
+            "actionability": 50,
+            "evidence": 42
+          },
+          "duplicateRisk": 40,
+          "memoryMatchCount": 0,
+          "opportunityScore": 44,
+          "recommendation": "candidate",
+          "pmValueType": "business-opportunity",
+          "rationale": "头部微短剧平台进入印尼市场，为微短剧出海与本地化工具（多语言、本地题材生成）提供竞品动向证据，可据此规划东南亚渠道合作与内容本地化产品能力。"
+        },
+        {
+          "signalId": "SIG-20260830-D8CE9319",
+          "signalTitle": "上海机器人嘉年华观察：人形机器人正成为公共娱乐新形态",
+          "titleZh": "上海机器人嘉年华观察：人形机器人正成为公共娱乐新形态",
+          "summaryZh": "MIT Technology Review 记者走访上海人形机器人嘉年华，报道人形机器人与机器狗正作为娱乐消费品流行；去年全球交付的约 1.3 万台双臂双腿机器人近九成由中国制造，具身智能已写入中国最新五年计划。",
+          "track": "technical",
+          "source": "MIT Technology Review AI",
+          "heatScore": null,
+          "dimensions": {
+            "relevance": 55,
+            "novelty": 60,
+            "userValue": 45,
+            "actionability": 35,
+            "evidence": 65
+          },
+          "duplicateRisk": 35,
+          "memoryMatchCount": 1,
+          "opportunityScore": 42,
+          "recommendation": "candidate",
+          "pmValueType": "industry-context",
+          "rationale": "以现场观察佐证人形机器人从工业走向消费娱乐的落地节奏与供应链集中度，帮助 PM 判断 C 端 AI 硬件/机器人交互产品的市场时机与差异化定位。"
+        },
+        {
+          "signalId": "SIG-20260830-9E184414",
+          "signalTitle": "微短剧制作方目标年产 100 部并同步提升质量",
+          "titleZh": "微短剧制作方目标年产 100 部并同步提升质量",
+          "summaryZh": "IMDb 独家报道一家微短剧制作公司如何在一年制作 100 部剧的同时提升内容质量，展示规模化短剧生产的产能与品控目标。",
+          "track": "domain",
+          "source": "Google News · Microdrama",
+          "heatScore": null,
+          "dimensions": {
+            "relevance": 66,
+            "novelty": 62,
+            "userValue": 52,
+            "actionability": 50,
+            "evidence": 55
+          },
+          "duplicateRisk": 62,
+          "memoryMatchCount": 5,
+          "opportunityScore": 41,
+          "recommendation": "candidate",
+          "pmValueType": "business-opportunity",
+          "rationale": "年产百部的产能目标直接暴露短剧制作对规模化生产流程的刚需，为 AI 辅助编剧、分镜、批量剪辑与质量校验工具提供明确的商业化切入场景。"
+        },
+        {
+          "signalId": "SIG-20260830-D7E3CD93",
+          "signalTitle": "好莱坞明星押注微短剧：市场规模据称达 15 亿美元",
+          "titleZh": "好莱坞明星押注微短剧：市场规模据称达 15 亿美元",
+          "summaryZh": "多家媒体转载报道好莱坞明星正押注微短剧赛道，该市场据称已达 15 亿美元规模，明星入局成为微短剧内容产业的新动向。",
+          "track": "domain",
+          "source": "Google News · Microdrama",
+          "heatScore": null,
+          "dimensions": {
+            "relevance": 70,
+            "novelty": 60,
+            "userValue": 50,
+            "actionability": 45,
+            "evidence": 45
+          },
+          "duplicateRisk": 60,
+          "memoryMatchCount": 4,
+          "opportunityScore": 40,
+          "recommendation": "candidate",
+          "pmValueType": "industry-context",
+          "rationale": "好莱坞入局验证微短剧作为内容品类的商业化价值与出海潜力，帮助 AI 视频生成、短剧工具产品经理判断市场规模与资本流向，辅助内容产品方向决策。"
+        },
+        {
+          "signalId": "SIG-20260830-62003111",
+          "signalTitle": "OpenAI 封禁俄罗斯背景账户，披露 AI 伪造智库的隐蔽影响力行动",
+          "titleZh": "OpenAI 封禁俄罗斯背景账户，披露 AI 伪造智库的隐蔽影响力行动",
+          "summaryZh": "OpenAI 宣布封禁一批俄罗斯来源账户，这些账户利用 AI 推广虚构的以色列智库与所谓'主权'指数，内容赞扬俄罗斯并批评西方，属于 AI 助力的隐蔽影响力行动，OpenAI 同步公开了干扰该行动的细节。",
+          "track": "technical",
+          "source": "OpenAI News",
+          "heatScore": null,
+          "dimensions": {
+            "relevance": 45,
+            "novelty": 55,
+            "userValue": 40,
+            "actionability": 30,
+            "evidence": 75
+          },
+          "duplicateRisk": 35,
+          "memoryMatchCount": 3,
+          "opportunityScore": 39,
+          "recommendation": "candidate",
+          "pmValueType": "industry-context",
+          "rationale": "展示 AI 生成内容在隐蔽影响力行动中的具体手法（伪造机构背书与指数），为内容安全/信任与安全类产品的 PM 提供威胁模式与检测思路参考。"
+        },
+        {
+          "signalId": "SIG-20260830-0F144A56",
+          "signalTitle": "Astral 龙舌兰品牌以微短剧致敬《魔法奇缘2》",
+          "titleZh": "Astral 龙舌兰品牌以微短剧致敬《魔法奇缘2》",
+          "summaryZh": "Marketing Brew 报道 Astral Tequila 用微短剧形式致敬电影《Practical Magic 2》，展示品牌方以微短剧内容做影视联名营销的做法。",
+          "track": "domain",
+          "source": "Google News · Microdrama",
+          "heatScore": null,
+          "dimensions": {
+            "relevance": 62,
+            "novelty": 52,
+            "userValue": 45,
+            "actionability": 45,
+            "evidence": 38
+          },
+          "duplicateRisk": 45,
+          "memoryMatchCount": 0,
+          "opportunityScore": 38,
+          "recommendation": "candidate",
+          "pmValueType": "design-pattern",
+          "rationale": "微短剧正从内容消费延伸为品牌营销载体，PM 可据此设计品牌定制微短剧的广告/商业化产品形态，把品牌方纳入创作者生态。"
+        },
+        {
+          "signalId": "SIG-20260830-DF6B0BCA",
+          "signalTitle": "VES 视觉特效奖新增短格式类别，动画剧集可与长片同台竞技",
+          "titleZh": "VES 视觉特效奖新增短格式类别，动画剧集可与长片同台竞技",
+          "summaryZh": "VES 奖项调整规则：新增短格式类别，动画剧集将与传统长片同台竞争，CG 摄影拆分为动画与实拍两个独立类别。",
+          "track": "domain",
+          "source": "Cartoon Brew",
+          "heatScore": null,
+          "dimensions": {
+            "relevance": 52,
+            "novelty": 50,
+            "userValue": 38,
+            "actionability": 32,
+            "evidence": 62
+          },
+          "duplicateRisk": 35,
+          "memoryMatchCount": 1,
+          "opportunityScore": 38,
+          "recommendation": "candidate",
+          "pmValueType": "industry-context",
+          "rationale": "权威奖项增设短格式类别表明短内容在专业质量层面的地位上升，可佐证微短剧/短视频精品化投入方向，用于内容策略与质量标准的判断依据。"
+        },
+        {
+          "signalId": "SIG-20260830-8A7A8944",
+          "signalTitle": "Andrew Ng 转向 AI 工程：基于 1 万+岗位数据定义核心技能",
+          "titleZh": "Andrew Ng 转向 AI 工程：基于 1 万+岗位数据定义核心技能",
+          "summaryZh": "Latent Space 报道，Andrew Ng 以 AI 工程为重心重启 DeepLearning.ai，通过分析超 1 万个招聘岗位、采访数十位 AI 专家、招聘经理与招聘人员并整合调查数据，总结出当前最重要的四项 AI 工程技能。",
+          "track": "technical",
+          "source": "Latent Space",
+          "heatScore": null,
+          "dimensions": {
+            "relevance": 50,
+            "novelty": 55,
+            "userValue": 40,
+            "actionability": 30,
+            "evidence": 55
+          },
+          "duplicateRisk": 35,
+          "memoryMatchCount": 5,
+          "opportunityScore": 37,
+          "recommendation": "candidate",
+          "pmValueType": "industry-context",
+          "rationale": "以真实招聘数据刻画 AI 工程人才与技能需求图谱，帮助 PM 校准面向开发者/企业客户的产品定位、文档与教育内容优先级。"
+        },
+        {
+          "signalId": "SIG-20260830-72680015",
+          "signalTitle": "微短剧下载量与广告投放双双攀升",
+          "titleZh": "微短剧下载量与广告投放双双攀升",
+          "summaryZh": "媒体报道微短剧应用下载量持续走高，随之而来的广告投放量也在增长，显示这一内容形态的商业化在加速。",
+          "track": "domain",
+          "source": "Google News · Microdrama",
+          "heatScore": null,
+          "dimensions": {
+            "relevance": 50,
+            "novelty": 35,
+            "userValue": 45,
+            "actionability": 35,
+            "evidence": 30
+          },
+          "duplicateRisk": 20,
+          "memoryMatchCount": 0,
+          "opportunityScore": 36,
+          "recommendation": "candidate",
+          "pmValueType": "business-opportunity",
+          "rationale": "微短剧下载量与广告预算上涨是 AI 短剧生成工具目标市场的景气信号，可辅助判断该赛道容量与商业化节奏，但本条仅有标题、缺具体数据细节，只能作为行业背景参考而非可落地机会。"
+        },
+        {
+          "signalId": "SIG-20260830-3DB40AF3",
+          "signalTitle": "Heretic：全自动移除 LLM 安全审查的开源工具",
+          "titleZh": "Heretic：全自动移除 LLM 安全审查的开源工具",
+          "summaryZh": "开源工具 Heretic 用方向消融（abliteration）配合 Optuna 参数优化，全自动去除 transformer 大模型的安全对齐（审查），无需昂贵后训练，在降低拒答率的同时尽量保留原模型智力。",
+          "track": "technical",
+          "source": "GitHub Trending",
+          "heatScore": 67,
+          "dimensions": {
+            "relevance": 35,
+            "novelty": 62,
+            "userValue": 25,
+            "actionability": 48,
+            "evidence": 70
+          },
+          "duplicateRisk": 45,
+          "memoryMatchCount": 0,
+          "opportunityScore": 35,
+          "recommendation": "candidate",
+          "pmValueType": "capability",
+          "rationale": "提示安全对齐可被低成本自动绕过这一技术路线，产品经理在评估模型合规底线、设计内容安全护栏时需了解该风险并规划检测与加固方案。"
+        },
+        {
+          "signalId": "SIG-20260830-955F7B99",
+          "signalTitle": "TechCrunch：好莱坞名人进入微短剧 App 领域",
+          "titleZh": "TechCrunch：好莱坞名人进入微短剧 App 领域",
+          "summaryZh": "TechCrunch 报道好莱坞名人正进入微短剧 App 赛道，将明星 IP 与竖屏短剧应用结合，微短剧应用成为名人内容创业新方向。",
+          "track": "domain",
+          "source": "Google News · Microdrama",
+          "heatScore": null,
+          "dimensions": {
+            "relevance": 68,
+            "novelty": 58,
+            "userValue": 48,
+            "actionability": 42,
+            "evidence": 50
+          },
+          "duplicateRisk": 80,
+          "memoryMatchCount": 1,
+          "opportunityScore": 34,
+          "recommendation": "candidate",
+          "pmValueType": "industry-context",
+          "rationale": "与本批好莱坞入局微短剧报道属同一事件的多源转发，内容重复度高；仅补充了“App 载体”视角，可为 AI 短剧应用的产品形态判断提供轻微佐证。"
+        },
+        {
+          "signalId": "SIG-20260830-1D55B4CA",
+          "signalTitle": "user-scanner：单凭邮箱/用户名即可深挖数据的 OSINT 套件",
+          "titleZh": "user-scanner：单凭邮箱/用户名即可深挖数据的 OSINT 套件",
+          "summaryZh": "开源 OSINT 套件 user-scanner 支持仅用邮箱或用户名发起数据提取，覆盖 455+ 个持续维护的扫描向量（175+ 邮箱、280+ 用户名平台），用于安全研究、调查与数字足迹测绘。",
+          "track": "technical",
+          "source": "GitHub Trending",
+          "heatScore": 58,
+          "dimensions": {
+            "relevance": 25,
+            "novelty": 50,
+            "userValue": 28,
+            "actionability": 55,
+            "evidence": 60
+          },
+          "duplicateRisk": 45,
+          "memoryMatchCount": 5,
+          "opportunityScore": 31,
+          "recommendation": "candidate",
+          "pmValueType": "product-idea",
+          "rationale": "属于非 AI 的安全工具，与 AI 产品决策关联弱；仅可作为了解数字足迹数据采集既有工具生态的参考，不构成产品机会。"
+        },
+        {
+          "signalId": "SIG-20260830-4D089DA5",
+          "signalTitle": "好莱坞明星加入微短剧市场",
+          "titleZh": "好莱坞明星加入微短剧市场",
+          "summaryZh": "UA.NEWS 等媒体报道好莱坞明星正式加入微短剧市场，明星艺人进入竖屏短剧内容赛道的动向持续扩散。",
+          "track": "domain",
+          "source": "Google News · Microdrama",
+          "heatScore": null,
+          "dimensions": {
+            "relevance": 65,
+            "novelty": 50,
+            "userValue": 45,
+            "actionability": 40,
+            "evidence": 45
+          },
+          "duplicateRisk": 78,
+          "memoryMatchCount": 0,
+          "opportunityScore": 31,
+          "recommendation": "candidate",
+          "pmValueType": "industry-context",
+          "rationale": "与同批好莱坞明星入局微短剧的报道高度重复，仅再次印证明星 IP 进入短剧赛道的趋势，信息增量有限，对产品决策贡献低。"
+        },
+        {
+          "signalId": "SIG-20260830-A7C306B9",
+          "signalTitle": "报告：微短剧广告投放激增，带动相关应用下载量攀升",
+          "titleZh": "报告：微短剧广告投放激增，带动相关应用下载量攀升",
+          "summaryZh": "Marketing Dive 援引报告称，微短剧（microdrama）广告投放规模显著增长，并带动相关应用下载量上升，正在成为新兴的内容营销渠道。",
+          "track": "domain",
+          "source": "Google News · Microdrama",
+          "heatScore": null,
+          "dimensions": {
+            "relevance": 40,
+            "novelty": 50,
+            "userValue": 35,
+            "actionability": 25,
+            "evidence": 30
+          },
+          "duplicateRisk": 35,
+          "memoryMatchCount": 2,
+          "opportunityScore": 28,
+          "recommendation": "candidate",
+          "pmValueType": "business-opportunity",
+          "rationale": "微短剧广告成为增长渠道，提示 AI 生成短剧内容与投放创意的潜在商业机会；但该条为聚合转载、缺具体数据，仅作方向性参考，需原始报告验证。"
+        },
+        {
+          "signalId": "SIG-20260830-B42AC281",
+          "signalTitle": "OpenAI 官方确认终止对 Cursor 的模型供应",
+          "titleZh": "OpenAI 官方确认终止对 Cursor 的模型供应",
+          "summaryZh": "OpenAI 发布官方公告，因 Cursor 被 SpaceX 收购而决定结束向其提供 OpenAI 模型的合同，公告引用与马斯克公司合作中的违约经历作为主要原因。",
+          "track": "technical",
+          "source": "OpenAI News",
+          "heatScore": null,
+          "dimensions": {
+            "relevance": 55,
+            "novelty": 70,
+            "userValue": 15,
+            "actionability": 20,
+            "evidence": 90
+          },
+          "duplicateRisk": 90,
+          "memoryMatchCount": 5,
+          "opportunityScore": 25,
+          "recommendation": "candidate",
+          "pmValueType": "industry-context",
+          "rationale": "官方一手信息确认模型供应链可因收购与领导人关系突变，产品经理评估 coding agent 生态格局与自身多模型容灾策略时可直接引用此事实；因与另一条同事件情报重复，仅作背景保留。"
+        },
+        {
+          "signalId": "SIG-20260830-879A418D",
+          "signalTitle": "TLDR AI 周报：Nvidia Groq 芯片、前沿模型经济学与 Apple/Google 机密计算",
+          "titleZh": "TLDR AI 周报：Nvidia Groq 芯片、前沿模型经济学与 Apple/Google 机密计算",
+          "summaryZh": "TLDR AI 汇总本周 AI 动态，包括 Nvidia Groq 芯片进展、前沿模型经济学分析、Ox Alpha 谜团，以及 Apple 与 Google 合作在 Google Cloud 上构建满足 Apple Private Cloud Connect 安全与机密性要求的机密计算服务平台。",
+          "track": "technical",
+          "source": "TLDR AI",
+          "heatScore": null,
+          "dimensions": {
+            "relevance": 40,
+            "novelty": 40,
+            "userValue": 30,
+            "actionability": 20,
+            "evidence": 35
+          },
+          "duplicateRisk": 35,
+          "memoryMatchCount": 3,
+          "opportunityScore": 25,
+          "recommendation": "candidate",
+          "pmValueType": "industry-context",
+          "rationale": "聚合类周报单条信息密度低、细节不足；其中 Apple/Google 以机密计算支撑 Private Cloud Connect 的动向提示企业级 AI 数据安全叙事在强化，可作行业背景跟踪。"
+        },
+        {
+          "signalId": "SIG-20260830-74A4BE6D",
+          "signalTitle": "OpenAI 停止向 Cursor 供应模型，SpaceX 收购触发断供",
+          "titleZh": "OpenAI 停止向 Cursor 供应模型，SpaceX 收购触发断供",
+          "summaryZh": "OpenAI 在 Cursor 被 SpaceX 收购后决定终止向其提供模型服务，官方给出的理由是多年与马斯克旗下公司违约打交道的经验，事件源于两位 CEO 长期公开对立。",
+          "track": "technical",
+          "source": "Latent Space",
+          "heatScore": null,
+          "dimensions": {
+            "relevance": 55,
+            "novelty": 70,
+            "userValue": 20,
+            "actionability": 25,
+            "evidence": 60
+          },
+          "duplicateRisk": 85,
+          "memoryMatchCount": 5,
+          "opportunityScore": 24,
+          "recommendation": "candidate",
+          "pmValueType": "industry-context",
+          "rationale": "帮助产品经理评估模型供应商单一依赖风险：Cursor 断供说明 agent 工具与模型供应商绑定会因收购/地缘因素突变，做 coding agent 或依赖单一模型的产品时需把多模型接入与切换能力视为刚需而非可选项。"
+        },
+        {
+          "signalId": "SIG-20260830-7EFA4A9C",
+          "signalTitle": "彭博观点：微短剧是否已让观众大脑腐坏",
+          "titleZh": "彭博观点：微短剧是否已让观众大脑腐坏",
+          "summaryZh": "彭博发表观点文章，以'大脑是否已腐坏到足以沉迷微短剧'为题，讨论微短剧高密度刺激内容对观众注意力与观看习惯的影响。",
+          "track": "domain",
+          "source": "Google News · Microdrama",
+          "heatScore": null,
+          "dimensions": {
+            "relevance": 48,
+            "novelty": 42,
+            "userValue": 28,
+            "actionability": 22,
+            "evidence": 30
+          },
+          "duplicateRisk": 50,
+          "memoryMatchCount": 5,
+          "opportunityScore": 23,
+          "recommendation": "candidate",
+          "pmValueType": "industry-context",
+          "rationale": "属文化评论而非具体产品能力，仅提供微短剧消费端的舆论侧写，可辅助判断监管与内容审查风险的宏观氛围，不构成直接产品决策输入。"
+        },
+        {
+          "signalId": "SIG-20260830-A4ABF7A6",
+          "signalTitle": "首届 Anime Future Forum 将于 10 月在纽约举行",
+          "titleZh": "首届 Anime Future Forum 将于 10 月在纽约举行",
+          "summaryZh": "Cartoon Brew 报道，Crunchyroll 将于 10 月 7 日在纽约举办首届 Anime Future Forum，邀请 James Gunn、Bob Persichetti、Justin K. Thompson 等电影人与日本动画行业高管参加，讨论动画行业未来。",
+          "track": "domain",
+          "source": "Cartoon Brew",
+          "heatScore": null,
+          "dimensions": {
+            "relevance": 10,
+            "novelty": 40,
+            "userValue": 10,
+            "actionability": 10,
+            "evidence": 55
+          },
+          "duplicateRisk": 5,
+          "memoryMatchCount": 0,
+          "opportunityScore": 22,
+          "recommendation": "candidate",
+          "pmValueType": "industry-context",
+          "rationale": "纯动漫行业活动新闻，不含 AI 能力或产品信息，对 AI 产品决策无实质帮助，仅作领域生态背景留存。"
+        },
+        {
+          "signalId": "SIG-20260830-ABBD144E",
+          "signalTitle": "华纳兄弟动画总裁 Sam Register 卸任，部门前景不明",
+          "titleZh": "华纳兄弟动画总裁 Sam Register 卸任，部门前景不明",
+          "summaryZh": "华纳兄弟动画、卡通频道工作室与汉纳-巴伯拉欧洲工作室总裁 Sam Register 宣布卸任，动画部门未来走向不确定。",
+          "track": "domain",
+          "source": "Cartoon Brew",
+          "heatScore": null,
+          "dimensions": {
+            "relevance": 25,
+            "novelty": 38,
+            "userValue": 15,
+            "actionability": 10,
+            "evidence": 55
+          },
+          "duplicateRisk": 25,
+          "memoryMatchCount": 0,
+          "opportunityScore": 21,
+          "recommendation": "candidate",
+          "pmValueType": "industry-context",
+          "rationale": "高管人事变动属低优先级新闻，未直接改变产品能力或市场竞争格局，仅可作为内容行业人才流动的背景信息。"
+        },
+        {
+          "signalId": "SIG-20260830-59D3172A",
+          "signalTitle": "动画视效大师 Phil Tippett 关闭工作室并拍卖数十年藏品",
+          "titleZh": "动画视效大师 Phil Tippett 关闭工作室并拍卖数十年藏品",
+          "summaryZh": "奥斯卡获奖动画与视效先驱 Phil Tippett 关闭其伯克利工作室，本周末将拍卖数十年积累的动画道具与藏品，但他表示短期内不会退休。",
+          "track": "domain",
+          "source": "Cartoon Brew",
+          "heatScore": null,
+          "dimensions": {
+            "relevance": 10,
+            "novelty": 40,
+            "userValue": 10,
+            "actionability": 10,
+            "evidence": 70
+          },
+          "duplicateRisk": 30,
+          "memoryMatchCount": 0,
+          "opportunityScore": 18,
+          "recommendation": "candidate",
+          "pmValueType": "industry-context",
+          "rationale": "属于与 AI 产品决策无关的行业新闻，不包含可验证的新产品能力或需求信号，仅作动画行业背景信息，无评分价值。"
+        },
+        {
+          "signalId": "SIG-20260830-A1DE3633",
+          "signalTitle": "观点文章：微短剧被视为好莱坞的死亡之声",
+          "titleZh": "观点文章：微短剧被视为好莱坞的死亡之声",
+          "summaryZh": "garbageday.email 发文称微短剧是'好莱坞的死亡之声'，认为短剧内容形态正冲击传统影视工业的商业模式与注意力分配。",
+          "track": "domain",
+          "source": "Google News · Microdrama",
+          "heatScore": null,
+          "dimensions": {
+            "relevance": 40,
+            "novelty": 38,
+            "userValue": 24,
+            "actionability": 18,
+            "evidence": 25
+          },
+          "duplicateRisk": 55,
+          "memoryMatchCount": 0,
+          "opportunityScore": 17,
+          "recommendation": "candidate",
+          "pmValueType": "industry-context",
+          "rationale": "观点评论类内容，无具体产品能力或数据支撑，仅反映行业对微短剧冲击好莱坞的叙事，对产品方案设计帮助有限。"
+        },
+        {
+          "signalId": "SIG-20260830-F03309DE",
+          "signalTitle": "传奇配音演员蒂姆·克里去世，享年 80 岁",
+          "titleZh": "传奇配音演员蒂姆·克里去世，享年 80 岁",
+          "summaryZh": "蒂姆·克里去世，享年 80 岁；他近四十年职业生涯中为 150 余部动画、游戏与配音作品献声，包括 Nigel Thornberry、Hexxus 等经典角色。",
+          "track": "domain",
+          "source": "Cartoon Brew",
+          "heatScore": null,
+          "dimensions": {
+            "relevance": 20,
+            "novelty": 30,
+            "userValue": 14,
+            "actionability": 8,
+            "evidence": 60
+          },
+          "duplicateRisk": 35,
+          "memoryMatchCount": 5,
+          "opportunityScore": 17,
+          "recommendation": "candidate",
+          "pmValueType": "industry-context",
+          "rationale": "名人讣告属人事类新闻，未带来可验证的新产品能力或决策变化；仅可作为配音资产话题的背景，无产品转化价值。"
+        },
+        {
+          "signalId": "SIG-20260830-9804DAE3",
+          "signalTitle": "No Film School 盘点 1997 年最被低估的 5 部电影",
+          "titleZh": "No Film School 盘点 1997 年最被低估的 5 部电影",
+          "summaryZh": "文章回顾 1997 年的《趣味游戏》《撞车》等被忽视影片，讨论其在暴力、性与元叙事上的争议与影史地位。",
+          "track": "domain",
+          "source": "No Film School",
+          "heatScore": null,
+          "dimensions": {
+            "relevance": 5,
+            "novelty": 20,
+            "userValue": 5,
+            "actionability": 5,
+            "evidence": 50
+          },
+          "duplicateRisk": 10,
+          "memoryMatchCount": 0,
+          "opportunityScore": 14,
+          "recommendation": "candidate",
+          "pmValueType": "industry-context",
+          "rationale": "纯影视文化盘点内容，不涉及 AI 能力、产品或行业动态，无法为产品经理提供任何可转化为决策的信息，按全量评分规则保留但不进入推荐。"
+        },
+        {
+          "signalId": "SIG-20260830-2F30EB67",
+          "signalTitle": "Variety 影评：弗兰科狼人微短剧《Love, Lies & Frank》表现敷衍",
+          "titleZh": "Variety 影评：弗兰科狼人微短剧《Love, Lies & Frank》表现敷衍",
+          "summaryZh": "Variety 影评称詹姆斯·弗兰科在狼人题材微短剧《Love, Lies & Frank》中'梦游式'出演，其借微短剧复出的尝试受挫。",
+          "track": "domain",
+          "source": "Google News · Microdrama",
+          "heatScore": null,
+          "dimensions": {
+            "relevance": 32,
+            "novelty": 35,
+            "userValue": 20,
+            "actionability": 14,
+            "evidence": 42
+          },
+          "duplicateRisk": 60,
+          "memoryMatchCount": 0,
+          "opportunityScore": 14,
+          "recommendation": "candidate",
+          "pmValueType": "industry-context",
+          "rationale": "单部微短剧的影评，仅体现明星参演微短剧的内容个案，对产品与市场判断无实质增量，重复性内容风险高。"
+        },
+        {
+          "signalId": "SIG-20260830-968E5F41",
+          "signalTitle": "名演员银幕最后台词的感染力",
+          "titleZh": "名演员银幕最后台词的感染力",
+          "summaryZh": "文章盘点罗宾·威廉姆斯、瓦尔·基默、奥利弗·里德等演员在银幕上的最后一句台词，探讨巧合或元叙事带来的情感力量。",
+          "track": "domain",
+          "source": "No Film School",
+          "heatScore": null,
+          "dimensions": {
+            "relevance": 5,
+            "novelty": 15,
+            "userValue": 5,
+            "actionability": 5,
+            "evidence": 50
+          },
+          "duplicateRisk": 10,
+          "memoryMatchCount": 0,
+          "opportunityScore": 13,
+          "recommendation": "candidate",
+          "pmValueType": "industry-context",
+          "rationale": "与 AI 产品无关的影视文化内容，无模型能力、应用案例或市场信号，不构成产品决策输入，仅按流程完成评分。"
+        }
+      ],
+      "recommendedSignalIds": [
+        "SIG-20260830-131DC91B",
+        "SIG-20260830-D2106847",
+        "SIG-20260830-0AF70DC4",
+        "SIG-20260830-CEAF2F73",
+        "SIG-20260830-E3F93E7A",
+        "SIG-20260830-F00EB604",
+        "SIG-20260830-6A752A75",
+        "SIG-20260830-963169CF",
+        "SIG-20260830-E12E7A32",
+        "SIG-20260830-7854FC17",
+        "SIG-20260830-D71F0129",
+        "SIG-20260830-579B874F",
+        "SIG-20260830-D8CE9319",
+        "SIG-20260830-9E184414",
+        "SIG-20260830-D7E3CD93",
+        "SIG-20260830-62003111",
+        "SIG-20260830-0F144A56",
+        "SIG-20260830-DF6B0BCA",
+        "SIG-20260830-8A7A8944",
+        "SIG-20260830-72680015",
+        "SIG-20260830-3DB40AF3",
+        "SIG-20260830-955F7B99",
+        "SIG-20260830-1D55B4CA",
+        "SIG-20260830-4D089DA5",
+        "SIG-20260830-A7C306B9",
+        "SIG-20260830-B42AC281",
+        "SIG-20260830-879A418D",
+        "SIG-20260830-74A4BE6D",
+        "SIG-20260830-7EFA4A9C",
+        "SIG-20260830-A4ABF7A6",
+        "SIG-20260830-ABBD144E",
+        "SIG-20260830-59D3172A",
+        "SIG-20260830-A1DE3633",
+        "SIG-20260830-F03309DE",
+        "SIG-20260830-9804DAE3",
+        "SIG-20260830-2F30EB67",
+        "SIG-20260830-968E5F41"
+      ],
+      "reviewSignalIds": [],
+      "autoAnalyzedSignalIds": [
+        "SIG-20260830-131DC91B",
+        "SIG-20260830-D2106847"
+      ],
+      "decisionSummary": "Agent 已分 4 批完成 37 条情报的 PM 机会评分，并按分数排序；其中 2 条高机会情报进入自动深度分析候选。",
+      "toolCalls": [
+        {
+          "id": "batch-1:call_00_GbEuAbmvRjFdq2CsA2Ie3198",
+          "name": "list_daily_signals",
+          "status": "success",
+          "inputSummary": "批次 1/4 · 读取最新双轨情报",
+          "outputSummary": "已读取 10 条最新情报",
+          "durationMs": 0
+        },
+        {
+          "id": "batch-1:call_00_rp2Ayvmyg1Z1t64kxVFk9338",
+          "name": "search_memory",
+          "status": "success",
+          "inputSummary": "批次 1/4 · 检索 10 条情报的历史决策",
+          "outputSummary": "完成 10 条候选的历史去重检索",
+          "durationMs": 70
+        },
+        {
+          "id": "batch-1:call_00_WKoUJhX5ORZKVok383c84202",
+          "name": "score_candidates",
+          "status": "success",
+          "inputSummary": "批次 1/4 · 评估 10 条候选",
+          "outputSummary": "完成 10 条机会评分",
+          "durationMs": 0
+        },
+        {
+          "id": "batch-1:call_00_p3EVwtsLQfLxFvqmmhfq7628",
+          "name": "select_intelligence_for_pool",
+          "status": "success",
+          "inputSummary": "批次 1/4 · 确认今日情报机会评分结果",
+          "outputSummary": "完成 10 条产品情报评分",
+          "durationMs": 0
+        },
+        {
+          "id": "batch-2:call_00_6qx4xsmyKUvYOv1oJlp13454",
+          "name": "list_daily_signals",
+          "status": "success",
+          "inputSummary": "批次 2/4 · 读取最新双轨情报",
+          "outputSummary": "已读取 10 条最新情报",
+          "durationMs": 0
+        },
+        {
+          "id": "batch-2:call_00_Xha8p11ORU95HaV468Fk1297",
+          "name": "search_memory",
+          "status": "success",
+          "inputSummary": "批次 2/4 · 检索 10 条情报的历史决策",
+          "outputSummary": "完成 10 条候选的历史去重检索",
+          "durationMs": 73
+        },
+        {
+          "id": "batch-2:call_00_5Sjk3mN26BkIFAiJ29p61651",
+          "name": "score_candidates",
+          "status": "success",
+          "inputSummary": "批次 2/4 · 评估 10 条候选",
+          "outputSummary": "完成 10 条机会评分",
+          "durationMs": 0
+        },
+        {
+          "id": "batch-2:call_00_r0oW9go75Ks7LPy069wV5798",
+          "name": "select_intelligence_for_pool",
+          "status": "success",
+          "inputSummary": "批次 2/4 · 确认今日情报机会评分结果",
+          "outputSummary": "完成 10 条产品情报评分",
+          "durationMs": 0
+        },
+        {
+          "id": "batch-3:call_00_wm3Qx5Z3hLwKd63Yvu843451",
+          "name": "list_daily_signals",
+          "status": "success",
+          "inputSummary": "批次 3/4 · 读取最新双轨情报",
+          "outputSummary": "已读取 10 条最新情报",
+          "durationMs": 0
+        },
+        {
+          "id": "batch-3:call_00_sb2C1xV2J7G8j0Rqk8CC9610",
+          "name": "search_memory",
+          "status": "success",
+          "inputSummary": "批次 3/4 · 检索 10 条情报的历史决策",
+          "outputSummary": "完成 10 条候选的历史去重检索",
+          "durationMs": 64
+        },
+        {
+          "id": "batch-3:call_00_btx746HD5qI7Mnq0hW119240",
+          "name": "score_candidates",
+          "status": "success",
+          "inputSummary": "批次 3/4 · 评估 10 条候选",
+          "outputSummary": "完成 10 条机会评分",
+          "durationMs": 0
+        },
+        {
+          "id": "batch-3:call_00_ET_EMLLNsuKc61e4TcGOcZO9143",
+          "name": "select_intelligence_for_pool",
+          "status": "success",
+          "inputSummary": "批次 3/4 · 确认今日情报机会评分结果",
+          "outputSummary": "完成 10 条产品情报评分",
+          "durationMs": 0
+        },
+        {
+          "id": "batch-4:call_00_zKdOTxQRpseVwp5b5JRW2910",
+          "name": "list_daily_signals",
+          "status": "success",
+          "inputSummary": "批次 4/4 · 读取最新双轨情报",
+          "outputSummary": "已读取 7 条最新情报",
+          "durationMs": 0
+        },
+        {
+          "id": "batch-4:call_00_0FuEYTOgklRGS4PzRuJ21599",
+          "name": "search_memory",
+          "status": "success",
+          "inputSummary": "批次 4/4 · 检索 7 条情报的历史决策",
+          "outputSummary": "完成 7 条候选的历史去重检索",
+          "durationMs": 49
+        },
+        {
+          "id": "batch-4:call_00_qZmjrTVqkoelMD7WvGWD3007",
+          "name": "score_candidates",
+          "status": "success",
+          "inputSummary": "批次 4/4 · 评估 7 条候选",
+          "outputSummary": "完成 7 条机会评分",
+          "durationMs": 0
+        },
+        {
+          "id": "batch-4:call_00_i3KkgAPhHc3qzpqyX74O5500",
+          "name": "select_intelligence_for_pool",
+          "status": "success",
+          "inputSummary": "批次 4/4 · 确认今日情报机会评分结果",
+          "outputSummary": "完成 7 条产品情报评分",
+          "durationMs": 0
+        }
+      ],
+      "error": null
+    },
     {
       "id": "TRIAGE-a6691fcd-627c-46c7-852a-f78fb6733d23",
       "agent": "product-opportunity-agent",
