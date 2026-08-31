@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "track": "technical",
-  "updatedAt": "2026-08-30T01:02:51.542Z",
+  "updatedAt": "2026-08-31T01:05:06.125Z",
   "items": [
     {
       "url": "https://www.latent.space/p/ainews-zawinskis-law-of-multiagents",
@@ -1314,6 +1314,46 @@
     {
       "url": "https://openai.com/index/our-decision-on-cursor-following-its-acquisition-by-spacex",
       "title": "Our decision on Cursor following its acquisition by SpaceX"
+    },
+    {
+      "url": "https://vercel.com/changelog/minimax-h3-and-h3-max-are-50-off-on-ai-gateway",
+      "title": "MiniMax H3 and H3 Max are 50% off on AI Gateway"
+    },
+    {
+      "url": "https://github.com/unclecode/crawl4ai",
+      "title": "unclecode/crawl4ai"
+    },
+    {
+      "url": "https://x.com/steveruizok/status/2093748670617256098",
+      "title": "Terrible advice for software engineers"
+    },
+    {
+      "url": "https://www.producthunt.com/products/superagent-a-home-for-your-ai-agents",
+      "title": "Superagent"
+    },
+    {
+      "url": "https://github.com/mvanhorn/last30days-skill",
+      "title": "mvanhorn/last30days-skill"
+    },
+    {
+      "url": "https://x.com/yakkamon_game/status/2093189911507808738",
+      "title": "Yakkamon - Regions"
+    },
+    {
+      "url": "https://github.com/punkpeye/awesome-mcp-servers",
+      "title": "punkpeye/awesome-mcp-servers"
+    },
+    {
+      "url": "https://github.com/pollen-robotics/microduck_rl",
+      "title": "pollen-robotics/microduck_rl"
+    },
+    {
+      "url": "https://github.com/corsairdev/corsair",
+      "title": "corsairdev/corsair"
+    },
+    {
+      "url": "https://github.com/colinhacks/zod",
+      "title": "colinhacks/zod"
     }
   ]
 }
