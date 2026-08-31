@@ -1,6 +1,6 @@
 {
   "schemaVersion": 2,
-  "updatedAt": "2026-08-30T01:37:36.914Z",
+  "updatedAt": "2026-08-31T01:34:06.497Z",
   "runs": [
     {
       "id": "RUN-1e983779-e3bb-4460-b354-ab6d05a25e07",
@@ -1907,6 +1907,426 @@
     }
   ],
   "triageRuns": [
+    {
+      "id": "TRIAGE-dee182b3-071b-4162-9a27-c7f1399eac64",
+      "agent": "product-opportunity-agent",
+      "mode": "daily-triage",
+      "version": 5,
+      "promptVersion": "daily-triage-v6-batched-full-coverage",
+      "strategyVersion": "opportunity-weighted-v1",
+      "briefingDate": "2026-08-31",
+      "objective": "扫描每日情报并完成 PM 机会评分与深度分析优先级排序",
+      "status": "completed",
+      "model": "deepseek-v4-flash",
+      "startedAt": "2026-08-31T01:32:10.109Z",
+      "completedAt": "2026-08-31T01:34:06.497Z",
+      "durationMs": 116388,
+      "scannedSignals": 14,
+      "candidates": [
+        {
+          "signalId": "SIG-20260831-B88590C4",
+          "signalTitle": "last30days-skill：跨平台社区信号加权的 AI 研究 Agent Skill",
+          "titleZh": "last30days-skill：跨平台社区信号加权的 AI 研究 Agent Skill",
+          "summaryZh": "一个 AI agent skill，可在 Reddit、X、YouTube、HN、Polymarket 及全网检索任意主题，按点赞、投票与真实资金等社区信号加权，并输出有据可依的总结。",
+          "track": "technical",
+          "source": "GitHub Trending",
+          "heatScore": 70,
+          "dimensions": {
+            "relevance": 85,
+            "novelty": 75,
+            "userValue": 75,
+            "actionability": 75,
+            "evidence": 65
+          },
+          "duplicateRisk": 35,
+          "memoryMatchCount": 5,
+          "opportunityScore": 67,
+          "recommendation": "candidate",
+          "pmValueType": "design-pattern",
+          "rationale": "展示用社区投票/市场信号替代编辑排序的 agent 检索加权模式，可借鉴到舆情洞察、竞品扫描类 agent 的信号融合设计，提升结果相关性与可信度，是可直接复制的 SKILL 级设计。"
+        },
+        {
+          "signalId": "SIG-20260831-7EA45D92",
+          "signalTitle": "Corsair：REST API 驱动的产品集成平台，让用户连接自己的应用",
+          "titleZh": "Corsair：REST API 驱动的产品集成平台，让用户连接自己的应用",
+          "summaryZh": "Corsair 是基于 REST API 的产品集成平台，同一集成层同时服务 agent、后端服务与多租户用户面板，与常见的 MCP-only agent 集成工具形成差异。",
+          "track": "technical",
+          "source": "GitHub Trending",
+          "heatScore": 66,
+          "dimensions": {
+            "relevance": 80,
+            "novelty": 70,
+            "userValue": 70,
+            "actionability": 70,
+            "evidence": 60
+          },
+          "duplicateRisk": 35,
+          "memoryMatchCount": 5,
+          "opportunityScore": 62,
+          "recommendation": "candidate",
+          "pmValueType": "design-pattern",
+          "rationale": "挑战“agent 集成只能用 MCP”的主流假设，提出 REST 优先、同一集成层复用于 agent/后端/用户面板的架构，产品经理可据此权衡自家多租户集成产品的接口策略与前后端复用成本。"
+        },
+        {
+          "signalId": "SIG-20260831-D46D1480",
+          "signalTitle": "crawl4ai：面向 LLM 的开源网页抓取工具，主打低成本大规模提取",
+          "titleZh": "crawl4ai：面向 LLM 的开源网页抓取工具，主打低成本大规模提取",
+          "summaryZh": "crawl4ai 是开源 LLM 友好型网页爬虫与抓取器，宣称比现有方案大幅降低大规模网页提取成本，目前开放早期接入申请。",
+          "track": "technical",
+          "source": "GitHub Trending",
+          "heatScore": 70,
+          "dimensions": {
+            "relevance": 80,
+            "novelty": 55,
+            "userValue": 70,
+            "actionability": 70,
+            "evidence": 65
+          },
+          "duplicateRisk": 35,
+          "memoryMatchCount": 3,
+          "opportunityScore": 61,
+          "recommendation": "candidate",
+          "pmValueType": "capability",
+          "rationale": "为 LLM 应用的数据采集层提供成本优化参照，产品经理可据此拆解自建 RAG/Agent 抓取管线的成本结构，或将 crawl4ai 作为低成本网页提取方案做接入对比验证。"
+        },
+        {
+          "signalId": "SIG-20260831-E1FB53C4",
+          "signalTitle": "MiniMax H3 与 H3 Max 在 Vercel AI Gateway 五折促销",
+          "titleZh": "MiniMax H3 与 H3 Max 在 Vercel AI Gateway 五折促销",
+          "summaryZh": "8 月 30 日至 9 月 13 日，MiniMax H3（2K 视频生成，支持文/图/首尾帧/参考素材输入）与 H3 Max（480p/768p 快速渲染）经 AI Gateway 计费享五折，模型 ID 不变，支持 webhook 异步生成。",
+          "track": "technical",
+          "source": "Vercel Changelog · AI",
+          "heatScore": null,
+          "dimensions": {
+            "relevance": 70,
+            "novelty": 55,
+            "userValue": 65,
+            "actionability": 65,
+            "evidence": 60
+          },
+          "duplicateRisk": 35,
+          "memoryMatchCount": 5,
+          "opportunityScore": 55,
+          "recommendation": "candidate",
+          "pmValueType": "capability",
+          "rationale": "给出视频生成模型的具体定价与调用模式：五折窗口降低接入试错成本，H3/H3 Max 的分辨率-速度取舍及异步 webhook 轮询模式可直接用于产品内视频生成能力的选型与成本测算。"
+        },
+        {
+          "signalId": "SIG-20260831-45B51BEF",
+          "signalTitle": "韩国 Showbox 推出微短剧厂牌 Showbite，瞄准全球市场",
+          "titleZh": "韩国 Showbox 推出微短剧厂牌 Showbite，瞄准全球市场",
+          "summaryZh": "韩国头部电影发行公司 Showbox 宣布成立微短剧厂牌 Showbite，计划面向全球市场制作与发行竖屏微短剧内容。",
+          "track": "domain",
+          "source": "Google News · Microdrama",
+          "heatScore": null,
+          "dimensions": {
+            "relevance": 55,
+            "novelty": 50,
+            "userValue": 35,
+            "actionability": 40,
+            "evidence": 50
+          },
+          "duplicateRisk": 10,
+          "memoryMatchCount": 0,
+          "opportunityScore": 44,
+          "recommendation": "candidate",
+          "pmValueType": "industry-context",
+          "rationale": "反映传统内容集团向微短剧出海迁移的趋势，可帮助判断短剧供给与制作标准变化，间接影响 AI 短剧制作、翻译、本地化工具的目标市场；但本条无任何 AI 能力细节，仅作行业背景参考。"
+        },
+        {
+          "signalId": "SIG-20260831-E55244F1",
+          "signalTitle": "microduck_rl：800 克双足机器人的开源强化学习训练环境",
+          "titleZh": "microduck_rl：800 克双足机器人的开源强化学习训练环境",
+          "summaryZh": "pollen-robotics 开源 Microduck 双足机器人（约 800g、25cm 高）的 RL 训练环境，基于 mjlab 与 PPO，策略以 50Hz 训练并导出 ONNX 部署到实体机器人，附带完整 sim2real 配方。",
+          "track": "technical",
+          "source": "GitHub Trending",
+          "heatScore": 68,
+          "dimensions": {
+            "relevance": 45,
+            "novelty": 70,
+            "userValue": 45,
+            "actionability": 45,
+            "evidence": 60
+          },
+          "duplicateRisk": 35,
+          "memoryMatchCount": 1,
+          "opportunityScore": 43,
+          "recommendation": "candidate",
+          "pmValueType": "capability",
+          "rationale": "小尺寸双足机器人 sim2real 全流程（执行器物理建模、域随机化、ONNX 部署）开源配方，为具身智能产品团队提供可复用的训练到部署范式，可评估是否引入自身仿真产品路线。"
+        },
+        {
+          "signalId": "SIG-20260831-61A57C93",
+          "signalTitle": "awesome-mcp-servers：MCP 服务器开源资源合集",
+          "titleZh": "awesome-mcp-servers：MCP 服务器开源资源合集",
+          "summaryZh": "punkpeye/awesome-mcp-servers 是一个收录各类 MCP 服务器的开源清单，供 agent 开发者查找现成可用的集成服务器。",
+          "track": "technical",
+          "source": "GitHub Trending",
+          "heatScore": 64,
+          "dimensions": {
+            "relevance": 65,
+            "novelty": 30,
+            "userValue": 40,
+            "actionability": 45,
+            "evidence": 55
+          },
+          "duplicateRisk": 75,
+          "memoryMatchCount": 3,
+          "opportunityScore": 30,
+          "recommendation": "candidate",
+          "pmValueType": "industry-context",
+          "rationale": "可作 agent 集成选型的目录参考，但属资源合集，与历史已评估并拒绝的 awesome-agent-skills、awesome-gpt-image-2 同质，无新增能力判断，仅作生态名录跟踪。"
+        },
+        {
+          "signalId": "SIG-20260831-843591BF",
+          "signalTitle": "Zod：TypeScript 优先的 schema 校验库再登 GitHub 趋势榜",
+          "titleZh": "Zod：TypeScript 优先的 schema 校验库再登 GitHub 趋势榜",
+          "summaryZh": "Zod 是 TypeScript 优先、带静态类型推断的 schema 校验库，本次因 GitHub 热度上榜，属于成熟的开发者工具而非新能力。",
+          "track": "technical",
+          "source": "GitHub Trending",
+          "heatScore": 56,
+          "dimensions": {
+            "relevance": 40,
+            "novelty": 15,
+            "userValue": 30,
+            "actionability": 35,
+            "evidence": 50
+          },
+          "duplicateRisk": 40,
+          "memoryMatchCount": 1,
+          "opportunityScore": 26,
+          "recommendation": "candidate",
+          "pmValueType": "industry-context",
+          "rationale": "成熟校验库登榜属热度波动而非新能力，对 AI 产品的价值仅在“AI 生成 TypeScript 代码的运行时校验”这一工程实践参考，暂不构成独立机会。"
+        },
+        {
+          "signalId": "SIG-20260831-140B4885",
+          "signalTitle": "Superagent：Product Hunt 上线的 AI agent 平台页面",
+          "titleZh": "Superagent：Product Hunt 上线的 AI agent 平台页面",
+          "summaryZh": "Product Hunt 上出现名为 Superagent 的 AI agent 平台产品页，定位为“AI agent 的家”，但页面暂未提供具体功能说明。",
+          "track": "technical",
+          "source": "Product Hunt · AI Products",
+          "heatScore": null,
+          "dimensions": {
+            "relevance": 60,
+            "novelty": 40,
+            "userValue": 30,
+            "actionability": 25,
+            "evidence": 25
+          },
+          "duplicateRisk": 50,
+          "memoryMatchCount": 5,
+          "opportunityScore": 26,
+          "recommendation": "candidate",
+          "pmValueType": "competitor",
+          "rationale": "页面无具体功能与差异化信息，证据不足以评估竞争威胁，仅列入 agent 平台生态跟踪名录，待后续补充能力说明再复评。"
+        },
+        {
+          "signalId": "SIG-20260831-C09F4F3A",
+          "signalTitle": "韩国 Showbox 推出微短剧厂牌 Showbite（Variety 独家报道）",
+          "titleZh": "韩国 Showbox 推出微短剧厂牌 Showbite（Variety 独家报道）",
+          "summaryZh": "Variety 独家报道韩国 Showbox 成立微短剧厂牌 Showbite 并瞄准全球市场，与本批 IMDb 转载的 Showbox 新闻为同一事实。",
+          "track": "domain",
+          "source": "Google News · Microdrama",
+          "heatScore": null,
+          "dimensions": {
+            "relevance": 55,
+            "novelty": 15,
+            "userValue": 35,
+            "actionability": 35,
+            "evidence": 50
+          },
+          "duplicateRisk": 90,
+          "memoryMatchCount": 0,
+          "opportunityScore": 18,
+          "recommendation": "candidate",
+          "pmValueType": "industry-context",
+          "rationale": "与本批 Showbox Showbite 另一来源为同一新闻，无新增事实，重复度高，不单独构成机会，仅确认行业背景信号的有效性。"
+        },
+        {
+          "signalId": "SIG-20260831-B19D7D16",
+          "signalTitle": "怪物养成游戏 Yakkamon 发布区域扩张玩法指南",
+          "titleZh": "怪物养成游戏 Yakkamon 发布区域扩张玩法指南",
+          "summaryZh": "Yakkamon 发布游戏指南，介绍玩家通过收集资源解锁地块、逐步向外扩张领地以获取更多资源与可捕获怪物的区域扩张机制。",
+          "track": "technical",
+          "source": "X / AttentionVC AI",
+          "heatScore": 78,
+          "dimensions": {
+            "relevance": 5,
+            "novelty": 15,
+            "userValue": 5,
+            "actionability": 5,
+            "evidence": 50
+          },
+          "duplicateRisk": 5,
+          "memoryMatchCount": 0,
+          "opportunityScore": 16,
+          "recommendation": "candidate",
+          "pmValueType": "industry-context",
+          "rationale": "纯游戏玩法内容，不含任何 AI 模型、Agent 或交互能力信息，无法为 AI 产品方案或竞品判断提供输入，属于无关行业噪声。"
+        },
+        {
+          "signalId": "SIG-20260831-9E856D82",
+          "signalTitle": "「AI 编码争议：工程师愤怒内容视频为何令人上瘾」观点文",
+          "titleZh": "「AI 编码争议：工程师愤怒内容视频为何令人上瘾」观点文",
+          "summaryZh": "tldraw 作者 steveruizok 发文讨论社交媒体上工程师抵制 AI 编码的愤怒内容视频现象，剖析 AI 编程话题为何两极分化，并鼓励读者认真看待这些反对声音。",
+          "track": "technical",
+          "source": "X / AttentionVC AI",
+          "heatScore": 72,
+          "dimensions": {
+            "relevance": 30,
+            "novelty": 25,
+            "userValue": 15,
+            "actionability": 10,
+            "evidence": 40
+          },
+          "duplicateRisk": 55,
+          "memoryMatchCount": 5,
+          "opportunityScore": 12,
+          "recommendation": "candidate",
+          "pmValueType": "industry-context",
+          "rationale": "帮助产品经理感知工程师群体对 AI 编码的真实抵触情绪，评估面向开发者产品时的接受度与舆论风险；但全文为个人观点，无具体产品能力或可验证方案，仅作行业情绪参考。"
+        },
+        {
+          "signalId": "SIG-20260831-E56E907C",
+          "signalTitle": "Miyu Distribution 获得巴西动画电影《Ana, En Passant》发行权",
+          "titleZh": "Miyu Distribution 获得巴西动画电影《Ana, En Passant》发行权",
+          "summaryZh": "发行公司 Miyu Distribution 获得巴西混合媒介动画长片《Ana, En Passant》的发行权，该片经柏林人才计划开发并在戛纳动画展映，将于今秋在巴西首映。",
+          "track": "domain",
+          "source": "Cartoon Brew",
+          "heatScore": null,
+          "dimensions": {
+            "relevance": 5,
+            "novelty": 15,
+            "userValue": 5,
+            "actionability": 5,
+            "evidence": 55
+          },
+          "duplicateRisk": 35,
+          "memoryMatchCount": 5,
+          "opportunityScore": 8,
+          "recommendation": "candidate",
+          "pmValueType": "industry-context",
+          "rationale": "属动画电影发行交易新闻，无 AI 技术或产品能力信息，不改变任何 AI 产品决策；仅可作动画行业渠道动向的背景了解，机会价值极低。"
+        },
+        {
+          "signalId": "SIG-20260831-4D8FD73B",
+          "signalTitle": "Studio 100 拿下比利时 CGI 动画电影《Juul》国际发行权",
+          "titleZh": "Studio 100 拿下比利时 CGI 动画电影《Juul》国际发行权",
+          "summaryZh": "Studio 100 Film 获得比利时 CGI 动画长片《Juul》的国际发行权，影片讲述昏迷的马戏团杂技演员被改造成活体木偶的暗黑故事。",
+          "track": "domain",
+          "source": "Cartoon Brew",
+          "heatScore": null,
+          "dimensions": {
+            "relevance": 5,
+            "novelty": 15,
+            "userValue": 5,
+            "actionability": 5,
+            "evidence": 55
+          },
+          "duplicateRisk": 35,
+          "memoryMatchCount": 2,
+          "opportunityScore": 8,
+          "recommendation": "candidate",
+          "pmValueType": "industry-context",
+          "rationale": "动画电影国际发行权收购，纯行业商业动态，不含 AI 能力或用户痛点信息，对 AI 产品经理的判断与方案无输入价值。"
+        }
+      ],
+      "recommendedSignalIds": [
+        "SIG-20260831-B88590C4",
+        "SIG-20260831-7EA45D92",
+        "SIG-20260831-D46D1480",
+        "SIG-20260831-E1FB53C4",
+        "SIG-20260831-45B51BEF",
+        "SIG-20260831-E55244F1",
+        "SIG-20260831-61A57C93",
+        "SIG-20260831-843591BF",
+        "SIG-20260831-140B4885",
+        "SIG-20260831-C09F4F3A",
+        "SIG-20260831-B19D7D16",
+        "SIG-20260831-9E856D82",
+        "SIG-20260831-E56E907C",
+        "SIG-20260831-4D8FD73B"
+      ],
+      "reviewSignalIds": [],
+      "autoAnalyzedSignalIds": [],
+      "decisionSummary": "Agent 已分 2 批完成 14 条情报的 PM 机会评分，并按分数排序；其中 0 条高机会情报进入自动深度分析候选。",
+      "toolCalls": [
+        {
+          "id": "batch-1:call_00_ZeYi7lgHQt77SOzVxyIs8394",
+          "name": "list_daily_signals",
+          "status": "success",
+          "inputSummary": "批次 1/2 · 读取最新双轨情报",
+          "outputSummary": "已读取 10 条最新情报",
+          "durationMs": 0
+        },
+        {
+          "id": "batch-1:call_00_AeQn1LNseu79MS8kV48H1479",
+          "name": "search_memory",
+          "status": "success",
+          "inputSummary": "批次 1/2 · 检索 10 条情报的历史决策",
+          "outputSummary": "完成 10 条候选的历史去重检索",
+          "durationMs": 71
+        },
+        {
+          "id": "batch-1:call_00_CP59S53P5Tew8OHjdBci3555",
+          "name": "score_candidates",
+          "status": "failed",
+          "inputSummary": "批次 1/2 · 评估 0 条候选",
+          "outputSummary": "必须对全部候选情报完成评分。",
+          "durationMs": 0
+        },
+        {
+          "id": "batch-1:call_00_efXTXg3NPmHmUod7TiVC5820",
+          "name": "score_candidates",
+          "status": "success",
+          "inputSummary": "批次 1/2 · 评估 10 条候选",
+          "outputSummary": "完成 10 条机会评分",
+          "durationMs": 1
+        },
+        {
+          "id": "batch-1:call_00_77zZqNC0C0CfaCDBk1Ig0100",
+          "name": "select_intelligence_for_pool",
+          "status": "success",
+          "inputSummary": "批次 1/2 · 确认今日情报机会评分结果",
+          "outputSummary": "完成 10 条产品情报评分",
+          "durationMs": 0
+        },
+        {
+          "id": "batch-2:call_00_InYDwcspNRLW8UJegCrL0053",
+          "name": "list_daily_signals",
+          "status": "success",
+          "inputSummary": "批次 2/2 · 读取最新双轨情报",
+          "outputSummary": "已读取 4 条最新情报",
+          "durationMs": 0
+        },
+        {
+          "id": "batch-2:call_00_3367RYJ1uKQlkdju12AV2670",
+          "name": "search_memory",
+          "status": "success",
+          "inputSummary": "批次 2/2 · 检索 4 条情报的历史决策",
+          "outputSummary": "完成 4 条候选的历史去重检索",
+          "durationMs": 25
+        },
+        {
+          "id": "batch-2:call_00_m3RD2Tt6skmK2w8rGPPF1006",
+          "name": "score_candidates",
+          "status": "success",
+          "inputSummary": "批次 2/2 · 评估 4 条候选",
+          "outputSummary": "完成 4 条机会评分",
+          "durationMs": 0
+        },
+        {
+          "id": "batch-2:call_00_HWhcuO2fu0OKJdu6wFvE2710",
+          "name": "select_intelligence_for_pool",
+          "status": "success",
+          "inputSummary": "批次 2/2 · 确认今日情报机会评分结果",
+          "outputSummary": "完成 4 条产品情报评分",
+          "durationMs": 0
+        }
+      ],
+      "error": null
+    },
     {
       "id": "TRIAGE-a3769939-28a3-4b2a-857e-3ed2bdd116d0",
       "agent": "product-opportunity-agent",
