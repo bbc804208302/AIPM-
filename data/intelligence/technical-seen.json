@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "track": "technical",
-  "updatedAt": "2026-08-31T01:05:06.125Z",
+  "updatedAt": "2026-09-01T01:38:03.581Z",
   "items": [
     {
       "url": "https://www.latent.space/p/ainews-zawinskis-law-of-multiagents",
@@ -1354,6 +1354,70 @@
     {
       "url": "https://github.com/colinhacks/zod",
       "title": "colinhacks/zod"
+    },
+    {
+      "url": "https://vercel.com/changelog/fx-ai-sdk-harness-adapter",
+      "title": "fx is now available in the AI SDK harness layer"
+    },
+    {
+      "url": "https://github.com/jingyaogong/minimind",
+      "title": "jingyaogong/minimind"
+    },
+    {
+      "url": "https://x.com/DoWCTO/status/2094431308202033439",
+      "title": "Department of War Launches OpenAI's ChatGPT Mil on GenAI.mil"
+    },
+    {
+      "url": "https://github.blog/changelog/2026-08-31-github-copilot-in-vs-code-august-2026-releases",
+      "title": "GitHub Copilot in VS Code, August 2026 releases"
+    },
+    {
+      "url": "https://github.com/zhaoxuya520/reverse-skill",
+      "title": "zhaoxuya520/reverse-skill"
+    },
+    {
+      "url": "https://x.com/DavidOndrej1/status/2094424967345496191",
+      "title": "Agentic Engineering Setup (after 2,000+ hours)"
+    },
+    {
+      "url": "https://vercel.com/changelog/set-per-user-budgets-on-ai-gateway",
+      "title": "Set per-user budgets on AI Gateway"
+    },
+    {
+      "url": "https://www.technologyreview.com/2026/08/31/1143180/hugging-face-hack-could-indicate-cultural-issues-at-openai",
+      "title": "The Hugging Face hack could indicate cultural issues at OpenAI"
+    },
+    {
+      "url": "https://x.com/DoWCTO/status/2094442461280063890",
+      "title": "Department of War Launches Starshield AI's Grok for Government on GenAI.mil"
+    },
+    {
+      "url": "https://openai.com/index/polimill",
+      "title": "Polimill builds Japan's next-generation public AI infrastructure"
+    },
+    {
+      "url": "https://vercel.com/blog/how-our-agents-build-on-brand-pages-with-design-md",
+      "title": "How our agents build on-brand pages with design.md"
+    },
+    {
+      "url": "https://x.com/lingxi/status/2094493172516966781",
+      "title": "Grok Bot for Engineering"
+    },
+    {
+      "url": "https://x.com/docmilanfar/status/2094283194187301003",
+      "title": "A Lagrangian View of Flow Matching"
+    },
+    {
+      "url": "https://openai.com/index/expanding-access-to-ai-with-chatgpt-ads",
+      "title": "A milestone in expanding access to AI"
+    },
+    {
+      "url": "https://tldr.tech/ai/2026-08-31",
+      "title": "OpenAI Cursor split 💔, self-improving AI 🧠, GPT-6 Astra 🚀"
+    },
+    {
+      "url": "https://x.com/harshbhatt7585/status/2094021031551766970",
+      "title": "The Math of RL: From Policy Gradients to PPO and GRPO"
     }
   ]
 }
