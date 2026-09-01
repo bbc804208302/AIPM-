@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "track": "domain",
-  "updatedAt": "2026-08-31T01:23:07.905Z",
+  "updatedAt": "2026-09-01T01:49:57.773Z",
   "items": [
     {
       "url": "https://www.creativebloq.com/3d/autodesk-tackles-ai-filmmakings-biggest-problem-with-3d-control",
@@ -1350,6 +1350,86 @@
     {
       "url": "https://www.cartoonbrew.com/business/juul-studio-100-belgium-265976.html",
       "title": "Macabre Belgian CGI Circus Drama ‘Juul’ Picked Up By Studio 100"
+    },
+    {
+      "url": "https://arxiv.org/abs/2608.27753",
+      "title": "What Can Low Resource Languages Learn From Each Other?"
+    },
+    {
+      "url": "https://arxiv.org/abs/2608.28219",
+      "title": "RASA: Disentangled Spatial-Motional Priors for Cross-Identity Character Animation"
+    },
+    {
+      "url": "https://nofilmschool.com/rocxzoom-robotic-extreme-zoom-camera",
+      "title": "These Ex-DJI Engineers Have Designed the World’s First Robotic Extreme Zoom Camera"
+    },
+    {
+      "url": "https://nofilmschool.com/samsung-p7-usb4-portable-ssd",
+      "title": "Samsung Has a New P7 USB4 Portable SSD Set to Offer up to 8TBs of Storage Capacity"
+    },
+    {
+      "url": "https://nofilmschool.com/pelican-cr45-crate-2677799007",
+      "title": "Looking for a New Gear Crate? Pelican Has a New All-Terrain Transport Ecosystem to Check Out"
+    },
+    {
+      "url": "https://nofilmschool.com/proton-flexy-camera",
+      "title": "Proton Unveils This Unique New Micro POV FLEXY Camera at IBC 2026"
+    },
+    {
+      "url": "https://arxiv.org/abs/2608.28404",
+      "title": "How Far Can 5,500 Hours of Driving Take You? A Scaling Law Analysis of Video Diffusion Models"
+    },
+    {
+      "url": "https://arxiv.org/abs/2608.27923",
+      "title": "PCBnet: A Dataset and Automatic Construction of SPICE Netlists from Schematic Images"
+    },
+    {
+      "url": "https://arxiv.org/abs/2608.28161",
+      "title": "Empowering Local Agriculture: A Deep Learning-Powered Web System for Identifying Bangladeshi Mango Varieties"
+    },
+    {
+      "url": "https://arxiv.org/abs/2608.28524",
+      "title": "Texture Image Classification Using DWT AlexNet Feature Fusion and Deep Neural Networks"
+    },
+    {
+      "url": "https://arxiv.org/abs/2506.07188",
+      "title": "Hierarchical Feature-level Reverse Propagation for Post-Training Neural Networks"
+    },
+    {
+      "url": "https://nofilmschool.com/once-upon-a-time-in-america-re-evaluated",
+      "title": "This Originally Panned Sergio Leone Epic is Now Hailed as an All Timer"
+    },
+    {
+      "url": "https://nofilmschool.com/love-and-death-on-long-island-overlooked-1997-movie",
+      "title": "John Hurt Falls For a '90210' Star in This Surprisingly Tender Stalker Film From the '90s"
+    },
+    {
+      "url": "https://nofilmschool.com/hannibal-lecter-the-silence-of-the-lambs-iconic-villain-introduction",
+      "title": "Iconic Villain Introductions: Hannibal Lecter's 'Silence of the Lambs' Debut Still Brings Chills"
+    },
+    {
+      "url": "https://www.cartoonbrew.com/anime/pokemon-wild-card-cloverworks-story-inc-266135.html",
+      "title": "‘Pokémon: Wild Card,’ The Franchise’s First Animated Feature In Seven Years, Unveiled For 2027"
+    },
+    {
+      "url": "https://arxiv.org/abs/2608.27922",
+      "title": "DensityKV: Density-Guided KV Cache Compression for Long Video Generation"
+    },
+    {
+      "url": "https://arxiv.org/abs/2608.28195",
+      "title": "UniLipi: A Unified Multi-Script OCR for Historical Indic Manuscripts"
+    },
+    {
+      "url": "https://arxiv.org/abs/2608.28341",
+      "title": "Cross-Spectral Dense Correspondence for Multimodal Spectral Medical Imaging"
+    },
+    {
+      "url": "https://arxiv.org/abs/2608.28455",
+      "title": "ARC-CT: Anatomy-Routed Contrastive Vision-Language Learning for 3D Chest CT"
+    },
+    {
+      "url": "https://arxiv.org/abs/2608.28460",
+      "title": "LayerRecall: A State-Conditioned Memory Router for Long-Horizon Consistency in Video Generation"
     }
   ]
 }
