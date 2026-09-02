@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "track": "technical",
-  "updatedAt": "2026-09-01T01:38:03.581Z",
+  "updatedAt": "2026-09-02T00:49:00.222Z",
   "items": [
     {
       "url": "https://www.latent.space/p/ainews-zawinskis-law-of-multiagents",
@@ -1418,6 +1418,86 @@
     {
       "url": "https://x.com/harshbhatt7585/status/2094021031551766970",
       "title": "The Math of RL: From Policy Gradients to PPO and GRPO"
+    },
+    {
+      "url": "https://openai.com/index/path-to-astra",
+      "title": "Path to Astra: critical capabilities and frontier safeguards"
+    },
+    {
+      "url": "https://github.com/browser-use/video-use",
+      "title": "browser-use/video-use"
+    },
+    {
+      "url": "https://x.com/giovannicatt3/status/2094815425972539565",
+      "title": "Nobody is talking seriously about AI demand"
+    },
+    {
+      "url": "https://deepmind.google/blog/introducing-agentic-video-in-gemini",
+      "title": "Introducing agentic video understanding with Gemini"
+    },
+    {
+      "url": "https://github.com/VoltAgent/awesome-design-md",
+      "title": "VoltAgent/awesome-design-md"
+    },
+    {
+      "url": "https://x.com/posthog/status/2094485724171223409",
+      "title": "Your AGENTS.md is holding you back"
+    },
+    {
+      "url": "https://www.latent.space/p/pr-not-welcome",
+      "title": "PRs NOT Welcome: How Top AI Open Source Projects Are Managing Thousands of Contributors"
+    },
+    {
+      "url": "https://openai.com/index/ai-native-company-workflows",
+      "title": "How AI-native companies turn workflows into operating capability"
+    },
+    {
+      "url": "https://github.blog/changelog/2026-09-01-copilot-code-review-can-now-approve-pull-requests",
+      "title": "Copilot code review can now approve pull requests"
+    },
+    {
+      "url": "https://github.blog/changelog/2026-09-01-claude-fable-5-1-generally-available-in-github-copilot",
+      "title": "Claude Fable 5.1 is generally available in GitHub Copilot"
+    },
+    {
+      "url": "https://www.producthunt.com/products/cosmic",
+      "title": "Cosmic Agent Plugins"
+    },
+    {
+      "url": "https://huggingface.co/blog/webgpu-kernels",
+      "title": "Introducing @huggingface/kernels: 200+ WebGPU Kernels for Local AI"
+    },
+    {
+      "url": "https://vercel.com/changelog/claude-fable-5-1-now-available-on-ai-gateway",
+      "title": "Claude Fable 5.1 now available on AI Gateway"
+    },
+    {
+      "url": "https://github.blog/changelog/2026-08-31-copilot-model-access-update-for-github-team-plans",
+      "title": "Copilot model access update for GitHub Team plans"
+    },
+    {
+      "url": "https://openai.com/index/supporting-california-bill-advance-ai-youth-safety",
+      "title": "OpenAI supports California’s bill to advance youth AI safety"
+    },
+    {
+      "url": "https://x.com/mattyp/status/2094833468400447618",
+      "title": "Using Grok Bot: 8 templates to get inspired"
+    },
+    {
+      "url": "https://huggingface.co/blog/allenai/benchmirt",
+      "title": "BenchMIRT: What are LLM benchmarks actually measuring?"
+    },
+    {
+      "url": "https://openai.com/index/chatgpt-connects-health-records-and-healthcare-sources",
+      "title": "Healthcare organizations can now connect EHR and additional industry data to ChatGPT"
+    },
+    {
+      "url": "https://www.latent.space/p/ainews-fals-h3-max-live-breaks-the",
+      "title": "[AINews] Fal’s H3 Max Live breaks the infinite videogen barrier"
+    },
+    {
+      "url": "https://tldr.tech/ai/2026-09-01",
+      "title": "Muse Code 👨‍💻, Runway Solaris ☀️, OpenClaw 2.0 🤖"
     }
   ]
 }
