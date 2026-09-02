@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "track": "domain",
-  "updatedAt": "2026-09-01T01:49:57.773Z",
+  "updatedAt": "2026-09-02T01:02:26.619Z",
   "items": [
     {
       "url": "https://www.creativebloq.com/3d/autodesk-tackles-ai-filmmakings-biggest-problem-with-3d-control",
@@ -1430,6 +1430,86 @@
     {
       "url": "https://arxiv.org/abs/2608.28460",
       "title": "LayerRecall: A State-Conditioned Memory Router for Long-Horizon Consistency in Video Generation"
+    },
+    {
+      "url": "https://arxiv.org/abs/2608.28699",
+      "title": "Beyond Visual Boundaries: Rethinking Scene Segmentation for Movie RAG"
+    },
+    {
+      "url": "https://arxiv.org/abs/2608.29230",
+      "title": "Compact Snapshot Spectral Imaging with Calibration-Free Aperture Diffraction"
+    },
+    {
+      "url": "https://arxiv.org/abs/2608.29590",
+      "title": "Guardrail-Agnostic Societal Bias Evaluation in Large Vision-Language Models"
+    },
+    {
+      "url": "https://arxiv.org/abs/2608.29621",
+      "title": "CineForge: Self-Improving Agents for Long-Horizon Video Generation"
+    },
+    {
+      "url": "https://nofilmschool.com/godox-lt1-creative-pixel-led",
+      "title": "This Cute Lil’ Creative Pixel LED Light from Godox Attaches to Your Camera or Your Wrist"
+    },
+    {
+      "url": "https://nofilmschool.com/leawood-films-amc",
+      "title": "AMC Theatres Plans to Distribute Small and Mid-Budget Movies Directly to the Big Screen"
+    },
+    {
+      "url": "https://arxiv.org/abs/2608.29123",
+      "title": "Dancing Stick Figures: An Introductory Dataset for Training Video Generation Models"
+    },
+    {
+      "url": "https://nofilmschool.com/zendaya-best-movie-roles",
+      "title": "Zendaya's 6 Best Movie Roles"
+    },
+    {
+      "url": "https://arxiv.org/abs/2608.28678",
+      "title": "Evaluating Constrained Iterative Refinement for Scalable Vector Graphics Generation with Off-the-Shelf VLMs"
+    },
+    {
+      "url": "https://arxiv.org/abs/2608.28798",
+      "title": "Blind Stereoscopic Omnidirectional Image Quality Assessment Using Predictive Coding Hierarchy"
+    },
+    {
+      "url": "https://nofilmschool.com/swit-mini-150b",
+      "title": "A New Palm-Sized 150W Bi-Color COB-LED Light is Here For Compact Video Needs"
+    },
+    {
+      "url": "https://nofilmschool.com/trumps-hollywood-incentive",
+      "title": "Will a Federal Tax Credit Fix Runaway Production? Breaking Down Trump’s Hollywood Incentive Endorsement"
+    },
+    {
+      "url": "https://news.google.com/rss/articles/CBMingFBVV95cUxQQkpFQll2QWM4YVFHM29JemVNZXhua1ZySk9nUEpRandfelJhWXl5cktBcmJIeWhEV2kyYUZ4YVdiWWtLcWpaWWZxUzdNS3MwREFlNnpYSk9Dbm1uSm5ubGtlUFhtMDctTzAya29yMDlBR1NIMFRYQVJ1RG9pWktXNl9YX0pXajFvd0YwVWZtLWlOeC1GVFVQQ0FXN3NsQQ?oc=5",
+      "title": "Kevin Hart’s Hartbeat To House Vertical Originals On Microdrama Platform aTwist - deadline.com"
+    },
+    {
+      "url": "https://nofilmschool.com/new-sigma-aizu-lenses",
+      "title": "Sigma Goes Wide and Long With Its T1.3 Aizu Large-Format Lens Series"
+    },
+    {
+      "url": "https://news.google.com/rss/articles/CBMi1AFBVV95cUxQT0xCQTdiRVFJSnp6SUJxNjJ1TFV0UkVNLV9sakVuVnByTG1ENFRjUkZmMnBWMW1MYTA1RlRlTm5fVkNtcVN5ZE9QaGh5M2NtLTlYZzZUNm95YldMX1pxdkV4X1N6VzlSV0h4bmJDbnp3V3VQYlBLbk1HWFdlc0xGTENrazdKSFV2dEJwT1R1OHB2cXk4NmFGNDZKZVpfU25ISlM4V3BERXEyR0lOZU5sUHdxSE1fSW9UY1FZcVJZWjVzb2h6WGpvUGdGcjZ0QXVHSmVRWg?oc=5",
+      "title": "VERZA TV Brings Bollywood to Mobile Audiences with Launch of New Bollywood Microdrama Collection - EIN News"
+    },
+    {
+      "url": "https://arxiv.org/abs/2608.28665",
+      "title": "Understanding Temporal Semantic Stability in Open-Vocabulary UAV Perception through Metric 3D Fusion"
+    },
+    {
+      "url": "https://arxiv.org/abs/2608.28670",
+      "title": "Memory-Efficient Training-Free Acceleration of Diffusion Transformers with BaryCache"
+    },
+    {
+      "url": "https://arxiv.org/abs/2608.28694",
+      "title": "SNF-Bench: Separating Static Drift from Natural Flow in Long-Horizon Fixed-Camera Video Generation"
+    },
+    {
+      "url": "https://arxiv.org/abs/2608.29289",
+      "title": "AOI-Net: Structural Face AOI-Guided Eye-Gaze Track Representation Learning for Autism Spectrum Disorder Detection"
+    },
+    {
+      "url": "https://arxiv.org/abs/2608.29609",
+      "title": "nnMNet: Baseline for Martian Terrain Semantic Segmentation"
     }
   ]
 }
