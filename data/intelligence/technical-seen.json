@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "track": "technical",
-  "updatedAt": "2026-09-02T00:49:00.222Z",
+  "updatedAt": "2026-09-03T00:56:24.718Z",
   "items": [
     {
       "url": "https://www.latent.space/p/ainews-zawinskis-law-of-multiagents",
@@ -1498,6 +1498,86 @@
     {
       "url": "https://tldr.tech/ai/2026-09-01",
       "title": "Muse Code 👨‍💻, Runway Solaris ☀️, OpenClaw 2.0 🤖"
+    },
+    {
+      "url": "https://vercel.com/changelog/muse-spark-1-3-now-available-on-ai-gateway",
+      "title": "Muse Spark 1.3 now available on AI Gateway"
+    },
+    {
+      "url": "https://github.com/google-research/timesfm",
+      "title": "google-research/timesfm"
+    },
+    {
+      "url": "https://x.com/cdleary/status/2094878051238887834",
+      "title": "Compilers 2.0: AI as stochastic optimizer"
+    },
+    {
+      "url": "https://news.smol.ai/issues/26-09-01-claude-mythos-51",
+      "title": "Claude Fable 5.1 and Claude Mythos 5.1"
+    },
+    {
+      "url": "https://github.com/sngyai/Sequoia-X",
+      "title": "sngyai/Sequoia-X"
+    },
+    {
+      "url": "https://x.com/irabukht/status/2094933153810977134",
+      "title": "7 Grok Bots for Marketing"
+    },
+    {
+      "url": "https://www.latent.space/p/ainews-claude-fablemythos-51-new",
+      "title": "[AINews] Claude Fable/Mythos 5.1: new SOTA model, 75% cache price cut but 70% more output tokens"
+    },
+    {
+      "url": "https://github.com/superlinked/sie",
+      "title": "superlinked/sie"
+    },
+    {
+      "url": "https://vercel.com/changelog/gemini-3-8-flash-now-available-on-ai-gateway",
+      "title": "Gemini 3.8 Flash now available on AI Gateway"
+    },
+    {
+      "url": "https://github.com/pacifio/atlas",
+      "title": "pacifio/atlas"
+    },
+    {
+      "url": "https://vercel.com/changelog/qwen-3-8-max-0902-now-available-on-ai-gateway",
+      "title": "Qwen 3.8 Max 0902 now available on AI Gateway"
+    },
+    {
+      "url": "https://www.technologyreview.com/2026/09/02/1142879/facilitating-ai-integration-with-simplicity-at-scale",
+      "title": "Facilitating AI integration with simplicity at scale"
+    },
+    {
+      "url": "https://github.blog/changelog/2026-09-02-enterprise-managed-settings-support-any-default-model",
+      "title": "Enterprise-managed settings support any default model"
+    },
+    {
+      "url": "https://github.blog/changelog/2026-09-02-content-exclusions-generally-available-in-copilot-app-and-cli",
+      "title": "Content exclusions generally available in Copilot app and CLI"
+    },
+    {
+      "url": "https://deepmind.google/blog/introducing-gemini-3-8-flash-and-38-flash-cyber",
+      "title": "Introducing Gemini 3.8 Flash and 3.8 Flash Cyber"
+    },
+    {
+      "url": "https://huggingface.co/blog/ibm-research/real-time-intelligence",
+      "title": "Real-Time Intelligence with IBM Time Series Models on Confluent"
+    },
+    {
+      "url": "https://vercel.com/changelog/glm-5-3-is-50-off-through-digitalocean-on-ai-gateway",
+      "title": "GLM-5.3 is 50% off through DigitalOcean on AI Gateway"
+    },
+    {
+      "url": "https://github.blog/changelog/2026-08-31-selected-github-copilot-models-deprecated",
+      "title": "Selected GitHub Copilot models deprecated"
+    },
+    {
+      "url": "https://github.com/vercel-labs/portless",
+      "title": "vercel-labs/portless"
+    },
+    {
+      "url": "https://github.com/blader/humanizer",
+      "title": "blader/humanizer"
     }
   ]
 }
