@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "track": "technical",
-  "updatedAt": "2026-09-03T00:56:24.718Z",
+  "updatedAt": "2026-09-04T00:45:56.928Z",
   "items": [
     {
       "url": "https://www.latent.space/p/ainews-zawinskis-law-of-multiagents",
@@ -1578,6 +1578,86 @@
     {
       "url": "https://github.com/blader/humanizer",
       "title": "blader/humanizer"
+    },
+    {
+      "url": "https://deepmind.google/blog/introducing-weathernext-3-our-most-advanced-and-accurate-global-weather-ai-model",
+      "title": "Introducing WeatherNext 3, our most advanced and accurate global weather AI model"
+    },
+    {
+      "url": "https://github.com/ByteByteGoHq/system-design-101",
+      "title": "ByteByteGoHq/system-design-101"
+    },
+    {
+      "url": "https://x.com/Konstantine/status/2095166660223397963",
+      "title": "The Cognitive Revolution (When Machines Do The Thinking)"
+    },
+    {
+      "url": "https://github.blog/changelog/2026-09-03-gemini-3-8-flash-is-now-available-in-github-copilot",
+      "title": "Gemini 3.8 Flash is now available in GitHub Copilot"
+    },
+    {
+      "url": "https://github.com/magnitudedev/magnitude",
+      "title": "magnitudedev/magnitude"
+    },
+    {
+      "url": "https://x.com/wordgrammer/status/2095263188153401712",
+      "title": "Prediction: AI will collapse"
+    },
+    {
+      "url": "https://openai.com/index/safety-overview-gpt-6-astra",
+      "title": "Safety overview: GPT-6 Astra"
+    },
+    {
+      "url": "https://github.com/f/prompts.chat",
+      "title": "f/prompts.chat"
+    },
+    {
+      "url": "https://github.blog/changelog/2026-09-03-upcoming-deprecation-of-selected-github-copilot-models",
+      "title": "Upcoming deprecation of selected GitHub Copilot models"
+    },
+    {
+      "url": "https://vercel.com/changelog/run-cursor-cloud-agents-vercel-sandbox",
+      "title": "Cursor Cloud Agents can now run in Vercel Sandbox"
+    },
+    {
+      "url": "https://github.blog/changelog/2026-09-03-reopening-copilot-business-and-enterprise-signups",
+      "title": "Reopening Copilot Business and Enterprise signups"
+    },
+    {
+      "url": "https://openai.com/index/daybreak-for-frontline-defenders",
+      "title": "Daybreak for Frontline Defenders: $1B to protect essential services"
+    },
+    {
+      "url": "https://openai.com/index/legora-financial-statement-review-with-astra",
+      "title": "Legora reviewed 41 documents in minutes with GPT-6 Astra"
+    },
+    {
+      "url": "https://openai.com/index/playco-game-prototyping-with-astra",
+      "title": "Playco cut manual fixes 50% prototyping games with GPT-6 Astra"
+    },
+    {
+      "url": "https://huggingface.co/blog/grpo-with-trl-ifstruct",
+      "title": "Fine-tuning a 350M Model for Better Structured Outputs in 100 GRPO Steps"
+    },
+    {
+      "url": "https://huggingface.co/blog/funes",
+      "title": "Give Your Coding Agents a Memory You Own"
+    },
+    {
+      "url": "https://huggingface.co/blog/train-to-paint-with-code",
+      "title": "Training a coding model to paint watercolours with TRL and OpenEnv"
+    },
+    {
+      "url": "https://x.com/QwenDevs/status/2095157452904018263",
+      "title": "From rg to zg: Local Search Beyond Keywords"
+    },
+    {
+      "url": "https://huggingface.co/blog/Hcompany/neomme",
+      "title": "NeoMME: an efficient Multimodal-native and Multilingual Encoder"
+    },
+    {
+      "url": "https://www.latent.space/p/ainews-muse-spark-13-matches-gpt",
+      "title": "[AINews] Muse Spark 1.3 matches GPT-5.6-Sol, confirming Meta Superintelligence as the newest Frontier Lab, >90% discount for training"
     }
   ]
 }
