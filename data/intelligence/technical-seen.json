@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "track": "technical",
-  "updatedAt": "2026-09-04T00:45:56.928Z",
+  "updatedAt": "2026-09-05T00:36:36.880Z",
   "items": [
     {
       "url": "https://www.latent.space/p/ainews-zawinskis-law-of-multiagents",
@@ -1658,6 +1658,86 @@
     {
       "url": "https://www.latent.space/p/ainews-muse-spark-13-matches-gpt",
       "title": "[AINews] Muse Spark 1.3 matches GPT-5.6-Sol, confirming Meta Superintelligence as the newest Frontier Lab, >90% discount for training"
+    },
+    {
+      "url": "https://github.blog/changelog/2026-09-04-github-copilot-weekly-releases-august-31",
+      "title": "GitHub Copilot weekly releases — August 31"
+    },
+    {
+      "url": "https://github.com/radixark/miles",
+      "title": "radixark/miles"
+    },
+    {
+      "url": "https://x.com/CarryGo_AI/status/2095822810119602382",
+      "title": "CarryGo, here we go!"
+    },
+    {
+      "url": "https://www.latent.space/p/ainews-gpt-6-astra-openais-biggest",
+      "title": "[AINews] GPT-6 Astra: OpenAI’s biggest LLM launch of all time"
+    },
+    {
+      "url": "https://github.com/anomalyco/opencode",
+      "title": "anomalyco/opencode"
+    },
+    {
+      "url": "https://x.com/AmirMushich/status/2095182776249049456",
+      "title": "How to design a Brand System from 1 reference image"
+    },
+    {
+      "url": "https://vercel.com/changelog/ling-3-0-flash-sante-is-now-available-on-ai-gateway-for-free",
+      "title": "Ling 3.0 Flash Sante is now available on AI Gateway for free"
+    },
+    {
+      "url": "https://vercel.com/changelog/gpt-6-astra-now-available-on-vercel-ai-gateway",
+      "title": "GPT 6 Astra now available on Vercel AI Gateway"
+    },
+    {
+      "url": "https://github.blog/changelog/2026-09-04-gpt-6-astra-is-generally-available-in-github-copilot",
+      "title": "GPT-6 Astra is generally available in GitHub Copilot"
+    },
+    {
+      "url": "https://tldr.tech/ai/2026-09-04",
+      "title": "GPT-6 Astra 🚀, Grok Bot Enterprise 🤖, Runway world model 🌎"
+    },
+    {
+      "url": "https://x.com/AndrewYNg/status/2095890279865721217",
+      "title": "AI Engineering Skills Map: Using coding agents"
+    },
+    {
+      "url": "https://x.com/pvncher/status/2095991462416490862",
+      "title": "Rethinking skills and prompts for GPT-6 Astra"
+    },
+    {
+      "url": "https://x.com/joshkim/status/2095633918611636627",
+      "title": "Grok Bot for Work"
+    },
+    {
+      "url": "https://www.technologyreview.com/2026/09/04/1140872/architecting-memory-and-storage-in-the-ai-era",
+      "title": "Architecting memory and storage in the AI era"
+    },
+    {
+      "url": "https://www.technologyreview.com/2026/09/04/1143452/drone-data-wild-west",
+      "title": "Data from drones in Ukraine is fueling a new Wild West marketplace"
+    },
+    {
+      "url": "https://tldr.tech/ai/2026-09-03",
+      "title": "Muse Spark 1.3 ✨, Gemini 3.8 Flash ⚡, intelligence vs cost 📊"
+    },
+    {
+      "url": "https://deepmind.google/blog/proactive-cyber-defense-for-governments-and-enterprises",
+      "title": "Proactive cyber defense for governments and enterprises"
+    },
+    {
+      "url": "https://openai.com/index/atv-big-air-tour",
+      "title": "ATV Big Air Tour turned 3 days of work into 3 hours with ChatGPT"
+    },
+    {
+      "url": "https://tldr.tech/ai/2026-09-02",
+      "title": "Fable 5.1 🧠, World Labs Atlas 🌍, Cognition $47B 💰"
+    },
+    {
+      "url": "https://openai.com/index/gilbert-tobin",
+      "title": "How law firm Gilbert + Tobin governs and scales AI with OpenAI"
     }
   ]
 }
