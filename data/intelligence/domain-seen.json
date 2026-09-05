@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "track": "domain",
-  "updatedAt": "2026-09-04T00:59:23.789Z",
+  "updatedAt": "2026-09-05T00:58:31.618Z",
   "items": [
     {
       "url": "https://www.creativebloq.com/3d/autodesk-tackles-ai-filmmakings-biggest-problem-with-3d-control",
@@ -1670,6 +1670,86 @@
     {
       "url": "https://arxiv.org/abs/2609.02233",
       "title": "InfraPatch: Cross-Task Targeted Grayscale Patch Attacks on Infrared-Adapted Vision-Language Models"
+    },
+    {
+      "url": "https://arxiv.org/abs/2609.03447",
+      "title": "STARS-GS: Structure-Aware Regularized Gaussian Splatting for Large-Scale Aerial Surface Reconstruction"
+    },
+    {
+      "url": "https://arxiv.org/abs/2609.03480",
+      "title": "Tree species mapping in Denmark: A comparison of spectral-temporal features with geospatial foundation model embeddings"
+    },
+    {
+      "url": "https://arxiv.org/abs/2609.03629",
+      "title": "EraseSAE: Surgical Concept Erasure in Text-to-Video Diffusion Models via Sparse Autoencoders"
+    },
+    {
+      "url": "https://arxiv.org/abs/2609.03689",
+      "title": "Semantic-Aware Subgraph State Space Model for WSI Classification in Histopathology"
+    },
+    {
+      "url": "https://arxiv.org/abs/2609.03690",
+      "title": "MetaStructAtlas: A Grounded 3D Vision-Language Dataset and Benchmark for Functional and Structural Reasoning in Whole-Body PET/CT"
+    },
+    {
+      "url": "https://arxiv.org/abs/2609.03773",
+      "title": "RealCADBench: Benchmarking Parametric CAD Modeling from Industrial Design Intents"
+    },
+    {
+      "url": "https://arxiv.org/abs/2609.03919",
+      "title": "OctWorld: Long-Range World-Consistent Video Generation with Octree-Based 3D Mapping"
+    },
+    {
+      "url": "https://arxiv.org/abs/2609.04120",
+      "title": "BooM-VVT: Boosting Mask-Free Video Virtual Try-On with Image-Level Pseudo Data"
+    },
+    {
+      "url": "https://arxiv.org/abs/2503.04997",
+      "title": "ISP-AD: A Large-Scale Real-World Dataset for Advancing Industrial Anomaly Detection with Synthetic and Real Defects"
+    },
+    {
+      "url": "https://nofilmschool.com/directors-who-rewrote-the-western",
+      "title": "5 Directors Who Changed the Western Genre Forever"
+    },
+    {
+      "url": "https://nofilmschool.com/manfrotto-one-video-tripod-with-502x-fluid-head",
+      "title": "Manfrotto Looks to Speed Up Your Workflows With Its New ONE Video Tripod and 502X Fluid Head"
+    },
+    {
+      "url": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxPZnNsQkx3anhMM2NKSFE0UV9xZ3JycEZXY3B4c3lvcWhxNzBXMHVaVk9ITTVFRm83Y19Ya2NYQkl4NlZTdkkzOU03Tzd2VUMySl9EWGVMUW1fNFFkeFdaWGJIQXJ4Z0ZWb3ZjMDBZY1hhSnBuMXZaVGl1b2s3VHFlQ04zZXNEdzh4THFFXzZWMTNpdUFsT0dHVUNSM0xxX3FQR29qNk1UOFNYSWFEcXFfVUM2R243V3Ro?oc=5",
+      "title": "Hollywood veterans launch vertical microdrama platform aTwist in eight countries - mediasat.info"
+    },
+    {
+      "url": "https://arxiv.org/abs/2609.03813",
+      "title": "SPARK: Input-Conditioned Sparse Activation Modulation for Frozen DiT-based Super-Resolution"
+    },
+    {
+      "url": "https://arxiv.org/abs/2609.04031",
+      "title": "DSAQuant: Denoising-Stage-Aligned Quantization-Aware Training for Video Generation"
+    },
+    {
+      "url": "https://arxiv.org/abs/2511.15884",
+      "title": "AnyBox: Efficient Zero-Shot 9DoF Pose Estimation of Boxes for Robotic Manipulation"
+    },
+    {
+      "url": "https://nofilmschool.com/querying-hollywood-agencies-and-managers",
+      "title": "The Truth About Querying Hollywood Agencies and Managers"
+    },
+    {
+      "url": "https://nofilmschool.com/character-arc-rite-of-passage",
+      "title": "The Story Rule That Separates Great Films from Great Entertainment"
+    },
+    {
+      "url": "https://nofilmschool.com/fujifilm-xf-400mm-f-4-5-r-lm-ois-wr-lens",
+      "title": "Fujifilm Drops Another Super-Telephoto Lens With This New 400mm f/4.5 Portable Prime"
+    },
+    {
+      "url": "https://nofilmschool.com/blackmagic-design-price-drop",
+      "title": "Blackmagic Design Announces Lower Prices for Two of Its Popular Full-Frame 6K Cameras"
+    },
+    {
+      "url": "https://news.google.com/rss/articles/CBMiTkFVX3lxTE1KbEVhYnp2OC1xSTNHT0ZEaXZmanJHRkR2ZzZ2Z3lTNTBadktqUFFKSWgxOHhQcWFzNUg3TEJtaEZ0TTFRUW5abzRhb2k4dw?oc=5",
+      "title": "JioHotstar’s Tadka Indian Microdrama Platform Reaches 100 Million Users - IMDb"
     }
   ]
 }
