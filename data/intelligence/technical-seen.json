@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "track": "technical",
-  "updatedAt": "2026-09-05T00:36:36.880Z",
+  "updatedAt": "2026-09-06T00:33:52.168Z",
   "items": [
     {
       "url": "https://www.latent.space/p/ainews-zawinskis-law-of-multiagents",
@@ -1738,6 +1738,42 @@
     {
       "url": "https://openai.com/index/gilbert-tobin",
       "title": "How law firm Gilbert + Tobin governs and scales AI with OpenAI"
+    },
+    {
+      "url": "https://openai.com/index/gpt-6-astra",
+      "title": "GPT-6 Astra: A new generation of intelligence"
+    },
+    {
+      "url": "https://github.com/WorldFlowAI/everything-claude-code",
+      "title": "WorldFlowAI/everything-claude-code"
+    },
+    {
+      "url": "https://x.com/imagine/status/2095977612778639618",
+      "title": "Grok Imagine Odyssey Contest Winners"
+    },
+    {
+      "url": "https://www.latent.space/p/grok-bot",
+      "title": "OpenClaw Power, MacBook Simplicity: Five Days With Grok Bot"
+    },
+    {
+      "url": "https://x.com/dkundel/status/2095972046014673156",
+      "title": "Five things I learned from using Astra"
+    },
+    {
+      "url": "https://www.latent.space/p/astra",
+      "title": "GPT-6 Astra: an automated AI Engineer you can hire for <$6 an hour"
+    },
+    {
+      "url": "https://x.com/vasuman/status/2095999742031675738",
+      "title": "Applied AI Doesn't Work"
+    },
+    {
+      "url": "https://x.com/nickbaumann_/status/2095974509522108428",
+      "title": "How I make content with Astra"
+    },
+    {
+      "url": "https://x.com/jonnym1ller/status/2095646368165769285",
+      "title": "Codex has changed my life as a solopreneur"
     }
   ]
 }
