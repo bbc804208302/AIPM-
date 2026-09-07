@@ -1,6 +1,6 @@
 {
   "schemaVersion": 2,
-  "updatedAt": "2026-09-06T01:20:10.440Z",
+  "updatedAt": "2026-09-07T01:17:43.451Z",
   "runs": [
     {
       "id": "RUN-c021b618-0412-4d6c-8f00-cac00726f8f8",
@@ -2122,6 +2122,510 @@
     }
   ],
   "triageRuns": [
+    {
+      "id": "TRIAGE-c93491f3-b5bb-40bf-83ea-35311c78907e",
+      "agent": "product-opportunity-agent",
+      "mode": "daily-triage",
+      "version": 5,
+      "promptVersion": "daily-triage-v6-batched-full-coverage",
+      "strategyVersion": "opportunity-weighted-v1",
+      "briefingDate": "2026-09-07",
+      "objective": "扫描每日情报并完成 PM 机会评分与深度分析优先级排序",
+      "status": "completed",
+      "model": "deepseek-v4-flash",
+      "startedAt": "2026-09-07T01:15:49.841Z",
+      "completedAt": "2026-09-07T01:17:43.451Z",
+      "durationMs": 113610,
+      "scannedSignals": 18,
+      "candidates": [
+        {
+          "signalId": "SIG-20260907-8BF41C23",
+          "signalTitle": "营销人 Corey Haines 开源跨 agent 营销技能包 marketing-skills",
+          "titleZh": "营销人 Corey Haines 开源跨 agent 营销技能包 marketing-skills",
+          "summaryZh": "Corey Haines 开源 marketing-skills，将 CRO 转化优化、文案、SEO、数据分析与增长工程方法打包为 AI agent 技能，兼容 Claude Code、OpenAI Codex、Cursor、Windsurf 等支持 Agent Skills 规范的编码 agent，面向技术型营销人员与创始人。",
+          "track": "technical",
+          "source": "GitHub Trending",
+          "heatScore": 72,
+          "dimensions": {
+            "relevance": 85,
+            "novelty": 75,
+            "userValue": 72,
+            "actionability": 75,
+            "evidence": 70
+          },
+          "duplicateRisk": 40,
+          "memoryMatchCount": 5,
+          "opportunityScore": 66,
+          "recommendation": "candidate",
+          "pmValueType": "product-idea",
+          "rationale": "它示范了把垂直职能的专业方法论（CRO/SEO/文案）编码成可跨编码 agent 复用的技能包，是‘领域知识 × Agent Skills 规范’的具体产品形态，可直接启发按营销/增长等职能打包技能库的产品与商业模式设计，且由知名营销人背书、场景明确，比纯清单类仓库更具可落地性。"
+        },
+        {
+          "signalId": "SIG-20260907-C376421D",
+          "signalTitle": "AIPOCH 开源本地优先、模型无关的 AI 科研工作台 Open Science",
+          "titleZh": "AIPOCH 开源本地优先、模型无关的 AI 科研工作台 Open Science",
+          "summaryZh": "AIPOCH 发布 Open Science，一个本地优先、模型无关的开源 AI 研究工作台，提供科学 agent、Python/R notebook、科研数据连接器与可复现溯源能力，覆盖 macOS、Windows、Linux；用户用自然语言描述研究目标，agent 负责读文件、联网搜索、运行代码与查询科研数据。",
+          "track": "technical",
+          "source": "GitHub Trending",
+          "heatScore": 67,
+          "dimensions": {
+            "relevance": 72,
+            "novelty": 72,
+            "userValue": 68,
+            "actionability": 60,
+            "evidence": 70
+          },
+          "duplicateRisk": 35,
+          "memoryMatchCount": 5,
+          "opportunityScore": 60,
+          "recommendation": "candidate",
+          "pmValueType": "product-idea",
+          "rationale": "它把‘可复现性与可审计性’作为科研 AI 工作台的核心差异化，用 agent+notebook+数据连接器的一体化结构解决科学计算黑箱问题；产品经理可借鉴其在重合规/重溯源领域做本地优先、模型无关产品时的功能拆解与定位方式。"
+        },
+        {
+          "signalId": "SIG-20260907-E46CCE35",
+          "signalTitle": "开源隐私优先语音听写应用 OpenWhispr 发布",
+          "titleZh": "开源隐私优先语音听写应用 OpenWhispr 发布",
+          "summaryZh": "OpenWhispr 定位为 WisprFlow 与 Granola 的开源免费替代，提供语音转文字听写、AI agent、会议转写与笔记功能，支持本地（Nvidia Parakeet/Whisper）与自带密钥的云端模型，主打隐私优先，覆盖 macOS、Windows、Linux。",
+          "track": "technical",
+          "source": "GitHub Trending",
+          "heatScore": 65,
+          "dimensions": {
+            "relevance": 75,
+            "novelty": 65,
+            "userValue": 70,
+            "actionability": 60,
+            "evidence": 65
+          },
+          "duplicateRisk": 35,
+          "memoryMatchCount": 5,
+          "opportunityScore": 59,
+          "recommendation": "candidate",
+          "pmValueType": "competitor",
+          "rationale": "作为 WisprFlow/Granola 的开源竞品，它以本地推理+BYOK 的数据不上云方案切入，直接暴露了 AI 听写/会议记录赛道当前‘云转录隐私代价’的竞争缝隙；产品经理可据此做竞品差异化对比，并评估隐私优先定位在办公场景的获客潜力。"
+        },
+        {
+          "signalId": "SIG-20260907-3784D7AB",
+          "signalTitle": "OpenAI 公布内部数据：编码 agent 正在加速其 AI 研究",
+          "titleZh": "OpenAI 公布内部数据：编码 agent 正在加速其 AI 研究",
+          "summaryZh": "OpenAI 分享编码 agent 在其内部研究中的早期使用数据，展示 agent 使用率、实验速度与任务复杂度的变化，说明 coding agent 正重塑 AI 研究流程并带来研究加速。",
+          "track": "technical",
+          "source": "OpenAI News",
+          "heatScore": null,
+          "dimensions": {
+            "relevance": 70,
+            "novelty": 60,
+            "userValue": 58,
+            "actionability": 55,
+            "evidence": 65
+          },
+          "duplicateRisk": 50,
+          "memoryMatchCount": 5,
+          "opportunityScore": 49,
+          "recommendation": "candidate",
+          "pmValueType": "industry-context",
+          "rationale": "提供编码 agent 在真实研究组织中提升实验速度与任务复杂度的早期量化证据，可用来校准‘agent 化研发/科研流程’产品的价值主张与 KPI 叙事；与 Uber 软件工厂案例方向相近，但来源为头部模型厂商内部数据，仍具参照价值。"
+        },
+        {
+          "signalId": "SIG-20260907-2CC5EAB1",
+          "signalTitle": "OpenAI 弃用 Codex Skills 仓库，技能示例并入 Plugins 体系",
+          "titleZh": "OpenAI 弃用 Codex Skills 仓库，技能示例并入 Plugins 体系",
+          "summaryZh": "OpenAI 将 openai/skills 仓库标记为弃用，Codex 技能与插件示例迁移至 OpenAI Plugins 仓库；官方定义 Agent Skills 为包含指令、脚本与资源的文件夹，供 agent 发现并执行特定任务，新增技能需按 Build plugins 指南制作 skill-only 插件，并强调‘编写一次、处处可用’。",
+          "track": "technical",
+          "source": "GitHub Trending",
+          "heatScore": 59,
+          "dimensions": {
+            "relevance": 70,
+            "novelty": 55,
+            "userValue": 55,
+            "actionability": 60,
+            "evidence": 75
+          },
+          "duplicateRisk": 65,
+          "memoryMatchCount": 5,
+          "opportunityScore": 47,
+          "recommendation": "candidate",
+          "pmValueType": "industry-context",
+          "rationale": "OpenAI 官方把 Codex 技能从独立 skills 目录收敛进 plugins 体系，直接改变 Agent 技能生态的分发与格式走向；产品经理在决定技能/插件产品的发布路径时不应再押注被弃用的独立仓库，也印证了跨工具复用（write once, use everywhere）作为技能标准化的核心叙事。"
+        },
+        {
+          "signalId": "SIG-20260907-A5831FFC",
+          "signalTitle": "Gemini 收录 Agentic 视频理解议题，指向智能体视频理解能力",
+          "titleZh": "Gemini 收录 Agentic 视频理解议题，指向智能体视频理解能力",
+          "summaryZh": "Google Gemini 的 Product Hunt 产品页出现 “Agentic Video Understanding in Gemini” 讨论条目，指向 Gemini 提供/讨论让智能体自主理解与处理视频内容的能力方向；该来源仅有讨论入口，未披露具体功能、接口或发布时间。",
+          "track": "technical",
+          "source": "Product Hunt · AI Products",
+          "heatScore": null,
+          "dimensions": {
+            "relevance": 75,
+            "novelty": 70,
+            "userValue": 55,
+            "actionability": 45,
+            "evidence": 25
+          },
+          "duplicateRisk": 60,
+          "memoryMatchCount": 5,
+          "opportunityScore": 41,
+          "recommendation": "candidate",
+          "pmValueType": "capability",
+          "rationale": "视频理解正从单次问答走向 agent 化（自主解析、按指令对视频执行任务），Gemini 若将该能力产品化，意味着视频审阅、素材结构化、质检与二次创作可由智能体端到端完成；产品经理可据此评估在自有产品中引入视频理解 agent 的可行窗口与竞品差距。但本来源仅一个讨论标题、证据极薄，且历史上多个 Gemini 能力公告已被重复处理，需追踪官方细则再落地。"
+        },
+        {
+          "signalId": "SIG-20260907-60BCEB4F",
+          "signalTitle": "Adult Swim 人气节目公开抨击 AI 动画",
+          "titleZh": "Adult Swim 人气节目公开抨击 AI 动画",
+          "summaryZh": "据 Polygon 报道，Adult Swim 最具代表性的节目正式在内容中对 AI 动画发起公开抨击，传递出头部电视动画平台对生成式 AI 制作的对抗立场；报道细节待原文确认。",
+          "track": "domain",
+          "source": "Google News · AIGC Production",
+          "heatScore": null,
+          "dimensions": {
+            "relevance": 60,
+            "novelty": 60,
+            "userValue": 40,
+            "actionability": 35,
+            "evidence": 30
+          },
+          "duplicateRisk": 40,
+          "memoryMatchCount": 5,
+          "opportunityScore": 36,
+          "recommendation": "candidate",
+          "pmValueType": "industry-context",
+          "rationale": "头部电视动画平台以节目形式公开反 AI 动画，是渠道与创作社区抵制情绪的强信号：做动画/内容生成工具的产品经理需据此评估品牌合作与发行渠道的接受度风险，并在产品中加入披露、版权溯源与人工审校设计以降低渠道准入障碍；但本来源为聚合摘要、证据薄弱，具体主张需读 Polygon 原文核实。"
+        },
+        {
+          "signalId": "SIG-20260907-DDBD2F4B",
+          "signalTitle": "华东影视基地向游客推出沉浸式短剧拍摄体验",
+          "titleZh": "华东影视基地向游客推出沉浸式短剧拍摄体验",
+          "summaryZh": "华东地区影视基地面向游客推出沉浸式短剧拍摄体验活动，让游客实地参与短剧拍摄过程；该报道来自聚合新闻，内容细节有限。",
+          "track": "domain",
+          "source": "Google News · Microdrama",
+          "heatScore": null,
+          "dimensions": {
+            "relevance": 50,
+            "novelty": 45,
+            "userValue": 35,
+            "actionability": 30,
+            "evidence": 25
+          },
+          "duplicateRisk": 20,
+          "memoryMatchCount": 0,
+          "opportunityScore": 34,
+          "recommendation": "candidate",
+          "pmValueType": "industry-context",
+          "rationale": "该新闻仅提示微短剧产业链向线下体验经济延伸的趋势，但缺少任何 AI 能力、用户需求或产品化细节，证据质量过低，无法支撑具体产品判断，仅作领域背景保留。"
+        },
+        {
+          "signalId": "SIG-20260907-1CC5ACA0",
+          "signalTitle": "中国动画《牛来》逆袭：预计票房突破 900 万美元",
+          "titleZh": "中国动画《牛来》逆袭：预计票房突破 900 万美元",
+          "summaryZh": "这部母子团队制作的动画上映前 10 天仅卖出不到 300 张票，随后排片从每日不足 5 场增至峰值约 2.2 万场，把网络群嘲转化为院线观影现象，预计票房超过 900 万美元。",
+          "track": "domain",
+          "source": "Cartoon Brew",
+          "heatScore": null,
+          "dimensions": {
+            "relevance": 25,
+            "novelty": 55,
+            "userValue": 20,
+            "actionability": 15,
+            "evidence": 75
+          },
+          "duplicateRisk": 25,
+          "memoryMatchCount": 0,
+          "opportunityScore": 29,
+          "recommendation": "candidate",
+          "pmValueType": "industry-context",
+          "rationale": "展示低成本中国动画借线上话题性实现院线逆袭的发行路径与排片放大机制，可作为评估面向中国动画/内容工作室的 AI 工具渠道策略与定价的市场背景案例；来源未提及任何 AI 技术，非产品级情报。"
+        },
+        {
+          "signalId": "SIG-20260907-C1CA66B2",
+          "signalTitle": "AutoHedge：用 swarm 智能与 AI agent 自动构建对冲基金",
+          "titleZh": "AutoHedge：用 swarm 智能与 AI agent 自动构建对冲基金",
+          "summaryZh": "AutoHedge 是自称企业级的自主 agent 对冲基金开源项目，宣称数分钟内即可搭建，以 swarm 智能与专用 AI agent 端到端自动完成市场分析、风险管理与交易执行，最小化人工干预。",
+          "track": "technical",
+          "source": "GitHub Trending",
+          "heatScore": 66,
+          "dimensions": {
+            "relevance": 55,
+            "novelty": 40,
+            "userValue": 35,
+            "actionability": 30,
+            "evidence": 60
+          },
+          "duplicateRisk": 75,
+          "memoryMatchCount": 5,
+          "opportunityScore": 26,
+          "recommendation": "candidate",
+          "pmValueType": "product-idea",
+          "rationale": "与历史已拒绝的 TradingAgents 属同一自主交易 agent 形态，重复度高，且缺乏真实资金、合规与风控验证证据；该方向仅作量化 agent 应用趋势跟踪，不构成新的产品决策输入。"
+        },
+        {
+          "signalId": "SIG-20260907-255082BA",
+          "signalTitle": "Sarvam AI 端侧 AI 后端实习面试经验帖走红",
+          "titleZh": "Sarvam AI 端侧 AI 后端实习面试经验帖走红",
+          "summaryZh": "一名求职者在 X 平台分享 Sarvam AI 后端工程师（端侧 AI）实习的面试与准备经验，方向是在用户笔记本或手机上本地运行 LLM 推理而非调用云端 API；作者声明不透露具体面试题与面试官信息。",
+          "track": "technical",
+          "source": "X / AttentionVC AI",
+          "heatScore": 74,
+          "dimensions": {
+            "relevance": 40,
+            "novelty": 40,
+            "userValue": 20,
+            "actionability": 15,
+            "evidence": 40
+          },
+          "duplicateRisk": 35,
+          "memoryMatchCount": 5,
+          "opportunityScore": 24,
+          "recommendation": "candidate",
+          "pmValueType": "industry-context",
+          "rationale": "属个人求职经验内容而非产品事实，仅侧面印证端侧推理正成为印度 AI 实验室的重点投入方向；无可迁移的产品方案或用户需求证据，按低优先级排除。"
+        },
+        {
+          "signalId": "SIG-20260907-1ECC47AD",
+          "signalTitle": "DreamWorks 远程动画员工批准首份工会合同，薪资福利与线下对齐",
+          "titleZh": "DreamWorks 远程动画员工批准首份工会合同，薪资福利与线下对齐",
+          "summaryZh": "DreamWorks 远程办公动画员工投票批准其首份 TAG（动画工会）合同，取得与线下员工一致的薪资与福利；同时 Sony Pictures Animation 的制片管理员工也投票成立工会。",
+          "track": "domain",
+          "source": "Cartoon Brew",
+          "heatScore": null,
+          "dimensions": {
+            "relevance": 15,
+            "novelty": 40,
+            "userValue": 20,
+            "actionability": 15,
+            "evidence": 75
+          },
+          "duplicateRisk": 25,
+          "memoryMatchCount": 0,
+          "opportunityScore": 24,
+          "recommendation": "candidate",
+          "pmValueType": "industry-context",
+          "rationale": "动画工作室远程/外包生产组织正在工会化并标准化用工条款，这会收紧北美动画工作室引入 AI 生成工具的节奏与版权归属边界；对评估面向海外动画工作室的 AI 工具销售窗口与合规设计有参考价值，但属劳工新闻，不含产品能力，机会度低。"
+        },
+        {
+          "signalId": "SIG-20260907-EE54BB48",
+          "signalTitle": "《Fingerbang》幕后：讲述爱上断指的哥特手绘动画创作谈",
+          "titleZh": "《Fingerbang》幕后：讲述爱上断指的哥特手绘动画创作谈",
+          "summaryZh": "韩国导演 Kim Yeonwoo 独家披露毕业动画短片《Fingerbang》的制作美术，谈及黑色幽默、手绘美学与“女人爱上断指”的怪诞爱情故事，影片将在 Fantoche 展映。",
+          "track": "domain",
+          "source": "Cartoon Brew",
+          "heatScore": null,
+          "dimensions": {
+            "relevance": 15,
+            "novelty": 45,
+            "userValue": 15,
+            "actionability": 10,
+            "evidence": 70
+          },
+          "duplicateRisk": 20,
+          "memoryMatchCount": 0,
+          "opportunityScore": 24,
+          "recommendation": "candidate",
+          "pmValueType": "industry-context",
+          "rationale": "独立动画短片个案，体现手绘美学与怪诞叙事的创作实验，对动画风格参考有微弱价值；不含 AI 或可复用产品能力，无法支撑产品决策，低机会。"
+        },
+        {
+          "signalId": "SIG-20260907-E0F75446",
+          "signalTitle": "OpenAI Pachocki 撰文反思强 AI 对齐挑战，呼吁更强防护与国际协调",
+          "titleZh": "OpenAI Pachocki 撰文反思强 AI 对齐挑战，呼吁更强防护与国际协调",
+          "summaryZh": "OpenAI 科学家 Pachocki 在‘An Alien Mind’一文中反思能力日益增强的 AI 及其对齐难题，呼吁建立更强的安全防护机制并推动国际协调。",
+          "track": "technical",
+          "source": "OpenAI News",
+          "heatScore": null,
+          "dimensions": {
+            "relevance": 30,
+            "novelty": 40,
+            "userValue": 25,
+            "actionability": 15,
+            "evidence": 60
+          },
+          "duplicateRisk": 40,
+          "memoryMatchCount": 5,
+          "opportunityScore": 23,
+          "recommendation": "candidate",
+          "pmValueType": "industry-context",
+          "rationale": "属于高层观点与政策呼吁类文章，未带来可验证的新产品能力或模型事实，对具体产品决策输入有限，仅作为 AI 治理与安全监管背景语境，按低优先级处理。"
+        },
+        {
+          "signalId": "SIG-20260907-673DAB47",
+          "signalTitle": "BFI 伦敦电影节动画单元公布：Brad Bird《Ray Gunn》与 Laika《Wildwood》全球首映",
+          "titleZh": "BFI 伦敦电影节动画单元公布：Brad Bird《Ray Gunn》与 Laika《Wildwood》全球首映",
+          "summaryZh": "伦敦电影节公布动画片单，Brad Bird《Ray Gunn》与 Laika《Wildwood》领衔全球首映，另有《Iron Boy》《Julián》《Rogue Trooper》《My Friend the Sun》等作品入选。",
+          "track": "domain",
+          "source": "Cartoon Brew",
+          "heatScore": null,
+          "dimensions": {
+            "relevance": 10,
+            "novelty": 40,
+            "userValue": 10,
+            "actionability": 5,
+            "evidence": 75
+          },
+          "duplicateRisk": 15,
+          "memoryMatchCount": 0,
+          "opportunityScore": 22,
+          "recommendation": "candidate",
+          "pmValueType": "industry-context",
+          "rationale": "影展内容排期与首发信息，可侧面了解头部动画工作室发行节奏，但对 AI 产品判断无直接增量，不含任何能力细节，低机会。"
+        },
+        {
+          "signalId": "SIG-20260907-E2AA456D",
+          "signalTitle": "釜山电影节设日本动画聚焦单元，回顾展横跨七十年",
+          "titleZh": "釜山电影节设日本动画聚焦单元，回顾展横跨七十年",
+          "summaryZh": "釜山电影节新设日本动画 Spotlight 单元，节目纵贯七十年动画史，把手冢治虫、押井守《天使之卵》《大都会》等经典与夏目真悟等新锐导演作品并置展映。",
+          "track": "domain",
+          "source": "Cartoon Brew",
+          "heatScore": null,
+          "dimensions": {
+            "relevance": 10,
+            "novelty": 40,
+            "userValue": 10,
+            "actionability": 5,
+            "evidence": 75
+          },
+          "duplicateRisk": 15,
+          "memoryMatchCount": 0,
+          "opportunityScore": 22,
+          "recommendation": "candidate",
+          "pmValueType": "industry-context",
+          "rationale": "影展回顾展信息，属行业文化动态，不含 AI 或产品能力信息，对 AI 产品经理决策无增量，低机会。"
+        },
+        {
+          "signalId": "SIG-20260907-34F21AA3",
+          "signalTitle": "LLVM 编译器工具链开源仓库登上 GitHub 趋势榜",
+          "titleZh": "LLVM 编译器工具链开源仓库登上 GitHub 趋势榜",
+          "summaryZh": "LLVM Project 是一套模块化、可复用的编译器与工具链技术集合，核心包含处理中间表示并生成目标文件所需的工具、库与头文件，工具涵盖汇编器、反汇编器、bitcode 分析与优化器。",
+          "track": "technical",
+          "source": "GitHub Trending",
+          "heatScore": 54,
+          "dimensions": {
+            "relevance": 15,
+            "novelty": 20,
+            "userValue": 10,
+            "actionability": 10,
+            "evidence": 70
+          },
+          "duplicateRisk": 10,
+          "memoryMatchCount": 0,
+          "opportunityScore": 21,
+          "recommendation": "candidate",
+          "pmValueType": "industry-context",
+          "rationale": "这是与 AI 产品决策无直接关联的底层编译器基础设施项目，不包含任何模型能力、交互方式或应用案例信息，仅凭 GitHub 趋势热度不应进入机会池，予以排除避免稀释分析资源。"
+        },
+        {
+          "signalId": "SIG-20260907-94895FAB",
+          "signalTitle": "雷德利·斯科特谈摄影创作：画面靠审美眼光而非器材",
+          "titleZh": "雷德利·斯科特谈摄影创作：画面靠审美眼光而非器材",
+          "summaryZh": "年近 90 的导演雷德利·斯科特在访谈中阐述其视觉理念与工作流程：认为决定画面的是布光与构图而非昂贵器材（“全在眼里”），坚持手绘分镜，并偏好多机位拍摄以节省片场时间与 VFX 成本，提及库布里克用拍立得当测光表等旧手法。",
+          "track": "domain",
+          "source": "No Film School",
+          "heatScore": null,
+          "dimensions": {
+            "relevance": 20,
+            "novelty": 30,
+            "userValue": 25,
+            "actionability": 20,
+            "evidence": 70
+          },
+          "duplicateRisk": 45,
+          "memoryMatchCount": 5,
+          "opportunityScore": 20,
+          "recommendation": "candidate",
+          "pmValueType": "industry-context",
+          "rationale": "对做 AI 视频/电影制作工具的产品经理：提示创作者价值核心是布光、构图、分镜等创作表达控制而非素材规格，可用于校准产品应优先强化“创作控制类”功能（如机位、布光参数、分镜规划）而非比拼分辨率；但属个人观点访谈，无 AI 能力信息，只能作为用户心理背景，不构成可直接承接的机会。"
+        }
+      ],
+      "recommendedSignalIds": [
+        "SIG-20260907-8BF41C23",
+        "SIG-20260907-C376421D",
+        "SIG-20260907-E46CCE35",
+        "SIG-20260907-3784D7AB",
+        "SIG-20260907-2CC5EAB1",
+        "SIG-20260907-A5831FFC",
+        "SIG-20260907-60BCEB4F",
+        "SIG-20260907-DDBD2F4B",
+        "SIG-20260907-1CC5ACA0",
+        "SIG-20260907-C1CA66B2",
+        "SIG-20260907-255082BA",
+        "SIG-20260907-1ECC47AD",
+        "SIG-20260907-EE54BB48",
+        "SIG-20260907-E0F75446",
+        "SIG-20260907-673DAB47",
+        "SIG-20260907-E2AA456D",
+        "SIG-20260907-34F21AA3",
+        "SIG-20260907-94895FAB"
+      ],
+      "reviewSignalIds": [],
+      "autoAnalyzedSignalIds": [],
+      "decisionSummary": "Agent 已分 2 批完成 18 条情报的 PM 机会评分，并按分数排序；其中 0 条高机会情报进入自动深度分析候选。",
+      "toolCalls": [
+        {
+          "id": "batch-1:call_00_UnW9QRW8D4LRYLzpdtC13973",
+          "name": "list_daily_signals",
+          "status": "success",
+          "inputSummary": "批次 1/2 · 读取最新双轨情报",
+          "outputSummary": "已读取 10 条最新情报",
+          "durationMs": 0
+        },
+        {
+          "id": "batch-1:call_00_OTZto8lCB0z5vw03TYdt3841",
+          "name": "search_memory",
+          "status": "success",
+          "inputSummary": "批次 1/2 · 检索 10 条情报的历史决策",
+          "outputSummary": "完成 10 条候选的历史去重检索",
+          "durationMs": 90
+        },
+        {
+          "id": "batch-1:call_00_2ieVW4esQ67IiPKkIJde8792",
+          "name": "score_candidates",
+          "status": "success",
+          "inputSummary": "批次 1/2 · 评估 10 条候选",
+          "outputSummary": "完成 10 条机会评分",
+          "durationMs": 0
+        },
+        {
+          "id": "batch-1:call_00_jVmQSwU4J8U3xMLdkcCD2557",
+          "name": "select_intelligence_for_pool",
+          "status": "success",
+          "inputSummary": "批次 1/2 · 确认今日情报机会评分结果",
+          "outputSummary": "完成 10 条产品情报评分",
+          "durationMs": 0
+        },
+        {
+          "id": "batch-2:call_00_vlF9s8XwTp9A2A1QkWLT7192",
+          "name": "list_daily_signals",
+          "status": "success",
+          "inputSummary": "批次 2/2 · 读取最新双轨情报",
+          "outputSummary": "已读取 8 条最新情报",
+          "durationMs": 0
+        },
+        {
+          "id": "batch-2:call_00_w6w2Rtt0yprdYLZXHbHv0803",
+          "name": "search_memory",
+          "status": "success",
+          "inputSummary": "批次 2/2 · 检索 8 条情报的历史决策",
+          "outputSummary": "完成 8 条候选的历史去重检索",
+          "durationMs": 67
+        },
+        {
+          "id": "batch-2:call_00_q3ND2S3BBnYY2hW7Eq302299",
+          "name": "score_candidates",
+          "status": "success",
+          "inputSummary": "批次 2/2 · 评估 8 条候选",
+          "outputSummary": "完成 8 条机会评分",
+          "durationMs": 0
+        },
+        {
+          "id": "batch-2:call_00_57FFMFGLs6fk2m6izQpW6715",
+          "name": "select_intelligence_for_pool",
+          "status": "success",
+          "inputSummary": "批次 2/2 · 确认今日情报机会评分结果",
+          "outputSummary": "完成 8 条产品情报评分",
+          "durationMs": 0
+        }
+      ],
+      "error": null
+    },
     {
       "id": "TRIAGE-0c3f6ce4-d77e-41f8-93e5-768a6703c219",
       "agent": "product-opportunity-agent",
