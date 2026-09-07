@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "track": "technical",
-  "updatedAt": "2026-09-06T00:33:52.168Z",
+  "updatedAt": "2026-09-07T00:41:10.504Z",
   "items": [
     {
       "url": "https://www.latent.space/p/ainews-zawinskis-law-of-multiagents",
@@ -1774,6 +1774,46 @@
     {
       "url": "https://x.com/jonnym1ller/status/2095646368165769285",
       "title": "Codex has changed my life as a solopreneur"
+    },
+    {
+      "url": "https://openai.com/index/research-acceleration-view-inside-openai",
+      "title": "Research acceleration: The view inside OpenAI"
+    },
+    {
+      "url": "https://github.com/openai/skills",
+      "title": "openai/skills"
+    },
+    {
+      "url": "https://x.com/buzzy_bit/status/2096138888251375848",
+      "title": "SARVAM AI Interview Experience and Prep - Backend Engineer (On-Device AI) Internship:"
+    },
+    {
+      "url": "https://www.producthunt.com/products/google",
+      "title": "Agentic Video Understanding in Gemini"
+    },
+    {
+      "url": "https://github.com/llvm/llvm-project",
+      "title": "llvm/llvm-project"
+    },
+    {
+      "url": "https://openai.com/index/an-alien-mind",
+      "title": "An Alien Mind"
+    },
+    {
+      "url": "https://github.com/coreyhaines31/marketingskills",
+      "title": "coreyhaines31/marketingskills"
+    },
+    {
+      "url": "https://github.com/aipoch/open-science",
+      "title": "aipoch/open-science"
+    },
+    {
+      "url": "https://github.com/OpenWhispr/openwhispr",
+      "title": "OpenWhispr/openwhispr"
+    },
+    {
+      "url": "https://github.com/The-Swarm-Corporation/AutoHedge",
+      "title": "The-Swarm-Corporation/AutoHedge"
     }
   ]
 }
