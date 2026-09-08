@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "track": "domain",
-  "updatedAt": "2026-09-07T01:01:49.886Z",
+  "updatedAt": "2026-09-08T01:13:19.847Z",
   "items": [
     {
       "url": "https://www.creativebloq.com/3d/autodesk-tackles-ai-filmmakings-biggest-problem-with-3d-control",
@@ -1862,6 +1862,86 @@
     {
       "url": "https://nofilmschool.com/ridley-scott-cinematography",
       "title": "Ridley Scott Says Stop Blaming Your Gear for Bad Cinematography"
+    },
+    {
+      "url": "https://arxiv.org/abs/2609.04282",
+      "title": "Step Back to Move Forward: Reflection-Aware Preference Optimization for Visual Generation"
+    },
+    {
+      "url": "https://arxiv.org/abs/2609.04283",
+      "title": "Joint Alignment and Distillation for Video Generation via Sample-Guided Distribution Matching"
+    },
+    {
+      "url": "https://arxiv.org/abs/2609.04903",
+      "title": "InterSing: Explicit Interaction Dynamics for 3D Duet Singing Animation and Beyond"
+    },
+    {
+      "url": "https://arxiv.org/abs/2609.04939",
+      "title": "LensStyle: Learning the Optical Aesthetics for Controllable Stylized Lens Effect Rendering"
+    },
+    {
+      "url": "https://arxiv.org/abs/2609.04249",
+      "title": "Encore: Infinite Audio-Video Generation with Adaptive Signal Routing"
+    },
+    {
+      "url": "https://arxiv.org/abs/2609.04500",
+      "title": "STyMo: Fast and Controllable Few-Shot Motion Style Transfer"
+    },
+    {
+      "url": "https://nofilmschool.com/robert-rodriguez-favorite-movies-influence-explained",
+      "title": "What You Can Learn from Robert Rodriguez’s 4 Favorite Movies"
+    },
+    {
+      "url": "https://news.google.com/rss/articles/CBMinwFBVV95cUxQSndhRC1qUjN5WkdBOUo1V0FtZ2RFemUzSV9uYjFCaUd6S3NGYlNsX1VVcUYzVU9Rc3o3RHBWbTJMU2V4TGloazRJTGY0LVptZlNRcnNRN3hvT09pNmFnMk51TWVrVEtVRVMwY01STExicjNtNUtmS1NPX3o5ZDVMM3ZwT2JCbXNfTlo4QzhIUV9RbjdLc0l5UUFuLVh2SlE?oc=5",
+      "title": "France: Kovalee, Nation launch Sweetz microdrama app - Advanced Television"
+    },
+    {
+      "url": "https://arxiv.org/abs/2609.05415",
+      "title": "UniMate: One Unified Model to Animate Diverse Skeletons"
+    },
+    {
+      "url": "https://arxiv.org/abs/2609.04649",
+      "title": "ReaDiT Guidance: Control for Image and Video Generation using Diffusion Transformer Features"
+    },
+    {
+      "url": "https://arxiv.org/abs/2609.05239",
+      "title": "Cross-Domain Tracker Adaptation Without Target-Domain Labels via Vision-Language Agents"
+    },
+    {
+      "url": "https://nofilmschool.com/terrence-fletcher-iconic-moments",
+      "title": "Iconic Villain Moments: Terrence Fletcher - The Moment You Realize How Far He’ll Go"
+    },
+    {
+      "url": "https://nofilmschool.com/mistakes-new-writers-make",
+      "title": "These Are the Mistakes New Writers Tend to Make"
+    },
+    {
+      "url": "https://nofilmschool.com/overlooked-1993-movies",
+      "title": "10 Overlooked Movies of 1993"
+    },
+    {
+      "url": "https://nofilmschool.com/the-birds-1963-afi-100-thrillers-list",
+      "title": "1963 Hitchcock Movie The New Yorker Called \"A Sorry Failure\" Named One of the Top 10 Thrillers of All Time"
+    },
+    {
+      "url": "https://nofilmschool.com/lin-shaye-insidious-performance",
+      "title": "Lin Shaye Is Why I Keep Watching ‘Insidious’"
+    },
+    {
+      "url": "https://nofilmschool.com/references-in-tarantino-s-reservoir-dogs",
+      "title": "All the Movie and Pop Culture References in Tarantino's Reservoir Dogs"
+    },
+    {
+      "url": "https://nofilmschool.com/720p-imac-odyssey",
+      "title": "Forget 70mm and 35mm. The True Cinematic Format Is 720p iMac"
+    },
+    {
+      "url": "https://news.google.com/rss/articles/CBMiZ0FVX3lxTE5tdWg5OThnRUF4N3Z4QVlqb182VG9Jc1k2b1ZvZmtqRWtiTkREQ2ZkNm5mZjRES1Z6OVhsWEVseE41c1RSWUhRMGw4NTZOZm50RGFQZEN2c05MeWJ0QVVRdHFSMUtMdms?oc=5",
+      "title": "Vertical Video Studio LoveHit Launches With Adaptations Of Literary Classics Starring Microdrama Regulars & Eric Roberts - IMDb"
+    },
+    {
+      "url": "https://arxiv.org/abs/2609.04550",
+      "title": "VISTA: Dense Multi-Label Classroom Coding with Vision-Language Models"
     }
   ]
 }
