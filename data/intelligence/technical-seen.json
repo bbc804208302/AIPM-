@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "track": "technical",
-  "updatedAt": "2026-09-07T00:41:10.504Z",
+  "updatedAt": "2026-09-08T00:54:16.818Z",
   "items": [
     {
       "url": "https://www.latent.space/p/ainews-zawinskis-law-of-multiagents",
@@ -1814,6 +1814,46 @@
     {
       "url": "https://github.com/The-Swarm-Corporation/AutoHedge",
       "title": "The-Swarm-Corporation/AutoHedge"
+    },
+    {
+      "url": "https://www.latent.space/p/aeo",
+      "title": "The Frontier AEO Tracker: What Astra Chooses (and every other frontier model, and what you can do about it)"
+    },
+    {
+      "url": "https://github.com/heygen-com/hyperframes",
+      "title": "heygen-com/hyperframes"
+    },
+    {
+      "url": "https://x.com/charliejhills/status/2096550164278485292",
+      "title": "Claude Code → Codex (and keep everything you already built)"
+    },
+    {
+      "url": "https://openai.com/index/supporting-independent-journalism-in-ukraine",
+      "title": "Supporting independent journalism in Ukraine"
+    },
+    {
+      "url": "https://github.com/mksglu/context-mode",
+      "title": "mksglu/context-mode"
+    },
+    {
+      "url": "https://x.com/ericzakariasson/status/2096917654179402172",
+      "title": "Grok Bot Marketplace is live!"
+    },
+    {
+      "url": "https://tldr.tech/ai/2026-09-07",
+      "title": "Claude proves Fermat 🧮, automated AI researcher 🔬, Z1 efficiency chip ⚡"
+    },
+    {
+      "url": "https://github.com/jo-inc/camofox-browser",
+      "title": "jo-inc/camofox-browser"
+    },
+    {
+      "url": "https://github.com/bytedance/deer-flow",
+      "title": "bytedance/deer-flow"
+    },
+    {
+      "url": "https://github.com/lightpanda-io/browser",
+      "title": "lightpanda-io/browser"
     }
   ]
 }
