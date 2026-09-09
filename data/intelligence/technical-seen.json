@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "track": "technical",
-  "updatedAt": "2026-09-08T00:54:16.818Z",
+  "updatedAt": "2026-09-09T01:02:47.085Z",
   "items": [
     {
       "url": "https://www.latent.space/p/ainews-zawinskis-law-of-multiagents",
@@ -1854,6 +1854,86 @@
     {
       "url": "https://github.com/lightpanda-io/browser",
       "title": "lightpanda-io/browser"
+    },
+    {
+      "url": "https://openai.com/index/introducing-chatgpt-images-2-5",
+      "title": "Introducing ChatGPT Images 2.5"
+    },
+    {
+      "url": "https://github.com/ayghri/i-have-adhd",
+      "title": "ayghri/i-have-adhd"
+    },
+    {
+      "url": "https://x.com/borjafat/status/2096929697716162715",
+      "title": "GPT-6 Astra should be Illegal for SEO"
+    },
+    {
+      "url": "https://www.technologyreview.com/2026/09/08/1142088/danijar-hafner-developing-plan-ahead-agents",
+      "title": "This AI entrepreneur is developing agents that can plan ahead for the unexpected"
+    },
+    {
+      "url": "https://github.com/openai/plugins",
+      "title": "openai/plugins"
+    },
+    {
+      "url": "https://x.com/ClaudeDevs/status/2097369738968195513",
+      "title": "Reducing cost and improving performance with Claude Platform"
+    },
+    {
+      "url": "https://openai.com/index/supporting-journalism-from-classrooms-to-newsrooms",
+      "title": "OpenAI expands initiatives to support journalism from classrooms to newsrooms"
+    },
+    {
+      "url": "https://openai.com/index/1password",
+      "title": "1Password increases engineering productivity 21% with Codex"
+    },
+    {
+      "url": "https://x.com/GoogleAI/status/2097334571637346484",
+      "title": "AlphaGenome Atlas: A High-Resolution Map of Human DNA Accelerating Biological Discovery"
+    },
+    {
+      "url": "https://vercel.com/changelog/gpt-image-2-5-flare-and-sunburst-now-available-on-ai-gateway",
+      "title": "GPT Image 2.5 Flare and Sunburst now available on AI Gateway"
+    },
+    {
+      "url": "https://tldr.tech/ai/2026-09-08",
+      "title": "OpenAI managed agents 🤖, TPU inference ⚡, Anthropic $517B compute 💰"
+    },
+    {
+      "url": "https://x.com/RohOnChain/status/2097303933081489605",
+      "title": "How to Use GPT-6 Astra to Find Profitable Trading Strategies 24/7"
+    },
+    {
+      "url": "https://openai.com/index/codex-quantum-computing-experiments",
+      "title": "How GPT-5.6 Sol helps run quantum computing experiments"
+    },
+    {
+      "url": "https://huggingface.co/blog/MultiverseComputingCAI/safety-for-whom",
+      "title": "Safety for Whom? Refusing the Right Subset of a Topic, Not the Whole Topic"
+    },
+    {
+      "url": "https://deepmind.google/blog/alphagenome-atlas-a-predictive-map-of-every-possible-dna-letter-change-in-the-human-genome",
+      "title": "AlphaGenome Atlas: A predictive map of every possible DNA letter change in the human genome"
+    },
+    {
+      "url": "https://openai.com/index/the-work-now-within-reach",
+      "title": "The Work Now Within Reach"
+    },
+    {
+      "url": "https://openai.com/index/navier-stokes-solution",
+      "title": "On the Navier–Stokes Millennium Prize Problem"
+    },
+    {
+      "url": "https://x.com/mattyp/status/2097083263361958087",
+      "title": "Using Grok Bot: Figma Photomosaics"
+    },
+    {
+      "url": "https://x.com/ForwardEditor/status/2097126303765864768",
+      "title": "Exactly how I edit videos with Astra"
+    },
+    {
+      "url": "https://x.com/TheVixhal/status/2097008871231672595",
+      "title": "The Math Needed for AI Inference Engineering (Complete Roadmap)"
     }
   ]
 }
