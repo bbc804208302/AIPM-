@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "track": "domain",
-  "updatedAt": "2026-09-09T01:15:27.819Z",
+  "updatedAt": "2026-09-10T01:05:06.684Z",
   "items": [
     {
       "url": "https://www.creativebloq.com/3d/autodesk-tackles-ai-filmmakings-biggest-problem-with-3d-control",
@@ -2022,6 +2022,86 @@
     {
       "url": "https://nofilmschool.com/paul-greengrass",
       "title": "Paul Greengrass' 5 Best Movies, Ranked"
+    },
+    {
+      "url": "https://nofilmschool.com/fujifilm-vf-gfxc2-viewfinder",
+      "title": "Fujifilm Finally Has a Bright, High-Res Viewfinder for the GFX ETERNA 55"
+    },
+    {
+      "url": "https://arxiv.org/abs/2609.06207",
+      "title": "PhysWeep: Does a Video Generator Realize the Physics You Ask For?"
+    },
+    {
+      "url": "https://arxiv.org/abs/2609.06721",
+      "title": "Companion-style QA Assistance in Ego-Vision"
+    },
+    {
+      "url": "https://arxiv.org/abs/2609.06991",
+      "title": "AV-SafetyBench: A Safety Benchmark for Text-to-Audio-Video Generation"
+    },
+    {
+      "url": "https://nofilmschool.com/iphone-duo-iphone-18-pro",
+      "title": "Apple Debuts Foldable iPhone Duo Plus 48MP Fusion Main Camera iPhone 18 Pro"
+    },
+    {
+      "url": "https://nofilmschool.com/om-system-pen-camera",
+      "title": "OM SYSTEM Brings Back the PEN With a Relaunch of This Classic Digital Camera"
+    },
+    {
+      "url": "https://arxiv.org/abs/2609.05918",
+      "title": "PAI-Actor: Cinematic Multi-Character Replacement in Dynamic Scenes"
+    },
+    {
+      "url": "https://arxiv.org/abs/2609.06712",
+      "title": "RoLA: Rotary-Positioned Low-Rank Linear Attention for Efficient Diffusion Transformers"
+    },
+    {
+      "url": "https://arxiv.org/abs/2609.06929",
+      "title": "Sub-Pixel Affine Registration of Space Debris Images via the Radon Point Spread Function"
+    },
+    {
+      "url": "https://nofilmschool.com/sigma-20-60mm-f-2-8-4-dg-contemporary-lens-2677836769",
+      "title": "Sigma Packs Some Powerful Full-Frame Optics in This New Palm-Sized Zoom"
+    },
+    {
+      "url": "https://arxiv.org/abs/2609.05912",
+      "title": "FreeTransformSR: Efficient Lightweight Image Super-Resolution via Free Low-Rank Learnable Transform"
+    },
+    {
+      "url": "https://arxiv.org/abs/2609.06261",
+      "title": "Adapting Vision Foundation Models to Acoustics for Pose-Free 3D Sonar Reconstruction"
+    },
+    {
+      "url": "https://arxiv.org/abs/2609.06373",
+      "title": "Multi-Grid Post-Training for Long-Form Multi-Shot Video Generation"
+    },
+    {
+      "url": "https://arxiv.org/abs/2609.06967",
+      "title": "Re-calibrated Contrastive Loss for Transformation-Aware Prompt Conditioning in Vision-Language Models"
+    },
+    {
+      "url": "https://arxiv.org/abs/2609.07029",
+      "title": "LoGAN: Multilingual Font Localization with Generative Agents"
+    },
+    {
+      "url": "https://nofilmschool.com/more-blackmagic-design-price-cuts",
+      "title": "Blackmagic Design Announces Even More Price Cuts Coming for Cameras and Other Products"
+    },
+    {
+      "url": "https://news.google.com/rss/articles/CBMigwFBVV95cUxNcVFCOVZXLWhQemFVZmowWVZnWWJhSkZSWGxJT2ZnSU1sTFFqYVBqZ01fR1VKb203UFNncm5YVkdrdmxOeW5DTk5CTUw0N29tRXB0R0pTVHlHMFNSc2E4eTlGOEVvOExLWl8zakJST2tWcGFXelBaQUExQ0VvSHdRR2szMA?oc=5",
+      "title": "Upscale Officially Launches As One-Stop Shop For Microdramas - Deadline"
+    },
+    {
+      "url": "https://nofilmschool.com/im-robbins-shawshank-script-fight",
+      "title": "Why the Best Directors Let Their Lead Actors Push Back"
+    },
+    {
+      "url": "https://www.cartoonbrew.com/feature-film/son-of-a-bitch-trailer-266368.html",
+      "title": "Brazil’s Raucous Road Movie ‘Son Of A Bitch’ Unveils International Trailer (EXCLUSIVE)"
+    },
+    {
+      "url": "https://arxiv.org/abs/2609.06051",
+      "title": "Image-Scale Robustness and Visual Recognition Performance: A Cross-Architecture Analysis"
     }
   ]
 }
