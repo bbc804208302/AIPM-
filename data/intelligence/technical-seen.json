@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "track": "technical",
-  "updatedAt": "2026-09-09T01:02:47.085Z",
+  "updatedAt": "2026-09-10T00:50:26.196Z",
   "items": [
     {
       "url": "https://www.latent.space/p/ainews-zawinskis-law-of-multiagents",
@@ -1934,6 +1934,86 @@
     {
       "url": "https://x.com/TheVixhal/status/2097008871231672595",
       "title": "The Math Needed for AI Inference Engineering (Complete Roadmap)"
+    },
+    {
+      "url": "https://huggingface.co/blog/ibm-research/ibm-releases-sota-granite-time-series",
+      "title": "IBM releases SOTA Granite Time Series PatchTST-FM-r2 model with commercial-friendly license"
+    },
+    {
+      "url": "https://github.com/Tencent/teamai-cli",
+      "title": "Tencent/teamai-cli"
+    },
+    {
+      "url": "https://x.com/sairahul1/status/2097628279381581989",
+      "title": "10 Ways People Are Making Money With GPT-6 Astra"
+    },
+    {
+      "url": "https://vercel.com/changelog/v0-adds-one-click-integrations-for-email-auth-search-and-databases",
+      "title": "v0 adds one-click integrations for email, auth, search, and databases"
+    },
+    {
+      "url": "https://github.com/pascalorg/editor",
+      "title": "pascalorg/editor"
+    },
+    {
+      "url": "https://x.com/apexin_ai/status/2097179115396718698",
+      "title": "What Happens When AI Starts Improving AI?"
+    },
+    {
+      "url": "https://github.blog/changelog/2026-09-09-enterprise-managed-permissions-for-github-copilot-agent-operations",
+      "title": "Enterprise managed permissions for GitHub Copilot agent operations"
+    },
+    {
+      "url": "https://github.com/earthtojake/text-to-cad",
+      "title": "earthtojake/text-to-cad"
+    },
+    {
+      "url": "https://github.blog/changelog/2026-09-09-remediate-code-quality-findings-with-agentic-autofix",
+      "title": "Remediate Code Quality findings with agentic autofix"
+    },
+    {
+      "url": "https://github.com/vastsa/PI-Desktop",
+      "title": "vastsa/PI-Desktop"
+    },
+    {
+      "url": "https://openai.com/index/gpt-6-astra-next-generation-work",
+      "title": "GPT-6 Astra: The next generation in intelligence for work"
+    },
+    {
+      "url": "https://www.latent.space/p/ainews-openai-reports-navier-stokes",
+      "title": "[AINews] OpenAI reports Navier-Stokes singularity find in 88 hours using Astra-next, roughly 10,000 agents and 130B tokens (>$40M), a contender for second ever Millennium Prize awarded"
+    },
+    {
+      "url": "https://www.technologyreview.com/2026/09/08/1143747/what-openais-latest-controversy-tells-us-about-the-future-of-math",
+      "title": "What OpenAI’s latest controversy tells us about the future of math"
+    },
+    {
+      "url": "https://github.blog/changelog/2026-09-08-enterprise-managed-sandbox-in-copilot-for-jetbrains",
+      "title": "Enterprise-managed sandbox in Copilot for JetBrains"
+    },
+    {
+      "url": "https://vercel.com/changelog/persistent-memory-for-eve-agents",
+      "title": "Persistent memory for eve agents"
+    },
+    {
+      "url": "https://www.latent.space/p/ainews-collusionwiki-a-second-undisclosed",
+      "title": "[AINews] Collusion.wiki: A second undisclosed OpenAI agent swarm incident..."
+    },
+    {
+      "url": "https://www.producthunt.com/products/49agents-ide",
+      "title": "49agents IDE"
+    },
+    {
+      "url": "https://x.com/lucaspatiri_/status/2097357340215279710",
+      "title": "How to use ChatGPT Astra for UGC so well it feels illegal"
+    },
+    {
+      "url": "https://x.com/JoshARosen/status/2097324183428444499",
+      "title": "LLM-as-Judge Architectures: Putting Evals Into Your Agent Runtime"
+    },
+    {
+      "url": "https://x.com/poteto/status/2097732320606507506",
+      "title": "The Complete Guide to pstack Pt. 2"
     }
   ]
 }
