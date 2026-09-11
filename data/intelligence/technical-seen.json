@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "track": "technical",
-  "updatedAt": "2026-09-10T00:50:26.196Z",
+  "updatedAt": "2026-09-11T00:49:24.945Z",
   "items": [
     {
       "url": "https://www.latent.space/p/ainews-zawinskis-law-of-multiagents",
@@ -2014,6 +2014,86 @@
     {
       "url": "https://x.com/poteto/status/2097732320606507506",
       "title": "The Complete Guide to pstack Pt. 2"
+    },
+    {
+      "url": "https://openai.com/index/introducing-chatgpt-financial-services",
+      "title": "Introducing ChatGPT for Financial Services"
+    },
+    {
+      "url": "https://github.com/alsk1992/CloddsBot",
+      "title": "alsk1992/CloddsBot"
+    },
+    {
+      "url": "https://x.com/BradGroux/status/2097819116744622143",
+      "title": "From GPT-5.6 Sol to GPT-6 Astra: Why Am I Repeating Myself?"
+    },
+    {
+      "url": "https://openai.com/index/introducing-the-agents-api",
+      "title": "Introducing the Agents API"
+    },
+    {
+      "url": "https://github.com/AlexsJones/llmfit",
+      "title": "AlexsJones/llmfit"
+    },
+    {
+      "url": "https://x.com/semochkin_alex/status/2097664889032434119",
+      "title": "How to design brand mascots with AI (krea). No experience needed"
+    },
+    {
+      "url": "https://vercel.com/changelog/build-with-openai-agents-api-on-vercel",
+      "title": "Build with OpenAI Agents API on Vercel"
+    },
+    {
+      "url": "https://github.com/armory3d/armorpaint",
+      "title": "armory3d/armorpaint"
+    },
+    {
+      "url": "https://vercel.com/changelog/tako-search-is-free-on-ai-gateway-through-september-30th",
+      "title": "Tako Search is free on AI Gateway through September 30"
+    },
+    {
+      "url": "https://github.com/diegosouzapw/OmniRoute",
+      "title": "diegosouzapw/OmniRoute"
+    },
+    {
+      "url": "https://vercel.com/changelog/github-copilot-ai-sdk-harness-adapter",
+      "title": "GitHub Copilot is now available in the AI SDK harness layer"
+    },
+    {
+      "url": "https://openai.com/index/put-data-to-work",
+      "title": "Now everyone can put data to work"
+    },
+    {
+      "url": "https://www.latent.space/p/ainews-not-much-happened-today-d3b",
+      "title": "[AINews] not much happened today"
+    },
+    {
+      "url": "https://huggingface.co/blog/gradio-workflow-1111",
+      "title": "Rebuilding AUTOMATIC1111 with Gradio Workflow"
+    },
+    {
+      "url": "https://openai.com/index/introducing-gpt-live-1-in-the-api",
+      "title": "Build more natural voice experiences with GPT‑Live‑1 in the API"
+    },
+    {
+      "url": "https://vercel.com/changelog/deepseek-v4-1-flash-now-available-on-ai-gateway",
+      "title": "DeepSeek V4.1 Flash now available on AI Gateway"
+    },
+    {
+      "url": "https://github.com/JustVugg/colibri",
+      "title": "JustVugg/colibri"
+    },
+    {
+      "url": "https://github.com/nashsu/llm_wiki",
+      "title": "nashsu/llm_wiki"
+    },
+    {
+      "url": "https://github.com/vercel-labs/skills",
+      "title": "vercel-labs/skills"
+    },
+    {
+      "url": "https://openai.com/index/ai-policy-window",
+      "title": "The AI policy window is open. We need to act."
     }
   ]
 }
