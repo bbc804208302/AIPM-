@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "track": "technical",
-  "updatedAt": "2026-09-11T00:49:24.945Z",
+  "updatedAt": "2026-09-12T00:54:50.309Z",
   "items": [
     {
       "url": "https://www.latent.space/p/ainews-zawinskis-law-of-multiagents",
@@ -2094,6 +2094,86 @@
     {
       "url": "https://openai.com/index/ai-policy-window",
       "title": "The AI policy window is open. We need to act."
+    },
+    {
+      "url": "https://github.blog/changelog/2026-09-10-github-copilot-weekly-releases-september-7",
+      "title": "GitHub Copilot weekly releases — September 7"
+    },
+    {
+      "url": "https://github.com/melgarafael/DeskcommCRM",
+      "title": "melgarafael/DeskcommCRM"
+    },
+    {
+      "url": "https://x.com/MiaAI_lab/status/2097682838480884104",
+      "title": "Pushing Local AI Forward"
+    },
+    {
+      "url": "https://github.blog/changelog/2026-09-11-add-vs-code-agents-to-copilot-usage-metrics",
+      "title": "Add VS Code Agents to Copilot usage metrics"
+    },
+    {
+      "url": "https://github.com/jihe520/MathModelAgent",
+      "title": "jihe520/MathModelAgent"
+    },
+    {
+      "url": "https://x.com/EXM7777/status/2098414759234457878",
+      "title": "How to automate content creation (Full Course)"
+    },
+    {
+      "url": "https://github.blog/changelog/2026-09-11-auto-resolution-and-analysis-updates-in-copilot-code-review",
+      "title": "Auto-resolution and analysis updates in Copilot code review"
+    },
+    {
+      "url": "https://github.com/jordan-gibbs/hyperresearch",
+      "title": "jordan-gibbs/hyperresearch"
+    },
+    {
+      "url": "https://openai.com/index/scaling-storage-one-billion-users-part-one",
+      "title": "Rapidly scaling online storage to serve over 1 billion ChatGPT users"
+    },
+    {
+      "url": "https://github.com/alphaXiv/OpenResearch",
+      "title": "alphaXiv/OpenResearch"
+    },
+    {
+      "url": "https://vercel.com/blog/how-tailscale-built-a-customer-facing-model-router-on-ai-gateway",
+      "title": "How Tailscale built a customer-facing model router on AI Gateway"
+    },
+    {
+      "url": "https://tldr.tech/ai/2026-09-11",
+      "title": "Agents API 🤖, Cognition SWE-2 👨‍💻, Muse Shared Agents 🧑‍🤝‍🧑"
+    },
+    {
+      "url": "https://x.com/Av1dlive/status/2098055179761525165",
+      "title": "How to Master ChatGPT Images 2.5 (Full Course)"
+    },
+    {
+      "url": "https://x.com/shannholmberg/status/2098004743536750869",
+      "title": "How to Become a Marketing Engineer"
+    },
+    {
+      "url": "https://x.com/AndrewYNg/status/2098459474608672916",
+      "title": "AI Engineering Skills Map: Shaping the build"
+    },
+    {
+      "url": "https://x.com/Alaya_AI/status/2097992367748137463",
+      "title": "Alaya AI: Mastering Multimodal Sensor Synchronization for Next-Gen Autonomous Systems"
+    },
+    {
+      "url": "https://x.com/paulfchristiano/status/2097733214303645729",
+      "title": "Personal statement on joining the OpenAI board"
+    },
+    {
+      "url": "https://www.technologyreview.com/2026/09/11/1143936/roundtables-will-ai-really-kill-us-all",
+      "title": "Roundtables: AI’s apocalypse crisis"
+    },
+    {
+      "url": "https://openai.com/index/cognition-devin-testing-with-astra",
+      "title": "Cognition helps Devin test its own work with GPT‑6 Astra"
+    },
+    {
+      "url": "https://openai.com/index/using-codex-chatgpt-to-search-for-new-antimicrobials",
+      "title": "How a researcher uses Codex and ChatGPT to search for new antimicrobial molecules"
     }
   ]
 }
