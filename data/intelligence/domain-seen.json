@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "track": "domain",
-  "updatedAt": "2026-09-11T01:06:50.521Z",
+  "updatedAt": "2026-09-12T01:07:46.716Z",
   "items": [
     {
       "url": "https://www.creativebloq.com/3d/autodesk-tackles-ai-filmmakings-biggest-problem-with-3d-control",
@@ -2182,6 +2182,86 @@
     {
       "url": "https://arxiv.org/abs/2508.13977",
       "title": "ROVR-Open-Dataset: A Large-Scale Depth Dataset for Autonomous Driving"
+    },
+    {
+      "url": "https://arxiv.org/abs/2609.10572",
+      "title": "Rethinking Handwritten Character Recognition"
+    },
+    {
+      "url": "https://arxiv.org/abs/2609.10943",
+      "title": "CamPilot: A Multi-Agent Cinematic Assistant for Camera-Controlled Movie Generation"
+    },
+    {
+      "url": "https://arxiv.org/abs/2609.11242",
+      "title": "From Evaluation to Enhancement: Benchmarking and Improving Think-with-Video Reasoning for Video Generative Models"
+    },
+    {
+      "url": "https://arxiv.org/abs/2609.11519",
+      "title": "Learning Interaction between Image and Layout Priors for Joint Image-Layout Generation in Design Templates"
+    },
+    {
+      "url": "https://arxiv.org/abs/2609.10988",
+      "title": "Exponential Pixelating Integral transform with dual fractal features for enhanced chest X-ray abnormality detection"
+    },
+    {
+      "url": "https://arxiv.org/abs/2609.11244",
+      "title": "OmniHallu: Unified Hallucination Detection for Cross-Modal Comprehension and Generation in Multimodal Large Language Models"
+    },
+    {
+      "url": "https://arxiv.org/abs/2609.11900",
+      "title": "MindTopo: Can Foundation Models Reason in Topological Space?"
+    },
+    {
+      "url": "https://arxiv.org/abs/2508.07769",
+      "title": "Dream4D: Lifting Camera-Controlled I2V towards Spatiotemporally Consistent 4D Generation"
+    },
+    {
+      "url": "https://arxiv.org/abs/2608.10519",
+      "title": "SparSTAR: Sparse Attention for SpaceTime AutoRegressive Video Synthesis"
+    },
+    {
+      "url": "https://arxiv.org/abs/2609.11507",
+      "title": "Harnessing Intrinsic Subject-Aware Attention for Controllable Multi-Subject Video Generation"
+    },
+    {
+      "url": "https://arxiv.org/abs/2609.11638",
+      "title": "Vidu S2: Real-Time Interactive, Editable, and Spatial Video Generation"
+    },
+    {
+      "url": "https://arxiv.org/abs/2510.04772",
+      "title": "Federated Learning for Surgical Vision in Appendicitis Classification: Results of the FedSurg EndoVis 2024 Challenge"
+    },
+    {
+      "url": "https://nofilmschool.com/job-jargon-glossary",
+      "title": "A Massive Job Jargon Glossary For Writers"
+    },
+    {
+      "url": "https://nofilmschool.com/owc-usb4-hub-usb-c",
+      "title": "Need More USB-C Ports? This New OWC USB4 Hub Can Turn a Single USB4 Port into Four"
+    },
+    {
+      "url": "https://nofilmschool.com/lone-wolf-cop-movies",
+      "title": "The Rise and Fall of the Lone-Wolf Cop Movie"
+    },
+    {
+      "url": "https://nofilmschool.com/atomos-shinobi-7-ii",
+      "title": "The Atomos Shinobi 7 II is Another Bright, High-Res Monitor For Your Cinema Workflows"
+    },
+    {
+      "url": "https://news.google.com/rss/articles/CBMixwFBVV95cUxQeWc0MW5XdUNmeE5nVTdrd19sYkhEQS1XcExweXM4SGREenBrLWRaRlNkLUItMExFLWNvbnduT1JiLVlYckFfYmdMaWtRRkFYTk1yTE9OUk91cUVqSDBtbHRnM1dER3FWc0NlMUxyanplOVNGdUE2VjJUWlhpUjdlakdVdnZaaVZBeXVHc0J3LU5wczQ4Nm95YTZ0Vzl6VU8zTFI3dWNpVVJ5aWw2cHJjdFUxdnpUOHB1bE5VUjJOenNEMHpMczRn0gHHAUFVX3lxTFB5ZzQxbld1Q2Z4TmdVN2t3X2xiSERBLVdwTHB5czhIZER6cGstZFpGU2QtQi0wTEUtY29ud25PUmItWVhyQV9iZ0xpa1FGQVhOTXJMT05ST3VxRWpIMG1sdGczV0RHcVZzQ2UxTHJqemU5U0Z1QTZWMlRaWGlSN2VqR1V2dlppVkF5dUdzQnctTnBzNDg2b3lhNnRXOXpVTzNMUjd1Y2lVUnlpbDZwcmN0VTF2elQ4cHVsTlVSMk56c0QwekxzNGc?oc=5",
+      "title": "DeNA (TSE:2432) Tests AI Animation Tools, Is The 6% Undervaluation Enough? - simplywall.st"
+    },
+    {
+      "url": "https://arxiv.org/abs/2609.11265",
+      "title": "Uncertainty DMD: Restoring Diversity in Few-Step Autoregressive Video Distillation"
+    },
+    {
+      "url": "https://arxiv.org/abs/2605.09697",
+      "title": "Discriminative Span as a Predictor of Synthetic Data Utility via Classifier Reconstruction"
+    },
+    {
+      "url": "https://www.cartoonbrew.com/festivals/viborg-animation-festival-winners-please-god-is-shy-ball-face-266473.html",
+      "title": "‘Please,’ ‘God Is Shy,’ ‘Ball Face’ Among 2026 Viborg Animation Festival Winners"
     }
   ]
 }
