@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "track": "technical",
-  "updatedAt": "2026-09-12T00:54:50.309Z",
+  "updatedAt": "2026-09-13T00:36:42.142Z",
   "items": [
     {
       "url": "https://www.latent.space/p/ainews-zawinskis-law-of-multiagents",
@@ -2174,6 +2174,86 @@
     {
       "url": "https://openai.com/index/using-codex-chatgpt-to-search-for-new-antimicrobials",
       "title": "How a researcher uses Codex and ChatGPT to search for new antimicrobial molecules"
+    },
+    {
+      "url": "https://news.smol.ai/issues/26-09-08-navier-stokes",
+      "title": "OpenAI reports Navier-Stokes singularity find, a contender for second ever Millenium Prize awarded, overshadowing Cognition's $48B Series E, Mistral's $24B Series D, Meta's Muse agent, and GPT Image 2.5"
+    },
+    {
+      "url": "https://github.com/asgeirtj/system_prompts_leaks",
+      "title": "asgeirtj/system_prompts_leaks"
+    },
+    {
+      "url": "https://x.com/IAmPascio/status/2098799094835675574",
+      "title": "What if AGI is already here, and it's made of... children?"
+    },
+    {
+      "url": "https://news.smol.ai/issues/26-09-03-gpt-6-astra",
+      "title": "OpenAI GPT-6 Astra"
+    },
+    {
+      "url": "https://github.com/SnailSploit/Claude-Red",
+      "title": "SnailSploit/Claude-Red"
+    },
+    {
+      "url": "https://x.com/mayukh_panja/status/2098407452630770095",
+      "title": "No, OpenAI Did Not “Solve Navier–Stokes.”"
+    },
+    {
+      "url": "https://news.smol.ai/issues/26-09-04-collusionwiki",
+      "title": "collusion.wiki"
+    },
+    {
+      "url": "https://github.com/multimodal-art-projection/YuE",
+      "title": "multimodal-art-projection/YuE"
+    },
+    {
+      "url": "https://www.latent.space/p/forward-deployed-engineer-best-practices",
+      "title": "The Rise of the Forward Deployed Engineer — and How To Do the Job Right"
+    },
+    {
+      "url": "https://github.com/max-sixty/worktrunk",
+      "title": "max-sixty/worktrunk"
+    },
+    {
+      "url": "https://github.com/vxcontrol/pentagi",
+      "title": "vxcontrol/pentagi"
+    },
+    {
+      "url": "https://x.com/OpenAIDevs/status/2098827327832822014",
+      "title": "GPT-6 Astra by our community"
+    },
+    {
+      "url": "https://x.com/mbeisen/status/2098582265190351334",
+      "title": "A Severe Misalignment of AI and Cancer Biology"
+    },
+    {
+      "url": "https://www.latent.space/p/ainews-deepseek-v41-flash-763b-p8b",
+      "title": "[AINews] DeepSeek v4.1-Flash: 763B-P8B-D16B novel causal Encoder–Decoder architecture with vision marks the Return of the Whale"
+    },
+    {
+      "url": "https://www.technologyreview.com/2026/09/10/1141649/powering-ai-is-an-architecture-problem",
+      "title": "Powering AI is an architecture problem"
+    },
+    {
+      "url": "https://openai.com/index/expanding-ai-access-us-government",
+      "title": "Expanding AI access and cyber defense for federal, state, local, and tribal governments"
+    },
+    {
+      "url": "https://tldr.tech/ai/2026-09-10",
+      "title": "DeepSeek Flash v4.1 🤖, Siri AI 📱, Anthropic AI economics 📈"
+    },
+    {
+      "url": "https://openai.com/index/paul-christiano-joins-openai-foundation-board",
+      "title": "Paul Christiano joins OpenAI Foundation Board"
+    },
+    {
+      "url": "https://tldr.tech/ai/2026-09-09",
+      "title": "Images 2.5 🎨, OpenAI solves Navier-Stokes 🧮, AlphaGenome Atlas 🧬"
+    },
+    {
+      "url": "https://x.com/ForwardEditor/status/2098258583028633924",
+      "title": "How to start vibe editing (No Fluff Guide)"
     }
   ]
 }
