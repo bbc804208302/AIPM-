@@ -1,6 +1,6 @@
 {
   "schemaVersion": 2,
-  "updatedAt": "2026-09-13T01:23:01.609Z",
+  "updatedAt": "2026-09-14T01:30:06.746Z",
   "runs": [
     {
       "id": "RUN-c06c97dd-86bd-4b94-80e3-59b2a37f3492",
@@ -2553,6 +2553,279 @@
     }
   ],
   "triageRuns": [
+    {
+      "id": "TRIAGE-2d20a71b-9cb6-47a3-a70f-bb8e9d22b55c",
+      "agent": "product-opportunity-agent",
+      "mode": "daily-triage",
+      "version": 5,
+      "promptVersion": "daily-triage-v6-batched-full-coverage",
+      "strategyVersion": "opportunity-weighted-v1",
+      "briefingDate": "2026-09-14",
+      "objective": "扫描每日情报并完成 PM 机会评分与深度分析优先级排序",
+      "status": "completed",
+      "model": "deepseek-v4-flash",
+      "startedAt": "2026-09-14T01:29:29.487Z",
+      "completedAt": "2026-09-14T01:30:06.746Z",
+      "durationMs": 37259,
+      "scannedSignals": 9,
+      "candidates": [
+        {
+          "signalId": "SIG-20260914-C489E6FB",
+          "signalTitle": "阿里开源 AI 代码审查 CLI：确定性流水线加 LLM Agent 混合架构",
+          "titleZh": "阿里开源 AI 代码审查 CLI：确定性流水线加 LLM Agent 混合架构",
+          "summaryZh": "阿里巴巴把内部使用两年的 AI 代码审查助手开源为 CLI：读取 Git diff 后经带工具调用能力的 Agent 生成结构化审查意见，给出精确到行的评论，内置 NPE、线程安全、XSS、SQL 注入等多语言规则集，配置模型端点即可用，兼容 OpenAI 与 Anthropic。",
+          "track": "technical",
+          "source": "GitHub Trending",
+          "heatScore": 74,
+          "dimensions": {
+            "relevance": 82,
+            "novelty": 70,
+            "userValue": 78,
+            "actionability": 74,
+            "evidence": 78
+          },
+          "duplicateRisk": 35,
+          "memoryMatchCount": 5,
+          "opportunityScore": 68,
+          "recommendation": "candidate",
+          "pmValueType": "competitor",
+          "rationale": "可直接对标我们自身的代码审查与研发提效能力：它用确定性规则流水线加 LLM Agent 而非纯模型方案解决误报与可解释性问题，并已披露数万开发者、数百万缺陷的规模化验证，是评估代码审查功能架构与差异化的重要竞品基线。"
+        },
+        {
+          "signalId": "SIG-20260914-99A9D14F",
+          "signalTitle": "Runway 将 Aleph 2 与生成视频能力接入 Premiere Pro 和 After Effects",
+          "titleZh": "Runway 将 Aleph 2 与生成视频能力接入 Premiere Pro 和 After Effects",
+          "summaryZh": "Runway 把 Aleph 2 视频生成模型直接集成进 Adobe Premiere Pro 与 After Effects，让剪辑师在原有专业剪辑软件内直接调用生成式视频能力，无需跳转到独立平台。",
+          "track": "domain",
+          "source": "Google News · AIGC Production",
+          "heatScore": null,
+          "dimensions": {
+            "relevance": 78,
+            "novelty": 72,
+            "userValue": 74,
+            "actionability": 64,
+            "evidence": 55
+          },
+          "duplicateRisk": 35,
+          "memoryMatchCount": 5,
+          "opportunityScore": 60,
+          "recommendation": "candidate",
+          "pmValueType": "competitor",
+          "rationale": "体现了生成式视频厂商嵌入专业创作工作流而非另起平台的分发策略，对 AIGC 创作类产品判断插件化与宿主集成路线、以及剪辑师工作流中生成能力该放在哪一步有直接参考价值。"
+        },
+        {
+          "signalId": "SIG-20260914-EB2C7BD4",
+          "signalTitle": "笨老板用法：把昂贵大模型用在刀刃上以节省 Astra 与 Fable 配额",
+          "titleZh": "笨老板用法：把昂贵大模型用在刀刃上以节省 Astra 与 Fable 配额",
+          "summaryZh": "一篇实操分享反驳用大模型做编排器、小模型干杂活的常见做法，主张把昂贵模型放在它真正擅长的环节，从而在有限配额下获得更高产出，并对比了多种使用方式的差异。",
+          "track": "technical",
+          "source": "X / AttentionVC AI",
+          "heatScore": 72,
+          "dimensions": {
+            "relevance": 64,
+            "novelty": 66,
+            "userValue": 60,
+            "actionability": 60,
+            "evidence": 52
+          },
+          "duplicateRisk": 20,
+          "memoryMatchCount": 0,
+          "opportunityScore": 56,
+          "recommendation": "candidate",
+          "pmValueType": "design-pattern",
+          "rationale": "直接针对 Agent 产品的模型路由与配额成本设计：它挑战了主流的用大模型当编排器这一默认范式，可启发我们重新评估编排层该用哪个档位模型、以及配额受限场景下如何分配昂贵调用以提升实际产出。"
+        },
+        {
+          "signalId": "SIG-20260914-968C3263",
+          "signalTitle": "Perplexity 用 GPT-6 Astra 跑通端到端业务系统",
+          "titleZh": "Perplexity 用 GPT-6 Astra 跑通端到端业务系统",
+          "summaryZh": "Perplexity 将 GPT-6 Astra 用于撰写对外沟通内容、修改软件并监控生产系统，团队的检查频率明显低于使用早期模型时，是一个模型可靠性提升后 Agent 承接跨环节真实业务任务的落地案例。",
+          "track": "technical",
+          "source": "OpenAI News",
+          "heatScore": null,
+          "dimensions": {
+            "relevance": 74,
+            "novelty": 70,
+            "userValue": 66,
+            "actionability": 58,
+            "evidence": 60
+          },
+          "duplicateRisk": 45,
+          "memoryMatchCount": 5,
+          "opportunityScore": 54,
+          "recommendation": "candidate",
+          "pmValueType": "capability",
+          "rationale": "关键信号不是模型参数而是人工检查频率显著下降这一可迁移指标，可用来判断在写文案、改代码、盯生产等高风险环节中，Agent 的自动执行边界是否可以放宽，以及审批与回滚设计该保留到哪一层。"
+        },
+        {
+          "signalId": "SIG-20260914-36CADC74",
+          "signalTitle": "用 GPT-6 Astra 与 Blender 从零做出完整可玩游戏",
+          "titleZh": "用 GPT-6 Astra 与 Blender 从零做出完整可玩游戏",
+          "summaryZh": "作者用 GPT-6 Astra 写代码、Blender 建模，在数次会话内做出名为 PaperRoute 的完整可玩游戏（Paperboy 风格送报游戏），而非只能跑一次的概念演示。",
+          "track": "technical",
+          "source": "X / AttentionVC AI",
+          "heatScore": 83,
+          "dimensions": {
+            "relevance": 68,
+            "novelty": 66,
+            "userValue": 62,
+            "actionability": 56,
+            "evidence": 48
+          },
+          "duplicateRisk": 35,
+          "memoryMatchCount": 5,
+          "opportunityScore": 53,
+          "recommendation": "candidate",
+          "pmValueType": "capability",
+          "rationale": "提供了从演示到完整交付物的能力证据：单人靠自然语言加建模工具完成可玩游戏，可用来判断 AI 辅助开发在多文件工程、素材生产等长链路任务上是否已越过可用门槛，并启发编程 Agent 产品如何处理跨工具协作场景。"
+        },
+        {
+          "signalId": "SIG-20260914-52F8894D",
+          "signalTitle": "观点：模型越来越便宜，上下文才是产品价值所在",
+          "titleZh": "观点：模型越来越便宜，上下文才是产品价值所在",
+          "summaryZh": "文章指出 API 菜单已普遍包含高级推理模型、低成本变体、缓存输入、批处理与针对重复 Agent 任务优化的模型，模型端点越来越容易被采购、对比和替换，产品价值的解释权因此转移到模型之外的上下文。",
+          "track": "technical",
+          "source": "X / AttentionVC AI",
+          "heatScore": 75,
+          "dimensions": {
+            "relevance": 66,
+            "novelty": 60,
+            "userValue": 56,
+            "actionability": 50,
+            "evidence": 50
+          },
+          "duplicateRisk": 40,
+          "memoryMatchCount": 5,
+          "opportunityScore": 48,
+          "recommendation": "candidate",
+          "pmValueType": "industry-context",
+          "rationale": "为产品定位提供判断依据：当模型能力可被随时替换、成本持续下降时，护城河应建在专有上下文、数据与工作流沉淀上，可用于检视现有功能中哪些价值叙事其实是依附于模型端点、容易被抹平的。"
+        },
+        {
+          "signalId": "SIG-20260914-3F220F35",
+          "signalTitle": "面向 AI 编程 Agent 的安全技能注册表 Agent Skills",
+          "titleZh": "面向 AI 编程 Agent 的安全技能注册表 Agent Skills",
+          "summaryZh": "一个为 Antigravity、Claude Code、Cursor、Copilot 等编程 Agent 提供已验证、已测试技能的资源库，主打在约 13% 市场技能含严重漏洞的背景下提供安全可复用的技能来源。",
+          "track": "technical",
+          "source": "GitHub Trending",
+          "heatScore": 71,
+          "dimensions": {
+            "relevance": 62,
+            "novelty": 55,
+            "userValue": 58,
+            "actionability": 46,
+            "evidence": 60
+          },
+          "duplicateRisk": 62,
+          "memoryMatchCount": 5,
+          "opportunityScore": 42,
+          "recommendation": "candidate",
+          "pmValueType": "design-pattern",
+          "rationale": "它把技能市场的安全校验单独做成产品卖点（13% 技能含严重漏洞），可启发自建 Agent 技能库时是否引入准入审查与版本验证机制；但当前仅是一个技能仓库，缺少用户侧痛点与采用证据，且与历史已拒的 awesome-agent-skills 类资源合集高度相似，重复风险偏高。"
+        },
+        {
+          "signalId": "SIG-20260914-D72E2CC2",
+          "signalTitle": "观点：智能存在速度上限，用控制论小增益定理解释 AI 自我改进",
+          "titleZh": "观点：智能存在速度上限，用控制论小增益定理解释 AI 自我改进",
+          "summaryZh": "一篇用控制理论解释递归自我改进（RSI）的文章，认为自我改进闭环的最大安全速度取决于生成可信改进证据的速度，小增益定理表明反馈环路增益乘积低于 1 时系统才稳定。",
+          "track": "technical",
+          "source": "X / AttentionVC AI",
+          "heatScore": 75,
+          "dimensions": {
+            "relevance": 40,
+            "novelty": 56,
+            "userValue": 34,
+            "actionability": 24,
+            "evidence": 50
+          },
+          "duplicateRisk": 36,
+          "memoryMatchCount": 5,
+          "opportunityScore": 32,
+          "recommendation": "candidate",
+          "pmValueType": "industry-context",
+          "rationale": "提供了一个评估自动迭代类 Agent 的思考框架，即自改进速度受限于可信评估证据的产生速度，可用于论证为什么自动优化闭环必须配套可靠的评测与回归机制；但属观点文章，无具体产品能力，仅适合作为长期技术判断参考。"
+        },
+        {
+          "signalId": "SIG-20260914-6A31EB77",
+          "signalTitle": "学者批评中国微短剧歪曲历史",
+          "titleZh": "学者批评中国微短剧歪曲历史",
+          "summaryZh": "《台北时报》报道有学者指出中国微短剧存在歪曲历史的问题，属于围绕微短剧题材导向与内容合规的舆情讨论。",
+          "track": "domain",
+          "source": "Google News · Microdrama",
+          "heatScore": null,
+          "dimensions": {
+            "relevance": 32,
+            "novelty": 34,
+            "userValue": 30,
+            "actionability": 20,
+            "evidence": 42
+          },
+          "duplicateRisk": 35,
+          "memoryMatchCount": 5,
+          "opportunityScore": 23,
+          "recommendation": "candidate",
+          "pmValueType": "industry-context",
+          "rationale": "仅是评论性舆情，不含任何产品能力、功能或用户诉求，最多作为微短剧题材合规风险的背景提示，无法支撑具体的产品决策，不建议投入分析资源。"
+        }
+      ],
+      "recommendedSignalIds": [
+        "SIG-20260914-C489E6FB",
+        "SIG-20260914-99A9D14F",
+        "SIG-20260914-EB2C7BD4",
+        "SIG-20260914-968C3263",
+        "SIG-20260914-36CADC74",
+        "SIG-20260914-52F8894D",
+        "SIG-20260914-3F220F35",
+        "SIG-20260914-D72E2CC2",
+        "SIG-20260914-6A31EB77"
+      ],
+      "reviewSignalIds": [],
+      "autoAnalyzedSignalIds": [],
+      "decisionSummary": "Agent 已分 1 批完成 9 条情报的 PM 机会评分，并按分数排序；其中 0 条高机会情报进入自动深度分析候选。",
+      "toolCalls": [
+        {
+          "id": "batch-1:call_00_ET_keVaZLqeTsChJvt4mgFC8492",
+          "name": "list_daily_signals",
+          "status": "success",
+          "inputSummary": "批次 1/1 · 读取最新双轨情报",
+          "outputSummary": "已读取 9 条最新情报",
+          "durationMs": 0
+        },
+        {
+          "id": "batch-1:call_00_i32vqiXFu4udSEIWVNMe1401",
+          "name": "search_memory",
+          "status": "success",
+          "inputSummary": "批次 1/1 · 检索 9 条情报的历史决策",
+          "outputSummary": "完成 9 条候选的历史去重检索",
+          "durationMs": 112
+        },
+        {
+          "id": "batch-1:call_00_HtrPGxxrHKB2AtenPCmC3600",
+          "name": "score_candidates",
+          "status": "failed",
+          "inputSummary": "批次 1/1 · 评估 9 条候选",
+          "outputSummary": "评分必须是有效数字。",
+          "durationMs": 0
+        },
+        {
+          "id": "batch-1:call_00_lqZd7QFYWt8QEewcBiJB1748",
+          "name": "score_candidates",
+          "status": "success",
+          "inputSummary": "批次 1/1 · 评估 9 条候选",
+          "outputSummary": "完成 9 条机会评分",
+          "durationMs": 0
+        },
+        {
+          "id": "batch-1:call_00_DHz4JdSzlJQANijHpkxo1004",
+          "name": "select_intelligence_for_pool",
+          "status": "success",
+          "inputSummary": "批次 1/1 · 确认今日情报机会评分结果",
+          "outputSummary": "完成 9 条产品情报评分",
+          "durationMs": 0
+        }
+      ],
+      "error": null
+    },
     {
       "id": "TRIAGE-4a9d7ff2-3c78-43d9-959a-c66a91a3c50d",
       "agent": "product-opportunity-agent",
