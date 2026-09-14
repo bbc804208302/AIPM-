@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "track": "technical",
-  "updatedAt": "2026-09-13T00:36:42.142Z",
+  "updatedAt": "2026-09-14T00:42:56.261Z",
   "items": [
     {
       "url": "https://www.latent.space/p/ainews-zawinskis-law-of-multiagents",
@@ -2254,6 +2254,34 @@
     {
       "url": "https://x.com/ForwardEditor/status/2098258583028633924",
       "title": "How to start vibe editing (No Fluff Guide)"
+    },
+    {
+      "url": "https://openai.com/index/perplexity-improving-accuracy-with-astra",
+      "title": "Perplexity trusts GPT-6 Astra with end-to-end systems"
+    },
+    {
+      "url": "https://github.com/tech-leads-club/agent-skills",
+      "title": "tech-leads-club/agent-skills"
+    },
+    {
+      "url": "https://x.com/builtbysketch/status/2098773631249854478",
+      "title": "How to build a full game with Blender and GPT 5.6 Astra (not just a demo)"
+    },
+    {
+      "url": "https://github.com/alibaba/open-code-review",
+      "title": "alibaba/open-code-review"
+    },
+    {
+      "url": "https://x.com/docmilanfar/status/2098887393759854599",
+      "title": "Intelligence Has a Speed Limit"
+    },
+    {
+      "url": "https://x.com/anshuc/status/2098811738674147520",
+      "title": "The Idiot Boss approach to getting more Astra/Fable quota"
+    },
+    {
+      "url": "https://x.com/Didotxyz_/status/2098785278643323203",
+      "title": "The Model Is Becoming Cheaper. The Context Is Not."
     }
   ]
 }
