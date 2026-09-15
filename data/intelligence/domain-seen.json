@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "track": "domain",
-  "updatedAt": "2026-09-14T01:06:18.474Z",
+  "updatedAt": "2026-09-15T01:29:08.810Z",
   "items": [
     {
       "url": "https://www.creativebloq.com/3d/autodesk-tackles-ai-filmmakings-biggest-problem-with-3d-control",
@@ -2334,6 +2334,86 @@
     {
       "url": "https://news.google.com/rss/articles/CBMifEFVX3lxTE9NblBxYW1Ea1BwelpJV0ZkYzBJV0dGY2U5VWFwamtwMUk1VHdHTm9YQ0JGZlNRdWFfakcwNV9JSWxOMHVBYzBNSlRKQkdPVW9wSlphLUZqTFlVX1g3dnBSZXVXdUlwWVV4LUs1XzBITkZ5dV9NMG9IazVsbHk?oc=5",
       "title": "Runway brings Aleph 2 and generative video directly into Premiere Pro and After Effects - PTTL.gr"
+    },
+    {
+      "url": "https://arxiv.org/abs/2609.12202",
+      "title": "QuPAINT: Physics-Aware Multimodal Reasoning for Quantum Material Characterization"
+    },
+    {
+      "url": "https://arxiv.org/abs/2609.13006",
+      "title": "Physics-Aware Video Generation via Agentic Planning and Graph-Guided Optimization"
+    },
+    {
+      "url": "https://arxiv.org/abs/2601.16982",
+      "title": "AnyView: Synthesizing Any Novel View in Dynamic Scenes"
+    },
+    {
+      "url": "https://arxiv.org/abs/2607.24077",
+      "title": "When Low CER is Not Enough: An Analysis of Hallucinations in Vision-Language OCR Systems on Historical Uruguayan Documents"
+    },
+    {
+      "url": "https://nofilmschool.com/robert-rodriguez-profitable-filmmaking",
+      "title": "Robert Rodriguez's 4 Rules for Making a Profitable Movie"
+    },
+    {
+      "url": "https://arxiv.org/abs/2609.12997",
+      "title": "SV-Cine: Diagnosis-Conditioned Segmentation of Single Ventricle Physiology via Generative Data Augmentation"
+    },
+    {
+      "url": "https://nofilmschool.com/blackmagic-camera-update-10-2-3",
+      "title": "The Blackmagic URSA Cine 17K 65 Gets a New Quiet Record Function With Lower Fan Speed"
+    },
+    {
+      "url": "https://arxiv.org/abs/2609.12409",
+      "title": "OphBiWSSD: Scaling Temporal Action Localization in Ophthalmic Surgeries with Bidirectional Weight-tied State Space Duality"
+    },
+    {
+      "url": "https://arxiv.org/abs/2609.12843",
+      "title": "Pre-Trained Low-Rank Tensor Decomposition for Multi-Dimensional Image Recovery"
+    },
+    {
+      "url": "https://arxiv.org/abs/2512.14235",
+      "title": "4D-RaDiff: Latent Point Diffusion for 4D Radar Point Cloud Generation"
+    },
+    {
+      "url": "https://nofilmschool.com/blackmagic-camera-update-103",
+      "title": "The Blackmagic URSA Cine 12K LF is Getting a Boost With Next-Gen Color Science (Plus Other Updates)"
+    },
+    {
+      "url": "https://nofilmschool.com/angelbird-av-pro-cfexpress-v4-type-a-memory-cards",
+      "title": "Sony Shooters Are Getting Some More Memory Card Options to Support Their 8K RAW Workflows"
+    },
+    {
+      "url": "https://nofilmschool.com/the-last-picture-show-quote",
+      "title": "Film Quote of the Day: The 1971 Movie Line That Captures the Bittersweet Reality of Life"
+    },
+    {
+      "url": "https://www.cartoonbrew.com/distribution/paramount-netflix-end-skydance-animation-deal-ray-gunn-266524.html",
+      "title": "Paramount, Netflix End Skydance Animation Deal; Future Films Will Receive Theatrical Releases"
+    },
+    {
+      "url": "https://nofilmschool.com/laowa-180mm-f-4-5-1-5x-ultra-macro-apo",
+      "title": "This Popular Laowa Tele-Macro Lens is Getting New Mount Options for Fujifilm and Nikon"
+    },
+    {
+      "url": "https://arxiv.org/abs/2609.12521",
+      "title": "Aligned Radiometric RGB-Thermal Fusion for UAV Facade Anomaly Screening"
+    },
+    {
+      "url": "https://arxiv.org/abs/2609.12953",
+      "title": "Fast and Faithful: Principled Conditional Flow Matching for Inverse Problems"
+    },
+    {
+      "url": "https://arxiv.org/abs/2609.12225",
+      "title": "PLSP (Pre-hoc Liminal Space Profiling): OOD Prediction over Detection -- An Anticipatory Approach for Machine Learning Model Reliability"
+    },
+    {
+      "url": "https://arxiv.org/abs/2609.12871",
+      "title": "A Multi-Vehicle Dataset with Camera, LiDAR, and Radar Sensors and Scanned 3D Models for Custom Auto-Annotation using RTK-GNSS"
+    },
+    {
+      "url": "https://nofilmschool.com/underrated-westerns",
+      "title": "The Most Underrated Westerns Ever Made"
     }
   ]
 }
