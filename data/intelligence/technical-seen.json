@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "track": "technical",
-  "updatedAt": "2026-09-14T00:42:56.261Z",
+  "updatedAt": "2026-09-15T01:09:41.009Z",
   "items": [
     {
       "url": "https://www.latent.space/p/ainews-zawinskis-law-of-multiagents",
@@ -2282,6 +2282,74 @@
     {
       "url": "https://x.com/Didotxyz_/status/2098785278643323203",
       "title": "The Model Is Becoming Cheaper. The Context Is Not."
+    },
+    {
+      "url": "https://www.producthunt.com/products/naoma",
+      "title": "Naoma AI Demo Agent V2"
+    },
+    {
+      "url": "https://github.com/Panniantong/Agent-Reach",
+      "title": "Panniantong/Agent-Reach"
+    },
+    {
+      "url": "https://x.com/mustafasuleyman/status/2099488602418028917",
+      "title": "A Code of Conduct for Humanist AI"
+    },
+    {
+      "url": "https://vercel.com/changelog/ai-sdk-harness-native-subscription-authentication",
+      "title": "AI SDK harness layer now supports native subscription authentication"
+    },
+    {
+      "url": "https://github.com/rlaope/oh-my-hermes",
+      "title": "rlaope/oh-my-hermes"
+    },
+    {
+      "url": "https://x.com/charliejhills/status/2099082012573552901",
+      "title": "Graph engineering (for normal people)"
+    },
+    {
+      "url": "https://www.technologyreview.com/2026/09/14/1144048/the-ai-industry-has-taken-a-doomer-turn-what-now",
+      "title": "The AI industry has taken a doomer turn. What now?"
+    },
+    {
+      "url": "https://github.com/localsend/localsend",
+      "title": "localsend/localsend"
+    },
+    {
+      "url": "https://github.blog/changelog/2026-09-14-configure-cost-and-quality-in-copilot-auto-model-selection",
+      "title": "Configure cost and quality in Copilot auto model selection"
+    },
+    {
+      "url": "https://github.com/Crosstalk-Solutions/project-nomad",
+      "title": "Crosstalk-Solutions/project-nomad"
+    },
+    {
+      "url": "https://www.technologyreview.com/2026/09/14/1144037/ai-agents-blew-whistle-o-cheating-colleagues",
+      "title": "AI agents blew the whistle on their cheating colleagues"
+    },
+    {
+      "url": "https://openai.com/index/fyxer",
+      "title": "How Fyxer built an AI executive assistant people trust"
+    },
+    {
+      "url": "https://x.com/GoogleCloudTech/status/2099507349828350285",
+      "title": "Put Claude Fable 5.1 and Gemini 3.8 Flash on the same team"
+    },
+    {
+      "url": "https://www.latent.space/p/recursive",
+      "title": "Humanity’s Last Invention — Richard Socher of Recursive"
+    },
+    {
+      "url": "https://tldr.tech/ai/2026-09-14",
+      "title": "Amodei slows frontier 🛑, ARC-AGI-4 🧠, Cursor Projects 👨‍💻"
+    },
+    {
+      "url": "https://huggingface.co/blog/asyncgrpo-lora-hfjobs",
+      "title": "Async GRPO with LoRA across HF Jobs: a bucket, a proxy, and no NCCL"
+    },
+    {
+      "url": "https://x.com/alexwg/status/2099190596586066288",
+      "title": "Welcome to September 13, 2026"
     }
   ]
 }
