@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "track": "domain",
-  "updatedAt": "2026-09-15T01:29:08.810Z",
+  "updatedAt": "2026-09-16T01:26:37.193Z",
   "items": [
     {
       "url": "https://www.creativebloq.com/3d/autodesk-tackles-ai-filmmakings-biggest-problem-with-3d-control",
@@ -2414,6 +2414,86 @@
     {
       "url": "https://nofilmschool.com/underrated-westerns",
       "title": "The Most Underrated Westerns Ever Made"
+    },
+    {
+      "url": "https://nofilmschool.com/new-sony-super-telephoto-primes",
+      "title": "Sony Has Two New G Master Super-Telephoto Prime Lenses for Alpha Shooters"
+    },
+    {
+      "url": "https://nofilmschool.com/moment-iphone-18-accessories",
+      "title": "Already Looking to Gear Up for the iPhone 18? These Moment Accessories Could Be the Move"
+    },
+    {
+      "url": "https://nofilmschool.com/creative-provenance-ai",
+      "title": "You Don’t Have to Use AI in Your Film, But Can You Prove You Didn’t?"
+    },
+    {
+      "url": "https://news.google.com/rss/articles/CBMigwFBVV95cUxOVTRjdGdBRDIyRGlmSFJ1eWtmMHZlMDAyejVjY2VEdEVpa1FTbzZ0RDFaam8zMjNHLU9zSWdESWo5clhvZ3VqbnJaSm5sWUR0WlE4am1KY25UbGlkSnJZMy1NdnpEMkVqNGdCV2h3SFA0NTlUa21hdHdwMEQyVkdTVDU3Zw?oc=5",
+      "title": "Snäxx Launches As Europe’s Latest Microdrama App Player - Deadline"
+    },
+    {
+      "url": "https://arxiv.org/abs/2609.13190",
+      "title": "Personalized and Explainable Blood Pressure Estimation from PPG via Hybrid CNN--Morphological Features"
+    },
+    {
+      "url": "https://arxiv.org/abs/2609.13264",
+      "title": "BEACON: Behavior and Appearance Control for Subject-Specific Video Generation"
+    },
+    {
+      "url": "https://arxiv.org/abs/2609.14307",
+      "title": "Robust low-rank tensor completion via factorized weighted tensor schatten-p norm minimization"
+    },
+    {
+      "url": "https://arxiv.org/abs/2609.15229",
+      "title": "Pre-PEFT Probing: Weight Statistics and Perturbation Robustness for Layer Selection in VLM Vision Encoders"
+    },
+    {
+      "url": "https://arxiv.org/abs/2609.15335",
+      "title": "Query-Conditioned Spherical Centroid Aggregation for Multimodal Retrieval"
+    },
+    {
+      "url": "https://nofilmschool.com/nuke-short-film",
+      "title": "How a Missed Comedy Showcase and a World-Ending Threat Inspired 'NUKE'"
+    },
+    {
+      "url": "https://nofilmschool.com/john-vorhaus-comedy-writing-tools",
+      "title": "The \"Inappropriate Response\" Is the Fastest Way to Make a Scene Funny"
+    },
+    {
+      "url": "https://nofilmschool.com/dueling-banjos-scene-deliverance",
+      "title": "Why the Deliverance \"Dueling Banjos\" Scene Still Haunts Filmmakers"
+    },
+    {
+      "url": "https://www.cartoonbrew.com/studios/dandelooo-launch-teen-young-adult-unit-266574.html",
+      "title": "Dandelooo Launches Dedicated Teen/YA Division With Two Apocolyptic Titles"
+    },
+    {
+      "url": "https://nofilmschool.com/animal-house-quotes",
+      "title": "Film Quote of the Day: The Animal House Line That Was Really Good Advice"
+    },
+    {
+      "url": "https://arxiv.org/abs/2609.13245",
+      "title": "SJD-SV: Speculative Jacobi Decoding with Semantics Verification for Autoregressive Image Generation"
+    },
+    {
+      "url": "https://arxiv.org/abs/2609.13328",
+      "title": "Pedestrian Crossing Intent Classification From Event-Based Vision Using Convolutional Spiking Neural Networks With Temporal Augmentation"
+    },
+    {
+      "url": "https://arxiv.org/abs/2609.13815",
+      "title": "Beyond OCR Accuracy: Text-Centric VQA Under Image Degradation with Modular and End-to-End"
+    },
+    {
+      "url": "https://arxiv.org/abs/2609.13830",
+      "title": "DiVA: Enabling Interactive Digital Life Simulation via Video Models"
+    },
+    {
+      "url": "https://arxiv.org/abs/2609.14391",
+      "title": "Newton Deep Unfolding for Compressed Sensing"
+    },
+    {
+      "url": "https://arxiv.org/abs/2609.14578",
+      "title": "A Building as a Repository: KIR, a Typed Intermediate Representation for Agent-Authored Building Information Models"
     }
   ]
 }
