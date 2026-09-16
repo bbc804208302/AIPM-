@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "track": "technical",
-  "updatedAt": "2026-09-15T01:09:41.009Z",
+  "updatedAt": "2026-09-16T01:05:28.621Z",
   "items": [
     {
       "url": "https://www.latent.space/p/ainews-zawinskis-law-of-multiagents",
@@ -2350,6 +2350,86 @@
     {
       "url": "https://x.com/alexwg/status/2099190596586066288",
       "title": "Welcome to September 13, 2026"
+    },
+    {
+      "url": "https://vercel.com/changelog/is-agentic-report-categories",
+      "title": "Is Agentic now tailors its audit by site type"
+    },
+    {
+      "url": "https://github.com/danny-avila/LibreChat",
+      "title": "danny-avila/LibreChat"
+    },
+    {
+      "url": "https://x.com/jack/status/2099649359017046048",
+      "title": "open the frontier"
+    },
+    {
+      "url": "https://www.latent.space/p/good-start-labs",
+      "title": "Can Skills Learned in Games Transfer to Real-World Work?"
+    },
+    {
+      "url": "https://github.com/MG1937/ASC",
+      "title": "MG1937/ASC"
+    },
+    {
+      "url": "https://x.com/EricSimons/status/2099528668917968970",
+      "title": "Accelerating Open Weight Models to the Frontier"
+    },
+    {
+      "url": "https://github.blog/changelog/2026-09-15-github-copilot-suggests-custom-properties-definitions",
+      "title": "GitHub Copilot suggests custom properties definitions"
+    },
+    {
+      "url": "https://github.com/earendil-works/pi",
+      "title": "earendil-works/pi"
+    },
+    {
+      "url": "https://deepmind.google/blog/introducing-gemini-3-8-live-and-3-8-live-extended-thinking",
+      "title": "Introducing Gemini 3.8 Live and 3.8 Live Extended Thinking"
+    },
+    {
+      "url": "https://x.com/GoogleAIStudio/status/2099907558886760562",
+      "title": "Introducing Gemini 3.8 Live and 3.8 Live Extended Thinking"
+    },
+    {
+      "url": "https://huggingface.co/blog/ibm-research/altk-evolve-consistency",
+      "title": "Your Agent Aced the Task. Will It Do It Again?"
+    },
+    {
+      "url": "https://vercel.com/changelog/gemini-3-8-live-models-now-available-on-ai-gateway",
+      "title": "Gemini 3.8 Live models now available on AI Gateway"
+    },
+    {
+      "url": "https://tldr.tech/ai/2026-09-15",
+      "title": "Siri model swapping 🔄, Claude Money 💰, Hugging Face Tau 👨‍💻"
+    },
+    {
+      "url": "https://www.producthunt.com/products/sierra",
+      "title": "Multimodal Agents by Sierra"
+    },
+    {
+      "url": "https://www.producthunt.com/products/openai",
+      "title": "OpenAI Agents API"
+    },
+    {
+      "url": "https://x.com/donnfelker/status/2099442539187069189",
+      "title": "The Evaporation of Software Engineering (and the Rise of the Agentic Builder)"
+    },
+    {
+      "url": "https://x.com/Hrushikeshhhh/status/2099590015336808865",
+      "title": "start ugly, write evals anyway."
+    },
+    {
+      "url": "https://www.technologyreview.com/2026/09/15/1143936/roundtables-will-ai-really-kill-us-all",
+      "title": "Roundtables: Could AI really kill us all?"
+    },
+    {
+      "url": "https://www.technologyreview.com/2026/09/15/1144028/ai-infrastructure-boom-investment-bubble-risk",
+      "title": "What’s at stake in AI’s trillion-dollar gamble"
+    },
+    {
+      "url": "https://www.latent.space/p/ainews-aef-1-standard-emerges-for",
+      "title": "[AINews] AEF-1 standard emerges for Third Party Evaluators, as Xai, OpenAI, and Anthropic all cosign"
     }
   ]
 }
