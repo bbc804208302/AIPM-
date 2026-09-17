@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "track": "technical",
-  "updatedAt": "2026-09-16T01:05:28.621Z",
+  "updatedAt": "2026-09-17T01:05:00.332Z",
   "items": [
     {
       "url": "https://www.latent.space/p/ainews-zawinskis-law-of-multiagents",
@@ -2430,6 +2430,86 @@
     {
       "url": "https://www.latent.space/p/ainews-aef-1-standard-emerges-for",
       "title": "[AINews] AEF-1 standard emerges for Third Party Evaluators, as Xai, OpenAI, and Anthropic all cosign"
+    },
+    {
+      "url": "https://github.blog/changelog/2026-09-16-copilot-budget-increase-requests-are-generally-available",
+      "title": "Copilot budget increase requests are generally available"
+    },
+    {
+      "url": "https://github.com/cloudflare/security-audit-skill",
+      "title": "cloudflare/security-audit-skill"
+    },
+    {
+      "url": "https://x.com/mustafasuleyman/status/2100223594534150428",
+      "title": "Its time to talk about ‘model welfare’"
+    },
+    {
+      "url": "https://openai.com/index/reimagining-advertising-with-ai",
+      "title": "Reimagining advertising with AI"
+    },
+    {
+      "url": "https://github.com/jamiepine/voicebox",
+      "title": "jamiepine/voicebox"
+    },
+    {
+      "url": "https://x.com/LingoAITech/status/2099886905488003476",
+      "title": "THE ARCHITECTURE OF AI-NATIVE WEB3.0"
+    },
+    {
+      "url": "https://vercel.com/changelog/typesafe-ai-jev-now-available-on-ai-gateway",
+      "title": "TypeSafe AI's Jev now available on AI Gateway"
+    },
+    {
+      "url": "https://github.com/supabase/supabase",
+      "title": "supabase/supabase"
+    },
+    {
+      "url": "https://www.latent.space/p/aiuc",
+      "title": "Underwriting Superintelligence: Backing Agents you can Sue — Rune Kvist, AIUC"
+    },
+    {
+      "url": "https://github.com/Tencent/WeKnora",
+      "title": "Tencent/WeKnora"
+    },
+    {
+      "url": "https://x.com/ShaneLegg/status/2100229706641539248",
+      "title": "Introducing the DeepMind Institute"
+    },
+    {
+      "url": "https://x.com/JacquelineSYC19/status/2100262432413528336",
+      "title": "How we built Hermes to support our entire team"
+    },
+    {
+      "url": "https://x.com/GoogleAIStudio/status/2099968977539903871",
+      "title": "Build real-time voice applications with Gemini 3.8 Live and 3.5 Transcribe"
+    },
+    {
+      "url": "https://x.com/GoogleCloudTech/status/2099946653134229721",
+      "title": "The Anatomy of Harness Engineering: How to Evaluate, Iterate, and Guard AI Coding Agents"
+    },
+    {
+      "url": "https://openai.com/index/model-misalignment-reporting-framework",
+      "title": "Our framework for reporting model misalignment"
+    },
+    {
+      "url": "https://openai.com/index/helping-older-adults-use-ai-in-everyday-life",
+      "title": "Helping older adults use AI in everyday life"
+    },
+    {
+      "url": "https://www.technologyreview.com/2026/09/16/1144014/building-the-materials-foundation-for-ai",
+      "title": "Building the materials foundation for AI"
+    },
+    {
+      "url": "https://www.latent.space/p/ainews-jev-a-system-one-model-that",
+      "title": "[AINews] Jev: a “System One Model” that only decides/classifies/routes/scores — >100x faster, >200x cheaper than small frontier LLMs"
+    },
+    {
+      "url": "https://github.com/cline/cline",
+      "title": "cline/cline"
+    },
+    {
+      "url": "https://x.com/zachlloydtweets/status/2099941244063432720",
+      "title": "Adopting the software factory model: crawl, walk, run"
     }
   ]
 }
