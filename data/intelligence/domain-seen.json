@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "track": "domain",
-  "updatedAt": "2026-09-16T01:26:37.193Z",
+  "updatedAt": "2026-09-17T01:26:42.752Z",
   "items": [
     {
       "url": "https://www.creativebloq.com/3d/autodesk-tackles-ai-filmmakings-biggest-problem-with-3d-control",
@@ -2494,6 +2494,86 @@
     {
       "url": "https://arxiv.org/abs/2609.14578",
       "title": "A Building as a Repository: KIR, a Typed Intermediate Representation for Agent-Authored Building Information Models"
+    },
+    {
+      "url": "https://nofilmschool.com/adobe-premiere-elements-2027",
+      "title": "Adobe Unveils Photoshop Elements and Premiere Elements 2027 With New AI-Powered Capabilities"
+    },
+    {
+      "url": "https://nofilmschool.com/blazing-saddles-wide-world-of-sports",
+      "title": "Film Quote of the Day: This 1974 Mel Brooks Comedy Gave Us One of Cinema's Funniest Lines"
+    },
+    {
+      "url": "https://arxiv.org/abs/2609.16637",
+      "title": "Can Knowledge Transfer Parameters Be Learned? LePoKet for Efficient Robotic Vision"
+    },
+    {
+      "url": "https://arxiv.org/abs/2609.16811",
+      "title": "Hyper-RED: Scalable Event Pre-training via Semantic Hypergraph Distillation"
+    },
+    {
+      "url": "https://arxiv.org/abs/2609.17094",
+      "title": "Hub-Spectral Activation of Latent Multimodal Knowledge"
+    },
+    {
+      "url": "https://arxiv.org/abs/2609.17414",
+      "title": "SlotDiT: Object-Centric Representations for Diffusion Transformers"
+    },
+    {
+      "url": "https://nofilmschool.com/canon-r8-mark-ii",
+      "title": "Canon Unveils the New R8 Mark II, Yet Another Full-Frame Workhorse for Hybrid Shooters"
+    },
+    {
+      "url": "https://nofilmschool.com/looking-for-film-financing-this-new-filmmaker-built-platform-aims-to-help-you-navigate-incentives",
+      "title": "Looking for Film Financing? This New Filmmaker-Built Platform Aims to Help You Wrangle Incentives"
+    },
+    {
+      "url": "https://nofilmschool.com/whos-watching-movie",
+      "title": "How to Turn the Camera Into a Character"
+    },
+    {
+      "url": "https://nofilmschool.com/fake-car-crash-without-stunt",
+      "title": "6 Tricks for Faking a Car Crash"
+    },
+    {
+      "url": "https://news.google.com/rss/articles/CBMivwFBVV95cUxOU3RoOWdBVWZuNklvNzVkUGNWd2RMdGtTNlJrY1VQM1B3bktvWDNES08xNW1rZ0l0X285MHdiMHRXT2VZY0lNdFZfUmhEUG9oaEI2UGtMd09EZ1l0RWphYU5VU0toRUNoZVNDdjJCV2FCWVpWTV9yVUVxUE8zaUl1ZjVNQUJmVldZMFl0Z19yb2RwcHFteE5tMTdnUEJxUVZfam5CQWhCNTBFWHdkbkpxNDBXS1l6T0hwRzZwcklHOA?oc=5",
+      "title": "HeyRuby.tv Launches on iPhone and iPad With a Creator-First Model for Microdrama - EIN News"
+    },
+    {
+      "url": "https://arxiv.org/abs/2609.16464",
+      "title": "A multimodal large language model for evidence-based autism spectrum disorder screening"
+    },
+    {
+      "url": "https://arxiv.org/abs/2609.17004",
+      "title": "Symmetry-Aware Likelihood-Orbit Aggregation for Selective Left-Right Claim Verification"
+    },
+    {
+      "url": "https://arxiv.org/abs/2609.16778",
+      "title": "Unifying Semantic Priors and High-Frequency Traces: Enhancing V-JEPA with Mixture-of-Experts for Robust Synthetic Image Forensics"
+    },
+    {
+      "url": "https://arxiv.org/abs/2609.16842",
+      "title": "FAHCD-Net: Frequency-Adaptive Heatmap-Conditional Diffusion Networks for Robust Facial Landmark Detection"
+    },
+    {
+      "url": "https://arxiv.org/abs/2609.17521",
+      "title": "PhysStream: Streaming Physics-Grounded Video Generation with Structured Scene Memory and Fine-Grained Motion Control"
+    },
+    {
+      "url": "https://arxiv.org/abs/2609.16011",
+      "title": "EMODY Flow: Emotion-Aware Audio-Driven Full-Body Motion Generation"
+    },
+    {
+      "url": "https://nofilmschool.com/she-shot-her-first-feature-in-just-11-nights-making-lockjaw",
+      "title": "She Shot Her First Feature in Just 11 Nights — Making 'Lockjaw'"
+    },
+    {
+      "url": "https://nofilmschool.com/panasonic-lumix-s-20mm-f-2-5-lens-2677867417",
+      "title": "Panasonic’s Latest LUMIX Full-Frame Prime is Set to Go Ultra-Wide and Ultra-Compact"
+    },
+    {
+      "url": "https://www.cartoonbrew.com/distribution/wildwood-final-trailer-ticket-sales-laika-266671.html",
+      "title": "Laika Unleashes The Final ‘Wildwood’ Trailer As Fathom Launches Tickets Sales"
     }
   ]
 }
