@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "track": "technical",
-  "updatedAt": "2026-09-17T01:05:00.332Z",
+  "updatedAt": "2026-09-18T01:00:56.573Z",
   "items": [
     {
       "url": "https://www.latent.space/p/ainews-zawinskis-law-of-multiagents",
@@ -2510,6 +2510,70 @@
     {
       "url": "https://x.com/zachlloydtweets/status/2099941244063432720",
       "title": "Adopting the software factory model: crawl, walk, run"
+    },
+    {
+      "url": "https://vercel.com/blog/ai-gateway-production-index-september-2026",
+      "title": "Open-weight models take 56% of token volume, Astra doubles Fable 5.1 spend"
+    },
+    {
+      "url": "https://github.com/Tencent/BrowserSkill",
+      "title": "Tencent/BrowserSkill"
+    },
+    {
+      "url": "https://x.com/Didotxyz_/status/2100300011175285207",
+      "title": "AI Agents Are Moving Beyond Chat"
+    },
+    {
+      "url": "https://openai.com/index/astra-for-law",
+      "title": "Introducing Astra for Law"
+    },
+    {
+      "url": "https://github.com/TencentCloud/Octop",
+      "title": "TencentCloud/Octop"
+    },
+    {
+      "url": "https://github.blog/changelog/2026-09-17-copilot-impact-dashboard-now-shows-feature-engagement",
+      "title": "Copilot impact dashboard now shows feature engagement"
+    },
+    {
+      "url": "https://github.com/coder/coder",
+      "title": "coder/coder"
+    },
+    {
+      "url": "https://github.blog/changelog/2026-09-17-agentic-cli-customizations-now-in-the-usage-metrics-api",
+      "title": "Agentic CLI customizations now in the usage metrics API"
+    },
+    {
+      "url": "https://tldr.tech/ai/2026-09-17",
+      "title": "Claude + Cowork merge 🛠️, ChatGPT sponsored agents 💰, harness tax 🤖"
+    },
+    {
+      "url": "https://www.producthunt.com/products/qagent-2",
+      "title": "QAgent"
+    },
+    {
+      "url": "https://www.producthunt.com/products/text-agent-store",
+      "title": "Text Agent Store"
+    },
+    {
+      "url": "https://openai.com/index/cooley-gopublic",
+      "title": "How Cooley is accelerating IPO work with ChatGPT"
+    },
+    {
+      "url": "https://www.latent.space/p/ainews-reality-checks-on-ai-news",
+      "title": "[AINews] Reality Checks on AI News (Yegge shuts down Gas Town, Databricks’ +60% Astra cost)"
+    },
+    {
+      "url": "https://openai.com/index/how-to-connect-ai-usage-to-business-value",
+      "title": "How to connect AI usage to business value"
+    },
+    {
+      "url": "https://openai.com/index/unlocking-new-ways-of-working",
+      "title": "How workers are unlocking new ways of working"
+    },
+    {
+      "url": "https://tldr.tech/ai/2026-09-16",
+      "title": "Jev ⚡, Periodic Neon 🧬, Gemini 3.8 Live 💬"
     }
   ]
 }
