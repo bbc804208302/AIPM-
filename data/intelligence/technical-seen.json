@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "track": "technical",
-  "updatedAt": "2026-09-18T01:00:56.573Z",
+  "updatedAt": "2026-09-19T00:57:26.020Z",
   "items": [
     {
       "url": "https://www.latent.space/p/ainews-zawinskis-law-of-multiagents",
@@ -2574,6 +2574,86 @@
     {
       "url": "https://tldr.tech/ai/2026-09-16",
       "title": "Jev ⚡, Periodic Neon 🧬, Gemini 3.8 Live 💬"
+    },
+    {
+      "url": "https://github.blog/changelog/2026-09-18-github-copilot-weekly-releases-september-14",
+      "title": "GitHub Copilot weekly releases — September 14"
+    },
+    {
+      "url": "https://github.com/Fission-AI/OpenSpec",
+      "title": "Fission-AI/OpenSpec"
+    },
+    {
+      "url": "https://x.com/sandylikesfrogs/status/2100631407676829995",
+      "title": "Make money, make no mistakes."
+    },
+    {
+      "url": "https://vercel.com/blog/ai-gateway-jev-model-launch",
+      "title": "Jev is the fastest-adopted model in AI Gateway history"
+    },
+    {
+      "url": "https://github.com/supermemoryai/supermemory",
+      "title": "supermemoryai/supermemory"
+    },
+    {
+      "url": "https://x.com/Sabrina_Ramonov/status/2100615977599955328",
+      "title": "GPT-6 Astra + DaVinci MCP (Beginner Tutorial)"
+    },
+    {
+      "url": "https://vercel.com/changelog/v0-now-reads-npm-credentials-from-shared-environment-variables",
+      "title": "v0 now reads npm credentials from shared environment variables"
+    },
+    {
+      "url": "https://github.com/tradesdontlie/tradingview-mcp",
+      "title": "tradesdontlie/tradingview-mcp"
+    },
+    {
+      "url": "https://vercel.com/changelog/gpt-live-1-now-available-on-ai-gateway",
+      "title": "GPT-Live 1 now available on AI Gateway"
+    },
+    {
+      "url": "https://github.com/rustfs/rustfs",
+      "title": "rustfs/rustfs"
+    },
+    {
+      "url": "https://github.blog/changelog/2026-09-18-copilot-code-review-an-improved-review-experience",
+      "title": "Copilot code review: An improved review experience"
+    },
+    {
+      "url": "https://github.blog/changelog/2026-09-18-upcoming-deprecation-of-selected-github-copilot-models-in-mid-october",
+      "title": "Upcoming deprecation of selected GitHub Copilot models in mid-October"
+    },
+    {
+      "url": "https://vercel.com/changelog/webmcp-mcp-handler",
+      "title": "WebMCP support now available in mcp-handler"
+    },
+    {
+      "url": "https://vercel.com/changelog/glm-5-3-flashx-now-available-on-ai-gateway",
+      "title": "GLM 5.3 FlashX now available on AI Gateway"
+    },
+    {
+      "url": "https://tldr.tech/ai/2026-09-18",
+      "title": "Claude Projects v2 💼, Google family agent 👨‍👩‍👧‍👦,"
+    },
+    {
+      "url": "https://www.producthunt.com/products/contextsbase",
+      "title": "ContextsBase - Backlog for Coding Agents"
+    },
+    {
+      "url": "https://openai.com/index/hex-gpt-6-astra",
+      "title": "Hex turns complex analysis into visual reports with GPT‑6 Astra"
+    },
+    {
+      "url": "https://www.producthunt.com/products/agent-interface",
+      "title": "Agent Interface"
+    },
+    {
+      "url": "https://x.com/mvanhorn/status/2100784142850097482",
+      "title": "WTF Is Jev? 9 Things People Are Already Building With It"
+    },
+    {
+      "url": "https://x.com/sydneyrunkle/status/2100754364545761643",
+      "title": "Building a Harness with Jev"
     }
   ]
 }
