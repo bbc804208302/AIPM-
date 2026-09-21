@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "track": "technical",
-  "updatedAt": "2026-09-20T00:38:37.354Z",
+  "updatedAt": "2026-09-21T00:49:48.234Z",
   "items": [
     {
       "url": "https://www.latent.space/p/ainews-zawinskis-law-of-multiagents",
@@ -2714,6 +2714,42 @@
     {
       "url": "https://x.com/akshay_pachaar/status/2101037514945597645",
       "title": "Jev Clearly Explained"
+    },
+    {
+      "url": "https://github.com/BuilderIO/agent-native",
+      "title": "BuilderIO/agent-native"
+    },
+    {
+      "url": "https://x.com/DhravyaShah/status/2101745550752428340",
+      "title": "I reverse-engineered Instinct's memory. Here's exactly how it works"
+    },
+    {
+      "url": "https://github.com/mihail911/modern-software-dev-assignments",
+      "title": "mihail911/modern-software-dev-assignments"
+    },
+    {
+      "url": "https://x.com/twostraws/status/2101317950787432483",
+      "title": "Codex vs Claude for app development"
+    },
+    {
+      "url": "https://github.com/vercel-labs/json-render",
+      "title": "vercel-labs/json-render"
+    },
+    {
+      "url": "https://x.com/trycua/status/2101437979180904640",
+      "title": "Jev, System One models, and the future of computer use"
+    },
+    {
+      "url": "https://x.com/LangChain/status/2101454284927959080",
+      "title": "Jev-as-a-Judge for Agent Evals"
+    },
+    {
+      "url": "https://x.com/_avichawla/status/2101563610644496464",
+      "title": "Build your own Jev (100% local)"
+    },
+    {
+      "url": "https://x.com/manish_fp/status/2101325394532266139",
+      "title": "Jev 101: what it is, and what you can build with it"
     }
   ]
 }
