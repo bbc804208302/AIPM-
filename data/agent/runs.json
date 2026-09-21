@@ -1,6 +1,6 @@
 {
   "schemaVersion": 2,
-  "updatedAt": "2026-09-20T01:31:35.154Z",
+  "updatedAt": "2026-09-21T01:29:29.569Z",
   "runs": [
     {
       "id": "RUN-fb229c72-2b6f-443f-9d7e-0658561b98a7",
@@ -2861,6 +2861,349 @@
     }
   ],
   "triageRuns": [
+    {
+      "id": "TRIAGE-ceb67b25-71dc-4d17-827c-c659c46c9037",
+      "agent": "product-opportunity-agent",
+      "mode": "daily-triage",
+      "version": 5,
+      "promptVersion": "daily-triage-v6-batched-full-coverage",
+      "strategyVersion": "opportunity-weighted-v1",
+      "briefingDate": "2026-09-21",
+      "objective": "扫描每日情报并完成 PM 机会评分与深度分析优先级排序",
+      "status": "completed",
+      "model": "deepseek-v4-flash",
+      "startedAt": "2026-09-21T01:28:58.249Z",
+      "completedAt": "2026-09-21T01:29:29.569Z",
+      "durationMs": 31320,
+      "scannedSignals": 11,
+      "candidates": [
+        {
+          "signalId": "SIG-20260921-CA2E5C3B",
+          "signalTitle": "Vercel Labs 开源 json-render：受组件约束的生成式 UI 框架",
+          "titleZh": "Vercel Labs 开源 json-render：受组件约束的生成式 UI 框架",
+          "summaryZh": "一个生成式 UI 框架，由 AI 根据自然语言提示生成界面，但输出被约束在开发者预定义的组件与动作内，AI 只负责生成 JSON、由框架安全渲染，在个性化与可靠性之间取平衡。",
+          "track": "technical",
+          "source": "GitHub Trending",
+          "heatScore": 71,
+          "dimensions": {
+            "relevance": 82,
+            "novelty": 74,
+            "userValue": 70,
+            "actionability": 76,
+            "evidence": 70
+          },
+          "duplicateRisk": 38,
+          "memoryMatchCount": 5,
+          "opportunityScore": 65,
+          "recommendation": "candidate",
+          "pmValueType": "design-pattern",
+          "rationale": "为想上生成式界面的产品团队提供现成的护栏式方案：白名单组件+AI 生成 JSON 的安全渲染路径，可直接对照评估自家产品做动态 UI 时的可控性与返工风险，避免让模型自由出码带来的不可控。"
+        },
+        {
+          "signalId": "SIG-20260921-745308B2",
+          "signalTitle": "BuilderIO 开源 agent-native：用统一 action 同时驱动 Agent 工具与专用 UI",
+          "titleZh": "BuilderIO 开源 agent-native：用统一 action 同时驱动 Agent 工具与专用 UI",
+          "summaryZh": "一个开源 TypeScript 框架，把每项能力一次性定义为 action，Agent 将其当作工具调用、前端 UI 也能直接调用同一 action，让自主执行的 agent 与为其量身定制的界面共享同一套能力定义。",
+          "track": "technical",
+          "source": "GitHub Trending",
+          "heatScore": 64,
+          "dimensions": {
+            "relevance": 78,
+            "novelty": 70,
+            "userValue": 66,
+            "actionability": 72,
+            "evidence": 68
+          },
+          "duplicateRisk": 35,
+          "memoryMatchCount": 5,
+          "opportunityScore": 62,
+          "recommendation": "candidate",
+          "pmValueType": "design-pattern",
+          "rationale": "给做 Agent 产品的 PM 一个可借鉴的架构范式：能力定义一次同时暴露给模型与界面，可用于评估自家 agent 产品的工具层与 UI 层是否该统一抽象，降低重复实现与行为不一致的成本。"
+        },
+        {
+          "signalId": "SIG-20260921-529F63A3",
+          "signalTitle": "逆向解析 iMessage 助手 Instinct 的记忆实现机制",
+          "titleZh": "逆向解析 iMessage 助手 Instinct 的记忆实现机制",
+          "summaryZh": "一位 agent 记忆方向的从业者逆向拆解近期走红的 iMessage 助手 Instinct 的记忆机制，说明其记忆如何分层与存取，并给出用 supermemory 复刻同等效果的具体做法。",
+          "track": "technical",
+          "source": "X / AttentionVC AI",
+          "heatScore": 74,
+          "dimensions": {
+            "relevance": 80,
+            "novelty": 72,
+            "userValue": 68,
+            "actionability": 65,
+            "evidence": 66
+          },
+          "duplicateRisk": 42,
+          "memoryMatchCount": 5,
+          "opportunityScore": 61,
+          "recommendation": "candidate",
+          "pmValueType": "competitor",
+          "rationale": "可直接观察一个已获用户验证的消息助手如何设计记忆层：哪些信息写入长期记忆、何时召回，为自家对话/助手产品的记忆方案提供竞品参照与实现路径取舍依据。"
+        },
+        {
+          "signalId": "SIG-20260921-2DC24253",
+          "signalTitle": "LangChain 探索用 Jev 充当 Agent 评估器（Jev-as-a-Judge）",
+          "titleZh": "LangChain 探索用 Jev 充当 Agent 评估器（Jev-as-a-Judge）",
+          "summaryZh": "LangChain 撰文提出 Jev 可成为第三类 agent 评估器：它不生成文本、而是直接返回带类型的答案，据 TypeSafe AI 数据在分类任务上比同类 LLM 快约 200 倍、成本低约 400 倍。",
+          "track": "technical",
+          "source": "X / AttentionVC AI",
+          "heatScore": 72,
+          "dimensions": {
+            "relevance": 76,
+            "novelty": 66,
+            "userValue": 68,
+            "actionability": 66,
+            "evidence": 68
+          },
+          "duplicateRisk": 64,
+          "memoryMatchCount": 5,
+          "opportunityScore": 54,
+          "recommendation": "candidate",
+          "pmValueType": "capability",
+          "rationale": "针对 agent 评测又慢又贵又不可靠的痛点，给出「决策型模型替代 LLM-as-judge 做受约束判断」的可行思路，可用于设计自家评测流水线里分类与打标环节的成本/速度方案。"
+        },
+        {
+          "signalId": "SIG-20260921-632FC78E",
+          "signalTitle": "Cua 用决策模型重建 computer-use agent 的判断层",
+          "titleZh": "Cua 用决策模型重建 computer-use agent 的判断层",
+          "summaryZh": "Cua 团队分享在 computer-use agent 中用决策型模型（System One／Jev）替代部分通用 LLM 调用的实践，探讨一次操作里哪些决策真正需要通用大模型、哪些可交给廉价高速的决策模型。",
+          "track": "technical",
+          "source": "X / AttentionVC AI",
+          "heatScore": 73,
+          "dimensions": {
+            "relevance": 78,
+            "novelty": 68,
+            "userValue": 66,
+            "actionability": 64,
+            "evidence": 66
+          },
+          "duplicateRisk": 64,
+          "memoryMatchCount": 5,
+          "opportunityScore": 53,
+          "recommendation": "candidate",
+          "pmValueType": "capability",
+          "rationale": "把 agent 的决策拆成「需要推理」与「只需选择」两类，并给出用小型决策模型承接后者的实践，对做浏览器/GUI agent 的产品在延迟与调用成本优化上有直接参考价值。"
+        },
+        {
+          "signalId": "SIG-20260921-CB998E2E",
+          "signalTitle": "不重训模型，用 next-token 打分把开源 LLM 改造成纯本地决策引擎",
+          "titleZh": "不重训模型，用 next-token 打分把开源 LLM 改造成纯本地决策引擎",
+          "summaryZh": "一份教程，讲如何在不重新训练的前提下把开源 LLM 变成快速本地决策引擎：用 next-token 打分在固定候选项上给出概率分布，结合 SGLang 部署，并与同模型的常规文本生成做基准对比。",
+          "track": "technical",
+          "source": "X / AttentionVC AI",
+          "heatScore": 73,
+          "dimensions": {
+            "relevance": 70,
+            "novelty": 62,
+            "userValue": 60,
+            "actionability": 68,
+            "evidence": 62
+          },
+          "duplicateRisk": 55,
+          "memoryMatchCount": 5,
+          "opportunityScore": 52,
+          "recommendation": "candidate",
+          "pmValueType": "capability",
+          "rationale": "给出把「让模型在固定选项里做选择」落地为本地低成本组件的具体做法，适合用来评估自家流程中的分类/路由环节是否可用本地小模型替代昂贵的大模型调用。"
+        },
+        {
+          "signalId": "SIG-20260921-21617E7D",
+          "signalTitle": "实践者对比 Codex 与 Claude 在应用开发中的表现",
+          "titleZh": "实践者对比 Codex 与 Claude 在应用开发中的表现",
+          "summaryZh": "一位同时使用 Codex 与 Claude 最高档订阅的开发者，分享两者在应用开发工作中的差异、各自适用场景与使用技巧。",
+          "track": "technical",
+          "source": "X / AttentionVC AI",
+          "heatScore": 73,
+          "dimensions": {
+            "relevance": 60,
+            "novelty": 44,
+            "userValue": 50,
+            "actionability": 52,
+            "evidence": 55
+          },
+          "duplicateRisk": 48,
+          "memoryMatchCount": 5,
+          "opportunityScore": 42,
+          "recommendation": "candidate",
+          "pmValueType": "competitor",
+          "rationale": "个人经验型对比，只能用于粗略感知两大编码 agent 的差异化体验，缺少可复现的评测数据，难以直接转化为自家产品在编码/agent 能力选型上的判断依据。"
+        },
+        {
+          "signalId": "SIG-20260921-0B151BFF",
+          "signalTitle": "Jev 101：面向分类决策的 System One 模型入门解读",
+          "titleZh": "Jev 101：面向分类决策的 System One 模型入门解读",
+          "summaryZh": "一篇入门解读，说明 Jev 不是聊天机器人而是类分类器模型，接收输入后以三种格式直接返回结果，宣称比现有模型快 40-100 倍、每十亿输入 token 仅 42 美元，适合低成本大规模构建 AI 产品。",
+          "track": "technical",
+          "source": "X / AttentionVC AI",
+          "heatScore": 72,
+          "dimensions": {
+            "relevance": 62,
+            "novelty": 48,
+            "userValue": 52,
+            "actionability": 48,
+            "evidence": 55
+          },
+          "duplicateRisk": 72,
+          "memoryMatchCount": 4,
+          "opportunityScore": 37,
+          "recommendation": "candidate",
+          "pmValueType": "capability",
+          "rationale": "属于关于 Jev 的二手科普与价格整理，未提供新的一手能力证据或落地案例，对已有 Jev 决策型模型认知的 PM 增量有限，仅适合做入门背景了解。"
+        },
+        {
+          "signalId": "SIG-20260921-5CEB50B8",
+          "signalTitle": "掌阅 iReader 在 36Kr 出海峰会分享 AI 短剧出海",
+          "titleZh": "掌阅 iReader 在 36Kr 出海峰会分享 AI 短剧出海",
+          "summaryZh": "掌阅 iReader 在 36Kr 2026 东方出海峰会上做主题演讲，介绍其 AI 短剧出海业务方向。",
+          "track": "domain",
+          "source": "Google News · Microdrama",
+          "heatScore": null,
+          "dimensions": {
+            "relevance": 45,
+            "novelty": 40,
+            "userValue": 40,
+            "actionability": 30,
+            "evidence": 30
+          },
+          "duplicateRisk": 35,
+          "memoryMatchCount": 5,
+          "opportunityScore": 30,
+          "recommendation": "candidate",
+          "pmValueType": "industry-context",
+          "rationale": "仅为峰会演讲与业务方向表态，没有可验证的产品能力或功能细节，只能作为短剧出海赛道的背景信号，不足以支撑产品决策。"
+        },
+        {
+          "signalId": "SIG-20260921-0F028E94",
+          "signalTitle": "斯坦福 CS146S《现代软件开发》课程作业仓库公开",
+          "titleZh": "斯坦福 CS146S《现代软件开发》课程作业仓库公开",
+          "summaryZh": "斯坦福 2025 秋季 CS146S（现代软件开发）课程的作业仓库，包含基于 Conda（Python 3.12）与 Poetry 的现代开发环境配置与练习项目。",
+          "track": "technical",
+          "source": "GitHub Trending",
+          "heatScore": 68,
+          "dimensions": {
+            "relevance": 30,
+            "novelty": 32,
+            "userValue": 25,
+            "actionability": 22,
+            "evidence": 55
+          },
+          "duplicateRisk": 35,
+          "memoryMatchCount": 5,
+          "opportunityScore": 25,
+          "recommendation": "candidate",
+          "pmValueType": "industry-context",
+          "rationale": "属于高校教学资源，只能用来侧面观察 AI 时代软件工程课程在教什么工具链，对具体产品决策几乎没有直接输入，不值得投入分析资源。"
+        },
+        {
+          "signalId": "SIG-20260921-FDA18E9C",
+          "signalTitle": "YouTube 上一条 AI 动画音乐视频（IDOT 足球联赛 / Dan Vasc / Holy Diver）",
+          "titleZh": "YouTube 上一条 AI 动画音乐视频（IDOT 足球联赛 / Dan Vasc / Holy Diver）",
+          "summaryZh": "这是一条来自 Google News AIGC 制作频道的 YouTube 视频条目，标题指向一段将足球联赛画面、Dan Vasc 演唱版《Holy Diver》与 AI 动画结合的短视频；除标题与通用聚合页描述外，来源摘要未提供任何制作工具、技术方案、数据或作者说明。",
+          "track": "domain",
+          "source": "Google News · AIGC Production",
+          "heatScore": null,
+          "dimensions": {
+            "relevance": 12,
+            "novelty": 8,
+            "userValue": 8,
+            "actionability": 5,
+            "evidence": 8
+          },
+          "duplicateRisk": 78,
+          "memoryMatchCount": 5,
+          "opportunityScore": 0,
+          "recommendation": "candidate",
+          "pmValueType": "industry-context",
+          "rationale": "该条目只有一个视频标题和通用聚合页描述，无法看出使用的模型、工作流或工具，也无创作方复盘，产品经理既无法从中提炼可复用的 AI 动画/视频生成方案，也无法判断竞品或能力变化；历史检索显示视频生成类公开资讯已多次因缺少用户问题、目标用户与可落地场景而被判为非需求，本次事实信息更稀薄，建议仅作噪声处理，不投入分析。"
+        }
+      ],
+      "recommendedSignalIds": [
+        "SIG-20260921-CA2E5C3B",
+        "SIG-20260921-745308B2",
+        "SIG-20260921-529F63A3",
+        "SIG-20260921-2DC24253",
+        "SIG-20260921-632FC78E",
+        "SIG-20260921-CB998E2E",
+        "SIG-20260921-21617E7D",
+        "SIG-20260921-0B151BFF",
+        "SIG-20260921-5CEB50B8",
+        "SIG-20260921-0F028E94",
+        "SIG-20260921-FDA18E9C"
+      ],
+      "reviewSignalIds": [],
+      "autoAnalyzedSignalIds": [],
+      "decisionSummary": "Agent 已分 2 批完成 11 条情报的 PM 机会评分，并按分数排序；其中 0 条高机会情报进入自动深度分析候选。",
+      "toolCalls": [
+        {
+          "id": "batch-1:call_00_ET_h5TAr7XvpFfQmA3Dw1zx8296",
+          "name": "list_daily_signals",
+          "status": "success",
+          "inputSummary": "批次 1/2 · 读取最新双轨情报",
+          "outputSummary": "已读取 10 条最新情报",
+          "durationMs": 1
+        },
+        {
+          "id": "batch-1:call_00_2l2xuQoB1hETnpQWanWm1688",
+          "name": "search_memory",
+          "status": "success",
+          "inputSummary": "批次 1/2 · 检索 10 条情报的历史决策",
+          "outputSummary": "完成 10 条候选的历史去重检索",
+          "durationMs": 137
+        },
+        {
+          "id": "batch-1:call_00_tiVSXAbqw3L7iDgj01Hb5493",
+          "name": "score_candidates",
+          "status": "success",
+          "inputSummary": "批次 1/2 · 评估 10 条候选",
+          "outputSummary": "完成 10 条机会评分",
+          "durationMs": 0
+        },
+        {
+          "id": "batch-1:call_00_7PTyTGibKwNLISWMuTOI0527",
+          "name": "select_intelligence_for_pool",
+          "status": "success",
+          "inputSummary": "批次 1/2 · 确认今日情报机会评分结果",
+          "outputSummary": "完成 10 条产品情报评分",
+          "durationMs": 1
+        },
+        {
+          "id": "batch-2:call_00_rSFFwYcpez5UeZzZj5ol7933",
+          "name": "list_daily_signals",
+          "status": "success",
+          "inputSummary": "批次 2/2 · 读取最新双轨情报",
+          "outputSummary": "已读取 1 条最新情报",
+          "durationMs": 0
+        },
+        {
+          "id": "batch-2:call_00_2ofCVM6BEK1VLxf3prWB1316",
+          "name": "search_memory",
+          "status": "success",
+          "inputSummary": "批次 2/2 · 检索 1 条情报的历史决策",
+          "outputSummary": "完成 1 条候选的历史去重检索",
+          "durationMs": 13
+        },
+        {
+          "id": "batch-2:call_00_yFACvoGZWaQ95u3LuJqS4166",
+          "name": "score_candidates",
+          "status": "success",
+          "inputSummary": "批次 2/2 · 评估 1 条候选",
+          "outputSummary": "完成 1 条机会评分",
+          "durationMs": 0
+        },
+        {
+          "id": "batch-2:call_00_ET_quOqF6fFgPM0CBu85X7X7525",
+          "name": "select_intelligence_for_pool",
+          "status": "success",
+          "inputSummary": "批次 2/2 · 确认今日情报机会评分结果",
+          "outputSummary": "完成 1 条产品情报评分",
+          "durationMs": 0
+        }
+      ],
+      "error": null
+    },
     {
       "id": "TRIAGE-8832237f-1863-40e4-be74-d644420afd0d",
       "agent": "product-opportunity-agent",
