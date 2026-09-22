@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "track": "domain",
-  "updatedAt": "2026-09-21T01:07:03.608Z",
+  "updatedAt": "2026-09-22T01:37:06.738Z",
   "items": [
     {
       "url": "https://www.creativebloq.com/3d/autodesk-tackles-ai-filmmakings-biggest-problem-with-3d-control",
@@ -2814,6 +2814,86 @@
     {
       "url": "https://news.google.com/rss/articles/CBMiXEFVX3lxTFB0TTc1N1RSWnRQUmxBUm9VRGFvQlBUOV92ZHV6dmg4c1llZV94MzdUTXNEaTFSeHVVUVZCMFByb1RXbjREaEpKU0RRUlZFNTVUY1V0YlI5UjNmT1hj?oc=5",
       "title": "IDOT FOOTBALL LEAGUE I DAN VASC I HOLY DIVER I AI ANIMATION #geeksandgamers #danvasc #TR33B3AR - YouTube"
+    },
+    {
+      "url": "https://arxiv.org/abs/2609.21424",
+      "title": "P$^3$-SAM: SAM with Perceptual Parallel Prompt for Few-Shot Strip Steel Surface Defect Segmentation"
+    },
+    {
+      "url": "https://arxiv.org/abs/2609.21455",
+      "title": "CompAdapt: Adaptable Composite Motion Modeling for Physics-Consistent Text-to-Video Generation"
+    },
+    {
+      "url": "https://arxiv.org/abs/2609.21516",
+      "title": "2D GauSS-MI: Efficient Active Scene Reconstruction with Balanced Visual and Geometric Quality"
+    },
+    {
+      "url": "https://arxiv.org/abs/2609.21754",
+      "title": "SFVO: Decoupled Confidence-Guided Stereo-Flow Visual Odometry with Bidirectional PnP"
+    },
+    {
+      "url": "https://arxiv.org/abs/2609.22069",
+      "title": "OmniVBench: A Benchmark and Large-Scale Dataset for Omni Reference-to-Video Generation"
+    },
+    {
+      "url": "https://arxiv.org/abs/2609.21468",
+      "title": "SkillIR: Evolving Scene-Aware Skills for Agentic Image Restoration"
+    },
+    {
+      "url": "https://arxiv.org/abs/2609.21541",
+      "title": "Purification and Regulation: Comorbidity-Aware Multi-Label Few-Shot Learning for Medical Image Classification"
+    },
+    {
+      "url": "https://arxiv.org/abs/2609.21392",
+      "title": "Omni Demand Understanding: A Benchmark for Contextual User-Intent Inference in Multimodal Interaction"
+    },
+    {
+      "url": "https://arxiv.org/abs/2609.21595",
+      "title": "Evaluating In-Context Learning and Retrieval Strategies for Devanagari Post-OCR Correction"
+    },
+    {
+      "url": "https://nofilmschool.com/fall-movies",
+      "title": "5 Movies to Put You in a Fall Mood"
+    },
+    {
+      "url": "https://nofilmschool.com/blazar-remus-ii-50mm-t2-4-full-frame-1-5x-anamorphic-lens",
+      "title": "Capture a Classic Widescreen Look With This New Blazar Lens Remus II 1.5x Anamorphic"
+    },
+    {
+      "url": "https://news.google.com/rss/articles/CBMitAFBVV95cUxOMFNtNVJ2QkRQeFMtQlFzOWlEV1lWT1FNT1ZSNHppdjJiUXpuaUdlSHJHYW9VOG83eWhyRjdWbEc2eFNuTkhXaml2X1ZmR2NndGJ2NDNaOUV3Q1dJRDZzNGRCdWpIaWhHUVlaSkVpMTFXcDZ2Um1NdnZuVkU1TjNHMHEweGFYMGVtbWtQSC1kbTVxNXNFM3FZUF9VM0w1TDFOcGtQR2prdC14UmJwNDNZMGhrU0o?oc=5",
+      "title": "HEYRUBY.TV LETS MICRODRAMA CREATORS LAUNCH WITH JUST 6 EPISODES — - The National Law Review"
+    },
+    {
+      "url": "https://arxiv.org/abs/2609.21246",
+      "title": "VLA-Scope: Shift-Aware Failure Prediction for Vision-Language-Action Models"
+    },
+    {
+      "url": "https://nofilmschool.com/directors-are-the-new-ip",
+      "title": "Film Directors Are the New IP"
+    },
+    {
+      "url": "https://nofilmschool.com/ridiculous-action-movie-villains-ever",
+      "title": "The 5 Most Ridiculous Action Movie Villains Ever"
+    },
+    {
+      "url": "https://www.cartoonbrew.com/festivals/blon-festival-director-interview-lithuanian-animation-266897.html",
+      "title": "BLON Festival Director Discusses the State of Lithuanian Animation and the Festival’s Future (EXCLUSIVE)"
+    },
+    {
+      "url": "https://nofilmschool.com/dog-day-afternoon-wyoming-quote",
+      "title": "Film Quote of the Day: The 'Dog Day Afternoon' Line That Was Funny on Screen But Tragic in Reality"
+    },
+    {
+      "url": "https://nofilmschool.com/ron-mita-screenplay-film-student",
+      "title": "How to Sell a Screenplay While You're Still in Film School"
+    },
+    {
+      "url": "https://nofilmschool.com/smallrig-t221-triple-proof-ip54-waterproof-v-mount-battery",
+      "title": "A New Solution is Here for Meeting the Power Demands of Long-Duration Video Capture"
+    },
+    {
+      "url": "https://www.cartoonbrew.com/festivals/ottawa-international-animation-festival-50-anniversary-overview-266863.html",
+      "title": "OIAF Celebrates 50 Years With Brad Bird ‘Ray Gunn’ Talk, ‘Forgotten Island’ Screening, And Canadian Animation Showcase"
     }
   ]
 }
