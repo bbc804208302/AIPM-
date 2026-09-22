@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "track": "technical",
-  "updatedAt": "2026-09-21T00:49:48.234Z",
+  "updatedAt": "2026-09-22T01:26:00.635Z",
   "items": [
     {
       "url": "https://www.latent.space/p/ainews-zawinskis-law-of-multiagents",
@@ -2750,6 +2750,86 @@
     {
       "url": "https://x.com/manish_fp/status/2101325394532266139",
       "title": "Jev 101: what it is, and what you can build with it"
+    },
+    {
+      "url": "https://openai.com/index/expanding-openai-academy-with-new-learning-paths",
+      "title": "Expanding OpenAI Academy with new learning paths"
+    },
+    {
+      "url": "https://github.com/zhouxiaoka/autoclip",
+      "title": "zhouxiaoka/autoclip"
+    },
+    {
+      "url": "https://x.com/obie/status/2101779116056088732",
+      "title": "You're Already a Meat Proxy"
+    },
+    {
+      "url": "https://vercel.com/changelog/ai-gateway-now-supports-typesafe-clients-and-http-api-for-jev",
+      "title": "AI Gateway now supports TypeSafe clients and an HTTP API for Jev"
+    },
+    {
+      "url": "https://x.com/omarsar0/status/2101774405521301681",
+      "title": "A Beginner's Guide to Jev"
+    },
+    {
+      "url": "https://www.latent.space/p/jev",
+      "title": "Jev: System One models for Prod, not God — with Diogo Almeida, CEO, TypeSafe AI"
+    },
+    {
+      "url": "https://github.blog/changelog/2026-09-21-grok-4-7-is-now-available-in-github-copilot",
+      "title": "Grok 4.7 is now available in GitHub Copilot"
+    },
+    {
+      "url": "https://openai.com/index/higgsfield-from-prompt-to-production-with-astra",
+      "title": "Higgsfield AI ships new video features in a day with GPT-6 Astra"
+    },
+    {
+      "url": "https://www.technologyreview.com/2026/09/21/1144161/border-towers-surveillance-methodology",
+      "title": "How we made the first comprehensive map of deaths along the US border’s “virtual wall”"
+    },
+    {
+      "url": "https://openai.com/index/v7",
+      "title": "How V7 gives AI agents institutional memory"
+    },
+    {
+      "url": "https://vercel.com/changelog/grok-4-7-now-available-and-40-off-on-ai-gateway-fx-eve",
+      "title": "Grok 4.7 now available and 40% off on AI Gateway, fx, and eve"
+    },
+    {
+      "url": "https://huggingface.co/blog/MultiverseComputingCAI/pruning-llms-like-a-physicist-block-removal-as-an",
+      "title": "Pruning LLMs Like a Physicist: Block Removal as an Ising Optimization Problem"
+    },
+    {
+      "url": "https://openai.com/index/advisory-group-on-mathematics-and-ai",
+      "title": "Advisory Group on Mathematics and Artificial Intelligence"
+    },
+    {
+      "url": "https://www.technologyreview.com/2026/09/21/1144164/border-towers-surveillance-policy-recommendations",
+      "title": "4 ways to address the failures we found along the US border’s “virtual wall”"
+    },
+    {
+      "url": "https://www.technologyreview.com/2026/09/21/1144166/border-towers-surveillance-investigation",
+      "title": "The US spent billions on border surveillance. Why can’t it catch people before they die?"
+    },
+    {
+      "url": "https://www.technologyreview.com/2026/09/21/1144170/border-towers-surveillance-feature",
+      "title": "She died at the San Diego border. A surveillance camera was in plain sight"
+    },
+    {
+      "url": "https://openai.com/index/building-standards-next-phase-ai",
+      "title": "Building standards for the next phase of AI"
+    },
+    {
+      "url": "https://huggingface.co/blog/tokenizers-v1",
+      "title": "tokenizers v1: encode, decode and scaling, measured"
+    },
+    {
+      "url": "https://tldr.tech/ai/2026-09-21",
+      "title": "Muse connectors 🤖, Meta SAM 3.1 🖼️, Gemini hacks companies 🔓"
+    },
+    {
+      "url": "https://x.com/murmur_arc/status/2101661966075072969",
+      "title": "A Swarm of Fruit Flies, Building a Civilization On-Chain"
     }
   ]
 }
