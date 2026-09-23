@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "track": "domain",
-  "updatedAt": "2026-09-22T01:37:06.738Z",
+  "updatedAt": "2026-09-23T01:30:53.146Z",
   "items": [
     {
       "url": "https://www.creativebloq.com/3d/autodesk-tackles-ai-filmmakings-biggest-problem-with-3d-control",
@@ -2894,6 +2894,86 @@
     {
       "url": "https://www.cartoonbrew.com/festivals/ottawa-international-animation-festival-50-anniversary-overview-266863.html",
       "title": "OIAF Celebrates 50 Years With Brad Bird ‘Ray Gunn’ Talk, ‘Forgotten Island’ Screening, And Canadian Animation Showcase"
+    },
+    {
+      "url": "https://arxiv.org/abs/2609.22947",
+      "title": "RewardVerse: Rubric-Guided Policy Optimization for Video Reward Modeling"
+    },
+    {
+      "url": "https://arxiv.org/abs/2609.23427",
+      "title": "RSPDBench: Benchmarking Vision Foundation Models on Earth Observation Tasks Under Physically Grounded Remote-Sensing Product Degradations"
+    },
+    {
+      "url": "https://arxiv.org/abs/2609.23658",
+      "title": "Why Do Video Diffusion Models Violate Physics? Unveiling the Flaws in Attention Mechanisms"
+    },
+    {
+      "url": "https://arxiv.org/abs/2609.24088",
+      "title": "Bridging Reconstruction and Generation: A Latent Distribution Perspective on Evaluation and Improvement"
+    },
+    {
+      "url": "https://arxiv.org/abs/2609.24223",
+      "title": "DiaSeg: Diagonal Segment Extraction from DTW Paths for Interpretable Gait Analysis"
+    },
+    {
+      "url": "https://nofilmschool.com/insta360-luna-ultra-firmware-update",
+      "title": "Insta360 Luna Ultra Gets a Major Boost With 15x Zoom, 4K Vertical Video, and New Stage Mode"
+    },
+    {
+      "url": "https://arxiv.org/abs/2609.22267",
+      "title": "Did You Steal My Shot? Pioneering Camera Motion Plagiarism Detection in Generative Videos"
+    },
+    {
+      "url": "https://arxiv.org/abs/2609.22315",
+      "title": "Yarn tracking of large-scale 3D textile reinforcements using topological material features"
+    },
+    {
+      "url": "https://arxiv.org/abs/2609.23586",
+      "title": "An Efficient and Effective Watermarking Scheme for the Protection of the Intellectual Property Rights of Video Generative Models"
+    },
+    {
+      "url": "https://arxiv.org/abs/2609.24158",
+      "title": "Relightable 3D Avatar Reconstruction with Semantic-Adaptive Motion-Illumination Responses"
+    },
+    {
+      "url": "https://nofilmschool.com/viltrox-af-14mm-f-4-air-l-lens",
+      "title": "This Popular Viltrox Ultra Wide Prime Finally Gets Expansion to L-Mount Full-Frame Camera Systems"
+    },
+    {
+      "url": "https://nofilmschool.com/tom-cruise-absolutely-annhilates-ai-filmmaking",
+      "title": "Tom Cruise Absolutely Annhilates AI Filmmaking"
+    },
+    {
+      "url": "https://nofilmschool.com/dont-force-your-next-big-movie-idea",
+      "title": "Why You Shouldn’t Force Your Next Big Movie Idea (And What to Do Instead)"
+    },
+    {
+      "url": "https://nofilmschool.com/spielberg-raiders-blocking-soderbergh",
+      "title": "How Spielberg Blocks a Scene: 3 'Raiders' Lessons"
+    },
+    {
+      "url": "https://nofilmschool.com/once-upon-time-west-whittling",
+      "title": "Film Quote of the Day: One Line From 1968's 'Once Upon a Time in the West' Built the Tension Perfectly"
+    },
+    {
+      "url": "https://news.google.com/rss/articles/CBMiakFVX3lxTFBJMHlSdXJXa2Zsckxha0E0ZVNuUXZ3VzZTUGFFRk9qM3JuYXBMelhncUlYZ3dzR2pHMjMyWnBQd2dOMFJnMlBrMmh1QVA2cm1fMWVlVjhSQnR6VEotdHROVnR3VDVoWTkwQXc?oc=5",
+      "title": "Linoleum 2026 unveils 250 films and a new AI animation competition in Kyiv - Межа. Новини України."
+    },
+    {
+      "url": "https://news.google.com/rss/articles/CBMiZEFVX3lxTE5MRUc2SnNKWURWRkVBV0JKdmVWcXctMVhCcTR5NHhBXzdDeXVVTXV4ZFFORWxhQ0pHOEZxVDJvSER4Um5TTmVic1YtVUlGbzVmdHhEOWltVXYzdUlxZ2Q5dVlPSGw?oc=5",
+      "title": "AI-Created Indian Musical Microdrama ‘Mohini – Khud Se Pyaar’ Unveils Debut Track ‘Angaat Aalay Ka’ (Exclusive) - IMDb"
+    },
+    {
+      "url": "https://nofilmschool.com/how-to-talk-about-primetime-2026",
+      "title": "A24’s ‘Primetime’ Crash Course: Your Toolkit for a Well-Informed Conversation"
+    },
+    {
+      "url": "https://nofilmschool.com/the-sixth-sense-afi-100-movies-list",
+      "title": "1999 Smash Hit Horror Movie Earns a Spot Among the Greatest Films in History"
+    },
+    {
+      "url": "https://arxiv.org/abs/2609.22706",
+      "title": "DOA-SORT: Directional Occlusion-Aware Multi-Object Tracking with Distributional Observations"
     }
   ]
 }
