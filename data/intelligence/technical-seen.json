@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "track": "technical",
-  "updatedAt": "2026-09-22T01:26:00.635Z",
+  "updatedAt": "2026-09-23T01:14:47.385Z",
   "items": [
     {
       "url": "https://www.latent.space/p/ainews-zawinskis-law-of-multiagents",
@@ -2830,6 +2830,86 @@
     {
       "url": "https://x.com/murmur_arc/status/2101661966075072969",
       "title": "A Swarm of Fruit Flies, Building a Civilization On-Chain"
+    },
+    {
+      "url": "https://openai.com/index/introducing-gpt-6-sol-and-luna",
+      "title": "Introducing GPT-6 Sol and Luna"
+    },
+    {
+      "url": "https://github.com/dream-num/univer",
+      "title": "dream-num/univer"
+    },
+    {
+      "url": "https://x.com/BlockchainDan/status/2101905589731258729",
+      "title": "Salvor v1.0.0-beta: I got tired of my projects forgetting what they learned, so I taught the repo to"
+    },
+    {
+      "url": "https://vercel.com/changelog/mimo-v2-6-models-now-available-on-ai-gateway",
+      "title": "MiMo V2.6 models now available on AI Gateway"
+    },
+    {
+      "url": "https://github.com/google/ax",
+      "title": "google/ax"
+    },
+    {
+      "url": "https://x.com/dsqjaffa/status/2102054148925526206",
+      "title": "Jev is INSANE for Marketing"
+    },
+    {
+      "url": "https://github.blog/changelog/2026-09-22-new-features-and-improvements-in-copilot-for-jetbrains",
+      "title": "New features and improvements in Copilot for JetBrains"
+    },
+    {
+      "url": "https://github.com/superdesigndev/treg",
+      "title": "superdesigndev/treg"
+    },
+    {
+      "url": "https://github.blog/changelog/2026-09-22-claude-opus-5-5-is-now-available-in-github-copilot",
+      "title": "Claude Opus 5.5 is now available in GitHub Copilot"
+    },
+    {
+      "url": "https://www.technologyreview.com/2026/09/22/1144890/roundtables-the-deadly-failures-of-the-virtual-border-wall",
+      "title": "Roundtables: The Deadly Failures of The Virtual Border Wall"
+    },
+    {
+      "url": "https://openai.com/index/parallel-cuts-time-and-cost-with-astra",
+      "title": "Parallel cut research time and cost in half with GPT‑6 Astra"
+    },
+    {
+      "url": "https://www.technologyreview.com/2026/09/22/1144867/dont-be-fooled-summer-ai-hype",
+      "title": "Don’t be fooled by this summer of AI hype"
+    },
+    {
+      "url": "https://www.latent.space/p/ainews-xiaomi-mimo-v26-pro-1t-a42b",
+      "title": "[AINews] Xiaomi MiMo-V2.6-Pro 1T-A42B: the new top Open Weights model, trained for $3M"
+    },
+    {
+      "url": "https://openai.com/index/priorities-principles-third-party-assessments",
+      "title": "Priorities and principles for effective third party assessments"
+    },
+    {
+      "url": "https://vercel.com/changelog/gpt-6-sol-and-luna-now-available-on-ai-gateway",
+      "title": "GPT-6 Sol and Luna now available on AI Gateway"
+    },
+    {
+      "url": "https://vercel.com/changelog/claude-opus-5-5-now-available-on-ai-gateway",
+      "title": "Claude Opus 5.5 now available on AI Gateway"
+    },
+    {
+      "url": "https://www.producthunt.com/products/planehq",
+      "title": "Plane Agents"
+    },
+    {
+      "url": "https://x.com/fdellaert/status/2101828698756325825",
+      "title": "Jev + graphical models: a paradigm shift?"
+    },
+    {
+      "url": "https://x.com/matthewcanham/status/2102077098756280413",
+      "title": "Jev Explained for Normies"
+    },
+    {
+      "url": "https://x.com/akshay_pachaar/status/2102087107410002345",
+      "title": "Build a Jev Judge"
     }
   ]
 }
