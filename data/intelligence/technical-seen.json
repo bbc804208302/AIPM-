@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "track": "technical",
-  "updatedAt": "2026-09-23T01:14:47.385Z",
+  "updatedAt": "2026-09-24T01:04:01.941Z",
   "items": [
     {
       "url": "https://www.latent.space/p/ainews-zawinskis-law-of-multiagents",
@@ -2910,6 +2910,86 @@
     {
       "url": "https://x.com/akshay_pachaar/status/2102087107410002345",
       "title": "Build a Jev Judge"
+    },
+    {
+      "url": "https://github.blog/changelog/2026-09-22-opentelemetry-in-the-github-copilot-app",
+      "title": "OpenTelemetry in the GitHub Copilot app"
+    },
+    {
+      "url": "https://github.com/strands-agents/harness-sdk",
+      "title": "strands-agents/harness-sdk"
+    },
+    {
+      "url": "https://x.com/EXM7777/status/2102758425386172842",
+      "title": "How to automate SEO with Opus 5.5 (Full Course)"
+    },
+    {
+      "url": "https://openai.com/index/grab-openai-ai-skills-southeast-asia",
+      "title": "Grab and OpenAI bring practical AI skills to Southeast Asia"
+    },
+    {
+      "url": "https://github.com/pbakaus/impeccable",
+      "title": "pbakaus/impeccable"
+    },
+    {
+      "url": "https://x.com/BradGroux/status/2102455199583334625",
+      "title": "I Think I’ve Been Using GPT-6 Astra Wrong"
+    },
+    {
+      "url": "https://openai.com/index/introducing-mentalhealthbench",
+      "title": "Introducing MentalHealthBench"
+    },
+    {
+      "url": "https://github.com/DeusData/codebase-memory-mcp",
+      "title": "DeusData/codebase-memory-mcp"
+    },
+    {
+      "url": "https://github.blog/changelog/2026-09-23-copilot-code-review-more-ways-to-request-and-configure-reviews",
+      "title": "More ways to request and configure Copilot code reviews"
+    },
+    {
+      "url": "https://github.com/harry7557558/spirula-studio",
+      "title": "harry7557558/spirula-studio"
+    },
+    {
+      "url": "https://github.com/TNT-Likely/PanWatch",
+      "title": "TNT-Likely/PanWatch"
+    },
+    {
+      "url": "https://huggingface.co/blog/nvidia/how-to-use-nvidia-warp-and-mjwarp",
+      "title": "How to Use NVIDIA Warp and MjWarp to Accelerate Robotics Simulation and Learning Workflows"
+    },
+    {
+      "url": "https://deepmind.google/blog/advancing-private-ai-compute-with-secure-server-side-memory",
+      "title": "Advancing Private AI Compute with secure, server-side memory"
+    },
+    {
+      "url": "https://openai.com/index/two-years-of-openai-academy",
+      "title": "Two years of OpenAI Academy"
+    },
+    {
+      "url": "https://github.blog/changelog/2026-09-23-local-sandboxing-in-the-github-copilot-app",
+      "title": "Local sandboxing in the GitHub Copilot app"
+    },
+    {
+      "url": "https://openai.com/index/ringg",
+      "title": "Ringg’s AI agents resolve up to 65% of customer calls with OpenAI"
+    },
+    {
+      "url": "https://www.technologyreview.com/2026/09/23/1144940/ai-hype-index-ai-loves-cheating",
+      "title": "The AI Hype Index: AI loves cheating"
+    },
+    {
+      "url": "https://www.latent.space/p/ainews-claude-opus-55-the-new-default",
+      "title": "[AINews] Claude Opus 5.5, the new default model for AINews — and everybody cuts prices 40-50%"
+    },
+    {
+      "url": "https://openai.com/index/airbnb-gpt-6-astra",
+      "title": "Airbnb widens access to GPT-6 Astra and OpenAI frontier models"
+    },
+    {
+      "url": "https://vercel.com/changelog/gemini-3-8-text-to-speech-models-now-available-on-ai-gateway",
+      "title": "Gemini 3.8 text-to-speech models now available on AI Gateway"
     }
   ]
 }
