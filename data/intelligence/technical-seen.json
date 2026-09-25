@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "track": "technical",
-  "updatedAt": "2026-09-24T01:04:01.941Z",
+  "updatedAt": "2026-09-25T01:08:18.692Z",
   "items": [
     {
       "url": "https://www.latent.space/p/ainews-zawinskis-law-of-multiagents",
@@ -2990,6 +2990,86 @@
     {
       "url": "https://vercel.com/changelog/gemini-3-8-text-to-speech-models-now-available-on-ai-gateway",
       "title": "Gemini 3.8 text-to-speech models now available on AI Gateway"
+    },
+    {
+      "url": "https://deepmind.google/blog/introducing-gemini-38-live-with-live-avatar",
+      "title": "Introducing Gemini 3.8 Live with Live Avatar"
+    },
+    {
+      "url": "https://github.com/vectorize-io/hindsight",
+      "title": "vectorize-io/hindsight"
+    },
+    {
+      "url": "https://x.com/sairahul1/status/2102694818485096803",
+      "title": "How To Code Almost Forever for $20/Month With Codex + GPT-6 Luna"
+    },
+    {
+      "url": "https://www.latent.space/p/foundries-vs-navigators-lowering",
+      "title": "Foundries vs Navigators: Lowering the Cost of Science"
+    },
+    {
+      "url": "https://github.com/NVIDIA/Model-Optimizer",
+      "title": "NVIDIA/Model-Optimizer"
+    },
+    {
+      "url": "https://x.com/joechalom/status/2102729939543863754",
+      "title": "The $4 Trillion Revolution: How AI Agents Will Rewire Finance and Spark an Economic Big Bang"
+    },
+    {
+      "url": "https://www.producthunt.com/products/intellagents-io",
+      "title": "IntellAgents.io"
+    },
+    {
+      "url": "https://github.com/leejet/stable-diffusion.cpp",
+      "title": "leejet/stable-diffusion.cpp"
+    },
+    {
+      "url": "https://www.latent.space/p/ainews-meta-connect-2026-muse-glasses",
+      "title": "[AINews] Meta Connect 2026: Muse glasses, voice, video, and Charm"
+    },
+    {
+      "url": "https://x.com/GoogleAIStudio/status/2102795277593653552",
+      "title": "Gemini 3.8 text-to-speech says hello"
+    },
+    {
+      "url": "https://x.com/nutlope/status/2102881280115249597",
+      "title": "How to train your own Jev for $17"
+    },
+    {
+      "url": "https://x.com/omarsar0/status/2102762406204076532",
+      "title": "Building a Custom Harness with Pi and Jev"
+    },
+    {
+      "url": "https://tldr.tech/ai/2026-09-24",
+      "title": "Gemini TTS 🗣️, Claude’s novel enzyme 🧬, Google private memory 🔒"
+    },
+    {
+      "url": "https://deepmind.google/blog/say-hello-to-gemini-38-text-to-speech",
+      "title": "Gemini 3.8 text-to-speech says hello"
+    },
+    {
+      "url": "https://www.latent.space/p/bio-security-is-an-ai-arms-race-eric",
+      "title": "🔬Bio-security is an AI Arms Race - Eric Nguyen (CEO, Radical Numerics)"
+    },
+    {
+      "url": "https://openai.com/index/openai-extends-cyber-access-to-ukraine-for-civilian-defense",
+      "title": "OpenAI extends cyber access to Ukraine for civilian defense"
+    },
+    {
+      "url": "https://openai.com/index/sam-altman-un-security-council-remarks",
+      "title": "Sam Altman’s remarks at the United Nations Security Council"
+    },
+    {
+      "url": "https://openai.com/index/harvey-from-context-to-confidence-with-astra",
+      "title": "Harvey turns legal context into stronger drafts with GPT-6 Astra"
+    },
+    {
+      "url": "https://openai.com/index/invideo-builds-with-gpt-6-astra",
+      "title": "How invideo improves color grading 3x with GPT‑6 Astra"
+    },
+    {
+      "url": "https://openai.com/index/chatgpt-ads-expands-southeast-asia-taiwan",
+      "title": "ChatGPT Ads expands to Southeast Asia and Taiwan"
     }
   ]
 }
