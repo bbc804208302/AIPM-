@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "track": "domain",
-  "updatedAt": "2026-09-25T01:31:50.428Z",
+  "updatedAt": "2026-09-26T01:35:23.299Z",
   "items": [
     {
       "url": "https://www.creativebloq.com/3d/autodesk-tackles-ai-filmmakings-biggest-problem-with-3d-control",
@@ -3134,6 +3134,86 @@
     {
       "url": "https://news.google.com/rss/articles/CBMi7AFBVV95cUxOcTBtcGdBMkh3eGx6bXpNZ3N1bUpseG5UMWE3ZmhUV1dRQzczU1pfeElLY1FJMGhoSFBoaWxlVVdWSlVhR0RadVpUX3dRcDJrRU1BLVNLLWF1d3hsaW15RlhaLTRYRnRSVlhidjdfMTBXQTg1bVIzcUY3TmhsaXVSMnB0cEllSmo4ZEdLYWMwV1VwSHpGN2FqeUl6UWd4cVAwcjd0SG9LVEh4NmNocS02QWlzY3VraWk5VlJJeVlhZk52UnBTcFNqSEZ4d0ZIWEFmUWJVblNHV0g1bFkxZy11LWpmNXdiWGhOTklQTQ?oc=5",
       "title": "Even Realities Launches ‘Exposed,’ Teasing Cinematic Microdrama Exploring Privacy and Consent in the Era of Camera-Enabled Smart Glasses - Roastbrief US"
+    },
+    {
+      "url": "https://arxiv.org/abs/2609.28930",
+      "title": "PlenoCI: Plenoptic CharacterIstics for View Dependence Aware Change Classification"
+    },
+    {
+      "url": "https://arxiv.org/abs/2609.29125",
+      "title": "FoCal: Frequency-Oriented Cross-Modal Interaction and Spectral Calibration for Aerial Visible-Infrared Object Detection"
+    },
+    {
+      "url": "https://arxiv.org/abs/2609.29292",
+      "title": "PHOSA: Photorealistic 3D Sign Avatar Modeling and Benchmark"
+    },
+    {
+      "url": "https://arxiv.org/abs/2608.21229",
+      "title": "Beyond Attention Masks: Instruction Anchoring for Efficient In-Context Diffusion Generation"
+    },
+    {
+      "url": "https://arxiv.org/abs/2609.28654",
+      "title": "Training Object Permanence in World Models"
+    },
+    {
+      "url": "https://arxiv.org/abs/2609.28923",
+      "title": "ViRDM: Taming Representation Distribution Matching for Few-Step Causal Video Generation"
+    },
+    {
+      "url": "https://arxiv.org/abs/2609.29604",
+      "title": "PROVE: Proof-guided Regime-aware Operator Verification for Hallucination Detection in Medical Visual Question Answering"
+    },
+    {
+      "url": "https://arxiv.org/abs/2609.29816",
+      "title": "AV-GRPO: Modality-Anchored Decoupling Diffusion Reinforcement Learning for Joint Audio-Video Generation"
+    },
+    {
+      "url": "https://arxiv.org/abs/2609.30221",
+      "title": "WanPE: Towards Cinematic Prompt Enhancement for Modern Text-to-Video Generation"
+    },
+    {
+      "url": "https://nofilmschool.com/rokinon-ef-mount-lenses",
+      "title": "Spice Up Your Stale DSLR Shots With These Rokinon EF Mount Primes"
+    },
+    {
+      "url": "https://nofilmschool.com/nikon-z5-iic-stock-lens",
+      "title": "A Look at the Stock Lens Option for the New Nikon Z5 IIC and Its Versatile Range"
+    },
+    {
+      "url": "https://nofilmschool.com/movies-that-were-inspired-by-alfred-hitchcocks-psycho",
+      "title": "4 Movies That Were Inspired By Alfred Hitchcock's 'Psycho'"
+    },
+    {
+      "url": "https://nofilmschool.com/hugo-box-office-performance-oscar-wins-explained",
+      "title": "2011 Martin Scorsese Classic Lost $100 Million, Then Went on to Sweep the Oscars"
+    },
+    {
+      "url": "https://nofilmschool.com/5-movies-that-survived-production-nightmares",
+      "title": "5 Movies That Survived Production Nightmares"
+    },
+    {
+      "url": "https://nofilmschool.com/dolly-parton-best-movie-scenes",
+      "title": "The Movie Moments That Made Dolly Parton a Screen Icon, Not Just a Music One"
+    },
+    {
+      "url": "https://nofilmschool.com/godox-litemons-sr20r",
+      "title": "This Clever New LED Light Panel from Godox Goes Around Your Camera or Smartphone"
+    },
+    {
+      "url": "https://nofilmschool.com/butterfly-effect-in-movies",
+      "title": "The Best Movies That Utilize the Butterfly Effect"
+    },
+    {
+      "url": "https://nofilmschool.com/red-river-line-john-wayne",
+      "title": "Film Quote of the Day: The 'Red River' Line That Shows Why Tom Dunson Was No Ordinary John Wayne Hero"
+    },
+    {
+      "url": "https://news.google.com/rss/articles/CBMiiwFBVV95cUxPdkZ5ZDNLaG83QVNTR2ZfYWh6ZHdTRi1FUW9MVDlWWlpWbEprYzhkckxBcGhNanc4VGZJZWV1NktuUW5jdXlGY3pTQWFrbmpGejBhMktkOG1YWnRZd2JlV2hiXzZLLXRfb29hYUZUaVB1OHJEajlsWldJZlZkaEtHSWEzT2tiaTBtLWtn?oc=5",
+      "title": "Best AI Tools for Audio Consistency in Microdrama and Series - raindance.org"
+    },
+    {
+      "url": "https://news.google.com/rss/articles/CBMijwFBVV95cUxPZUdlRllDRVVlYzZyWG5qQXdtY2kxczFOdVVlR2tKQWJPc2dVY21EZVJ2UzFyLTY4NzI3eGE2Wi1wNlpwcjEtZWRmbHhCOXhWM09Vb3dGQS1XUk9KaG40SHpMczN4UXJ0WUpOTDJRTWlsM0xrYVZ0T2o1RXRfQ3ZJNXlMS0dsclJDZmF6UEh0SQ?oc=5",
+      "title": "Forget Quibi; Jeffrey Katzenberg Is Launching a Next-Gen AI Animation Studio - TheWrap"
     }
   ]
 }
