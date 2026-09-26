@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "track": "technical",
-  "updatedAt": "2026-09-25T01:08:18.692Z",
+  "updatedAt": "2026-09-26T01:11:11.451Z",
   "items": [
     {
       "url": "https://www.latent.space/p/ainews-zawinskis-law-of-multiagents",
@@ -3070,6 +3070,86 @@
     {
       "url": "https://openai.com/index/chatgpt-ads-expands-southeast-asia-taiwan",
       "title": "ChatGPT Ads expands to Southeast Asia and Taiwan"
+    },
+    {
+      "url": "https://vercel.com/blog/state-of-agent-skills",
+      "title": "State of agent skills"
+    },
+    {
+      "url": "https://github.com/androoAGI/starnet",
+      "title": "androoAGI/starnet"
+    },
+    {
+      "url": "https://x.com/Av1dlive/status/2102802621664985241",
+      "title": "How to Build Agentic Harness using Jev (Builder's Guide)"
+    },
+    {
+      "url": "https://github.blog/changelog/2026-09-24-default-enablement-of-copilot-features-for-copilot-business-and-enterprise",
+      "title": "Default Enablement of Copilot features for Copilot Business and Enterprise"
+    },
+    {
+      "url": "https://github.com/shy3130/tick-stock-panel",
+      "title": "shy3130/tick-stock-panel"
+    },
+    {
+      "url": "https://x.com/chamath/status/2103546630192685350",
+      "title": "Why AI is booming, but productivity isn't"
+    },
+    {
+      "url": "https://github.blog/changelog/2026-09-25-github-copilot-weekly-releases-september-21",
+      "title": "GitHub Copilot weekly releases — September 21"
+    },
+    {
+      "url": "https://vercel.com/changelog/pixel-canary-is-now-available-in-stealth-for-free-on-ai-gateway",
+      "title": "Pixel Canary is now available in stealth for free on AI Gateway"
+    },
+    {
+      "url": "https://x.com/Ghast_AI/status/2103129586733322338",
+      "title": "Ghast AI Season 3 Starts September 25"
+    },
+    {
+      "url": "https://www.latent.space/p/openrouter",
+      "title": "OpenRouter: from Seed to Stripe — with OpenRouter’s Alex Atallah & AMP’s Anjney Midha"
+    },
+    {
+      "url": "https://github.blog/changelog/2026-09-25-agentic-autofix-now-uses-copilot-memory",
+      "title": "Agentic autofix now uses Copilot Memory"
+    },
+    {
+      "url": "https://github.blog/changelog/2026-09-25-updates-to-github-copilot-for-slack-and-microsoft-teams",
+      "title": "Updates to GitHub Copilot for Slack and Microsoft Teams"
+    },
+    {
+      "url": "https://www.latent.space/p/runway",
+      "title": "Runway’s WorldPrompt and the Engineering of Real-Time Worlds"
+    },
+    {
+      "url": "https://huggingface.co/blog/LiquidAI/lfm2-5-vl-dspark",
+      "title": "Accelerating vision-language models with LFM2.5-VL-DSpark"
+    },
+    {
+      "url": "https://www.producthunt.com/products/jevforagents",
+      "title": "JevForAgents"
+    },
+    {
+      "url": "https://www.producthunt.com/products/lateron-email",
+      "title": "LaterOn v2: The agentic email plaftform"
+    },
+    {
+      "url": "https://x.com/trq212/status/2103576349499855160",
+      "title": "Using Claude Code: Spending your effort"
+    },
+    {
+      "url": "https://huggingface.co/blog/evaleval-aisi",
+      "title": "How UK AISI and EvalEval Are Making Benchmark Results Reproducible"
+    },
+    {
+      "url": "https://openai.com/index/proaction",
+      "title": "Proaction boosts sales 60% and saves 75+ hours with Codex"
+    },
+    {
+      "url": "https://www.technologyreview.com/2026/09/25/1145144/pentagon-ai-lie-detector",
+      "title": "The Pentagon wants $30 million to build an AI-powered lie detector"
     }
   ]
 }
