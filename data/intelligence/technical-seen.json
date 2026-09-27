@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "track": "technical",
-  "updatedAt": "2026-09-26T01:11:11.451Z",
+  "updatedAt": "2026-09-27T01:05:07.085Z",
   "items": [
     {
       "url": "https://www.latent.space/p/ainews-zawinskis-law-of-multiagents",
@@ -3150,6 +3150,66 @@
     {
       "url": "https://www.technologyreview.com/2026/09/25/1145144/pentagon-ai-lie-detector",
       "title": "The Pentagon wants $30 million to build an AI-powered lie detector"
+    },
+    {
+      "url": "https://www.latent.space/p/ainews-the-future-of-latent-space",
+      "title": "[AINews] The Future of Latent Space"
+    },
+    {
+      "url": "https://github.com/tensorflow/tensorflow",
+      "title": "tensorflow/tensorflow"
+    },
+    {
+      "url": "https://x.com/jacobandreou/status/2103470116906176622",
+      "title": "The New Copilot"
+    },
+    {
+      "url": "https://tldr.tech/ai/2026-09-25",
+      "title": "ChatGPT Pro Max 🤖, Muse realtime avatar 🎭, DeepSeek $1B ARR 💰"
+    },
+    {
+      "url": "https://github.com/mobile-next/mobile-mcp",
+      "title": "mobile-next/mobile-mcp"
+    },
+    {
+      "url": "https://x.com/DhravyaShah/status/2103668051468300701",
+      "title": "We're open sourcing the company brain, Here's how we designed the multi-player harness"
+    },
+    {
+      "url": "https://tldr.tech/ai/2026-09-23",
+      "title": "GPT-6 ⚡, Opus 5.5 🧠, AI leaders at UN 🌐"
+    },
+    {
+      "url": "https://www.latent.space/p/john-platt",
+      "title": "🔬 An Oscar, Two Asteroids, and the Algorithm in Your sklearn: John Platt on AI for Science"
+    },
+    {
+      "url": "https://openai.com/index/better-prompt-caching-for-gpt-6",
+      "title": "Better prompt caching for GPT-6"
+    },
+    {
+      "url": "https://huggingface.co/blog/transformers-llama-cpp-quants",
+      "title": "Transformers now runs llama.cpp quants"
+    },
+    {
+      "url": "https://huggingface.co/blog/omlx",
+      "title": "Jun Kim, oMLX creator and maintainer, joins Hugging Face to support the MLX community"
+    },
+    {
+      "url": "https://tldr.tech/ai/2026-09-22",
+      "title": "Opus 5.5 imminent ⏳, Grok 4.7 🚀, MiMo v2.6 🤖"
+    },
+    {
+      "url": "https://x.com/saylor/status/2103834820413374912",
+      "title": "Prescriptions for Prosperity in the Digital Economy"
+    },
+    {
+      "url": "https://x.com/ErikKaum/status/2103169247102812334",
+      "title": "Jev is a state-of-the-art search reranker"
+    },
+    {
+      "url": "https://x.com/cerebras/status/2103506859709858175",
+      "title": "We built a 20x faster Grok bot"
     }
   ]
 }
