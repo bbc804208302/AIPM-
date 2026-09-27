@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "track": "domain",
-  "updatedAt": "2026-09-26T01:35:23.299Z",
+  "updatedAt": "2026-09-27T01:28:28.087Z",
   "items": [
     {
       "url": "https://www.creativebloq.com/3d/autodesk-tackles-ai-filmmakings-biggest-problem-with-3d-control",
@@ -3214,6 +3214,86 @@
     {
       "url": "https://news.google.com/rss/articles/CBMijwFBVV95cUxPZUdlRllDRVVlYzZyWG5qQXdtY2kxczFOdVVlR2tKQWJPc2dVY21EZVJ2UzFyLTY4NzI3eGE2Wi1wNlpwcjEtZWRmbHhCOXhWM09Vb3dGQS1XUk9KaG40SHpMczN4UXJ0WUpOTDJRTWlsM0xrYVZ0T2o1RXRfQ3ZJNXlMS0dsclJDZmF6UEh0SQ?oc=5",
       "title": "Forget Quibi; Jeffrey Katzenberg Is Launching a Next-Gen AI Animation Studio - TheWrap"
+    },
+    {
+      "url": "https://arxiv.org/abs/2609.28857",
+      "title": "MEVL-STP: Multi-Encoder and Vision Language Model for Arbitrarily Shaped Scene Text Spotting"
+    },
+    {
+      "url": "https://arxiv.org/abs/2609.29875",
+      "title": "When Can Agents Forget Their Reasoning? ICLR for Long-Horizon Agent Context Compression"
+    },
+    {
+      "url": "https://nofilmschool.com/fantastic-fest-premiere-into-the-sky-proves-an-indie-blockbuster-is-possible",
+      "title": "Fantastic Fest Premiere 'Into the Sky' Proves an 'Indie Blockbuster' is Possible"
+    },
+    {
+      "url": "https://arxiv.org/abs/2609.28988",
+      "title": "Personalized Korean Lipreading as Visual Speech Recognition: Transfer, Census and Adaptation on OLKAVS"
+    },
+    {
+      "url": "https://www.cartoonbrew.com/festivals/oiaf-winners-we-are-aliens-praying-mantis-267198.html",
+      "title": "‘We Are Aliens,’ ‘Praying Mantis’ Win Top Prizes As ‘Ball Face’ Makes Student Film History At OIAF 2026"
+    },
+    {
+      "url": "https://www.cartoonbrew.com/animators/ray-gunn-brad-bird-adel-abada-neysa-bove-jason-ryan-oiaf-267180.html",
+      "title": "Brad Bird Wants To Push Animation ‘Less Towards The Kiddies Table’ With ‘Ray Gunn’"
+    },
+    {
+      "url": "https://news.google.com/rss/articles/CBMiU0FVX3lxTE1UVGdXWG81UG1ybzl0NnFJWC1uVmx5U1prWVc0Vk9MSUdvX1EtS3NSZ0NHTHZrX19vNFhUdEE1WWg5dnJkYTZVWXNtRFVUamJBRFVv?oc=5",
+      "title": "Can You Get 500M Views & Get Rich Fast Making AI Short Dramas With Only 3000 Yuan Budget? - eu.36kr.com"
+    },
+    {
+      "url": "https://arxiv.org/abs/2609.29384",
+      "title": "Segment-Level Risk Discovery in Online Handwriting for Alzheimer's Disease Detection"
+    },
+    {
+      "url": "https://arxiv.org/abs/2609.29721",
+      "title": "SALI: Shot-Aware Late Interaction for Cross-Shot Relation Matching in Text-to-Video Retrieval using Film-Grammar Knowledge"
+    },
+    {
+      "url": "https://news.google.com/rss/articles/CBMinwFBVV95cUxPUlpoTW03VnUwMmhoMjA4Q0E2cU9YM0Z3SVl1ZjAwcTRaYVZxUXdXOVZNWW5faC1jbF9NYktJUUs5eDk3am5QSnU5MzV3NXBYc3dVN3BnWW1tZVFXUWhWaHhKa1UwTl96dGEzM1lTYlhRZ0N3bEVaTUlYN2RBVFZ4VXJ6dmItVHhzN21kalJJWmgxenRoU2x6U21FWFdLWnM?oc=5",
+      "title": "‘The Tonight Show’ Is Bringing Back Its Billionaire Microdrama Satire for a Second Season - The Hollywood Reporter"
+    },
+    {
+      "url": "https://nofilmschool.com/14-days-in-gainesville",
+      "title": "Intersecting Tragedy, Memory, and the Gridiron in '14 Days in Gainesville'"
+    },
+    {
+      "url": "https://www.cartoonbrew.com/markets/animation-markets-ottawa-networking-267159.html",
+      "title": "How To Make An Animation Market Worth Your Time And Money"
+    },
+    {
+      "url": "https://news.google.com/rss/articles/CBMipAFBVV95cUxQSm9yM2dUdjh5NTV2aFNHZnNjc3BHbjFGR045ajU2Zmc5OUIxY1R1bXplN0t3OGN3WUhMUzRaZzB2ZzVDUGt6dUJDRWJoaUxVc3RwMmpHWGJYbDN3Zk9hbTNobUxJY1pwZm1VZ1NJa2YtZmlkUGJqSTZhU1hFZEl2T0FtbHBCdU1zTUJKM1JrWjEwZ1k4cGpJRXZwUHFyQ0V1WV9LdQ?oc=5",
+      "title": "‘The Tonight Show’ Brings Back Microdrama for Season 2 With Alix Earle and John Stamos - TheWrap"
+    },
+    {
+      "url": "https://nofilmschool.com/trust-your-audience-screenwriting",
+      "title": "How to Stop Overexplaining Your Screenplay"
+    },
+    {
+      "url": "https://news.google.com/rss/articles/CBMigAFBVV95cUxOeUkzNDNWemJld2RGdFBMeW1xNnh6NXo4b2FqVkRBYW5aZlRUeUxiUGhKMUJRYVplYTdXNmF6ZFFmUmhYM0dTeGQtVG5zcGxYa3pWeVFyNFN3RzV3LWxlVkY4el9tYWdZREZjTDhBQ2o2SDktSHpGNEdYY0s2ZENXbQ?oc=5",
+      "title": "L.A. Mayoral Candidate Nithya Raman Turns to Microdramas to Power Youth Vote - Variety"
+    },
+    {
+      "url": "https://www.cartoonbrew.com/business/federal-film-tax-credit-animation-us-work-requirement-267079.html",
+      "title": "A New 20% Federal Tax Credit Would Require Most Animation Work To Stay In The U.S. To Qualify"
+    },
+    {
+      "url": "https://nofilmschool.com/best-tv-shows-of-the-21st-century",
+      "title": "Digging into The New York Times \"Best TV Shows of the 21st Century\" List"
+    },
+    {
+      "url": "https://news.google.com/rss/articles/CBMieEFVX3lxTFBVQkZXakhGdjFGbi1iQWJuZDY3WlBRREE2SnBkYmpaZVpoY0c1S3JNenpxM2xXS0E1LWtCdmVMSkdTYnhvQ1l2TU4taEhISEs0Zjh5cXZ0RV9kVU56azNQaTJRZTNBNEZGUTRnTjhtdXV4WXg1VzRZVA?oc=5",
+      "title": "Fallon’s Tonight Show Is Bringing Back Its Billionaire Microdrama (Updated) - LateNighter"
+    },
+    {
+      "url": "https://news.google.com/rss/articles/CBMihwFBVV95cUxPRVZfbDJ0ZmpsYUJEVTR4STctV01MTms4RjlTQWl0UjRwSjdfdjFGRWdNRFdqTWNlYlFPd0s4dUx4Q085LWNXV0MtRGVIYTBLQjNlYjlvdU4zVW9mY1lBemV1ZlNFVGlDREpJMHd6MEIyVFA0OXdOZEl2ck1iVVBOdFgyMVA2M2vSAYwBQVVfeXFMUGZYYWNCZTZKUF8ySWZBZ196UGNRZzZwbUpYZC1YdDdTeWdyazdmSXlRSHBiYVRHVnpxTWR3WUVtMTJwTm1DWWluYjNFazZLb1VheGpNeVFYa0laNTBVTmhod0ROUHZMQ2hRbUVoMzk5ZTFUXy11WGw1Q0hjdHh6NGNmY1cxMHZZeTF4STE?oc=5",
+      "title": "YouTube wants you to pump its TV watch time with microdramas - Tubefilter"
+    },
+    {
+      "url": "https://nofilmschool.com/editor-harrison-wall",
+      "title": "'Slow Horses' Season 6 Editor Harrison Wall Breaks Down His “Small Cheats”"
     }
   ]
 }
