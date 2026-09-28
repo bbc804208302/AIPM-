@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "track": "technical",
-  "updatedAt": "2026-09-27T01:05:07.085Z",
+  "updatedAt": "2026-09-28T01:24:27.951Z",
   "items": [
     {
       "url": "https://www.latent.space/p/ainews-zawinskis-law-of-multiagents",
@@ -3210,6 +3210,22 @@
     {
       "url": "https://x.com/cerebras/status/2103506859709858175",
       "title": "We built a 20x faster Grok bot"
+    },
+    {
+      "url": "https://vercel.com/changelog/ember-1-from-fireworks-now-available-on-ai-gateway",
+      "title": "Ember-1 from Fireworks now available on AI Gateway"
+    },
+    {
+      "url": "https://github.com/mvschwarz/openrig",
+      "title": "mvschwarz/openrig"
+    },
+    {
+      "url": "https://x.com/0xMovez/status/2104216919033192746",
+      "title": "How to build motion design studio with Opus 5.5 ( Full-course )"
+    },
+    {
+      "url": "https://github.com/willfaust/Madeira",
+      "title": "willfaust/Madeira"
     }
   ]
 }
