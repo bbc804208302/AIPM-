@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "track": "technical",
-  "updatedAt": "2026-09-28T01:24:27.951Z",
+  "updatedAt": "2026-09-29T02:28:43.597Z",
   "items": [
     {
       "url": "https://www.latent.space/p/ainews-zawinskis-law-of-multiagents",
@@ -3226,6 +3226,78 @@
     {
       "url": "https://github.com/willfaust/Madeira",
       "title": "willfaust/Madeira"
+    },
+    {
+      "url": "https://www.technologyreview.com/2026/09/28/1145230/when-can-we-say-ai-made-a-scientific-discovery",
+      "title": "When can we say AI made a scientific discovery?"
+    },
+    {
+      "url": "https://github.com/byoungd/up",
+      "title": "byoungd/up"
+    },
+    {
+      "url": "https://x.com/n2parko/status/2104663299485020568",
+      "title": "Meet your Team Bots"
+    },
+    {
+      "url": "https://www.latent.space/p/thariq",
+      "title": "Claude Code’s Next Era — Thariq Shihipar, Anthropic"
+    },
+    {
+      "url": "https://x.com/joedaroo/status/2104335929293127851",
+      "title": "Its not just the f*cking sandbox"
+    },
+    {
+      "url": "https://github.blog/changelog/2026-09-28-claude-sonnet-5-5-in-github-copilot",
+      "title": "Claude Sonnet 5.5 in GitHub Copilot"
+    },
+    {
+      "url": "https://huggingface.co/blog/Hcompany/holo4",
+      "title": "Holo4: powering generalist computer-use agents"
+    },
+    {
+      "url": "https://x.com/twoclipping/status/2104446706741825818",
+      "title": "How I Make $10K Launch Videos for $0 with Opus 5.5 (Full Course)"
+    },
+    {
+      "url": "https://www.technologyreview.com/2026/09/28/1145197/whos-liable-when-ai-agents-go-rogue",
+      "title": "Who’s liable when AI agents go rogue?"
+    },
+    {
+      "url": "https://vercel.com/changelog/claude-sonnet-5-5-now-available-on-ai-gateway",
+      "title": "Claude Sonnet 5.5 now available on AI Gateway"
+    },
+    {
+      "url": "https://www.producthunt.com/products/microsoft-copilot",
+      "title": "Microsoft Copilot"
+    },
+    {
+      "url": "https://x.com/RaphaelAubryy/status/2104502744010629269",
+      "title": "i made 10+ motion videos with opus 5.5 in 3 days. here's the whole pipeline (open source)"
+    },
+    {
+      "url": "https://openai.com/index/how-we-will-do-better-for-australia",
+      "title": "How we will do better for Australia"
+    },
+    {
+      "url": "https://openai.com/form/codex-originals",
+      "title": "Are you a Codex Original?"
+    },
+    {
+      "url": "https://openai.com/index/basis-tax-workbook-with-astra",
+      "title": "Basis completes a tax workbook 2x faster with GPT-6 Astra"
+    },
+    {
+      "url": "https://tldr.tech/ai/2026-09-28",
+      "title": "Muse manifesto 📜, OpenAI training pause 🚨, trading compute 🤝"
+    },
+    {
+      "url": "https://x.com/lilykeilani011/status/2104324237347409953",
+      "title": "You Don't Hate AI Art. You Hate Admitting You Like It"
+    },
+    {
+      "url": "https://openai.com/index/lenfest-ai-collaborative-expansion",
+      "title": "The Lenfest Institute grows landmark program with expanded OpenAI support"
     }
   ]
 }
