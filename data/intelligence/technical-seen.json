@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "track": "technical",
-  "updatedAt": "2026-09-29T02:28:43.597Z",
+  "updatedAt": "2026-09-30T01:49:34.521Z",
   "items": [
     {
       "url": "https://www.latent.space/p/ainews-zawinskis-law-of-multiagents",
@@ -3298,6 +3298,74 @@
     {
       "url": "https://openai.com/index/lenfest-ai-collaborative-expansion",
       "title": "The Lenfest Institute grows landmark program with expanded OpenAI support"
+    },
+    {
+      "url": "https://openai.com/index/introducing-gpt-6-1-sol",
+      "title": "Introducing GPT-6.1 Sol"
+    },
+    {
+      "url": "https://github.com/NVIDIA/OpenShell",
+      "title": "NVIDIA/OpenShell"
+    },
+    {
+      "url": "https://x.com/EugenAlpeza/status/2104936003282546913",
+      "title": "The FDE boom is a product gap"
+    },
+    {
+      "url": "https://www.technologyreview.com/2026/09/29/1145186/making-ai-an-asset-not-an-expense",
+      "title": "Making AI an asset, not an expense"
+    },
+    {
+      "url": "https://github.com/t8y2/dbx",
+      "title": "t8y2/dbx"
+    },
+    {
+      "url": "https://x.com/GoogleAI/status/2104645904682946908",
+      "title": "CC, our experimental AI agent built for families"
+    },
+    {
+      "url": "https://github.blog/changelog/2026-09-29-gpt-6-1-sol-in-github-copilot",
+      "title": "GPT-6.1 Sol in GitHub Copilot"
+    },
+    {
+      "url": "https://github.com/VectifyAI/PageIndex",
+      "title": "VectifyAI/PageIndex"
+    },
+    {
+      "url": "https://huggingface.co/blog/MultiverseComputingCAI/getting-the-source-right-not-just-the-fact-source",
+      "title": "Getting the Source Right, Not Just the Fact: Source-Aware Verification for MCP Agents"
+    },
+    {
+      "url": "https://openai.com/index/devday-2026-recap",
+      "title": "DevDay 2026 Recap"
+    },
+    {
+      "url": "https://openai.com/index/introducing-dots",
+      "title": "Introducing dots"
+    },
+    {
+      "url": "https://vercel.com/changelog/gpt-6-1-sol-now-available-on-ai-gateway",
+      "title": "GPT-6.1 Sol now available on AI Gateway"
+    },
+    {
+      "url": "https://www.latent.space/p/ainews-opus-55-is-good-at-explainer",
+      "title": "[AINews] Opus 5.5 is good at explainer videos"
+    },
+    {
+      "url": "https://www.latent.space/p/ainews-amd-buys-world-labs-for-82b",
+      "title": "[AINews] AMD buys World Labs for $8.2B, as Atlas solves sparse reconstruction problem for robotics, design and more"
+    },
+    {
+      "url": "https://tldr.tech/ai/2026-09-29",
+      "title": "Claude Sonnet 5.5 🧠, Anthropic IPO leaks 📝, AMD buys World Labs 💰"
+    },
+    {
+      "url": "https://openai.com/index/towards-safety-cases-for-frontier-ai-training",
+      "title": "Towards safety cases for frontier AI training"
+    },
+    {
+      "url": "https://huggingface.co/blog/nvidia/kumo-tabular",
+      "title": "NVIDIA Kumo Tabular Sets a New Accuracy-Efficiency Frontier for Tabular Prediction"
     }
   ]
 }
