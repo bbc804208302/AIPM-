@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "track": "domain",
-  "updatedAt": "2026-09-29T02:34:56.781Z",
+  "updatedAt": "2026-09-30T02:08:28.046Z",
   "items": [
     {
       "url": "https://www.creativebloq.com/3d/autodesk-tackles-ai-filmmakings-biggest-problem-with-3d-control",
@@ -3410,6 +3410,86 @@
     {
       "url": "https://news.google.com/rss/articles/CBMiZkFVX3lxTE5ma0JKNEtRQnRmbVM2M3pRRFdXcjZ4NzJuTllpRTVqbzZEaDBfdDVDc0NZNnQzNHE5eEx3UXU3bWlILVVLaUZVaUQtRkUyR0JQLUpZWWZZc0RLb3FPaVV1d2dibld1QQ?oc=5",
       "title": "Margot Robbie’s ‘Neighbours’ Episodes to Be Recut Into a Microdrama by RoseBerry for Its Epis Platform (Exclusive) - imdb.com"
+    },
+    {
+      "url": "https://arxiv.org/abs/2609.31665",
+      "title": "Language-Augmented Video Action Anticipation: Design Fundamentals, Benchmarks, and Open Challenges"
+    },
+    {
+      "url": "https://arxiv.org/abs/2609.31823",
+      "title": "SynDORBench: Evaluating LVLM Perceptual Robustness Under Physically Constrained Visibility Conditions"
+    },
+    {
+      "url": "https://arxiv.org/abs/2609.32352",
+      "title": "EyeVQA: Benchmarking Ophthalmic Vision-Language Models from Recognition to Spatial Grounding"
+    },
+    {
+      "url": "https://nofilmschool.com/iconic-movies-that-almost-had-different-titles",
+      "title": "5 Iconic Films That Almost Had Different Titles"
+    },
+    {
+      "url": "https://nofilmschool.com/hedwig-and-the-angry-inch-box-office-explained",
+      "title": "This 2001 Musical Flop Is Now a Beloved Criterion Collection Classic"
+    },
+    {
+      "url": "https://nofilmschool.com/kyle-maclachlan-david-lynch-ranked",
+      "title": "Every Film and Show Kyle MacLachlan Made With David Lynch, Ranked"
+    },
+    {
+      "url": "https://news.google.com/rss/articles/CBMilwFBVV95cUxQdnlreWR3STFCMjF3NTRkVmtKa2J0ZGZVT0NqajVBMUdwOFZGM0ZmMWNocU1EbEIwcXhiRm5nVnFCb3hxUV9EMEEwQnd3Ulo5Y1B2ckZhV2FsSllfSV9WZjhhV21sSm1Cc01FT1BBQ21qRUJXNGVaTFo3YzBQamxObnYyUmZodU9jVUFEcFM4YklWanJVc05J?oc=5",
+      "title": "'Neighbours' Storylines Featuring Margot Robbie to be Launched as Microdramas by Roseberry for Epis Platform - Michael Fairman TV"
+    },
+    {
+      "url": "https://arxiv.org/abs/2609.31705",
+      "title": "MDL-Calibrated Significance-Gain Pair Encoding: Replication-Aware Automatic Stopping for Subword Tokenization"
+    },
+    {
+      "url": "https://arxiv.org/abs/2609.31657",
+      "title": "Enhancing Foundation Models for Imbalanced SAR Ship Classification via Targeted Oversampling"
+    },
+    {
+      "url": "https://arxiv.org/abs/2609.31671",
+      "title": "Unsupervised spiking feature learning for event-based pedestrian crossing detection: approaching supervised accuracy without labelled training data"
+    },
+    {
+      "url": "https://arxiv.org/abs/2609.31681",
+      "title": "Devanagari Handwritten Character Recognition Using TrOCR: A Transformer-Based Model with Real-Time Web Deployment"
+    },
+    {
+      "url": "https://arxiv.org/abs/2609.32041",
+      "title": "Amnesia by Design, Memory By Necessity: Persistent State for Document Intelligence"
+    },
+    {
+      "url": "https://nofilmschool.com/floating-carousel-napier-powers",
+      "title": "How the 'Floating Carousel' Directors Shot NYC on Favors"
+    },
+    {
+      "url": "https://nofilmschool.com/wide-shots-from-classic-westerns",
+      "title": "3 Wide Shots From Classic Westerns Used 3 Different Ways"
+    },
+    {
+      "url": "https://nofilmschool.com/xgrids-portalcam",
+      "title": "How This XGRIDS PortalCam Can Change How You Tackle Production Planning or Visual Effects"
+    },
+    {
+      "url": "https://nofilmschool.com/how-to-run-camera-test",
+      "title": "How to Run a Camera Test (and Why Pros Never Skip Them)"
+    },
+    {
+      "url": "https://nofilmschool.com/a-man-who-wears-both-a-belt-and-suspenders",
+      "title": "Film Quote of the Day: The Oddest Trust Test in 'Once Upon a Time in the West'"
+    },
+    {
+      "url": "https://www.cartoonbrew.com/festivals/manchester-animation-festival-wildwood-ray-gunn-forgotten-island-267261.html",
+      "title": "Manchester Animation Festival Unveils 2026 Competition, Full Program With ‘Wildwood,’ ‘Ray Gunn,’ ‘Forgotten Island’"
+    },
+    {
+      "url": "https://arxiv.org/abs/2609.31654",
+      "title": "Temporal-Attention Head Specialization During Video Diffusion Training"
+    },
+    {
+      "url": "https://arxiv.org/abs/2609.32376",
+      "title": "An End-to-End Latent-Rollout Approach for Pushing Few-Step ImageNet-$256$ Generation to FID $1.11$ without Fr\\'echet Losses"
     }
   ]
 }
