@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "track": "technical",
-  "updatedAt": "2026-09-30T01:49:34.521Z",
+  "updatedAt": "2026-10-01T01:48:18.934Z",
   "items": [
     {
       "url": "https://www.latent.space/p/ainews-zawinskis-law-of-multiagents",
@@ -3366,6 +3366,86 @@
     {
       "url": "https://huggingface.co/blog/nvidia/kumo-tabular",
       "title": "NVIDIA Kumo Tabular Sets a New Accuracy-Efficiency Frontier for Tabular Prediction"
+    },
+    {
+      "url": "https://vercel.com/changelog/ai-gateway-adds-browserbase-search-and-fetch-tools",
+      "title": "AI Gateway adds Browserbase Search and Fetch tools"
+    },
+    {
+      "url": "https://github.com/modelcontextprotocol/servers",
+      "title": "modelcontextprotocol/servers"
+    },
+    {
+      "url": "https://x.com/Teamily_AI/status/2105025063762489426",
+      "title": "Teamily vs. OpenAI Dots: The Vision \"Team of Dots\" is Already Here, Using by Million of Users"
+    },
+    {
+      "url": "https://vercel.com/changelog/vercel-agent-now-installs-private-packages-from-npm-and-custom-registries",
+      "title": "Vercel Agent now installs private packages from npm and custom registries"
+    },
+    {
+      "url": "https://github.com/colbymchenry/codegraph",
+      "title": "colbymchenry/codegraph"
+    },
+    {
+      "url": "https://x.com/pirroh/status/2104976589180252218",
+      "title": "Free the models: harness design at the frontier"
+    },
+    {
+      "url": "https://www.latent.space/p/devday-2026",
+      "title": "Why Dwarkesh is Wrong about Computer Use + How OpenAI shipped its Jev competitor in 1 Week"
+    },
+    {
+      "url": "https://deepmind.google/blog/introducing-synthid-bio",
+      "title": "Introducing SynthID Bio"
+    },
+    {
+      "url": "https://x.com/DeepSeekHarness/status/2105330281389662575",
+      "title": "DeepSeek Harness for Desktop Is Here"
+    },
+    {
+      "url": "https://github.blog/changelog/2026-09-30-hydrafusion-in-vs-code-and-the-github-copilot-app",
+      "title": "HydraFusion in VS Code and the GitHub Copilot app"
+    },
+    {
+      "url": "https://www.technologyreview.com/2026/09/30/1145339/were-not-going-to-shoot-ourselves-in-the-foot-over-hugging-face-says-openais-chief-research-officer",
+      "title": "“We’re not going to shoot ourselves in the foot” over hack fallout, says OpenAI’s chief research officer"
+    },
+    {
+      "url": "https://openai.com/index/disrupting-a-coordinated-model-distillation-campaign",
+      "title": "Disrupting a coordinated model-distillation campaign"
+    },
+    {
+      "url": "https://www.latent.space/p/ainews-openai-devday-2026-dots-61",
+      "title": "[AINews] OpenAI DevDay 2026: Dots, 6.1 Sol, Ultrafast, Decisions API, Agents API, Spaces, Marketplace, and 1.2 Billion ChatGPT WAU"
+    },
+    {
+      "url": "https://vercel.com/changelog/ling-3-1-flash-is-now-available-on-ai-gateway",
+      "title": "Ling 3.1 Flash is now available on AI Gateway"
+    },
+    {
+      "url": "https://www.producthunt.com/products/agent-identity",
+      "title": "Agent Identity"
+    },
+    {
+      "url": "https://www.producthunt.com/products/flocker-agent-profiles",
+      "title": "Flocker Agent Profiles"
+    },
+    {
+      "url": "https://x.com/michaeljburry/status/2105312854710669582",
+      "title": "History Rhymes: Large Language Models Off to a Bad Start?"
+    },
+    {
+      "url": "https://x.com/arlanoska/status/2105001306503139816",
+      "title": "Building a design system for coding agents"
+    },
+    {
+      "url": "https://deepmind.google/blog/gemini-4-argon-our-next-era-of-frontier-intelligence",
+      "title": "Gemini 4 Argon: our next era of frontier intelligence"
+    },
+    {
+      "url": "https://openai.com/index/helping-small-businesses-put-ai-to-work",
+      "title": "Helping small businesses put AI to work"
     }
   ]
 }
