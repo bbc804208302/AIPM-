@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "track": "domain",
-  "updatedAt": "2026-09-30T02:08:28.046Z",
+  "updatedAt": "2026-10-01T02:10:31.263Z",
   "items": [
     {
       "url": "https://www.creativebloq.com/3d/autodesk-tackles-ai-filmmakings-biggest-problem-with-3d-control",
@@ -3490,6 +3490,86 @@
     {
       "url": "https://arxiv.org/abs/2609.32376",
       "title": "An End-to-End Latent-Rollout Approach for Pushing Few-Step ImageNet-$256$ Generation to FID $1.11$ without Fr\\'echet Losses"
+    },
+    {
+      "url": "https://nofilmschool.com/final-cut-camera-update-2-4",
+      "title": "Apple’s Final Cut Camera Gets a Major Update With a New Design and Support for Variable Aperture"
+    },
+    {
+      "url": "https://arxiv.org/abs/2609.36199",
+      "title": "PreviewDiff: Multimodal Critic-Guided Search over Diffusion Latents"
+    },
+    {
+      "url": "https://arxiv.org/abs/2609.36937",
+      "title": "WeLike2Party! In-Context Motion Transfer for Multi-Human Image Animation"
+    },
+    {
+      "url": "https://arxiv.org/abs/2609.37001",
+      "title": "Parameterized Stripe Attention for Efficient Video Generation"
+    },
+    {
+      "url": "https://arxiv.org/abs/2609.37030",
+      "title": "MotionInsight: Diagnosing Object Motion Deficiencies in Generated Videos"
+    },
+    {
+      "url": "https://nofilmschool.com/apple-creator-studio-updates",
+      "title": "Apple Creator Studio Prepares for the iPhone 18 Pro With New Templates and Cinematic Mode Effects"
+    },
+    {
+      "url": "https://nofilmschool.com/beat-screenwriting-software",
+      "title": "Why This Free, Open-Source Screenwriting App Should Be on Every Mac Writer’s Radar"
+    },
+    {
+      "url": "https://nofilmschool.com/laowa-acris-35mm-f-2-8-1x-af-macro-apo",
+      "title": "Meet the World’s First Full-Frame Autofocus 35mm Lens With True 1:1 Life-Size Magnification"
+    },
+    {
+      "url": "https://nofilmschool.com/best-harrison-ford-movie-lines",
+      "title": "10 Most Iconic Harrison Ford Movie Lines"
+    },
+    {
+      "url": "https://arxiv.org/abs/2609.36217",
+      "title": "Sparse-View Interpretable 3D Animal Behavior Representations for Neural Encoding and Decoding"
+    },
+    {
+      "url": "https://arxiv.org/abs/2609.36598",
+      "title": "Beyond Legibility: Benchmarking Visual Text Rendering and In-Place Editing in Unified Video Generation"
+    },
+    {
+      "url": "https://arxiv.org/abs/2609.36803",
+      "title": "EGSD: Event-Grounded Self-Distillation for Streaming Video Understanding"
+    },
+    {
+      "url": "https://nofilmschool.com/lee-kirk-on-directing-actors-and-the-making-of-nimrods",
+      "title": "Actor-Turned-Director Lee Kirk on Directing Actors and the Making of 'Nimrods'"
+    },
+    {
+      "url": "https://nofilmschool.com/adobe-plugin-in-chatgpt-update",
+      "title": "Adobe Announces More Interactive Editing Controls Are Coming for its Plugin in ChatGPT"
+    },
+    {
+      "url": "https://nofilmschool.com/most-unusual-james-bond-villains",
+      "title": "The 10 Most Unusual James Bond Villains"
+    },
+    {
+      "url": "https://nofilmschool.com/the-movies-someone-s-older-brother-made-you-watch",
+      "title": "The Movies Someone's Older Brother Made You Watch"
+    },
+    {
+      "url": "https://nofilmschool.com/digger-inarritu-lubezki-color-palette",
+      "title": "Why Does 'Digger' Look Like Someone Bleached It?"
+    },
+    {
+      "url": "https://arxiv.org/abs/2609.36386",
+      "title": "Stealth Is a Relation, Not a Property: How Event Representations Create Blind Spots for Timing Attacks in Event-Based Perception"
+    },
+    {
+      "url": "https://arxiv.org/abs/2609.36826",
+      "title": "Learning via Self-Consistency for Diffusion-based Video Reasoning"
+    },
+    {
+      "url": "https://arxiv.org/abs/2609.37046",
+      "title": "Speed in the Blind Spot: An Interpretability Analysis of Dynamic Perception in VLMs for Autonomous Driving"
     }
   ]
 }
