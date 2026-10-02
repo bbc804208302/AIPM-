@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "track": "domain",
-  "updatedAt": "2026-10-01T02:10:31.263Z",
+  "updatedAt": "2026-10-02T02:16:40.255Z",
   "items": [
     {
       "url": "https://www.creativebloq.com/3d/autodesk-tackles-ai-filmmakings-biggest-problem-with-3d-control",
@@ -3570,6 +3570,86 @@
     {
       "url": "https://arxiv.org/abs/2609.37046",
       "title": "Speed in the Blind Spot: An Interpretability Analysis of Dynamic Perception in VLMs for Autonomous Driving"
+    },
+    {
+      "url": "https://arxiv.org/abs/2609.38426",
+      "title": "LoopVL: Recurrent Visual Intelligence"
+    },
+    {
+      "url": "https://arxiv.org/abs/2609.38615",
+      "title": "Exo2EgoHOI: Hand-Object-Interaction Aware Exocentric-to-Egocentric Video Generation"
+    },
+    {
+      "url": "https://arxiv.org/abs/2609.38691",
+      "title": "No Corners Cut: State-Grounded Transitions for Mid-Stream Prompt Switches in Video Generation"
+    },
+    {
+      "url": "https://nofilmschool.com/mavis-camera-update-82",
+      "title": "The Mavic Camera App Gets Update for iPhone 18 Pro and Variable Aperture Support"
+    },
+    {
+      "url": "https://nofilmschool.com/panasonic-lumix-s9-firmware-update",
+      "title": "The Panasonic LUMIX S9 is Getting a Power-Up With 4K60p in MP4 Lite and Expanded Button Functions"
+    },
+    {
+      "url": "https://arxiv.org/abs/2609.38278",
+      "title": "Masked Swingers: Harnessing Data Augmentation to Advance Autoencoders for Self-Supervised Learning"
+    },
+    {
+      "url": "https://arxiv.org/abs/2609.38562",
+      "title": "LongTake: Learning to Sustain Dynamics in Long-Horizon Video Generation"
+    },
+    {
+      "url": "https://arxiv.org/abs/2609.38636",
+      "title": "STEPS: Scene Text Editing with Preserved Style Using Diffusion and Contrastive Style Encoding"
+    },
+    {
+      "url": "https://www.cartoonbrew.com/distribution/kpop-demon-hunters-sequel-theatrical-release-267319.html",
+      "title": "Netflix Promises ‘Very Broad Theatrical Release’ For ‘KPop Demon Hunters’ Sequel"
+    },
+    {
+      "url": "https://arxiv.org/abs/2609.38839",
+      "title": "FrameMorrow: Future-guided Frame Selection with Prospective Tokens for Long-Horizon Video Generation"
+    },
+    {
+      "url": "https://nofilmschool.com/duck-soup-quotes",
+      "title": "Film Quote of the Day: Groucho Marx's Best Insult Disguised as a Compliment"
+    },
+    {
+      "url": "https://www.cartoonbrew.com/artist-rights/apple-studios-vfx-workers-union-iatse-267325.html",
+      "title": "Apple Said No, But Its VFX Workers Said Yes, Voting 12-0 To Unionize With IATSE"
+    },
+    {
+      "url": "https://nofilmschool.com/will-stone-lighting-approach",
+      "title": "Why Good Lighting Is Never Just One Setup"
+    },
+    {
+      "url": "https://arxiv.org/abs/2609.38271",
+      "title": "Evaluating Multi-Task Morphological Concept Learning for Pulmonary Nodule Malignancy Assessment in 3D CT"
+    },
+    {
+      "url": "https://arxiv.org/abs/2609.38343",
+      "title": "Learning Semantic Inpainting for Animatable Gaussian Head Avatars"
+    },
+    {
+      "url": "https://arxiv.org/abs/2609.38476",
+      "title": "Curating Synthetic Data for Task-Specific Visual Perception"
+    },
+    {
+      "url": "https://arxiv.org/abs/2609.38622",
+      "title": "Eulerian Motion Reconstruction for Water Scenery"
+    },
+    {
+      "url": "https://arxiv.org/abs/2609.38689",
+      "title": "EPIC: Epipolar-Consistent 360{\\deg} Immersive Stereo Video Generation"
+    },
+    {
+      "url": "https://arxiv.org/abs/2609.38819",
+      "title": "Future Video Generation Better Aligns with the Human Visual Cortex than Observed Video"
+    },
+    {
+      "url": "https://news.google.com/rss/articles/CBMioAFBVV95cUxOUmg5SGUyZkl0X0pWR2Z3dHNvYm05NkJUX0hOaUpQcGhLLTZFZk5xTVYzOFdRZ3o3VE9YTTBna0VFYVctb1RCd2RGeFdvTkFTZ05UOHBiXzE3Uk40SVA4MndKdGRXODJDWDJIWFh4MGFPdmVwdFdyeFBzTkk3bWtLTzR0RW5uWWthelRRZXViSFhWY0t3OTRqX0VKek5SZk85?oc=5",
+      "title": "Margot Robbie’s ‘Neighbours’ Episodes to Be Recut Into a Microdrama by RoseBerry for Its Epis Platform (EXCLUSIVE) - Variety"
     }
   ]
 }
