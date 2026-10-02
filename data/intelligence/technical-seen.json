@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "track": "technical",
-  "updatedAt": "2026-10-01T01:48:18.934Z",
+  "updatedAt": "2026-10-02T02:00:27.887Z",
   "items": [
     {
       "url": "https://www.latent.space/p/ainews-zawinskis-law-of-multiagents",
@@ -3446,6 +3446,86 @@
     {
       "url": "https://openai.com/index/helping-small-businesses-put-ai-to-work",
       "title": "Helping small businesses put AI to work"
+    },
+    {
+      "url": "https://github.blog/changelog/2026-10-01-github-copilot-in-vs-code-september-2026-releases",
+      "title": "GitHub Copilot in VS Code, September 2026 releases"
+    },
+    {
+      "url": "https://github.com/tile-ai/tilelang",
+      "title": "tile-ai/tilelang"
+    },
+    {
+      "url": "https://x.com/jakeserval/status/2105659201221804372",
+      "title": "The Rise of the Automation Engineer"
+    },
+    {
+      "url": "https://github.blog/changelog/2026-10-01-github-copilot-can-now-interact-with-desktop-apps",
+      "title": "GitHub Copilot can now interact with desktop apps with computer use"
+    },
+    {
+      "url": "https://github.com/Friedrich-M/UniMate",
+      "title": "Friedrich-M/UniMate"
+    },
+    {
+      "url": "https://x.com/RohanNayak2/status/2105334948551139678",
+      "title": "Why LLMs can't write well and how Sherpa fixes it"
+    },
+    {
+      "url": "https://github.blog/changelog/2026-10-01-dynamic-workflows-in-copilot-cli-and-the-copilot-app",
+      "title": "Dynamic workflows in Copilot CLI and the Copilot app"
+    },
+    {
+      "url": "https://openai.com/index/albertsons-reimagining-retail",
+      "title": "How Albertsons Companies is reimagining retail from the inside out"
+    },
+    {
+      "url": "https://huggingface.co/blog/allenai/olmocore3",
+      "title": "Introducing Olmo-core 3: Open, scalable training infrastructure for large MoEs"
+    },
+    {
+      "url": "https://openai.com/index/the-den-family-social",
+      "title": "The Den frees up 10-15 hours a week to grow with ChatGPT Work"
+    },
+    {
+      "url": "https://vercel.com/changelog/laya-decision-model-now-available-on-ai-gateway-free-through-october-31",
+      "title": "Laya decision model now available on AI Gateway, free through October 31"
+    },
+    {
+      "url": "https://vercel.com/changelog/microsoft-ai-models-are-now-available-on-ai-gateway",
+      "title": "Microsoft AI models are now available on AI Gateway"
+    },
+    {
+      "url": "https://www.producthunt.com/products/omnia-2",
+      "title": "Omnia Agent"
+    },
+    {
+      "url": "https://x.com/arscontexta/status/2105397004226494487",
+      "title": "how to build agentic systems for knowledge work"
+    },
+    {
+      "url": "https://x.com/OptimaiNetwork/status/2105313828401824243",
+      "title": "September at OptimAI: Building the Next Layer of the Agentic Internet"
+    },
+    {
+      "url": "https://www.latent.space/p/rlm",
+      "title": "Academia is for Ambition — Alex Zhang, MIT"
+    },
+    {
+      "url": "https://openai.com/index/the-eternal-complement",
+      "title": "The eternal complement"
+    },
+    {
+      "url": "https://www.latent.space/p/ainews-gemini-4-argon-gdms-answer",
+      "title": "[AINews] Gemini 4 Argon: GDM’s answer to Astra/Fable, with 1M output"
+    },
+    {
+      "url": "https://tldr.tech/ai/2026-10-01",
+      "title": "Gemini 4 Argon 🧠, inside OpenAI’s chip ⚡, distillation takedown 🕵️"
+    },
+    {
+      "url": "https://huggingface.co/blog/open-tts-leaderboard",
+      "title": "Open TTS Leaderboard: Scalable Evaluation for Multilingual Text-to-Speech and Voice Cloning"
     }
   ]
 }
