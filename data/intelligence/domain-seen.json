@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "track": "domain",
-  "updatedAt": "2026-10-02T02:16:40.255Z",
+  "updatedAt": "2026-10-03T01:58:59.169Z",
   "items": [
     {
       "url": "https://www.creativebloq.com/3d/autodesk-tackles-ai-filmmakings-biggest-problem-with-3d-control",
@@ -3650,6 +3650,86 @@
     {
       "url": "https://news.google.com/rss/articles/CBMioAFBVV95cUxOUmg5SGUyZkl0X0pWR2Z3dHNvYm05NkJUX0hOaUpQcGhLLTZFZk5xTVYzOFdRZ3o3VE9YTTBna0VFYVctb1RCd2RGeFdvTkFTZ05UOHBiXzE3Uk40SVA4MndKdGRXODJDWDJIWFh4MGFPdmVwdFdyeFBzTkk3bWtLTzR0RW5uWWthelRRZXViSFhWY0t3OTRqX0VKek5SZk85?oc=5",
       "title": "Margot Robbie’s ‘Neighbours’ Episodes to Be Recut Into a Microdrama by RoseBerry for Its Epis Platform (EXCLUSIVE) - Variety"
+    },
+    {
+      "url": "https://arxiv.org/abs/2610.00279",
+      "title": "Multi-Resolution Feature Fusion U-Net for Magnetic Resonance Imaging Segmentation"
+    },
+    {
+      "url": "https://arxiv.org/abs/2610.01052",
+      "title": "Towards Subject Consistency over Dynamic Subject Sets in Video Generation"
+    },
+    {
+      "url": "https://arxiv.org/abs/2610.01092",
+      "title": "Ego2Act: Evaluating Goal-Directed Manipulation in Egocentric Video Generation"
+    },
+    {
+      "url": "https://arxiv.org/abs/2610.01162",
+      "title": "PhysicsLENS: Diagnosing Physical Property Blindness in Video Generation Models"
+    },
+    {
+      "url": "https://arxiv.org/abs/2610.01279",
+      "title": "PickMoment: Continuous-Time Single-Image-to-Video via Learning Deblurring and Blur-to-Video"
+    },
+    {
+      "url": "https://nofilmschool.com/nyc-mome-listening-tour-2026",
+      "title": "NYC Wants to Hear Your Filming Headaches"
+    },
+    {
+      "url": "https://nofilmschool.com/davinci-resolve-update-21-1-1",
+      "title": "DaVinci Resolve 21.1.1 Adds Trim Editor Improvements for Audio Clips and Multiple Edit Point Control"
+    },
+    {
+      "url": "https://nofilmschool.com/fujifilm-announces-price-revisions",
+      "title": "Fujifilm Latest Company to Announce Price Increases for Cameras on the Way"
+    },
+    {
+      "url": "https://arxiv.org/abs/2610.00097",
+      "title": "DramaAgent: Agentic Storytelling Video Generation"
+    },
+    {
+      "url": "https://arxiv.org/abs/2610.00691",
+      "title": "Soundwich: Video Generation with Layered and Controllable Audio"
+    },
+    {
+      "url": "https://arxiv.org/abs/2610.01134",
+      "title": "Open Vocabulary Word Recognition From Transcribed Bangla Texts"
+    },
+    {
+      "url": "https://nofilmschool.com/uniting-led-volumes-and-live-visual-chaos-cinematographer-bradford-lipson-on-rolling-loud",
+      "title": "Uniting LED Volumes and Live Visual Chaos: Cinematographer Bradford Lipson on 'Rolling Loud'"
+    },
+    {
+      "url": "https://arxiv.org/abs/2610.00315",
+      "title": "Beyond Pixel Reconstruction: Retrieval-Guided Glyph-Aware Restoration for Low-Resource Manchu Historical Documents"
+    },
+    {
+      "url": "https://arxiv.org/abs/2610.00576",
+      "title": "Gestalt: Large Multimodal Interplay Model"
+    },
+    {
+      "url": "https://arxiv.org/abs/2610.00812",
+      "title": "Video Generation Models: A Survey of Post-Training and Alignment"
+    },
+    {
+      "url": "https://news.google.com/rss/articles/CBMiakFVX3lxTFBtU2h1b3ZCT1luNGNPUm9NYUtQaW1iX29zeU0tbjUxdTZnRks4bXN3TkxKM1plZTFuSEhBVktITk1Fb1VKbjFTN29lRFkxSWxwOE4yTXVBcllKTFRhT0VFeXJNRXg5a3o2bVE?oc=5",
+      "title": "Microdrama Platform Founders Say Hollywood Has Come Knocking as Traditional Pipelines Shrink - IMDb"
+    },
+    {
+      "url": "https://nofilmschool.com/bil-richardson-filmmaker",
+      "title": "This Film May Have Saved My Life"
+    },
+    {
+      "url": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxQTnZSUHVrUHFyZjJrdndwZGY1SjVNQzY3QlVmbDJ3WkdrbmViS1hzT2RweHZpR2dCdzB5d3RQSDlVWUV4Yzd4YnhTQzR4Z0lwNU9nN1V1SmdpQWQ4WnhHZlpLbVhKMjA0SV9kQXRTTTlvYmUyVGZFYl9Bbjl2TWhHdS1MVmp4V0NDb0lPdEo2UGNVMDVWaUVTdUdBTjNoRHlCMDdqcjJrR0tnUUE?oc=5",
+      "title": "Microdrama Platform Founders Say Hollywood Has Come Knocking as Traditional Pipelines Shrink - TheWrap"
+    },
+    {
+      "url": "https://nofilmschool.com/ttartisan-af-85mm-f-1-8-neo-lens-2677984005",
+      "title": "TTArtisan’s Latest Lens is Just a Lens (and Sometimes That’s a Good Thing)"
+    },
+    {
+      "url": "https://nofilmschool.com/austin-abrams-scream-king",
+      "title": "Austin Abrams: The Scream King We Need"
     }
   ]
 }
