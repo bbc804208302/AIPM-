@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "track": "technical",
-  "updatedAt": "2026-10-02T02:00:27.887Z",
+  "updatedAt": "2026-10-03T01:42:43.777Z",
   "items": [
     {
       "url": "https://www.latent.space/p/ainews-zawinskis-law-of-multiagents",
@@ -3526,6 +3526,86 @@
     {
       "url": "https://huggingface.co/blog/open-tts-leaderboard",
       "title": "Open TTS Leaderboard: Scalable Evaluation for Multilingual Text-to-Speech and Voice Cloning"
+    },
+    {
+      "url": "https://www.technologyreview.com/2026/10/02/1143774/redefining-enterprise-intelligence-with-autonomous-ai",
+      "title": "Redefining enterprise intelligence with autonomous AI"
+    },
+    {
+      "url": "https://github.com/JuliusBrussee/caveman",
+      "title": "JuliusBrussee/caveman"
+    },
+    {
+      "url": "https://x.com/pushmeet/status/2105314763148321102",
+      "title": "Safeguarding the AI Era of Biology: Watermarking the Building Blocks of Life"
+    },
+    {
+      "url": "https://github.blog/changelog/2026-10-02-copilot-code-review-api-support-and-new-default-effort-level",
+      "title": "Copilot code review: API support and new default effort level"
+    },
+    {
+      "url": "https://x.com/0xROAS/status/2105719128954950142",
+      "title": "here's how to make viral videos with Seedance 2.5"
+    },
+    {
+      "url": "https://github.blog/changelog/2026-10-02-selected-models-in-github-copilot-deprecated",
+      "title": "Selected models in GitHub Copilot deprecated"
+    },
+    {
+      "url": "https://openai.com/index/practical-guide-building-gpt-6",
+      "title": "A model guide for the GPT-6 family"
+    },
+    {
+      "url": "https://x.com/ActionModelAI/status/2105650063166857406",
+      "title": "OpenAI Withheld GPT-6.1 Astra. It Exposed AI’s Permission Problem."
+    },
+    {
+      "url": "https://x.com/UberEng/status/2106071967619322330",
+      "title": "Designing MCP Gateway Uber's MCP Management Platform"
+    },
+    {
+      "url": "https://huggingface.co/blog/allenai/astabrief",
+      "title": "Open-sourcing AstaBrief, the fast report-generation model in Asta"
+    },
+    {
+      "url": "https://www.latent.space/p/airbnb",
+      "title": "Inside-Out AI: Rebuilding Airbnb Behind the Scenes and Across the Guest Experience"
+    },
+    {
+      "url": "https://huggingface.co/blog/ServiceNow-AI/autosynthdata",
+      "title": "AutoSynthData: Generating Training Data for Enterprise Agents"
+    },
+    {
+      "url": "https://vercel.com/blog/how-rogo-ships-agent-written-code-to-production-in-5-minutes-on-vercel",
+      "title": "How Rogo ships agent-written code to production in 5 minutes on Vercel"
+    },
+    {
+      "url": "https://openai.com/index/chatham-financial",
+      "title": "Chatham scales its capital markets expertise with OpenAI"
+    },
+    {
+      "url": "https://tldr.tech/ai/2026-10-02",
+      "title": "Decision models 🤖, Claude-shaped science 🧪, OpenAI safety firings 🚨"
+    },
+    {
+      "url": "https://x.com/0xSigil/status/2105782954094182442",
+      "title": "Own your AI, don’t let it own you"
+    },
+    {
+      "url": "https://www.technologyreview.com/2026/10/02/1145639/dont-be-fooled-llms-dont-reason",
+      "title": "Don’t be fooled—LLMs don’t reason"
+    },
+    {
+      "url": "https://www.latent.space/p/ainews-pi-10-pi-durable-and-aie-nyc",
+      "title": "[AINews] Pi 1.0, Pi Durable, and AIE NYC"
+    },
+    {
+      "url": "https://tldr.tech/ai/2026-09-30",
+      "title": "OpenAI Dots 🟡, GPT-6.1 Sol ⚡, software factories 🏭"
+    },
+    {
+      "url": "https://x.com/eric_ho/status/2105359054763880598",
+      "title": "We can and must solve alignment"
     }
   ]
 }
