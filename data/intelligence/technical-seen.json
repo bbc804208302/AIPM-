@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "track": "technical",
-  "updatedAt": "2026-10-03T01:42:43.777Z",
+  "updatedAt": "2026-10-04T02:23:49.342Z",
   "items": [
     {
       "url": "https://www.latent.space/p/ainews-zawinskis-law-of-multiagents",
@@ -3606,6 +3606,30 @@
     {
       "url": "https://x.com/eric_ho/status/2105359054763880598",
       "title": "We can and must solve alignment"
+    },
+    {
+      "url": "https://huggingface.co/blog/microsoft/thinkingbox",
+      "title": "The Agent Said It Was Done. The Database Disagreed."
+    },
+    {
+      "url": "https://github.com/cloudflare/cloudflare-os",
+      "title": "cloudflare/cloudflare-os"
+    },
+    {
+      "url": "https://x.com/VibeMarketer_/status/2106023099955310650",
+      "title": "How to build a content machine with Opus 5.5 (Full Course)"
+    },
+    {
+      "url": "https://www.producthunt.com/products/agent-activity",
+      "title": "Agent Activity"
+    },
+    {
+      "url": "https://github.com/jamwithai/production-agentic-rag-course",
+      "title": "jamwithai/production-agentic-rag-course"
+    },
+    {
+      "url": "https://x.com/goyal__pramod/status/2106244243727507733",
+      "title": "Reinforcement Learning from scratch #1"
     }
   ]
 }
