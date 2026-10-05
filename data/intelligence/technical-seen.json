@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "track": "technical",
-  "updatedAt": "2026-10-04T02:23:49.342Z",
+  "updatedAt": "2026-10-05T01:35:35.212Z",
   "items": [
     {
       "url": "https://www.latent.space/p/ainews-zawinskis-law-of-multiagents",
@@ -3630,6 +3630,30 @@
     {
       "url": "https://x.com/goyal__pramod/status/2106244243727507733",
       "title": "Reinforcement Learning from scratch #1"
+    },
+    {
+      "url": "https://github.com/michael-denyer/pstack-claude",
+      "title": "michael-denyer/pstack-claude"
+    },
+    {
+      "url": "https://x.com/gregisenberg/status/2106737353431581132",
+      "title": "VIBE MANUFACTURING IS HERE"
+    },
+    {
+      "url": "https://github.com/antirez/ds4",
+      "title": "antirez/ds4"
+    },
+    {
+      "url": "https://x.com/sermakarevich/status/2106453816757354947",
+      "title": "Evals: how to know whether an AI system actually works"
+    },
+    {
+      "url": "https://x.com/rehan_shei/status/2106548006350942533",
+      "title": "All games are open source now"
+    },
+    {
+      "url": "https://x.com/onlyonealexia/status/2106567216816603504",
+      "title": "LIST OF HACKATHON FOR OCTOBER."
     }
   ]
 }
