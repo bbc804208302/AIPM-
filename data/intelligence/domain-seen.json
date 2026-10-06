@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "track": "domain",
-  "updatedAt": "2026-10-05T02:02:04.516Z",
+  "updatedAt": "2026-10-06T02:59:25.526Z",
   "items": [
     {
       "url": "https://www.creativebloq.com/3d/autodesk-tackles-ai-filmmakings-biggest-problem-with-3d-control",
@@ -3874,6 +3874,86 @@
     {
       "url": "https://www.cartoonbrew.com/newsletter/skydances-identity-crisis-canadas-kids-media-crossroads-adventure-times-in-house-animation-267419.html",
       "title": "Skydance’s Identity Crisis; Canada’s Kids Media Crossroads; ‘Adventure Time’s’ In-House Animation"
+    },
+    {
+      "url": "https://nofilmschool.com/vivo-x500-pro",
+      "title": "Vivo Unveils a New Sony-Partnered Smartphone With Some Wild Video Specs and Features"
+    },
+    {
+      "url": "https://nofilmschool.com/apples-full-disk-access-statement",
+      "title": "Here’s Why Apple is Issuing a Warning Against Users Giving Their AI Agents Full Disk Access"
+    },
+    {
+      "url": "https://arxiv.org/abs/2610.02521",
+      "title": "Spatial Memory Intelligence: Endowing World Models with Understanding-Driven Long-Term Memory"
+    },
+    {
+      "url": "https://nofilmschool.com/when-courtroom-dramas-dominated-hollywood",
+      "title": "When Courtroom Dramas Dominated Hollywood"
+    },
+    {
+      "url": "https://nofilmschool.com/blackmagic-cloud-store-update-2-1-1",
+      "title": "Blackmagic Cloud Store is Adding Support for Mac OS Golden Gate to All Models"
+    },
+    {
+      "url": "https://arxiv.org/abs/2610.02322",
+      "title": "SCION: Scene Composition with Instanced Neural Primitives"
+    },
+    {
+      "url": "https://arxiv.org/abs/2610.03047",
+      "title": "Parasitic Co-Denoising: Unlocking 3D Human Motion Generation in a Frozen Video Diffusion Model"
+    },
+    {
+      "url": "https://arxiv.org/abs/2610.03202",
+      "title": "Contextual Flow Matching: Adaptive Step Selection in Flow Models for Efficient Visual Generation"
+    },
+    {
+      "url": "https://arxiv.org/abs/2610.03120",
+      "title": "In-Distribution Forcing for Long Video Generation at Test Time"
+    },
+    {
+      "url": "https://arxiv.org/abs/2610.03154",
+      "title": "Does Physics Live in the Activations? Localizing Physical Quantities in Video Diffusion Models"
+    },
+    {
+      "url": "https://nofilmschool.com/how-snl-editors-turn-36-hours-of-footage-into-a-finished-sketch",
+      "title": "How 'SNL' Editors Turn 36 Hours of Footage Into a Finished Sketch"
+    },
+    {
+      "url": "https://nofilmschool.com/digger-ending-explained",
+      "title": "Digger Ending Explained"
+    },
+    {
+      "url": "https://nofilmschool.com/moviepro-iphone-camera-app",
+      "title": "This iPhone Camera App is Another Solid Pro Shooting Option for Mobile Filmmakers"
+    },
+    {
+      "url": "https://nofilmschool.com/digger-brecht-alienation-effect",
+      "title": "The 'Digger' Twist Is Actually 90 Years Old"
+    },
+    {
+      "url": "https://arxiv.org/abs/2610.02421",
+      "title": "An AI-Based Multi-Stage Approach for Androgenetic Alopecia Assessment from Low-Magnification Scalp Images"
+    },
+    {
+      "url": "https://arxiv.org/abs/2610.02626",
+      "title": "Imagine the Future, Internalize the Gist: Efficient VLA Reasoning via Internalized Spatiotemporal Imagination"
+    },
+    {
+      "url": "https://arxiv.org/abs/2610.02718",
+      "title": "Revisiting Visual Representation Enhancement of VLMs via Kernel Canonical Correlation Analysis"
+    },
+    {
+      "url": "https://arxiv.org/abs/2610.02726",
+      "title": "SymRegFlow: Symmetry-Regularized Flow Matching for Video World Models"
+    },
+    {
+      "url": "https://arxiv.org/abs/2610.02755",
+      "title": "FiberGeoText: A Vision-Language Model for Population- Level Organization of Superficial White Matter"
+    },
+    {
+      "url": "https://arxiv.org/abs/2610.02779",
+      "title": "TRAC: Trajectory-aware Reuse and Adaptive Correction for Efficient Autoregressive Video Generation"
     }
   ]
 }
