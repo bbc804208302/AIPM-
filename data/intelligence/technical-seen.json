@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "track": "technical",
-  "updatedAt": "2026-10-05T01:35:35.212Z",
+  "updatedAt": "2026-10-06T02:41:05.444Z",
   "items": [
     {
       "url": "https://www.latent.space/p/ainews-zawinskis-law-of-multiagents",
@@ -3654,6 +3654,62 @@
     {
       "url": "https://x.com/onlyonealexia/status/2106567216816603504",
       "title": "LIST OF HACKATHON FOR OCTOBER."
+    },
+    {
+      "url": "https://openai.com/index/new-chatgpt-ads-format-and-measurement",
+      "title": "Building advertising for the way people use AI"
+    },
+    {
+      "url": "https://github.com/DuarteSantos8/openGym",
+      "title": "DuarteSantos8/openGym"
+    },
+    {
+      "url": "https://x.com/BrianRoemmele/status/2106815617466855807",
+      "title": "How To Hire A Grok Bot: Experience From The First Zero Human Company."
+    },
+    {
+      "url": "https://www.technologyreview.com/2026/10/05/1145580/connecting-ai-agents-to-enterprise-knowledge",
+      "title": "Connecting AI agents to enterprise knowledge"
+    },
+    {
+      "url": "https://github.com/M-Abozaid/esp32-c3-adblock",
+      "title": "M-Abozaid/esp32-c3-adblock"
+    },
+    {
+      "url": "https://x.com/stevenmarkryan/status/2106979185919176985",
+      "title": "He Who Controls the Compute Controls the Universe"
+    },
+    {
+      "url": "https://openai.com/index/eu-text-provenance",
+      "title": "Our approach to EU text provenance rules"
+    },
+    {
+      "url": "https://tldr.tech/ai/2026-10-05",
+      "title": "Prime Inference 📈, agent population 📈, Claude academy 🎓"
+    },
+    {
+      "url": "https://vercel.com/changelog/voyage-rerank-3-and-rerank-3-lite-are-now-available-on-ai-gateway",
+      "title": "Voyage Rerank 3 and Rerank 3 Lite are now available on AI Gateway"
+    },
+    {
+      "url": "https://www.technologyreview.com/2026/10/05/1145682/people-really-hate-ai-so-why-cant-they-get-enough",
+      "title": "People really hate AI, so why can’t they get enough?"
+    },
+    {
+      "url": "https://www.technologyreview.com/2026/10/05/1145413/emtech-future-2026-when-ai-meets-everything",
+      "title": "EmTech Future 2026: When AI Meets Everything"
+    },
+    {
+      "url": "https://huggingface.co/blog/rl-environments",
+      "title": "Welcome RL Environments to the hub"
+    },
+    {
+      "url": "https://x.com/TryLiveAvatar/status/2107180306390544775",
+      "title": "Every language learner gets a tutor now"
+    },
+    {
+      "url": "https://www.technologyreview.com/2026/10/05/1143813/bringing-predictive-analytics-to-the-agentic-ai-era",
+      "title": "Bringing predictive analytics to the agentic AI era"
     }
   ]
 }
