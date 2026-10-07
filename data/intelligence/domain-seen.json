@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "track": "domain",
-  "updatedAt": "2026-10-06T02:59:25.526Z",
+  "updatedAt": "2026-10-07T02:24:17.383Z",
   "items": [
     {
       "url": "https://www.creativebloq.com/3d/autodesk-tackles-ai-filmmakings-biggest-problem-with-3d-control",
@@ -3954,6 +3954,86 @@
     {
       "url": "https://arxiv.org/abs/2610.02779",
       "title": "TRAC: Trajectory-aware Reuse and Adaptive Correction for Efficient Autoregressive Video Generation"
+    },
+    {
+      "url": "https://arxiv.org/abs/2610.05066",
+      "title": "Salvation Lies Within: Eliciting Inherent Style Transfer in Step-Distilled Diffusion Models"
+    },
+    {
+      "url": "https://arxiv.org/abs/2610.05141",
+      "title": "SemCam: Semantic Camera Motion Control for Video Generation"
+    },
+    {
+      "url": "https://nofilmschool.com/project-hail-mary-cinematography",
+      "title": "How Greig Fraser Brought ‘Project Hail Mary’ to Life: Cameras, Aspect Ratios, and In-Camera Magic"
+    },
+    {
+      "url": "https://nofilmschool.com/iconic-movie-scenes-that-almost-didnt-make-the-cut",
+      "title": "Iconic Movie Scenes That Almost Didn't Make the Cut"
+    },
+    {
+      "url": "https://nofilmschool.com/how-to-talk-about-other-mommy-2026",
+      "title": "‘Other Mommy’ Crash Course: Your Toolkit for a Well-Informed Conversation"
+    },
+    {
+      "url": "https://arxiv.org/abs/2610.04529",
+      "title": "TAME:Topology-Aware Text-Driven Motion Editing across Heterogeneous Humanoid Skeletons"
+    },
+    {
+      "url": "https://arxiv.org/abs/2610.04627",
+      "title": "Task-Sensitive Geometry of Representation Transfer for Object Detection under Image Degradation"
+    },
+    {
+      "url": "https://arxiv.org/abs/2610.03980",
+      "title": "FADE: Frame-Aware Diffusion-Transformer-based Multi-Concept Erasure for Video Unlearning"
+    },
+    {
+      "url": "https://arxiv.org/abs/2610.04073",
+      "title": "Why Convolution Still Matters: Evaluating Inductive Biases in Cryospheric Image Classification"
+    },
+    {
+      "url": "https://arxiv.org/abs/2610.04152",
+      "title": "Kepler4D: Controllable Future Video Generation via 4D Scene State Evolution"
+    },
+    {
+      "url": "https://arxiv.org/abs/2610.04336",
+      "title": "A differentiable Lagrangian-coupled 3D Gaussian Splatting-SPH model for forward simulation and inverse analysis in solid mechanics"
+    },
+    {
+      "url": "https://arxiv.org/abs/2610.04700",
+      "title": "Decouple, Purify and Unite: Semantic-Structural Prototype Learning for Federated Medical Segmentation"
+    },
+    {
+      "url": "https://nofilmschool.com/aaron-sorkin-explains-ai-gets-wrong-storytelling",
+      "title": "Aaron Sorkin Explains What AI Gets Wrong About Storytelling"
+    },
+    {
+      "url": "https://nofilmschool.com/austin-film-festival-2026-schedule",
+      "title": "The Austin Film Festival Announces Full 2026 Lineup and Schedule of Screenwriting Programs"
+    },
+    {
+      "url": "https://nofilmschool.com/contact-film-quotes",
+      "title": "Film Quote of the Day: Why 'Contact' Understood Human Connection Better Than Any Sci-Fi Movie"
+    },
+    {
+      "url": "https://nofilmschool.com/michael-douglas-best-movies",
+      "title": "The 7 Best Michael Douglas Movies"
+    },
+    {
+      "url": "https://www.cartoonbrew.com/business/psyop-group-free-agents-partnership-267571.html",
+      "title": "Psyop Group Expands U.S. Reach With Free Agents Partnership"
+    },
+    {
+      "url": "https://nofilmschool.com/hollywood-best-script-myth",
+      "title": "How to Write a Screenplay Hollywood Can Sell"
+    },
+    {
+      "url": "https://www.cartoonbrew.com/series/get-jiro-creators-action-sequence-267554.html",
+      "title": "‘Get Jiro!’ Creators On How They Pulled Off The Show’s Impressibe One-Take Action Sequence"
+    },
+    {
+      "url": "https://nofilmschool.com/smallrig-35mm-external-optical-viewfinders",
+      "title": "Recreate the Feel of Classic Film Shooting With These 35mm External Optical Viewfinders"
     }
   ]
 }
