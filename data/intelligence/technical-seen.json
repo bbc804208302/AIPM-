@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "track": "technical",
-  "updatedAt": "2026-10-06T02:41:05.444Z",
+  "updatedAt": "2026-10-07T02:04:51.496Z",
   "items": [
     {
       "url": "https://www.latent.space/p/ainews-zawinskis-law-of-multiagents",
@@ -3710,6 +3710,70 @@
     {
       "url": "https://www.technologyreview.com/2026/10/05/1143813/bringing-predictive-analytics-to-the-agentic-ai-era",
       "title": "Bringing predictive analytics to the agentic AI era"
+    },
+    {
+      "url": "https://www.latent.space/p/ainews-reflection-beam-501b-a23b",
+      "title": "[AINews] Reflection Beam - 501B-A23B American Open Model"
+    },
+    {
+      "url": "https://github.com/morluto/rea",
+      "title": "morluto/rea"
+    },
+    {
+      "url": "https://x.com/mustafasuleyman/status/2107475087075197239",
+      "title": "AI won't take your job anytime soon. In 10 yrs, only 5% of what humans do will be replaced by AI"
+    },
+    {
+      "url": "https://vercel.com/changelog/nano-banana-2-1-now-available-on-ai-gateway",
+      "title": "Nano Banana 2.1 now available on AI Gateway"
+    },
+    {
+      "url": "https://github.com/deepseek-ai/DeepGEMM",
+      "title": "deepseek-ai/DeepGEMM"
+    },
+    {
+      "url": "https://x.com/Hesamation/status/2107407133289386301",
+      "title": "If you have too many interests, build this AI system in 1 hour"
+    },
+    {
+      "url": "https://github.blog/changelog/2026-10-06-update-your-ide-to-restore-agent-activity-in-copilot-usage-metrics",
+      "title": "Update your IDE to restore agent activity in Copilot usage metrics"
+    },
+    {
+      "url": "https://deepmind.google/blog/embeddinggemma-2-an-open-lightweight-multimodal-embedding-model",
+      "title": "EmbeddingGemma 2: an open, lightweight multimodal embedding model"
+    },
+    {
+      "url": "https://vercel.com/changelog/confidence-based-decision-fallbacks",
+      "title": "AI Gateway adds confidence-based decision fallbacks"
+    },
+    {
+      "url": "https://openai.com/index/atlassian-partnership",
+      "title": "Atlassian and OpenAI expand partnership to turn enterprise knowledge into action"
+    },
+    {
+      "url": "https://openai.com/index/jump-trading",
+      "title": "How Jump Trading is scaling quant research with ChatGPT"
+    },
+    {
+      "url": "https://openai.com/index/sharing-ai-progress-in-mathematics",
+      "title": "Sharing AI progress in mathematics"
+    },
+    {
+      "url": "https://openai.com/index/advancing-computer-use-with-ironclad",
+      "title": "Advancing computer use with Ironclad"
+    },
+    {
+      "url": "https://vercel.com/changelog/mistral-large-4-now-available-on-ai-gateway",
+      "title": "Mistral Large 4 now available on AI Gateway"
+    },
+    {
+      "url": "https://tldr.tech/ai/2026-10-06",
+      "title": "Instinct group chats 💬, Reflection’s 501B model 🧠, OpenAI text watermarks 🏷️"
+    },
+    {
+      "url": "https://huggingface.co/blog/tiiuae/falcon-emirati",
+      "title": "Falcon-Emirati: When an LLM Learns the Dialect, the Culture, and the Nuance"
     }
   ]
 }
