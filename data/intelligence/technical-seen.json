@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "track": "technical",
-  "updatedAt": "2026-10-07T02:04:51.496Z",
+  "updatedAt": "2026-10-08T02:30:19.588Z",
   "items": [
     {
       "url": "https://www.latent.space/p/ainews-zawinskis-law-of-multiagents",
@@ -3774,6 +3774,86 @@
     {
       "url": "https://huggingface.co/blog/tiiuae/falcon-emirati",
       "title": "Falcon-Emirati: When an LLM Learns the Dialect, the Culture, and the Nuance"
+    },
+    {
+      "url": "https://github.blog/changelog/2026-10-07-claude-haiku-5-5-in-github-copilot",
+      "title": "Claude Haiku 5.5 in GitHub Copilot"
+    },
+    {
+      "url": "https://github.com/manaflow-ai/cmux",
+      "title": "manaflow-ai/cmux"
+    },
+    {
+      "url": "https://huggingface.co/blog/LiquidAI/open-d1",
+      "title": "Multimodal open d1 decision models for the edge"
+    },
+    {
+      "url": "https://github.blog/changelog/2026-10-07-purpose-built-model-for-leaked-secret-detection",
+      "title": "Purpose-built model for leaked secret detection"
+    },
+    {
+      "url": "https://github.blog/changelog/2026-10-07-local-sandboxing-for-github-copilot-now-generally-available",
+      "title": "Local sandboxing for GitHub Copilot now generally available"
+    },
+    {
+      "url": "https://github.blog/changelog/2026-10-07-discover-local-models-in-github-copilot-cli",
+      "title": "Discover local models in GitHub Copilot CLI"
+    },
+    {
+      "url": "https://www.latent.space/p/stacklok",
+      "title": "Can a Cloud-Native Harness Make Agents Reliable Beyond the Desktop?"
+    },
+    {
+      "url": "https://huggingface.co/blog/nvidia/nemotron-ioi-and-imo-2026",
+      "title": "One Model Family, Two Gold-Level Results: Fine-Tuning Nemotron for IOI and IMO"
+    },
+    {
+      "url": "https://openai.com/index/teens-learn-and-plan",
+      "title": "Helping teens learn, plan, and shape the future of AI"
+    },
+    {
+      "url": "https://openai.com/index/radisson",
+      "title": "Radisson Hotel Group brings hotel discovery into ChatGPT"
+    },
+    {
+      "url": "https://vercel.com/changelog/openai-decisions-api-now-available-on-ai-gateway",
+      "title": "OpenAI Decisions API now available on AI Gateway"
+    },
+    {
+      "url": "https://vercel.com/changelog/claude-haiku-5-5-now-available-on-ai-gateway",
+      "title": "Claude Haiku 5.5 now available on AI Gateway"
+    },
+    {
+      "url": "https://vercel.com/changelog/glyph-cluster-is-now-available-in-stealth-for-free-on-ai-gateway",
+      "title": "Glyph Cluster is now available in stealth for free on AI Gateway"
+    },
+    {
+      "url": "https://tldr.tech/ai/2026-10-07",
+      "title": "Mistral Large 4 🧠, OpenAI Decisions API ❓, Nano Banana 2.1 🍌"
+    },
+    {
+      "url": "https://www.producthunt.com/products/figma",
+      "title": "Figma Agent"
+    },
+    {
+      "url": "https://www.producthunt.com/products/devally",
+      "title": "DevAlly AI Agent"
+    },
+    {
+      "url": "https://vercel.com/changelog/openai-ultrafast-mode-now-available-on-ai-gateway",
+      "title": "OpenAI Ultrafast mode now available on AI Gateway"
+    },
+    {
+      "url": "https://vercel.com/changelog/flux-3-image-now-available-on-ai-gateway",
+      "title": "FLUX 3 Image now available on AI Gateway"
+    },
+    {
+      "url": "https://www.latent.space/p/ainews-quasi-riemann-hypothesis-openai",
+      "title": "[AINews] Quasi-Riemann-Hypothesis: OpenAI publishes 722 math papers solving 90 of the top 500 open math problems; “the most significant moment” in >100 years of mathematics"
+    },
+    {
+      "url": "https://openai.com/index/gpt-6-for-everyone",
+      "title": "GPT-6 and Intelligent UI for everyone"
     }
   ]
 }
