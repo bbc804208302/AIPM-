@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "track": "domain",
-  "updatedAt": "2026-10-07T02:24:17.383Z",
+  "updatedAt": "2026-10-08T02:42:15.912Z",
   "items": [
     {
       "url": "https://www.creativebloq.com/3d/autodesk-tackles-ai-filmmakings-biggest-problem-with-3d-control",
@@ -4034,6 +4034,86 @@
     {
       "url": "https://nofilmschool.com/smallrig-35mm-external-optical-viewfinders",
       "title": "Recreate the Feel of Classic Film Shooting With These 35mm External Optical Viewfinders"
+    },
+    {
+      "url": "https://nofilmschool.com/dittodub-native-6-ai-dubbing-model",
+      "title": "DittoDub Launches New Native 6 AI Dubbing Model With Support for Over 100 Languages"
+    },
+    {
+      "url": "https://arxiv.org/abs/2610.07788",
+      "title": "Image-Space Refraction Correction for Underwater 3D Reconstruction: Warping Flat-Port Views into Pinhole Perspective"
+    },
+    {
+      "url": "https://arxiv.org/abs/2610.07939",
+      "title": "CCDF: A Benchmark Dataset for Deepfake Detection in Real-World Surveillance Footage"
+    },
+    {
+      "url": "https://arxiv.org/abs/2610.08684",
+      "title": "RenderBench: Benchmarking Render-to-Real Video Transfer with Reconstructed Digital Twins"
+    },
+    {
+      "url": "https://nofilmschool.com/sinima-creative-ownership-platform",
+      "title": "Worried About AI Training on Your Videos? This Platform Lets You Protect and Monetize Your Work"
+    },
+    {
+      "url": "https://arxiv.org/abs/2610.08213",
+      "title": "RACE-FPP: A Robust AI-assisted Characterisation Enhancement for Fringe Projection Profilometry"
+    },
+    {
+      "url": "https://arxiv.org/abs/2610.08620",
+      "title": "LiDAR Resolution Recovery via Foundation-Model-Guided Diffusion"
+    },
+    {
+      "url": "https://nofilmschool.com/gopro-mission-1-pro-ils-demos",
+      "title": "Can the GoPro MISSION 1 Pro ILS Actually be Used for Capturing High-End Cinematic Video?"
+    },
+    {
+      "url": "https://arxiv.org/abs/2610.07925",
+      "title": "TF-PRVR: Training-Free Partially Relevant Video Retrieval"
+    },
+    {
+      "url": "https://arxiv.org/abs/2610.08528",
+      "title": "MedCORE: Criteria-Grounded Clinical Reasoning for Interpretable Medical Image Diagnosis"
+    },
+    {
+      "url": "https://arxiv.org/abs/2610.08772",
+      "title": "Backend-Agnostic Sparse Attention for Fast High-Resolution Visual Generation"
+    },
+    {
+      "url": "https://nofilmschool.com/william-friedkin-fear-directing",
+      "title": "'The French Connection' Director William Friedkin Dreaded Every Single Shoot"
+    },
+    {
+      "url": "https://www.cartoonbrew.com/series/doctor-who-tardis-crew-first-look-267627.html",
+      "title": "BBC Unveils First Look At Animated ‘Doctor Who’ Preschool Series ‘TARDIS Crew’"
+    },
+    {
+      "url": "https://arxiv.org/abs/2610.07072",
+      "title": "On Color Alignment in VAE Latent Spaces and Its Applications"
+    },
+    {
+      "url": "https://arxiv.org/abs/2610.07339",
+      "title": "A doctrine-grounded visual question answering dataset for Tactical Combat Casualty Care"
+    },
+    {
+      "url": "https://arxiv.org/abs/2610.07911",
+      "title": "Diverse Motion Customization via Control-based Dynamic Optimization"
+    },
+    {
+      "url": "https://arxiv.org/abs/2610.08791",
+      "title": "World Models' Last Exam in Physics"
+    },
+    {
+      "url": "https://nofilmschool.com/canoncanon-eos-r8-mark-ii-features-eos-r8-mark-ii-features",
+      "title": "Jumping From Smartphone to Full-Frame Mirrorless? Here’s Why You Should Consider the Canon R8 Mark II"
+    },
+    {
+      "url": "https://arxiv.org/abs/2610.08315",
+      "title": "Catastrophic Forgetting in Sequential Thermal Anti-UAV Detection: The Role of Scale-Conditioned Gradient Imbalance"
+    },
+    {
+      "url": "https://arxiv.org/abs/2610.08672",
+      "title": "PDB: Point-Based Deformation Blending for Facial Animation Retargeting"
     }
   ]
 }
