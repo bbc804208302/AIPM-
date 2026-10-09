@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "track": "domain",
-  "updatedAt": "2026-10-08T02:42:15.912Z",
+  "updatedAt": "2026-10-09T02:56:40.895Z",
   "items": [
     {
       "url": "https://www.creativebloq.com/3d/autodesk-tackles-ai-filmmakings-biggest-problem-with-3d-control",
@@ -4114,6 +4114,86 @@
     {
       "url": "https://arxiv.org/abs/2610.08672",
       "title": "PDB: Point-Based Deformation Blending for Facial Animation Retargeting"
+    },
+    {
+      "url": "https://arxiv.org/abs/2610.09223",
+      "title": "PVSync: A Unified Lip-Sync Expert for Timing and Articulation"
+    },
+    {
+      "url": "https://arxiv.org/abs/2610.10047",
+      "title": "AdSpark: A Large-Scale Dataset and Benchmark for Product-Centric Advertisement Video Generation"
+    },
+    {
+      "url": "https://arxiv.org/abs/2610.10163",
+      "title": "Beyond Anonymous Captions: Grounding Character Identity in Video Captioning and Question Answering"
+    },
+    {
+      "url": "https://nofilmschool.com/over-the-garden-wall-structure",
+      "title": "Why Your Origin Story Might Belong Near the End"
+    },
+    {
+      "url": "https://arxiv.org/abs/2610.09326",
+      "title": "VIS-Ground: Video Interactive Storytelling with Contextual Grounding"
+    },
+    {
+      "url": "https://arxiv.org/abs/2610.09513",
+      "title": "OmniCam: Omni-Camera Trajectory Generation via Geometry-Grounded Pose Token Learning"
+    },
+    {
+      "url": "https://arxiv.org/abs/2610.10196",
+      "title": "HuLiGen: Human LiDAR Generation from Parametric Body Models"
+    },
+    {
+      "url": "https://nofilmschool.com/sigma-50-120mm-f-2-8-dc-os-contemporary-lens-2678057279",
+      "title": "Sigma Completes Its f/2.8 Contemporary Zoom Series With an Extremely Portable New Lens"
+    },
+    {
+      "url": "https://arxiv.org/abs/2610.09252",
+      "title": "Adaptive Visual Token Reduction for Accelerated Image Understanding"
+    },
+    {
+      "url": "https://arxiv.org/abs/2610.09514",
+      "title": "STRIKE: Learning Visual State Transitions for Physical World Modeling"
+    },
+    {
+      "url": "https://arxiv.org/abs/2610.10238",
+      "title": "Geometry-Supervised Visual Representation Learning for Multi-Phenotype Lesion Interpretation in Medical VLMs"
+    },
+    {
+      "url": "https://arxiv.org/abs/2610.10286",
+      "title": "$\\Delta$Representation: Geometry Supervised Representation Learning of Phenotypes via Counterfactual Reasoning for Medical VLMs"
+    },
+    {
+      "url": "https://nofilmschool.com/blackmagic-camera-for-android-3-5",
+      "title": "Blackmagic Camera for Android 3.5 Adds 10-bit Remote Previews and Android 17 Optimization"
+    },
+    {
+      "url": "https://news.google.com/rss/articles/CBMiZkFVX3lxTFAzakpOQTVnTUJOTnRoTHUyV1lzOG5Nd2R3SFFucHdveFVkZmZ4SEk2MVJVVWZ5RVJfcnJUSDhoczlPQ1lhQjZ1Q0pJZXhFYUI4ejlpVEhyTmZmY2xYS2RCVGQ0Rm5SQQ?oc=5",
+      "title": "A+E Global Media and Lifetime Expand Microdrama Slate, Announcing Mobile Launch Originals and Nearly 200 Titles Adapted for Third-Party Distribution - IMDb"
+    },
+    {
+      "url": "https://nofilmschool.com/la-soundstage-shuts-down",
+      "title": "L.A.’s Soundstage Real Estate Bubble Has Burst. Here’s What It Means for Filmmakers"
+    },
+    {
+      "url": "https://nofilmschool.com/damon-affleck-artists-equity",
+      "title": "How Ben Affleck’s Artists Equity Is Redefining Film Financing Models"
+    },
+    {
+      "url": "https://nofilmschool.com/sigma-16-300mm-f-3-5-6-7-dc-os-contemporary-lens-nikon-z",
+      "title": "Sigma’s Extremely Rangy and Versatile 16-300mm Zoom is Coming to the Nikon Z Mount"
+    },
+    {
+      "url": "https://nofilmschool.com/saint-north-by-northwest-quote",
+      "title": "Film Quote of the Day: The Eva Marie Saint Line That Made 'North by Northwest' Impossible to Forget"
+    },
+    {
+      "url": "https://www.cartoonbrew.com/law/baobab-namethemachine-pixar-tax-credits-267651.html",
+      "title": "California Awards Nearly $9M In Tax Credits To Two Indie Animated Features, Pixar Scores Another $40M"
+    },
+    {
+      "url": "https://news.google.com/rss/articles/CBMinAJBVV95cUxOV1IxYmlLUWFOeVRQN2cyUHp2dDdXWGgycGd2MUlXYnUwbGhQLXExNklNYUEzR0pZaEJKWk52dnhJMVU2QjZubjVic1labmRzbWFtRXpIdmN1ejdEbUZKM1I4Y3lGcmpFaTVRWk9RRjBpMnNhd2QwYXN4UV9tbm9lMlZZQzhqRV85Z0Y5bGdnd0s4UzBQMWM5TXJkTm02Y1J2b090bjREMVdxNy01MVJDcWZGNDFaZFI5WV9OYjFXVTRTZ1JlOXdodDc0LTNzZWtWbUtMek1JcjhFQUowbEJUejB3SVlwZUl3X2kwVHJqYy1LUDY0eWtWdFF5S0dNWEI4R21iQlk1dWNVd3VJUzNkcGZUNkhEUzZYZnhmeg?oc=5",
+      "title": "IQST - IQSTEL Advances Microdrama Commercialization with Outreach to Seven Mobile Operators Serving Approximately 93 Million Subscribers - PR Newswire"
     }
   ]
 }
