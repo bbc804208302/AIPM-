@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "track": "technical",
-  "updatedAt": "2026-10-08T02:30:19.588Z",
+  "updatedAt": "2026-10-09T02:46:30.099Z",
   "items": [
     {
       "url": "https://www.latent.space/p/ainews-zawinskis-law-of-multiagents",
@@ -3854,6 +3854,86 @@
     {
       "url": "https://openai.com/index/gpt-6-for-everyone",
       "title": "GPT-6 and Intelligent UI for everyone"
+    },
+    {
+      "url": "https://www.technologyreview.com/2026/10/08/1146224/roundtables-a-conversation-with-the-creator-of-ai-designed-viruses",
+      "title": "Roundtables: A Conversation With the Creator of AI-Designed Viruses"
+    },
+    {
+      "url": "https://x.com/jakecastilloooo/status/2107873317369581751",
+      "title": "How to scale your app with an AI UGC Army (Full Workflow)"
+    },
+    {
+      "url": "https://openai.com/index/oracle",
+      "title": "How Oracle turns days of work into minutes with ChatGPT and Codex"
+    },
+    {
+      "url": "https://x.com/satyanadella/status/2108213283144810958",
+      "title": "The Infinite SaaS Factory"
+    },
+    {
+      "url": "https://www.technologyreview.com/2026/10/08/1144020/building-a-safer-path-to-autonomous-industrial-ai",
+      "title": "Building a safer path to autonomous industrial AI"
+    },
+    {
+      "url": "https://www.latent.space/p/ainews-claude-haiku-55-better-than",
+      "title": "[AINews] Claude Haiku 5.5 — better than GPT-6 Luna at the same pricing"
+    },
+    {
+      "url": "https://huggingface.co/blog/building-with-ml-intern",
+      "title": "The model that didn't exist, so you made it yourself"
+    },
+    {
+      "url": "https://vercel.com/changelog/grok-imagine-video-1-5-lite-on-ai-gateway",
+      "title": "Grok Imagine Video 1.5 Lite on AI Gateway"
+    },
+    {
+      "url": "https://vercel.com/changelog/step-5-preview-now-available-on-ai-gateway",
+      "title": "Step 5 Preview now available on AI Gateway"
+    },
+    {
+      "url": "https://tldr.tech/ai/2026-10-08",
+      "title": "ChatGPT Intelligent UI 🧠, Claude Haiku 5.5 ⚡, Grok Bot 3rd party models 🤖"
+    },
+    {
+      "url": "https://huggingface.co/blog/tiiuae/falcon-asr",
+      "title": "Introducing Falcon ASR"
+    },
+    {
+      "url": "https://www.producthunt.com/products/agentguard-5",
+      "title": "AgentGuard"
+    },
+    {
+      "url": "https://x.com/rabi_guha/status/2108238432355123572",
+      "title": "We reverse engineered ChatGPT Intelligent UI. Here's how it actually works"
+    },
+    {
+      "url": "https://x.com/free_ai_guides/status/2107886470421750022",
+      "title": "How to make a cartoon explainer video with Claude"
+    },
+    {
+      "url": "https://x.com/aashatwt/status/2107804480234455433",
+      "title": "how to use AI agents to run your marketing team (the playbook)"
+    },
+    {
+      "url": "https://www.latent.space/p/periodic",
+      "title": "Synthesis Superintelligence: from Semiconductors to Superconductors — Periodic Labs’ Liam Fedus and Ekin Dogus Cubuk"
+    },
+    {
+      "url": "https://openai.com/index/pollo-ai",
+      "title": "Pollo AI turns creative ideas into campaigns with OpenAI"
+    },
+    {
+      "url": "https://openai.com/index/legalon-halves-codex-costs",
+      "title": "LegalOn halves Codex costs while maintaining development speed"
+    },
+    {
+      "url": "https://www.technologyreview.com/2026/10/08/1145923/ai-breakthroughs-in-robotics-wont-change-your-life-any-time-soon",
+      "title": "AI breakthroughs in robotics won’t change your life any time soon"
+    },
+    {
+      "url": "https://openai.com/index/disrupting-ai-enabled-false-front-operations",
+      "title": "Disrupting AI-enabled “false front” operations"
     }
   ]
 }
