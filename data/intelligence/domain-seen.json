@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "track": "domain",
-  "updatedAt": "2026-10-09T02:56:40.895Z",
+  "updatedAt": "2026-10-10T02:20:55.290Z",
   "items": [
     {
       "url": "https://www.creativebloq.com/3d/autodesk-tackles-ai-filmmakings-biggest-problem-with-3d-control",
@@ -4194,6 +4194,86 @@
     {
       "url": "https://news.google.com/rss/articles/CBMinAJBVV95cUxOV1IxYmlLUWFOeVRQN2cyUHp2dDdXWGgycGd2MUlXYnUwbGhQLXExNklNYUEzR0pZaEJKWk52dnhJMVU2QjZubjVic1labmRzbWFtRXpIdmN1ejdEbUZKM1I4Y3lGcmpFaTVRWk9RRjBpMnNhd2QwYXN4UV9tbm9lMlZZQzhqRV85Z0Y5bGdnd0s4UzBQMWM5TXJkTm02Y1J2b090bjREMVdxNy01MVJDcWZGNDFaZFI5WV9OYjFXVTRTZ1JlOXdodDc0LTNzZWtWbUtMek1JcjhFQUowbEJUejB3SVlwZUl3X2kwVHJqYy1LUDY0eWtWdFF5S0dNWEI4R21iQlk1dWNVd3VJUzNkcGZUNkhEUzZYZnhmeg?oc=5",
       "title": "IQST - IQSTEL Advances Microdrama Commercialization with Outreach to Seven Mobile Operators Serving Approximately 93 Million Subscribers - PR Newswire"
+    },
+    {
+      "url": "https://arxiv.org/abs/2610.10984",
+      "title": "Fluid-Gen-Zero: Grounding Pretrained Video Generators in Physics without Training"
+    },
+    {
+      "url": "https://arxiv.org/abs/2610.11174",
+      "title": "IntactWorld: Joint World Modeling with Intact Features"
+    },
+    {
+      "url": "https://arxiv.org/abs/2610.11237",
+      "title": "Breaking the Group Size Barrier: Parameter-Efficient Group Dance Generation with Chain-of-Dancers"
+    },
+    {
+      "url": "https://arxiv.org/abs/2610.11286",
+      "title": "When Scene Text Hijacks the Scene: Uncovering, Exploiting, and Mitigating Rendered-Text Semantic Leakage in Image Generation Models"
+    },
+    {
+      "url": "https://arxiv.org/abs/2610.11302",
+      "title": "iCATS: Fast Video Generation via Interaction-Aware Sparse Attention and Timestep-Adaptive Sparsity"
+    },
+    {
+      "url": "https://arxiv.org/abs/2610.11329",
+      "title": "PathLang: A Language-Centered Benchmark for Vision-Language Models in Computational Pathology"
+    },
+    {
+      "url": "https://nofilmschool.com/sony-ecm-ax10",
+      "title": "Sony’s New Spatial Audio USB-C Mic Aims to Bring a New Level of Immersion to Content Creators"
+    },
+    {
+      "url": "https://nofilmschool.com/instantly-recognizable-film-scores",
+      "title": "The Most Instantly Recognizable Film Scores of All Time"
+    },
+    {
+      "url": "https://arxiv.org/abs/2610.11498",
+      "title": "Parametric Trajectory Distillation for Few-Step Video Generation"
+    },
+    {
+      "url": "https://nofilmschool.com/lenovo-15-3-pro-9n-multi-touch-laptop",
+      "title": "All In on AI? This New NVIDIA RTX Spark N1X-Powered Laptop Could Be For You"
+    },
+    {
+      "url": "https://arxiv.org/abs/2610.11023",
+      "title": "Expression-Diverse References for Identity-Preserving Video Generation"
+    },
+    {
+      "url": "https://nofilmschool.com/crystal-lake-premieres-october-15-everything-we-know-about-the-friday-the-13th-prequel",
+      "title": "'Crystal Lake' Premieres October 15: Everything We Know About the Friday the 13th Prequel"
+    },
+    {
+      "url": "https://nofilmschool.com/aaron-sorkin-social-reckoning-writing",
+      "title": "Aaron Sorkin's 6 Biggest Writing Lessons"
+    },
+    {
+      "url": "https://nofilmschool.com/lexar-sd-cards-deals",
+      "title": "Here are Some More 4K-Ready Memory Cards On Sale and Ready for Your Pockets"
+    },
+    {
+      "url": "https://nofilmschool.com/sensor-size-focal-length-depth",
+      "title": "Full Frame vs. Super 35 and How Sensor Size Changes Your Shot"
+    },
+    {
+      "url": "https://nofilmschool.com/sony-auto-framing-accessibility-feature",
+      "title": "Struggling With Framing Up Your Shots? Here’s How to Let Your Sony Cameras Handle it For You"
+    },
+    {
+      "url": "https://www.cartoonbrew.com/anime/anime-fandom-study-2026-teen-viewing-habits-267734.html",
+      "title": "Anime Accounts For At Least Half Of Viewing For 82% Of Teen Fans, And Other Findings From New Study"
+    },
+    {
+      "url": "https://nofilmschool.com/100-slasher-film-prompts",
+      "title": "100 Slasher Film Prompts"
+    },
+    {
+      "url": "https://nofilmschool.com/nuclear-explosion-from-terminator-2",
+      "title": "How ‘Terminator 2’ Created One of Cinema’s Most Realistic Nuclear Explosions With Practical Effects"
+    },
+    {
+      "url": "https://arxiv.org/abs/2610.10991",
+      "title": "Region-Aware CLS Token Augmentation for Fine-Grained Image Retrieval"
     }
   ]
 }
