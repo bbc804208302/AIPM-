@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "track": "technical",
-  "updatedAt": "2026-10-09T02:46:30.099Z",
+  "updatedAt": "2026-10-10T02:04:18.543Z",
   "items": [
     {
       "url": "https://www.latent.space/p/ainews-zawinskis-law-of-multiagents",
@@ -3934,6 +3934,86 @@
     {
       "url": "https://openai.com/index/disrupting-ai-enabled-false-front-operations",
       "title": "Disrupting AI-enabled “false front” operations"
+    },
+    {
+      "url": "https://github.blog/changelog/2026-10-09-github-copilot-weekly-releases-october-5",
+      "title": "GitHub Copilot weekly releases — October 5"
+    },
+    {
+      "url": "https://github.com/BerriAI/litellm",
+      "title": "BerriAI/litellm"
+    },
+    {
+      "url": "https://x.com/NicholasDulait/status/2108212094214529135",
+      "title": "How to use Claude Opus 5.5 for SEO so well it feels illegal"
+    },
+    {
+      "url": "https://vercel.com/blog/how-rillet-ships-3-faster-with-ai-agents-on-vercel",
+      "title": "How Rillet ships 3× faster with AI agents on Vercel"
+    },
+    {
+      "url": "https://github.com/Robbyant/lingbot-map",
+      "title": "Robbyant/lingbot-map"
+    },
+    {
+      "url": "https://x.com/michaeljburry/status/2108277211610456409",
+      "title": "Short Thoughts: The AI Cloud Oligopoly, Stages of Grief & a Flashing Bear Market Indicator"
+    },
+    {
+      "url": "https://github.blog/changelog/2026-10-08-copilot-code-review-new-organization-billing-options-and-controls",
+      "title": "Copilot code review: New organization billing options and controls"
+    },
+    {
+      "url": "https://github.com/twostraws/SwiftUI-Agent-Skill",
+      "title": "twostraws/SwiftUI-Agent-Skill"
+    },
+    {
+      "url": "https://vercel.com/changelog/agents-can-now-buy-domains-with-the-vercel-cli",
+      "title": "Agents can now buy domains with the Vercel CLI"
+    },
+    {
+      "url": "https://www.technologyreview.com/2026/10/09/1145728/we-are-putting-too-much-faith-in-ai-to-say-no",
+      "title": "We’re putting too much faith in AI’s ability to say no"
+    },
+    {
+      "url": "https://openai.com/index/asana-browser-agent",
+      "title": "Asana cuts model costs 76x in browser tests with GPT-6.1 Sol"
+    },
+    {
+      "url": "https://vercel.com/changelog/microsoft-decision-1-now-available-on-ai-gateway",
+      "title": "Microsoft Decision-1 now available on AI Gateway"
+    },
+    {
+      "url": "https://vercel.com/changelog/liquid-ai-d1-is-available-on-ai-gateway",
+      "title": "Liquid AI's d1 is available on AI Gateway"
+    },
+    {
+      "url": "https://tldr.tech/ai/2026-10-09",
+      "title": "GPT-6.1 Ultrafast ⚡, Gemini universal agent 🤖, speculative decoding 🧠"
+    },
+    {
+      "url": "https://www.producthunt.com/products/agentsdr",
+      "title": "AgentSDR"
+    },
+    {
+      "url": "https://x.com/igus_ai/status/2108300082097635788",
+      "title": "How to Cut Your AI Coding Bill to $0 in 10 Minutes (Full Setup)"
+    },
+    {
+      "url": "https://x.com/0xMorlex/status/2108171726412464173",
+      "title": "Grok Bot + Opus 5.5: The Ultimate Agent Harness in 10 Steps"
+    },
+    {
+      "url": "https://www.latent.space/p/biohub-deepmind",
+      "title": "Why AlphaFold Didn't Solve Protein Folding — Pushmeet Kohli, Google DeepMind & Sal Candido, Biohub"
+    },
+    {
+      "url": "https://huggingface.co/blog/allenai/impactful-scheduling",
+      "title": "Impactful scheduling for GPU clusters"
+    },
+    {
+      "url": "https://openai.com/index/sophos",
+      "title": "Sophos cuts threat investigation time by 96% with OpenAI Daybreak"
     }
   ]
 }
