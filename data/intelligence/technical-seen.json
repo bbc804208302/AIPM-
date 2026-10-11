@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "track": "technical",
-  "updatedAt": "2026-10-10T02:04:18.543Z",
+  "updatedAt": "2026-10-11T01:33:13.244Z",
   "items": [
     {
       "url": "https://www.latent.space/p/ainews-zawinskis-law-of-multiagents",
@@ -4014,6 +4014,30 @@
     {
       "url": "https://openai.com/index/sophos",
       "title": "Sophos cuts threat investigation time by 96% with OpenAI Daybreak"
+    },
+    {
+      "url": "https://www.latent.space/p/standard-bots",
+      "title": "Building AI for Reliable Execution: Lessons From Industrial Robotics"
+    },
+    {
+      "url": "https://x.com/satyanadella/status/2108931348857827686",
+      "title": "Models as Insider Risks in the Super Intelligence Era"
+    },
+    {
+      "url": "https://github.blog/changelog/2026-10-10-new-controls-and-chat-improvements-in-copilot-for-jetbrains",
+      "title": "New controls and chat improvements in Copilot for JetBrains"
+    },
+    {
+      "url": "https://www.latent.space/p/ainews-typesafejev-at-100m-arr-75b",
+      "title": "[AINews] TypeSafe/Jev at >$100M ARR, $7.5B valuation 3 weeks after launch"
+    },
+    {
+      "url": "https://www.producthunt.com/products/agentdock",
+      "title": "AgentDock"
+    },
+    {
+      "url": "https://www.latent.space/p/nyc2026",
+      "title": "[Subscriber Exclusive] NYC Subscriber Meetups!"
     }
   ]
 }
