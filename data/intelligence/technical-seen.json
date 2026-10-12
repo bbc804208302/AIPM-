@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "track": "technical",
-  "updatedAt": "2026-10-11T01:33:13.244Z",
+  "updatedAt": "2026-10-12T02:03:01.763Z",
   "items": [
     {
       "url": "https://www.latent.space/p/ainews-zawinskis-law-of-multiagents",
@@ -4038,6 +4038,18 @@
     {
       "url": "https://www.latent.space/p/nyc2026",
       "title": "[Subscriber Exclusive] NYC Subscriber Meetups!"
+    },
+    {
+      "url": "https://github.com/lyogavin/airllm",
+      "title": "lyogavin/airllm"
+    },
+    {
+      "url": "https://x.com/sermakarevich/status/2108942010123968804",
+      "title": "Agentic evals: how to know whether an AI agent did the job, and will do it again"
+    },
+    {
+      "url": "https://x.com/kirat_tw/status/2109282009390702948",
+      "title": "Game of skill"
     }
   ]
 }

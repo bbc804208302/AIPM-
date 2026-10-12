@@ -1,0 +1,222 @@
+{
+  "schemaVersion": 1,
+  "briefingDate": "2026-10-12",
+  "timezone": "Asia/Shanghai",
+  "track": "technical",
+  "generatedAt": "2026-10-12T02:03:01.763Z",
+  "candidateCount": 3,
+  "targetCount": 10,
+  "dailyLimit": 20,
+  "items": [
+    {
+      "id": "SIG-20261012-759119AB",
+      "briefingDate": "2026-10-12",
+      "track": "technical",
+      "title": "lyogavin/airllm",
+      "sourceId": "github-trending",
+      "source": "GitHub Trending",
+      "sourceGroup": "github-trending",
+      "sourceType": "scrape",
+      "trustTier": "community",
+      "category": "model-capability",
+      "summary": "AirLLM 70B inference with single 4GB GPU",
+      "url": "https://github.com/lyogavin/airllm",
+      "publishedAt": null,
+      "collectedAt": "2026-10-12T02:03:01.605Z",
+      "sourceRank": 7,
+      "sourceMetadata": {
+        "language": "Jupyter Notebook",
+        "starsToday": "548 stars today",
+        "pageDescription": "AirLLM 70B inference with single 4GB GPU. Contribute to lyogavin/airllm development by creating an account on GitHub. AirLLM 70B inference with single 4GB GPU Quickstart | Configurations | MacOS | Example notebooks | FAQ AirLLM dramatically reduces inference memory usage, letting 70B large language models run on a single 4GB GPU card — without quantization, distillation, or pruning. You can even run Kimi K3 (2.8T) — the largest open-source model released to date — on under 4GB, Qwen3.8-Flash-Next (125B) on 6GB, and DeepSeek-V3 (671B) on ~12GB. We now also support training huge models on small VRAM: Qwen3.8-Flash-Next (125B) under 6GB."
+      },
+      "selectionReason": "GitHub Trending 今日排名 #7",
+      "heatScore": 76,
+      "impactScore": null,
+      "noveltyScore": null,
+      "productInsight": null,
+      "createdAt": "2026-10-12T02:03:01.605Z",
+      "highValue": false,
+      "readStatus": "未读",
+      "convertedToDemand": false,
+      "titleZh": "lyogavin/airllm",
+      "summaryZh": "AI 概述暂未生成。原始来源摘要：AirLLM 70B inference with single 4GB GPU",
+      "translationStatus": "needs-review"
+    },
+    {
+      "id": "SIG-20261012-665628F9",
+      "briefingDate": "2026-10-12",
+      "track": "technical",
+      "title": "Agentic evals: how to know whether an AI agent did the job, and will do it again",
+      "sourceId": "attentionvc-ai",
+      "source": "X / AttentionVC AI",
+      "sourceGroup": "x-viral",
+      "sourceType": "api",
+      "trustTier": "community",
+      "category": "agent",
+      "summary": "An article for engineers who ship agents built on large language models (LLMs): systems that call tools, change records, and act on a customer's behalf over several steps. After reading it you will be",
+      "url": "https://x.com/sermakarevich/status/2108942010123968804",
+      "publishedAt": "2026-10-10T15:25:32.000Z",
+      "collectedAt": "2026-10-12T02:03:00.924Z",
+      "sourceRank": 7,
+      "sourceMetadata": {
+        "author": "@sermakarevich",
+        "followers": 1014,
+        "views": 30589,
+        "likes": 504,
+        "reposts": 80,
+        "pageDescription": "Agentic evals: how to know whether an AI agent did the job, and will do it again An article for engineers who ship agents built on large language models (LLMs): systems that call tools, change records, and act on a customer's behalf over several steps. After reading it you will be able to grade an agent run by what it changed rather than what it said, put a reliability number next to the capability number, find the step where a failing run went wrong, and tell when a model-as-judge can be trusted. It then widens to their managers and to whoever decides whether an agent may touch orders, code, or money. The numbers come from published papers listed at the end and from one runnable experiment on a small support agent that Level 0 describes completely. Nothing here assumes you have seen it before. An agent is a language model in a loop: it reads a request, picks a tool (look up an order, cancel it, refund it, send a reply), reads the tool's answer, and picks again until it decides it is done. The code around the model that runs this loop, with its prompt, tools and retries, is the harness. An agent eval is a repeatable test that tells you, with a number you can trust, whether the agent did the job, whether it does it every time, and where it goes wrong when it does not."
+      },
+      "selectionReason": "AttentionVC AI 近 15 日情报 #7",
+      "heatScore": 72,
+      "impactScore": null,
+      "noveltyScore": null,
+      "productInsight": null,
+      "createdAt": "2026-10-12T02:03:00.924Z",
+      "highValue": false,
+      "readStatus": "未读",
+      "convertedToDemand": false,
+      "titleZh": "Agentic evals: how to know whether an AI agent did the job, and will do it again",
+      "summaryZh": "AI 概述暂未生成。原始来源摘要：An article for engineers who ship agents built on large language models (LLMs): systems that call tools, change records, and act on a customer's behalf over several steps. After re…",
+      "translationStatus": "needs-review"
+    },
+    {
+      "id": "SIG-20261012-5378201D",
+      "briefingDate": "2026-10-12",
+      "track": "technical",
+      "title": "Game of skill",
+      "sourceId": "attentionvc-ai",
+      "source": "X / AttentionVC AI",
+      "sourceGroup": "x-viral",
+      "sourceType": "api",
+      "trustTier": "community",
+      "category": "ai-coding",
+      "summary": "For most of the last two decades, coding was the filter. If you could write good software, you were “smart” in the way the market cared about. Elite universities, top firms and startups all used it as",
+      "url": "https://x.com/kirat_tw/status/2109282009390702948",
+      "publishedAt": "2026-10-11T13:56:34.000Z",
+      "collectedAt": "2026-10-12T02:03:00.924Z",
+      "sourceRank": 8,
+      "sourceMetadata": {
+        "author": "@kirat_tw",
+        "followers": 124861,
+        "views": 22028,
+        "likes": 503,
+        "reposts": 26,
+        "pageDescription": "Game of skill For most of the last two decades, coding was the filter. If you could write good software, you were “smart” in the way the market cared about. Elite universities, top firms and startups all used it as the test. LeetCode became a rite of passage. Competitive programming became a credential. AI now writes a large share of the code that ships. Not perfectly, but well enough that “can you code” no longer tells you much about who someone is or how they think. When a skill becomes commoditized, it stops being a signal."
+      },
+      "selectionReason": "AttentionVC AI 近 15 日情报 #8",
+      "heatScore": 71,
+      "impactScore": null,
+      "noveltyScore": null,
+      "productInsight": null,
+      "createdAt": "2026-10-12T02:03:00.924Z",
+      "highValue": false,
+      "readStatus": "未读",
+      "convertedToDemand": false,
+      "titleZh": "Game of skill",
+      "summaryZh": "AI 概述暂未生成。原始来源摘要：For most of the last two decades, coding was the filter. If you could write good software, you were “smart” in the way the market cared about. Elite universities, top firms and sta…",
+      "translationStatus": "needs-review"
+    }
+  ],
+  "sources": [
+    {
+      "sourceId": "github-trending",
+      "sourceName": "GitHub Trending",
+      "status": "success",
+      "collected": 3,
+      "durationMs": 1079
+    },
+    {
+      "sourceId": "openai-news",
+      "sourceName": "OpenAI News",
+      "status": "success",
+      "collected": 12,
+      "durationMs": 239
+    },
+    {
+      "sourceId": "deepmind-blog",
+      "sourceName": "Google DeepMind Blog",
+      "status": "success",
+      "collected": 12,
+      "durationMs": 309
+    },
+    {
+      "sourceId": "huggingface-blog",
+      "sourceName": "Hugging Face Blog",
+      "status": "success",
+      "collected": 12,
+      "durationMs": 134
+    },
+    {
+      "sourceId": "tldr-ai",
+      "sourceName": "TLDR AI",
+      "status": "success",
+      "collected": 12,
+      "durationMs": 378
+    },
+    {
+      "sourceId": "smol-ai-news",
+      "sourceName": "Smol AI News",
+      "status": "success",
+      "collected": 12,
+      "durationMs": 1207
+    },
+    {
+      "sourceId": "latent-space",
+      "sourceName": "Latent Space",
+      "status": "success",
+      "collected": 12,
+      "durationMs": 341
+    },
+    {
+      "sourceId": "mit-tech-review-ai",
+      "sourceName": "MIT Technology Review AI",
+      "status": "success",
+      "collected": 10,
+      "durationMs": 296
+    },
+    {
+      "sourceId": "product-hunt-ai",
+      "sourceName": "Product Hunt · AI Products",
+      "status": "success",
+      "collected": 2,
+      "durationMs": 281
+    },
+    {
+      "sourceId": "github-ai-changelog",
+      "sourceName": "GitHub Changelog · AI",
+      "status": "success",
+      "collected": 6,
+      "durationMs": 272
+    },
+    {
+      "sourceId": "vercel-ai-changelog",
+      "sourceName": "Vercel Changelog · AI",
+      "status": "success",
+      "collected": 20,
+      "durationMs": 951
+    },
+    {
+      "sourceId": "attentionvc-ai",
+      "sourceName": "X / AttentionVC AI",
+      "status": "success",
+      "collected": 3,
+      "durationMs": 364
+    }
+  ],
+  "quality": {
+    "llmReview": {
+      "status": "disabled",
+      "model": null,
+      "requestedItems": 0,
+      "successfulItems": 0,
+      "finalReviewedItems": 0,
+      "pendingItems": 3,
+      "batchCount": 0,
+      "requestCount": 0,
+      "retryCount": 0,
+      "failedBatchCount": 0,
+      "durationMs": 0,
+      "issues": []
+    }
+  }
+}
