@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "track": "technical",
-  "updatedAt": "2026-10-13T03:21:05.154Z",
+  "updatedAt": "2026-10-14T01:35:22.496Z",
   "items": [
     {
       "url": "https://www.latent.space/p/ainews-zawinskis-law-of-multiagents",
@@ -4082,6 +4082,78 @@
     {
       "url": "https://github.com/Alishahryar1/free-claude-code",
       "title": "Alishahryar1/free-claude-code"
+    },
+    {
+      "url": "https://www.technologyreview.com/2026/10/13/1146366/open-models-have-real-benefits-do-they-outweigh-the-risks",
+      "title": "Open models have real benefits. Do they outweigh the risks?"
+    },
+    {
+      "url": "https://x.com/melvindvivas/status/2109876908934787127",
+      "title": "How Grok Bot Changed the Way I Work"
+    },
+    {
+      "url": "https://www.latent.space/p/dyna",
+      "title": "Dyna-2: General Purpose Physical Agents with Hour-Long Autonomy — Jason Ma, Dyna Robotics"
+    },
+    {
+      "url": "https://x.com/eglyman/status/2110007713396613568",
+      "title": "Introducing Glass: Learn Things Once."
+    },
+    {
+      "url": "https://github.blog/changelog/2026-10-13-gemini-4-argon-in-github-copilot",
+      "title": "Gemini 4 Argon in GitHub Copilot"
+    },
+    {
+      "url": "https://huggingface.co/blog/LiquidAI/lfm25-24b-a2b",
+      "title": "Run fast, private agents on-device with LFM2.5-24B-A2B"
+    },
+    {
+      "url": "https://www.latent.space/p/ainews-meta-muse-wonder-and-wonder",
+      "title": "[AINews] Meta Muse Wonder & Wonder Full: MSL’s Claude 5.5-tier Frontier Model"
+    },
+    {
+      "url": "https://www.technologyreview.com/2026/10/13/1145755/ai-labs-buying-data-from-dead-startups-to-train-models",
+      "title": "AI labs are buying data from dead startups to train their models"
+    },
+    {
+      "url": "https://vercel.com/changelog/drama-3-now-available-on-ai-gateway",
+      "title": "Drama 3 now available on AI Gateway"
+    },
+    {
+      "url": "https://vercel.com/changelog/mai-image-2-6-and-mai-image-2-6-flash-now-available-on-ai-gateway",
+      "title": "MAI-Image-2.6 and MAI-Image-2.6-Flash now available on AI Gateway"
+    },
+    {
+      "url": "https://vercel.com/changelog/gemini-4-argon-now-available-on-ai-gateway",
+      "title": "Gemini 4 Argon now available on AI Gateway"
+    },
+    {
+      "url": "https://www.producthunt.com/products/postnitro",
+      "title": "PostNitro for Agents"
+    },
+    {
+      "url": "https://x.com/GoogleAIStudio/status/2110061450618159297",
+      "title": "Gemini 4 Argon: Built to solve your hardest problems"
+    },
+    {
+      "url": "https://deepmind.google/blog/developing-gemini-4-argon-responsibly-and-safely",
+      "title": "Developing Gemini 4 Argon responsibly and safely"
+    },
+    {
+      "url": "https://deepmind.google/blog/gemini-4-argon-for-robotics",
+      "title": "Gemini 4 Argon for Robotics"
+    },
+    {
+      "url": "https://deepmind.google/blog/introducing-gemini-4-argon",
+      "title": "Gemini 4 Argon: Built to solve your hardest problems"
+    },
+    {
+      "url": "https://openai.com/index/higgsfield-longer-videos-voice",
+      "title": "Higgsfield takes AI video from 1 minute to over 10"
+    },
+    {
+      "url": "https://tldr.tech/ai/2026-10-13",
+      "title": "Muse Wonder ✨, Maia 300 ⚡, AI self-replication 🧬"
     }
   ]
 }
